@@ -1,0 +1,38 @@
+# Keep only barcodes with >=100 fragments
+awk -F'\t' 'NR==1{next} $2>=100 {print $1"\t"$2}' out/fragment_counts.tsv \
+  > out/fragment_ge100.tsv
+
+# Filter step1 metadata to singlets only
+awk -F'\t' 'NR==1{print; next} $6!="NA" && $4=="Singlet" {print}' \
+  out/step1_hto_adt_metadata.tsv > out/step1_singlet_metadata.tsv
+# (In the R output: hto_classification is column 4; donor_id column 5; second_id column 6)
+
+# Now inner-join on barcode
+python - <<'PY'
+import pandas as pd
+
+md = pd.read_csv("out/step1_singlet_metadata.tsv", sep="\t")
+fc = pd.read_csv("out/fragment_ge100.tsv", sep="\t", header=None, names=["barcode","n_fragments"])
+
+clean = md.merge(fc, on="barcode", how="inner")
+
+# Reorder / keep key columns (add whatever else you want)
+keep = [
+    "barcode",
+    "donor_id",
+    "hto_classification",
+    "doublet_flag",
+    "negative_flag",
+    "singlet_flag",
+    "adt_total",
+    "hto_total",
+    "n_fragments",
+    "second_id",
+    "hto_margin",
+]
+keep = [c for c in keep if c in clean.columns]
+clean = clean[keep].sort_values(["donor_id","barcode"])
+
+clean.to_csv("out/clean_cells.tsv", sep="\t", index=False)
+print("Wrote out/clean_cells.tsv with", len(clean), "cells")
+PY
