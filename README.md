@@ -56,7 +56,7 @@ Example:
   Data/H3K4me1/outputs H3K4me1_rep1 10 10 100 5000
 ```
 
-## Chunked execution (recommended)
+## Chunked execution
 
 Use these stage scripts if you want to stop after clean-cell QC, call peaks separately, then run downstream matrices.
 
