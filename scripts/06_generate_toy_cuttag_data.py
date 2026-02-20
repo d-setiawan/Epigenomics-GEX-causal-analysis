@@ -91,6 +91,11 @@ def main():
         for chrom, start, end, name in peaks:
             f.write(f"{chrom}\t{start}\t{end}\t{name}\n")
 
+    chrom_sizes_path = out_dir / "toy_chrom.sizes"
+    with chrom_sizes_path.open("w") as f:
+        f.write("chr1\t8000\n")
+        f.write("chr2\t8000\n")
+
     # Fragments
     frag_path = out_dir / "toy_fragments.tsv.gz"
     with gzip.open(frag_path, "wt") as f:
@@ -175,6 +180,7 @@ def main():
     print(f"  {hto_path}")
     print(f"  {frag_path}")
     print(f"  {peaks_path}")
+    print(f"  {chrom_sizes_path}")
     print(f"  {md_path} (mock metadata for testing steps 2-5)")
 
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ $# -lt 9 ]]; then
+if [[ $# -lt 10 ]]; then
   cat <<'USAGE' >&2
 Usage:
   run_cuttag_qc_pipeline.sh \
-    <adt.tsv> <hto.tsv> <fragments.tsv.gz> <peaks.bed> \
+    <adt.tsv> <hto.tsv> <fragments.tsv.gz> <peaks.bed> <chrom.sizes> \
     <out_dir> <sample_prefix> \
     <min_adt> <min_hto> <min_cuttag_fragments>
 
@@ -28,11 +28,12 @@ ADT_TSV="$1"
 HTO_TSV="$2"
 FRAGMENTS_TSV_GZ="$3"
 PEAKS_BED="$4"
-OUT_DIR="$5"
-SAMPLE_PREFIX="$6"
-MIN_ADT="$7"
-MIN_HTO="$8"
-MIN_CUTTAG_FRAGMENTS="$9"
+CHROM_SIZES="$5"
+OUT_DIR="$6"
+SAMPLE_PREFIX="$7"
+MIN_ADT="$8"
+MIN_HTO="$9"
+MIN_CUTTAG_FRAGMENTS="${10}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 mkdir -p "$OUT_DIR"
@@ -64,7 +65,7 @@ python3 "$SCRIPT_DIR/04_filter_matrix_by_barcodes.py" \
   "$HTO_TSV" "$CLEAN_BARCODES_TSV" "${OUT_PREFIX}_hto_clean_matrix.tsv"
 
 python3 "$SCRIPT_DIR/05_build_chromatin_matrix.py" \
-  "$FRAGMENTS_TSV_GZ" "$PEAKS_BED" "$CLEAN_BARCODES_TSV" "$OUT_PREFIX"
+  "$FRAGMENTS_TSV_GZ" "$PEAKS_BED" "$CHROM_SIZES" "$CLEAN_BARCODES_TSV" "$OUT_PREFIX"
 
 echo "Pipeline complete for sample: $SAMPLE_PREFIX"
 echo "Key outputs:"
