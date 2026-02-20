@@ -8,7 +8,7 @@ suppressPackageStartupMessages({
 # -------------------------
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 3) {
-  cat("Usage: Rscript 01_demux_hto_adt.R <adt.tsv> <hto.tsv> <out_prefix>\n")
+  cat("Usage: Rscript 01_demux_adt_hto.R <adt.tsv> <hto.tsv> <out_prefix> [min_adt] [min_hto]\n")
   quit(status = 1)
 }
 
@@ -16,8 +16,11 @@ adt_path <- args[[1]]
 hto_path <- args[[2]]
 out_prefix <- args[[3]]
 
-MIN_ADT <- 10
-MIN_HTO <- 10
+MIN_ADT <- if (length(args) >= 4) as.numeric(args[[4]]) else 10
+MIN_HTO <- if (length(args) >= 5) as.numeric(args[[5]]) else 10
+if (is.na(MIN_ADT) || is.na(MIN_HTO)) {
+  stop("min_adt and min_hto must be numeric.")
+}
 
 # -------------------------
 # Helpers: read matrix (rows=features, cols=barcodes)

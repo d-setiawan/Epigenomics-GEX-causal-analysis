@@ -5,7 +5,7 @@ from collections import Counter
 
 def count_fragments(fragments_tsv_gz: str) -> Counter:
     """
-    fragments.tsv.gz format (cellranger-atac):
+    fragments.tsv(.gz) format (used by scCUT&Tag/ATAC-like pipelines):
       chr  start  end  barcode  duplicate_count(optional)
     We count lines per barcode (each line is a fragment).
     """
@@ -32,9 +32,9 @@ def main():
 
     c = count_fragments(frag_path)
     with open(out_path, "w") as w:
-        w.write("barcode\tn_fragments\n")
-        for bc, n in c.items():
-            w.write(f"{bc}\t{n}\n")
+        w.write("barcode\tn_cuttag_fragments\n")
+        for bc in sorted(c):
+            w.write(f"{bc}\t{c[bc]}\n")
 
     print(f"Wrote {out_path} with {len(c)} barcodes.", file=sys.stderr)
 
