@@ -36,17 +36,39 @@ def load_whitelist(path: Path):
     return keep
 
 
+def detect_delimiter(line: str):
+    if "\t" in line:
+        return "tab"
+    if "," in line:
+        return "comma"
+    return "whitespace"
+
+
+def split_line(line: str, mode: str):
+    s = line.rstrip("\n")
+    if mode == "tab":
+        return s.split("\t")
+    if mode == "comma":
+        return s.split(",")
+    # Generic whitespace fallback (handles one-or-more spaces)
+    return s.split()
+
+
 def main():
     args = parse_args()
 
     keep = load_whitelist(Path(args.barcode_tsv))
 
     with open(args.matrix_tsv, "r", newline="") as in_f, open(args.out_tsv, "w", newline="") as out_f:
-        reader = csv.reader(in_f, delimiter="\t")
         writer = csv.writer(out_f, delimiter="\t")
 
-        header = next(reader, None)
-        if header is None or len(header) < 2:
+        header_line = in_f.readline()
+        if not header_line:
+            raise ValueError("Input matrix is empty.")
+
+        mode = detect_delimiter(header_line)
+        header = split_line(header_line, mode)
+        if len(header) < 2:
             raise ValueError("Input matrix must have at least two columns (feature + >=1 barcode).")
 
         cell_headers = header[1:]
@@ -56,9 +78,10 @@ def main():
         out_header = [header[0]] + [cell_headers[i] for i in keep_idx]
         writer.writerow(out_header)
 
-        for row in reader:
-            if not row:
+        for line in in_f:
+            if not line.strip():
                 continue
+            row = split_line(line, mode)
             if len(row) < len(header):
                 row = row + ["0"] * (len(header) - len(row))
             out_row = [row[0]] + [row[i + 1] for i in keep_idx]

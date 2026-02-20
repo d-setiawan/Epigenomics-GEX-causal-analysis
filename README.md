@@ -56,6 +56,41 @@ Example:
   Data/H3K4me1/outputs H3K4me1_rep1 10 10 100 5000
 ```
 
+## Chunked execution (recommended)
+
+Use these stage scripts if you want to stop after clean-cell QC, call peaks separately, then run downstream matrices.
+
+### Stage 1: Pre-peak QC and clean-cell selection
+
+```bash
+./scripts/run_cuttag_stage1_prepeak.sh \
+  <adt.tsv> <hto.tsv> <fragments.tsv.gz> \
+  <out_dir> <sample_prefix> \
+  <min_adt> <min_hto> [min_cuttag_fragments]
+```
+
+This gives you `*_clean_barcodes.tsv` and `*_clean_cells.tsv`.
+
+### Stage 2: Peak calling from clean fragments (MACS3)
+
+```bash
+./scripts/run_cuttag_stage2_call_peaks.sh \
+  <fragments.tsv.gz> <clean_barcodes.tsv> \
+  <out_dir> <sample_prefix> <genome_size> [macs_q]
+```
+
+This filters fragments to clean barcodes, runs `macs3 callpeak`, and writes `*_peaks.bed`.
+
+### Stage 3: Downstream matrix generation (SnapATAC2)
+
+```bash
+./scripts/run_cuttag_stage3_downstream.sh \
+  <fragments.tsv.gz> <peaks.bed> <chrom.sizes> \
+  <clean_barcodes.tsv> <out_prefix> [bin_size]
+```
+
+This creates both peak-based and fixed-bin chromatin matrices.
+
 ## Script-by-script description
 
 ### `scripts/run_cuttag_qc_pipeline.sh`
@@ -71,6 +106,22 @@ Orchestrates all steps in order:
 Orchestrates:
 1. Entire `run_cuttag_qc_pipeline.sh` (QC + peak matrix).
 2. `07_build_fixed_bin_matrix.py` (fixed-bin matrix from the same clean cells).
+
+### `scripts/run_cuttag_stage1_prepeak.sh`
+Purpose:
+- Runs QC/demux/filtering only (steps 1-4).
+- Produces clean barcodes and clean-cell metadata before peak calling.
+
+### `scripts/run_cuttag_stage2_call_peaks.sh`
+Purpose:
+- Filters fragments to clean barcodes.
+- Calls peaks with MACS3.
+- Produces pipeline-ready `*_peaks.bed`.
+
+### `scripts/run_cuttag_stage3_downstream.sh`
+Purpose:
+- Runs SnapATAC2 matrix generation from known clean barcodes + known peaks.
+- Produces both peak and bin matrices.
 
 ### `scripts/01_demux_adt_hto.R`
 Purpose:
@@ -139,6 +190,14 @@ Main outputs:
 - `*_bin_chromatin_clean_barcodes.tsv`
 - `*_bin_chromatin_clean_features.tsv`
 - `*_bins.bed`
+
+### `scripts/08_filter_fragments_by_barcodes.py`
+Purpose:
+- Filters `fragments.tsv(.gz)` to a clean barcode whitelist.
+- Used by stage 2 before MACS3 peak calling.
+
+Main output:
+- filtered fragments TSV (typically then gzipped and used by MACS3).
 
 ## Output files: rows, columns, and meaning
 

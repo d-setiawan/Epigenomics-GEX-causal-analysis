@@ -140,13 +140,21 @@ obj <- NormalizeData(obj, assay = "HTO", normalization.method = "CLR", margin = 
 obj <- HTODemux(obj, assay = "HTO", positive.quantile = 0.99, verbose = FALSE)
 
 md <- obj@meta.data
-cells_singlet <- rownames(md)[md$HTO_classification == "Singlet"]
+# Seurat versions differ:
+# - HTO_classification.global: Singlet/Doublet/Negative
+# - HTO_classification: donor/hashtag assignment (e.g., HTO1)
+if ("HTO_classification.global" %in% colnames(md)) {
+  hto_class <- as.character(md$HTO_classification.global)
+} else {
+  hto_class <- as.character(md$HTO_classification)
+}
+cells_singlet <- rownames(md)[hto_class == "Singlet"]
 
 out <- data.frame(
   barcode = rownames(md),
   adt_total = as.numeric(adt_total[rownames(md)]),
   hto_total = as.numeric(hto_total[rownames(md)]),
-  hto_classification = md$HTO_classification,
+  hto_classification = hto_class,
   donor_id = as.character(md$HTO_maxID),
   second_id = as.character(md$HTO_secondID),
   hto_margin = as.numeric(md$HTO_margin),

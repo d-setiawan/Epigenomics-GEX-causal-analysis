@@ -4,6 +4,14 @@ import csv
 import inspect
 from pathlib import Path
 
+def normalize_barcode(bc: str) -> str:
+    bc = bc.strip()
+    if "." in bc and bc.rsplit(".", 1)[-1].isdigit():
+        bc = bc.rsplit(".", 1)[0]
+    if "-" in bc and bc.rsplit("-", 1)[-1].isdigit():
+        bc = bc.rsplit("-", 1)[0]
+    return bc
+
 
 def parse_args():
     p = argparse.ArgumentParser(
@@ -46,7 +54,7 @@ def load_chrom_sizes(path: Path):
 
 
 def load_whitelist(path: Path):
-    barcodes = []
+    barcodes = set()
     with path.open("r", newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         if "barcode" not in (reader.fieldnames or []):
@@ -54,10 +62,16 @@ def load_whitelist(path: Path):
         for row in reader:
             bc = row["barcode"].strip()
             if bc:
-                barcodes.append(bc)
+                # Keep original and common suffix variants to match fragments format.
+                barcodes.add(bc)
+                norm = normalize_barcode(bc)
+                if norm:
+                    barcodes.add(norm)
+                    barcodes.add(f"{norm}-1")
+                    barcodes.add(f"{norm}.1")
     if not barcodes:
         raise ValueError(f"No barcodes found in {path}")
-    return barcodes
+    return sorted(barcodes)
 
 
 def call_supported(func, **kwargs):
