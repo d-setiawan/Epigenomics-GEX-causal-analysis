@@ -1,5 +1,3 @@
-#!/usr/bin/env Rscript
-
 suppressPackageStartupMessages({
   library(Matrix)
   library(Seurat)
@@ -22,14 +20,40 @@ MIN_ADT <- 10
 MIN_HTO <- 10
 
 # -------------------------
-# Helpers: read TSV matrix (rows=features, cols=barcodes)
+# Helpers: read matrix (rows=features, cols=barcodes)
 # -------------------------
 read_tsv_matrix <- function(path) {
-  df <- read.delim(path, header = TRUE, row.names = 1, check.names = FALSE)
+  # Primary expectation: TSV with features in col 1 and barcodes in header.
+  # Some exports are space-delimited even when named "*.tsv", so retry with
+  # generic whitespace splitting if tab parsing collapses to one column.
+  df <- tryCatch(
+    read.delim(path, header = TRUE, row.names = 1, check.names = FALSE),
+    error = function(e) NULL
+  )
+
+  if (is.null(df) || ncol(df) <= 1) {
+    df <- read.table(
+      path,
+      header = TRUE,
+      row.names = 1,
+      check.names = FALSE,
+      sep = "",
+      comment.char = "",
+      quote = ""
+    )
+  }
+
   m <- as.matrix(df)
-  # If counts are integer-like, keep numeric anyway
-  m <- Matrix(m, sparse = TRUE)
-  return(m)
+  storage.mode(m) <- "numeric"
+  Matrix(m, sparse = TRUE)
+}
+
+normalize_barcodes <- function(x) {
+  x <- trimws(x)
+  # Normalize common 10x suffix conventions (.1 vs -1)
+  x <- sub("\\.[0-9]+$", "", x)
+  x <- sub("-[0-9]+$", "", x)
+  x
 }
 
 # -------------------------
@@ -38,12 +62,40 @@ read_tsv_matrix <- function(path) {
 adt <- read_tsv_matrix(adt_path)
 hto <- read_tsv_matrix(hto_path)
 
-# Ensure barcodes intersect
-common_cells <- intersect(colnames(adt), colnames(hto))
-if (length(common_cells) == 0) stop("No overlapping cell barcodes between ADT and HTO matrices.")
+# Ensure barcodes intersect (with robust harmonization for suffix/style mismatches)
+adt_bc_raw <- colnames(adt)
+hto_bc_raw <- colnames(hto)
 
-adt <- adt[, common_cells, drop = FALSE]
-hto <- hto[, common_cells, drop = FALSE]
+adt_bc_norm <- normalize_barcodes(adt_bc_raw)
+hto_bc_norm <- normalize_barcodes(hto_bc_raw)
+
+common_cells_norm <- intersect(adt_bc_norm, hto_bc_norm)
+if (length(common_cells_norm) == 0) {
+  stop("No overlapping cell barcodes between ADT and HTO matrices after barcode normalization.")
+}
+cat(sprintf(
+  "Barcode overlap diagnostics: ADT=%d, HTO=%d, shared=%d\n",
+  length(adt_bc_norm), length(hto_bc_norm), length(common_cells_norm)
+))
+
+# Use first occurrence per normalized barcode to avoid duplicate-column ambiguity.
+adt_first <- !duplicated(adt_bc_norm)
+hto_first <- !duplicated(hto_bc_norm)
+
+adt <- adt[, adt_first, drop = FALSE]
+hto <- hto[, hto_first, drop = FALSE]
+
+adt_bc_norm <- adt_bc_norm[adt_first]
+hto_bc_norm <- hto_bc_norm[hto_first]
+
+adt_idx <- match(common_cells_norm, adt_bc_norm)
+hto_idx <- match(common_cells_norm, hto_bc_norm)
+
+adt <- adt[, adt_idx, drop = FALSE]
+hto <- hto[, hto_idx, drop = FALSE]
+
+colnames(adt) <- common_cells_norm
+colnames(hto) <- common_cells_norm
 
 # -------------------------
 # Apply raw count thresholds
@@ -53,6 +105,19 @@ hto_total <- Matrix::colSums(hto)
 
 keep_counts <- (adt_total >= MIN_ADT) & (hto_total >= MIN_HTO)
 cells_pass_counts <- names(which(keep_counts))
+cat(sprintf(
+  "Threshold diagnostics: MIN_ADT=%d, MIN_HTO=%d, passing_cells=%d\n",
+  MIN_ADT, MIN_HTO, length(cells_pass_counts)
+))
+if (length(cells_pass_counts) == 0) {
+  stop(sprintf(
+    paste0(
+      "No cells pass thresholds: MIN_ADT=%d, MIN_HTO=%d. ",
+      "Check ADT/HTO count distributions, barcode harmonization, or lower thresholds."
+    ),
+    MIN_ADT, MIN_HTO
+  ))
+}
 
 # Subset matrices to threshold-passing cells
 adt2 <- adt[, cells_pass_counts, drop = FALSE]
@@ -60,38 +125,20 @@ hto2 <- hto[, cells_pass_counts, drop = FALSE]
 
 # -------------------------
 # Seurat object + HTO demux
-# We use a minimal RNA assay just to host cells; ADT/HTO live in their own assays
+# Build object directly from HTO counts to avoid Assay5 dummy-layer edge cases.
 # -------------------------
-dummy_rna <- Matrix::Matrix(0, nrow = 1, ncol = ncol(hto2), sparse = TRUE)
-colnames(dummy_rna) <- colnames(hto2)
-rownames(dummy_rna) <- "dummy"
-
-obj <- CreateSeuratObject(counts = dummy_rna)
+obj <- CreateSeuratObject(counts = hto2, assay = "HTO")
 
 # Add assays
-obj[["HTO"]] <- CreateAssayObject(counts = hto2)
 obj[["ADT"]] <- CreateAssayObject(counts = adt2)
 
-# Normalize (matching your description)
-# HTO often uses CLR as well; Seurat vignette uses CLR for HTO
-obj <- NormalizeData(obj, assay = "HTO", normalization.method = "CLR")
-obj <- NormalizeData(obj, assay = "ADT", normalization.method = "CLR")
-
-# Demultiplex
-obj <- HTODemux(obj, assay = "HTO", positive.quantile = 0.99)
+# CLR normalize HTO then demultiplex
+obj <- NormalizeData(obj, assay = "HTO", normalization.method = "CLR", margin = 2, verbose = FALSE)
+obj <- HTODemux(obj, assay = "HTO", positive.quantile = 0.99, verbose = FALSE)
 
 md <- obj@meta.data
-# Seurat outputs columns:
-#  - HTO_classification (Singlet/Doublet/Negative)
-#  - HTO_maxID (best tag)
-#  - HTO_secondID (second best)
-#  - HTO_margin, etc.
+cells_singlet <- rownames(md)[md$HTO_classification == "Singlet"]
 
-# Keep singlets only
-is_singlet <- md$HTO_classification == "Singlet"
-cells_singlet <- rownames(md)[is_singlet]
-
-# Build output table for all cells that passed count thresholds (before singlet filter)
 out <- data.frame(
   barcode = rownames(md),
   adt_total = as.numeric(adt_total[rownames(md)]),
