@@ -1,4 +1,11 @@
-Data/H3K4me1/H3K4me1_rep1_histone_fragments.tsv
+# Raw fragment files (large local inputs)
+Data/*/*_histone_fragments.tsv
+Data/*/*_histone_fragments.tsv.gz
+Data/*/*_fragments.tsv
+Data/*/*_fragments.tsv.gz
 
-# Pipeline outputs
-Data/H3K4me1/outputs
+# Pipeline outputs (all histone modification folders)
+Data/*/outputs/
+
+# Sandbox analysis outputs
+sandbox_outputs/
