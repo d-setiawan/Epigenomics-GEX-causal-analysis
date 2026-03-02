@@ -148,12 +148,18 @@ def main():
         base_columns.append("n_cuttag_fragments")
 
     with metadata_out.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=base_columns, delimiter="\t", extrasaction="ignore")
+        writer = csv.DictWriter(
+            f,
+            fieldnames=base_columns,
+            delimiter="\t",
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(clean_rows)
 
     with barcode_out.open("w", newline="") as f:
-        writer = csv.writer(f, delimiter="\t")
+        writer = csv.writer(f, delimiter="\t", lineterminator="\n")
         writer.writerow(["barcode"])
         for row in clean_rows:
             writer.writerow([row["barcode"]])

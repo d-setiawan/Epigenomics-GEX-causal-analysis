@@ -60,7 +60,7 @@ def main():
     keep = load_whitelist(Path(args.barcode_tsv))
 
     with open(args.matrix_tsv, "r", newline="") as in_f, open(args.out_tsv, "w", newline="") as out_f:
-        writer = csv.writer(out_f, delimiter="\t")
+        writer = csv.writer(out_f, delimiter="\t", lineterminator="\n")
 
         header_line = in_f.readline()
         if not header_line:
@@ -68,24 +68,54 @@ def main():
 
         mode = detect_delimiter(header_line)
         header = split_line(header_line, mode)
-        if len(header) < 2:
-            raise ValueError("Input matrix must have at least two columns (feature + >=1 barcode).")
+        if len(header) < 1:
+            raise ValueError("Input matrix header is malformed.")
 
-        cell_headers = header[1:]
-        cell_norm = [normalize_barcode(c) for c in cell_headers]
-        keep_idx = [i for i, bc in enumerate(cell_norm) if bc in keep]
-
-        out_header = [header[0]] + [cell_headers[i] for i in keep_idx]
-        writer.writerow(out_header)
-
+        first_data = None
         for line in in_f:
             if not line.strip():
                 continue
-            row = split_line(line, mode)
-            if len(row) < len(header):
-                row = row + ["0"] * (len(header) - len(row))
+            first_data = split_line(line, mode)
+            break
+        if first_data is None:
+            raise ValueError("Input matrix has no data rows.")
+
+        # Support both common matrix styles:
+        # 1) feature label present in header: feature,bc1,bc2,...
+        # 2) feature label absent in header (rownames-style): bc1,bc2,... with rows feature,val1,val2,...
+        if len(first_data) == len(header) + 1:
+            feature_header = "feature"
+            cell_headers = header
+        elif len(first_data) >= len(header):
+            feature_header = header[0]
+            cell_headers = header[1:]
+        else:
+            raise ValueError(
+                "Could not reconcile header/data widths. "
+                f"header_fields={len(header)}, first_data_fields={len(first_data)}"
+            )
+
+        if not cell_headers:
+            raise ValueError("No cell barcode columns detected in matrix header.")
+
+        cell_norm = [normalize_barcode(c) for c in cell_headers]
+        keep_idx = [i for i, bc in enumerate(cell_norm) if bc in keep]
+        out_header = [feature_header] + [cell_headers[i] for i in keep_idx]
+        writer.writerow(out_header)
+
+        expected_len = len(cell_headers) + 1
+
+        def write_row(row):
+            if len(row) < expected_len:
+                row = row + ["0"] * (expected_len - len(row))
             out_row = [row[0]] + [row[i + 1] for i in keep_idx]
             writer.writerow(out_row)
+
+        write_row(first_data)
+        for line in in_f:
+            if not line.strip():
+                continue
+            write_row(split_line(line, mode))
 
     print(f"Wrote {args.out_tsv} with {len(keep_idx)} selected barcodes.")
 
