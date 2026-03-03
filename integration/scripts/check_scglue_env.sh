@@ -100,6 +100,15 @@ for import_name, dist_name in optional:
         print(f"[OK]   {import_name}: {dist_version(dist_name)}")
 
 print()
+print("=== scGLUE Import Smoke Test ===")
+try:
+    import scglue  # noqa: F401
+    print("[OK]   import scglue")
+except Exception as e:  # pragma: no cover
+    print(f"[FAIL] import scglue failed: {type(e).__name__}: {e}")
+    missing.append("scglue_import_runtime")
+
+print()
 if missing:
     print("=== RESULT: FAIL ===")
     print("Missing required packages:", ", ".join(missing))

@@ -31,3 +31,36 @@ After setup, use:
 - `integration/manifests/step1_data_check.tsv`
 
 These are generated with repo-relative paths so scripts are portable across machines as long as the same repo layout is kept.
+
+## Pilot preprocessing (step 4)
+
+Run method-specific preprocessing first, before guidance graph and model training.
+
+scGLUE track:
+
+```bash
+bash integration/scripts/run_preprocess_scglue_pilot.sh H3K4me1
+```
+
+If your `scglue` import is currently incompatible, run:
+
+```bash
+bash integration/scripts/run_preprocess_scglue_pilot.sh H3K4me1 --chrom-lsi-backend sklearn
+```
+
+Jianle track:
+
+```bash
+bash integration/scripts/run_preprocess_jianle_pilot.sh H3K4me1
+```
+
+Outputs are written to:
+
+- `integration/outputs/scglue/pilot/<MARK>/preprocess/`
+- `integration/outputs/jianle/pilot/<MARK>/preprocess/`
+
+Each run writes:
+
+- `rna_preprocessed.h5ad`
+- `chrom_<MARK>_preprocessed.h5ad`
+- `preprocess_summary.json`
