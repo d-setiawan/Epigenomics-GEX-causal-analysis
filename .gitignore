@@ -7,5 +7,13 @@ Data/*/*_fragments.tsv.gz
 # Pipeline outputs (all histone modification folders)
 Data/*/outputs/
 
+# Downloaded GEX inputs (large local files)
+Data/GexData/
+
 # Sandbox analysis outputs
 sandbox_outputs/
+
+# Integration runtime artifacts (keep scripts/configs/manifests tracked)
+integration/workspace/
+integration/outputs/
+integration/logs/

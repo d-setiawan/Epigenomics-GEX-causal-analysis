@@ -360,6 +360,36 @@ If you generate both peak and bin matrices, recommended default:
 3. Practical strategy:
 - Run integration on bins, then transfer cluster/cell-state labels and run causal analysis on peaks within states.
 
+## Integration module (scGLUE + Jianle)
+
+The repository now includes a dedicated integration module:
+
+- `integration/methods/scglue/` for scGLUE runs.
+- `integration/methods/jianle/` for Jianle-method runs.
+- `integration/scripts/` for shared setup and environment checks.
+
+Build/update the local integration workspace and manifests:
+
+```bash
+python3 integration/scripts/setup_integration_workspace.py
+```
+
+Check scGLUE environment:
+
+```bash
+bash integration/scripts/check_scglue_env.sh
+```
+
+Shared input manifest for both methods:
+
+- `integration/manifests/scglue_input_manifest.tsv`
+
+Generated runtime directories are gitignored:
+
+- `integration/workspace/`
+- `integration/outputs/`
+- `integration/logs/`
+
 ## Toy test (small dataset)
 
 Generate a tiny synthetic dataset:
