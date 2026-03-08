@@ -4,16 +4,18 @@ This directory is the repo-native home for all downstream integration work.
 
 Primary active method track:
 1. `scGLUE` joint integration (RNA + all histone marks in one model)
+2. `jianle` joint integration (scMRDR-inspired practical implementation)
 
 Secondary/legacy track:
 1. Pilot per-mark scripts (`*_pilot*`) for debugging and backward compatibility
-2. `jianle` method stubs
 
 ## Layout
 - `scripts/setup_integration_workspace.py`: shared workspace setup.
 - `scripts/check_scglue_env.sh`: environment smoke-check.
 - `scripts/scglue/`: ordered scGLUE joint wrappers.
+- `scripts/jianle/`: ordered Jianle joint wrappers.
 - `methods/scglue/scripts/`: scGLUE Python implementations.
+- `methods/jianle/scripts/`: Jianle Python implementations.
 - `manifests/`: generated input manifests.
 - `workspace/`: local symlinked input view (generated, gitignored).
 - `outputs/`: all run outputs (generated, gitignored).
@@ -66,6 +68,49 @@ Expected stage outputs:
 - `train_summary.json`
 4. `train/validation/`
 - `cells_umap_clusters.tsv`
+- `validation_metrics.json`
+- `umap_by_modality.png`
+- `umap_by_leiden.png`
+
+## Joint Jianle Track (scMRDR-inspired)
+
+Run the full joint pipeline:
+
+```bash
+bash integration/scripts/jianle/run_joint_pipeline.sh \
+  jianle_v1 \
+  --train-arg --max-epochs --train-arg 200 \
+  --train-arg --learning-rate --train-arg 1e-3 \
+  --train-arg --batch-size --train-arg 256
+```
+
+Step-by-step:
+
+```bash
+bash integration/scripts/jianle/run_preprocess_joint.sh jianle_v1
+bash integration/scripts/jianle/run_train_joint.sh jianle_v1 --max-epochs 200
+bash integration/scripts/jianle/run_validate_joint.sh jianle_v1
+```
+
+Output root:
+- `integration/outputs/jianle/joint/<RUN_ID>/`
+
+Expected stage outputs:
+1. `preprocess/`
+- `rna_preprocessed.h5ad`
+- `chrom_<MARK>_preprocessed.h5ad`
+- `chrom_preprocessed_manifest.tsv`
+- `joint_preprocess_summary.json`
+2. `train/`
+- `jianle_joint_model.pt`
+- `all_cells_jianle_embeddings.tsv`
+- `modality_outputs.tsv`
+- `train_history.tsv`
+- `train_summary.json`
+3. `train/validation/`
+- `cells_umap_clusters.tsv`
+- `cluster_sizes.tsv`
+- `cluster_by_modality.tsv`
 - `validation_metrics.json`
 - `umap_by_modality.png`
 - `umap_by_leiden.png`

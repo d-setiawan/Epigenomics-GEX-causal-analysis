@@ -69,7 +69,7 @@ Use these stage scripts if you want to stop after clean-cell QC, call peaks sepa
   <min_adt> <min_hto> [min_cuttag_fragments]
 ```
 
-This gives you `*_clean_barcodes.tsv` and `*_clean_cells.tsv`.
+This gives `*_clean_barcodes.tsv` and `*_clean_cells.tsv`.
 
 ### Stage 2: Peak calling from clean fragments (MACS3)
 

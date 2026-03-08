@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and visualize joint scGLUE embeddings."""
+"""Validate and visualize joint Jianle embeddings."""
 
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ def same_modality_neighbor_fraction(x: np.ndarray, labels: np.ndarray, k: int) -
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="Validate joint scGLUE results")
+    p = argparse.ArgumentParser(description="Validate joint Jianle integration results")
     p.add_argument("--repo-root", default=str(infer_repo_root()))
     p.add_argument("--train-dir", required=True, help="Joint training output directory")
     p.add_argument("--out-dir", default=None, help="Default: <train-dir>/validation")
@@ -58,25 +58,24 @@ def main() -> int:
     out_dir = resolve_path(repo_root, args.out_dir) if args.out_dir else train_dir / "validation"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    emb_path = train_dir / "all_cells_glue_embeddings.tsv"
+    emb_path = train_dir / "all_cells_jianle_embeddings.tsv"
     if not emb_path.exists():
         raise FileNotFoundError(f"Missing embeddings table: {emb_path}")
     emb = pd.read_csv(emb_path, sep="\t")
-    glue_cols = [c for c in emb.columns if c.startswith("GLUE_")]
-    if not glue_cols:
-        raise RuntimeError("No GLUE_* columns found in all_cells_glue_embeddings.tsv")
+    emb_cols = [c for c in emb.columns if c.startswith("JIANLE_")]
+    if not emb_cols:
+        raise RuntimeError("No JIANLE_* columns found in all_cells_jianle_embeddings.tsv")
 
-    x = emb[glue_cols].to_numpy(dtype=float)
+    x = emb[emb_cols].to_numpy(dtype=float)
     obs = emb[["cell", "modality_key", "mark"]].copy()
-    # Cell barcodes are reused across modalities; use a unique per-row obs id.
     obs["obs_id"] = obs["modality_key"].astype(str) + "::" + obs["cell"].astype(str)
     obs.index = obs["obs_id"].astype(str)
     obs.index.name = "obs_id"
 
     adata = ad.AnnData(X=np.zeros((x.shape[0], 1), dtype=np.float32), obs=obs)
-    adata.obsm["X_glue"] = x
+    adata.obsm["X_jianle"] = x
 
-    sc.pp.neighbors(adata, n_neighbors=min(args.n_neighbors, max(2, adata.n_obs - 1)), use_rep="X_glue")
+    sc.pp.neighbors(adata, n_neighbors=min(args.n_neighbors, max(2, adata.n_obs - 1)), use_rep="X_jianle")
     sc.tl.umap(adata, min_dist=args.umap_min_dist, random_state=args.random_seed)
     sc.tl.leiden(adata, resolution=args.leiden_resolution, random_state=args.random_seed, key_added="leiden")
 
@@ -105,7 +104,7 @@ def main() -> int:
         plt.scatter(sub["UMAP1"], sub["UMAP2"], s=4, alpha=0.7, label=mod)
     plt.xlabel("UMAP1")
     plt.ylabel("UMAP2")
-    plt.title("Joint scGLUE UMAP by modality")
+    plt.title("Joint Jianle UMAP by modality")
     plt.legend(markerscale=3, fontsize=8, loc="best")
     plt.tight_layout()
     umap_mod_png = out_dir / "umap_by_modality.png"
@@ -120,7 +119,7 @@ def main() -> int:
         plt.scatter(sub["UMAP1"], sub["UMAP2"], s=4, alpha=0.7, color=cmap(i % 20), label=str(cl))
     plt.xlabel("UMAP1")
     plt.ylabel("UMAP2")
-    plt.title("Joint scGLUE UMAP by Leiden cluster")
+    plt.title("Joint Jianle UMAP by Leiden cluster")
     plt.tight_layout()
     umap_cluster_png = out_dir / "umap_by_leiden.png"
     plt.savefig(umap_cluster_png, dpi=200)
