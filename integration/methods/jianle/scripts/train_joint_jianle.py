@@ -34,6 +34,7 @@ class ModalityData:
     mark: str
     adata: ad.AnnData
     counts: sp.csr_matrix
+    feature_mask: np.ndarray | None
     obs_names: pd.Index
     n_obs: int
     n_vars: int
@@ -174,7 +175,10 @@ def extract_batch(
     else:
         x_norm = x_counts * (norm_target_sum / lib)
 
-    feature_mask = np.ones((1, x_counts.shape[1]), dtype=np.float32)
+    if m.feature_mask is not None:
+        feature_mask = np.asarray(m.feature_mask, dtype=np.float32).reshape(1, -1)
+    else:
+        feature_mask = np.ones((1, x_counts.shape[1]), dtype=np.float32)
     return x_norm, x_counts, feature_mask
 
 
@@ -334,18 +338,28 @@ def load_modalities(
 
     out: Dict[str, ModalityData] = {}
 
-    def _prepare_counts(adata: ad.AnnData, layer_name: str) -> Tuple[sp.csr_matrix, int, ad.AnnData]:
+    def _prepare_counts(
+        adata: ad.AnnData,
+        layer_name: str,
+    ) -> Tuple[sp.csr_matrix, int, ad.AnnData, np.ndarray | None]:
         x = adata.layers[layer_name] if layer_name in adata.layers else adata.X
         if not sp.issparse(x):
             x = sp.csr_matrix(np.asarray(x, dtype=np.float32))
         else:
             x = x.tocsr().astype(np.float32)
 
-        if use_highly_variable and "highly_variable" in adata.var:
+        feature_mask = None
+        if "feature_available" in adata.var:
+            feature_mask = adata.var["feature_available"].to_numpy(dtype=np.float32)
+
+        shared_feature_universe = bool(adata.uns.get("shared_feature_universe", False))
+        if use_highly_variable and (not shared_feature_universe) and "highly_variable" in adata.var:
             hv = adata.var["highly_variable"].to_numpy(dtype=bool)
             if hv.sum() > 0:
                 adata = adata[:, hv].copy()
                 x = x[:, hv]
+                if feature_mask is not None:
+                    feature_mask = feature_mask[hv]
 
         row_sums = np.asarray(x.sum(axis=1)).ravel()
         keep = row_sums > 0
@@ -354,10 +368,10 @@ def load_modalities(
             adata = adata[keep].copy()
             x = x[keep]
 
-        return x.tocsr(), dropped, adata
+        return x.tocsr(), dropped, adata, feature_mask
 
     rna = ad.read_h5ad(rna_path)
-    x, dropped, rna = _prepare_counts(rna, rna_layer)
+    x, dropped, rna, feature_mask = _prepare_counts(rna, rna_layer)
     if rna.n_obs < 2:
         raise RuntimeError("Too few RNA cells after filtering zero-count rows")
     out["rna"] = ModalityData(
@@ -365,6 +379,7 @@ def load_modalities(
         mark="RNA",
         adata=rna,
         counts=x,
+        feature_mask=feature_mask,
         obs_names=rna.obs_names.copy(),
         n_obs=int(rna.n_obs),
         n_vars=int(rna.n_vars),
@@ -380,7 +395,7 @@ def load_modalities(
             cpath = (preprocess_dir / cpath).resolve() if (preprocess_dir / cpath).exists() else cpath.resolve()
 
         adata = ad.read_h5ad(cpath)
-        x, dropped, adata = _prepare_counts(adata, chrom_layer)
+        x, dropped, adata, feature_mask = _prepare_counts(adata, chrom_layer)
         if adata.n_obs < 2:
             raise RuntimeError(f"Too few cells in {key} after filtering zero-count rows")
         out[key] = ModalityData(
@@ -388,6 +403,7 @@ def load_modalities(
             mark=mark,
             adata=adata,
             counts=x,
+            feature_mask=feature_mask,
             obs_names=adata.obs_names.copy(),
             n_obs=int(adata.n_obs),
             n_vars=int(adata.n_vars),

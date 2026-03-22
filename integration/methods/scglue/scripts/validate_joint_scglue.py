@@ -7,6 +7,7 @@ import argparse
 import json
 import math
 import tarfile
+from collections import Counter
 from io import BytesIO
 from pathlib import Path
 
@@ -34,22 +35,254 @@ def strip_10x_suffix(series: pd.Series) -> pd.Series:
     return series.astype(str).str.replace(r"-\d+$", "", regex=True)
 
 
-def load_rna_cell_annotations(path: Path, level: str) -> pd.DataFrame:
+def load_rna_cell_annotations(path: Path) -> pd.DataFrame:
     with tarfile.open(path, "r:gz") as tf:
         member = "cell_types/cell_types.csv"
         f = tf.extractfile(member)
         if f is None:
             raise FileNotFoundError(f"Missing {member} in {path}")
         ann = pd.read_csv(BytesIO(f.read()))
-    required = {"barcode", level}
+    required = {"barcode", "coarse_cell_type", "fine_cell_type"}
     missing = required - set(ann.columns)
     if missing:
         raise ValueError(f"Annotation file missing columns: {sorted(missing)}")
-    ann = ann[["barcode", level]].copy()
+    keep_cols = ["barcode", "coarse_cell_type", "fine_cell_type"]
+    if "cell_count_in_model" in ann.columns:
+        keep_cols.append("cell_count_in_model")
+    ann = ann[keep_cols].copy()
     ann["barcode"] = ann["barcode"].astype(str)
     ann["barcode_core"] = strip_10x_suffix(ann["barcode"])
     ann = ann.drop_duplicates(subset=["barcode_core"])
     return ann
+
+
+def normalize_label_level(level: str) -> str:
+    aliases = {
+        "coarse_cell_type": "coarse_cell_type",
+        "fine_cell_type": "fine_cell_type",
+        "harmonized_coarse": "harmonized_coarse",
+        "harmonized_fine": "harmonized_fine",
+    }
+    if level not in aliases:
+        raise ValueError(f"Unsupported label level: {level}")
+    return aliases[level]
+
+
+def load_harmonization_table(path: Path) -> pd.DataFrame:
+    harm = pd.read_csv(path, sep="\t")
+    required = {"coarse_cell_type", "fine_cell_type", "harmonized_coarse", "harmonized_fine"}
+    missing = required - set(harm.columns)
+    if missing:
+        raise ValueError(f"Harmonization table missing columns: {sorted(missing)}")
+    dup = harm.duplicated(subset=["coarse_cell_type", "fine_cell_type"])
+    if dup.any():
+        raise ValueError("Harmonization table has duplicate coarse/fine label pairs")
+    if "cell_ontology_id" not in harm.columns:
+        harm["cell_ontology_id"] = pd.NA
+    return harm
+
+
+def apply_harmonization(ann: pd.DataFrame, harm: pd.DataFrame | None) -> tuple[pd.DataFrame, dict]:
+    merged = ann.copy()
+    if harm is None:
+        merged["harmonized_coarse"] = merged["coarse_cell_type"]
+        merged["harmonized_fine"] = merged["fine_cell_type"]
+        merged["cell_ontology_id"] = pd.NA
+        return merged, {"mode": "identity", "n_unmapped_rows": 0}
+
+    merged = merged.merge(
+        harm[["coarse_cell_type", "fine_cell_type", "harmonized_coarse", "harmonized_fine", "cell_ontology_id"]],
+        on=["coarse_cell_type", "fine_cell_type"],
+        how="left",
+    )
+    unmapped = int(merged["harmonized_coarse"].isna().sum() + merged["harmonized_fine"].isna().sum())
+    merged["harmonized_coarse"] = merged["harmonized_coarse"].fillna(merged["coarse_cell_type"])
+    merged["harmonized_fine"] = merged["harmonized_fine"].fillna(merged["fine_cell_type"])
+    return merged, {"mode": "table", "n_unmapped_rows": unmapped}
+
+
+def majority_vote(labels: list[str]) -> tuple[str, float]:
+    labels = [str(x) for x in labels if pd.notna(x) and str(x) != ""]
+    if not labels:
+        return "unknown", 0.0
+    counts = Counter(labels)
+    label, count = counts.most_common(1)[0]
+    return label, float(count / len(labels))
+
+
+def plot_label_overlay(
+    adata: ad.AnnData,
+    values: pd.Series,
+    out_path: Path,
+    title: str,
+    figsize: tuple[float, float] = (8, 6.5),
+) -> None:
+    values = values.reindex(adata.obs_names)
+    labeled = values.dropna()
+    labeled = labeled.loc[labeled.astype(str) != ""]
+    if labeled.empty:
+        return
+    temp_col = "__plot_label__"
+    adata.obs[temp_col] = values
+    try:
+        fig, ax = plt.subplots(figsize=figsize)
+        sc.pl.umap(
+            adata,
+            color=temp_col,
+            ax=ax,
+            show=False,
+            title=title,
+            legend_loc="right margin",
+            na_color="lightgray",
+            na_in_legend=False,
+            frameon=False,
+            size=8,
+        )
+        fig.tight_layout()
+        fig.savefig(out_path, dpi=200, bbox_inches="tight")
+        plt.close(fig)
+    finally:
+        del adata.obs[temp_col]
+
+
+def save_scanpy_umap(
+    adata: ad.AnnData,
+    color: str,
+    out_path: Path,
+    title: str,
+    figsize: tuple[float, float] = (7, 6),
+    legend_loc: str | None = "right margin",
+) -> None:
+    fig, ax = plt.subplots(figsize=figsize)
+    sc.pl.umap(
+        adata,
+        color=color,
+        ax=ax,
+        show=False,
+        title=title,
+        legend_loc=legend_loc,
+        frameon=False,
+        size=8,
+    )
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def save_scanpy_modality_facets(adata: ad.AnnData, out_path: Path) -> None:
+    modality_list = list(adata.obs["modality_key"].astype(str).drop_duplicates())
+    n_panels = len(modality_list)
+    n_cols = min(3, n_panels)
+    n_rows = math.ceil(n_panels / n_cols)
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(5 * n_cols, 4.5 * n_rows), squeeze=False)
+    axes_flat = axes.flatten()
+    cmap = plt.get_cmap("tab10", max(n_panels, 1))
+    for i, (ax, mod) in enumerate(zip(axes_flat, modality_list)):
+        temp_col = f"__highlight_modality_{i}"
+        adata.obs[temp_col] = pd.Categorical(
+            np.where(adata.obs["modality_key"].astype(str) == mod, mod, "other"),
+            categories=[mod, "other"],
+        )
+        try:
+            sc.pl.umap(
+                adata,
+                color=temp_col,
+                ax=ax,
+                show=False,
+                title=str(mod),
+                legend_loc=None,
+                frameon=False,
+                size=7,
+                palette={mod: cmap(i), "other": "#d3d3d3"},
+            )
+        finally:
+            del adata.obs[temp_col]
+    for ax in axes_flat[n_panels:]:
+        ax.axis("off")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def transfer_labels_from_rna(
+    out_cells: pd.DataFrame,
+    x: np.ndarray,
+    ann: pd.DataFrame,
+    k: int,
+    min_confidence: float,
+) -> pd.DataFrame:
+    cells = out_cells.copy()
+    cells["row_idx"] = np.arange(cells.shape[0])
+
+    ann_cols = [
+        "barcode_core",
+        "coarse_cell_type",
+        "fine_cell_type",
+        "harmonized_coarse",
+        "harmonized_fine",
+        "cell_ontology_id",
+    ]
+    rna_ref = cells.loc[cells["modality_key"].astype(str) == "rna"].merge(
+        ann[ann_cols],
+        on="barcode_core",
+        how="left",
+    )
+    rna_ref = rna_ref.dropna(subset=["harmonized_coarse"]).copy()
+    if rna_ref.empty:
+        raise RuntimeError("RNA annotation overlay exists, but no RNA cells matched the annotation table")
+
+    ref_idx = rna_ref["row_idx"].to_numpy(dtype=int)
+    ref_x = x[ref_idx]
+    k_eff = min(max(1, k), ref_x.shape[0])
+    nn = NearestNeighbors(n_neighbors=k_eff, metric="euclidean")
+    nn.fit(ref_x)
+
+    result = cells[["cell", "modality_key", "mark", "barcode_core"]].copy()
+    result["harmonized_coarse"] = pd.NA
+    result["harmonized_fine"] = pd.NA
+    result["coarse_confidence"] = np.nan
+    result["fine_confidence"] = np.nan
+    result["label_source"] = "unlabeled"
+    result["cell_ontology_id"] = pd.NA
+
+    rna_obs = rna_ref.set_index("obs_id")
+    result.loc[rna_obs.index, "harmonized_coarse"] = rna_obs["harmonized_coarse"]
+    result.loc[rna_obs.index, "harmonized_fine"] = rna_obs["harmonized_fine"]
+    result.loc[rna_obs.index, "coarse_confidence"] = 1.0
+    result.loc[rna_obs.index, "fine_confidence"] = 1.0
+    result.loc[rna_obs.index, "label_source"] = "rna_annotation"
+    result.loc[rna_obs.index, "cell_ontology_id"] = rna_obs["cell_ontology_id"].to_numpy()
+
+    query_cells = cells.loc[cells["modality_key"].astype(str) != "rna"].copy()
+    if not query_cells.empty:
+        query_idx = query_cells["row_idx"].to_numpy(dtype=int)
+        query_x = x[query_idx]
+        nbr_idx = nn.kneighbors(query_x, return_distance=False)
+        ref_labels = rna_ref.reset_index(drop=True)
+        for obs_id, nbrs in zip(query_cells.index, nbr_idx):
+            nbr_df = ref_labels.iloc[nbrs]
+            coarse, coarse_conf = majority_vote(nbr_df["harmonized_coarse"].tolist())
+            fine_pool = nbr_df
+            if coarse != "unknown":
+                fine_pool = nbr_df.loc[nbr_df["harmonized_coarse"] == coarse]
+                if fine_pool.empty:
+                    fine_pool = nbr_df
+            fine, fine_conf = majority_vote(fine_pool["harmonized_fine"].tolist())
+            if coarse_conf < min_confidence:
+                coarse = "unknown"
+            if fine_conf < min_confidence:
+                fine = "unknown"
+            result.loc[obs_id, "harmonized_coarse"] = coarse
+            result.loc[obs_id, "harmonized_fine"] = fine
+            result.loc[obs_id, "coarse_confidence"] = coarse_conf
+            result.loc[obs_id, "fine_confidence"] = fine_conf
+            result.loc[obs_id, "label_source"] = "rna_knn_transfer"
+            if fine != "unknown":
+                ontology, _ = majority_vote(fine_pool["cell_ontology_id"].tolist())
+                if ontology != "unknown":
+                    result.loc[obs_id, "cell_ontology_id"] = ontology
+
+    return result
 
 
 def same_modality_neighbor_fraction(x: np.ndarray, labels: np.ndarray, k: int) -> float:
@@ -78,10 +311,27 @@ def main() -> int:
         help="Tar.gz containing cell_types/cell_types.csv for RNA annotation overlay",
     )
     p.add_argument(
+        "--harmonization-tsv",
+        default="integration/manifests/rna_label_harmonization.tsv",
+        help="Optional TSV mapping raw RNA labels to harmonized coarse/fine labels",
+    )
+    p.add_argument(
         "--cell-type-level",
         default="coarse_cell_type",
-        choices=["coarse_cell_type", "fine_cell_type"],
-        help="Column from cell_types.csv to plot on the RNA overlay UMAP",
+        choices=["coarse_cell_type", "fine_cell_type", "harmonized_coarse", "harmonized_fine"],
+        help="Label column to plot on the RNA overlay UMAP",
+    )
+    p.add_argument(
+        "--transfer-labels",
+        action="store_true",
+        help="Transfer harmonized RNA labels to non-RNA modalities using kNN in GLUE space",
+    )
+    p.add_argument("--transfer-k", type=int, default=25, help="k for RNA-to-non-RNA label transfer")
+    p.add_argument(
+        "--transfer-min-confidence",
+        type=float,
+        default=0.5,
+        help="If winning vote fraction is below this threshold, assign 'unknown'",
     )
     p.add_argument("--n-neighbors", type=int, default=30)
     p.add_argument("--umap-min-dist", type=float, default=0.3)
@@ -141,51 +391,14 @@ def main() -> int:
     mod_by_cluster_frac_tsv = out_dir / "cluster_by_modality_fraction.tsv"
     mod_by_cluster_frac.to_csv(mod_by_cluster_frac_tsv, sep="\t")
 
-    plt.figure(figsize=(7, 6))
-    for mod, sub in out_cells.groupby("modality_key", sort=False):
-        plt.scatter(sub["UMAP1"], sub["UMAP2"], s=4, alpha=0.7, label=mod)
-    plt.xlabel("UMAP1")
-    plt.ylabel("UMAP2")
-    plt.title("Joint scGLUE UMAP by modality")
-    plt.legend(markerscale=3, fontsize=8, loc="best")
-    plt.tight_layout()
     umap_mod_png = out_dir / "umap_by_modality.png"
-    plt.savefig(umap_mod_png, dpi=200)
-    plt.close()
+    save_scanpy_umap(adata, color="modality_key", out_path=umap_mod_png, title="Joint scGLUE UMAP by modality")
 
-    modality_list = list(out_cells["modality_key"].astype(str).drop_duplicates())
-    n_panels = len(modality_list)
-    n_cols = min(3, n_panels)
-    n_rows = math.ceil(n_panels / n_cols)
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(5 * n_cols, 4.5 * n_rows), squeeze=False)
-    axes_flat = axes.flatten()
-    for ax, mod in zip(axes_flat, modality_list):
-        fg = out_cells.loc[out_cells["modality_key"] == mod]
-        ax.scatter(out_cells["UMAP1"], out_cells["UMAP2"], s=3, alpha=0.12, color="lightgray", rasterized=True)
-        ax.scatter(fg["UMAP1"], fg["UMAP2"], s=4, alpha=0.8, rasterized=True)
-        ax.set_title(str(mod))
-        ax.set_xlabel("UMAP1")
-        ax.set_ylabel("UMAP2")
-    for ax in axes_flat[n_panels:]:
-        ax.axis("off")
-    plt.tight_layout()
     umap_mod_facets_png = out_dir / "umap_by_modality_facets.png"
-    plt.savefig(umap_mod_facets_png, dpi=200)
-    plt.close()
+    save_scanpy_modality_facets(adata, out_path=umap_mod_facets_png)
 
-    plt.figure(figsize=(7, 6))
-    cats = out_cells["leiden"].astype("category")
-    cmap = plt.get_cmap("tab20")
-    for i, cl in enumerate(cats.cat.categories):
-        sub = out_cells.loc[cats == cl]
-        plt.scatter(sub["UMAP1"], sub["UMAP2"], s=4, alpha=0.7, color=cmap(i % 20), label=str(cl))
-    plt.xlabel("UMAP1")
-    plt.ylabel("UMAP2")
-    plt.title("Joint scGLUE UMAP by Leiden cluster")
-    plt.tight_layout()
     umap_cluster_png = out_dir / "umap_by_leiden.png"
-    plt.savefig(umap_cluster_png, dpi=200)
-    plt.close()
+    save_scanpy_umap(adata, color="leiden", out_path=umap_cluster_png, title="Joint scGLUE UMAP by Leiden cluster")
 
     plt.figure(figsize=(max(8, 1.2 * mod_by_cluster_frac.shape[1]), max(6, 0.35 * mod_by_cluster_frac.shape[0])))
     ax = plt.gca()
@@ -204,46 +417,88 @@ def main() -> int:
     plt.close()
 
     annotation_path = resolve_path(repo_root, args.rna_annotation_tar)
+    harmonization_path = resolve_path(repo_root, args.harmonization_tsv)
     annotated_cells_tsv = None
     umap_celltype_png = None
+    transferred_cells_tsv = None
+    umap_joint_harm_coarse_png = None
+    umap_joint_harm_fine_png = None
+    annotation_summary = {
+        "annotation_tar": str(annotation_path) if annotation_path and annotation_path.exists() else None,
+        "harmonization_tsv": str(harmonization_path) if harmonization_path and harmonization_path.exists() else None,
+        "cell_type_level": args.cell_type_level,
+        "rna_annotation_overlay_written": False,
+        "joint_transfer_written": False,
+    }
     if annotation_path and annotation_path.exists():
-        ann = load_rna_cell_annotations(annotation_path, args.cell_type_level)
+        ann_raw = load_rna_cell_annotations(annotation_path)
+        harm = load_harmonization_table(harmonization_path) if harmonization_path and harmonization_path.exists() else None
+        ann, harm_summary = apply_harmonization(ann_raw, harm)
+        label_level = normalize_label_level(args.cell_type_level)
         rna_cells = out_cells.loc[out_cells["modality_key"].astype(str) == "rna"].copy()
         rna_cells = rna_cells.merge(
-            ann[["barcode_core", args.cell_type_level]],
+            ann[
+                [
+                    "barcode_core",
+                    "coarse_cell_type",
+                    "fine_cell_type",
+                    "harmonized_coarse",
+                    "harmonized_fine",
+                    "cell_ontology_id",
+                ]
+            ],
             on="barcode_core",
             how="left",
         )
-        annotated_cells_tsv = out_dir / f"rna_umap_{args.cell_type_level}.tsv"
+        rna_cells.index = rna_cells["obs_id"].astype(str)
+        annotated_cells_tsv = out_dir / f"rna_umap_{label_level}.tsv"
         rna_cells.to_csv(annotated_cells_tsv, sep="\t", index=False)
+        plot_label_overlay(
+            adata=adata,
+            values=rna_cells[label_level],
+            out_path=out_dir / f"umap_rna_{label_level}.png",
+            title=f"Joint UMAP with RNA {label_level}",
+        )
+        umap_celltype_png = out_dir / f"umap_rna_{label_level}.png"
+        annotation_summary["rna_annotation_overlay_written"] = umap_celltype_png.exists()
+        annotation_summary["harmonization"] = harm_summary
 
-        labeled = rna_cells.dropna(subset=[args.cell_type_level]).copy()
-        if not labeled.empty:
-            categories = sorted(labeled[args.cell_type_level].astype(str).unique().tolist())
-            cmap = plt.get_cmap("tab20", max(len(categories), 1))
-            color_map = {cat: cmap(i % cmap.N) for i, cat in enumerate(categories)}
+        if args.transfer_labels:
+            transferred = transfer_labels_from_rna(
+                out_cells=out_cells,
+                x=x,
+                ann=ann,
+                k=args.transfer_k,
+                min_confidence=args.transfer_min_confidence,
+            )
+            transferred_cells_tsv = out_dir / "joint_harmonized_label_transfer.tsv"
+            transferred.to_csv(transferred_cells_tsv, sep="\t", index_label="obs_id")
 
-            plt.figure(figsize=(8, 6.5))
-            plt.scatter(out_cells["UMAP1"], out_cells["UMAP2"], s=3, alpha=0.08, color="lightgray", rasterized=True)
-            for cat in categories:
-                sub = labeled.loc[labeled[args.cell_type_level].astype(str) == cat]
-                plt.scatter(
-                    sub["UMAP1"],
-                    sub["UMAP2"],
-                    s=6,
-                    alpha=0.85,
-                    color=color_map[cat],
-                    label=cat,
-                    rasterized=True,
-                )
-            plt.xlabel("UMAP1")
-            plt.ylabel("UMAP2")
-            plt.title(f"Joint UMAP with RNA {args.cell_type_level}")
-            plt.legend(markerscale=2, fontsize=7, bbox_to_anchor=(1.02, 1), loc="upper left")
-            plt.tight_layout()
-            umap_celltype_png = out_dir / f"umap_rna_{args.cell_type_level}.png"
-            plt.savefig(umap_celltype_png, dpi=200, bbox_inches="tight")
-            plt.close()
+            transfer_plot = out_cells.join(
+                transferred[["harmonized_coarse", "harmonized_fine", "coarse_confidence", "fine_confidence", "label_source"]],
+                how="left",
+            )
+            umap_joint_harm_coarse_png = out_dir / "umap_joint_harmonized_coarse.png"
+            plot_label_overlay(
+                adata=adata,
+                values=transfer_plot["harmonized_coarse"],
+                out_path=umap_joint_harm_coarse_png,
+                title="Joint UMAP with transferred harmonized coarse labels",
+            )
+            umap_joint_harm_fine_png = out_dir / "umap_joint_harmonized_fine.png"
+            plot_label_overlay(
+                adata=adata,
+                values=transfer_plot["harmonized_fine"],
+                out_path=umap_joint_harm_fine_png,
+                title="Joint UMAP with transferred harmonized fine labels",
+            )
+            annotation_summary["joint_transfer_written"] = True
+            annotation_summary["transfer"] = {
+                "k": args.transfer_k,
+                "min_confidence": args.transfer_min_confidence,
+                "n_unknown_coarse": int((transferred["harmonized_coarse"].astype(str) == "unknown").sum()),
+                "n_unknown_fine": int((transferred["harmonized_fine"].astype(str) == "unknown").sum()),
+            }
 
     metrics = {
         "n_cells_total": int(adata.n_obs),
@@ -255,11 +510,7 @@ def main() -> int:
             "silhouette_by_modality": "Near 0 is usually better modality mixing; very high positive indicates separation.",
             "mean_same_modality_neighbor_fraction": "Lower indicates better cross-modality mixing (context dependent).",
         },
-        "annotation_overlay": {
-            "annotation_tar": str(annotation_path) if annotation_path and annotation_path.exists() else None,
-            "cell_type_level": args.cell_type_level,
-            "rna_annotation_overlay_written": bool(umap_celltype_png),
-        },
+        "annotation_overlay": annotation_summary,
     }
     metrics_json = out_dir / "validation_metrics.json"
     with metrics_json.open("w") as f:
@@ -277,6 +528,12 @@ def main() -> int:
         print(f"Wrote: {annotated_cells_tsv}")
     if umap_celltype_png:
         print(f"Wrote: {umap_celltype_png}")
+    if transferred_cells_tsv:
+        print(f"Wrote: {transferred_cells_tsv}")
+    if umap_joint_harm_coarse_png and umap_joint_harm_coarse_png.exists():
+        print(f"Wrote: {umap_joint_harm_coarse_png}")
+    if umap_joint_harm_fine_png and umap_joint_harm_fine_png.exists():
+        print(f"Wrote: {umap_joint_harm_fine_png}")
     print(f"Wrote: {metrics_json}")
     return 0
 

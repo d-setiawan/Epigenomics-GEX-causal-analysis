@@ -25,6 +25,10 @@ Stages:
 4. `train/validation/`: clustering/UMAP diagnostics and mixing metrics.
 5. `train/causal_inputs/`: PC-ready per-target-gene tables.
 
+Label harmonization utilities:
+1. `build_label_harmonization_template.py`: bootstraps `integration/manifests/rna_label_harmonization.tsv` from the RNA annotation tarball.
+2. `validate_joint_scglue.py --transfer-labels`: applies the harmonization TSV to RNA labels, then transfers harmonized labels to non-RNA modalities in GLUE space using RNA kNN.
+
 Example:
 
 ```bash
@@ -56,6 +60,17 @@ Export causal inputs (example target genes):
 bash integration/scripts/scglue/run_export_causal_inputs_joint.sh \
   joint_v1 \
   MYC,TP53,GATA1
+```
+
+Bootstrap and use label harmonization:
+
+```bash
+bash integration/scripts/scglue/run_build_label_harmonization_template.sh --force
+
+NUMBA_CACHE_DIR=/tmp/numba_scglue_validation \
+bash integration/scripts/scglue/run_validate_joint.sh joint_v2 \
+  --cell-type-level harmonized_coarse \
+  --transfer-labels
 ```
 
 ## Legacy pilot scripts

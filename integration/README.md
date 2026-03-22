@@ -70,9 +70,50 @@ Expected stage outputs:
 - `cells_umap_clusters.tsv`
 - `validation_metrics.json`
 - `umap_by_modality.png`
+- `umap_by_modality_facets.png`
 - `umap_by_leiden.png`
+- `cluster_by_modality.tsv`
+- `cluster_by_modality_fraction.tsv`
+- `cluster_by_modality_heatmap.png`
+- `rna_umap_<LABEL>.tsv`
+- `umap_rna_<LABEL>.png`
+- `joint_harmonized_label_transfer.tsv` (when `--transfer-labels` is used)
+- `umap_joint_harmonized_coarse.png` (when `--transfer-labels` is used)
+- `umap_joint_harmonized_fine.png` (when `--transfer-labels` is used)
 
 ## Joint Jianle Track (scMRDR-inspired)
+
+Optional gene-space bootstrap:
+
+```bash
+bash integration/scripts/jianle/run_build_gene_feature_universe.sh \
+  gene_space_v1 \
+  /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
+  --gene-universe-mode union_linked \
+  --gene-region promoter \
+  --promoter-len 2000 \
+  --weight-mode binary
+```
+
+This converts each histone peak matrix into a cell-by-gene matrix on a shared
+gene universe and writes:
+
+- `integration/outputs/jianle/gene_features/<RUN_ID>/gene_universe.tsv`
+- `integration/outputs/jianle/gene_features/<RUN_ID>/joint_gene_feature_manifest.tsv`
+- `integration/outputs/jianle/gene_features/<RUN_ID>/matrices/<MARK>_gene_scores.mtx`
+- `integration/outputs/jianle/gene_features/<RUN_ID>/matrices/<MARK>_gene_scores_availability.tsv`
+
+To run Jianle against that shared gene universe:
+
+```bash
+bash integration/scripts/jianle/run_joint_pipeline.sh \
+  jianle_gene_union \
+  --preprocess-arg --gene-feature-manifest \
+  --preprocess-arg integration/outputs/jianle/gene_features/gene_space_v1/joint_gene_feature_manifest.tsv \
+  --train-arg --max-epochs --train-arg 200 \
+  --train-arg --learning-rate --train-arg 1e-3 \
+  --train-arg --batch-size --train-arg 256
+```
 
 Run the full joint pipeline:
 
