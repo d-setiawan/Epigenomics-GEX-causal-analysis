@@ -35,6 +35,9 @@ class ModalityData:
     adata: ad.AnnData
     counts: sp.csr_matrix
     feature_mask: np.ndarray | None
+    feature_mean: np.ndarray | None
+    feature_std: np.ndarray | None
+    covariates: np.ndarray | None
     obs_names: pd.Index
     n_obs: int
     n_vars: int
@@ -145,8 +148,29 @@ def zinb_nll(
             mask = mask.unsqueeze(0)
         mask = mask.to(dtype=log_prob.dtype)
         denom = mask.sum(dim=1).clamp_min(1.0)
-        nll = -(log_prob * mask).sum(dim=1) / denom
+        total_features = float(log_prob.shape[1])
+        rescale = total_features / denom
+        nll = -(log_prob * mask).sum(dim=1) * rescale
     return nll.mean()
+
+
+def masked_mse_loss(
+    x: torch.Tensor,
+    mean: torch.Tensor,
+    mask: torch.Tensor | None = None,
+) -> torch.Tensor:
+    sq_err = (x - mean).pow(2)
+    if mask is None:
+        loss = sq_err.mean(dim=1)
+    else:
+        if mask.dim() == 1:
+            mask = mask.unsqueeze(0)
+        mask = mask.to(dtype=sq_err.dtype)
+        denom = mask.sum(dim=1).clamp_min(1.0)
+        total_features = float(sq_err.shape[1])
+        rescale = total_features / denom
+        loss = (sq_err * mask).sum(dim=1) * rescale
+    return loss.mean()
 
 
 def sample_indices(n: int, batch_size: int, rng: np.random.Generator) -> np.ndarray:
@@ -160,7 +184,8 @@ def extract_batch(
     idx: np.ndarray,
     norm_target_sum: float,
     use_log_input: bool,
-) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    reconstruction_distribution: str,
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray | None, np.ndarray]:
     sub = m.counts[idx]
     if sp.issparse(sub):
         x_counts = sub.toarray().astype(np.float32)
@@ -175,11 +200,28 @@ def extract_batch(
     else:
         x_norm = x_counts * (norm_target_sum / lib)
 
+    if reconstruction_distribution == "gaussian":
+        if m.feature_mean is None or m.feature_std is None:
+            raise RuntimeError(
+                f"Gaussian reconstruction requested for {m.key}, but model_mean/model_std are missing"
+            )
+        mean = np.asarray(m.feature_mean, dtype=np.float32).reshape(1, -1)
+        std = np.asarray(m.feature_std, dtype=np.float32).reshape(1, -1)
+        x_gauss = (x_norm - mean) / std
+        x_in = x_gauss.astype(np.float32)
+        x_target = x_gauss.astype(np.float32)
+    else:
+        x_in = x_norm.astype(np.float32)
+        x_target = x_counts.astype(np.float32)
+
     if m.feature_mask is not None:
         feature_mask = np.asarray(m.feature_mask, dtype=np.float32).reshape(1, -1)
     else:
-        feature_mask = np.ones((1, x_counts.shape[1]), dtype=np.float32)
-    return x_norm, x_counts, feature_mask
+        feature_mask = np.ones((1, x_target.shape[1]), dtype=np.float32)
+    covariates = None
+    if m.covariates is not None:
+        covariates = np.asarray(m.covariates[idx], dtype=np.float32)
+    return x_in, x_target, feature_mask, covariates, lib.astype(np.float32)
 
 
 class SharedEncoder(nn.Module):
@@ -225,12 +267,14 @@ class SharedDecoder(nn.Module):
         dropout: float,
         shared_latent_dim: int,
         specific_latent_dim: int,
+        covariate_dim: int,
         modality_keys: list[str],
     ):
         super().__init__()
         self.modality_keys = modality_keys
+        self.covariate_dim = int(covariate_dim)
 
-        in_dim = shared_latent_dim + specific_latent_dim
+        in_dim = shared_latent_dim + specific_latent_dim + self.covariate_dim
         trunk = []
         for _ in range(max(1, hidden_depth)):
             trunk += [nn.Linear(in_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout)]
@@ -245,8 +289,18 @@ class SharedDecoder(nn.Module):
             {k: nn.Parameter(torch.zeros(d, dtype=torch.float32)) for k, d in modality_dims.items()}
         )
 
-    def forward(self, key: str, z_u: torch.Tensor, z_s: torch.Tensor):
+    def forward(
+        self,
+        key: str,
+        z_u: torch.Tensor,
+        z_s: torch.Tensor,
+        covariates: torch.Tensor | None = None,
+    ):
         z = torch.cat([z_u, z_s], dim=1)
+        if self.covariate_dim > 0:
+            if covariates is None:
+                covariates = torch.zeros((z.shape[0], self.covariate_dim), dtype=z.dtype, device=z.device)
+            z = torch.cat([z, covariates], dim=1)
         h = self.trunk(z)
 
         rho_logits = self.rho_heads[key](h)
@@ -279,6 +333,7 @@ class JianleParityModel(nn.Module):
         dropout: float,
         shared_latent_dim: int,
         specific_latent_dim: int,
+        covariate_dim: int,
     ):
         super().__init__()
         self.modality_keys = modality_keys
@@ -300,6 +355,7 @@ class JianleParityModel(nn.Module):
             dropout,
             shared_latent_dim,
             specific_latent_dim,
+            covariate_dim,
             modality_keys,
         )
         self.discriminator = ModalityDiscriminator(
@@ -321,8 +377,14 @@ class JianleParityModel(nn.Module):
         idx = self.key_to_idx[key]
         return self.encoder(key, x, idx)
 
-    def decode(self, key: str, z_u: torch.Tensor, z_s: torch.Tensor):
-        return self.decoder(key, z_u, z_s)
+    def decode(
+        self,
+        key: str,
+        z_u: torch.Tensor,
+        z_s: torch.Tensor,
+        covariates: torch.Tensor | None = None,
+    ):
+        return self.decoder(key, z_u, z_s, covariates=covariates)
 
 
 def load_modalities(
@@ -341,7 +403,7 @@ def load_modalities(
     def _prepare_counts(
         adata: ad.AnnData,
         layer_name: str,
-    ) -> Tuple[sp.csr_matrix, int, ad.AnnData, np.ndarray | None]:
+    ) -> Tuple[sp.csr_matrix, int, ad.AnnData, np.ndarray | None, np.ndarray | None, np.ndarray | None]:
         x = adata.layers[layer_name] if layer_name in adata.layers else adata.X
         if not sp.issparse(x):
             x = sp.csr_matrix(np.asarray(x, dtype=np.float32))
@@ -351,6 +413,11 @@ def load_modalities(
         feature_mask = None
         if "feature_available" in adata.var:
             feature_mask = adata.var["feature_available"].to_numpy(dtype=np.float32)
+        feature_mean = None
+        feature_std = None
+        if "model_mean" in adata.var and "model_std" in adata.var:
+            feature_mean = adata.var["model_mean"].to_numpy(dtype=np.float32)
+            feature_std = adata.var["model_std"].to_numpy(dtype=np.float32)
 
         shared_feature_universe = bool(adata.uns.get("shared_feature_universe", False))
         if use_highly_variable and (not shared_feature_universe) and "highly_variable" in adata.var:
@@ -360,6 +427,9 @@ def load_modalities(
                 x = x[:, hv]
                 if feature_mask is not None:
                     feature_mask = feature_mask[hv]
+                if feature_mean is not None and feature_std is not None:
+                    feature_mean = feature_mean[hv]
+                    feature_std = feature_std[hv]
 
         row_sums = np.asarray(x.sum(axis=1)).ravel()
         keep = row_sums > 0
@@ -368,10 +438,10 @@ def load_modalities(
             adata = adata[keep].copy()
             x = x[keep]
 
-        return x.tocsr(), dropped, adata, feature_mask
+        return x.tocsr(), dropped, adata, feature_mask, feature_mean, feature_std
 
     rna = ad.read_h5ad(rna_path)
-    x, dropped, rna, feature_mask = _prepare_counts(rna, rna_layer)
+    x, dropped, rna, feature_mask, feature_mean, feature_std = _prepare_counts(rna, rna_layer)
     if rna.n_obs < 2:
         raise RuntimeError("Too few RNA cells after filtering zero-count rows")
     out["rna"] = ModalityData(
@@ -380,6 +450,9 @@ def load_modalities(
         adata=rna,
         counts=x,
         feature_mask=feature_mask,
+        feature_mean=feature_mean,
+        feature_std=feature_std,
+        covariates=None,
         obs_names=rna.obs_names.copy(),
         n_obs=int(rna.n_obs),
         n_vars=int(rna.n_vars),
@@ -395,7 +468,7 @@ def load_modalities(
             cpath = (preprocess_dir / cpath).resolve() if (preprocess_dir / cpath).exists() else cpath.resolve()
 
         adata = ad.read_h5ad(cpath)
-        x, dropped, adata, feature_mask = _prepare_counts(adata, chrom_layer)
+        x, dropped, adata, feature_mask, feature_mean, feature_std = _prepare_counts(adata, chrom_layer)
         if adata.n_obs < 2:
             raise RuntimeError(f"Too few cells in {key} after filtering zero-count rows")
         out[key] = ModalityData(
@@ -404,6 +477,9 @@ def load_modalities(
             adata=adata,
             counts=x,
             feature_mask=feature_mask,
+            feature_mean=feature_mean,
+            feature_std=feature_std,
+            covariates=None,
             obs_names=adata.obs_names.copy(),
             n_obs=int(adata.n_obs),
             n_vars=int(adata.n_vars),
@@ -413,13 +489,146 @@ def load_modalities(
     return out
 
 
+def normalize_covariate_value(value) -> str:
+    if pd.isna(value):
+        return "__missing__"
+    text = str(value).strip()
+    if not text or text.lower() in {"na", "nan", "none", "null"}:
+        return "__missing__"
+    return text
+
+
+def build_decoder_covariates(
+    mod_data: Dict[str, ModalityData],
+    covariate_cols_csv: str | None,
+) -> dict:
+    requested = [c.strip() for c in str(covariate_cols_csv or "").split(",") if c.strip()]
+    if not requested:
+        for key in mod_data:
+            mod_data[key].covariates = None
+        return {
+            "requested_columns": [],
+            "used_columns": [],
+            "categories": {},
+            "covariate_dim": 0,
+        }
+
+    categories_by_col: Dict[str, list[str]] = {}
+    used_cols: list[str] = []
+    for col in requested:
+        values: list[str] = []
+        for m in mod_data.values():
+            if col in m.adata.obs:
+                values.extend(normalize_covariate_value(v) for v in m.adata.obs[col].tolist())
+            else:
+                values.extend(["__missing__"] * m.n_obs)
+        categories = sorted(set(values))
+        if len(categories) <= 1:
+            continue
+        categories_by_col[col] = categories
+        used_cols.append(col)
+
+    if not used_cols:
+        for key in mod_data:
+            mod_data[key].covariates = None
+        return {
+            "requested_columns": requested,
+            "used_columns": [],
+            "categories": {},
+            "covariate_dim": 0,
+        }
+
+    offsets: Dict[str, int] = {}
+    covariate_dim = 0
+    for col in used_cols:
+        offsets[col] = covariate_dim
+        covariate_dim += len(categories_by_col[col])
+
+    for m in mod_data.values():
+        mat = np.zeros((m.n_obs, covariate_dim), dtype=np.float32)
+        for col in used_cols:
+            categories = categories_by_col[col]
+            cat_to_idx = {cat: i for i, cat in enumerate(categories)}
+            fallback_idx = cat_to_idx.get("__missing__", 0)
+            if col in m.adata.obs:
+                values = [normalize_covariate_value(v) for v in m.adata.obs[col].tolist()]
+            else:
+                values = ["__missing__"] * m.n_obs
+            row_idx = np.arange(m.n_obs, dtype=int)
+            col_idx = np.asarray([offsets[col] + cat_to_idx.get(v, fallback_idx) for v in values], dtype=int)
+            mat[row_idx, col_idx] = 1.0
+        m.covariates = mat
+
+    return {
+        "requested_columns": requested,
+        "used_columns": used_cols,
+        "categories": categories_by_col,
+        "covariate_dim": int(covariate_dim),
+    }
+
+
+def subset_modalities(
+    mod_data: Dict[str, ModalityData],
+    max_cells_per_modality: int | None,
+    random_seed: int,
+) -> Dict[str, ModalityData]:
+    if max_cells_per_modality is None or int(max_cells_per_modality) <= 0:
+        return mod_data
+
+    limit = int(max_cells_per_modality)
+    rng = np.random.default_rng(random_seed)
+    out: Dict[str, ModalityData] = {}
+    for key, m in mod_data.items():
+        if m.n_obs <= limit:
+            out[key] = m
+            continue
+
+        idx = np.sort(rng.choice(m.n_obs, size=limit, replace=False)).astype(int)
+        adata = m.adata[idx].copy()
+        counts = m.counts[idx].tocsr()
+        covariates = None if m.covariates is None else np.asarray(m.covariates[idx], dtype=np.float32)
+        out[key] = ModalityData(
+            key=m.key,
+            mark=m.mark,
+            adata=adata,
+            counts=counts,
+            feature_mask=None if m.feature_mask is None else np.asarray(m.feature_mask, dtype=np.float32).copy(),
+            feature_mean=None if m.feature_mean is None else np.asarray(m.feature_mean, dtype=np.float32).copy(),
+            feature_std=None if m.feature_std is None else np.asarray(m.feature_std, dtype=np.float32).copy(),
+            covariates=covariates,
+            obs_names=adata.obs_names.copy(),
+            n_obs=int(adata.n_obs),
+            n_vars=int(adata.n_vars),
+            dropped_zero_count_rows=m.dropped_zero_count_rows,
+        )
+    return out
+
+
+def resolve_reconstruction_distribution(
+    mod_data: Dict[str, ModalityData],
+    requested: str,
+) -> str:
+    requested = str(requested).strip().lower()
+    if requested in {"zinb", "gaussian"}:
+        return requested
+
+    shared = all(bool(m.adata.uns.get("shared_feature_universe", False)) for m in mod_data.values())
+    has_stats = all(m.feature_mean is not None and m.feature_std is not None for m in mod_data.values())
+    if shared and has_stats:
+        return "gaussian"
+    return "zinb"
+
+
 def train(
     mod_data: Dict[str, ModalityData],
     args: argparse.Namespace,
     device: torch.device,
+    covariate_info: dict,
+    reconstruction_distribution: str,
 ):
     modality_keys = list(mod_data.keys())
     modality_dims = {k: int(mod_data[k].n_vars) for k in modality_keys}
+    covariate_dim = int(covariate_info.get("covariate_dim", 0))
 
     model = JianleParityModel(
         modality_dims=modality_dims,
@@ -429,6 +638,7 @@ def train(
         dropout=args.dropout,
         shared_latent_dim=args.shared_latent_dim,
         specific_latent_dim=args.specific_latent_dim,
+        covariate_dim=covariate_dim,
     ).to(device)
 
     vae_params = list(model.encoder.parameters()) + list(model.decoder.parameters()) + list(model.prior_mu_s.parameters()) + list(model.prior_logvar_s.parameters())
@@ -462,14 +672,19 @@ def train(
             batches = {}
             for key in modality_keys:
                 idx = sample_indices(mod_data[key].n_obs, args.batch_size, rng)
-                x_in_np, x_counts_np, mask_np = extract_batch(
-                    mod_data[key], idx, args.norm_target_sum, args.use_log_input
+                x_in_np, x_target_np, mask_np, cov_np, lib_np = extract_batch(
+                    mod_data[key],
+                    idx,
+                    args.norm_target_sum,
+                    args.use_log_input,
+                    reconstruction_distribution,
                 )
                 batches[key] = {
                     "x_in": torch.from_numpy(x_in_np).to(device),
-                    "x_counts": torch.from_numpy(x_counts_np).to(device),
+                    "x_target": torch.from_numpy(x_target_np).to(device),
                     "mask": torch.from_numpy(mask_np).to(device),
-                    "lib": torch.from_numpy(x_counts_np.sum(axis=1, keepdims=True)).to(device),
+                    "lib": torch.from_numpy(lib_np).to(device),
+                    "covariates": torch.from_numpy(cov_np).to(device) if cov_np is not None else None,
                     "mod_idx": model.key_to_idx[key],
                 }
 
@@ -503,26 +718,33 @@ def train(
 
             for key in modality_keys:
                 x_in = batches[key]["x_in"]
-                x_counts = batches[key]["x_counts"]
+                x_target = batches[key]["x_target"]
                 mask = batches[key]["mask"]
                 lib = batches[key]["lib"].clamp_min(1.0)
+                covariates = batches[key]["covariates"]
 
                 mu_u, logvar_u, mu_s, logvar_s = model.encode(key, x_in)
                 z_u = reparameterize(mu_u, logvar_u)
                 z_s = reparameterize(mu_s, logvar_s)
 
-                rho_logits, pi_logits, theta = model.decode(key, z_u, z_s)
+                recon_head, pi_logits, theta = model.decode(key, z_u, z_s, covariates=covariates)
 
-                rho = F.softmax(rho_logits, dim=1)
-                mu_nb = lib * rho
-
-                recon = zinb_nll(
-                    x_counts,
-                    mu=mu_nb,
-                    theta=theta,
-                    pi_logits=pi_logits,
-                    mask=mask,
-                )
+                if reconstruction_distribution == "gaussian":
+                    recon = masked_mse_loss(
+                        x_target,
+                        mean=recon_head,
+                        mask=mask,
+                    )
+                else:
+                    rho = F.softmax(recon_head, dim=1)
+                    mu_nb = lib * rho
+                    recon = zinb_nll(
+                        x_target,
+                        mu=mu_nb,
+                        theta=theta,
+                        pi_logits=pi_logits,
+                        mask=mask,
+                    )
 
                 kl_u = kl_normal_std(mu_u, logvar_u)
                 prior_mu = model.prior_mu_s[key].unsqueeze(0)
@@ -600,6 +822,7 @@ def encode_shared_mu(
     norm_target_sum: float,
     use_log_input: bool,
     device: torch.device,
+    reconstruction_distribution: str,
 ) -> Dict[str, np.ndarray]:
     model.eval()
     out = {}
@@ -609,7 +832,13 @@ def encode_shared_mu(
             embs = []
             for i in range(0, m.n_obs, batch_size):
                 idx = np.arange(i, min(i + batch_size, m.n_obs))
-                x_in_np, _, _ = extract_batch(m, idx, norm_target_sum, use_log_input)
+                x_in_np, _, _, _, _ = extract_batch(
+                    m,
+                    idx,
+                    norm_target_sum,
+                    use_log_input,
+                    reconstruction_distribution,
+                )
                 x_in = torch.from_numpy(x_in_np).to(device)
                 mu_u, _, _, _ = model.encode(key, x_in)
                 embs.append(mu_u.detach().cpu().numpy())
@@ -647,10 +876,27 @@ def main() -> int:
     p.add_argument("--steps-per-epoch", type=int, default=None)
     p.add_argument("--max-epochs", type=int, default=200)
     p.add_argument("--log-every", type=int, default=10)
+    p.add_argument(
+        "--max-cells-per-modality",
+        type=int,
+        default=None,
+        help="Optional cap for a smoke-test subset; randomly samples up to this many cells per modality",
+    )
 
     p.add_argument("--norm-target-sum", type=float, default=1e4)
     p.add_argument("--use-log-input", action="store_true", default=True)
     p.add_argument("--no-use-log-input", action="store_false", dest="use_log_input")
+    p.add_argument(
+        "--reconstruction-distribution",
+        default="auto",
+        choices=["auto", "zinb", "gaussian"],
+        help="Decoder reconstruction family; auto selects gaussian for shared-gene inputs with stored mean/std stats",
+    )
+    p.add_argument(
+        "--covariate-cols",
+        default="batch_id,donor_id",
+        help="Comma-separated obs columns to one-hot encode and feed into the decoder",
+    )
 
     p.add_argument("--cpu-only", action="store_true", default=False)
     p.add_argument("--no-cpu-only", action="store_false", dest="cpu_only")
@@ -678,8 +924,17 @@ def main() -> int:
         chrom_layer=args.chrom_layer,
         use_highly_variable=(not args.no_use_highly_variable),
     )
+    mod_data = subset_modalities(mod_data, args.max_cells_per_modality, args.random_seed)
+    reconstruction_distribution = resolve_reconstruction_distribution(mod_data, args.reconstruction_distribution)
+    covariate_info = build_decoder_covariates(mod_data, args.covariate_cols)
 
-    model, history, modality_keys = train(mod_data, args, device)
+    model, history, modality_keys = train(
+        mod_data,
+        args,
+        device,
+        covariate_info,
+        reconstruction_distribution=reconstruction_distribution,
+    )
     emb_dict = encode_shared_mu(
         model,
         modality_keys,
@@ -688,6 +943,7 @@ def main() -> int:
         norm_target_sum=args.norm_target_sum,
         use_log_input=args.use_log_input,
         device=device,
+        reconstruction_distribution=reconstruction_distribution,
     )
 
     history_tsv = out_dir / "train_history.tsv"
@@ -700,6 +956,7 @@ def main() -> int:
             "modality_keys": modality_keys,
             "modality_to_mark": {k: mod_data[k].mark for k in modality_keys},
             "input_dims": {k: int(mod_data[k].n_vars) for k in modality_keys},
+            "covariate_info": covariate_info,
             "shared_latent_dim": int(args.shared_latent_dim),
             "specific_latent_dim": int(args.specific_latent_dim),
             "params": vars(args),
@@ -769,8 +1026,14 @@ def main() -> int:
             "device": str(device),
             "n_modalities": len(modality_keys),
             "max_epochs": int(args.max_epochs),
-            "objective": "L_recon(ZINB) + beta*L_KL + lambda*L_alignment + gamma*L_preserve",
+            "reconstruction_distribution": reconstruction_distribution,
+            "objective": (
+                "L_recon(masked Gaussian/MSE) + beta*L_KL + lambda*L_alignment + gamma*L_preserve"
+                if reconstruction_distribution == "gaussian"
+                else "L_recon(masked ZINB, paper-rescaled) + beta*L_KL + lambda*L_alignment + gamma*L_preserve"
+            ),
         },
+        "covariates": covariate_info,
         "outputs": {
             "model_pt": str(model_path),
             "all_cells_jianle_embeddings_tsv": str(all_cells_tsv),

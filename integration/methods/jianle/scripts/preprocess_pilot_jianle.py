@@ -73,6 +73,65 @@ def read_named_column(path: Path, preferred_col: str) -> pd.Series:
     return df.iloc[:, 0].astype(str)
 
 
+def pick_rna_sample_barcodes(repo_root: Path) -> Path | None:
+    candidates = [
+        repo_root / "integration/workspace/data/rna/gex_sample_barcodes.csv",
+        repo_root / "Data/GexData/GEX_sample_barcodes.csv",
+    ]
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
+
+
+def load_rna_barcode_metadata(repo_root: Path) -> pd.DataFrame | None:
+    path = pick_rna_sample_barcodes(repo_root)
+    if path is None:
+        return None
+
+    df = pd.read_csv(path, header=None)
+    if df.shape[1] < 2:
+        return None
+
+    meta = pd.DataFrame(
+        {
+            "sample_id": df.iloc[:, 0].astype(str),
+            "barcode": df.iloc[:, 1].astype(str),
+        }
+    )
+    meta["barcode_core"] = strip_10x_suffix(meta["barcode"])
+    meta["batch_id"] = meta["sample_id"].astype(str)
+    return meta.drop_duplicates("barcode", keep="first")
+
+
+def annotate_rna_covariates(adata: ad.AnnData, repo_root: Path) -> ad.AnnData:
+    adata = adata.copy()
+    meta = load_rna_barcode_metadata(repo_root)
+    if meta is not None and not meta.empty:
+        exact = meta.set_index("barcode")[["sample_id", "batch_id"]]
+        adata.obs = adata.obs.join(exact, how="left")
+
+        if adata.obs[["sample_id", "batch_id"]].isna().any().any():
+            core = meta.drop_duplicates("barcode_core", keep="first").set_index("barcode_core")[["sample_id", "batch_id"]]
+            adata.obs["barcode_core"] = strip_10x_suffix(adata.obs.index.to_series())
+            fallback = adata.obs["barcode_core"].map(core["sample_id"])
+            adata.obs["sample_id"] = adata.obs["sample_id"].fillna(fallback)
+            fallback = adata.obs["barcode_core"].map(core["batch_id"])
+            adata.obs["batch_id"] = adata.obs["batch_id"].fillna(fallback)
+
+    if "sample_id" not in adata.obs:
+        adata.obs["sample_id"] = "rna"
+    else:
+        adata.obs["sample_id"] = adata.obs["sample_id"].fillna("rna").astype(str)
+
+    if "batch_id" not in adata.obs:
+        adata.obs["batch_id"] = adata.obs["sample_id"].astype(str)
+    else:
+        adata.obs["batch_id"] = adata.obs["batch_id"].fillna(adata.obs["sample_id"]).astype(str)
+
+    return adata
+
+
 def build_chrom_adata(repo_root: Path, row: Dict[str, str], mark: str) -> tuple[ad.AnnData, float]:
     mtx_path = resolve_path(repo_root, row["bin_mtx"])
     barcodes_path = resolve_path(repo_root, row["bin_barcodes"])
@@ -109,6 +168,8 @@ def build_chrom_adata(repo_root: Path, row: Dict[str, str], mark: str) -> tuple[
 
     adata.obs["modality"] = "chromatin"
     adata.obs["mark"] = mark
+    adata.obs["sample_id"] = str(row.get("prefix", mark))
+    adata.obs["batch_id"] = str(row.get("prefix", mark))
     adata.layers["counts"] = adata.X.copy()
 
     return adata, matched_frac
@@ -232,6 +293,7 @@ def main() -> int:
 
     rna = sc.read_10x_h5(rna_h5_path)
     rna = preprocess_rna(rna, args)
+    rna = annotate_rna_covariates(rna, repo_root)
 
     chrom, chrom_meta_match = build_chrom_adata(repo_root, row, args.mark)
     chrom = preprocess_chrom_for_jianle(chrom, args)

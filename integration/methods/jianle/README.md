@@ -9,12 +9,15 @@ Implemented here:
 1. Joint preprocessing across RNA + all histone marks
 2. Joint model training with scMRDR-style terms:
    reconstruction via ZINB + beta-VAE KL + adversarial alignment + isometric preserve loss
-3. Joint validation (UMAP + cluster composition + mixing metrics)
+3. Joint validation (UMAP + cluster composition + mixing metrics + RNA annotation overlays + optional label transfer)
 4. Gene-centric shared-feature-universe bootstrap from histone peak matrices to gene-level features
 5. Shared-gene preprocess and training mode with per-modality feature-availability masks
+6. Decoder conditioning on explicit covariates such as `batch_id` and `donor_id`
+7. scGLUE-style validation outputs including modality facets, cluster-by-modality fractions, RNA label overlays, and optional harmonized label transfer
+8. Shared-gene HVG-union reduction with automatic Gaussian reconstruction on z-scored log-normalized gene features
 
 Not implemented yet:
-1. Full paper-faithful masked reconstruction normalization and covariate-conditioned decoding
+1. Paper-faithful training protocol and benchmark suite
 2. Causal-export wrapper specific to Jianle outputs
 
 ## Scripts
@@ -73,15 +76,20 @@ Notes:
 2. `--gene-universe-mode rna` reproduces the older RNA-anchored universe.
 3. `--gene-universe-mode union_linked` keeps RNA genes plus any extra genes linked in at least one selected histone mark.
 4. Each mark now also exports a `feature_available` table so training can mask structurally unavailable genes.
+5. The joint builder now also preserves `source_prefix` so shared-gene preprocessing can keep a chromatin-side `batch_id`.
 
 ### Run Jianle in shared-gene mode
 
 ```bash
 bash integration/scripts/jianle/run_preprocess_joint.sh jianle_gene_union \
-  --gene-feature-manifest integration/outputs/jianle/gene_features/gene_space_v1/joint_gene_feature_manifest.tsv
+  --gene-feature-manifest integration/outputs/jianle/gene_features/gene_space_v1/joint_gene_feature_manifest.tsv \
+  --shared-hvg-top-genes 3000
 
-bash integration/scripts/jianle/run_train_joint.sh jianle_gene_union --max-epochs 200
-bash integration/scripts/jianle/run_validate_joint.sh jianle_gene_union
+bash integration/scripts/jianle/run_train_joint.sh jianle_gene_union \
+  --covariate-cols donor_id \
+  --max-epochs 200
+bash integration/scripts/jianle/run_validate_joint.sh jianle_gene_union \
+  --transfer-labels
 ```
 
 Or via the full pipeline:
@@ -90,8 +98,22 @@ Or via the full pipeline:
 bash integration/scripts/jianle/run_joint_pipeline.sh jianle_gene_union \
   --preprocess-arg --gene-feature-manifest \
   --preprocess-arg integration/outputs/jianle/gene_features/gene_space_v1/joint_gene_feature_manifest.tsv \
+  --preprocess-arg --shared-hvg-top-genes --preprocess-arg 3000 \
+  --train-arg --covariate-cols --train-arg donor_id \
   --train-arg --max-epochs --train-arg 200
 ```
+
+Covariate notes:
+1. Training now one-hot encodes the requested `obs` columns and concatenates them into the decoder input.
+2. The default is `--covariate-cols batch_id,donor_id`.
+3. If a covariate is missing for a modality, it is encoded with a `__missing__` category rather than dropped.
+4. In the current workspace, chromatin has `donor_id` from HTO demultiplexing, while RNA does not, so RNA cells are conditioned on the missing-donor category unless richer RNA metadata are added later.
+
+Shared-gene feature notes:
+1. `--shared-hvg-top-genes` now selects per-modality HVGs and reduces the shared-gene feature space to their union.
+2. The preprocess stores modality-specific `model_mean` and `model_std` values computed from log-normalized shared-gene counts.
+3. `train_joint_jianle.py` now supports `--reconstruction-distribution auto|zinb|gaussian`.
+4. In shared-gene mode with stored normalization stats, `--reconstruction-distribution auto` resolves to Gaussian reconstruction with masked MSE.
 
 ### Full joint pipeline
 
@@ -116,6 +138,11 @@ bash integration/scripts/jianle/run_validate_joint.sh jianle_v1
 Shared-gene mode uses the same commands, but `run_preprocess_joint.sh` should be
 given `--gene-feature-manifest <joint_gene_feature_manifest.tsv>`.
 
+Validation notes:
+1. `run_validate_joint.sh` now accepts the same RNA annotation overlay arguments as the scGLUE validator.
+2. By default it looks for `integration/workspace/data/rna/cell_type_annotation.tar.gz`.
+3. Add `--transfer-labels` to write harmonized RNA-to-non-RNA label transfer outputs in Jianle space.
+
 ## Output layout
 
 Root:
@@ -139,14 +166,23 @@ Expected outputs:
 - `cells_umap_clusters.tsv`
 - `cluster_sizes.tsv`
 - `cluster_by_modality.tsv`
+- `cluster_by_modality_fraction.tsv`
 - `validation_metrics.json`
 - `umap_by_modality.png`
+- `umap_by_modality_facets.png`
 - `umap_by_leiden.png`
+- `cluster_by_modality_heatmap.png`
+- `rna_umap_<LABEL>.tsv` when RNA annotation tar is available
+- `umap_rna_<LABEL>.png` when RNA annotation tar is available
+- `joint_harmonized_label_transfer.tsv` when `--transfer-labels` is used
+- `umap_joint_harmonized_coarse.png` when `--transfer-labels` is used
+- `umap_joint_harmonized_fine.png` when `--transfer-labels` is used
 
 ## Metrics interpretation
 
 `validation_metrics.json` includes:
 1. `silhouette_by_modality` (closer to 0 is usually better mixing)
 2. `mean_same_modality_neighbor_fraction` (lower usually means stronger cross-modality integration)
+3. `annotation_overlay` summary for RNA annotations, harmonization, and optional label transfer
 
-Use these metrics with the UMAP plots and `cluster_by_modality.tsv` for sanity checks.
+Use these metrics with the UMAP plots, `cluster_by_modality.tsv`, and `cluster_by_modality_fraction.tsv` for sanity checks.

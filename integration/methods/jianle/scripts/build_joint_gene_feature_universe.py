@@ -264,14 +264,18 @@ def assign_feature_ids(gene_coords: pd.DataFrame, rna_mapped: pd.DataFrame) -> p
         .astype(str)
         .to_dict()
     )
+    reserved_feature_ids = {gene for gene in mapped.values() if str(gene)}
 
     used: set[str] = set()
     feature_ids: List[str] = []
     rna_gene_col: List[str | None] = []
     present_in_rna: List[bool] = []
 
-    for row in gene_coords.sort_values("_coord_order").itertuples(index=False):
-        mapped_gene = mapped.get(int(row._coord_order))
+    sorted_genes = gene_coords.sort_values("_coord_order").copy()
+    row_iter = sorted_genes[["_coord_order", "gene_name", "gene_id"]].itertuples(index=False, name=None)
+
+    for coord_order, gene_name, gene_id in row_iter:
+        mapped_gene = mapped.get(int(coord_order))
         if mapped_gene:
             feature_id = str(mapped_gene)
             if feature_id in used:
@@ -285,17 +289,17 @@ def assign_feature_ids(gene_coords: pd.DataFrame, rna_mapped: pd.DataFrame) -> p
             continue
 
         feature_id = choose_unmapped_feature_id(
-            gene_name=str(row.gene_name),
-            gene_id=str(row.gene_id),
-            used=used,
-            coord_order=int(row._coord_order),
+            gene_name=str(gene_name),
+            gene_id=str(gene_id),
+            used=used | reserved_feature_ids,
+            coord_order=int(coord_order),
         )
         used.add(feature_id)
         feature_ids.append(feature_id)
         rna_gene_col.append(None)
         present_in_rna.append(False)
 
-    out = gene_coords.sort_values("_coord_order").copy()
+    out = sorted_genes
     out["feature_id"] = feature_ids
     out["rna_gene"] = rna_gene_col
     out["present_in_rna"] = np.asarray(present_in_rna, dtype=bool)
@@ -628,6 +632,7 @@ def main() -> int:
     globally_linked_gene_indices: set[int] = set()
 
     for mark in marks:
+        source_row = manifest_df.loc[manifest_df["mark"] == mark].iloc[0].to_dict()
         paths = workspace_peak_paths(repo_root, mark)
         missing = [str(pth) for pth in paths.values() if not pth.exists()]
         if missing:
@@ -682,6 +687,7 @@ def main() -> int:
         mark_buffers.append(
             {
                 "mark": mark,
+                "source_prefix": str(source_row.get("prefix", mark)),
                 "paths": paths,
                 "peak_barcodes": peak_barcodes.astype(str).tolist(),
                 "window_bp": int(window_bp),
@@ -768,6 +774,7 @@ def main() -> int:
         manifest_rows.append(
             {
                 "mark": mark,
+                "source_prefix": str(buf["source_prefix"]),
                 "modality_key": f"chrom_{mark}",
                 "gene_universe": str(gene_universe_tsv),
                 "gene_universe_mode": args.gene_universe_mode,
@@ -815,6 +822,7 @@ def main() -> int:
         manifest_rows,
         [
             "mark",
+            "source_prefix",
             "modality_key",
             "gene_universe",
             "gene_universe_mode",

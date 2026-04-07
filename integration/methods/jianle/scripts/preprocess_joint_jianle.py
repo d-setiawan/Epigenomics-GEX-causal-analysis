@@ -17,6 +17,7 @@ from scipy import io as spio
 from scipy import sparse as sp
 
 from preprocess_pilot_jianle import (
+    annotate_rna_covariates,
     build_chrom_adata,
     infer_repo_root,
     pick_rna_h5,
@@ -130,6 +131,145 @@ def annotate_shared_feature_universe(
     return adata
 
 
+def sparse_log_normalize_counts(x: sp.csr_matrix, target_sum: float) -> sp.csr_matrix:
+    x = x.tocsr().astype(np.float32)
+    lib = np.asarray(x.sum(axis=1)).ravel().astype(np.float32)
+    scale = np.zeros_like(lib, dtype=np.float32)
+    keep = lib > 0.0
+    scale[keep] = float(target_sum) / lib[keep]
+    out = x.multiply(scale[:, None]).tocsr().astype(np.float32)
+    if out.nnz > 0:
+        out.data = np.log1p(out.data)
+    return out
+
+
+def compute_sparse_feature_stats(x: sp.csr_matrix) -> tuple[np.ndarray, np.ndarray]:
+    mean = np.asarray(x.mean(axis=0)).ravel().astype(np.float32)
+    sq_mean = np.asarray(x.power(2).mean(axis=0)).ravel().astype(np.float32)
+    var = np.maximum(0.0, sq_mean - mean**2).astype(np.float32)
+    std = np.sqrt(var).astype(np.float32)
+    std[~np.isfinite(std) | (std < 1e-6)] = 1.0
+    return mean, std
+
+
+def prepare_shared_modality_features(
+    adata: ad.AnnData,
+    args: argparse.Namespace,
+) -> ad.AnnData:
+    counts = adata.layers["counts"] if "counts" in adata.layers else adata.X
+    if not sp.issparse(counts):
+        counts = sp.csr_matrix(np.asarray(counts, dtype=np.float32))
+    else:
+        counts = counts.tocsr().astype(np.float32)
+    adata.layers["counts"] = counts.copy()
+
+    lognorm = sparse_log_normalize_counts(counts, target_sum=args.rna_target_sum)
+    adata.X = lognorm
+
+    if "feature_available" in adata.var:
+        available_mask = adata.var["feature_available"].to_numpy(dtype=bool)
+    else:
+        available_mask = np.ones(adata.n_vars, dtype=bool)
+
+    hvg_mask = np.zeros(adata.n_vars, dtype=bool)
+    mean_arr = np.zeros(adata.n_vars, dtype=np.float32)
+    std_arr = np.ones(adata.n_vars, dtype=np.float32)
+
+    available_idx = np.flatnonzero(available_mask)
+    if available_idx.size > 0:
+        counts_available = counts[:, available_idx]
+        gene_totals = np.asarray(counts_available.sum(axis=0)).ravel()
+        nonzero_mask = gene_totals > 0
+        usable_idx = available_idx[nonzero_mask]
+        if usable_idx.size > 0:
+            counts_usable = counts[:, usable_idx]
+            lognorm_usable = lognorm[:, usable_idx]
+
+            mean_sub, std_sub = compute_sparse_feature_stats(lognorm_usable)
+            mean_arr[usable_idx] = mean_sub
+            std_arr[usable_idx] = std_sub
+
+            if int(args.shared_hvg_top_genes) > 0:
+                n_top = min(int(args.shared_hvg_top_genes), usable_idx.size)
+                if n_top > 0:
+                    tmp_counts = ad.AnnData(counts_usable.copy())
+                    tmp_counts.layers["counts"] = counts_usable.copy()
+                    try:
+                        sc.pp.highly_variable_genes(
+                            tmp_counts,
+                            n_top_genes=n_top,
+                            flavor=args.shared_hvg_flavor,
+                            layer="counts",
+                        )
+                        hvg_mask[usable_idx] = tmp_counts.var["highly_variable"].to_numpy(dtype=bool)
+                    except ValueError as exc:
+                        # Extremely sparse aggregated histone features can produce repeated
+                        # mean-bin edges in Scanpy's cell_ranger-style HVG routine.
+                        # Fall back to a normalized-data HVG call, then to a simple variance
+                        # ranking so shared-gene preprocessing remains robust.
+                        if "Bin edges must be unique" not in str(exc):
+                            raise
+                        tmp_lognorm = ad.AnnData(lognorm_usable.copy())
+                        try:
+                            sc.pp.highly_variable_genes(
+                                tmp_lognorm,
+                                n_top_genes=n_top,
+                                flavor="seurat",
+                            )
+                            hvg_mask[usable_idx] = tmp_lognorm.var["highly_variable"].to_numpy(dtype=bool)
+                        except Exception:
+                            rank_order = np.argsort(-(std_sub.astype(np.float64) ** 2), kind="stable")
+                            chosen = usable_idx[rank_order[:n_top]]
+                            hvg_mask[chosen] = True
+
+    adata.var["model_mean"] = mean_arr
+    adata.var["model_std"] = std_arr
+    adata.var["highly_variable"] = hvg_mask
+    return adata
+
+
+def compute_shared_rna_pca(adata: ad.AnnData, args: argparse.Namespace) -> ad.AnnData:
+    use_mask = np.zeros(adata.n_vars, dtype=bool)
+    if "feature_available" in adata.var:
+        use_mask = adata.var["feature_available"].to_numpy(dtype=bool)
+    if "highly_variable" in adata.var and adata.var["highly_variable"].to_numpy(dtype=bool).sum() > 1:
+        use_mask = use_mask & adata.var["highly_variable"].to_numpy(dtype=bool)
+
+    use_idx = np.flatnonzero(use_mask)
+    if adata.n_obs > 1 and use_idx.size > 1:
+        tmp = adata[:, use_idx].copy()
+        sc.pp.scale(tmp, max_value=args.rna_scale_max)
+        n_pcs = min(args.rna_n_pcs, tmp.n_obs - 1, tmp.n_vars - 1)
+        if n_pcs >= 1:
+            sc.tl.pca(tmp, n_comps=int(n_pcs), use_highly_variable=False, svd_solver="arpack")
+            adata.obsm["X_pca"] = tmp.obsm["X_pca"]
+    return adata
+
+
+def subset_shared_modalities_to_hvg_union(
+    rna: ad.AnnData,
+    chrom_adatas: dict[str, ad.AnnData],
+) -> tuple[ad.AnnData, dict[str, ad.AnnData], int]:
+    union_mask = rna.var["highly_variable"].to_numpy(dtype=bool).copy() if "highly_variable" in rna.var else np.zeros(rna.n_vars, dtype=bool)
+    for chrom in chrom_adatas.values():
+        if "highly_variable" in chrom.var:
+            union_mask |= chrom.var["highly_variable"].to_numpy(dtype=bool)
+
+    union_count = int(union_mask.sum())
+    if union_count <= 0:
+        raise RuntimeError("Shared-gene HVG union ended up empty; try increasing --shared-hvg-top-genes")
+
+    rna = rna[:, union_mask].copy()
+    rna.var["shared_hvg_union"] = True
+
+    out: dict[str, ad.AnnData] = {}
+    for mark, chrom in chrom_adatas.items():
+        sub = chrom[:, union_mask].copy()
+        sub.var["shared_hvg_union"] = True
+        out[mark] = sub
+    return rna, out, union_count
+
+
 def build_shared_gene_chrom_adata(
     repo_root: Path,
     row: dict,
@@ -192,6 +332,8 @@ def build_shared_gene_chrom_adata(
 
     adata.obs["modality"] = "chromatin"
     adata.obs["mark"] = mark
+    adata.obs["sample_id"] = str(row.get("source_prefix", row.get("prefix", mark)))
+    adata.obs["batch_id"] = str(row.get("source_prefix", row.get("prefix", mark)))
     adata.layers["counts"] = adata.X.copy()
     return adata, matched_frac
 
@@ -245,20 +387,9 @@ def preprocess_rna_shared_gene_space(
     adata.obs_names = rna.obs_names.copy()
     adata = annotate_shared_feature_universe(adata, gene_universe_df, feature_available)
     adata.layers["counts"] = adata.X.copy()
-
-    adata.var["highly_variable"] = False
-    sc.pp.normalize_total(adata, target_sum=args.rna_target_sum)
-    sc.pp.log1p(adata)
-
-    available_idx = np.flatnonzero(feature_available)
-    if adata.n_obs > 1 and available_idx.size > 1:
-        tmp = adata[:, available_idx].copy()
-        sc.pp.scale(tmp, max_value=args.rna_scale_max)
-        n_pcs = max(1, min(args.rna_n_pcs, tmp.n_obs - 1, tmp.n_vars - 1))
-        sc.tl.pca(tmp, n_comps=n_pcs, svd_solver="arpack")
-        adata.obsm["X_pca"] = tmp.obsm["X_pca"]
-
+    adata = prepare_shared_modality_features(adata, args)
     adata.obs["modality"] = "rna"
+    adata = annotate_rna_covariates(adata, infer_repo_root())
     return adata
 
 
@@ -287,6 +418,18 @@ def main() -> int:
     p.add_argument("--rna-target-sum", type=float, default=1e4)
     p.add_argument("--rna-scale-max", type=float, default=10.0)
     p.add_argument("--rna-n-pcs", type=int, default=50)
+    p.add_argument(
+        "--shared-hvg-top-genes",
+        type=int,
+        default=3000,
+        help="For shared-gene mode, select up to this many HVGs per modality and keep the union",
+    )
+    p.add_argument(
+        "--shared-hvg-flavor",
+        default="cell_ranger",
+        choices=["cell_ranger", "seurat"],
+        help="Scanpy HVG flavor for shared-gene mode",
+    )
 
     p.add_argument("--chrom-top-features", type=int, default=30000)
     p.add_argument("--chrom-n-lsi", type=int, default=50)
@@ -328,19 +471,18 @@ def main() -> int:
         rna = preprocess_rna_shared_gene_space(rna, gene_universe_df, args)
     else:
         rna = preprocess_rna(rna, args)
+        rna = annotate_rna_covariates(rna, repo_root)
 
     rna.obs["modality_key"] = "rna"
     rna.obs["mark"] = "RNA"
-
-    rna_out = out_dir / "rna_preprocessed.h5ad"
-    rna.write_h5ad(rna_out, compression="gzip")
-
-    chrom_rows: list[dict] = []
+    chrom_adatas: dict[str, ad.AnnData] = {}
+    chrom_meta: dict[str, dict] = {}
     for mark in marks:
         row = manifest_df.loc[manifest_df["mark"] == mark].iloc[0].to_dict()
         if shared_gene_mode:
             assert gene_universe_df is not None
             chrom, clean_match = build_shared_gene_chrom_adata(repo_root, row, mark, gene_universe_df)
+            chrom = prepare_shared_modality_features(chrom, args)
         else:
             chrom, clean_match = build_chrom_adata(repo_root, row, mark)
             chrom = preprocess_chrom_for_jianle(chrom, args)
@@ -353,6 +495,23 @@ def main() -> int:
         chrom.obs["modality_key"] = f"chrom_{mark}"
         chrom.obs["mark"] = mark
 
+        chrom_adatas[mark] = chrom
+        chrom_meta[mark] = {
+            "clean_metadata_match_fraction": float(clean_match),
+        }
+
+    shared_hvg_union_size = None
+    if shared_gene_mode:
+        if int(args.shared_hvg_top_genes) > 0:
+            rna, chrom_adatas, shared_hvg_union_size = subset_shared_modalities_to_hvg_union(rna, chrom_adatas)
+        rna = compute_shared_rna_pca(rna, args)
+
+    rna_out = out_dir / "rna_preprocessed.h5ad"
+    rna.write_h5ad(rna_out, compression="gzip")
+
+    chrom_rows: list[dict] = []
+    for mark in marks:
+        chrom = chrom_adatas[mark]
         chrom_out = out_dir / f"chrom_{mark}_preprocessed.h5ad"
         chrom.write_h5ad(chrom_out, compression="gzip")
 
@@ -364,8 +523,9 @@ def main() -> int:
                 "n_cells": int(chrom.n_obs),
                 "n_features": int(chrom.n_vars),
                 "n_available_features": int(chrom.var["feature_available"].sum()) if "feature_available" in chrom.var else int(chrom.n_vars),
+                "n_hvg": int(chrom.var["highly_variable"].sum()) if "highly_variable" in chrom.var else 0,
                 "n_lsi": int(chrom.obsm["X_lsi"].shape[1]) if "X_lsi" in chrom.obsm else 0,
-                "clean_metadata_match_fraction": float(clean_match),
+                "clean_metadata_match_fraction": float(chrom_meta[mark]["clean_metadata_match_fraction"]),
             }
         )
 
@@ -380,6 +540,7 @@ def main() -> int:
             "n_cells",
             "n_features",
             "n_available_features",
+            "n_hvg",
             "n_lsi",
             "clean_metadata_match_fraction",
         ],
@@ -406,8 +567,11 @@ def main() -> int:
         "shared_gene_universe": (
             {
                 "path": str(gene_universe_path),
-                "n_features": int(gene_universe_df.shape[0]),
+                "n_features_before_hvg_union": int(gene_universe_df.shape[0]),
+                "n_features_after_hvg_union": int(rna.n_vars),
                 "n_present_in_rna": int(gene_universe_df["present_in_rna"].sum()),
+                "shared_hvg_top_genes_per_modality": int(args.shared_hvg_top_genes),
+                "shared_hvg_union_size": int(shared_hvg_union_size) if shared_hvg_union_size is not None else None,
             }
             if shared_gene_mode and gene_universe_df is not None and gene_universe_path is not None
             else None

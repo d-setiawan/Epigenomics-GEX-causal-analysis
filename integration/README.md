@@ -110,10 +110,17 @@ bash integration/scripts/jianle/run_joint_pipeline.sh \
   jianle_gene_union \
   --preprocess-arg --gene-feature-manifest \
   --preprocess-arg integration/outputs/jianle/gene_features/gene_space_v1/joint_gene_feature_manifest.tsv \
+  --train-arg --covariate-cols --train-arg batch_id,donor_id \
   --train-arg --max-epochs --train-arg 200 \
   --train-arg --learning-rate --train-arg 1e-3 \
   --train-arg --batch-size --train-arg 256
 ```
+
+In shared-gene mode, Jianle now:
+
+- uses paper-closer masked reconstruction rescaling over the shared universe,
+- reads `feature_available` masks from preprocessing outputs,
+- conditions the decoder on requested covariates such as `batch_id` and `donor_id`.
 
 Run the full joint pipeline:
 
@@ -152,9 +159,17 @@ Expected stage outputs:
 - `cells_umap_clusters.tsv`
 - `cluster_sizes.tsv`
 - `cluster_by_modality.tsv`
+- `cluster_by_modality_fraction.tsv`
 - `validation_metrics.json`
 - `umap_by_modality.png`
+- `umap_by_modality_facets.png`
 - `umap_by_leiden.png`
+- `cluster_by_modality_heatmap.png`
+- `rna_umap_<LABEL>.tsv` when RNA annotation tar is available
+- `umap_rna_<LABEL>.png` when RNA annotation tar is available
+- `joint_harmonized_label_transfer.tsv` when `--transfer-labels` is used
+- `umap_joint_harmonized_coarse.png` when `--transfer-labels` is used
+- `umap_joint_harmonized_fine.png` when `--transfer-labels` is used
 
 ## Causal discovery export
 

@@ -17,3 +17,7 @@ sandbox_outputs/
 integration/workspace/
 integration/outputs/
 integration/logs/
+
+# Causal discovery run outputs
+CausalDiscovery/outputs/*
+!CausalDiscovery/outputs/.gitkeep
