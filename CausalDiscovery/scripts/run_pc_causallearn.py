@@ -6,13 +6,19 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from itertools import combinations
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from causallearn.search.ConstraintBased.PC import pc
+from causallearn.graph.GraphClass import CausalGraph
 from causallearn.utils.PCUtils.BackgroundKnowledge import BackgroundKnowledge
+from causallearn.utils.PCUtils.BackgroundKnowledgeOrientUtils import orient_by_background_knowledge
+from causallearn.utils.PCUtils.Helper import append_value
+from causallearn.utils.PCUtils import Meek, UCSepset
+from causallearn.utils.cit import CIT
 from scipy.stats import norm, rankdata
+from tqdm.auto import tqdm
 
 
 def infer_repo_root() -> Path:
@@ -121,6 +127,150 @@ def edge_to_record(edge) -> dict[str, str]:
     }
 
 
+def skeleton_discovery_limited(
+    data: np.ndarray,
+    alpha: float,
+    indep_test,
+    stable: bool = True,
+    background_knowledge: BackgroundKnowledge | None = None,
+    verbose: bool = False,
+    show_progress: bool = True,
+    node_names: list[str] | None = None,
+    max_depth: int = -1,
+) -> CausalGraph:
+    """Repo-local PC skeleton search with an optional maximum conditioning depth."""
+
+    assert type(data) == np.ndarray
+    assert 0 < alpha < 1
+
+    no_of_var = data.shape[1]
+    cg = CausalGraph(no_of_var, node_names)
+    cg.set_ind_test(indep_test)
+
+    depth = -1
+    pbar = tqdm(total=no_of_var) if show_progress else None
+    while cg.max_degree() - 1 > depth:
+        depth += 1
+        if max_depth >= 0 and depth > max_depth:
+            break
+
+        edge_removal = []
+        if show_progress:
+            pbar.reset()
+        for x in range(no_of_var):
+            if show_progress:
+                pbar.update()
+                pbar.set_description(f"Depth={depth}, working on node {x}")
+            neigh_x = cg.neighbors(x)
+            if len(neigh_x) < depth - 1:
+                continue
+            for y in neigh_x:
+                knowledge_ban_edge = False
+                sepsets = set()
+                if background_knowledge is not None and (
+                    background_knowledge.is_forbidden(cg.G.nodes[x], cg.G.nodes[y])
+                    and background_knowledge.is_forbidden(cg.G.nodes[y], cg.G.nodes[x])
+                ):
+                    knowledge_ban_edge = True
+                if knowledge_ban_edge:
+                    if not stable:
+                        edge1 = cg.G.get_edge(cg.G.nodes[x], cg.G.nodes[y])
+                        if edge1 is not None:
+                            cg.G.remove_edge(edge1)
+                        edge2 = cg.G.get_edge(cg.G.nodes[y], cg.G.nodes[x])
+                        if edge2 is not None:
+                            cg.G.remove_edge(edge2)
+                        append_value(cg.sepset, x, y, ())
+                        append_value(cg.sepset, y, x, ())
+                        break
+                    edge_removal.append((x, y))
+                    edge_removal.append((y, x))
+
+                neigh_x_noy = np.delete(neigh_x, np.where(neigh_x == y))
+                for cond_set in combinations(neigh_x_noy, depth):
+                    p_val = cg.ci_test(x, y, cond_set)
+                    if p_val > alpha:
+                        if verbose:
+                            print(f"{x} ind {y} | {cond_set} with p-value {p_val:f}\n")
+                        if not stable:
+                            edge1 = cg.G.get_edge(cg.G.nodes[x], cg.G.nodes[y])
+                            if edge1 is not None:
+                                cg.G.remove_edge(edge1)
+                            edge2 = cg.G.get_edge(cg.G.nodes[y], cg.G.nodes[x])
+                            if edge2 is not None:
+                                cg.G.remove_edge(edge2)
+                            append_value(cg.sepset, x, y, cond_set)
+                            append_value(cg.sepset, y, x, cond_set)
+                            break
+                        edge_removal.append((x, y))
+                        edge_removal.append((y, x))
+                        for s in cond_set:
+                            sepsets.add(s)
+                    elif verbose:
+                        print(f"{x} dep {y} | {cond_set} with p-value {p_val:f}\n")
+                if (x, y) in edge_removal or not cg.G.get_edge(cg.G.nodes[x], cg.G.nodes[y]):
+                    append_value(cg.sepset, x, y, tuple(sepsets))
+                    append_value(cg.sepset, y, x, tuple(sepsets))
+
+        if show_progress:
+            pbar.refresh()
+
+        for (x, y) in list(set(edge_removal)):
+            edge1 = cg.G.get_edge(cg.G.nodes[x], cg.G.nodes[y])
+            if edge1 is not None:
+                cg.G.remove_edge(edge1)
+
+    if show_progress:
+        pbar.close()
+
+    return cg
+
+
+def run_pc_search(
+    data: np.ndarray,
+    alpha: float,
+    indep_test: str,
+    stable: bool = True,
+    background_knowledge: BackgroundKnowledge | None = None,
+    verbose: bool = False,
+    show_progress: bool = True,
+    node_names: list[str] | None = None,
+    max_depth: int = -1,
+    uc_rule: int = 0,
+    uc_priority: int = 2,
+    **kwargs,
+) -> CausalGraph:
+    """Local PC wrapper that optionally constrains conditioning-set depth."""
+
+    indep_test_obj = CIT(data, indep_test, **kwargs)
+    cg_1 = skeleton_discovery_limited(
+        data,
+        alpha,
+        indep_test_obj,
+        stable=stable,
+        background_knowledge=background_knowledge,
+        verbose=verbose,
+        show_progress=show_progress,
+        node_names=node_names,
+        max_depth=max_depth,
+    )
+
+    if background_knowledge is not None:
+        orient_by_background_knowledge(cg_1, background_knowledge)
+
+    if uc_rule == 0:
+        cg_2 = UCSepset.uc_sepset(cg_1, uc_priority, background_knowledge=background_knowledge)
+        return Meek.meek(cg_2, background_knowledge=background_knowledge)
+    if uc_rule == 1:
+        cg_2 = UCSepset.maxp(cg_1, uc_priority, background_knowledge=background_knowledge)
+        return Meek.meek(cg_2, background_knowledge=background_knowledge)
+    if uc_rule == 2:
+        cg_2 = UCSepset.definite_maxp(cg_1, alpha, uc_priority, background_knowledge=background_knowledge)
+        cg_before = Meek.definite_meek(cg_2, background_knowledge=background_knowledge)
+        return Meek.meek(cg_before, background_knowledge=background_knowledge)
+    raise ValueError("uc_rule should be in [0, 1, 2]")
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description="Run a PC baseline on a locus matrix with causal-learn")
     p.add_argument("--repo-root", default=str(infer_repo_root()))
@@ -137,6 +287,7 @@ def main() -> int:
     p.add_argument("--background-mode", default="none", choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"])
     p.add_argument("--min-unique", type=int, default=2)
     p.add_argument("--min-std", type=float, default=1e-8)
+    p.add_argument("--max-depth", type=int, default=-1, help="Maximum conditioning-set size for PC skeleton search; -1 means no cap")
     p.add_argument("--dropna-rows", action="store_true", default=True)
     p.add_argument("--keep-na-rows", action="store_false", dest="dropna_rows")
     args = p.parse_args()
@@ -206,7 +357,7 @@ def main() -> int:
     model_df = model_df.astype(float)
     background_knowledge, bg_rules = build_background_knowledge(selected_cols, args.background_mode)
 
-    cg = pc(
+    cg = run_pc_search(
         model_df.to_numpy(),
         alpha=args.alpha,
         indep_test=args.indep_test,
@@ -214,6 +365,7 @@ def main() -> int:
         show_progress=False,
         node_names=selected_cols,
         background_knowledge=background_knowledge,
+        max_depth=args.max_depth,
     )
 
     out_dir = (
@@ -221,6 +373,7 @@ def main() -> int:
         if args.out_dir
         else matrix_path.parent / (
             f"pc_{sanitize_token(args.indep_test)}_alpha_{sanitize_token(str(args.alpha))}"
+            + ("" if args.max_depth < 0 else f"_depth_{args.max_depth}")
             + ("" if args.transform == "none" else f"_xform_{sanitize_token(args.transform)}")
             + ("" if args.background_mode == "none" else f"_bg_{sanitize_token(args.background_mode)}")
         )
@@ -281,6 +434,7 @@ def main() -> int:
         "selected_columns": selected_cols,
         "transform": args.transform,
         "background_mode": args.background_mode,
+        "max_depth": args.max_depth,
         "n_background_rules": len(bg_rules),
         "n_edges": len(edge_records),
         "outputs": {
@@ -306,6 +460,7 @@ def main() -> int:
     print(f"Wrote: {bg_rules_path}")
     print(f"Wrote: {summary_path}")
     print(f"Selected columns: {len(selected_cols)}")
+    print(f"Max depth: {args.max_depth}")
     print(f"Background rules: {len(bg_rules)}")
     print(f"Edges: {len(edge_records)}")
     return 0

@@ -147,13 +147,19 @@ Run baseline PC on one locus:
 
 ```bash
 python3 CausalDiscovery/scripts/run_pc_causallearn.py \
-  --matrix-tsv CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_pilot_rawbins/CD14_matched_locus_matrix.tsv
+  --matrix-tsv CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_pilot_rawbins/CD14_matched_locus_matrix.tsv \
+  --max-depth 2
 ```
 
 Optional background-knowledge modes currently supported:
 
 - `--background-mode minimal_expr_sink`
 - `--background-mode tiered_distal_promoter_expr`
+
+Optional depth cap:
+
+- `--max-depth <d>`
+- use `--max-depth -1` for the default uncapped search
 
 Plot the learned graph:
 
@@ -169,6 +175,7 @@ To distinguish the old retained-feature analyses from the current hybrid workflo
 - directories ending in `_gluebins` use the retained chromatin features stored in the `scGLUE` modality `h5ad` files
 - directories ending in `_rawbins` use the same one-to-one `scGLUE` pairing but recompute region scores from the raw clean chromatin bin matrices
 - `csf1r_e1e5_rawbins` and `cd14_regions678_rawbins` are the current literature-aligned raw-bin runs
+- PC run directories include `_depth_<d>` when a depth cap is applied
 
 ## Current interpretation stance
 
