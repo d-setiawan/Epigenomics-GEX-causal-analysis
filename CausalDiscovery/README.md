@@ -1,190 +1,201 @@
 # CausalDiscovery
 
-This directory is the repo-native home for causal graph discovery work built on top of the joint `scGLUE` integration outputs.
+This directory contains the active causal-discovery workflow built on top of `joint_v2` `scGLUE` integration.
 
-## Goal
+## Start here
 
-Use the joint `scGLUE` embedding to pseudo-pair cells across modalities inside one cell type, then export gene-centric locus tables that can be used as inputs for causal discovery methods such as the PC algorithm.
+Use the single entrypoint:
 
-## Recommended layout
+- [causal_cli.py](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/causal_cli.py)
 
-- `configs/`: run settings for causal-discovery experiments
-- `notes/`: design notes, gene panels, method comparisons
-- `scripts/`: causal-discovery runners and export utilities
-- `outputs/`: generated tables, graphs, and run summaries
+The script directory is now organized like this:
 
-## Current starting point
+- [causal_cli.py](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/causal_cli.py)
+  - The only script most people should run directly.
+- [commands/](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/commands)
+  - Implementation scripts used by the CLI.
+- [legacy/](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/legacy)
+  - Older scripts kept for reference only.
+- [scripts/README.md](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/README.md)
+  - Short “what to run” guide.
 
-The strongest current `scGLUE` run is:
+## Current workflow
 
-- `integration/outputs/scglue/joint/joint_v2/`
+The active pipeline is:
 
-The most important files for causal discovery are:
+$$
+\text{scGLUE latent space for pairing}
+\rightarrow
+\text{raw clean chromatin bins for quantification}
+\rightarrow
+\text{nearby CUT\&Tag peak dataset generation}
+\rightarrow
+\text{locus-level causal graph discovery}
+$$
 
-- `integration/outputs/scglue/joint/joint_v2/train/all_cells_glue_embeddings.tsv`
-- `integration/outputs/scglue/joint/joint_v2/train/validation/joint_harmonized_label_transfer.tsv`
-- `integration/outputs/scglue/joint/joint_v2/train/modalities/rna_with_glue.h5ad`
-- `integration/manifests/scglue_input_manifest.tsv`
+Concretely:
 
-The key distinction in the current workflow is:
-
-- `scGLUE` latent coordinates are used for cross-modality pairing
-- raw clean chromatin bin matrices are used for locus-region scoring
-
-This avoids being limited to the reduced chromatin feature subset retained during `scGLUE` preprocessing.
-
-## Current cell type
-
-The working cell type is `monocyte` at the harmonized coarse-label level.
-
-Approximate `joint_v2` monocyte counts across modalities:
-
-- `rna`: `1887`
-- `chrom_H3K27ac`: `1577`
-- `chrom_H3K27me3`: `2321`
-- `chrom_H3K4me1`: `1561`
-- `chrom_H3K4me2`: `2099`
-- `chrom_H3K4me3`: `2390`
-- `chrom_H3K9me3`: `1575`
-
-## Current pairing strategy
-
-The current working approach is **RNA-anchored one-to-one pseudo-pairing** inside one coarse cell type.
-
-The `scGLUE` embedding places all modalities in a shared latent space
-\(z \in \mathbb{R}^{30}\).
-We then:
-
-1. Restrict to one coarse label, currently `monocyte`.
-2. Use RNA cells as anchors.
-3. Rank RNA anchors by how well they are supported across all chromatin marks in GLUE space.
-4. For each histone modality separately, solve a one-to-one assignment from the chosen RNA anchors to cells of that mark.
-
-This gives a pseudo-paired table with:
-
-\[
-\text{row} = \text{RNA anchor} + \text{one matched cell from each chromatin modality}
-\]
-
-Important caveats:
-
-- these are **pseudo-paired** samples, not true multiome cells
-- no chromatin cell is reused within a given modality
-- the validity of the rows depends on the quality of the `scGLUE` geometry
-
-## What goes into the PC matrix?
-
-Keep the graph small and interpretable.
-
-For a target gene \(g\), prefer columns such as:
-
-- \(Y_g\): normalized expression of \(g\)
-- \(H_{g,\mathrm{mark}}^{\mathrm{promoter}}\): promoter-linked histone signal for each mark
-- \(H_{g,\mathrm{mark}}^{\mathrm{distal}}\): distal or enhancer-linked histone summary for each mark when a named region is available
-
-Do **not** use all chromatin bins directly as PC variables in the first pass.
-Use a small number of literature-backed named regions per locus, then aggregate the raw clean bins that overlap each curated region into one region-mark score.
-
-Also do **not** treat the `GLUE_*` dimensions themselves as causal nodes.
-Use them for alignment and pairing, not as graph variables.
-
-## Current human monocyte loci
-
-Current active human monocyte validation loci:
-
-- `CSF1R`
-- `CD14`
-- `IL1B`
-- `CCR2`
-
-Current literature-aligned raw-bin configs:
-
-- `CausalDiscovery/configs/loci/csf1r_e1e5_regions.tsv`
-- `CausalDiscovery/configs/loci/cd14_regions678.tsv`
-
-Exploratory but currently secondary:
-
-- `CEBPA`
-
-## Current scripts
-
-- `CausalDiscovery/scripts/build_scglue_one_to_one_matches.py`
-- `CausalDiscovery/scripts/export_locus_matrix_scglue_matches.py`
-- `CausalDiscovery/scripts/export_locus_panel_scglue_matches.py`
-- `CausalDiscovery/scripts/run_pc_causallearn.py`
-- `CausalDiscovery/scripts/plot_pc_graph.py`
-
-## Baseline workflow
-
-1. Filter `joint_v2` to `harmonized_coarse == monocyte`.
+1. Restrict to one cell type, currently `monocyte`.
 2. Build RNA-anchored one-to-one pseudo-pairs in `scGLUE` space.
-3. Export one locus matrix per target gene from the paired cells, scoring curated regions from the raw clean chromatin bins.
-4. Run baseline PC on the raw matched locus matrix.
-5. Compare the learned graph against known promoter/enhancer biology before adding transforms or background knowledge.
+3. Generate nearby CUT&Tag peak matrices per gene.
+4. Keep literature-backed curated regions only as overlap annotations and evaluation references.
+5. Run `PC + KCI`, `FCI + KCI`, or `DAGMA` on the resulting nearby peak matrices.
 
-## Example commands
+## Active data and outputs
+
+Current active pairing:
+
+- [harmonized_coarse__monocyte__rna_anchor](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor)
+
+Current active nearby-peak datasets:
+
+- [monocyte_cuttag_peak_genes](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes)
+- [monocyte_cuttag_peak_genes_300kb](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb)
+
+Current literature-aligned configs:
+
+- [csf1r_e1e5_regions.tsv](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/configs/loci/csf1r_e1e5_regions.tsv)
+- [cd14_regions678.tsv](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/configs/loci/cd14_regions678.tsv)
+- [monocyte_cuttag_peak_genes.tsv](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/configs/gene_panels/monocyte_cuttag_peak_genes.tsv)
+
+## Default graph-learning setup
+
+The active graph runner lives in [commands/run_pc_causallearn.py](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/commands/run_pc_causallearn.py), but you should usually call it through [causal_cli.py](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/scripts/causal_cli.py).
+
+The current default workflow uses:
+
+- `PC + KCI`
+- `FCI + KCI`
+- `DAGMA` for continuous optimization-based DAG search
+- tiered background knowledge by default in the CLI
+- optional rank-Gaussian transform
+- optional local `--max-depth` cap
+
+For `DAGMA`, the new family presets are:
+
+- `gaussian_gaussian`
+  - Gaussian peaks and Gaussian gene expression on the `log1p_norm` nearby-peak root
+- `bernoulli_peak_nb_gene`
+  - Bernoulli peaks with logit link and NB2 gene counts with log link on the `raw_counts` root
+- `gaussian_nb`
+  - Gaussian peaks with NB2 gene counts
+- `nb_nb`
+  - NB2 peaks with NB2 gene counts
+
+The mixed-family implementation is now repo-local rather than delegated to the upstream global-loss DAGMA package. The current implementation note is in [dagma_mixed_family_implementation.md](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/notes/dagma_mixed_family_implementation.md).
+
+## Recommended commands
 
 Build the one-to-one monocyte matches:
 
 ```bash
-python3 CausalDiscovery/scripts/build_scglue_one_to_one_matches.py \
-  --run-id joint_v2 \
-  --cell-type monocyte \
-  --label-column harmonized_coarse
+python3 CausalDiscovery/scripts/causal_cli.py match --run-id joint_v2
 ```
 
-Export a small human monocyte panel in one pass:
+Generate nearby CUT&Tag peak datasets:
 
 ```bash
-python3 CausalDiscovery/scripts/export_locus_panel_scglue_matches.py \
+python3 CausalDiscovery/scripts/causal_cli.py dataset \
   --run-id joint_v2 \
-  --locus-config CausalDiscovery/configs/loci/cd14_regions.tsv \
-  --locus-config CausalDiscovery/configs/loci/il1b_regions.tsv \
-  --locus-config CausalDiscovery/configs/loci/ccr2_regions.tsv
+  --gene-panel CausalDiscovery/configs/gene_panels/monocyte_cuttag_peak_genes.tsv
 ```
 
-Run baseline PC on one locus:
+Generate raw-count nearby peak datasets into a separate dataset root:
 
 ```bash
-python3 CausalDiscovery/scripts/run_pc_causallearn.py \
-  --matrix-tsv CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_pilot_rawbins/CD14_matched_locus_matrix.tsv \
+python3 CausalDiscovery/scripts/causal_cli.py dataset \
+  --run-id joint_v2 \
+  --gene-panel CausalDiscovery/configs/gene_panels/monocyte_cuttag_peak_genes.tsv \
+  --quant-mode raw_counts \
+  --out-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts
+```
+
+Install `DAGMA` into the active environment before using `--method dagma`:
+
+```bash
+pip install "git+https://github.com/kevinsbello/dagma.git@088616885d71b56c0573cd4902c1fcbac02e649f"
+```
+
+Run one depth-limited `PC + KCI` job:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py graph \
+  --method pc \
+  --matrix-tsv CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/cd14/nearby_peaks/CD14_nearby_peak_matrix.tsv \
   --max-depth 2
 ```
 
-Optional background-knowledge modes currently supported:
+This now writes both the graph tables and a plot in the run directory by default. Use `--no-plot` to skip the figure, or `--plot-layout spring` if you want the older force-directed layout instead of the nearby-peak local-coordinate layout.
 
-- `--background-mode minimal_expr_sink`
-- `--background-mode tiered_distal_promoter_expr`
-
-Optional depth cap:
-
-- `--max-depth <d>`
-- use `--max-depth -1` for the default uncapped search
-
-Plot the learned graph:
+Run one depth-limited `FCI + KCI` job:
 
 ```bash
-python3 CausalDiscovery/scripts/plot_pc_graph.py \
-  --pc-dir CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_pilot_rawbins/pc_kci_alpha_0_05
+python3 CausalDiscovery/scripts/causal_cli.py graph \
+  --method fci \
+  --matrix-tsv CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/cd14/nearby_peaks/CD14_nearby_peak_matrix.tsv \
+  --max-depth 2
 ```
 
-## Output naming
+Run one `DAGMA` job on the same nearby-peak matrix:
 
-To distinguish the old retained-feature analyses from the current hybrid workflow:
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py graph \
+  --method dagma \
+  --matrix-tsv CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/cd14/nearby_peaks/CD14_nearby_peak_matrix.tsv \
+  --dagma-family-config gaussian_gaussian \
+  --background-mode tiered_distal_promoter_expr
+```
 
-- directories ending in `_gluebins` use the retained chromatin features stored in the `scGLUE` modality `h5ad` files
-- directories ending in `_rawbins` use the same one-to-one `scGLUE` pairing but recompute region scores from the raw clean chromatin bin matrices
-- `csf1r_e1e5_rawbins` and `cd14_regions678_rawbins` are the current literature-aligned raw-bin runs
-- PC run directories include `_depth_<d>` when a depth cap is applied
+Run one mixed-family `DAGMA` job with Bernoulli peaks and NB2 gene behavior:
 
-## Current interpretation stance
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py graph \
+  --method dagma \
+  --matrix-tsv CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts/cd14/nearby_peaks/CD14_nearby_peak_matrix.tsv \
+  --dagma-family-config bernoulli_peak_nb_gene \
+  --dagma-loss-type l2 \
+  --transform none \
+  --background-mode tiered_distal_promoter_expr
+```
 
-The current baseline intentionally uses:
+Run a full nearby-peak sweep across genes, methods, and depths for an existing dataset root:
 
-- raw matched locus matrices
-- default `KCI` PC
-- no background-knowledge constraints
-- no extra transforms beyond the exporter normalization
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py sweep \
+  --window-bp 300000 \
+  --depths 1,2,3,4,5
+```
 
-This is a useful first sanity check, but not the final causal-discovery setup.
-If a locus looks promising under this weakly constrained baseline, it can then be revisited with stronger preprocessing or biological priors.
+Run the same sweep on a raw-count dataset root that was generated earlier:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py sweep \
+  --depths 1,2,3,4,5 \
+  --dataset-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts
+```
+
+`DAGMA` is intentionally excluded from the depth-based `sweep`, because that command is designed around `max_depth`. Use `dagma-sweep` instead:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py dagma-sweep \
+  --dataset-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb \
+  --family-configs gaussian_gaussian,bernoulli_peak_nb_gene,gaussian_nb,nb_nb \
+  --lambda1-values 0.03,0.01 \
+  --w-threshold-values 0.3,0.1 \
+  --T-values 5
+```
+
+Plot a saved graph:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py plot \
+  --graph-dir CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/cd14/nearby_peaks/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --layout local
+```
+
+## Evaluation
+
+Evaluation and validation ideas live in:
+
+- [evaluation.md](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/evaluation.md)
+- [evaluation/README.md](/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/CausalDiscovery/evaluation/README.md)

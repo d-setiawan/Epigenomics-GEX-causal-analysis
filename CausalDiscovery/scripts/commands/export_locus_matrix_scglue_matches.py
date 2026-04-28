@@ -17,7 +17,7 @@ from scipy import sparse
 
 
 def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    return Path(__file__).resolve().parents[3]
 
 
 def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
@@ -90,6 +90,23 @@ def log1p_norm_for_gene(
     return np.log1p(vals)
 
 
+def raw_counts_for_gene(
+    x: sparse.csr_matrix,
+    genes: list[str],
+    gene: str,
+) -> np.ndarray:
+    try:
+        idx = genes.index(gene)
+    except ValueError:
+        return np.full(x.shape[0], np.nan, dtype=float)
+    col = x[:, idx]
+    return np.asarray(col.toarray()).ravel().astype(float)
+
+
+def row_sums_for_matrix(x: sparse.csr_matrix) -> np.ndarray:
+    return np.asarray(x.sum(axis=1)).ravel().astype(float)
+
+
 def load_rna_counts(rna_h5ad: Path) -> tuple[sparse.csr_matrix, list[str], list[str]]:
     with h5py.File(rna_h5ad, "r") as f:
         obs = read_string_dataset(f["obs"]["_index"])
@@ -117,7 +134,8 @@ def stream_raw_region_aggregates(
     selected_barcodes: Iterable[str],
     regions: pd.DataFrame,
     target_sum: float,
-) -> tuple[pd.DataFrame, list[dict], int]:
+    quant_mode: str = "log1p_norm",
+) -> tuple[pd.DataFrame, list[dict], int, pd.DataFrame]:
     """Stream a raw Matrix Market file and aggregate only curated regions for selected cells."""
 
     barcode_series = pd.read_csv(barcode_path, sep="\t", header=None).iloc[:, 0].astype(str)
@@ -199,8 +217,12 @@ def stream_raw_region_aggregates(
         region_vals = np.array([region_sum_maps[reg_name][barcode_to_row[bc]] for bc in kept_barcodes], dtype=float)
         if n_bins == 0:
             score = np.full_like(region_vals, np.nan, dtype=float)
-        else:
+        elif quant_mode == "raw_counts":
+            score = region_vals
+        elif quant_mode == "log1p_norm":
             score = np.log1p((region_vals / float(n_bins)) * (target_sum / row_sums))
+        else:
+            raise ValueError(f"Unsupported quant_mode: {quant_mode}")
         value_df[reg_name] = score
 
     region_bin_rows = []
@@ -216,7 +238,13 @@ def stream_raw_region_aggregates(
                 "bin_features_truncated": bool(len(feats) > 200),
             }
         )
-    return value_df, region_bin_rows, len(barcode_series)
+    library_size_df = pd.DataFrame(
+        {
+            "barcode": kept_barcodes,
+            "library_size": np.array([row_sum_map[barcode_to_row[bc]] for bc in kept_barcodes], dtype=float),
+        }
+    )
+    return value_df, region_bin_rows, len(barcode_series), library_size_df
 
 
 def main() -> int:
@@ -307,7 +335,7 @@ def main() -> int:
 
         if source_used == "raw":
             print(f"[{mark}] streaming raw Matrix Market for curated regions")
-            raw_value_df, raw_region_rows, n_cells = stream_raw_region_aggregates(
+            raw_value_df, raw_region_rows, n_cells, _ = stream_raw_region_aggregates(
                 matrix_path=matrix_path,
                 barcode_path=barcode_path,
                 feature_path=feature_path,

@@ -16,7 +16,7 @@ from scipy import sparse
 
 
 def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    return Path(__file__).resolve().parents[3]
 
 
 def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
