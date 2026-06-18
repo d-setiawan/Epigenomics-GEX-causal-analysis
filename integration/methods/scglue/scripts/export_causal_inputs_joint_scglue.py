@@ -13,16 +13,7 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
+from _common import infer_repo_root, resolve_path
 
 
 def parse_gene_list(genes_csv: str | None, gene_file: str | None) -> List[str]:

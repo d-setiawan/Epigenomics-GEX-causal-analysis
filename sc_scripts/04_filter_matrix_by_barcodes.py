@@ -3,14 +3,7 @@ import argparse
 import csv
 from pathlib import Path
 
-
-def normalize_barcode(bc: str) -> str:
-    bc = bc.strip()
-    if "." in bc and bc.rsplit(".", 1)[-1].isdigit():
-        bc = bc.rsplit(".", 1)[0]
-    if "-" in bc and bc.rsplit("-", 1)[-1].isdigit():
-        bc = bc.rsplit("-", 1)[0]
-    return bc
+from _common import load_barcode_whitelist
 
 
 def parse_args():
@@ -21,19 +14,6 @@ def parse_args():
     p.add_argument("barcode_tsv", help="TSV with a barcode column (e.g. *_clean_barcodes.tsv)")
     p.add_argument("out_tsv", help="Filtered output matrix TSV")
     return p.parse_args()
-
-
-def load_whitelist(path: Path):
-    keep = set()
-    with path.open("r", newline="") as f:
-        reader = csv.DictReader(f, delimiter="\t")
-        if "barcode" not in (reader.fieldnames or []):
-            raise ValueError(f"Missing 'barcode' column in {path}")
-        for row in reader:
-            bc = normalize_barcode(row["barcode"])
-            if bc:
-                keep.add(bc)
-    return keep
 
 
 def detect_delimiter(line: str):
@@ -57,7 +37,7 @@ def split_line(line: str, mode: str):
 def main():
     args = parse_args()
 
-    keep = load_whitelist(Path(args.barcode_tsv))
+    keep = load_barcode_whitelist(Path(args.barcode_tsv))
 
     with open(args.matrix_tsv, "r", newline="") as in_f, open(args.out_tsv, "w", newline="") as out_f:
         writer = csv.writer(out_f, delimiter="\t", lineterminator="\n")

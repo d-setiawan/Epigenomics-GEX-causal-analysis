@@ -1,33 +1,44 @@
 # Evaluation
 
-This directory is the working area for external validation of the causal-discovery pipeline.
+This directory is the working area for external validation of the causal-discovery graphs.
 
-## Purpose
+## Current Evaluation Goal
 
-The graph-learning outputs live under `CausalDiscovery/outputs/...`.
+The active graph matrices are uncurated nearby CUT&Tag peak matrices. Curated promoter and enhancer regions are not graph variables in the current phase. Instead, they are used as evaluation annotations.
 
-This directory is for the external evidence that helps us evaluate those graphs, especially:
+The main question is:
 
-- `ePerturbDB`
-- `ENCODE SCREEN`
-- derived node-support tables used to highlight graph nodes
+$$
+\text{Do uncurated graph edges recover peaks that overlap literature-backed promoter/enhancer regions?}
+$$
 
-## Recommended layout
+For `CSF1R`, `CD14`, and `IL1B`, nearby peak metadata already records overlap with curated regions when those overlaps exist.
 
-- `templates/`
-  - column templates for external evidence tables
-- `external/`
-  - locus-focused TSV extracts prepared from `ePerturbDB` and `ENCODE SCREEN`
-- `reports/`
-  - optional benchmark summaries, overlap reports, and notes
+## Evidence Sources
 
-You can create `external/` and `reports/` as needed; they are not required for the plotting workflow.
+External evidence can include:
 
-## External evidence table format
+- `ePerturbDB`: stronger perturbation-based support when available.
+- `ENCODE Portal`: PBMC or monocyte peak-file support from released GRCh38 ENCODE BED files.
+- `ENCODE SCREEN`: broader regulatory annotation support, especially cCREs and enhancer-like elements.
+- `JASPAR`: online motif support for peak nodes using JASPAR matrices plus UCSC hg38 sequence retrieval.
+- Curated project locus configs under `CausalDiscovery/configs/loci/`.
+- Nearby peak metadata emitted by dataset generation.
 
-Use the template in:
+See [external_sources.md](external_sources.md) for the supported online source
+formats, default ENCODE SCREEN URLs, and plotting semantics.
 
-- `templates/external_support_regions_template.tsv`
+## Recommended Layout
+
+- `templates/`: column templates for external evidence tables.
+- `external/`: locus-focused TSV extracts from external resources.
+- `reports/`: benchmark summaries, overlap reports, and notes.
+
+The key template is:
+
+```text
+templates/external_support_regions_template.tsv
+```
 
 Expected columns:
 
@@ -40,101 +51,208 @@ Expected columns:
 - `biosample`
 - `notes`
 
-The support-builder script only requires `chrom`, `start`, and `end`, but adding the other columns makes the output much more interpretable.
+Only `chrom`, `start`, and `end` are required for interval overlap, but the other columns make reports easier to interpret.
 
-## Workflow
+## Nearby-Peak Overlap Checks
 
-### 1. Prepare locus-focused external TSVs
+For the current datasets, start by reading each gene's nearby peak metadata:
 
-Create two TSVs for the locus you want to evaluate:
+```text
+CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/<gene>/nearby_peaks/<GENE>_nearby_peak_metadata.tsv
+CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts/<gene>/nearby_peaks/<GENE>_nearby_peak_metadata.tsv
+```
 
-- one from `ePerturbDB`
-- one from `ENCODE SCREEN`
+Useful columns include:
 
-Best practice:
+- `gene`
+- `mark`
+- `signed_distance_to_tss`
+- `overlaps_curated_region`
+- `overlapping_curated_region_names`
 
-- keep the tables locus-focused instead of genome-wide
-- include only the target gene and nearby candidate regulatory elements you want to compare against
-- for `ENCODE SCREEN`, prefer cCREs or cCRE-target gene links from the most relevant immune/monocyte-like biosamples
+These columns let us evaluate graph edges without injecting curated biology into the graph-learning matrix.
 
-### 2. Build node-level support annotations
+## External Support Workflow
 
-Example:
+For the downloaded ePerturbDB files, place the database TSV, enhancer-gene BED,
+and enhancer-TF overlap BED in `Data/external/eperturbdb/`, then annotate a
+saved graph:
 
 ```bash
-python3 CausalDiscovery/scripts/build_node_support_table.py \
-  --pc-dir CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_regions678_rawbins/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --support-preset local_eperturbdb
+```
+
+To rebuild support and render the graph in one plotting command:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py plot \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --online-support \
+  --support-preset local_eperturbdb
+```
+
+You can also prepare locus-focused template TSVs from `ePerturbDB` and/or
+`ENCODE SCREEN`, then annotate a saved graph:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
   --locus-config CausalDiscovery/configs/loci/cd14_regions678.tsv \
   --eperturbdb-tsv CausalDiscovery/evaluation/external/cd14_eperturbdb.tsv \
   --encode-screen-tsv CausalDiscovery/evaluation/external/cd14_encode_screen.tsv
 ```
 
-This writes:
+This writes support tables into the graph directory:
 
 - `node_support.tsv`
 - `node_support_matches.tsv`
+- `edge_support.tsv`
+- `support_report.md`
 
-directly into the graph output directory.
+The local ePerturbDB adapter writes three source labels when matching records
+are present:
 
-### 3. Plot the graph
+- `eperturbdb`: perturbation database rows with `Gene (literature)` target-gene support.
+- `eperturbdb_enhancer_gene`: enhancer interval/nearest-gene annotation.
+- `eperturbdb_tf_overlap`: enhancer interval/TF overlap context.
 
-The plotter now auto-loads `node_support.tsv` when it exists:
+You can also fetch ENCODE SCREEN directly:
 
 ```bash
-python3 CausalDiscovery/scripts/plot_pc_graph.py \
-  --pc-dir CausalDiscovery/outputs/locus_matrices_matched/joint_v2/cd14_regions678_rawbins/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --fetch-encode-screen
 ```
 
-Highlight scheme:
+For PBMC- or monocyte-context ENCODE peak evidence, query ENCODE Portal files:
 
-- orange outline = `ePerturbDB`
-- purple outline = `ENCODE SCREEN`
-- red outline = both sources
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --fetch-encode-pbmc \
+  --encode-biosample-term "CD14-positive monocyte" \
+  --encode-assay-term DNase-seq \
+  --max-encode-files 10
+```
 
-## Matching logic
+For motif-level regulatory support, query JASPAR and UCSC sequences:
 
-The current support-builder uses:
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --fetch-jaspar \
+  --jaspar-matrix-id MA0139.1 \
+  --jaspar-min-score 0.75
+```
 
-- expression nodes:
-  - matched by exact gene symbol
-- coordinate region nodes such as `chr5:140612011-140612339__H3K27ac`:
-  - matched by genomic interval overlap
-- named region nodes such as `promoter_primary_tss__H3K4me3`:
-  - matched by interval overlap after resolving coordinates from `--locus-config`
+Re-plot the graph:
 
-## How to use the sources well
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py plot \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --layout local
+```
 
-### `ePerturbDB`
+Or build external support and plot in one step:
 
-Use it as the stronger causal-support layer.
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py plot \
+  --graph-dir CausalDiscovery/outputs/methods/pc/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/pc_kci_alpha_0_05_depth_2_bg_tiered_distal_promoter_expr \
+  --online-support \
+  --fetch-encode-pbmc \
+  --encode-biosample-term "CD14-positive monocyte" \
+  --encode-assay-term DNase-seq \
+  --layout local
+```
 
-Good uses:
+New graph runs can also build support before rendering their final plot:
 
-- flag region nodes whose intervals overlap experimentally perturbed enhancers
-- flag the expression node if the target gene appears in those perturbation records
-- prioritize loci where the graph recovers edges adjacent to perturbed regions
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py graph \
+  --matrix-tsv CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb/cd14/nearby_peaks/CD14_nearby_peak_matrix.tsv \
+  --method fci \
+  --online-support \
+  --fetch-encode-pbmc \
+  --encode-biosample-term "CD14-positive monocyte" \
+  --encode-assay-term DNase-seq \
+  --plot-layout local
+```
 
-### `ENCODE SCREEN`
+Add `--fetch-jaspar --jaspar-matrix-id <ID>` to the same `graph` or `plot`
+commands when motif-level peak support should be included.
 
-Use it as a broader regulatory-support layer.
+For the current monocyte/PBMC analysis, the compact preset is:
 
-Good uses:
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py plot \
+  --graph-dir CausalDiscovery/outputs/methods/fci/joint_v2_monocyte_cuttag_peak_genes_300kb/cd14/fci_kci_alpha_0_05_depth_5_bg_tiered_distal_promoter_expr \
+  --online-support \
+  --support-preset monocyte_regulatory \
+  --layout local
+```
 
-- check whether recovered nodes overlap cCREs
-- check whether distal nodes align with enhancer-like cCREs
-- check whether promoter nodes align with promoter-like signatures or cCRE-target gene links
+This expands to ENCODE SCREEN, ENCODE Portal `CD14-positive monocyte`
+`DNase-seq`, and JASPAR CTCF (`MA0139.1`) support.
 
-### Combining them
+## Matching Logic
 
-The most convincing nodes are those supported by both:
+Support annotation uses:
 
-\[
-\text{graph support} \cap \text{ePerturbDB} \cap \text{ENCODE SCREEN}
-\]
+- Expression nodes: exact gene-symbol matching.
+- Coordinate peak nodes such as `chr5:140612011-140612339__H3K27ac`: genomic interval overlap.
+- Named curated regions: coordinates resolved from the locus config, then interval overlap.
+- Peak-expression edges: interval evidence on the peak endpoint validates the
+  edge only when the external target gene matches the expression endpoint. This
+  keeps ePerturbDB-style target-gene evidence edge-specific and prevents
+  ENCODE/JASPAR interval-only context from validating peak-to-gene edges.
 
-In practice, that means:
+## How To Interpret Support
 
-- `ePerturbDB` helps with causal credibility
-- `ENCODE SCREEN` helps with regulatory plausibility and broader annotation coverage
+`ePerturbDB` is the stronger causal-support layer. It is most useful when graph-adjacent peaks overlap experimentally perturbed enhancers.
 
-Together they give a good first-pass external benchmark even before new perturbation experiments.
+`ENCODE Portal` peak files provide cell-context support when the chosen biosample term matches the analysis, for example `peripheral blood mononuclear cell` or `CD14-positive monocyte`.
+
+`ENCODE SCREEN` is a broader regulatory-plausibility layer. It is useful for checking whether graph-adjacent peaks overlap cCREs, enhancer-like signatures, promoter-like signatures, or cCRE-target gene links.
+
+`JASPAR` is motif-level regulatory plausibility. It helps prioritize peak nodes
+with TF motif support, especially for peak-peak or TF-centered follow-up, but it
+is not perturbation evidence by itself.
+
+The strongest first-pass evidence is:
+
+$$
+\text{graph-adjacent peak}
+\cap
+\text{curated/literature region}
+\cap
+\text{external regulatory evidence}
+$$
+
+This is still validation, not proof of causality. It tells us whether the uncurated graph learner is rediscovering plausible biology before we move to stronger perturbation-based claims.
+
+## Graph Stability Pipeline
+
+Saved `PC`, `FCI`, and `DAGMA` graph runs can now be compared directly with:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py \
+  --python-bin /home/dgsetiawan/anaconda3/bin/python \
+  evaluate \
+  --methods pc,fci \
+  --datasets joint_v2_monocyte_cuttag_peak_genes_300kb \
+  --genes cd14 \
+  --out-dir CausalDiscovery/outputs/evaluation/graph_stability/cd14_pc_fci_300kb
+```
+
+The evaluator writes:
+
+- `graph_runs.tsv`
+- `normalized_edges.tsv`
+- `edge_stability.tsv`
+- `pairwise_graph_similarity.tsv`
+- `group_summary.tsv`
+- `evaluation_report.md`
+
+See [graph_evaluation_pipeline.md](graph_evaluation_pipeline.md) for usage and metric definitions. See [literature_review_graph_evaluation.md](literature_review_graph_evaluation.md) for the citation-backed rationale.

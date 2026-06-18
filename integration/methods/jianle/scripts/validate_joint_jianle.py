@@ -6,9 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import tarfile
-from collections import Counter
-from io import BytesIO
 from pathlib import Path
 
 import anndata as ad
@@ -19,95 +16,16 @@ import scanpy as sc
 from sklearn.metrics import silhouette_score
 from sklearn.neighbors import NearestNeighbors
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def strip_10x_suffix(series: pd.Series) -> pd.Series:
-    return series.astype(str).str.replace(r"-\d+$", "", regex=True)
-
-
-def load_rna_cell_annotations(path: Path) -> pd.DataFrame:
-    with tarfile.open(path, "r:gz") as tf:
-        member = "cell_types/cell_types.csv"
-        f = tf.extractfile(member)
-        if f is None:
-            raise FileNotFoundError(f"Missing {member} in {path}")
-        ann = pd.read_csv(BytesIO(f.read()))
-    required = {"barcode", "coarse_cell_type", "fine_cell_type"}
-    missing = required - set(ann.columns)
-    if missing:
-        raise ValueError(f"Annotation file missing columns: {sorted(missing)}")
-    keep_cols = ["barcode", "coarse_cell_type", "fine_cell_type"]
-    if "cell_count_in_model" in ann.columns:
-        keep_cols.append("cell_count_in_model")
-    ann = ann[keep_cols].copy()
-    ann["barcode"] = ann["barcode"].astype(str)
-    ann["barcode_core"] = strip_10x_suffix(ann["barcode"])
-    ann = ann.drop_duplicates(subset=["barcode_core"])
-    return ann
-
-
-def normalize_label_level(level: str) -> str:
-    aliases = {
-        "coarse_cell_type": "coarse_cell_type",
-        "fine_cell_type": "fine_cell_type",
-        "harmonized_coarse": "harmonized_coarse",
-        "harmonized_fine": "harmonized_fine",
-    }
-    if level not in aliases:
-        raise ValueError(f"Unsupported label level: {level}")
-    return aliases[level]
-
-
-def load_harmonization_table(path: Path) -> pd.DataFrame:
-    harm = pd.read_csv(path, sep="\t")
-    required = {"coarse_cell_type", "fine_cell_type", "harmonized_coarse", "harmonized_fine"}
-    missing = required - set(harm.columns)
-    if missing:
-        raise ValueError(f"Harmonization table missing columns: {sorted(missing)}")
-    dup = harm.duplicated(subset=["coarse_cell_type", "fine_cell_type"])
-    if dup.any():
-        raise ValueError("Harmonization table has duplicate coarse/fine label pairs")
-    if "cell_ontology_id" not in harm.columns:
-        harm["cell_ontology_id"] = pd.NA
-    return harm
-
-
-def apply_harmonization(ann: pd.DataFrame, harm: pd.DataFrame | None) -> tuple[pd.DataFrame, dict]:
-    merged = ann.copy()
-    if harm is None:
-        merged["harmonized_coarse"] = merged["coarse_cell_type"]
-        merged["harmonized_fine"] = merged["fine_cell_type"]
-        merged["cell_ontology_id"] = pd.NA
-        return merged, {"mode": "identity", "n_unmapped_rows": 0}
-
-    merged = merged.merge(
-        harm[["coarse_cell_type", "fine_cell_type", "harmonized_coarse", "harmonized_fine", "cell_ontology_id"]],
-        on=["coarse_cell_type", "fine_cell_type"],
-        how="left",
-    )
-    unmapped = int(merged["harmonized_coarse"].isna().sum() + merged["harmonized_fine"].isna().sum())
-    merged["harmonized_coarse"] = merged["harmonized_coarse"].fillna(merged["coarse_cell_type"])
-    merged["harmonized_fine"] = merged["harmonized_fine"].fillna(merged["fine_cell_type"])
-    return merged, {"mode": "table", "n_unmapped_rows": unmapped}
-
-
-def majority_vote(labels: list[str]) -> tuple[str, float]:
-    labels = [str(x) for x in labels if pd.notna(x) and str(x) != ""]
-    if not labels:
-        return "unknown", 0.0
-    counts = Counter(labels)
-    label, count = counts.most_common(1)[0]
-    return label, float(count / len(labels))
+from _common import (
+    apply_harmonization,
+    infer_repo_root,
+    load_harmonization_table,
+    load_rna_cell_annotations,
+    majority_vote,
+    normalize_label_level,
+    resolve_path,
+    strip_10x_suffix,
+)
 
 
 def plot_label_overlay(

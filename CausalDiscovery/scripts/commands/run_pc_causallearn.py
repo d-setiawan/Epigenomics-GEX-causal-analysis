@@ -6,21 +6,41 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import warnings
 from itertools import combinations
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from causallearn.graph.GraphClass import CausalGraph
-from causallearn.search.ConstraintBased.FCI import fci
+from causallearn.graph.GraphNode import GraphNode
+from causallearn.graph.Endpoint import Endpoint
+from causallearn.search.ConstraintBased.FCI import (
+    fci,
+    getPossibleDsep,
+    get_color_edges,
+    reorientAllWith,
+    rule0,
+    rule8,
+    rule9,
+    rule10,
+    ruleR3,
+    ruleR4B,
+    ruleR5,
+    ruleR6,
+    ruleR7,
+    rulesR1R2cycle,
+)
+from causallearn.utils.FAS import fas
 from causallearn.utils.PCUtils.BackgroundKnowledge import BackgroundKnowledge
 from causallearn.utils.PCUtils.BackgroundKnowledgeOrientUtils import orient_by_background_knowledge
 from causallearn.utils.PCUtils.Helper import append_value
 from causallearn.utils.PCUtils import Meek, UCSepset
-from causallearn.utils.cit import CIT
+from causallearn.utils.cit import CIT, CIT_Base, FastKCI, register_ci_test
 from scipy.stats import norm, rankdata
 from tqdm.auto import tqdm
 
+from _common import infer_repo_root, resolve_path, sanitize_token
 from dagma_mixed_family import MixedFamilyDagmaLinear
 from plot_pc_graph import plot_saved_graph
 
@@ -61,19 +81,155 @@ DAGMA_FAMILY_CONFIGS = {
 }
 
 
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+class SafeFastKCI(CIT_Base):
+    """FastKCI wrapper that falls back when causal-learn hits degenerate blocks."""
+
+    def __init__(
+        self,
+        data: np.ndarray,
+        *,
+        fallback: str = "rcit",
+        K: int = 3,
+        J: int = 4,
+        fastkci_alpha: float = 500,
+        use_gp: bool = False,
+        cache_path: str | None = None,
+        **kwargs,
+    ):
+        super().__init__(data, cache_path=cache_path)
+        params = {
+            "fallback": fallback,
+            "K": int(K),
+            "J": int(J),
+            "fastkci_alpha": float(fastkci_alpha),
+            "use_gp": bool(use_gp),
+        }
+        self.check_cache_method_consistent("safe_fastkci", json.dumps(params, sort_keys=True))
+        self.assert_input_data_is_valid()
+        self.fastkci = FastKCI(
+            data,
+            K=int(K),
+            J=int(J),
+            alpha=float(fastkci_alpha),
+            use_gp=bool(use_gp),
+        )
+        self.fallback_method = str(fallback)
+        self.fallback_test = CIT(data, method=self.fallback_method)
+        self.last_resort_method = "fisherz"
+        self.last_resort_test = None if self.fallback_method == self.last_resort_method else CIT(data, method=self.last_resort_method)
+        self.n_fallbacks = 0
+        self.n_last_resort_fallbacks = 0
+        self.n_conservative_failures = 0
+        self.fallback_errors: list[str] = []
+
+    def __call__(self, X, Y, condition_set=None):
+        Xs, Ys, condition_set, cache_key = self.get_formatted_XYZ_and_cachekey(X, Y, condition_set)
+        if cache_key in self.pvalue_cache:
+            return self.pvalue_cache[cache_key]
+
+        try:
+            p_value = float(self.fastkci(Xs[0], Ys[0], condition_set))
+            if not np.isfinite(p_value):
+                raise ValueError(f"FastKCI returned non-finite p-value: {p_value}")
+        except Exception as exc:
+            self.n_fallbacks += 1
+            if len(self.fallback_errors) < 20:
+                self.fallback_errors.append(f"{type(exc).__name__}: {exc}")
+            try:
+                p_value = float(self.fallback_test(Xs[0], Ys[0], condition_set))
+                fallback_message = f"fell back to {self.fallback_method}"
+            except Exception as fallback_exc:
+                if len(self.fallback_errors) < 20:
+                    self.fallback_errors.append(f"{type(fallback_exc).__name__}: {fallback_exc}")
+                if self.last_resort_test is not None:
+                    try:
+                        p_value = float(self.last_resort_test(Xs[0], Ys[0], condition_set))
+                        self.n_last_resort_fallbacks += 1
+                        fallback_message = (
+                            f"{self.fallback_method} also failed, then fell back to {self.last_resort_method}"
+                        )
+                    except Exception as last_resort_exc:
+                        if len(self.fallback_errors) < 20:
+                            self.fallback_errors.append(f"{type(last_resort_exc).__name__}: {last_resort_exc}")
+                        p_value = 0.0
+                        self.n_conservative_failures += 1
+                        fallback_message = (
+                            f"{self.fallback_method} and {self.last_resort_method} both failed; "
+                            "using conservative p=0.0"
+                        )
+                else:
+                    p_value = 0.0
+                    self.n_conservative_failures += 1
+                    fallback_message = f"{self.fallback_method} also failed; using conservative p=0.0"
+            if self.n_fallbacks <= 20:
+                warnings.warn(
+                    f"FastKCI failed for one CI test and {fallback_message}: {exc}",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+            elif self.n_fallbacks == 21:
+                warnings.warn(
+                    f"FastKCI fallback warning limit reached; suppressing further {self.fallback_method} fallback warnings.",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+
+        self.pvalue_cache[cache_key] = p_value
+        return p_value
 
 
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
+register_ci_test("safe_fastkci", SafeFastKCI)
 
 
-def sanitize_token(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "_", value.strip().lower()).strip("_") or "value"
+def resolve_ci_test(args) -> tuple[str, dict[str, object]]:
+    if args.indep_test != "fastkci":
+        return args.indep_test, {}
+    return "safe_fastkci", {
+        "K": int(args.fastkci_k),
+        "J": int(args.fastkci_j),
+        "fastkci_alpha": float(args.fastkci_alpha_param),
+        "use_gp": bool(args.fastkci_use_gp),
+        "fallback": str(args.fastkci_fallback),
+    }
+
+
+def infer_default_graph_out_dir(
+    repo_root: Path,
+    matrix_path: Path,
+    method: str,
+    run_dir_name: str,
+    *,
+    dagma_family_config: str | None = None,
+) -> Path:
+    outputs_root = repo_root / "CausalDiscovery" / "outputs"
+    methods_root = outputs_root / "methods" / sanitize_token(method)
+    try:
+        rel = matrix_path.resolve().relative_to(outputs_root.resolve())
+    except ValueError:
+        return matrix_path.parent / run_dir_name
+
+    parts = rel.parts
+    if len(parts) >= 5 and parts[0] == "datasets":
+        run_id = parts[1]
+        dataset_name = parts[2]
+        gene_name = parts[3]
+        dataset_id = sanitize_token(f"{run_id}__{dataset_name}")
+        if sanitize_token(method) == "dagma" and dagma_family_config:
+            family_id = sanitize_token(dagma_family_config)
+            return methods_root / dataset_id / family_id / gene_name / run_dir_name
+        return methods_root / dataset_id / gene_name / run_dir_name
+
+    if len(parts) >= 4 and parts[0] in {"locus_matrices_matched", "locus_matrices"}:
+        dataset_family = parts[0]
+        run_id = parts[1]
+        locus_name = parts[2]
+        dataset_id = sanitize_token(f"{run_id}__{dataset_family}")
+        if sanitize_token(method) == "dagma" and dagma_family_config:
+            family_id = sanitize_token(dagma_family_config)
+            return methods_root / dataset_id / family_id / locus_name / run_dir_name
+        return methods_root / dataset_id / locus_name / run_dir_name
+
+    return matrix_path.parent / run_dir_name
 
 
 def auto_select_columns(df: pd.DataFrame) -> list[str]:
@@ -232,6 +388,17 @@ def run_dagma_search(
     adjacency = np.asarray(adjacency, dtype=float)
     if adjacency.ndim != 2 or adjacency.shape[0] != adjacency.shape[1]:
         raise ValueError(f"DAGMA returned an invalid adjacency matrix shape: {adjacency.shape}")
+    forbidden_before_clamp = 0
+    max_forbidden_abs_weight = 0.0
+    if exclude_edges:
+        exc = np.asarray(list(exclude_edges), dtype=int)
+        forbidden_values = adjacency[exc[:, 0], exc[:, 1]]
+        forbidden_before_clamp = int(np.count_nonzero(forbidden_values))
+        if forbidden_values.size:
+            max_forbidden_abs_weight = float(np.max(np.abs(forbidden_values)))
+        adjacency[exc[:, 0], exc[:, 1]] = 0.0
+    model.forbidden_edges_nonzero_before_clamp_ = forbidden_before_clamp
+    model.forbidden_edges_max_abs_weight_before_clamp_ = max_forbidden_abs_weight
     return adjacency, model
 
 
@@ -571,30 +738,191 @@ def run_fci_search(
     show_progress: bool = True,
     node_names: list[str] | None = None,
     max_depth: int = -1,
+    possible_dsep_depth: int = -1,
+    max_path_length: int = -1,
     **kwargs,
 ):
-    graph, edges = fci(
+    if possible_dsep_depth < 0 and max_path_length < 0:
+        graph, edges = fci(
+            data,
+            independence_test_method=indep_test,
+            alpha=alpha,
+            depth=max_depth,
+            background_knowledge=background_knowledge,
+            show_progress=show_progress,
+            node_names=node_names,
+            **kwargs,
+        )
+        return graph, edges
+    return run_fci_search_bounded(
         data,
-        independence_test_method=indep_test,
         alpha=alpha,
-        depth=max_depth,
+        indep_test=indep_test,
         background_knowledge=background_knowledge,
         show_progress=show_progress,
         node_names=node_names,
+        max_depth=max_depth,
+        possible_dsep_depth=possible_dsep_depth,
+        max_path_length=max_path_length,
         **kwargs,
     )
-    return graph, edges
+
+
+def remove_by_possible_dsep_limited(
+    graph,
+    independence_test,
+    alpha: float,
+    sep_sets: dict[tuple[int, int], set[int]],
+    *,
+    max_conditioning_depth: int,
+) -> int:
+    """Bounded version of causal-learn FCI Possible-D-Sep pruning.
+
+    causal-learn's default `removeByPossibleDsep` enumerates all subsets of
+    each Possible-D-Sep set. That is combinatorial on dense local peak graphs.
+    This repo-local version caps the conditioning-set size.
+    """
+
+    if max_conditioning_depth < 2:
+        return 0
+
+    def _contains_all(set_a, set_b) -> bool:
+        return all(node_b in set_a for node_b in set_b)
+
+    removed = 0
+    for edge in list(graph.get_graph_edges()):
+        if not graph.contains_edge(edge):
+            continue
+        node_a = edge.get_node1()
+        node_b = edge.get_node2()
+
+        for left_node, right_node in [(node_a, node_b), (node_b, node_a)]:
+            if not graph.contains_edge(edge):
+                break
+            possible_dsep = getPossibleDsep(left_node, right_node, graph, max_conditioning_depth)
+            max_size = min(max_conditioning_depth, len(possible_dsep))
+            for size in range(2, max_size + 1):
+                found_independence = False
+                for choice in combinations(range(len(possible_dsep)), size):
+                    sepset_nodes = tuple(possible_dsep[index] for index in choice)
+                    if _contains_all(set(graph.get_adjacent_nodes(node_a)), set(sepset_nodes)):
+                        continue
+                    if _contains_all(set(graph.get_adjacent_nodes(node_b)), set(sepset_nodes)):
+                        continue
+                    x_idx = graph.get_node_map()[left_node]
+                    y_idx = graph.get_node_map()[right_node]
+                    cond_set = tuple(graph.get_node_map()[possible_dsep[index]] for index in choice)
+                    p_value = independence_test(x_idx, y_idx, cond_set)
+                    if p_value > alpha:
+                        graph.remove_edge(edge)
+                        sep_sets[(x_idx, y_idx)] = set(cond_set)
+                        removed += 1
+                        found_independence = True
+                        break
+                if found_independence:
+                    break
+    return removed
+
+
+def run_fci_search_bounded(
+    data: np.ndarray,
+    alpha: float,
+    indep_test: str,
+    background_knowledge: BackgroundKnowledge | None = None,
+    show_progress: bool = True,
+    node_names: list[str] | None = None,
+    max_depth: int = -1,
+    possible_dsep_depth: int = -1,
+    max_path_length: int = -1,
+    verbose: bool = False,
+    **kwargs,
+):
+    independence_test = CIT(data, method=indep_test, **kwargs)
+    if node_names is None:
+        node_names = [f"X{i + 1}" for i in range(data.shape[1])]
+    nodes = []
+    for idx, name in enumerate(node_names):
+        node = GraphNode(str(name))
+        node.add_attribute("id", idx)
+        nodes.append(node)
+
+    graph, sep_sets, _ = fas(
+        data,
+        nodes,
+        independence_test_method=independence_test,
+        alpha=alpha,
+        knowledge=background_knowledge,
+        depth=max_depth,
+        verbose=verbose,
+        show_progress=show_progress,
+    )
+
+    reorientAllWith(graph, Endpoint.CIRCLE)
+    rule0(graph, nodes, sep_sets, background_knowledge, verbose)
+    remove_by_possible_dsep_limited(
+        graph,
+        independence_test,
+        alpha,
+        sep_sets,
+        max_conditioning_depth=possible_dsep_depth,
+    )
+    reorientAllWith(graph, Endpoint.CIRCLE)
+    rule0(graph, nodes, sep_sets, background_knowledge, verbose)
+
+    change_flag = True
+    first_time = True
+    while change_flag:
+        change_flag = False
+        change_flag = rulesR1R2cycle(graph, background_knowledge, change_flag, verbose)
+        change_flag = ruleR3(graph, sep_sets, background_knowledge, change_flag, verbose)
+        if change_flag or (
+            first_time
+            and background_knowledge is not None
+            and len(background_knowledge.forbidden_rules_specs) > 0
+            and len(background_knowledge.required_rules_specs) > 0
+            and len(background_knowledge.tier_map.keys()) > 0
+        ):
+            change_flag = ruleR4B(
+                graph,
+                max_path_length,
+                data,
+                independence_test,
+                alpha,
+                sep_sets,
+                change_flag,
+                background_knowledge,
+                verbose,
+            )
+            first_time = False
+        change_flag = ruleR5(graph, change_flag, verbose)
+        change_flag = ruleR6(graph, change_flag, verbose)
+        change_flag = ruleR7(graph, change_flag, verbose)
+        change_flag = rule8(graph, nodes, change_flag)
+        change_flag = rule9(graph, nodes, change_flag)
+        change_flag = rule10(graph, change_flag)
+
+    graph.set_pag(True)
+    return graph, get_color_edges(graph)
 
 
 def main() -> int:
     p = argparse.ArgumentParser(description="Run a PC or FCI baseline on a locus matrix with causal-learn")
     p.add_argument("--repo-root", default=str(infer_repo_root()))
     p.add_argument("--matrix-tsv", required=True)
-    p.add_argument("--out-dir", default=None, help="Default: <matrix-dir>/<method>_<indep_test>_alpha_<alpha>")
+    p.add_argument(
+        "--out-dir",
+        default=None,
+        help="Default: CausalDiscovery/outputs/methods/<method>/<dataset>/<gene-or-locus>/<result-dir> when the matrix lives under the project outputs tree.",
+    )
     p.add_argument("--method", default="pc", choices=["pc", "fci", "dagma"])
     p.add_argument("--columns", default="auto", help="Comma-separated column list or 'auto'")
     p.add_argument("--alpha", type=float, default=0.05)
     p.add_argument("--indep-test", default="kci")
+    p.add_argument("--fastkci-k", type=int, default=3, help="Safe FastKCI mixture components; lower values reduce degenerate block failures.")
+    p.add_argument("--fastkci-j", type=int, default=4, help="Safe FastKCI random partition repetitions.")
+    p.add_argument("--fastkci-alpha-param", type=float, default=500.0, help="Safe FastKCI Dirichlet alpha parameter.")
+    p.add_argument("--fastkci-use-gp", action="store_true", default=False, help="Use GP width estimation inside FastKCI conditional tests.")
+    p.add_argument("--fastkci-fallback", default="rcit", choices=["rcit", "fisherz", "kci"], help="Fallback CI test if one FastKCI test fails.")
     p.add_argument("--stable", action="store_true", default=True)
     p.add_argument("--unstable", action="store_false", dest="stable")
     p.add_argument("--transform", default="none", choices=["none", "rank_gaussian"])
@@ -604,6 +932,18 @@ def main() -> int:
     p.add_argument("--min-unique", type=int, default=2)
     p.add_argument("--min-std", type=float, default=1e-8)
     p.add_argument("--max-depth", type=int, default=-1, help="Maximum conditioning-set size for PC skeleton search; -1 means no cap")
+    p.add_argument(
+        "--fci-possible-dsep-depth",
+        type=int,
+        default=-2,
+        help="Maximum conditioning-set size for FCI Possible-D-Sep pruning. -2 means reuse --max-depth; -1 means causal-learn default unlimited.",
+    )
+    p.add_argument(
+        "--fci-max-path-length",
+        type=int,
+        default=-2,
+        help="Maximum discriminating-path length for FCI orientation. -2 means reuse --max-depth; -1 means causal-learn default unlimited.",
+    )
     p.add_argument("--dropna-rows", action="store_true", default=True)
     p.add_argument("--keep-na-rows", action="store_false", dest="dropna_rows")
     p.add_argument("--plot", action="store_true", default=True)
@@ -696,6 +1036,8 @@ def main() -> int:
     resolved_dagma_loss = "mixed_family"
     dagma_offsets = np.zeros((selected_df.shape[0], len(selected_cols)), dtype=float)
     dagma_nb2_dispersions = [np.nan] * len(selected_cols)
+    fci_possible_dsep_depth = args.max_depth if args.fci_possible_dsep_depth == -2 else args.fci_possible_dsep_depth
+    fci_max_path_length = args.max_depth if args.fci_max_path_length == -2 else args.fci_max_path_length
     if args.method == "dagma":
         selected_df, transformed_df, model_df, dagma_offsets, dagma_family = prepare_dagma_inputs(
             selected_df,
@@ -731,27 +1073,32 @@ def main() -> int:
     model_df = model_df.astype(float)
     background_knowledge, bg_rules = build_background_knowledge(selected_cols, args.background_mode)
     dagma_exclude_edges = build_dagma_exclude_edges(selected_cols, bg_rules) if args.method == "dagma" else []
+    resolved_indep_test, ci_kwargs = resolve_ci_test(args)
 
     if args.method == "pc":
         graph = run_pc_search(
             model_df.to_numpy(),
             alpha=args.alpha,
-            indep_test=args.indep_test,
+            indep_test=resolved_indep_test,
             stable=args.stable,
             show_progress=False,
             node_names=selected_cols,
             background_knowledge=background_knowledge,
             max_depth=args.max_depth,
+            **ci_kwargs,
         ).G
     elif args.method == "fci":
         graph, _ = run_fci_search(
             model_df.to_numpy(),
             alpha=args.alpha,
-            indep_test=args.indep_test,
+            indep_test=resolved_indep_test,
             show_progress=False,
             node_names=selected_cols,
             background_knowledge=background_knowledge,
             max_depth=args.max_depth,
+            possible_dsep_depth=fci_possible_dsep_depth,
+            max_path_length=fci_max_path_length,
+            **ci_kwargs,
         )
     elif args.method == "dagma":
         graph = None
@@ -772,7 +1119,13 @@ def main() -> int:
     out_dir = (
         resolve_path(repo_root, args.out_dir)
         if args.out_dir
-        else matrix_path.parent / default_out_dir_name(args)
+        else infer_default_graph_out_dir(
+            repo_root,
+            matrix_path,
+            args.method,
+            default_out_dir_name(args),
+            dagma_family_config=(args.dagma_family_config if args.method == "dagma" else None),
+        )
     )
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -827,6 +1180,7 @@ def main() -> int:
     bg_rules_df.to_csv(bg_rules_path, sep="\t", index=False)
 
     if args.plot:
+        plot_max_edges = None if args.plot_max_edges <= 0 else args.plot_max_edges
         plot_out_prefix = resolve_path(repo_root, args.plot_out_prefix) if args.plot_out_prefix else None
         plot_png_path, plot_svg_path = plot_saved_graph(
             repo_root=repo_root,
@@ -835,7 +1189,7 @@ def main() -> int:
             layout_seed=args.plot_layout_seed,
             title=args.plot_title,
             layout=args.plot_layout,
-            max_edges=args.plot_max_edges,
+            max_edges=plot_max_edges,
             peaks_per_row=args.plot_peaks_per_row,
         )
 
@@ -844,6 +1198,11 @@ def main() -> int:
             "matrix_tsv": str(matrix_path),
         },
         "params": vars(args),
+        "requested_indep_test": args.indep_test,
+        "resolved_indep_test": resolved_indep_test,
+        "ci_kwargs": ci_kwargs,
+        "resolved_fci_possible_dsep_depth": int(fci_possible_dsep_depth),
+        "resolved_fci_max_path_length": int(fci_max_path_length),
         "n_rows_before_dropna": n_rows_before_dropna,
         "n_rows_after_dropna": n_rows_after_dropna,
         "n_columns_requested": len(requested_cols),
@@ -879,6 +1238,8 @@ def main() -> int:
             "verbose": args.dagma_verbose,
             "n_excluded_edges": len(dagma_exclude_edges),
             "excluded_edges": dagma_exclude_edges,
+            "n_forbidden_edges_nonzero_before_clamp": int(getattr(dagma_model, "forbidden_edges_nonzero_before_clamp_", 0)),
+            "max_forbidden_abs_weight_before_clamp": float(getattr(dagma_model, "forbidden_edges_max_abs_weight_before_clamp_", 0.0)),
             "preprocessing": dagma_family,
             "model_fit": {
                 "h_final": float(getattr(dagma_model, "h_final", np.nan)),

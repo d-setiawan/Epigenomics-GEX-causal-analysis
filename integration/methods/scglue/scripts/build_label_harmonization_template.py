@@ -10,14 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str) -> Path:
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
+from _common import infer_repo_root, resolve_path
 
 
 def load_annotation(path: Path) -> pd.DataFrame:

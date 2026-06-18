@@ -4,11 +4,23 @@ Data/*/*_histone_fragments.tsv.gz
 Data/*/*_fragments.tsv
 Data/*/*_fragments.tsv.gz
 
+# Python runtime/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local graphify index and reports
+graphify-out/
+
 # Pipeline outputs (all histone modification folders)
 Data/*/outputs/
 
 # Downloaded GEX inputs (large local files)
 Data/GexData/
+
+# Downloaded external evidence databases
+Data/external/eperturbdb/*
+!Data/external/eperturbdb/.gitkeep
 
 # Sandbox analysis outputs
 sandbox_outputs/

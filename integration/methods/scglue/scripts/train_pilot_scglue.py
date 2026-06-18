@@ -9,118 +9,20 @@ Expected upstream artifacts:
 from __future__ import annotations
 
 import argparse
-import inspect
 import json
 from pathlib import Path
-from typing import Dict, Tuple
 
 import anndata as ad
-import networkx as nx
-import numpy as np
 import pandas as pd
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def load_graph(nodes_tsv: Path, edges_tsv: Path) -> nx.MultiDiGraph:
-    g = nx.MultiDiGraph()
-
-    if nodes_tsv.exists():
-        nodes = pd.read_csv(nodes_tsv, sep="\t")
-        if "node" not in nodes.columns:
-            raise ValueError(f"nodes file missing `node` column: {nodes_tsv}")
-        for row in nodes.itertuples(index=False):
-            attrs = {
-                "node_type": getattr(row, "node_type", ""),
-                "modality": getattr(row, "modality", ""),
-                "mark": getattr(row, "mark", ""),
-            }
-            g.add_node(str(getattr(row, "node")), **attrs)
-
-    if not edges_tsv.exists():
-        raise FileNotFoundError(f"guidance edges file not found: {edges_tsv}")
-
-    edges = pd.read_csv(edges_tsv, sep="\t")
-    required = {"source", "target", "weight", "sign"}
-    missing = required - set(edges.columns)
-    if missing:
-        raise ValueError(f"edges file missing columns: {sorted(missing)}")
-
-    n_skipped = 0
-    for row in edges.itertuples(index=False):
-        src = str(getattr(row, "source"))
-        tgt = str(getattr(row, "target"))
-        w = float(getattr(row, "weight"))
-        s = int(getattr(row, "sign"))
-
-        if not np.isfinite(w) or w <= 0:
-            n_skipped += 1
-            continue
-        if w > 1:
-            w = 1.0
-        if s not in (-1, 1):
-            s = 1 if s >= 0 else -1
-
-        attrs = {
-            "weight": float(w),
-            "sign": int(s),
-            "type": str(getattr(row, "type", "")),
-            "mark": str(getattr(row, "mark", "")),
-            "distance_bp": int(getattr(row, "distance_bp", 0)),
-        }
-        g.add_edge(src, tgt, **attrs)
-
-    if g.number_of_nodes() == 0:
-        raise RuntimeError("Loaded graph has zero nodes")
-    if g.number_of_edges() == 0:
-        raise RuntimeError("Loaded graph has zero edges")
-
-    if n_skipped:
-        print(f"[WARN] Skipped {n_skipped} invalid graph edges")
-
-    return g
-
-
-def subset_adata_to_graph(adata: ad.AnnData, graph_nodes: set[str]) -> Tuple[ad.AnnData, int]:
-    mask = adata.var_names.isin(graph_nodes)
-    dropped = int((~mask).sum())
-    return adata[:, mask].copy(), dropped
-
-
-def build_embedding_df(mat: np.ndarray, index: pd.Index, prefix: str) -> pd.DataFrame:
-    cols = [f"{prefix}_{i+1}" for i in range(mat.shape[1])]
-    return pd.DataFrame(mat, index=index, columns=cols)
-
-
-def patch_scglue_scheduler_verbose_compat() -> bool:
-    """
-    Patch scGLUE LR scheduler plugin for torch versions where
-    ReduceLROnPlateau no longer accepts `verbose`.
-    """
-    import torch
-    import scglue.models.plugins as plugins
-
-    sig = inspect.signature(torch.optim.lr_scheduler.ReduceLROnPlateau)
-    if "verbose" in sig.parameters:
-        return False
-
-    base_cls = torch.optim.lr_scheduler.ReduceLROnPlateau
-
-    class _CompatReduceLROnPlateau(base_cls):
-        def __init__(self, *args, verbose=None, **kwargs):
-            super().__init__(*args, **kwargs)
-
-    plugins.ReduceLROnPlateau = _CompatReduceLROnPlateau
-    return True
+from _common import (
+    build_embedding_df,
+    infer_repo_root,
+    load_graph,
+    patch_scglue_scheduler_verbose_compat,
+    resolve_path,
+    subset_adata_to_graph,
+)
 
 
 def main() -> int:

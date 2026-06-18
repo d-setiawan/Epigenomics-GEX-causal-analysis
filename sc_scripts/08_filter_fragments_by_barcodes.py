@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
 import argparse
-import csv
 import gzip
 from pathlib import Path
 
-
-def normalize_barcode(bc: str) -> str:
-    bc = bc.strip()
-    if "." in bc and bc.rsplit(".", 1)[-1].isdigit():
-        bc = bc.rsplit(".", 1)[0]
-    if "-" in bc and bc.rsplit("-", 1)[-1].isdigit():
-        bc = bc.rsplit("-", 1)[0]
-    return bc
+from _common import load_barcode_whitelist, normalize_barcode
 
 
 def parse_args():
@@ -22,24 +14,9 @@ def parse_args():
     return p.parse_args()
 
 
-def load_barcodes(path: Path):
-    keep = set()
-    with path.open("r", newline="") as f:
-        reader = csv.DictReader(f, delimiter="\t")
-        if "barcode" not in (reader.fieldnames or []):
-            raise ValueError(f"Missing 'barcode' column in {path}")
-        for row in reader:
-            bc = normalize_barcode(row["barcode"])
-            if bc:
-                keep.add(bc)
-    if not keep:
-        raise ValueError(f"No barcodes found in {path}")
-    return keep
-
-
 def main():
     args = parse_args()
-    keep = load_barcodes(Path(args.clean_barcodes_tsv))
+    keep = load_barcode_whitelist(Path(args.clean_barcodes_tsv))
 
     opener = gzip.open if args.fragments_tsv_gz.endswith(".gz") else open
     n_in = 0

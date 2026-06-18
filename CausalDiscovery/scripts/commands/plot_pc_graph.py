@@ -12,6 +12,8 @@ from pathlib import Path
 import networkx as nx
 import pandas as pd
 
+from _common import infer_repo_root, resolve_path
+
 
 PEAK_PATTERN = re.compile(r"^(?P<chrom>chr[^:]+):(?P<start>\d+)-(?P<end>\d+)__(?P<mark>.+)$")
 MARK_COLORS = {
@@ -30,17 +32,6 @@ def get_plt():
     except ImportError as exc:  # pragma: no cover - environment dependent
         raise ImportError("matplotlib is required to plot graph outputs.") from exc
     return plt
-
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
 
 
 def region_label(region: str) -> str:
@@ -140,10 +131,25 @@ def support_style(highlight_class: str) -> dict[str, str | float]:
             "linewidth": 3.2,
             "size_delta": 320.0,
         },
+        "encode_only": {
+            "edgecolor": "#8E5CF7",
+            "linewidth": 3.2,
+            "size_delta": 320.0,
+        },
         "encode_screen_only": {
             "edgecolor": "#8E5CF7",
             "linewidth": 3.2,
             "size_delta": 320.0,
+        },
+        "jaspar_only": {
+            "edgecolor": "#2A9D8F",
+            "linewidth": 3.2,
+            "size_delta": 320.0,
+        },
+        "multi_source": {
+            "edgecolor": "#D7263D",
+            "linewidth": 4.0,
+            "size_delta": 440.0,
         },
         "both": {
             "edgecolor": "#D7263D",
@@ -236,6 +242,38 @@ def select_edges_for_plot(
     return sorted(edge_rows, key=edge_score, reverse=True)[:max_edges]
 
 
+def incident_nodes(edge_rows: list[dict[str, object]]) -> set[str]:
+    nodes: set[str] = set()
+    for row in edge_rows:
+        nodes.add(str(row["node1"]))
+        nodes.add(str(row["node2"]))
+    return nodes
+
+
+def draw_empty_graph_message(plt, output_prefix: Path, title: str) -> tuple[Path, Path]:
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.set_axis_off()
+    ax.set_title(title, fontsize=13)
+    ax.text(
+        0.5,
+        0.5,
+        "No edges to plot",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=14,
+        color="#555555",
+    )
+    png_path = output_prefix.with_suffix(".png")
+    svg_path = output_prefix.with_suffix(".svg")
+    output_prefix.parent.mkdir(parents=True, exist_ok=True)
+    fig.tight_layout()
+    fig.savefig(png_path, dpi=200, bbox_inches="tight")
+    fig.savefig(svg_path, bbox_inches="tight")
+    plt.close(fig)
+    return png_path, svg_path
+
+
 def local_peak_sort_key(node: str, metadata_lookup: dict[str, dict[str, object]]) -> tuple[object, ...]:
     meta = metadata_lookup.get(node, {})
     chrom = meta.get("chrom")
@@ -302,8 +340,121 @@ def graph_support_lookup(support_df: pd.DataFrame) -> dict[str, dict[str, str]]:
         str(row["node_name"]): {
             "sources": str(row["sources"]),
             "highlight_class": str(row["highlight_class"]),
+            "support_labels": str(row.get("support_labels", "")),
         }
         for row in support_df.to_dict(orient="records")
+    }
+
+
+def load_edge_support(graph_dir: Path, edge_support_path: Path | None) -> pd.DataFrame:
+    candidate = edge_support_path or (graph_dir / "edge_support.tsv")
+    if not candidate.exists():
+        return pd.DataFrame(columns=["node1", "node2", "edge_text", "validated", "sources", "highlight_class"])
+    df = pd.read_csv(candidate, sep="\t")
+    required = {"node1", "node2", "validated", "sources", "highlight_class"}
+    missing = required.difference(df.columns)
+    if missing:
+        raise ValueError(f"Edge support TSV missing required columns {sorted(missing)}: {candidate}")
+    return df
+
+
+def edge_support_lookup(edge_support_df: pd.DataFrame) -> dict[tuple[str, str], dict[str, str]]:
+    lookup: dict[tuple[str, str], dict[str, str]] = {}
+    for row in edge_support_df.to_dict(orient="records"):
+        node1 = str(row["node1"])
+        node2 = str(row["node2"])
+        record = {
+            "validated": str(row.get("validated", "")),
+            "sources": str(row.get("sources", "")),
+            "highlight_class": str(row.get("highlight_class", "")),
+            "support_labels": str(row.get("support_labels", "")),
+        }
+        lookup[(node1, node2)] = record
+        lookup[(node2, node1)] = record
+    return lookup
+
+
+def sources_from_support_record(record: dict[str, str] | None) -> set[str]:
+    if not record:
+        return set()
+    return {source for source in str(record.get("sources", "")).split("|") if source and source.lower() != "nan"}
+
+
+def source_family(source: str) -> str:
+    source = source.lower()
+    if source.startswith("eperturb"):
+        return "eperturbdb"
+    if source.startswith("encode"):
+        return "encode"
+    if source.startswith("jaspar"):
+        return "jaspar"
+    return source
+
+
+def edge_support_record(
+    row: dict[str, object],
+    support_lookup: dict[str, dict[str, str]],
+    edge_lookup: dict[tuple[str, str], dict[str, str]],
+) -> dict[str, str]:
+    node1 = str(row["node1"])
+    node2 = str(row["node2"])
+    from_file = edge_lookup.get((node1, node2))
+    if from_file:
+        return from_file
+    sources = sources_from_support_record(support_lookup.get(node1)) | sources_from_support_record(support_lookup.get(node2))
+    return {
+        "validated": str(bool(sources)),
+        "sources": "|".join(sorted(sources)),
+        "highlight_class": support_highlight_class(sources),
+        "support_labels": "",
+    }
+
+
+def support_highlight_class(sources: set[str]) -> str:
+    families = {source_family(source) for source in sources}
+    if {"eperturbdb", "encode"}.issubset(families):
+        return "both"
+    if len(families) > 1:
+        return "multi_source"
+    if families == {"eperturbdb"}:
+        return "eperturbdb_only"
+    if families == {"encode"}:
+        return "encode_only"
+    if families == {"jaspar"}:
+        return "jaspar_only"
+    return "none"
+
+
+def edge_visual_style(
+    row: dict[str, object],
+    support_lookup: dict[str, dict[str, str]],
+    edge_lookup: dict[tuple[str, str], dict[str, str]],
+    *,
+    default_color: str,
+    default_alpha: float,
+) -> dict[str, object]:
+    support = edge_support_record(row, support_lookup, edge_lookup)
+    highlight_class = str(support.get("highlight_class", "none"))
+    colors = {
+        "eperturbdb_only": "#E67E22",
+        "encode_only": "#8E5CF7",
+        "encode_screen_only": "#8E5CF7",
+        "jaspar_only": "#2A9D8F",
+        "multi_source": "#D7263D",
+        "both": "#D7263D",
+    }
+    if highlight_class in colors:
+        return {
+            "color": colors[highlight_class],
+            "alpha": 0.96,
+            "width_boost": 1.4,
+            "validated": True,
+        }
+    return {
+        "color": "#B9B9B9",
+        "alpha": 0.38,
+        "width_boost": -0.6,
+        "validated": False,
     }
 
 
@@ -320,6 +471,7 @@ def plot_local_graph(
     nodes: list[str],
     edges_df: pd.DataFrame,
     support_lookup: dict[str, dict[str, str]],
+    edge_lookup: dict[tuple[str, str], dict[str, str]],
     metadata_df: pd.DataFrame,
     output_prefix: Path,
     title: str | None = None,
@@ -340,8 +492,11 @@ def plot_local_graph(
 
     edge_rows = edges_df.to_dict(orient="records")
     edge_rows = select_edges_for_plot(edge_rows, gene_node=gene_node, max_edges=max_edges, metadata_lookup=metadata_lookup)
+    plotted_nodes = incident_nodes(edge_rows)
+    if not plotted_nodes:
+        return draw_empty_graph_message(plt, output_prefix, title or f"{gene_name} {method.upper()} local graph")
 
-    peaks = [node for node in nodes if node != gene_node]
+    peaks = [node for node in nodes if node != gene_node and node in plotted_nodes]
     peaks.sort(key=lambda node: local_peak_sort_key(node, metadata_lookup))
 
     n_rows = max(1, math.ceil(max(len(peaks), 1) / max(peaks_per_row, 1)))
@@ -357,7 +512,8 @@ def plot_local_graph(
         y = 1.2 - 0.55 * row_idx
         for peak_name, x in zip(row_peaks, xs):
             positions[peak_name] = (float(x), float(y))
-    positions[gene_node] = (0.0, -0.65)
+    if gene_node in plotted_nodes:
+        positions[gene_node] = (0.0, -0.65)
 
     fig_height = max(4.8, 3.7 + 0.95 * n_rows)
     fig_width = max(8.0, min(16.0, peaks_per_row * 0.6))
@@ -372,6 +528,8 @@ def plot_local_graph(
         x0, y0 = positions[node1]
         x1, y1 = positions[node2]
         kind, orientation = edge_kind(str(row["endpoint1"]), str(row["endpoint2"]))
+        style = edge_visual_style(row, support_lookup, edge_lookup, default_color="#1f4e79", default_alpha=0.85)
+        width = max(0.8, edge_width(row) + float(style["width_boost"]))
 
         if kind == "directed" and orientation is not None:
             src = str(row[orientation[0]])
@@ -385,21 +543,38 @@ def plot_local_graph(
                 xytext=(x0, y0),
                 arrowprops=dict(
                     arrowstyle="->",
-                    color="#1f4e79",
-                    linewidth=edge_width(row),
+                    color=str(style["color"]),
+                    linewidth=width,
                     shrinkA=12,
                     shrinkB=12,
-                    alpha=0.85,
+                    alpha=float(style["alpha"]),
                     connectionstyle=connection,
                 ),
             )
             continue
 
         if kind == "undirected":
-            ax.plot([x0, x1], [y0, y1], color="#333333", linewidth=edge_width(row, base=1.8, scale=2.4), alpha=0.85, zorder=1)
+            style = edge_visual_style(row, support_lookup, edge_lookup, default_color="#333333", default_alpha=0.85)
+            ax.plot(
+                [x0, x1],
+                [y0, y1],
+                color=str(style["color"]),
+                linewidth=max(0.8, edge_width(row, base=1.8, scale=2.4) + float(style["width_boost"])),
+                alpha=float(style["alpha"]),
+                zorder=1,
+            )
             continue
 
-        ax.plot([x0, x1], [y0, y1], color="#888888", linewidth=edge_width(row, base=1.6, scale=2.0), alpha=0.85, linestyle="--", zorder=1)
+        style = edge_visual_style(row, support_lookup, edge_lookup, default_color="#888888", default_alpha=0.85)
+        ax.plot(
+            [x0, x1],
+            [y0, y1],
+            color=str(style["color"]),
+            linewidth=max(0.8, edge_width(row, base=1.6, scale=2.0) + float(style["width_boost"])),
+            alpha=float(style["alpha"]),
+            linestyle="--",
+            zorder=1,
+        )
         partial_labels[(node1, node2)] = f"{endpoint_symbol(str(row['endpoint1']))}{endpoint_symbol(str(row['endpoint2']))}"
 
     peak_x = [positions[name][0] for name in peaks]
@@ -418,18 +593,23 @@ def plot_local_graph(
             zorder=3,
         )
 
-    ax.scatter(
-        [positions[gene_node][0]],
-        [positions[gene_node][1]],
-        s=260,
-        color=local_node_color(gene_node),
-        edgecolor=local_outline_color(gene_node, metadata_lookup),
-        linewidth=1.4,
-        marker="s",
-        zorder=4,
-    )
+    if gene_node in plotted_nodes:
+        ax.scatter(
+            [positions[gene_node][0]],
+            [positions[gene_node][1]],
+            s=260,
+            color=local_node_color(gene_node),
+            edgecolor=local_outline_color(gene_node, metadata_lookup),
+            linewidth=1.4,
+            marker="s",
+            zorder=4,
+        )
 
-    highlighted = [node for node in nodes if support_lookup.get(node, {}).get("highlight_class") not in {"", "none", None}]
+    highlighted = [
+        node
+        for node in nodes
+        if node in plotted_nodes and support_lookup.get(node, {}).get("highlight_class") not in {"", "none", None}
+    ]
     for node in highlighted:
         style = support_style(str(support_lookup[node]["highlight_class"]))
         x, y = positions[node]
@@ -448,8 +628,9 @@ def plot_local_graph(
         x, y = positions[peak_name]
         ax.text(x, y + 0.085, local_node_label(peak_name, metadata_lookup), ha="center", va="bottom", fontsize=6.8)
 
-    gene_x, gene_y = positions[gene_node]
-    ax.text(gene_x, gene_y - 0.12, gene_name, ha="center", va="top", fontsize=10, fontweight="bold")
+    if gene_node in plotted_nodes:
+        gene_x, gene_y = positions[gene_node]
+        ax.text(gene_x, gene_y - 0.12, gene_name, ha="center", va="top", fontsize=10, fontweight="bold")
 
     for (node1, node2), label in partial_labels.items():
         x0, y0 = positions[node1]
@@ -467,6 +648,13 @@ def plot_local_graph(
             "blue arrow = directed",
             "black line = undirected",
             "gray dashed = partial/PAG",
+            "",
+            "Validation:",
+            "orange edge/node = ePerturbDB",
+            "purple edge/node = ENCODE",
+            "green edge/node = JASPAR motif",
+            "red edge/node = multiple source families",
+            "faint gray edge = no external support",
         ]
     )
     ax.text(
@@ -537,14 +725,21 @@ def plot_spring_graph(
     nodes: list[str],
     edges_df: pd.DataFrame,
     support_lookup: dict[str, dict[str, str]],
+    edge_lookup: dict[tuple[str, str], dict[str, str]],
     output_prefix: Path,
     title: str,
     layout_seed: int,
 ) -> tuple[Path, Path]:
     plt = get_plt()
+    edge_rows = edges_df.to_dict(orient="records")
+    plotted_nodes = incident_nodes(edge_rows)
+    if not plotted_nodes:
+        return draw_empty_graph_message(plt, output_prefix, title)
+    nodes = [node for node in nodes if node in plotted_nodes]
+
     graph_for_layout = nx.Graph()
     graph_for_layout.add_nodes_from(nodes)
-    for row in edges_df.to_dict(orient="records"):
+    for row in edge_rows:
         graph_for_layout.add_edge(row["node1"], row["node2"])
 
     pos = nx.spring_layout(graph_for_layout, seed=layout_seed)
@@ -557,35 +752,40 @@ def plot_spring_graph(
     partial_edges = []
     partial_labels = {}
 
-    for row in edges_df.to_dict(orient="records"):
+    for row in edge_rows:
         kind, orientation = edge_kind(str(row["endpoint1"]), str(row["endpoint2"]))
+        style = edge_visual_style(row, support_lookup, edge_lookup, default_color="#333333", default_alpha=0.85)
+        color = str(style["color"])
+        alpha = float(style["alpha"])
         if kind == "undirected":
-            undirected_edges.append((row["node1"], row["node2"], edge_width(row, base=2.2, scale=2.4)))
+            undirected_edges.append((row["node1"], row["node2"], edge_width(row, base=2.2, scale=2.4), color, alpha))
         elif kind == "directed" and orientation is not None:
             src_key, dst_key = orientation
-            directed_edges.append((row[src_key], row[dst_key], edge_width(row, base=2.4, scale=3.0)))
+            directed_edges.append((row[src_key], row[dst_key], edge_width(row, base=2.4, scale=3.0), color, alpha))
         else:
             edge = (row["node1"], row["node2"])
-            partial_edges.append(edge)
+            partial_edges.append((row["node1"], row["node2"], edge_width(row, base=1.6, scale=2.0), color, alpha))
             partial_labels[edge] = f"{endpoint_symbol(str(row['endpoint1']))}{endpoint_symbol(str(row['endpoint2']))}"
 
     if undirected_edges:
         nx.draw_networkx_edges(
             graph_for_layout,
             pos,
-            edgelist=[(u, v) for u, v, _ in undirected_edges],
+            edgelist=[(u, v) for u, v, _, _, _ in undirected_edges],
             ax=ax,
-            width=[width for _, _, width in undirected_edges],
-            edge_color="#333333",
+            width=[width for _, _, width, _, _ in undirected_edges],
+            edge_color=[color for _, _, _, color, _ in undirected_edges],
+            alpha=[alpha for _, _, _, _, alpha in undirected_edges],
         )
     if directed_edges:
         nx.draw_networkx_edges(
             graph_for_layout,
             pos,
-            edgelist=[(u, v) for u, v, _ in directed_edges],
+            edgelist=[(u, v) for u, v, _, _, _ in directed_edges],
             ax=ax,
-            width=[width for _, _, width in directed_edges],
-            edge_color="#1F4E79",
+            width=[width for _, _, width, _, _ in directed_edges],
+            edge_color=[color for _, _, _, color, _ in directed_edges],
+            alpha=[alpha for _, _, _, _, alpha in directed_edges],
             arrows=True,
             arrowstyle="-|>",
             arrowsize=22,
@@ -597,10 +797,11 @@ def plot_spring_graph(
         nx.draw_networkx_edges(
             graph_for_layout,
             pos,
-            edgelist=partial_edges,
+            edgelist=[(u, v) for u, v, _, _, _ in partial_edges],
             ax=ax,
-            width=2.0,
-            edge_color="#888888",
+            width=[width for _, _, width, _, _ in partial_edges],
+            edge_color=[color for _, _, _, color, _ in partial_edges],
+            alpha=[alpha for _, _, _, _, alpha in partial_edges],
             style="dashed",
         )
         nx.draw_networkx_edge_labels(
@@ -673,6 +874,7 @@ def plot_saved_graph(
     graph_dir: Path,
     out_prefix: Path | None = None,
     node_support_tsv: Path | None = None,
+    edge_support_tsv: Path | None = None,
     layout_seed: int = 13,
     title: str | None = None,
     layout: str = "auto",
@@ -684,6 +886,7 @@ def plot_saved_graph(
     nodes = load_selected_nodes(graph_dir)
     support_df = load_node_support(graph_dir, node_support_tsv)
     support_lookup = graph_support_lookup(support_df)
+    edge_lookup = edge_support_lookup(load_edge_support(graph_dir, edge_support_tsv))
     gene_name = infer_gene_name(nodes)
     metadata_df = load_nearby_peak_metadata(graph_dir, gene_name)
 
@@ -699,6 +902,7 @@ def plot_saved_graph(
             nodes=nodes,
             edges_df=edges_df,
             support_lookup=support_lookup,
+            edge_lookup=edge_lookup,
             metadata_df=metadata_df,
             output_prefix=output_prefix,
             title=title,
@@ -710,6 +914,7 @@ def plot_saved_graph(
         nodes=nodes,
         edges_df=edges_df,
         support_lookup=support_lookup,
+        edge_lookup=edge_lookup,
         output_prefix=output_prefix,
         title=title or graph_dir.name.replace("_", " "),
         layout_seed=layout_seed,
@@ -726,6 +931,11 @@ def main() -> int:
         default=None,
         help="Optional node-level support TSV. Default: <graph-dir>/node_support.tsv if it exists.",
     )
+    p.add_argument(
+        "--edge-support-tsv",
+        default=None,
+        help="Optional edge-level support TSV. Default: <graph-dir>/edge_support.tsv if it exists.",
+    )
     p.add_argument("--layout-seed", type=int, default=13)
     p.add_argument("--title", default=None)
     p.add_argument("--layout", default="auto", choices=["auto", "local", "spring"])
@@ -739,16 +949,19 @@ def main() -> int:
         raise FileNotFoundError(f"Missing graph directory: {args.graph_dir}")
 
     support_path = resolve_path(repo_root, args.node_support_tsv)
+    edge_support_path = resolve_path(repo_root, args.edge_support_tsv)
     out_prefix = resolve_path(repo_root, args.out_prefix)
+    max_edges = None if args.max_edges <= 0 else args.max_edges
     png_path, svg_path = plot_saved_graph(
         repo_root=repo_root,
         graph_dir=graph_dir,
         out_prefix=out_prefix,
         node_support_tsv=support_path,
+        edge_support_tsv=edge_support_path,
         layout_seed=args.layout_seed,
         title=args.title,
         layout=args.layout,
-        max_edges=args.max_edges,
+        max_edges=max_edges,
         peaks_per_row=args.peaks_per_row,
     )
 

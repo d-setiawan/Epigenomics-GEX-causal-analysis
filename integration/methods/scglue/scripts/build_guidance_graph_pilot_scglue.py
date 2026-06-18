@@ -23,6 +23,8 @@ import networkx as nx
 import numpy as np
 import pandas as pd
 
+from _common import infer_repo_root, load_manifest_row, resolve_path
+
 
 MARK_SIGN = {
     "H3K27ac": +1,
@@ -61,28 +63,11 @@ MARK_DEFAULT_ALPHA = {
 }
 
 
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str) -> Path:
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
 def parse_bin_name(name: str) -> Tuple[str, int, int]:
     # Expect: chr:start-end
     chrom, rest = name.split(":", 1)
     start_s, end_s = rest.split("-", 1)
     return chrom, int(start_s), int(end_s)
-
-
-def load_manifest_row(manifest_path: Path, mark: str) -> Dict[str, str]:
-    df = pd.read_csv(manifest_path, sep="\t")
-    hit = df.loc[df["mark"] == mark]
-    if hit.empty:
-        raise ValueError(f"Mark '{mark}' not found in manifest: {manifest_path}")
-    return hit.iloc[0].to_dict()
 
 
 def write_tsv(path: Path, fieldnames: List[str], rows: List[dict]) -> None:

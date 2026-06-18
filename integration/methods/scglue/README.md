@@ -1,39 +1,44 @@
 # scGLUE Method Track
 
-This folder contains scGLUE-specific Python implementations.
+This folder contains the scGLUE-specific Python implementations. The active integration run for the project is `joint_v2`.
 
-## Active joint workflow (recommended)
+## Role In The Project
 
-Joint scripts:
-1. `preprocess_joint_scglue.py`
-2. `build_guidance_graph_joint_scglue.py`
-3. `train_joint_scglue.py`
-4. `validate_joint_scglue.py`
-5. `export_causal_inputs_joint_scglue.py`
+scGLUE gives us a shared latent space across RNA and six single-cell CUT&Tag marks:
 
-Wrapper entrypoint:
-1. `integration/scripts/scglue/run_joint_pipeline.sh`
-2. Optional stage wrappers under `integration/scripts/scglue/`
+- `H3K27ac`
+- `H3K27me3`
+- `H3K4me1`
+- `H3K4me2`
+- `H3K4me3`
+- `H3K9me3`
 
-Expected joint output root:
-1. `integration/outputs/scglue/joint/<RUN_ID>/`
+The latent space is used for RNA-anchored one-to-one pseudo-pairing in `CausalDiscovery`. The graph matrices themselves are generated later from raw clean CUT&Tag bin signal over mark-specific CUT&Tag peaks.
 
-Stages:
-1. `preprocess/`: one RNA AnnData + one AnnData per mark (prefixed feature namespace).
-2. `graph/`: one combined guidance graph spanning RNA + all mark features.
-3. `train/`: one joint scGLUE model and shared latent embeddings for all modalities.
-4. `train/validation/`: clustering/UMAP diagnostics and mixing metrics.
-5. `train/causal_inputs/`: PC-ready per-target-gene tables.
+## Active Workflow
 
-Label harmonization utilities:
-1. `build_label_harmonization_template.py`: bootstraps `integration/manifests/rna_label_harmonization.tsv` from the RNA annotation tarball.
-2. `validate_joint_scglue.py --transfer-labels`: applies the harmonization TSV to RNA labels, then transfers harmonized labels to non-RNA modalities in GLUE space using RNA kNN.
+Python stages:
 
-Example:
+1. `scripts/preprocess_joint_scglue.py`
+2. `scripts/build_guidance_graph_joint_scglue.py`
+3. `scripts/train_joint_scglue.py`
+4. `scripts/validate_joint_scglue.py`
+5. `scripts/export_causal_inputs_joint_scglue.py`
+
+Shell wrappers from repo root:
+
+```bash
+bash integration/scripts/scglue/run_preprocess_joint.sh joint_v2
+bash integration/scripts/scglue/run_build_graph_joint.sh joint_v2 /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz
+bash integration/scripts/scglue/run_train_joint.sh joint_v2 --max-epochs 120 --compute-consistency
+bash integration/scripts/scglue/run_validate_joint.sh joint_v2 --cell-type-level harmonized_coarse --transfer-labels
+```
+
+The all-in-one wrapper is:
 
 ```bash
 bash integration/scripts/scglue/run_joint_pipeline.sh \
-  joint_v1 \
+  joint_v2 \
   /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
   --graph-arg --backend --graph-arg custom \
   --graph-arg --window-bp --graph-arg 50000 \
@@ -46,36 +51,73 @@ bash integration/scripts/scglue/run_joint_pipeline.sh \
   --train-arg --compute-consistency
 ```
 
-## Joint graph backends
+## Outputs
 
-`build_guidance_graph_joint_scglue.py` supports:
-1. `--backend custom` (default): streaming TSV writer, per-mark build, no in-memory global `networkx` graph.
-2. `--backend scglue`: uses `scglue.genomics.rna_anchored_prior_graph` directly (higher memory).
+Output root:
 
-`custom` backend is recommended for full multi-mark runs because it is more memory stable while still building a full RNA + chromatin guidance graph.
-
-Export causal inputs (example target genes):
-
-```bash
-bash integration/scripts/scglue/run_export_causal_inputs_joint.sh \
-  joint_v1 \
-  MYC,TP53,GATA1
+```text
+integration/outputs/scglue/joint/<RUN_ID>/
 ```
 
-Bootstrap and use label harmonization:
+Important stage outputs:
+
+- `preprocess/rna_preprocessed.h5ad`: RNA AnnData after scGLUE preprocessing.
+- `preprocess/chrom_<MARK>_preprocessed.h5ad`: one CUT&Tag AnnData per mark.
+- `preprocess/chrom_preprocessed_manifest.tsv`: manifest of processed chromatin AnnData files.
+- `graph/guidance_edges.tsv`: RNA-to-chromatin guidance edges.
+- `graph/guidance_nodes.tsv`: graph node metadata.
+- `train/scglue_joint_model.dill`: trained scGLUE model.
+- `train/all_cells_glue_embeddings.tsv`: shared latent cell embeddings.
+- `train/modality_outputs.tsv`: modality/cell metadata aligned to embeddings.
+- `train/feature_glue_embeddings.tsv`: feature embeddings.
+- `train/validation/validation_metrics.json`: quantitative integration diagnostics.
+- `train/validation/umap_by_modality.png`: UMAP colored by modality.
+- `train/validation/joint_harmonized_label_transfer.tsv`: optional transferred labels from RNA to chromatin cells.
+
+For `joint_v2`, the validation metrics currently support using scGLUE over the scMRDR comparison run for downstream pairing.
+
+## Guidance Graph Backends
+
+`build_guidance_graph_joint_scglue.py` supports:
+
+- `--backend custom`: recommended for full multi-mark runs; streams graph construction and avoids holding the full graph in memory.
+- `--backend scglue`: uses `scglue.genomics.rna_anchored_prior_graph` directly; useful as a reference but can be more memory intensive.
+
+The guidance graph uses genomic proximity between RNA genes and chromatin bins/features. It is an integration prior, not the same object as the causal-discovery graph.
+
+## Label Harmonization
+
+Build a label harmonization template:
 
 ```bash
 bash integration/scripts/scglue/run_build_label_harmonization_template.sh --force
+```
 
+Then validate with transferred labels:
+
+```bash
 NUMBA_CACHE_DIR=/tmp/numba_scglue_validation \
 bash integration/scripts/scglue/run_validate_joint.sh joint_v2 \
   --cell-type-level harmonized_coarse \
   --transfer-labels
 ```
 
-## Legacy pilot scripts
+The current CausalDiscovery workflow uses the harmonized coarse `monocyte` label for pseudo-pairing.
 
-Pilot scripts are still present for debugging/backward compatibility:
-1. `preprocess_pilot_scglue.py`
-2. `build_guidance_graph_pilot_scglue.py`
-3. `train_pilot_scglue.py`
+## Causal Export Note
+
+`export_causal_inputs_joint_scglue.py` is retained for older scGLUE-feature-based exports:
+
+```bash
+bash integration/scripts/scglue/run_export_causal_inputs_joint.sh joint_v2 CSF1R,CD14,IL1B
+```
+
+The active graph workflow no longer starts from this export. It starts from `CausalDiscovery/scripts/causal_cli.py match` and then generates nearby CUT&Tag peak datasets from the matched cells.
+
+## Legacy Pilot Scripts
+
+These are retained for debugging and backward compatibility:
+
+- `scripts/preprocess_pilot_scglue.py`
+- `scripts/build_guidance_graph_pilot_scglue.py`
+- `scripts/train_pilot_scglue.py`

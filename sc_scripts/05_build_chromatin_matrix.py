@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
 import argparse
-import csv
-import inspect
 from pathlib import Path
 
-def normalize_barcode(bc: str) -> str:
-    bc = bc.strip()
-    if "." in bc and bc.rsplit(".", 1)[-1].isdigit():
-        bc = bc.rsplit(".", 1)[0]
-    if "-" in bc and bc.rsplit("-", 1)[-1].isdigit():
-        bc = bc.rsplit("-", 1)[0]
-    return bc
+from _common import call_supported, import_with_whitelist, load_barcode_whitelist, load_chrom_sizes
 
 
 def parse_args():
@@ -30,83 +22,6 @@ def parse_args():
         help="Set if fragments file is already sorted by barcode for faster import",
     )
     return p.parse_args()
-
-
-def load_chrom_sizes(path: Path):
-    chrom_sizes = {}
-    with path.open("r") as f:
-        for line in f:
-            if not line.strip() or line.startswith("#"):
-                continue
-            parts = line.rstrip("\n").split("\t")
-            if len(parts) < 2:
-                continue
-            chrom = parts[0]
-            try:
-                size = int(parts[1])
-            except ValueError:
-                continue
-            if size > 0:
-                chrom_sizes[chrom] = size
-    if not chrom_sizes:
-        raise ValueError(f"No valid chromosome sizes found in {path}")
-    return chrom_sizes
-
-
-def load_whitelist(path: Path):
-    barcodes = set()
-    with path.open("r", newline="") as f:
-        reader = csv.DictReader(f, delimiter="\t")
-        if "barcode" not in (reader.fieldnames or []):
-            raise ValueError(f"Missing 'barcode' column in {path}")
-        for row in reader:
-            bc = row["barcode"].strip()
-            if bc:
-                # Keep original and common suffix variants to match fragments format.
-                barcodes.add(bc)
-                norm = normalize_barcode(bc)
-                if norm:
-                    barcodes.add(norm)
-                    barcodes.add(f"{norm}-1")
-                    barcodes.add(f"{norm}.1")
-    if not barcodes:
-        raise ValueError(f"No barcodes found in {path}")
-    return sorted(barcodes)
-
-
-def call_supported(func, **kwargs):
-    sig = inspect.signature(func)
-    supported = {k: v for k, v in kwargs.items() if k in sig.parameters}
-    return func(**supported)
-
-
-def import_with_whitelist(snap, fragments, chrom_sizes, whitelist, sorted_by_barcode):
-    if hasattr(snap.pp, "import_fragments"):
-        fn = snap.pp.import_fragments
-        return call_supported(
-            fn,
-            fragment_file=fragments,
-            chrom_sizes=chrom_sizes,
-            chrom_size=chrom_sizes,
-            whitelist=whitelist,
-            min_num_fragments=1,
-            sorted_by_barcode=sorted_by_barcode,
-        )
-
-    if hasattr(snap.pp, "import_data"):
-        fn = snap.pp.import_data
-        return call_supported(
-            fn,
-            fragment_file=fragments,
-            chrom_sizes=chrom_sizes,
-            chrom_size=chrom_sizes,
-            whitelist=whitelist,
-            min_num_fragments=1,
-            sorted_by_barcode=sorted_by_barcode,
-            low_memory=True,
-        )
-
-    raise RuntimeError("SnapATAC2 import function not found. Expected pp.import_fragments or pp.import_data.")
 
 
 def export_matrix_market(adata, out_prefix: Path):
@@ -151,7 +66,7 @@ def main():
         ) from e
 
     chrom_sizes = load_chrom_sizes(Path(args.chrom_sizes_tsv))
-    whitelist = load_whitelist(Path(args.clean_barcodes_tsv))
+    whitelist = sorted(load_barcode_whitelist(Path(args.clean_barcodes_tsv), include_suffix_variants=True))
 
     adata = import_with_whitelist(
         snap=snap,

@@ -3,14 +3,7 @@ import argparse
 import csv
 from pathlib import Path
 
-
-def normalize_barcode(bc: str) -> str:
-    bc = bc.strip()
-    if "." in bc and bc.rsplit(".", 1)[-1].isdigit():
-        bc = bc.rsplit(".", 1)[0]
-    if "-" in bc and bc.rsplit("-", 1)[-1].isdigit():
-        bc = bc.rsplit("-", 1)[0]
-    return bc
+from _common import normalize_barcode
 
 
 def read_fragment_counts(path: Path):

@@ -4,13 +4,13 @@
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pandas as pd
 
+from _common import json_dump
 from export_locus_matrix_scglue_matches import (
     infer_repo_root,
     load_rna_counts,
@@ -248,20 +248,52 @@ def annotate_peak_stats(matrix_df: pd.DataFrame, peak_columns: list[str]) -> pd.
     return pd.DataFrame(rows)
 
 
-def json_dump(path: Path, payload: dict[str, Any]) -> None:
-    def _default(obj: Any) -> Any:
-        if isinstance(obj, (np.integer, np.floating)):
-            return obj.item()
-        if isinstance(obj, Path):
-            return str(obj)
-        raise TypeError(f"Object of type {type(obj).__name__} is not JSON serializable")
+def weighted_average_neighbor_values(
+    raw_value_df: pd.DataFrame,
+    raw_library_df: pd.DataFrame,
+    mark_assignments: pd.DataFrame,
+    region_cols: list[str],
+    mark: str,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Average per-cell quantified peak values over kNN chromatin neighbors."""
 
-    path.write_text(json.dumps(payload, indent=2, default=_default) + "\n")
+    required = {"sample_id", "matched_cell", "weight"}
+    missing = required - set(mark_assignments.columns)
+    if missing:
+        raise ValueError(f"Neighbor assignments for {mark} missing columns: {sorted(missing)}")
+
+    assign = mark_assignments[["sample_id", "matched_cell", "weight"]].copy()
+    assign["sample_id"] = assign["sample_id"].astype(str)
+    assign["matched_cell"] = assign["matched_cell"].astype(str)
+    assign["weight"] = assign["weight"].astype(float)
+
+    if not region_cols:
+        empty_values = assign[["sample_id"]].drop_duplicates().reset_index(drop=True)
+    else:
+        empty_values = None
+
+    per_cell = raw_value_df.rename(columns={"barcode": "matched_cell"}).copy()
+    per_cell["matched_cell"] = per_cell["matched_cell"].astype(str)
+    if empty_values is None:
+        merged = assign.merge(per_cell[["matched_cell", *region_cols]], on="matched_cell", how="left")
+        for col in region_cols:
+            merged[col] = merged[col].astype(float) * merged["weight"]
+        averaged_values = merged.groupby("sample_id", as_index=False)[region_cols].sum(min_count=1)
+    else:
+        averaged_values = empty_values
+
+    library = raw_library_df.rename(columns={"barcode": "matched_cell", "library_size": f"libsize__{mark}"}).copy()
+    library["matched_cell"] = library["matched_cell"].astype(str)
+    library_merged = assign.merge(library[["matched_cell", f"libsize__{mark}"]], on="matched_cell", how="left")
+    library_merged[f"libsize__{mark}"] = library_merged[f"libsize__{mark}"].astype(float) * library_merged["weight"]
+    averaged_library = library_merged.groupby("sample_id", as_index=False)[[f"libsize__{mark}"]].sum(min_count=1)
+    return averaged_values, averaged_library
 
 
 def export_gene_datasets(
     repo_root: Path,
     matched: pd.DataFrame,
+    neighbor_assignments: pd.DataFrame | None,
     gene_row: pd.Series,
     expr_log1p_values: pd.Series,
     expr_raw_values: pd.Series,
@@ -312,8 +344,17 @@ def export_gene_datasets(
     for manifest_row in manifest.to_dict(orient="records"):
         mark = str(manifest_row["mark"])
         sample_cell_col = f"cell_{mark}"
+        mark_neighbor_assignments = None
         if sample_cell_col not in base_df.columns:
-            raise ValueError(f"Matched samples file missing column: {sample_cell_col}")
+            if neighbor_assignments is None:
+                raise ValueError(f"Matched samples file missing column: {sample_cell_col}")
+            mark_neighbor_assignments = neighbor_assignments.loc[
+                neighbor_assignments["target_mark"].astype(str) == mark
+            ].copy()
+            if mark_neighbor_assignments.empty:
+                raise ValueError(
+                    f"Matched samples file lacks {sample_cell_col}, and neighbor_assignments.tsv has no rows for {mark}"
+                )
 
         peaks_bed = resolve_path(repo_root, str(manifest_row["peaks_bed"]))
         feature_path = resolve_path(repo_root, str(manifest_row["bin_features"]))
@@ -336,20 +377,42 @@ def export_gene_datasets(
             matrix_path=matrix_path,
             barcode_path=barcode_path,
             feature_path=feature_path,
-            selected_barcodes=base_df[sample_cell_col].astype(str).tolist(),
+            selected_barcodes=(
+                base_df[sample_cell_col].astype(str).tolist()
+                if mark_neighbor_assignments is None
+                else mark_neighbor_assignments["matched_cell"].astype(str).drop_duplicates().tolist()
+            ),
             regions=nearby_regions[["region_name", "region_type", "chrom", "start", "end"]].copy(),
             target_sum=target_sum,
             quant_mode=quant_mode,
         )
-        per_cell_df = raw_value_df.rename(columns={"barcode": sample_cell_col})
-        raw_library_df = raw_library_df.rename(columns={"barcode": sample_cell_col, "library_size": f"libsize__{mark}"})
-        base_df = base_df.merge(raw_library_df, on=sample_cell_col, how="left")
-        nearby_matrix = nearby_matrix.merge(raw_library_df, on=sample_cell_col, how="left")
-
         nearby_cols = nearby_regions["region_name"].astype(str).tolist()
+
+        if mark_neighbor_assignments is None:
+            per_cell_df = raw_value_df.rename(columns={"barcode": sample_cell_col})
+            mark_library_df = raw_library_df.rename(
+                columns={"barcode": sample_cell_col, "library_size": f"libsize__{mark}"}
+            )
+            base_df = base_df.merge(mark_library_df, on=sample_cell_col, how="left")
+            nearby_matrix = nearby_matrix.merge(mark_library_df, on=sample_cell_col, how="left")
+        else:
+            per_cell_df, mark_library_df = weighted_average_neighbor_values(
+                raw_value_df=raw_value_df,
+                raw_library_df=raw_library_df,
+                mark_assignments=mark_neighbor_assignments,
+                region_cols=nearby_cols,
+                mark=mark,
+            )
+            base_df = base_df.merge(mark_library_df, on="sample_id", how="left")
+            nearby_matrix = nearby_matrix.merge(mark_library_df, on="sample_id", how="left")
+
         if nearby_cols:
-            nearby_values_df = per_cell_df[[sample_cell_col] + nearby_cols].copy()
-            nearby_matrix = nearby_matrix.merge(nearby_values_df, on=sample_cell_col, how="left")
+            if mark_neighbor_assignments is None:
+                nearby_values_df = per_cell_df[[sample_cell_col] + nearby_cols].copy()
+                nearby_matrix = nearby_matrix.merge(nearby_values_df, on=sample_cell_col, how="left")
+            else:
+                nearby_values_df = per_cell_df[["sample_id"] + nearby_cols].copy()
+                nearby_matrix = nearby_matrix.merge(nearby_values_df, on="sample_id", how="left")
             nearby_col_order.extend(nearby_cols)
 
         region_meta_by_name = {
@@ -437,9 +500,13 @@ def export_gene_datasets(
         "window_start": int(tss - window_bp),
         "window_end": int(tss + window_bp),
         "quant_mode": quant_mode,
+        "matrix_construction_strategy": (
+            "rna_anchor_neighbor_average" if neighbor_assignments is not None else "one_to_one_pseudo_pair"
+        ),
         "rna_columns": [expr_log1p_col, expr_raw_col],
         "library_size_columns": ["libsize__rna", *[f"libsize__{mark}" for mark in manifest["mark"].astype(str).tolist()]],
         "n_samples": int(nearby_matrix["sample_id"].nunique()),
+        "neighbor_assignment_rows": int(neighbor_assignments.shape[0]) if neighbor_assignments is not None else 0,
         "n_nearby_peak_variables": int(len(nearby_col_order)),
         "n_curated_regions_for_evaluation": int(curated_regions.shape[0]),
         "n_nearby_peaks_overlapping_curated_regions": int(
@@ -514,6 +581,11 @@ def main() -> int:
     out_root.mkdir(parents=True, exist_ok=True)
 
     matched = pd.read_csv(matched_path, sep="\t")
+    neighbor_assignments_path = matching_dir / "neighbor_assignments.tsv"
+    neighbor_assignments = pd.read_csv(neighbor_assignments_path, sep="\t") if neighbor_assignments_path.exists() else None
+    matrix_construction_strategy = (
+        "rna_anchor_neighbor_average" if neighbor_assignments is not None else "one_to_one_pseudo_pair"
+    )
     manifest = pd.read_csv(manifest_path, sep="\t")
     marks = [m.strip() for m in args.marks.split(",") if m.strip()]
     manifest = manifest.loc[manifest["mark"].astype(str).isin(marks)].copy()
@@ -540,6 +612,7 @@ def main() -> int:
             export_gene_datasets(
                 repo_root=repo_root,
                 matched=matched,
+                neighbor_assignments=neighbor_assignments,
                 gene_row=pd.Series(gene_row),
                 expr_log1p_values=expr_log1p_cache[gene],
                 expr_raw_values=expr_raw_cache[gene],
@@ -560,6 +633,8 @@ def main() -> int:
         "marks": marks,
         "target_sum": float(args.target_sum),
         "quant_mode": args.quant_mode,
+        "matrix_construction_strategy": matrix_construction_strategy,
+        "neighbor_assignments_tsv": str(neighbor_assignments_path) if neighbor_assignments is not None else None,
         "genes": panel_summary_rows,
     }
     json_dump(out_root / "panel_summary.json", panel_summary)

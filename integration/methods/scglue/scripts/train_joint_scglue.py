@@ -4,107 +4,23 @@
 from __future__ import annotations
 
 import argparse
-import csv
-import inspect
 import json
 from pathlib import Path
-from typing import Dict, Tuple
+from typing import Dict
 
 import anndata as ad
-import networkx as nx
-import numpy as np
 import pandas as pd
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def load_graph(nodes_tsv: Path, edges_tsv: Path) -> nx.MultiDiGraph:
-    g = nx.MultiDiGraph()
-    if nodes_tsv.exists():
-        nodes = pd.read_csv(nodes_tsv, sep="\t")
-        for row in nodes.itertuples(index=False):
-            g.add_node(
-                str(getattr(row, "node")),
-                node_type=str(getattr(row, "node_type", "")),
-                modality=str(getattr(row, "modality", "")),
-                mark=str(getattr(row, "mark", "")),
-            )
-    edges = pd.read_csv(edges_tsv, sep="\t")
-    for row in edges.itertuples(index=False):
-        w = float(getattr(row, "weight"))
-        if not np.isfinite(w) or w <= 0:
-            continue
-        s = int(getattr(row, "sign"))
-        s = 1 if s >= 0 else -1
-        g.add_edge(
-            str(getattr(row, "source")),
-            str(getattr(row, "target")),
-            weight=min(w, 1.0),
-            sign=s,
-            type=str(getattr(row, "type", "")),
-            mark=str(getattr(row, "mark", "")),
-            distance_bp=int(getattr(row, "distance_bp", 0)),
-        )
-    if g.number_of_nodes() == 0 or g.number_of_edges() == 0:
-        raise RuntimeError(f"Invalid graph loaded from {nodes_tsv} / {edges_tsv}")
-    return g
-
-
-def subset_adata_to_graph(adata: ad.AnnData, graph_nodes: set[str]) -> Tuple[ad.AnnData, int]:
-    mask = adata.var_names.isin(graph_nodes)
-    dropped = int((~mask).sum())
-    return adata[:, mask].copy(), dropped
-
-
-def drop_nonfinite_obs_by_rep(adata: ad.AnnData, rep_key: str) -> Tuple[ad.AnnData, int]:
-    rep = adata.obsm.get(rep_key)
-    if rep is None:
-        return adata, 0
-    keep = np.isfinite(rep).all(axis=1)
-    dropped = int((~keep).sum())
-    if dropped:
-        adata = adata[keep].copy()
-    return adata, dropped
-
-
-def build_embedding_df(mat: np.ndarray, index: pd.Index, prefix: str) -> pd.DataFrame:
-    cols = [f"{prefix}_{i+1}" for i in range(mat.shape[1])]
-    return pd.DataFrame(mat, index=index, columns=cols)
-
-
-def write_tsv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
-        w.writeheader()
-        w.writerows(rows)
-
-
-def patch_scglue_scheduler_verbose_compat() -> bool:
-    import torch
-    import scglue.models.plugins as plugins
-
-    sig = inspect.signature(torch.optim.lr_scheduler.ReduceLROnPlateau)
-    if "verbose" in sig.parameters:
-        return False
-
-    base_cls = torch.optim.lr_scheduler.ReduceLROnPlateau
-
-    class _CompatReduceLROnPlateau(base_cls):
-        def __init__(self, *args, verbose=None, **kwargs):
-            super().__init__(*args, **kwargs)
-
-    plugins.ReduceLROnPlateau = _CompatReduceLROnPlateau
-    return True
+from _common import (
+    build_embedding_df,
+    drop_nonfinite_obs_by_rep,
+    infer_repo_root,
+    load_graph,
+    patch_scglue_scheduler_verbose_compat,
+    resolve_path,
+    subset_adata_to_graph,
+    write_tsv,
+)
 
 
 def main() -> int:

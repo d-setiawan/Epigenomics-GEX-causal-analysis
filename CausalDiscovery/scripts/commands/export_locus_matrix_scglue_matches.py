@@ -4,8 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import json
-import re
 from pathlib import Path
 from typing import Iterable
 
@@ -15,20 +13,7 @@ import pandas as pd
 from scipy import io as spio
 from scipy import sparse
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def sanitize_token(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "_", value.strip().lower()).strip("_") or "value"
+from _common import infer_repo_root, resolve_path, sanitize_token
 
 
 def parse_feature_interval(feature: str) -> tuple[str, int, int]:
@@ -55,6 +40,13 @@ def read_csr_group(group: h5py.Group, shape: tuple[int, int]) -> sparse.csr_matr
     indices = group["indices"][()]
     indptr = group["indptr"][()]
     return sparse.csr_matrix((data, indices, indptr), shape=shape)
+
+
+def read_single_column_tsv(path: Path, header_name: str | None = None) -> list[str]:
+    values = pd.read_csv(path, sep="\t", header=None).iloc[:, 0].astype(str).tolist()
+    if header_name is not None and values and values[0] == header_name:
+        return values[1:]
+    return values
 
 
 def mean_log1p_norm_for_features(
@@ -138,9 +130,10 @@ def stream_raw_region_aggregates(
 ) -> tuple[pd.DataFrame, list[dict], int, pd.DataFrame]:
     """Stream a raw Matrix Market file and aggregate only curated regions for selected cells."""
 
-    barcode_series = pd.read_csv(barcode_path, sep="\t", header=None).iloc[:, 0].astype(str)
-    barcode_to_row = {barcode: idx + 1 for idx, barcode in enumerate(barcode_series.tolist())}
+    barcodes = read_single_column_tsv(barcode_path, header_name="barcode")
+    barcode_to_row = {barcode: idx + 1 for idx, barcode in enumerate(barcodes)}
     kept_barcodes = [bc for bc in selected_barcodes if bc in barcode_to_row]
+    kept_row_indices = np.array([barcode_to_row[bc] for bc in kept_barcodes], dtype=int)
     selected_rows = {barcode_to_row[bc] for bc in kept_barcodes}
 
     region_defs = []
@@ -157,22 +150,19 @@ def stream_raw_region_aggregates(
 
     col_to_regions: dict[int, list[str]] = {}
     region_feature_lists: dict[str, list[str]] = {reg["region_name"]: [] for reg in region_defs}
-    with feature_path.open("r") as f:
-        header = next(f, None)
-        for col_idx, line in enumerate(f, start=1):
-            feat = line.strip().split("\t", 1)[0]
-            if not feat:
-                continue
-            chrom, start, end = parse_feature_interval(feat)
-            overlap_regions = [
-                reg["region_name"]
-                for reg in region_defs
-                if chrom == reg["chrom"] and overlaps(start, end, reg["start"], reg["end"])
-            ]
-            if overlap_regions:
-                col_to_regions[col_idx] = overlap_regions
-                for reg_name in overlap_regions:
-                    region_feature_lists[reg_name].append(feat)
+    for col_idx, feat in enumerate(read_single_column_tsv(feature_path, header_name="feature"), start=1):
+        if not feat:
+            continue
+        chrom, start, end = parse_feature_interval(feat)
+        overlap_regions = [
+            reg["region_name"]
+            for reg in region_defs
+            if chrom == reg["chrom"] and overlaps(start, end, reg["start"], reg["end"])
+        ]
+        if overlap_regions:
+            col_to_regions[col_idx] = overlap_regions
+            for reg_name in overlap_regions:
+                region_feature_lists[reg_name].append(feat)
 
     row_sum_map = {row_idx: 0.0 for row_idx in selected_rows}
     region_sum_maps: dict[str, dict[int, float]] = {
@@ -208,13 +198,13 @@ def stream_raw_region_aggregates(
             for reg_name in region_names:
                 region_sum_maps[reg_name][row_idx] += value
 
-    value_df = pd.DataFrame({"barcode": kept_barcodes})
-    row_sums = np.array([row_sum_map[barcode_to_row[bc]] for bc in kept_barcodes], dtype=float)
+    value_columns: dict[str, np.ndarray | list[str]] = {"barcode": kept_barcodes}
+    row_sums = np.array([row_sum_map[row_idx] for row_idx in kept_row_indices], dtype=float)
     row_sums[row_sums <= 0] = 1.0
     for reg in region_defs:
         reg_name = reg["region_name"]
         n_bins = len(region_feature_lists[reg_name])
-        region_vals = np.array([region_sum_maps[reg_name][barcode_to_row[bc]] for bc in kept_barcodes], dtype=float)
+        region_vals = np.array([region_sum_maps[reg_name][row_idx] for row_idx in kept_row_indices], dtype=float)
         if n_bins == 0:
             score = np.full_like(region_vals, np.nan, dtype=float)
         elif quant_mode == "raw_counts":
@@ -223,7 +213,8 @@ def stream_raw_region_aggregates(
             score = np.log1p((region_vals / float(n_bins)) * (target_sum / row_sums))
         else:
             raise ValueError(f"Unsupported quant_mode: {quant_mode}")
-        value_df[reg_name] = score
+        value_columns[reg_name] = score
+    value_df = pd.DataFrame(value_columns)
 
     region_bin_rows = []
     for reg in region_defs:
@@ -241,10 +232,10 @@ def stream_raw_region_aggregates(
     library_size_df = pd.DataFrame(
         {
             "barcode": kept_barcodes,
-            "library_size": np.array([row_sum_map[barcode_to_row[bc]] for bc in kept_barcodes], dtype=float),
+            "library_size": np.array([row_sum_map[row_idx] for row_idx in kept_row_indices], dtype=float),
         }
     )
-    return value_df, region_bin_rows, len(barcode_series), library_size_df
+    return value_df, region_bin_rows, len(barcodes), library_size_df
 
 
 def main() -> int:

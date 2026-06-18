@@ -1,446 +1,243 @@
-# Epigenomics-GEX-causal-analysis
+# Epigenomics-GEX Causal Analysis
 
-## scCUT&Tag QC + clean-matrix pipeline
+This repository connects single-cell gene expression with single-cell CUT&Tag histone-mark data for monocyte-focused causal graph discovery.
 
-This repository provides a preprocessing pipeline to:
-1. Demultiplex pooled cells using HTO.
-2. Filter cells by ADT/HTO depth and scCUT&Tag fragment depth.
-3. Build clean barcode whitelist + clean metadata.
-4. Build a clean cell-by-chromatin sparse matrix for downstream integration and causal analysis.
+The current active workflow is:
 
-## End-to-end command
+$$
+\text{CUT\&Tag preprocessing}
+\rightarrow
+\text{scGLUE joint integration}
+\rightarrow
+\text{monocyte pseudo-pairing}
+\rightarrow
+\text{nearby peak causal graph discovery}
+$$
+
+The project has three main areas:
+
+- [sc_scripts](sc_scripts): raw CUT&Tag preprocessing, QC, peak calling, and matrix generation.
+- [integration](integration): cross-modality integration, with `scGLUE joint_v2` as the active downstream base.
+- [CausalDiscovery](CausalDiscovery): monocyte pseudo-pairing, nearby CUT&Tag peak matrix generation, and graph discovery with `PC`, `FCI`, and repo-local mixed-family `DAGMA`.
+
+## Current Status
+
+The active integration is `scGLUE joint_v2`. It is preferred over the current `scMRDR_gaussian` comparison run because it has better modality mixing and keeps a region-aware representation that fits the causal-discovery workflow.
+
+The active graph-discovery setup uses:
+
+- cell type: `monocyte`
+- genes: `CSF1R`, `CD14`, `IL1B`
+- pairing: RNA-anchored one-to-one pseudo-pairs in `scGLUE` latent space
+- candidate regions: all mark-specific CUT&Tag peaks within $300{,}000$ bp of the TSS
+- graph inputs: nearby peak matrices in both `log1p_norm` and `raw_counts` forms
+- graph methods: `PC + KCI`, `FCI + KCI`, and mixed-family `DAGMA`
+
+The current biological-support layer cross-references saved graph edges against
+external regulatory evidence before plotting:
+
+- local ePerturbDB downloads in `Data/external/eperturbdb`
+- ENCODE Portal PBMC/monocyte GRCh38 peak files
+- ENCODE SCREEN cCRE annotations
+- JASPAR motif support using UCSC hg38 sequence lookup
+
+Validated edges are highlighted in the final SVG/PNG graph plots. Unvalidated
+edges are kept but drawn faintly, so graph discovery remains exploratory while
+external evidence is interpreted as a post-hoc support layer.
+
+## Preprocessing
+
+The raw CUT&Tag preprocessing scripts live in [sc_scripts](sc_scripts).
+
+The staged pipeline is:
+
+1. Demultiplex ADT/HTO counts with [01_demux_adt_hto.R](sc_scripts/01_demux_adt_hto.R).
+2. Count fragments per barcode with [02_count_fragments.py](sc_scripts/02_count_fragments.py).
+3. Build clean cell metadata and clean barcode whitelists with [03_build_clean_cell_metadata.py](sc_scripts/03_build_clean_cell_metadata.py).
+4. Filter fragments and call mark-specific peaks with MACS3 using [run_cuttag_stage2_call_peaks.sh](sc_scripts/run_cuttag_stage2_call_peaks.sh).
+5. Build peak matrices with [05_build_chromatin_matrix.py](sc_scripts/05_build_chromatin_matrix.py).
+6. Build fixed-bin matrices with [07_build_fixed_bin_matrix.py](sc_scripts/07_build_fixed_bin_matrix.py).
+
+Important outputs per histone mark are:
+
+- `*_clean_cells.tsv`: QC-passed cell metadata.
+- `*_clean_barcodes.tsv`: barcode whitelist used downstream.
+- `*_peaks.bed`: mark-specific MACS3 CUT&Tag peak intervals.
+- `*_chromatin_clean.mtx`: cell-by-peak count matrix.
+- `*_bin_chromatin_clean.mtx`: cell-by-fixed-bin count matrix.
+- `*_bins.bed`: fixed-bin genomic intervals.
+
+The active integration manifest is [integration/manifests/scglue_input_manifest.tsv](integration/manifests/scglue_input_manifest.tsv). It points to the fixed-bin matrices, clean-cell metadata, bins BED files, and peaks BED files for:
+
+- `H3K27ac`
+- `H3K27me3`
+- `H3K4me1`
+- `H3K4me2`
+- `H3K4me3`
+- `H3K9me3`
+
+## Integration
+
+Integration code lives in [integration](integration).
+
+The two method tracks are:
+
+- [integration/methods/scglue](integration/methods/scglue): active recommended track.
+- [integration/methods/jianle](integration/methods/jianle): scMRDR-inspired comparison track.
+
+The active run is:
+
+- [integration/outputs/scglue/joint/joint_v2](integration/outputs/scglue/joint/joint_v2)
+
+`joint_v2` writes shared latent embeddings for RNA and all histone-mark modalities. These embeddings are used for pseudo-pairing, not as the final source of local chromatin values.
+
+The comparison run is:
+
+- [integration/outputs/jianle/joint/scMRDR_gaussian](integration/outputs/jianle/joint/scMRDR_gaussian)
+
+Current validation favors `scGLUE joint_v2` over `scMRDR_gaussian` for this project:
+
+- `scGLUE joint_v2` mean same-modality neighbor fraction: about `0.255`
+- `scMRDR_gaussian` mean same-modality neighbor fraction: about `0.569`
+- `scGLUE joint_v2` modality silhouette is closer to $0$
+
+## Graph Discovery
+
+Causal graph discovery lives in [CausalDiscovery](CausalDiscovery).
+
+Use the single CLI entrypoint:
 
 ```bash
-./scripts/run_cuttag_qc_pipeline.sh \
-  <adt.tsv> <hto.tsv> <fragments.tsv.gz> <peaks.bed> <chrom.sizes> \
-  <out_dir> <sample_prefix> \
-  <min_adt> <min_hto> <min_cuttag_fragments>
+python3 CausalDiscovery/scripts/causal_cli.py --help
 ```
 
-Example:
+The active graph workflow is:
 
-```bash
-./scripts/run_cuttag_qc_pipeline.sh \
-  Data/H3K4me1/H3K4me1_rep1_ADT_counts.tsv \
-  Data/H3K4me1/H3K4me1_rep1_HTO_counts.tsv \
-  /path/to/fragments.tsv.gz \
-  /path/to/peaks.bed \
-  /path/to/chrom.sizes \
-  Data/H3K4me1/outputs H3K4me1_rep1 10 10 100
+1. Use `scGLUE joint_v2` latent space.
+2. Restrict to monocytes.
+3. Build RNA-anchored one-to-one pseudo-pairs or RNA-anchor $k$-nearest-neighbor averaged chromatin profiles.
+4. Generate nearby peak matrices for `CSF1R`, `CD14`, and `IL1B`.
+5. Optionally apply structural peak filtering, currently $p_\mathrm{nonzero} > 0.01$.
+6. Run `PC`, `FCI`, or `DAGMA`.
+7. Build external support tables from ePerturbDB, ENCODE, and/or JASPAR.
+8. Re-render graph plots with externally validated edges highlighted.
+
+Active pairing root:
+
+- [CausalDiscovery/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor](CausalDiscovery/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor)
+
+Active dataset roots:
+
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb): `log1p_norm`
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts): `raw_counts`
+
+Alternative RNA-anchor neighbor-averaged roots:
+
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10): `log1p_norm`
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10_rawcounts](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10_rawcounts): `raw_counts`
+
+Current broad-window RNA-anchor averaged roots:
+
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10): `log1p_norm`
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_rawcounts](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_rawcounts): `raw_counts`
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_nz001](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_nz001): `log1p_norm`, filtered to $p_\mathrm{nonzero} > 0.01$
+- [CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_rawcounts_nz001](CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_rawcounts_nz001): `raw_counts`, filtered to $p_\mathrm{nonzero} > 0.01$
+
+The older `300kb` one-to-one and `300kb` RNA-anchor averaged roots contain the smaller nearby peak sets:
+
+- `CSF1R`: $19$ nearby peak variables
+- `CD14`: $43$ nearby peak variables
+- `IL1B`: $24$ nearby peak variables
+
+The current 1 Mb RNA-anchor averaged roots contain broader candidate sets before filtering:
+
+- `CSF1R`: $69$ peaks, filtered to $60$
+- `CD14`: $113$ peaks, filtered to $99$
+- `IL1B`: $82$ peaks, filtered to $74$
+
+Graph outputs live under:
+
+```text
+CausalDiscovery/outputs/methods/<method>/<dataset>/<gene>/<result-run>
 ```
 
-Note:
-- `Rscript` and Seurat are required for step 1 (`01_demux_adt_hto.R`).
-- `snapatac2` is required for steps 5 and 7.
+For `DAGMA`, the output tree includes one extra family layer:
 
-## End-to-end command (peaks + fixed bins)
-
-Use this when you want both feature spaces from one run:
-
-```bash
-./scripts/run_cuttag_qc_dual_features.sh \
-  <adt.tsv> <hto.tsv> <fragments.tsv.gz> <peaks.bed> <chrom.sizes> \
-  <out_dir> <sample_prefix> \
-  <min_adt> <min_hto> <min_cuttag_fragments> [bin_size]
+```text
+CausalDiscovery/outputs/methods/dagma/<dataset>/<family-config>/<gene>/<result-run>
 ```
 
-Example:
+Each externally supported graph directory can contain:
 
-```bash
-./scripts/run_cuttag_qc_dual_features.sh \
-  Data/H3K4me1/H3K4me1_rep1_ADT_counts.tsv \
-  Data/H3K4me1/H3K4me1_rep1_HTO_counts.tsv \
-  /path/to/fragments.tsv.gz \
-  /path/to/peaks.bed \
-  /path/to/chrom.sizes \
-  Data/H3K4me1/outputs H3K4me1_rep1 10 10 100 5000
-```
+- `node_support.tsv`: node-level external evidence summary.
+- `node_support_matches.tsv`: record-level evidence matches.
+- `edge_support.tsv`: edge-level validation result and highlight class.
+- `support_report.md`: source counts, match counts, and interpretation notes.
 
-## Chunked execution
+Peak-to-expression edge validation is target-gene-aware: the peak must overlap
+an external interval record whose target gene matches the expression endpoint.
+Interval-only sources such as ENCODE peak files or JASPAR motifs support peak
+nodes and peak-peak edges, but they do not by themselves validate a peak-to-gene
+edge.
 
-Use these stage scripts if you want to stop after clean-cell QC, call peaks separately, then run downstream matrices.
+## Common Commands
 
-### Stage 1: Pre-peak QC and clean-cell selection
-
-```bash
-./scripts/run_cuttag_stage1_prepeak.sh \
-  <adt.tsv> <hto.tsv> <fragments.tsv.gz> \
-  <out_dir> <sample_prefix> \
-  <min_adt> <min_hto> [min_cuttag_fragments]
-```
-
-This gives `*_clean_barcodes.tsv` and `*_clean_cells.tsv`.
-
-### Stage 2: Peak calling from clean fragments (MACS3)
-
-```bash
-./scripts/run_cuttag_stage2_call_peaks.sh \
-  <fragments.tsv.gz> <clean_barcodes.tsv> \
-  <out_dir> <sample_prefix> <genome_size> [macs_q]
-```
-
-This filters fragments to clean barcodes, runs `macs3 callpeak`, and writes `*_peaks.bed`.
-
-### Stage 3: Downstream matrix generation (SnapATAC2)
-
-```bash
-./scripts/run_cuttag_stage3_downstream.sh \
-  <fragments.tsv.gz> <peaks.bed> <chrom.sizes> \
-  <clean_barcodes.tsv> <out_prefix> [bin_size]
-```
-
-This creates both peak-based and fixed-bin chromatin matrices.
-
-## Script-by-script description
-
-### `scripts/run_cuttag_qc_pipeline.sh`
-Orchestrates all steps in order:
-1. `01_demux_adt_hto.R`
-2. `02_count_fragments.py`
-3. `03_build_clean_cell_metadata.py`
-4. `04_filter_matrix_by_barcodes.py` (ADT)
-5. `04_filter_matrix_by_barcodes.py` (HTO)
-6. `05_build_chromatin_matrix.py`
-
-### `scripts/run_cuttag_qc_dual_features.sh`
-Orchestrates:
-1. Entire `run_cuttag_qc_pipeline.sh` (QC + peak matrix).
-2. `07_build_fixed_bin_matrix.py` (fixed-bin matrix from the same clean cells).
-
-### `scripts/run_cuttag_stage1_prepeak.sh`
-Purpose:
-- Runs QC/demux/filtering only (steps 1-4).
-- Produces clean barcodes and clean-cell metadata before peak calling.
-
-### `scripts/run_cuttag_stage2_call_peaks.sh`
-Purpose:
-- Filters fragments to clean barcodes.
-- Calls peaks with MACS3.
-- Produces pipeline-ready `*_peaks.bed`.
-
-### `scripts/run_cuttag_stage3_downstream.sh`
-Purpose:
-- Runs SnapATAC2 matrix generation from known clean barcodes + known peaks.
-- Produces both peak and bin matrices.
-
-### `scripts/01_demux_adt_hto.R`
-Purpose:
-- Reads ADT and HTO count matrices.
-- Harmonizes barcode suffixes (`-1`, `.1`) and intersects barcodes.
-- Applies minimum per-cell count thresholds (`min_adt`, `min_hto`).
-- Runs HTO CLR normalization + `HTODemux` in Seurat.
-
-Main outputs:
-- `*_hto_adt_metadata.tsv`
-- `*_singlet_barcodes.tsv`
-
-### `scripts/02_count_fragments.py`
-Purpose:
-- Reads `fragments.tsv` or `fragments.tsv.gz`.
-- Counts fragment lines per barcode.
-
-Main output:
-- `*_fragment_counts.tsv`
-
-### `scripts/03_build_clean_cell_metadata.py`
-Purpose:
-- Merges HTO/ADT metadata with fragment counts.
-- Keeps only cells that pass final clean-cell criteria:
-- `hto_classification == "Singlet"`
-- `donor_id` present (unless `--allow-missing-donor`)
-- `n_cuttag_fragments >= --min-fragments`
-
-Main outputs:
-- `*_clean_cells.tsv`
-- `*_clean_barcodes.tsv`
-
-### `scripts/04_filter_matrix_by_barcodes.py`
-Purpose:
-- Subsets any feature-by-cell TSV matrix to a clean barcode whitelist.
-- Used in pipeline for ADT and HTO filtered matrices.
-
-Main outputs:
-- `*_adt_clean_matrix.tsv`
-- `*_hto_clean_matrix.tsv`
-
-### `scripts/05_build_chromatin_matrix.py`
-Purpose:
-- Imports fragments in SnapATAC2 using clean barcode whitelist and chromosome sizes.
-- Builds cell-by-peak matrix via SnapATAC2 `make_peak_matrix`.
-- Exports the result to MatrixMarket + barcode/feature TSV files.
-
-Main outputs:
-- `*_chromatin_clean.mtx`
-- `*_chromatin_clean_barcodes.tsv`
-- `*_chromatin_clean_features.tsv`
-
-### `scripts/06_generate_toy_cuttag_data.py`
-Purpose:
-- Generates a small synthetic dataset for testing pipeline logic.
-- Also writes mock `toy_hto_adt_metadata.tsv` so downstream steps can be tested without R/Seurat.
-
-### `scripts/07_build_fixed_bin_matrix.py`
-Purpose:
-- Imports fragments in SnapATAC2 using clean barcode whitelist and chromosome sizes.
-- Builds fixed-bin (tile) matrix via SnapATAC2 `add_tile_matrix`.
-- Supports `--bin-size` (default `5000`).
-
-Main outputs:
-- `*_bin_chromatin_clean.mtx`
-- `*_bin_chromatin_clean_barcodes.tsv`
-- `*_bin_chromatin_clean_features.tsv`
-- `*_bins.bed`
-
-### `scripts/08_filter_fragments_by_barcodes.py`
-Purpose:
-- Filters `fragments.tsv(.gz)` to a clean barcode whitelist.
-- Used by stage 2 before MACS3 peak calling.
-
-Main output:
-- filtered fragments TSV (typically then gzipped and used by MACS3).
-
-## Output files: rows, columns, and meaning
-
-Below, `<prefix>` means `<out_dir>/<sample_prefix>`.
-
-### `<prefix>_hto_adt_metadata.tsv`
-Row meaning:
-- One row per cell barcode after ADT/HTO intersection + minimum count filters.
-
-Columns:
-- `barcode`: normalized cell barcode ID.
-- `adt_total`: total ADT counts for that cell.
-- `hto_total`: total HTO counts for that cell.
-- `hto_classification`: Seurat HTO call (`Singlet`, `Doublet`, `Negative`).
-- `donor_id`: top HTO identity (`HTO_maxID`).
-- `second_id`: second-best HTO identity (`HTO_secondID`).
-- `hto_margin`: confidence margin between top and second HTO.
-- `doublet_flag`: `True/False` for `Doublet`.
-- `negative_flag`: `True/False` for `Negative`.
-- `singlet_flag`: `True/False` for `Singlet`.
-
-### `<prefix>_singlet_barcodes.tsv`
-Row meaning:
-- One row per HTO-singlet barcode from step 1.
-
-Columns:
-- `barcode`: singlet barcode.
-
-### `<prefix>_fragment_counts.tsv`
-Row meaning:
-- One row per barcode observed in fragments file.
-
-Columns:
-- `barcode`: cell barcode from fragments.
-- `n_cuttag_fragments`: number of fragment records for that barcode.
-
-### `<prefix>_clean_cells.tsv`
-Row meaning:
-- One row per final clean cell passing all filters.
-
-Columns:
-- Includes all columns from `*_hto_adt_metadata.tsv`.
-- Adds `n_cuttag_fragments` from fragment counting.
-
-This is the main cell-level metadata table for downstream analysis.
-
-### `<prefix>_clean_barcodes.tsv`
-Row meaning:
-- One row per final clean barcode.
-
-Columns:
-- `barcode`: final whitelist used to subset matrices.
-
-### `<prefix>_adt_clean_matrix.tsv`
-Row meaning:
-- One row per ADT feature (antibody tag).
-
-Column meaning:
-- Column 1: feature name.
-- Columns 2..N: clean cell barcodes.
-- Each value: ADT count for feature x cell.
-
-Matrix orientation:
-- `features x cells`
-
-### `<prefix>_hto_clean_matrix.tsv`
-Row meaning:
-- One row per HTO feature.
-
-Column meaning:
-- Column 1: HTO feature name.
-- Columns 2..N: clean cell barcodes.
-- Each value: HTO count for feature x cell.
-
-Matrix orientation:
-- `features x cells`
-
-### `<prefix>_chromatin_clean.mtx`
-Format:
-- MatrixMarket sparse coordinate format.
-
-Matrix orientation:
-- `cells x chromatin_features`
-
-Row meaning:
-- Row index = cell (barcode mapping in `*_chromatin_clean_barcodes.tsv`).
-
-Column meaning:
-- Column index = chromatin feature/peak (mapping in `*_chromatin_clean_features.tsv`).
-
-Entry meaning:
-- Value at `(cell_i, feature_j)` = SnapATAC2 peak-count matrix entry for cell `i` and peak `j`.
-
-### `<prefix>_chromatin_clean_barcodes.tsv`
-Row meaning:
-- One row per matrix row in `*_chromatin_clean.mtx` (same order).
-
-Columns:
-- `barcode`: clean cell barcode.
-
-### `<prefix>_chromatin_clean_features.tsv`
-Row meaning:
-- One row per matrix column in `*_chromatin_clean.mtx` (same order).
-
-Columns:
-- `feature`: peak name from BED column 4, or fallback `chr:start-end`.
-
-### `<prefix>_bin_chromatin_clean.mtx`
-Format:
-- MatrixMarket sparse coordinate format.
-
-Matrix orientation:
-- `cells x fixed_bins`
-
-Row meaning:
-- Row index = cell (barcode mapping in `*_bin_chromatin_clean_barcodes.tsv`).
-
-Column meaning:
-- Column index = fixed genomic bin (mapping in `*_bin_chromatin_clean_features.tsv`).
-
-Entry meaning:
-- Value at `(cell_i, bin_j)` = SnapATAC2 tile-count matrix entry for cell `i` and bin `j`.
-
-### `<prefix>_bin_chromatin_clean_barcodes.tsv`
-Row meaning:
-- One row per matrix row in `*_bin_chromatin_clean.mtx` (same order).
-
-Columns:
-- `barcode`: clean cell barcode.
-
-### `<prefix>_bin_chromatin_clean_features.tsv`
-Row meaning:
-- One row per matrix column in `*_bin_chromatin_clean.mtx` (same order).
-
-Columns:
-- `feature`: fixed-bin name formatted as `chr:start-end`.
-
-### `<prefix>_bins.bed`
-Row meaning:
-- One row per fixed genomic bin used to build the bin matrix.
-
-Columns:
-- `chrom`: chromosome.
-- `start`: 0-based bin start.
-- `end`: bin end (exclusive).
-- `name`: bin ID (`chr:start-end`).
-
-## Recommended downstream usage
-
-For integration and causal graph discovery, use:
-1. `*_chromatin_clean.mtx` + `*_chromatin_clean_barcodes.tsv` + `*_chromatin_clean_features.tsv` as the primary epigenomic matrix.
-2. `*_clean_cells.tsv` as cell-level covariates (donor/sample/QC).
-3. Optional `*_adt_clean_matrix.tsv` as additional modality/covariates.
-
-If you generate both peak and bin matrices, recommended default:
-1. Integration:
-- Start with `*_bin_chromatin_clean.mtx` for robust cross-sample alignment (consistent feature space).
-2. Causal graph discovery:
-- Start with `*_chromatin_clean.mtx` (peaks) for better biological interpretability and reduced dimensionality.
-3. Practical strategy:
-- Run integration on bins, then transfer cluster/cell-state labels and run causal analysis on peaks within states.
-
-## Integration module (scGLUE + Jianle)
-
-The repository now includes a dedicated integration module:
-
-- `integration/methods/scglue/` for scGLUE runs.
-- `integration/methods/jianle/` for Jianle-method runs.
-- `integration/scripts/` for shared setup and environment checks.
-
-Build/update the local integration workspace and manifests:
+Set up integration workspace:
 
 ```bash
 python3 integration/scripts/setup_integration_workspace.py
 ```
 
-Check scGLUE environment:
+Build monocyte pseudo-pairs:
 
 ```bash
-bash integration/scripts/check_scglue_env.sh
+python3 CausalDiscovery/scripts/causal_cli.py match --run-id joint_v2
 ```
 
-Shared input manifest for both methods:
-
-- `integration/manifests/scglue_input_manifest.tsv`
-
-Generated runtime directories are gitignored:
-
-- `integration/workspace/`
-- `integration/outputs/`
-- `integration/logs/`
-
-## Toy test (small dataset)
-
-Generate a tiny synthetic dataset:
+Generate $300$ kb nearby peak matrices:
 
 ```bash
-python3 ./scripts/06_generate_toy_cuttag_data.py ./sandbox_outputs/toy_validation/toy_data
+python3 CausalDiscovery/scripts/causal_cli.py dataset \
+  --run-id joint_v2 \
+  --window-bp 300000
 ```
 
-Run the full pipeline on toy data (requires `Rscript` + Seurat):
+Generate raw-count matrices:
 
 ```bash
-./scripts/run_cuttag_qc_pipeline.sh \
-  ./sandbox_outputs/toy_validation/toy_data/toy_ADT_counts.tsv \
-  ./sandbox_outputs/toy_validation/toy_data/toy_HTO_counts.tsv \
-  ./sandbox_outputs/toy_validation/toy_data/toy_fragments.tsv.gz \
-  ./sandbox_outputs/toy_validation/toy_data/toy_peaks.bed \
-  ./sandbox_outputs/toy_validation/toy_data/toy_chrom.sizes \
-  ./sandbox_outputs/toy_validation/toy_out toy 10 10 100
+python3 CausalDiscovery/scripts/causal_cli.py dataset \
+  --run-id joint_v2 \
+  --window-bp 300000 \
+  --quant-mode raw_counts \
+  --out-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts
 ```
 
-Test downstream steps without R/Seurat (using mock metadata):
+Run a `PC + KCI` sweep:
 
 ```bash
-python3 ./scripts/02_count_fragments.py \
-  ./sandbox_outputs/toy_validation/toy_data/toy_fragments.tsv.gz \
-  ./sandbox_outputs/toy_validation/toy_out_fragment_counts.tsv
-
-python3 ./scripts/03_build_clean_cell_metadata.py \
-  ./sandbox_outputs/toy_validation/toy_data/toy_hto_adt_metadata.tsv \
-  ./sandbox_outputs/toy_validation/toy_out_fragment_counts.tsv \
-  ./sandbox_outputs/toy_validation/toy_out/toy --min-fragments 100
-
-python3 ./scripts/04_filter_matrix_by_barcodes.py \
-  ./sandbox_outputs/toy_validation/toy_data/toy_ADT_counts.tsv \
-  ./sandbox_outputs/toy_validation/toy_out/toy_clean_barcodes.tsv \
-  ./sandbox_outputs/toy_validation/toy_out/toy_adt_clean_matrix.tsv
-
-python3 ./scripts/05_build_chromatin_matrix.py \
-  ./sandbox_outputs/toy_validation/toy_data/toy_fragments.tsv.gz \
-  ./sandbox_outputs/toy_validation/toy_data/toy_peaks.bed \
-  ./sandbox_outputs/toy_validation/toy_data/toy_chrom.sizes \
-  ./sandbox_outputs/toy_validation/toy_out/toy_clean_barcodes.tsv \
-  ./sandbox_outputs/toy_validation/toy_out/toy
+python3 CausalDiscovery/scripts/causal_cli.py sweep \
+  --dataset-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb \
+  --methods pc \
+  --depths 1,2 \
+  --alpha 0.1
 ```
 
-To test fixed-bin matrix on toy data, run step 7:
+Run Gaussian-family DAGMA sweeps:
 
 ```bash
-python3 ./scripts/07_build_fixed_bin_matrix.py \
-  ./sandbox_outputs/toy_validation/toy_data/toy_fragments.tsv.gz \
-  ./sandbox_outputs/toy_validation/toy_data/toy_chrom.sizes \
-  ./sandbox_outputs/toy_validation/toy_out/toy_clean_barcodes.tsv \
-  ./sandbox_outputs/toy_validation/toy_out/toy --bin-size 1000
+bash CausalDiscovery/scripts/run_dagma_log1p_gaussian.sh
 ```
+
+Run raw-count DAGMA sweeps:
+
+```bash
+bash CausalDiscovery/scripts/run_dagma_rawcounts_family_presets.sh
+```
+
+## Notes
+
+The older curated locus-matrix workflow is preserved under `CausalDiscovery/outputs/locus_matrices_matched` and `CausalDiscovery/scripts/legacy`, but the active discovery workflow now uses nearby CUT&Tag peaks with curated literature regions kept as evaluation annotations.
+
+The next candidate-reduction layer is elastic-net stability screening on the `log1p_norm` nearby-peak matrices. This should be treated as association-based screening before causal discovery, not as causal evidence by itself, because the selected peak set depends on the same data used downstream for graph learning.
+
+The main evaluation framing is in [CausalDiscovery/evaluation.md](CausalDiscovery/evaluation.md).

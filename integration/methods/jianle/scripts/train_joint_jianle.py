@@ -11,7 +11,6 @@ Objective (paper-aligned terms):
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import math
 import random
@@ -26,6 +25,8 @@ import scipy.sparse as sp
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+from _common import build_embedding_df, infer_repo_root, resolve_path, write_tsv
 
 
 @dataclass
@@ -42,30 +43,6 @@ class ModalityData:
     n_obs: int
     n_vars: int
     dropped_zero_count_rows: int
-
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def write_tsv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
-        w.writeheader()
-        w.writerows(rows)
-
-
-def build_embedding_df(mat: np.ndarray, index: pd.Index, prefix: str) -> pd.DataFrame:
-    cols = [f"{prefix}_{i+1}" for i in range(mat.shape[1])]
-    return pd.DataFrame(mat, index=index, columns=cols)
 
 
 def set_seed(seed: int) -> None:

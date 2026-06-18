@@ -8,6 +8,7 @@ PYTHON_BIN="${PYTHON_BIN:-/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python}"
 CLI="${CLI:-${SCRIPT_DIR}/causal_cli.py}"
 DATASET_ROOT="${DATASET_ROOT:-${CAUSAL_DIR}/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rawcounts}"
 GENE_PANEL="${GENE_PANEL:-${CAUSAL_DIR}/configs/gene_panels/monocyte_cuttag_peak_genes.tsv}"
+FAMILY_CONFIGS="${FAMILY_CONFIGS:-bernoulli_peak_nb_gene,nb_nb}"
 
 LAMBDA1_VALUES="${LAMBDA1_VALUES:-0.03,0.01,0.003}"
 W_THRESHOLD_VALUES="${W_THRESHOLD_VALUES:-0.3,0.1,0.05}"
@@ -19,12 +20,13 @@ PEAK_BINARY_THRESHOLD="${PEAK_BINARY_THRESHOLD:-0.0}"
 export MPLCONFIGDIR="${MPLCONFIGDIR:-/tmp/matplotlib}"
 
 # Keep transform at 'none' here because the Bernoulli peak preset binarizes
-# the peak columns itself and rejects additional transforms.
+# the peak columns itself and rejects additional transforms. This raw-count
+# helper is for family configs that require raw CUT&Tag peak counts.
 "${PYTHON_BIN}" "${CLI}" \
   dagma-sweep \
   --dataset-root "${DATASET_ROOT}" \
   --gene-panel "${GENE_PANEL}" \
-  --family-configs bernoulli_peak_nb_gene,gaussian_nb,nb_nb \
+  --family-configs "${FAMILY_CONFIGS}" \
   --dagma-loss-type l2 \
   --lambda1-values "${LAMBDA1_VALUES}" \
   --w-threshold-values "${W_THRESHOLD_VALUES}" \

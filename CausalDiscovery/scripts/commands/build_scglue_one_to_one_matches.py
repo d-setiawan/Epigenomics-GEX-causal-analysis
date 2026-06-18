@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 from pathlib import Path
 from typing import Any
 
@@ -15,23 +14,7 @@ from scipy.optimize import linear_sum_assignment
 from scipy.spatial.distance import cdist
 from sklearn.neighbors import NearestNeighbors
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
-
-
-def resolve_path(repo_root: Path, path_str: str | None) -> Path | None:
-    if path_str is None:
-        return None
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def sanitize_token(value: str) -> str:
-    value = value.strip().lower()
-    value = re.sub(r"[^a-z0-9]+", "_", value)
-    value = value.strip("_")
-    return value or "value"
+from _common import infer_repo_root, resolve_path, sanitize_token
 
 
 def build_obs_id(df: pd.DataFrame) -> pd.Series:

@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict
 
 import anndata as ad
 import numpy as np
@@ -19,58 +19,14 @@ import scanpy as sc
 from scipy import io as spio
 from sklearn.decomposition import TruncatedSVD
 
-
-def infer_repo_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def resolve_path(repo_root: Path, path_str: str) -> Path:
-    p = Path(path_str)
-    return p if p.is_absolute() else (repo_root / p)
-
-
-def strip_10x_suffix(barcodes: pd.Series) -> pd.Series:
-    return barcodes.astype(str).str.replace(r"-\d+$", "", regex=True)
-
-
-def pick_rna_h5(repo_root: Path, rna_h5: Optional[str]) -> Path:
-    if rna_h5:
-        p = resolve_path(repo_root, rna_h5)
-        if not p.exists():
-            raise FileNotFoundError(f"RNA h5 not found: {p}")
-        return p
-
-    candidates = [
-        repo_root / "integration/workspace/data/rna/gex_feature_cell_matrix.h5",
-        repo_root / "Data/GexData/GEX_feature_cell_matrix_HDF5.h5",
-    ]
-    for c in candidates:
-        if c.exists():
-            return c
-
-    gex_dir = repo_root / "Data/GexData"
-    for ext in ("*.h5", "*.hdf5"):
-        found = sorted(gex_dir.glob(ext))
-        if found:
-            return found[0]
-    raise FileNotFoundError("Could not find RNA h5 input. Provide --rna-h5 explicitly.")
-
-
-def load_manifest_row(manifest_path: Path, mark: str) -> Dict[str, str]:
-    df = pd.read_csv(manifest_path, sep="\t")
-    if "mark" not in df.columns:
-        raise ValueError(f"Manifest missing 'mark' column: {manifest_path}")
-    hit = df.loc[df["mark"] == mark]
-    if hit.empty:
-        raise ValueError(f"Mark '{mark}' not found in manifest: {manifest_path}")
-    return hit.iloc[0].to_dict()
-
-
-def read_named_column(path: Path, preferred_col: str) -> pd.Series:
-    df = pd.read_csv(path, sep="\t")
-    if preferred_col in df.columns:
-        return df[preferred_col].astype(str)
-    return df.iloc[:, 0].astype(str)
+from _common import (
+    infer_repo_root,
+    load_manifest_row,
+    pick_rna_h5,
+    read_named_column,
+    resolve_path,
+    strip_10x_suffix,
+)
 
 
 def pick_rna_sample_barcodes(repo_root: Path) -> Path | None:
