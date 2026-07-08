@@ -152,6 +152,43 @@ Common focused usage scans one or a few motifs:
 Unfocused scans are bounded by `--max-jaspar-motifs`, `--jaspar-min-score`, and
 `--jaspar-max-peak-bp` to avoid slow broad sequence scans.
 
+### ENCODE-rE2G Monocyte Gene Links (target-gene-aware, cell-type-aligned)
+
+Purpose: the one source that can **validate peak-to-gene edges** for our monocyte panel.
+Unlike ENCODE peaks / SCREEN / JASPAR (interval/motif-only) and ePerturbDB (no monocyte
+coverage), ENCODE-rE2G predictions are native GRCh38, CD14-positive-monocyte-specific, and
+carry an explicit `TargetGene` per regulatory element.
+
+Build the support table (fetches all CD14+ monocyte donor datasets from ENCODE, merges the
+`thresholded element gene links`, and writes the support-template TSV):
+
+```bash
+python3 CausalDiscovery/scripts/build_re2g_gene_link_support.py \
+  --biosample-term "CD14-positive monocyte" \
+  --out-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
+```
+
+Then feed it to the support layer as a target-gene-aware source (the template `gene` column
+enables exact matching to expression nodes):
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir <graph_dir> \
+  --eperturbdb-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
+```
+
+A peak node overlapping an rE2G element whose `TargetGene` matches the expression node
+validates that peak-to-gene edge. Worked example (CD14 300 kb graph): the stable
+`chr5:140638835-140639790__H3K4me3 -> expr__CD14` edge stays **unvalidated** because rE2G
+links that interval (which overlaps the TMCO6 TSS) to **TMCO6**, not CD14 — i.e. the source
+correctly flags a likely neighbor-promoter artifact. The true CD14 promoter element is
+`chr5:140633141-140633951` (rE2G score 0.9999).
+
+Note: the tool currently routes through the `--eperturbdb-tsv` template path, so matches are
+labeled `eperturbdb` in the output tables (the `support_label` `rE2G_*`, `biosample`, and
+`notes` fields keep the real provenance). Promoting rE2G to a first-class `re2g` source name
+and plot color is the recommended follow-up.
+
 ## Presets
 
 The CLI provides support presets for common source bundles:

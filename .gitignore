@@ -22,6 +22,9 @@ Data/GexData/
 Data/external/eperturbdb/*
 !Data/external/eperturbdb/.gitkeep
 
+# Downloaded ENCODE-rE2G monocyte gene-link tables (regenerate with build_re2g_gene_link_support.py)
+Data/external/re2g/
+
 # Sandbox analysis outputs
 sandbox_outputs/
 

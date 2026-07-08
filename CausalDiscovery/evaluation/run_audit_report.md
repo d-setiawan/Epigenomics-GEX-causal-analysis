@@ -91,9 +91,13 @@ CSF1R/CD14/IL1B. So the stable CD14 promoter-H3K4me3 → expression edge is curr
 
 **Options to make peak→gene validation possible (pick before over-investing in regeneration):**
 
-1. Add a cell-type-aware, target-gene-aware source that actually covers monocytes — e.g.
-   **ENCODE cCRE–gene links / EPIREgulon / ABC-model enhancer–gene predictions for monocytes**,
-   or **monocyte eQTL / promoter-capture Hi-C** (target-gene aware).
+1. **[DONE] Add a cell-type-aware, target-gene-aware monocyte source — ENCODE-rE2G.**
+   `CausalDiscovery/scripts/build_re2g_gene_link_support.py` fetches the CD14+ monocyte
+   ENCODE-rE2G element→gene predictions (native GRCh38, `TargetGene` per element) and writes a
+   support-template TSV; feed via `support --eperturbdb-tsv`. Validated on the CD14 300 kb graph:
+   the "stable" `chr5:140638835-140639790__H3K4me3 → expr__CD14` edge stays unvalidated because
+   rE2G links that element to **TMCO6** (its TSS is inside the peak), not CD14 — the source
+   correctly flags a probable neighbor-promoter artifact. See `external_sources.md`.
 2. Reframe honestly: use ENCODE-monocyte for peak-node support, and report peak→gene edges
    as **unvalidated-but-plausible** (the promoter overlap is the biology), not as DB-validated.
 3. Add a `cell_type_aligned` flag to every support match and only count aligned matches toward
