@@ -33,3 +33,14 @@ integration/logs/
 # Causal discovery run outputs
 CausalDiscovery/outputs/*
 !CausalDiscovery/outputs/.gitkeep
+
+# LaTeX build intermediates (keep .tex/.pdf/.md and figures under notes/)
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
+
+# Windows "mark of the web" metadata files
+*:Zone.Identifier

@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+
+\title{Joint Integration Summary for scRNA-seq and scCUT\&Tag Datasets}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Summary of scGLUE Integration}
+\begin{itemize}
+    \item RNA preprocessing: 3{,}000 highly variable genes, then PCA to 50 dimensions.
+    \item scCUT\&Tag preprocessing: each histone-mark dataset was processed separately and represented with 50-dimensional LSI coordinates.
+    \item Guidance graph: had to be built with the custom joint backend but this is just to circumvent memory issues. We are using GENCODE v49 primary assembly annotation and gene-ID-based RNA feature mapping.
+    \item Gene region rule: promoter-based graph with a 1{,}000 bp promoter extension and a 50 kb RNA--chromatin linking window.
+    \item Graph size: 24{,}724 RNA genes, 90{,}000 chromatin features, 114{,}724 total nodes, and 611{,}042 total edges.
+    \item Histone-mark sign encoding: activating marks were assigned positive edges (\texttt{sign = +1}; H3K27ac, H3K4me1, H3K4me2, H3K4me3), while repressive marks were assigned negative edges (\texttt{sign = -1}; H3K27me3, H3K9me3).
+    \item Edge weighting: current run used \texttt{weight\_mode = power}, so the edge weight followed a fixed power-law form \(w(d) = \alpha ((d + 1000)/1000)^{-0.75}\), where \(d\) is genomic distance.
+    \item Mark-specific weight scaling: \(\alpha = 1.0\) for activating marks and \(\alpha = 0.7\) for repressive marks.     \item Output for visualization: all cells were merged into one AnnData object and the integrated embedding was stored in \texttt{adata.obsm["X\_glue"]}.
+\end{itemize}
+
+\newpage{}
+\section*{Dataset Summary}
+Table~\ref{tab:datasets} is the summary of the datasets that are included in the current joint integration run. The cell counts are the number of cells kept for integration after the preprocessing and QC beforehand.
+\begin{table}[H]
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.3cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{6.1cm} r}
+\toprule
+Dataset & Omics & Representation used for integration & Cells \\
+\midrule
+scRNA-seq & RNA & 3,000 highly variable genes, PCA (50 components) & 9,462 \\
+H3K27ac & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 7,098 \\
+H3K27me3 & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 7,172 \\
+H3K4me1 & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 5,683 \\
+H3K4me2 & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 8,441 \\
+H3K4me3 & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 8,875 \\
+H3K9me3 & scCUT\&Tag & 30,000 selected chromatin features, LSI (50 components) & 7,164 \\
+\midrule
+Total & Joint multi-omics & Shared scGLUE embedding & 53,895 \\
+\bottomrule
+\end{tabular}
+\caption{Datasets included in the current joint integration analysis.}
+\label{tab:datasets}
+\end{table}
+
+
+\newpage{}
+\section*{Figure 1: Integrated Embedding Colored by Cell Type}
+Figure~\ref{fig:celltype}: the integrated UMAP colored by harmonized coarse cell type labels. RNA cells use the provided annotation file, and non-RNA scCUT\&Tag cells are assigned labels by nearest-neighbor transfer from annotated RNA cells in the integrated latent space.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{../../Epigenomics-GEX-causal-analysis/integration/outputs/scglue/joint/joint_v2/train/validation/umap_joint_harmonized_coarse.png}
+\caption{UMAP of the integrated embedding colored by harmonized coarse cell type. The UMAP coordinates are computed from the joint scGLUE embedding stored in \texttt{adata.obsm["X\_glue"]}, and the figure is rendered with \texttt{sc.pl.umap}. RNA labels are used as the reference annotation and transferred to scCUT\&Tag cells in the joint embedding space.}
+\label{fig:celltype}
+\end{figure}
+
+\newpage{}
+\section*{Figure 2: Integrated Embedding Colored by Omics / Data Source}
+Figure~\ref{fig:omics} shows the same integrated UMAP, colored by modality / data source for each cell.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{../../Epigenomics-GEX-causal-analysis/integration/outputs/scglue/joint/joint_v2/train/validation/umap_by_modality.png}
+\caption{UMAP of the integrated embedding colored by omics / data source.}
+\label{fig:omics}
+\end{figure}
+
+\end{document}
