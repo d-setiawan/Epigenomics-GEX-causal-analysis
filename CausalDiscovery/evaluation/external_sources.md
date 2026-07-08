@@ -3,6 +3,34 @@
 This file tracks the external evidence sources used by the biological-support
 layer for local peak-gene graph evaluation.
 
+## Cell-Type Alignment And Coverage (2026-07 check)
+
+Our data is CD14-positive / classical **monocyte** (RNA harmonized label `monocyte`).
+An audit of how the support layer aligns to that cell type found:
+
+- **Cell type is not used as a match/filter anywhere except the ENCODE Portal API query.**
+  In `build_node_support_table.py` a record matches a node on exactly two axes: genomic
+  interval overlap and (for expression nodes) target-gene-name equality. The tissue/cell-type
+  field is read from ePerturbDB but only written into the descriptive `biosample` string — it
+  never rejects a record. So `encode_screen`, `jaspar`, and all `eperturbdb` sources can
+  "support" a monocyte edge with breast/skin/hESC/K562 evidence. Treat their matches as
+  cell-type-agnostic plausibility, not monocyte validation.
+- **ENCODE Portal is the only cell-type-gated source** (server-side `biosample_ontology.term_name`).
+  ENCODE has usable monocyte data: `CD14-positive monocyte` returns **159** GRCh38 peak-bed
+  files, `peripheral blood mononuclear cell` returns 25. So for cell-type-aligned interval
+  support, prefer the `monocyte_encode` / `monocyte_regulatory` presets over `pbmc_encode`
+  and over the code default (which is PBMC).
+- **ePerturbDB cannot validate our peak-to-gene edges.** Its content is overwhelmingly
+  non-immune (Skin ~50k, Bone Marrow ~11k, embryonic ~10k, Breast ~6k rows; ~2 immune rows).
+  Crucially, `CSF1R` and `CD14` have **0** rows in the `Gene (literature)` column and `IL1B`
+  has **0** (its 96 hits are only `nearest_gene_name`, which the validation does not use).
+  Since ePerturbDB is the only source carrying target-gene semantics, **no current source can
+  validate a peak-to-gene edge (e.g. a promoter-peak -> expression edge) for our genes.**
+- **Net:** the suite can give cell-type-aligned **peak-node / peak-peak interval** support
+  (ENCODE-monocyte), plus cell-type-agnostic context (SCREEN, JASPAR). It **cannot** give
+  cell-type-aligned **peak-to-gene edge** validation for CSF1R/CD14/IL1B with the sources on
+  hand. See `run_audit_report.md` for the full breakdown and options.
+
 ## Current Supported Sources
 
 ### ENCODE Portal PBMC Peak Files

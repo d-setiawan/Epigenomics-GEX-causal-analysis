@@ -238,6 +238,11 @@ bash CausalDiscovery/scripts/run_dagma_rawcounts_family_presets.sh
 
 The older curated locus-matrix workflow is preserved under `CausalDiscovery/outputs/locus_matrices_matched` and `CausalDiscovery/scripts/legacy`, but the active discovery workflow now uses nearby CUT&Tag peaks with curated literature regions kept as evaluation annotations.
 
-The next candidate-reduction layer is elastic-net stability screening on the `log1p_norm` nearby-peak matrices. This should be treated as association-based screening before causal discovery, not as causal evidence by itself, because the selected peak set depends on the same data used downstream for graph learning.
+Elastic-net stability screening on the `log1p_norm` nearby-peak matrices is the candidate-reduction layer. It is association-based screening before causal discovery, not causal evidence by itself. To keep peak selection and graph discovery from sharing samples, use `elastic-net-screen --graph-split-fraction` (see [CausalDiscovery/README.md](CausalDiscovery/README.md) → Screening Plan); without it, selection and graph learning use the same rows and downstream tests are optimistically biased.
 
-The main evaluation framing is in [CausalDiscovery/evaluation.md](CausalDiscovery/evaluation.md).
+## Documentation Map
+
+- [notes/](notes) — research/planning notes, identifiability derivations (`notes/Identifiability/`), the Spring 2026 final report, and the integration summary. These are now tracked in this repo.
+- [CausalDiscovery/evaluation.md](CausalDiscovery/evaluation.md) and [CausalDiscovery/evaluation/](CausalDiscovery/evaluation) — evaluation framing, external-source docs, and the saved-run audit.
+- [CausalDiscovery/evaluation/run_audit_report.md](CausalDiscovery/evaluation/run_audit_report.md) — audit of the saved graph runs (trust tiers, post-selection leakage, count-family DAGMA gaps, cell-type coverage of the external evidence).
+- [integration/README.md](integration/README.md), [CausalDiscovery/README.md](CausalDiscovery/README.md), [sc_scripts/](sc_scripts) — per-stage READMEs and preprocessing scripts.

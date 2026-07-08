@@ -57,6 +57,16 @@ regulatory evidence and write support-aware plots:
 - `encode_screen`: online ENCODE SCREEN cCRE Registry intervals.
 - `jaspar`: online JASPAR motif matrices plus UCSC hg38 sequence retrieval.
 
+> **Cell-type alignment caveat (2026-07).** Only the ENCODE Portal source is cell-type-gated
+> (use `monocyte_encode` / `monocyte_regulatory`, which query `CD14-positive monocyte`; ENCODE
+> has 159 such GRCh38 peak beds). `encode_screen`, `jaspar`, and all `eperturbdb` sources apply
+> **no** cell-type filter, so they can credit a monocyte edge with off-target evidence. ePerturbDB
+> also has ~zero immune content and **zero `Gene (literature)` rows for CSF1R/CD14/IL1B**, so it
+> cannot validate peak-to-gene edges for our genes. Net: the suite gives cell-type-aligned
+> peak-node / peak-peak interval support but **cannot** validate peak-to-gene edges for our
+> panel. Details and options: [evaluation/run_audit_report.md](evaluation/run_audit_report.md)
+> and [evaluation/external_sources.md](evaluation/external_sources.md).
+
 Support outputs are written into each graph directory:
 
 ```text

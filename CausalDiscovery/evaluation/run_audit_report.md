@@ -58,6 +58,48 @@ Across 14 PC+FCI runs (depths 1–5, α∈{0.05,0.1}) on the Tier-A 300 kb CD14 
   robust biological edge is *not* credited by the annotation — the promoter window is too
   narrow. Widen promoter windows (or add a promoter-proximal tier) in the evaluation layer.
 
+## Cell-type alignment of the external evidence suite
+
+Before regenerating datasets we checked whether the evaluation suite can actually do its
+job for **monocyte** data (our RNA harmonizes to `monocyte`; fine types CD14-positive /
+classical / non-classical). Two things were audited: (1) does the code align by cell type,
+and (2) do the databases even contain monocyte / target-gene evidence.
+
+**Code (how matching works).** `build_node_support_table.py` matches a record to a node on
+**only** interval overlap + target-gene-name equality. Cell type is never a match/filter
+criterion, with one exception: the ENCODE Portal query passes `biosample_ontology.term_name`
+to the API (server-side filter). ePerturbDB's tissue/cell-type column is read but used only as
+a display string. So SCREEN, JASPAR, and ePerturbDB matches are cell-type-agnostic — they can
+credit a monocyte edge with non-monocyte (skin/breast/hESC/K562) evidence.
+
+**Data (coverage), per source:**
+
+| Source | Target-gene aware? | Cell-type gated? | Monocyte coverage | Can validate peak→gene for CSF1R/CD14/IL1B? |
+| --- | --- | --- | --- | --- |
+| ENCODE Portal (`encode_pbmc`) | No (interval-only) | **Yes** (server-side) | **Yes — 159 CD14+ monocyte GRCh38 peak beds** (PBMC: 25) | No — interval-only by the suite's own rule |
+| ENCODE SCREEN cCRE | No (interval-only) | No (genome-wide registry) | agnostic | No |
+| JASPAR motifs | No (motif-only) | No (sequence) | agnostic | No |
+| ePerturbDB (all 3) | **Yes** (`Gene (literature)`) | No | **~0 immune rows**; CSF1R/CD14 = 0, IL1B = 0 literature hits | **No — no coverage** |
+
+**Verdict.** The suite **can** provide cell-type-aligned **peak-node / peak-peak interval**
+support via ENCODE with a monocyte biosample term (use `monocyte_encode` /
+`monocyte_regulatory`, not `pbmc_encode` or the PBMC default). It **cannot** provide
+cell-type-aligned **peak-to-gene edge** validation for our genes: the only target-gene-aware
+source (ePerturbDB) has no monocyte content and zero `Gene (literature)` rows for
+CSF1R/CD14/IL1B. So the stable CD14 promoter-H3K4me3 → expression edge is currently
+**unvalidatable** by this suite.
+
+**Options to make peak→gene validation possible (pick before over-investing in regeneration):**
+
+1. Add a cell-type-aware, target-gene-aware source that actually covers monocytes — e.g.
+   **ENCODE cCRE–gene links / EPIREgulon / ABC-model enhancer–gene predictions for monocytes**,
+   or **monocyte eQTL / promoter-capture Hi-C** (target-gene aware).
+2. Reframe honestly: use ENCODE-monocyte for peak-node support, and report peak→gene edges
+   as **unvalidated-but-plausible** (the promoter overlap is the biology), not as DB-validated.
+3. Add a `cell_type_aligned` flag to every support match and only count aligned matches toward
+   the "validated" highlight class, so SCREEN/JASPAR/ePerturbDB stop silently crediting monocyte
+   edges with off-target evidence.
+
 ## Suggested next actions
 
 - Regenerate the screened datasets with `--graph-split-fraction 0.3` and re-run PC/FCI/DAGMA.
