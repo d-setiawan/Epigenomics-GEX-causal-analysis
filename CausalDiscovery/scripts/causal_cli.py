@@ -427,6 +427,8 @@ def build_support_command_args(project_root: Path, graph_dir: Path, args, *, inc
         out.extend(["--jaspar-matrix-id", matrix_id])
     for url in getattr(args, "external_support_url", []):
         out.extend(["--external-support-url", url])
+    for tsv in getattr(args, "external_support_tsv", []):
+        out.extend(["--external-support-tsv", tsv])
     if getattr(args, "fetch_encode_screen", False):
         out.append("--fetch-encode-screen")
     if getattr(args, "fetch_encode_pbmc", False):
@@ -515,6 +517,7 @@ def has_external_support_source(args) -> bool:
             bool(getattr(args, "eperturbdb_tf_overlap_bed", None)),
             bool(getattr(args, "encode_screen_tsv", None)),
             bool(getattr(args, "external_support_url", [])),
+            bool(getattr(args, "external_support_tsv", [])),
         ]
     )
 
@@ -816,6 +819,8 @@ def add_external_support_args(p, *, include_online_support_flag: bool = False, o
     p.add_argument("--max-eperturbdb-records", type=int, default=None)
     p.add_argument("--encode-screen-tsv", default=None)
     p.add_argument("--external-support-url", action="append", default=[])
+    p.add_argument("--external-support-tsv", action="append", default=[],
+                   help="Additional local template TSV as SOURCE=PATH (e.g. pchic=...tsv).")
     p.add_argument("--external-cache-dir", default="CausalDiscovery/evaluation/external/cache")
     p.add_argument("--max-online-records", type=int, default=None)
     p.add_argument("--min-overlap-bp", type=int, default=1)

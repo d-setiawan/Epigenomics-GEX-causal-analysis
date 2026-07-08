@@ -185,6 +185,46 @@ that interval (which overlaps the TMCO6 TSS) to **TMCO6**, not CD14 — i.e. the
 flags a likely neighbor-promoter artifact. The true CD14 promoter element is
 `chr5:140633141-140633951` (rE2G score 0.9999).
 
+### BLUEPRINT Monocyte PCHi-C Gene Links (physical peak->gene axis)
+
+Purpose: the **physical** peak->gene axis (promoter-capture Hi-C), complementing rE2G (prediction)
+and eQTL (genetics). BLUEPRINT promoter-capture Hi-C (Javierre et al., Cell 2016) links a gene
+promoter (bait) to distal fragments (other-end) with a per-cell-type CHiCAGO score; the monocyte
+column is `Mon` (>= 5 is significant). So a peak overlapping a fragment that physically contacts a
+target gene's promoter in monocytes is physical evidence for a peak->gene edge.
+
+Build the support table (downloads the OSF peak matrix, filters to the panel genes with `Mon >= 5`,
+and lifts hg19 -> hg38 via `scripts/liftover.py`'s chain):
+
+```bash
+python3 CausalDiscovery/scripts/build_pchic_gene_link_support.py \
+  --genes CSF1R,CD14,IL1B --cell-type-col Mon --min-score 5 \
+  --out-tsv Data/external/pchic/pchic_mon_gene_links.tsv
+```
+
+Feed it as the local named source `pchic` (plot color pink, `#E84393`):
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py support \
+  --graph-dir <graph_dir> \
+  --external-support-tsv pchic=Data/external/pchic/pchic_mon_gene_links.tsv \
+  --re2g-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
+```
+
+Worked example (CD14 300 kb graph): PCHi-C matched CD14 CUT&Tag peaks that physically contact the
+CD14 promoter in monocytes (e.g. `chr5:140547304-140547778__H3K27ac`), and **15 nodes gained
+`multi_source` support** — corroborated by *both* rE2G and PCHi-C (the "two axes agree" case). The
+`chr5:140638835-140639790__H3K4me3` stable-edge peak is NOT among them (it is the TMCO6 promoter,
+not a CD14 contact), consistent with rE2G.
+
+### Generic local named sources
+
+Any support-template TSV can be added as a first-class named source with
+`--external-support-tsv SOURCE=PATH` (the local analog of `--external-support-url SOURCE=URL`).
+This is how new Phase-B validators (pchic, and later eqtl / blueprint_chip / chipatlas) plug in
+without per-source CLI plumbing. `pchic` gets its own source family and color; add colors for new
+families in `plot_pc_graph.py` `support_style()` and `source_family()`.
+
 ## Presets
 
 The CLI provides support presets for common source bundles:
@@ -284,7 +324,8 @@ Validated edges are colored by support source:
 - purple: ENCODE support only (`encode_screen`, `encode_pbmc`, or another ENCODE-prefixed source).
 - green: JASPAR motif support only.
 - blue: ENCODE-rE2G only (`re2g` — the target-gene-aware monocyte gene-link source).
-- red: multiple source families.
+- pink: BLUEPRINT monocyte PCHi-C only (`pchic` — physical promoter contact).
+- red: multiple source families (**this is the "two-or-more axes agree" high-confidence case**).
 - faint gray: no external support found.
 
 The edge is considered validated using edge-aware support rules:

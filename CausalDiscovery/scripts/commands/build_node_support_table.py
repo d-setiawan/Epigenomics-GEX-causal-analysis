@@ -489,6 +489,8 @@ def source_family(source: str) -> str:
     source = source.lower()
     if source.startswith("re2g"):
         return "re2g"
+    if source.startswith("pchic"):
+        return "pchic"
     if source.startswith("eperturb"):
         return "eperturbdb"
     if source.startswith("encode"):
@@ -512,6 +514,8 @@ def highlight_class_for_sources(sources: set[str]) -> str:
         return "jaspar_only"
     if families == {"re2g"}:
         return "re2g_only"
+    if families == {"pchic"}:
+        return "pchic_only"
     return "none"
 
 
@@ -1364,6 +1368,7 @@ def main() -> int:
     p.add_argument("--jaspar-max-peak-bp", type=int, default=2000, help="Skip intervals longer than this for online sequence motif scans")
     p.add_argument("--eperturbdb-url", default=None, help="Online TSV URL for ePerturbDB-style evidence using the evaluation template columns")
     p.add_argument("--external-support-url", action="append", default=[], help="Additional online template TSV as SOURCE=URL")
+    p.add_argument("--external-support-tsv", action="append", default=[], help="Additional LOCAL template TSV as SOURCE=PATH (e.g. pchic=Data/external/pchic/pchic_mon_gene_links.tsv)")
     p.add_argument("--external-cache-dir", default="CausalDiscovery/evaluation/external/cache")
     p.add_argument("--max-online-records", type=int, default=None, help="Optional cap for online records retained after locus overlap filtering")
     p.add_argument("--min-overlap-bp", type=int, default=1)
@@ -1514,10 +1519,21 @@ def main() -> int:
         source_tables.append(fetch_template_tsv_url(url, source_name, cache_dir))
         source_events.append({"source": source_name, "mode": "online_template_tsv", "url": url})
 
+    for source_tsv in args.external_support_tsv:
+        source_name, rel_path = source_name_from_url_arg(source_tsv)
+        local_path = resolve_path(repo_root, rel_path)
+        if local_path is None or not local_path.exists():
+            raise FileNotFoundError(f"Missing external support TSV for source '{source_name}': {rel_path}")
+        source_tables.append(normalize_external_table(local_path, source_name))
+        source_events.append({"source": source_name, "mode": "local_tsv", "path": local_path})
+
     if not source_tables:
         raise ValueError("At least one external support TSV, URL, --fetch-encode-screen, --fetch-encode-pbmc, or --fetch-jaspar is required")
 
     external_df = pd.concat(source_tables, ignore_index=True)
+    # Materialize the external records once; rebuilding this per node is O(nodes * records)
+    # and becomes the dominant cost with large sources (e.g. the ~667k-row rE2G table).
+    external_records = external_df.to_dict(orient="records")
     match_records: list[dict[str, object]] = []
     summary_records: list[dict[str, object]] = []
 
@@ -1528,7 +1544,7 @@ def main() -> int:
         node_biosamples: list[str] = []
         node_notes: list[str] = []
 
-        for ext in external_df.to_dict(orient="records"):
+        for ext in external_records:
             gene_match = False
             interval_match = False
 

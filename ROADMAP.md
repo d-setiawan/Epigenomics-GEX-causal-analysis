@@ -115,8 +115,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [ ] Merge the current `audit-and-rigor-postselection-split` branch (or open a PR) once reviewed. *(needs push authorization)*
 
 ### Phase B — Validation layer (Q1) — build the triangulation
-- [ ] **peak→gene, physical:** Javierre PCHi-C `Mon` loader → support template (bait=target gene, `oe`=
-      interacting region; filter `Mon≥5`; liftOver).
+- [x] **Generic local named-source mechanism** `--external-support-tsv SOURCE=PATH` (local analog of
+      `--external-support-url`), so new validators plug in without per-source CLI plumbing.
+- [x] **Efficiency fix:** hoisted `external_df.to_dict()` out of the per-node loop (was O(nodes*records);
+      the 667k-row rE2G source made `support` time out — now ~18s for the two-axis CD14 run).
+- [x] **peak→gene, physical:** `build_pchic_gene_link_support.py` — Javierre PCHi-C `Mon≥5`, hg19→hg38
+      lifted, source `pchic`. 86 monocyte gene-links for the panel; on CD14 it corroborates 15 nodes with
+      rE2G (`multi_source`). Verified end-to-end.
 - [ ] **peak→gene, genetics:** eQTL Catalogue monocyte eQTL loader (BLUEPRINT/Fairfax/CEDAR; use SuSiE
       credible sets); count an eQTL variant in a peak targeting the gene as support.
 - [ ] **peak-node:** BLUEPRINT monocyte histone ChIP loader (GRCh38, per mark) — "is this a real monocyte
@@ -124,6 +129,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [ ] **peak-peak:** ChIP-Atlas colocalization + ReMap shared-`TF:biotype`; monocyte Hi-C loop co-membership.
 - [ ] Add a `cell_type_aligned` flag to every support match and a **multi-axis "≥2 agree" edge validation**
       class; stop counting cell-type-agnostic (SCREEN/JASPAR/ePerturbDB) evidence as monocyte validation.
+      *(node-level ≥2-axis already shows as `multi_source`; formalize an axis-aware edge rule.)*
 - [ ] Re-run support on the tracked graphs; regenerate `support_report.md` per graph with the new sources.
 
 ### Phase C — Aggregation (Q2) — replace kNN-averaging
@@ -163,6 +169,10 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-08** Phase B started: generic `--external-support-tsv` local named-source mechanism;
+  support matching efficiency fix (per-node `to_dict` hoisted); BLUEPRINT monocyte PCHi-C physical
+  peak→gene source (`build_pchic_gene_link_support.py`, source `pchic`, pink). Two-axis rE2G+PCHi-C
+  triangulation demonstrated on CD14 (15 `multi_source` nodes).
 - **2026-07-08** Phase A foundations landed: pinned envs (`envs/`), hg19↔hg38 `liftover.py` (round-trip
   verified), and rE2G promoted to a first-class `--re2g-tsv`/`re2g` source (blue). kNN-averaged datasets
   kept as a labeled baseline (Phase C decision).
