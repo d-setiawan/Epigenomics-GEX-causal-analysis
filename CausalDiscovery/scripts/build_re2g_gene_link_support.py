@@ -18,7 +18,7 @@ suite:
 
 Feed the output to the support layer with:
 
-    causal_cli.py support --graph-dir <dir> --eperturbdb-tsv <this_output.tsv>
+    causal_cli.py support --graph-dir <dir> --re2g-tsv <this_output.tsv>   # first-class 're2g' source
 
 Because the template `gene` column enables exact target-gene matching, a peak
 node overlapping an rE2G element whose TargetGene matches the expression node

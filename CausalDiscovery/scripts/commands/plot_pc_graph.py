@@ -146,6 +146,11 @@ def support_style(highlight_class: str) -> dict[str, str | float]:
             "linewidth": 3.2,
             "size_delta": 320.0,
         },
+        "re2g_only": {
+            "edgecolor": "#2E86DE",
+            "linewidth": 3.4,
+            "size_delta": 360.0,
+        },
         "multi_source": {
             "edgecolor": "#D7263D",
             "linewidth": 4.0,
@@ -382,6 +387,8 @@ def sources_from_support_record(record: dict[str, str] | None) -> set[str]:
 
 def source_family(source: str) -> str:
     source = source.lower()
+    if source.startswith("re2g"):
+        return "re2g"
     if source.startswith("eperturb"):
         return "eperturbdb"
     if source.startswith("encode"):

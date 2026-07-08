@@ -105,13 +105,14 @@ discovery. Report donor-level block-bootstrap edge-mark stability.**
 Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis until Phase A–C land.
 
 ### Phase A — Foundations & quick wins
-- [ ] Pin the environments: write `requirements-causal.txt` / `environment.yml` (scGLUE, causal-learn,
-      py-tetrad+JPype+Java, SEACells, lingam, gCastle, RCIT). Currently none exist — top reproducibility risk.
-- [ ] Add a `liftOver` utility (hg19↔hg38) + chain files as a shared helper (needed by several DBs and by
-      any hg19 resource). Decide direction: lift our hg38 peaks → hg19 once, or lift each DB → hg38.
-- [ ] Promote **rE2G to a first-class `re2g` source** in `build_node_support_table.py` (own source name +
-      plot color + preset), instead of routing through `--eperturbdb-tsv`.
-- [ ] Merge the current `audit-and-rigor-postselection-split` branch (or open a PR) once reviewed.
+- [x] **Pin the environments** — `envs/` has `environment-scrna_r.yml` (recreation artifact) + pip-freeze
+      records for `scrna_r` (heavy: scGLUE/causal-learn/dagma/scanpy/snapatac2/torch), `cvbench`, and base;
+      `envs/README.md` maps env→stage and lists not-yet-installed Phase C/D tools.
+- [x] **liftOver utility** — `CausalDiscovery/scripts/liftover.py` (pyliftover backend + UCSC fallback,
+      auto-downloads chains to gitignored `Data/external/chains/`). Verified exact hg38→hg19→hg38 round-trip.
+- [x] **rE2G is now a first-class `re2g` source** — `--re2g-tsv` on `graph`/`plot`/`support`; own
+      `source=re2g`, `highlight_class=re2g_only`, blue plot color (`#2E86DE`). Tested on the CD14 graph.
+- [ ] Merge the current `audit-and-rigor-postselection-split` branch (or open a PR) once reviewed. *(needs push authorization)*
 
 ### Phase B — Validation layer (Q1) — build the triangulation
 - [ ] **peak→gene, physical:** Javierre PCHi-C `Mon` loader → support template (bait=target gene, `oe`=
@@ -162,6 +163,9 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-08** Phase A foundations landed: pinned envs (`envs/`), hg19↔hg38 `liftover.py` (round-trip
+  verified), and rE2G promoted to a first-class `--re2g-tsv`/`re2g` source (blue). kNN-averaged datasets
+  kept as a labeled baseline (Phase C decision).
 - **2026-07-08** Created this roadmap. Completed earlier today: run audit + trust tiers; post-selection
   `--graph-split-fraction`; notes/ moved into repo; empty skeleton dirs removed; cell-type alignment audit
   of the evaluation suite; **ENCODE-rE2G monocyte gene-link source added** (caught the CD14→TMCO6 mis-assignment).

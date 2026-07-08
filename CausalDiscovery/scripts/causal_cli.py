@@ -398,6 +398,7 @@ def build_support_command_args(project_root: Path, graph_dir: Path, args, *, inc
         optional_arg(out, "--edge-support-tsv", getattr(args, "edge_support_tsv", None))
         optional_arg(out, "--report-md", getattr(args, "report_md", None))
     optional_arg(out, "--eperturbdb-tsv", getattr(args, "eperturbdb_tsv", None))
+    optional_arg(out, "--re2g-tsv", getattr(args, "re2g_tsv", None))
     optional_arg(out, "--eperturbdb-dir", getattr(args, "eperturbdb_dir", None))
     optional_arg(out, "--eperturbdb-database-tsv", getattr(args, "eperturbdb_database_tsv", None))
     optional_arg(out, "--eperturbdb-enhancer-gene-bed", getattr(args, "eperturbdb_enhancer_gene_bed", None))
@@ -507,6 +508,7 @@ def has_external_support_source(args) -> bool:
             bool(getattr(args, "fetch_jaspar", False)),
             bool(getattr(args, "eperturbdb_url", None)),
             bool(getattr(args, "eperturbdb_tsv", None)),
+            bool(getattr(args, "re2g_tsv", None)),
             bool(getattr(args, "eperturbdb_dir", None)),
             bool(getattr(args, "eperturbdb_database_tsv", None)),
             bool(getattr(args, "eperturbdb_enhancer_gene_bed", None)),
@@ -804,6 +806,9 @@ def add_external_support_args(p, *, include_online_support_flag: bool = False, o
     p.add_argument("--jaspar-max-peak-bp", type=int, default=2000)
     p.add_argument("--eperturbdb-url", default=None)
     p.add_argument("--eperturbdb-tsv", default=None)
+    p.add_argument("--re2g-tsv", default=None,
+                   help="ENCODE-rE2G monocyte gene-link support template TSV (target-gene-aware; "
+                        "build with scripts/build_re2g_gene_link_support.py). Loaded as source 're2g'.")
     p.add_argument("--eperturbdb-dir", default=None)
     p.add_argument("--eperturbdb-database-tsv", default=None)
     p.add_argument("--eperturbdb-enhancer-gene-bed", default=None)

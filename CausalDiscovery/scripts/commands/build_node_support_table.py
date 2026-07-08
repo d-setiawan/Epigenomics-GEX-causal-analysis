@@ -487,6 +487,8 @@ def build_region_lookup(locus_config_path: Path | None) -> dict[str, dict[str, o
 
 def source_family(source: str) -> str:
     source = source.lower()
+    if source.startswith("re2g"):
+        return "re2g"
     if source.startswith("eperturb"):
         return "eperturbdb"
     if source.startswith("encode"):
@@ -508,6 +510,8 @@ def highlight_class_for_sources(sources: set[str]) -> str:
         return "encode_only"
     if families == {"jaspar"}:
         return "jaspar_only"
+    if families == {"re2g"}:
+        return "re2g_only"
     return "none"
 
 
@@ -1336,6 +1340,7 @@ def main() -> int:
     p.add_argument("--pc-dir", required=True, help="Graph output directory containing run_summary.json / selected_matrix.tsv")
     p.add_argument("--locus-config", default=None, help="Optional locus config TSV for named-region nodes")
     p.add_argument("--eperturbdb-tsv", default=None, help="TSV extract from ePerturbDB using the evaluation template columns")
+    p.add_argument("--re2g-tsv", default=None, help="ENCODE-rE2G monocyte gene-link support template TSV (target-gene-aware; build with scripts/build_re2g_gene_link_support.py). Loaded as source 're2g'.")
     p.add_argument("--eperturbdb-dir", default=None, help="Directory containing downloaded ePerturbDB database/enhancer/TF files")
     p.add_argument("--eperturbdb-database-tsv", default=None, help="Downloaded ePerturbDB Database TSV/TSV.txt file")
     p.add_argument("--eperturbdb-enhancer-gene-bed", default=None, help="Downloaded ePerturbDB enhancer_gene BED file")
@@ -1385,6 +1390,12 @@ def main() -> int:
             raise FileNotFoundError(f"Missing ePerturbDB TSV: {args.eperturbdb_tsv}")
         source_tables.append(normalize_external_table(eperturbdb_path, "eperturbdb"))
         source_events.append({"source": "eperturbdb", "mode": "local_tsv", "path": eperturbdb_path})
+    if args.re2g_tsv:
+        re2g_path = resolve_path(repo_root, args.re2g_tsv)
+        if re2g_path is None or not re2g_path.exists():
+            raise FileNotFoundError(f"Missing rE2G TSV: {args.re2g_tsv}")
+        source_tables.append(normalize_external_table(re2g_path, "re2g"))
+        source_events.append({"source": "re2g", "mode": "local_tsv", "path": re2g_path})
     if args.encode_screen_tsv:
         encode_path = resolve_path(repo_root, args.encode_screen_tsv)
         if encode_path is None or not encode_path.exists():

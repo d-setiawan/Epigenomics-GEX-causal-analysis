@@ -168,26 +168,22 @@ python3 CausalDiscovery/scripts/build_re2g_gene_link_support.py \
   --out-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
 ```
 
-Then feed it to the support layer as a target-gene-aware source (the template `gene` column
-enables exact matching to expression nodes):
+Then feed it to the support layer as the first-class **`re2g`** source (target-gene-aware; the
+template `gene` column enables exact matching to expression nodes):
 
 ```bash
 python3 CausalDiscovery/scripts/causal_cli.py support \
   --graph-dir <graph_dir> \
-  --eperturbdb-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
+  --re2g-tsv Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv
 ```
 
-A peak node overlapping an rE2G element whose `TargetGene` matches the expression node
-validates that peak-to-gene edge. Worked example (CD14 300 kb graph): the stable
-`chr5:140638835-140639790__H3K4me3 -> expr__CD14` edge stays **unvalidated** because rE2G
-links that interval (which overlaps the TMCO6 TSS) to **TMCO6**, not CD14 — i.e. the source
-correctly flags a likely neighbor-promoter artifact. The true CD14 promoter element is
+Matches are labeled `source=re2g` with `highlight_class=re2g_only` (plot color blue, `#2E86DE`).
+A peak node overlapping an rE2G element whose `TargetGene` matches the expression node validates
+that peak-to-gene edge. Worked example (CD14 300 kb graph): the stable
+`chr5:140638835-140639790__H3K4me3 -> expr__CD14` edge stays **unvalidated** because rE2G links
+that interval (which overlaps the TMCO6 TSS) to **TMCO6**, not CD14 — i.e. the source correctly
+flags a likely neighbor-promoter artifact. The true CD14 promoter element is
 `chr5:140633141-140633951` (rE2G score 0.9999).
-
-Note: the tool currently routes through the `--eperturbdb-tsv` template path, so matches are
-labeled `eperturbdb` in the output tables (the `support_label` `rE2G_*`, `biosample`, and
-`notes` fields keep the real provenance). Promoting rE2G to a first-class `re2g` source name
-and plot color is the recommended follow-up.
 
 ## Presets
 
@@ -287,6 +283,7 @@ Validated edges are colored by support source:
 - orange: ePerturbDB only.
 - purple: ENCODE support only (`encode_screen`, `encode_pbmc`, or another ENCODE-prefixed source).
 - green: JASPAR motif support only.
+- blue: ENCODE-rE2G only (`re2g` — the target-gene-aware monocyte gene-link source).
 - red: multiple source families.
 - faint gray: no external support found.
 
