@@ -53,14 +53,11 @@ def default_dataset_root(project_root: Path, run_id: str, gene_panel: Path, wind
     return project_root / "CausalDiscovery" / "outputs" / "datasets" / sanitize_token(run_id) / panel_token
 
 
-def default_elastic_net_out_root(causal_dir: Path, top_k: int) -> Path:
-    return (
-        causal_dir
-        / "outputs"
-        / "datasets"
-        / "joint_v2"
-        / f"monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_elasticnet_top{int(top_k)}_crossfit"
-    )
+def default_elastic_net_out_root(causal_dir: Path, top_k: int, graph_split_fraction: float = 0.0) -> Path:
+    name = f"monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_elasticnet_top{int(top_k)}_crossfit"
+    if graph_split_fraction and graph_split_fraction > 0.0:
+        name += f"_graphsplit{int(round(graph_split_fraction * 100))}"
+    return causal_dir / "outputs" / "datasets" / "joint_v2" / name
 
 
 def resolve_project_path(project_root: Path, value) -> Path | None:
@@ -282,6 +279,12 @@ def build_elastic_net_screen_args(project_root: Path, args) -> list[str]:
         str(args.tol),
         "--coef-tol",
         str(args.coef_tol),
+        "--graph-split-fraction",
+        str(args.graph_split_fraction),
+        "--split-random-state",
+        str(args.split_random_state),
+        "--min-graph-rows",
+        str(args.min_graph_rows),
     ]
     optional_arg(out, "--report-root", args.report_root)
     optional_arg(out, "--genes", args.genes)
@@ -900,6 +903,15 @@ def main() -> int:
     p_elastic.add_argument("--max-iter", type=int, default=20000)
     p_elastic.add_argument("--tol", type=float, default=1e-4)
     p_elastic.add_argument("--coef-tol", type=float, default=1e-10)
+    p_elastic.add_argument(
+        "--graph-split-fraction",
+        type=float,
+        default=0.0,
+        help="Hold out this fraction of rows as a disjoint graph split so peak selection "
+        "and graph discovery do not share samples (clean post-selection). 0.0 = legacy shared-sample.",
+    )
+    p_elastic.add_argument("--split-random-state", type=int, default=17)
+    p_elastic.add_argument("--min-graph-rows", type=int, default=50)
 
     p_organize = sub.add_parser(
         "organize-outputs",
@@ -1005,7 +1017,7 @@ def main() -> int:
 
     if args.command == "elastic-net-screen":
         if args.out_root is None:
-            args.out_root = default_elastic_net_out_root(causal_dir, args.top_k)
+            args.out_root = default_elastic_net_out_root(causal_dir, args.top_k, args.graph_split_fraction)
         run_python(args.python_bin, "screen_nearby_peaks_elastic_net.py", build_elastic_net_screen_args(project_root, args))
         return 0
 

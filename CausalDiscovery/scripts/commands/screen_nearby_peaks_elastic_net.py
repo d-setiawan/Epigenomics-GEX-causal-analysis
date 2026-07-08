@@ -28,7 +28,14 @@ def parse_float_list(value: str) -> list[float]:
     return vals
 
 
-def infer_report_root(repo_root: Path, dataset_root: Path, top_k: int) -> Path:
+def report_suffix(top_k: int, graph_split_fraction: float) -> str:
+    suffix = f"top{int(top_k)}_crossfit"
+    if graph_split_fraction and graph_split_fraction > 0.0:
+        suffix += f"_graphsplit{int(round(graph_split_fraction * 100))}"
+    return suffix
+
+
+def infer_report_root(repo_root: Path, dataset_root: Path, top_k: int, graph_split_fraction: float = 0.0) -> Path:
     outputs_root = repo_root / "CausalDiscovery" / "outputs"
     try:
         rel = dataset_root.resolve().relative_to((outputs_root / "datasets").resolve())
@@ -36,7 +43,7 @@ def infer_report_root(repo_root: Path, dataset_root: Path, top_k: int) -> Path:
         dataset_id = sanitize_token("__".join(parts[:2])) if len(parts) >= 2 else sanitize_token(dataset_root.name)
     except ValueError:
         dataset_id = sanitize_token(dataset_root.name)
-    return outputs_root / "methods" / "elastic_net_screen" / dataset_id / f"top{top_k}_crossfit"
+    return outputs_root / "methods" / "elastic_net_screen" / dataset_id / report_suffix(top_k, graph_split_fraction)
 
 
 def peak_sort_tuple(row: pd.Series) -> tuple[str, int, int, str, str]:
@@ -164,6 +171,9 @@ def screen_one_gene(
     max_iter: int,
     tol: float,
     coef_tol: float,
+    graph_split_fraction: float = 0.0,
+    split_random_state: int = 17,
+    min_graph_rows: int = 50,
 ) -> dict[str, Any]:
     paths = source_paths(dataset_root, gene)
     for key in ["matrix", "metadata"]:
@@ -196,8 +206,37 @@ def screen_one_gene(
             "clean the matrix or extend the screen to drop rows explicitly."
         )
 
-    x = numeric[peak_cols].to_numpy(dtype=float)
-    y = numeric[expr_col].to_numpy(dtype=float)
+    x_full = numeric[peak_cols].to_numpy(dtype=float)
+    y_full = numeric[expr_col].to_numpy(dtype=float)
+    n_total = int(x_full.shape[0])
+
+    # Sample split for clean post-selection inference. When graph_split_fraction > 0
+    # we partition rows into a disjoint SCREEN split (used to select peaks) and a
+    # GRAPH split (written into the screened matrix for downstream PC/FCI/DAGMA).
+    # This ensures peak selection and graph discovery never share samples, so the
+    # downstream conditional-independence tests / scores are not biased by the fact
+    # that the same rows were used to choose the peaks. Default 0.0 keeps the legacy
+    # shared-sample behavior (exploratory only).
+    if graph_split_fraction and graph_split_fraction > 0.0:
+        if not 0.0 < graph_split_fraction < 1.0:
+            raise ValueError("--graph-split-fraction must be in (0, 1)")
+        rng = np.random.default_rng(int(split_random_state))
+        perm = rng.permutation(n_total)
+        n_graph = int(round(float(graph_split_fraction) * n_total))
+        n_graph = max(int(min_graph_rows), min(n_graph, n_total - int(min_graph_rows)))
+        graph_idx = np.sort(perm[:n_graph])
+        screen_idx = np.sort(perm[n_graph:])
+        if screen_idx.size < 2 * int(n_splits):
+            raise ValueError(
+                f"{gene}: screen split has {screen_idx.size} rows, too few for "
+                f"{n_splits}-fold cross-fit. Lower --graph-split-fraction or --n-splits."
+            )
+    else:
+        graph_idx = np.arange(n_total)
+        screen_idx = np.arange(n_total)
+
+    x = x_full[screen_idx, :]
+    y = y_full[screen_idx]
     rkf = RepeatedKFold(n_splits=int(n_splits), n_repeats=int(n_repeats), random_state=int(random_state))
 
     cv_rows: list[pd.DataFrame] = []
@@ -237,14 +276,15 @@ def screen_one_gene(
         negative_count += ((winner_coef < -coef_tol) & selected).astype(int)
 
         for row_idx in test_idx:
+            orig_idx = int(screen_idx[int(row_idx)])
             fold_rows.append(
                 {
                     "split_id": split_id,
                     "repeat": repeat_idx,
                     "fold": fold_idx,
-                    "row_index": int(row_idx),
-                    "sample_id": matrix.loc[row_idx, "sample_id"] if "sample_id" in matrix.columns else "",
-                    "role": "held_out",
+                    "row_index": orig_idx,
+                    "sample_id": matrix.loc[orig_idx, "sample_id"] if "sample_id" in matrix.columns else "",
+                    "role": "held_out_in_screen_cv",
                 }
             )
         split_id += 1
@@ -299,7 +339,10 @@ def screen_one_gene(
     dropped["drop_reason"] = f"not in top {top_k} by elastic-net cross-fit selection frequency"
 
     non_peak_cols = [col for col in matrix.columns if col not in peak_cols]
-    screened_matrix = matrix.loc[:, non_peak_cols + selected_peak_cols].copy()
+    # Only the disjoint graph-split rows are written into the screened matrix, so
+    # downstream graph discovery runs on samples that were NOT used to pick peaks.
+    # With graph_split_fraction == 0.0 this is every row (legacy behavior).
+    screened_matrix = matrix.iloc[graph_idx].loc[:, non_peak_cols + selected_peak_cols].reset_index(drop=True).copy()
     retained_metadata = metadata.loc[metadata["variable_name"].astype(str).isin(selected_set)].copy()
     retained_metadata = retained_metadata.merge(
         ranking[
@@ -343,12 +386,26 @@ def screen_one_gene(
     fold_path = report_dir / f"{gene}_elasticnet_fold_assignments.tsv"
     winners_path = report_dir / f"{gene}_elasticnet_winning_hyperparameters.tsv"
 
+    split_path = report_dir / f"{gene}_elasticnet_sample_split.tsv"
+
     ranking.to_csv(ranking_path, sep="\t", index=False)
     ranking.loc[ranking["selected"]].to_csv(selected_path, sep="\t", index=False)
     dropped.to_csv(dropped_path, sep="\t", index=False)
     cv_scores.to_csv(cv_path, sep="\t", index=False)
     fold_assignments.to_csv(fold_path, sep="\t", index=False)
     cv_scores.loc[cv_scores["is_winner"]].to_csv(winners_path, sep="\t", index=False)
+
+    split_roles = np.empty(n_total, dtype=object)
+    split_roles[screen_idx] = "screen"
+    split_roles[graph_idx] = "graph"
+    split_assignments = pd.DataFrame(
+        {
+            "row_index": np.arange(n_total),
+            "sample_id": matrix["sample_id"].astype(str) if "sample_id" in matrix.columns else "",
+            "split": split_roles,
+        }
+    )
+    split_assignments.to_csv(split_path, sep="\t", index=False)
 
     source_summary: dict[str, Any] = {}
     if paths["summary"].exists():
@@ -380,6 +437,22 @@ def screen_one_gene(
             "n_alphas": int(alphas.shape[0]),
             "metric": "rank_average of held-out RMSE rank and held-out R2 rank",
             "coef_tol": float(coef_tol),
+            "n_screen_rows": int(screen_idx.size),
+        },
+        "sample_split": {
+            "graph_split_fraction": float(graph_split_fraction),
+            "split_random_state": int(split_random_state),
+            "n_total_rows": int(n_total),
+            "n_screen_rows": int(screen_idx.size),
+            "n_graph_rows": int(graph_idx.size),
+            "shares_samples_between_screen_and_graph": bool(not (graph_split_fraction and graph_split_fraction > 0.0)),
+            "note": (
+                "Peaks selected on the screen split; screened matrix holds disjoint graph rows, "
+                "so downstream PC/FCI/DAGMA is clean post-selection inference."
+                if graph_split_fraction and graph_split_fraction > 0.0
+                else "No sample split: peaks selected and graph rows are identical (shared-sample, "
+                "exploratory only; downstream CI tests/scores are optimistically biased)."
+            ),
         },
         "outputs": {
             "nearby_peak_matrix_tsv": str(out_paths["matrix"]),
@@ -392,6 +465,7 @@ def screen_one_gene(
             "cv_scores_tsv": str(cv_path),
             "fold_assignments_tsv": str(fold_path),
             "winning_hyperparameters_tsv": str(winners_path),
+            "sample_split_tsv": str(split_path),
         },
     }
     json_dump(out_paths["summary"], summary)
@@ -426,6 +500,19 @@ def main() -> int:
     p.add_argument("--max-iter", type=int, default=20000)
     p.add_argument("--tol", type=float, default=1e-4)
     p.add_argument("--coef-tol", type=float, default=1e-10)
+    p.add_argument(
+        "--graph-split-fraction",
+        type=float,
+        default=0.0,
+        help=(
+            "Fraction of rows held out as a disjoint GRAPH split for downstream "
+            "graph discovery. Peaks are selected on the remaining SCREEN rows so "
+            "selection and graph learning do not share samples (clean post-selection). "
+            "Default 0.0 keeps the legacy shared-sample behavior."
+        ),
+    )
+    p.add_argument("--split-random-state", type=int, default=17)
+    p.add_argument("--min-graph-rows", type=int, default=50)
     args = p.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
@@ -446,8 +533,14 @@ def main() -> int:
         raise ValueError("--n-repeats must be at least 1")
     if args.n_alphas < 1:
         raise ValueError("--n-alphas must be at least 1")
+    if args.graph_split_fraction and not 0.0 <= args.graph_split_fraction < 1.0:
+        raise ValueError("--graph-split-fraction must be in [0, 1)")
 
-    report_root = resolve_path(repo_root, args.report_root) if args.report_root else infer_report_root(repo_root, dataset_root, args.top_k)
+    report_root = (
+        resolve_path(repo_root, args.report_root)
+        if args.report_root
+        else infer_report_root(repo_root, dataset_root, args.top_k, args.graph_split_fraction)
+    )
     if report_root is None:
         raise ValueError("--report-root resolved to None")
 
@@ -480,6 +573,9 @@ def main() -> int:
                 max_iter=args.max_iter,
                 tol=args.tol,
                 coef_tol=args.coef_tol,
+                graph_split_fraction=args.graph_split_fraction,
+                split_random_state=args.split_random_state,
+                min_graph_rows=args.min_graph_rows,
             )
         )
 
@@ -494,6 +590,8 @@ def main() -> int:
             "report_root": str(report_root),
             "screening_method": "elastic_net_crossfit",
             "screening_note": "Association screen only; not causal evidence.",
+            "graph_split_fraction": float(args.graph_split_fraction),
+            "split_random_state": int(args.split_random_state),
             "selection": {
                 "top_k": int(args.top_k),
                 "n_splits": int(args.n_splits),

@@ -249,6 +249,28 @@ Run the elastic-net screen with:
 PYTHON_BIN="$(which python)" bash CausalDiscovery/scripts/run_elasticnet_screen_average_k10.sh
 ```
 
+#### Clean post-selection: `--graph-split-fraction`
+
+By default the screen keeps every row in the screened matrix, so peak selection and
+graph discovery share samples (exploratory only; the existing `..._elasticnet_top30_crossfit`
+runs are this kind). To get clean post-selection inference, hold out a disjoint graph split:
+
+```bash
+python3 CausalDiscovery/scripts/causal_cli.py elastic-net-screen \
+  --dataset-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10 \
+  --top-k 30 \
+  --graph-split-fraction 0.3
+```
+
+Peaks are selected on the `screen` split (here `1 - 0.3` of rows); the screened matrix
+written for downstream `graph`/`sweep`/`dagma-sweep` contains **only** the disjoint `graph`
+split rows. Selection and graph learning therefore never share samples, so the downstream
+conditional-independence tests / DAGMA scores are not biased by the selection step. The split
+is deterministic (`--split-random-state`), recorded per gene in
+`*_elasticnet_sample_split.tsv`, and summarized under `sample_split` in each `run_summary.json`.
+Output roots and report dirs gain a `_graphsplit<pct>` suffix so split runs never clobber the
+shared-sample ones.
+
 ### Current Next Steps
 
 The immediate goal is to reduce overly dense `PC` and `FCI` graphs using both structural filters and expression-informed screening. The current staged plan is:
