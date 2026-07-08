@@ -25,6 +25,9 @@ Data/external/eperturbdb/*
 # Downloaded ENCODE-rE2G monocyte gene-link tables (regenerate with build_re2g_gene_link_support.py)
 Data/external/re2g/
 
+# liftOver chain files (auto-downloaded from UCSC by scripts/liftover.py)
+Data/external/chains/
+
 # Downloaded external-evidence caches (ENCODE portal / SCREEN; regenerated on demand)
 CausalDiscovery/evaluation/external/cache/encode_*
 CausalDiscovery/evaluation/external/cache/*.bed.gz

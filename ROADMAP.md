@@ -126,6 +126,8 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [ ] Re-run support on the tracked graphs; regenerate `support_report.md` per graph with the new sources.
 
 ### Phase C — Aggregation (Q2) — replace kNN-averaging
+> Decision (2026-07-08): **keep the current kNN-averaged datasets as a labeled baseline** for
+> comparison; do not delete them. Add metacell/OT schemes alongside and compare (do not replace outright).
 - [ ] Implement SEACells metacells in the scGLUE joint latent (per modality, non-overlapping).
 - [ ] Implement metacell-to-metacell OT matching (unpaired design); keep 1:1 and kNN-avg as baselines.
 - [ ] Add mcRigor QC + library-size stabilization; choose graining by mcRigor.

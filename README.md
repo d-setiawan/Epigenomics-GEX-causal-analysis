@@ -245,6 +245,8 @@ Elastic-net stability screening on the `log1p_norm` nearby-peak matrices is the 
 - [ROADMAP.md](ROADMAP.md) — **the living master plan**: current status, the three method decisions
   (validation databases, cell aggregation, causal-discovery algorithms), and the phased action list.
   Update it as decisions land and steps complete.
+- [envs/](envs) — pinned environment specs and which conda env (`scrna_r` heavy / base tooling) runs
+  which pipeline stage. Recreate with `conda env create -f envs/environment-scrna_r.yml`.
 - [notes/](notes) — research/planning notes, identifiability derivations (`notes/Identifiability/`), the Spring 2026 final report, and the integration summary. These are now tracked in this repo.
 - [CausalDiscovery/evaluation.md](CausalDiscovery/evaluation.md) and [CausalDiscovery/evaluation/](CausalDiscovery/evaluation) — evaluation framing, external-source docs, and the saved-run audit.
 - [CausalDiscovery/evaluation/run_audit_report.md](CausalDiscovery/evaluation/run_audit_report.md) — audit of the saved graph runs (trust tiers, post-selection leakage, count-family DAGMA gaps, cell-type coverage of the external evidence).
