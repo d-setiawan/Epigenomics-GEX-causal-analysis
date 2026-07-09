@@ -150,8 +150,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [ ] Implement SEACells metacells in the scGLUE joint latent (per modality, non-overlapping).
 - [ ] Implement metacell-to-metacell OT matching (unpaired design); keep 1:1 and kNN-avg as baselines.
 - [ ] Add mcRigor QC + library-size stabilization; choose graining by mcRigor.
-- [ ] Implement `n_eff` estimators (participation ratio, reuse proxy, empirical null calibration) and a
-      **null-calibration false-positive test** (permute peak columns; measure realized type-I error).
+- [x] **null-calibration false-positive test** built (`scripts/null_calibration.py`) and run on the kNN-avg
+      baseline → **the current graphs are noise-dominated** (real edges ≈ α×pairs ≈ null floor for all 3
+      genes; peak→gene edges occur as often under noise as in real data). See
+      [evaluation/null_calibration_findings.md](evaluation/null_calibration_findings.md). This reframes
+      the plan: stability-selection + multiple-testing control are the PRIMARY fixes; metacells (honest n)
+      are necessary but insufficient alone.
+- [ ] Implement `n_eff` estimators (participation ratio, reuse proxy) as a complementary diagnostic.
 - [ ] Run the 5-scheme comparison (kNN-avg, dist-weighted, SEACells, OT-1:1, metacell-OT) on null
       calibration, `n_eff`, graph density/stability, and external-support precision. Pick the winner.
 
@@ -181,6 +186,14 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Null-calibration diagnostic built + run → current graphs are noise-dominated.**
+  `scripts/null_calibration.py` (permute every feature column, re-run FCI, compare edge counts). On the
+  300 kb kNN-avg baseline the real edge count sits inside/below the null band for all 3 genes
+  (CD14 56 vs null 51.7; CSF1R 10 vs 9.2; IL1B 6 vs 12.4) — edges track α×pairs, not signal; peak→gene
+  edges are noise-level. Reframes Q2: the primary fix is stability-selection + multiple-testing control,
+  with non-overlapping metacells (honest n) necessary but not sufficient. SEACells CANNOT go in `scrna_r`
+  (it force-upgrades numpy 1.26→2.2, breaking scGLUE/causal-learn) — use an isolated env or native
+  scanpy Leiden metacells. See evaluation/null_calibration_findings.md.
 - **2026-07-09** **Genetics axis added → 3-axis evaluation suite complete.**
   `build_eqtl_gene_link_support.py` loads monocyte eQTL Catalogue SuSiE credible sets (source `eqtl`,
   teal); wired into `run_gene_pipeline.py` (`--eqtl-tsv`, auto-detected). 3-axis node coverage now in
