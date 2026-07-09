@@ -147,9 +147,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 ### Phase C — Aggregation (Q2) — replace kNN-averaging
 > Decision (2026-07-08): **keep the current kNN-averaged datasets as a labeled baseline** for
 > comparison; do not delete them. Add metacell/OT schemes alongside and compare (do not replace outright).
-- [ ] Implement SEACells metacells in the scGLUE joint latent (per modality, non-overlapping).
-- [ ] Implement metacell-to-metacell OT matching (unpaired design); keep 1:1 and kNN-avg as baselines.
-- [ ] Add mcRigor QC + library-size stabilization; choose graining by mcRigor.
+- [x] **Non-overlapping metacells implemented** (native scanpy Leiden over the scGLUE joint latent —
+      NOT SEACells, which force-upgrades numpy and breaks scrna_r): `metacell_assign.py` (148 metacells,
+      133 complete) + `build_metacell_matching_dir.py` (emits a dataset-stage-compatible matching dir +
+      pseudobulk metacell RNA h5ad; dataset stage runs unchanged). Metacell CD14 matrix = 133 honest-n rows.
+- [x] **Bake-off done → winning config = metacell + α=0.01 + bootstrap stability selection** (see
+      [evaluation/aggregation_bakeoff.md](evaluation/aggregation_bakeoff.md)). Metacell fixes calibration
+      (α=0.01 null/expected 3.0×→1.0×) and is the only config whose single-run graph beats the null p95
+      (16 > 14); its stable peak→gene edges are externally validated by rE2G + eQTL.
+- [ ] (Optional refinement) metacell-to-metacell OT matching; mcRigor QC + library-size stabilization.
 - [x] **null-calibration false-positive test** built (`scripts/null_calibration.py`) and run on the kNN-avg
       baseline → **the current graphs are noise-dominated** (real edges ≈ α×pairs ≈ null floor for all 3
       genes; peak→gene edges occur as often under noise as in real data). See
@@ -157,8 +163,10 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       the plan: stability-selection + multiple-testing control are the PRIMARY fixes; metacells (honest n)
       are necessary but insufficient alone.
 - [ ] Implement `n_eff` estimators (participation ratio, reuse proxy) as a complementary diagnostic.
-- [ ] Run the 5-scheme comparison (kNN-avg, dist-weighted, SEACells, OT-1:1, metacell-OT) on null
-      calibration, `n_eff`, graph density/stability, and external-support precision. Pick the winner.
+- [x] Comparison run (baseline 1:1 vs metacell, α 0.05/0.01, single-run vs stability) via
+      `null_calibration.py` + `bootstrap_stability.py`. Winner recorded above. Bootstrap **stability
+      selection is the primary signal/noise separator** (real ≥0.5 edges vs null max-freq 0.12–0.22)
+      and belongs in every config — fold it into the pipeline as the headline output (Phase D/E).
 
 ### Phase D — Causal discovery upgrade (Q3)
 - [ ] Wire GFCI (py-tetrad) into `causal_cli.py` as a method → PAG output; keep PC/FCI for comparison.
@@ -186,6 +194,14 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Combined aggregation overhaul + bake-off → winning config chosen.** Built
+  non-overlapping metacells (native scanpy Leiden; `metacell_assign.py` + `build_metacell_matching_dir.py`;
+  133 honest-n rows, dataset stage unchanged) and `bootstrap_stability.py`. Bake-off (CD14):
+  **metacell + α=0.01 + stability selection wins** — metacells fix calibration (α=0.01 null/expected
+  3.0×→1.0×), metacell+α=0.01 is the only single-run config beating null p95 (16>14), and bootstrap
+  stability cleanly separates signal (real 12–57 stable edges) from noise (null 0, max-freq 0.12–0.22).
+  Metacell stable CD14 peak→gene edges externally validated by rE2G + eQTL. Stability selection is the
+  primary lever and should become the pipeline's headline output. See evaluation/aggregation_bakeoff.md.
 - **2026-07-09** **Null-calibration diagnostic built + run → current graphs are noise-dominated.**
   `scripts/null_calibration.py` (permute every feature column, re-run FCI, compare edge counts). On the
   300 kb kNN-avg baseline the real edge count sits inside/below the null band for all 3 genes
