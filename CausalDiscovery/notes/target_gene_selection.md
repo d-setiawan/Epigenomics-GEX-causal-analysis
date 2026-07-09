@@ -81,11 +81,39 @@ most discovered peak→gene edges will have a real chance of prediction- and gen
 
 ## Should we use other cell types? — pros / cons
 
-Our **experimental data is monocyte** (scRNA + scCUT&Tag). We build causal graphs from those
-cells; we cannot switch the *discovery* cell type without new experiments. So "other cell
-types" realistically means one of three moves:
+**Correction to an earlier claim:** the dataset is NOT monocyte-only. It is a PBMC/blood sample
+whose cells were label-transferred into several types; **monocyte was chosen because it had the
+highest scGLUE label-transfer confidence (0.96), not because it is the only option.** Observed
+composition (harmonized_coarse):
 
-### A. Stay strict monocyte (current) + pick validation-rich genes
+| cell type | RNA cells | total (RNA + 6 marks) | integration confidence |
+| --- | --- | --- | --- |
+| **T cell** | **4,946** | 20,575 | 0.91 |
+| **monocyte** (current) | 1,887 | 13,410 | **0.96** |
+| NK cell | 1,183 | 10,420 | 0.91 |
+| B cell | 739 | 5,320 | 0.95 |
+| dendritic cell | 206 | 1,590 | 0.91 |
+
+**Switching the discovery cell type to another type already in this data is FREE** — just re-run
+metacell assignment for that label and redo gene selection for it. No new experiments (that
+caveat only applies to cell lines we don't have, e.g. K562). Notably, **T cell has ~2.6× more
+RNA cells than monocyte (4,946 vs 1,887)** → hundreds of metacells → would directly ease the
+small-`n` bottleneck limiting our PAGs, and T-cell validation is abundant (ENCODE rE2G CD4/CD8,
+many T-cell eQTL datasets, Javierre PCHi-C naive/activated CD4 & CD8 columns). B cell integrates
+slightly better (0.95) but has fewer cells. So the real options are:
+
+### A. Stay monocyte (current) + pick validation-rich genes — but note its small-n cost
+Monocyte has the **fewest RNA cells of the major types** → ~133 metacells → the power bottleneck.
+
+### A′. Switch discovery to T cell (or B cell), WITHIN this dataset
+- **Pros:** ~2.6× more cells → hundreds of metacells → relieves the small-`n` problem; rich
+  T-cell validation exists on all three axes.
+- **Cons:** slightly lower integration confidence (0.91 vs 0.96); target becomes lymphoid not
+  myeloid; must redo metacells + gene ranking for the new type.
+- **Verdict: a real, arguably better option if statistical power is the priority.** Worth a
+  head-to-head (monocyte n≈133 vs T-cell n≈300+ on the same pipeline).
+
+### A″. Stay strict monocyte — validation honesty (unchanged rationale)
 - **Pros:** cell-type-aligned validation is honest and defensible; an edge validated in
   monocyte is real for our system; no cross-cell-type confounding; the 331-gene pool shows
   monocyte data is *not* actually limiting once we pick the right genes.
