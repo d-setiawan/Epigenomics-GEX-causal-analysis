@@ -214,6 +214,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Expanded panel to 15 genes + ran the full pipeline → 7 validated stable edges across
+  4 genes** (`evaluation/expanded_panel_results.md`). Built 12 validation-rich genes into a metacell
+  300 kb dataset (all have usable nearby peaks, 13–53 each), regenerated eQTL + PCHi-C support for the
+  panel (new genes have naive-monocyte eQTL, unlike the original 3). Ran metacell+GFCI+FCI+stability+3-axis
+  on all 15. Top tier (stable AND validated): **LSP1** ×2 (rE2G), **IL4R** ×2 (PCHi-C), **CD14** ×2
+  (eQTL+rE2G), **PLCL1** ×1 (rE2G) — all three axes now yield validated stable edges (vs 2 edges/1 gene
+  before). Fixed a singular-matrix crash (collinear sparse peaks) via a pre-discovery collinearity drop
+  (commit e3e07e3). Also **corrected the cell-type record**: data is PBMC/blood (T 20.6k > monocyte 13.4k
+  > NK > B > DC); monocyte was chosen for best scGLUE confidence (0.96), not exclusivity — switching
+  discovery to T cell is free and would ease small-n.
 - **2026-07-09** **Target-gene validation-coverage analysis** (`notes/target_gene_selection.md` +
   `evaluation/candidate_genes_validation_rich.tsv`). Ranked all genes by monocyte validation coverage
   (genome-wide rE2G distal links + eQTL credible sets across the 11 monocyte datasets) × expression in
