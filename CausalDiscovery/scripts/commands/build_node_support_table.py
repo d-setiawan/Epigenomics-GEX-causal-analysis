@@ -68,6 +68,13 @@ def load_selected_nodes(pc_dir: Path) -> list[str]:
 def parse_graph_node(node_name: str, region_lookup: dict[str, dict[str, object]]) -> dict[str, object]:
     if node_name.startswith("expr__"):
         gene = node_name.split("__", 1)[1]
+        # Strip expression-quantification suffixes so the gene metadata is the bare
+        # symbol (e.g. expr__CD14_log1p -> CD14). Otherwise target-gene-aware support
+        # matching (same_gene) fails against database gene symbols like "CD14".
+        for suffix in ("_log1p", "_raw_counts", "_rawcounts", "_lognorm", "_norm"):
+            if gene.endswith(suffix):
+                gene = gene[: -len(suffix)]
+                break
         return {
             "node_name": node_name,
             "node_type": "expression",

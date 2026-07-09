@@ -5,6 +5,7 @@ Keep it in sync: when you finish an action, check its box and move a one-line no
 Changelog; when a decision changes, edit the Decision and note why in the Changelog.
 
 - Related docs: [README.md](README.md) · [CausalDiscovery/README.md](CausalDiscovery/README.md) ·
+  **[CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md)** (end-to-end driver + alternative paths) ·
   [integration/README.md](integration/README.md) ·
   [CausalDiscovery/evaluation/run_audit_report.md](CausalDiscovery/evaluation/run_audit_report.md) ·
   [CausalDiscovery/evaluation/external_sources.md](CausalDiscovery/evaluation/external_sources.md) ·
@@ -127,9 +128,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [ ] **peak-node:** BLUEPRINT monocyte histone ChIP loader (GRCh38, per mark) — "is this a real monocyte
       mark". Add Roadmap E029 chromHMM active-state overlap.
 - [ ] **peak-peak:** ChIP-Atlas colocalization + ReMap shared-`TF:biotype`; monocyte Hi-C loop co-membership.
-- [ ] Add a `cell_type_aligned` flag to every support match and a **multi-axis "≥2 agree" edge validation**
-      class; stop counting cell-type-agnostic (SCREEN/JASPAR/ePerturbDB) evidence as monocyte validation.
-      *(node-level ≥2-axis already shows as `multi_source`; formalize an axis-aware edge rule.)*
+- [x] **Axis-aware edge validation rule formalized** in the end-to-end driver
+      (`run_gene_pipeline.py`): peak→gene edges validate only under
+      `region_interval_with_matching_target_gene` (target-gene-aware); peak-peak
+      "either-endpoint" overlap is demoted to `no_target_validator` (node-existence,
+      not edge support). Verdict tiers: `VALIDATED_MULTI_ALGO`/`VALIDATED`/
+      `recurrent_unvalidated`/`unvalidated`. Fixed a support bug where the expr node's
+      quant suffix (`expr__CD14_log1p`) leaked into the gene symbol and broke every
+      `same_gene` match. See [PIPELINE.md](CausalDiscovery/PIPELINE.md).
+- [ ] Add an explicit `cell_type_aligned` flag column to every support match (the
+      driver already ignores cell-type-agnostic SCREEN/JASPAR for edge validation).
 - [ ] Re-run support on the tracked graphs; regenerate `support_report.md` per graph with the new sources.
 
 ### Phase C — Aggregation (Q2) — replace kNN-averaging
@@ -169,6 +177,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-08** **End-to-end pipeline spine landed** (`CausalDiscovery/PIPELINE.md`):
+  `run_gene_pipeline.py` runs pc/fci/dagma on a gene → runs the target-aware support
+  suite on each → cross-algorithm consensus with axis-aware verdicts;
+  `summarize_pipeline_panel.py` rolls up the panel. Ran all 3 genes on the 300 kb
+  kNN-avg baseline (fisherz+rank_gaussian): CD14 has 1 `VALIDATED_MULTI_ALGO` edge
+  (`chr5:140612012-140612249__H3K4me2 → CD14`, rE2G-supported, FCI∩PC); CSF1R 0 /
+  IL1B 1 peak→gene edges, none target-aware validated; DAGMA empty on all three.
+  Fixed a target-gene-matching bug (quant suffix leaked into the expr node's gene
+  symbol). This formalizes the Phase B axis-aware edge validation rule.
 - **2026-07-08** Phase B started: generic `--external-support-tsv` local named-source mechanism;
   support matching efficiency fix (per-node `to_dict` hoisted); BLUEPRINT monocyte PCHi-C physical
   peak→gene source (`build_pchic_gene_link_support.py`, source `pchic`, pink). Two-axis rE2G+PCHi-C
