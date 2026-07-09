@@ -214,6 +214,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Monocyte-vs-T-cell power head-to-head** (`evaluation/celltype_power_comparison.md`).
+  Built a T-cell metacell dataset (245 metacells vs monocyte 133, ~1.8×) on the same panel and compared
+  calibration + bootstrap stability. Finding: **more cells ≠ uniformly more power** — T-cell wins where
+  the gene has T-cell signal (PLCL1 4 core vs 0; IL4R 3 core vs 0) but monocyte wins for myeloid-biased
+  genes (LSP1, CD14); net T-cell 8 core edges vs monocyte 4 across 4 genes. Null stays 0 in both (both
+  valid). **Confound:** the panel is monocyte-selected, so biased toward monocyte. Conclusion: monocyte
+  stays the default; a fair T-cell test needs T-cell-specific gene selection + T-cell validation DBs.
 - **2026-07-09** **Expanded panel to 15 genes + ran the full pipeline → 7 validated stable edges across
   4 genes** (`evaluation/expanded_panel_results.md`). Built 12 validation-rich genes into a metacell
   300 kb dataset (all have usable nearby peaks, 13–53 each), regenerated eQTL + PCHi-C support for the
