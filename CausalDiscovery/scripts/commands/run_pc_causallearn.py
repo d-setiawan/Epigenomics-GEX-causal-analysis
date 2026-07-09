@@ -181,16 +181,133 @@ class SafeFastKCI(CIT_Base):
 register_ci_test("safe_fastkci", SafeFastKCI)
 
 
-def resolve_ci_test(args) -> tuple[str, dict[str, object]]:
-    if args.indep_test != "fastkci":
-        return args.indep_test, {}
-    return "safe_fastkci", {
-        "K": int(args.fastkci_k),
-        "J": int(args.fastkci_j),
-        "fastkci_alpha": float(args.fastkci_alpha_param),
-        "use_gp": bool(args.fastkci_use_gp),
-        "fallback": str(args.fastkci_fallback),
-    }
+class ZeroDelFisherZ(CIT_Base):
+    """Test-wise-deletion Fisher-Z CI test (Causal Dropout Model, Dai et al., ICLR 2024).
+
+    For a test X _||_ Y | Z, every row whose *conditioning* variables contain a
+    dropout zero is deleted, then the ordinary Fisher-Z partial-correlation test is
+    run on the surviving rows. Theorem 2 of the paper shows these test-wise-deletion
+    CI relations asymptotically equal the dropout-free CI relations, so PC/FCI run on
+    top of this test recover the underlying (dropout-free) structure.
+
+    Adapted (self-contained, no external import) from the reference implementation
+    ``csl/utils/cit.py::ZeroDel_FisherZ`` in the scRNA-Causal-Dropout repo.
+
+    IMPORTANT — zero pattern vs. transformed data
+    ------------------------------------------------
+    ``data`` handed to the CI test by this script's discovery path is usually
+    z-scored (``--standardize``, default on) and may be otherwise transformed, so a
+    naive ``data != 0`` no longer marks dropout: centering moves the zeros off 0.
+    To stay correct we accept an explicit ``nonzero_mask`` built from the *raw*
+    (pre-transform, pre-standardize) feature matrix, where ``True`` marks an observed
+    (non-dropout) entry. Row deletion uses that mask; the partial correlation is still
+    computed on the discovery matrix. Because z-scoring is a per-column *linear* map,
+    Pearson/partial correlations on any fixed subset of rows are unchanged, so using
+    the z-scored values here is exact. (A *rank_gaussian* transform is nonlinear and
+    does change correlations — main() warns against combining it with this test.)
+    If no mask is supplied we fall back to ``data != 0``.
+    """
+
+    def __init__(self, data: np.ndarray, *, nonzero_mask=None, cache_path: str | None = None, **kwargs):
+        super().__init__(data, cache_path=cache_path)
+        if nonzero_mask is None:
+            nonzero_boolean_mat = np.asarray(data, dtype=float) != 0
+            mask_tag = "self_zero"
+        else:
+            nonzero_boolean_mat = np.asarray(nonzero_mask, dtype=bool)
+            if nonzero_boolean_mat.shape != data.shape:
+                raise ValueError(
+                    "nonzero_mask shape "
+                    f"{nonzero_boolean_mat.shape} does not match data shape {data.shape}."
+                )
+            mask_tag = "external_zero"
+        self.check_cache_method_consistent(
+            "zerodel_fisherz",
+            json.dumps({"mask": mask_tag}, sort_keys=True),
+        )
+        self.assert_input_data_is_valid()
+        self.nonzero_boolean_mat = nonzero_boolean_mat
+
+    def _get_index_no_dropout_rows(self, var: list[int]) -> np.ndarray:
+        return np.where(np.all(self.nonzero_boolean_mat[:, var], axis=1))[0]
+
+    def __call__(self, X, Y, condition_set=None, return_rho=False, return_sample_size=False):
+        Xs, Ys, condition_set, cache_key = self.get_formatted_XYZ_and_cachekey(X, Y, condition_set)
+        var = Xs + Ys + condition_set
+        if cache_key in self.pvalue_cache:
+            res = self.pvalue_cache[cache_key]
+            if len(res) == 2:
+                res = (res[0], res[1], self.sample_size)
+            if return_rho:
+                return res if return_sample_size else res[:2]
+            return (res[0], res[2]) if return_sample_size else res[0]
+
+        # Test-wise deletion: drop rows with a dropout zero in any conditioning var.
+        kept = self._get_index_no_dropout_rows(condition_set)
+        n_kept = int(len(kept))
+        if n_kept <= len(condition_set) + 3:
+            warnings.warn(
+                "ZeroDel_FisherZ: too few rows after test-wise deletion "
+                f"(n={n_kept}, |Z|={len(condition_set)}); returning p=1 (independent).",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+            res = (1 - np.finfo(float).eps, 0.0, n_kept)
+            self.pvalue_cache[cache_key] = res[:2]
+            if return_rho:
+                return res if return_sample_size else res[:2]
+            return (res[0], res[2]) if return_sample_size else res[0]
+
+        sub = self.data[kept][:, var]
+        with np.errstate(invalid="ignore", divide="ignore"):
+            sub_corr = np.corrcoef(sub.T)
+        # After deletion a kept variable can become (near-)constant on the surviving
+        # rows -> corrcoef returns NaN/Inf and the SVD in pinv diverges. On the very
+        # sparse peak data this happens often; treat it as an uninformative test (p=1)
+        # instead of crashing the discovery worker.
+        if not np.all(np.isfinite(sub_corr)):
+            warnings.warn(
+                "ZeroDel_FisherZ: degenerate correlation submatrix after test-wise deletion "
+                f"(n={n_kept}, |Z|={len(condition_set)}); returning p=1 (independent).",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+            res = (1 - np.finfo(float).eps, 0.0, n_kept)
+            self.pvalue_cache[cache_key] = res[:2]
+            if return_rho:
+                return res if return_sample_size else res[:2]
+            return (res[0], res[2]) if return_sample_size else res[0]
+        inv = np.linalg.pinv(sub_corr)
+        r = -inv[0, 1] / np.sqrt(inv[0, 0] * inv[1, 1])
+        if abs(r) >= 1:
+            r = (1.0 - np.finfo(float).eps) * np.sign(r)
+        z = 0.5 * np.log((1 + r) / (1 - r))
+        stat = np.sqrt(n_kept - len(condition_set) - 3) * abs(z)
+        p = 2 * (1 - norm.cdf(abs(stat)))
+        res = (float(p), float(r), n_kept)
+        self.pvalue_cache[cache_key] = res[:2]
+        if return_rho:
+            return res if return_sample_size else res[:2]
+        return (res[0], res[2]) if return_sample_size else res[0]
+
+
+register_ci_test("zerodel_fisherz", ZeroDelFisherZ)
+
+
+def resolve_ci_test(args, *, nonzero_mask=None) -> tuple[str, dict[str, object]]:
+    if args.indep_test == "fastkci":
+        return "safe_fastkci", {
+            "K": int(args.fastkci_k),
+            "J": int(args.fastkci_j),
+            "fastkci_alpha": float(args.fastkci_alpha_param),
+            "use_gp": bool(args.fastkci_use_gp),
+            "fallback": str(args.fastkci_fallback),
+        }
+    if args.indep_test == "zerodel_fisherz":
+        # Pass the raw dropout mask so deletion is correct even though the discovery
+        # matrix is z-scored/transformed. See ZeroDelFisherZ docstring.
+        return "zerodel_fisherz", ({} if nonzero_mask is None else {"nonzero_mask": nonzero_mask})
+    return args.indep_test, {}
 
 
 def infer_default_graph_out_dir(
@@ -1073,7 +1190,30 @@ def main() -> int:
     model_df = model_df.astype(float)
     background_knowledge, bg_rules = build_background_knowledge(selected_cols, args.background_mode)
     dagma_exclude_edges = build_dagma_exclude_edges(selected_cols, bg_rules) if args.method == "dagma" else []
-    resolved_indep_test, ci_kwargs = resolve_ci_test(args)
+
+    # For the Causal Dropout Model test-wise-deletion test we need the *raw* dropout
+    # pattern (before transform/standardize move zeros off 0). selected_df here is the
+    # untransformed, row-filtered feature matrix in the same row/column order as model_df.
+    zerodel_nonzero_mask = None
+    if args.indep_test == "zerodel_fisherz" and args.method in {"pc", "fci"}:
+        zerodel_nonzero_mask = selected_df[selected_cols].to_numpy(dtype=float) != 0
+        zero_frac = float(1.0 - zerodel_nonzero_mask.mean())
+        if args.transform == "rank_gaussian":
+            warnings.warn(
+                "--indep-test zerodel_fisherz with --transform rank_gaussian: the rank-Gaussian "
+                "transform is nonlinear and destroys the count-magnitude semantics the dropout "
+                "theorem relies on. Row deletion still uses the raw zero pattern, but the partial "
+                "correlation is computed on transformed values. Use --transform none for a valid test.",
+                RuntimeWarning,
+            )
+        if zero_frac < 1e-6:
+            warnings.warn(
+                f"--indep-test zerodel_fisherz: raw data has essentially no zeros (zero fraction "
+                f"{zero_frac:.2e}); test-wise deletion is a no-op and this reduces to plain Fisher-Z. "
+                "The Causal Dropout Model is only informative on data with genuine dropout zeros.",
+                RuntimeWarning,
+            )
+    resolved_indep_test, ci_kwargs = resolve_ci_test(args, nonzero_mask=zerodel_nonzero_mask)
 
     if args.method == "pc":
         graph = run_pc_search(

@@ -33,12 +33,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
 from pathlib import Path
 
 import pandas as pd
+
+# Discovery methods that route through causal_cli.py graph (vs. the GFCI/Tetrad path).
+CLI_METHODS = {"pc", "fci", "dagma"}
 
 # --- source name -> triangulation axis (peak->gene). eqtl slots in at Phase B. -
 SOURCE_AXIS = {
@@ -52,10 +56,10 @@ TARGET_AWARE_SOURCES = set(SOURCE_AXIS)
 TARGET_AWARE_RULES = {"region_interval_with_matching_target_gene"}
 
 
-def sh(cmd: list[str]) -> None:
+def sh(cmd: list[str], env: dict | None = None) -> None:
     """Run a subprocess, streaming output; raise on failure."""
     print(f"\n$ {' '.join(cmd)}", flush=True)
-    completed = subprocess.run(cmd, check=False)
+    completed = subprocess.run(cmd, check=False, env=env)
     if completed.returncode != 0:
         raise SystemExit(f"command failed ({completed.returncode}): {' '.join(cmd)}")
 
@@ -114,6 +118,106 @@ def support_cmd(cli: Path, python_bin: str, graph_dir: Path,
     return cmd
 
 
+def gfci_cmd(script: Path, gfci_python_bin: str, matrix: Path,
+             out_dir: Path, a: argparse.Namespace) -> list[str]:
+    """GFCI runs in the causaldisco env (JDK 21) via run_gfci_tetrad.py."""
+    return [
+        gfci_python_bin, str(script),
+        "--matrix-tsv", str(matrix),
+        "--out-dir", str(out_dir),
+        "--alpha", str(a.gfci_alpha),
+        "--penalty-discount", str(a.gfci_penalty_discount),
+        "--transform", a.transform,
+    ]
+
+
+def gfci_env(a: argparse.Namespace) -> dict:
+    """Env for the GFCI subprocess: force JAVA_HOME to the JDK-21 env."""
+    env = os.environ.copy()
+    env["JAVA_HOME"] = str(a.java_home)
+    return env
+
+
+def resolve_stability_method(methods: list[str], requested: str | None) -> str:
+    """Stability re-runs discovery via causal_cli graph, which only supports
+    pc/fci/dagma. Default to the primary CLI discovery method (first such in
+    --methods), falling back to fci if only GFCI was requested."""
+    if requested:
+        return requested
+    for m in methods:
+        if m in CLI_METHODS:
+            return m
+    return "fci"
+
+
+def stability_cmd(script: Path, python_bin: str, matrix: Path, out_dir: Path,
+                  label: str, method: str, a: argparse.Namespace) -> list[str]:
+    return [
+        sys.executable, str(script),
+        "--matrix-tsv", str(matrix),
+        "--label", label,
+        "--out-dir", str(out_dir),
+        "--n-boot", str(a.n_boot),
+        "--subsample-frac", str(a.subsample_frac),
+        "--stable-threshold", str(a.stable_threshold),
+        "--python-bin", python_bin,
+        "--method", method,
+        "--indep-test", a.indep_test,
+        "--transform", a.transform,
+        "--alpha", str(a.alpha),
+        "--max-depth", str(a.max_depth),
+        "--background-mode", a.background_mode,
+    ]
+
+
+def run_stability(a: argparse.Namespace, gene_out: Path, matrix: Path) -> dict:
+    """Bootstrap edge-stability selection on the gene's matrix (headline step)."""
+    script = a.repo_root / "CausalDiscovery" / "scripts" / "bootstrap_stability.py"
+    method = resolve_stability_method(a.methods, a.stability_method)
+    out_dir = gene_out / "stability"
+    label = a.gene.upper()
+    sh(stability_cmd(script, a.python_bin, matrix, out_dir, label, method, a))
+
+    freq: dict[tuple, float] = {}
+    stab_tsv = out_dir / f"edge_stability_{label}.tsv"
+    if stab_tsv.exists():
+        sdf = pd.read_csv(stab_tsv, sep="\t")
+        for _, r in sdf.iterrows():
+            key = tuple(sorted([str(r["node1"]), str(r["node2"])]))
+            freq[key] = float(r["frequency"])
+    summ_json = out_dir / f"stability_summary_{label}.json"
+    summary = json.loads(summ_json.read_text()) if summ_json.exists() else {}
+    return {
+        "method": method,
+        "out_dir": str(out_dir),
+        "freq": freq,
+        "summary": summary,
+        "stable_threshold": a.stable_threshold,
+    }
+
+
+def merge_stability(consensus: pd.DataFrame, freq: dict[tuple, float],
+                    threshold: float) -> pd.DataFrame:
+    """Add per-edge stability frequency + stable/top-tier flags to the consensus."""
+    if consensus.empty:
+        for col in ("stability", "stable", "top_tier"):
+            consensus[col] = pd.Series(dtype="float64" if col == "stability" else "bool")
+        return consensus
+    stab, stable, top = [], [], []
+    for _, r in consensus.iterrows():
+        key = tuple(sorted([str(r["node1"]), str(r["node2"])]))
+        f = freq.get(key, 0.0)
+        is_stable = f >= threshold
+        stab.append(f)
+        stable.append(is_stable)
+        top.append(bool(is_stable and r.get("target_aware_validated", False)))
+    consensus = consensus.copy()
+    consensus["stability"] = stab
+    consensus["stable"] = stable
+    consensus["top_tier"] = top
+    return consensus
+
+
 def edge_kind(node1: str, node2: str) -> str:
     e1, e2 = node1.startswith("expr__"), node2.startswith("expr__")
     if e1 and e2:
@@ -166,7 +270,11 @@ def run_gene(a: argparse.Namespace) -> dict:
     for method in a.methods:
         mdir = gene_out / method
         t0 = time.time()
-        sh(graph_cmd(cli, a.python_bin, method, matrix, mdir, a))
+        if method == "gfci":
+            script = a.repo_root / "CausalDiscovery" / "scripts" / "run_gfci_tetrad.py"
+            sh(gfci_cmd(script, a.gfci_python_bin, matrix, mdir, a), env=gfci_env(a))
+        else:
+            sh(graph_cmd(cli, a.python_bin, method, matrix, mdir, a))
         sh(support_cmd(cli, a.python_bin, mdir, a))
         dt = time.time() - t0
 
@@ -195,9 +303,18 @@ def run_gene(a: argparse.Namespace) -> dict:
             })
 
     consensus = build_consensus(a.gene, edge_rows)
-    write_outputs(a, gene_out, matrix, per_method, edge_rows, consensus)
+
+    stability = None
+    if a.stability:
+        stability = run_stability(a, gene_out, matrix)
+        consensus = merge_stability(consensus, stability["freq"], a.stable_threshold)
+    else:
+        consensus = merge_stability(consensus, {}, a.stable_threshold)
+
+    write_outputs(a, gene_out, matrix, per_method, edge_rows, consensus, stability)
     return {"gene": a.gene.upper(), "per_method": per_method,
-            "consensus": consensus, "out_dir": str(gene_out)}
+            "consensus": consensus, "out_dir": str(gene_out),
+            "stability": stability}
 
 
 def build_consensus(gene: str, edge_rows: list[dict]) -> pd.DataFrame:
@@ -272,7 +389,8 @@ def verdict(kind: str, n_methods: int, validated: bool, n_axes: int) -> str:
 
 
 def write_outputs(a, gene_out: Path, matrix: Path, per_method: dict,
-                  edge_rows: list[dict], consensus: pd.DataFrame) -> None:
+                  edge_rows: list[dict], consensus: pd.DataFrame,
+                  stability: dict | None = None) -> None:
     consensus.to_csv(gene_out / "edges_consensus.tsv", sep="\t", index=False)
     pd.DataFrame(edge_rows).to_csv(gene_out / "edges_per_method.tsv", sep="\t", index=False)
 
@@ -285,6 +403,7 @@ def write_outputs(a, gene_out: Path, matrix: Path, per_method: dict,
             "alpha": a.alpha, "indep_test": a.indep_test, "transform": a.transform,
             "max_depth": a.max_depth, "background_mode": a.background_mode,
             "dagma_w_threshold": a.dagma_w_threshold, "min_overlap_bp": a.min_overlap_bp,
+            "gfci_alpha": a.gfci_alpha, "gfci_penalty_discount": a.gfci_penalty_discount,
         },
         "sources": {
             "re2g_tsv": str(a.re2g_tsv) if a.re2g_tsv else None,
@@ -292,15 +411,75 @@ def write_outputs(a, gene_out: Path, matrix: Path, per_method: dict,
             "eqtl_tsv": str(a.eqtl_tsv) if a.eqtl_tsv else None,
             "node_context_preset": a.node_context_preset,
         },
+        "stability": {
+            "enabled": bool(stability),
+            "method": stability["method"] if stability else None,
+            "n_boot": a.n_boot, "subsample_frac": a.subsample_frac,
+            "stable_threshold": a.stable_threshold,
+            "summary": stability["summary"] if stability else None,
+            "out_dir": stability["out_dir"] if stability else None,
+        },
         "per_method": per_method,
     }
     (gene_out / "pipeline_manifest.json").write_text(json.dumps(manifest, indent=2))
 
-    write_report(a, gene_out, matrix, per_method, consensus)
+    write_report(a, gene_out, matrix, per_method, consensus, stability)
+
+
+def _stability_headline(a, consensus: pd.DataFrame, stability: dict | None) -> list[str]:
+    """The headline 'Stability-selected + validated edges' section."""
+    lines = ["## Stability-selected + validated edges (headline)", ""]
+    if not a.stability or stability is None:
+        lines += ["_Stability selection disabled (`--no-stability`)._", ""]
+        return lines
+    summ = stability.get("summary", {})
+    thr = a.stable_threshold
+    lines += [
+        f"- Bootstrap stability: method `{stability['method']}` · "
+        f"{a.n_boot} resamples · subsample {a.subsample_frac} · stable ≥ {thr}",
+        f"- Edges ever seen: **{summ.get('n_edges_seen', '?')}** · "
+        f"stable (≥ {thr}): **{summ.get('n_stable', '?')}** "
+        f"(peak→gene {summ.get('n_stable_peak_gene', '?')})",
+        "",
+        "**Top tier = edges that are BOTH bootstrap-stable AND target-aware validated:**",
+        "",
+    ]
+    pg = consensus[consensus["edge_kind"] == "peak_gene"] if not consensus.empty else consensus
+    top = pg[pg.get("top_tier", False) == True] if not pg.empty else pg  # noqa: E712
+    if top is None or top.empty:
+        lines += ["_No edge is both stable and target-aware validated at the current threshold._"]
+        # still surface the best of each so the section is informative
+        if not pg.empty:
+            stab_only = pg[pg["stable"] == True].sort_values("stability", ascending=False)  # noqa: E712
+            val_only = pg[pg["target_aware_validated"] == True]  # noqa: E712
+            if not stab_only.empty:
+                lines += ["", f"- stable peak→gene edges (freq ≥ {thr}): "
+                          + ", ".join(f"`{_peak_of(r, a)}` ({r['stability']:.2f})"
+                                      for _, r in stab_only.head(6).iterrows())]
+            if not val_only.empty:
+                lines += [f"- target-aware validated peak→gene edges: "
+                          + ", ".join(f"`{_peak_of(r, a)}` [{r['axes'] or '—'}]"
+                                      for _, r in val_only.iterrows())]
+    else:
+        lines += ["| peak | gene | stability | axes | sources | algos | verdict |",
+                  "| --- | --- | --- | --- | --- | --- | --- |"]
+        for _, r in top.sort_values("stability", ascending=False).iterrows():
+            lines.append(
+                f"| `{_peak_of(r, a)}` | {a.gene.upper()} | **{r['stability']:.2f}** "
+                f"| {r['axes'] or '—'} | {r['target_aware_sources'] or '—'} "
+                f"| {str(r['methods']).replace('|', ', ')} | {r['verdict']} |")
+    lines += [""]
+    return lines
+
+
+def _peak_of(r, a) -> str:
+    """Return the peak endpoint of a peak→gene consensus row."""
+    n1, n2 = str(r["node1"]), str(r["node2"])
+    return n2 if n1.startswith("expr__") else n1
 
 
 def write_report(a, gene_out: Path, matrix: Path, per_method: dict,
-                 consensus: pd.DataFrame) -> None:
+                 consensus: pd.DataFrame, stability: dict | None = None) -> None:
     pg = consensus[consensus["edge_kind"] == "peak_gene"] if not consensus.empty else consensus
     validated = pg[pg["target_aware_validated"]] if not pg.empty else pg
     lines = [
@@ -313,6 +492,7 @@ def write_report(a, gene_out: Path, matrix: Path, per_method: dict,
         + ", ".join([s for s, v in [("re2g", a.re2g_tsv), ("pchic", a.pchic_tsv), ("eqtl", a.eqtl_tsv)] if v] or ["(none)"]),
         f"- Node-context preset (gene-agnostic): `{a.node_context_preset}`",
         "",
+        *_stability_headline(a, consensus, stability),
         "## Per-algorithm discovery",
         "",
         "| method | edges | vars | seconds |",
@@ -372,11 +552,36 @@ def main() -> int:
                    default=repo_root / "CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb",
                    help="Nearby-peak dataset root (default: 300kb kNN-avg baseline).")
     p.add_argument("--methods", default="fci,pc",
-                   help="Comma-separated algorithms: any of pc,fci,dagma.")
+                   help="Comma-separated algorithms: any of pc,fci,dagma,gfci.")
     p.add_argument("--out-root", type=Path,
                    default=repo_root / "CausalDiscovery/outputs/pipeline")
     p.add_argument("--python-bin", default=default_python_bin(),
                    help="Python with causal-learn/dagma (default: scrna_r env).")
+    # GFCI (Tetrad / pytetrad) runs in a separate JDK-21 env.
+    p.add_argument("--gfci-python-bin",
+                   default="/home/dgsetiawan/anaconda3/envs/causaldisco/bin/python",
+                   help="Python with pytetrad (causaldisco env) for the GFCI method.")
+    p.add_argument("--java-home",
+                   default="/home/dgsetiawan/anaconda3/envs/causaldisco",
+                   help="JAVA_HOME (JDK 21) exported for the GFCI subprocess.")
+    p.add_argument("--gfci-alpha", type=float, default=0.01,
+                   help="Fisher-Z alpha for GFCI (independent of PC/FCI --alpha).")
+    p.add_argument("--gfci-penalty-discount", type=float, default=2.0,
+                   help="SEM-BIC penalty discount for GFCI.")
+    # Stability-selection (headline) step.
+    p.add_argument("--stability", action="store_true", default=True,
+                   help="Run bootstrap edge-stability selection (default: on).")
+    p.add_argument("--no-stability", dest="stability", action="store_false",
+                   help="Disable the stability-selection step.")
+    p.add_argument("--stability-method", default=None,
+                   help="Discovery method for stability re-runs (pc/fci/dagma). "
+                        "Default: primary CLI method in --methods.")
+    p.add_argument("--n-boot", type=int, default=50,
+                   help="Bootstrap resamples for stability selection.")
+    p.add_argument("--subsample-frac", type=float, default=0.7,
+                   help="Row subsample fraction per bootstrap.")
+    p.add_argument("--stable-threshold", type=float, default=0.5,
+                   help="Recurrence frequency at/above which an edge is 'stable'.")
     # discovery params (Q3 defaults)
     p.add_argument("--indep-test", default="fisherz")
     p.add_argument("--transform", default="rank_gaussian", choices=["none", "rank_gaussian"])
@@ -411,6 +616,12 @@ def main() -> int:
         for _, r in val.iterrows():
             print(f"    ✓ {r['verdict']:20s} {r['methods']:8s} axes={r['axes']}"
                   f"  {r['node1']} — {r['node2']}")
+        if "top_tier" in c.columns:
+            top = c[(c["edge_kind"] == "peak_gene") & (c["top_tier"] == True)]  # noqa: E712
+            print(f"  STABLE + VALIDATED (top tier): {len(top)}")
+            for _, r in top.iterrows():
+                print(f"    ★ stability={r['stability']:.2f}  {_peak_of(r, a)} → {a.gene.upper()}"
+                      f"  axes={r['axes']}")
     print("=" * 64)
     return 0
 
