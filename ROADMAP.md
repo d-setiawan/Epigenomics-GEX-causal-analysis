@@ -177,15 +177,23 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       eQTL-validated peak→CD14 edge** `chr5:140638860-140639949__H3K4me2`; GFCI is far sparser than FCI
       (1 vs 16 edges — the Q3 "score skeleton fixes density" claim); RCD flagged 26 latent-confounded
       entries; CAM-UV disagreed (nonlinear, small n); GIN found no latent structure. See envs/README.md.
-- [ ] Wire GFCI (py-tetrad) into `causal_cli.py` as a method → PAG output; keep PC/FCI for comparison.
+- [x] **GFCI wired into the pipeline** (`run_gfci_tetrad.py` + `run_gene_pipeline.py --methods gfci`,
+      routed to the causaldisco env/JDK21; support-compatible graph dir). GFCI is far sparser than FCI
+      (1 vs 28 edges on metacell CD14). *(Wired into `run_gene_pipeline.py`, not `causal_cli.py`.)*
+- [x] **Stability selection is now the pipeline headline** — `run_gene_pipeline.py` runs
+      `bootstrap_stability.py` and reports the top tier = edges BOTH bootstrap-stable AND target-aware
+      validated. On metacell CD14: `chr5:140638860-140639949__H3K4me2→CD14` (stability 0.70, fci∩gfci,
+      eQTL, VALIDATED_MULTI_ALGO) + `chr5:140591420-140591815__H3K4me3→CD14` (0.70, rE2G). *(Row
+      subsampling; upgrade to donor-level block-bootstrap once donor labels are threaded.)*
+- [x] **Causal Dropout Model added + assessed** — `--indep-test zerodel_fisherz` in
+      `run_pc_causallearn.py` (test-wise deletion, raw zero-mask threaded). **Verdict: not usable as a
+      default** — our peaks are 70–93% zero (metacell) / 98–99% (1:1/raw), so test-wise deletion starves
+      the sample (1:1 collapses to 1 edge). Keep only as an optional sensitivity check on metacell data
+      with `--transform none`. See envs/README.md / commit.
 - [ ] Add rank-fisherz and RCoT CI tests; make rank-fisherz the default; deprecate KCI to opt-in.
 - [ ] VST the gene-count node; remove count-family DAGMA presets (keep Gaussian DAGMA as sensitivity).
 - [ ] Add a pre-discovery step to regress out / condition on donor, batch, cell-cycle score.
-- [ ] Add donor-level block-bootstrap edge-mark stability reporting; make stability the headline output.
-- [ ] **Causal Dropout Model** — wire `zerodel_fisherz` (test-wise deletion, Dai et al. ICLR'24;
-      github.com/MarkDana/scRNA-Causal-Dropout) as an `--indep-test` option. Best for the raw-count /
-      sparse-peak regime (metacell averaging already removes most dropout zeros), so use as a sensitivity
-      cross-check, not on the metacell-log1p matrix. It is a drop-in CI test (causal-learn CIT interface).
+- [ ] Upgrade stability to donor-level block-bootstrap (needs donor labels on rows).
 
 ### Phase E — Analysis (only after A–D)
 - [ ] Regenerate datasets on the chosen aggregation, at 300 kb (interpretable window).
@@ -205,6 +213,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Pipeline upgraded: GFCI + stability headline; Causal-Dropout CI added & assessed.**
+  `run_gfci_tetrad.py` + `run_gene_pipeline.py --methods gfci` (causaldisco/JDK21); bootstrap
+  stability-selection is now the report headline (top tier = stable AND validated). On metacell CD14 the
+  top tier is the eQTL-validated `…140638860…H3K4me2→CD14` (stability 0.70, fci∩gfci) + the rE2G-validated
+  `…140591420…H3K4me3→CD14`. Added `--indep-test zerodel_fisherz` (Causal Dropout Model) — assessed as
+  NOT usable by default (peaks 70–99% zero → test-wise deletion starves the sample), only a niche
+  sensitivity check. Commit bbc796d.
 - **2026-07-09** **Phase-D method zoo installed + cross-method-validated.** One centralized `causaldisco`
   mamba env (py-tetrad + JDK 21, lingam, causal-learn, gcastle) covers all three requested directions:
   Java suite (GFCI/RFCI/FCI-Max), non-sufficiency functional (RCD/CAM-UV/ParceLiNGAM), latent-structure
