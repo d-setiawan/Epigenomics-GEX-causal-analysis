@@ -171,12 +171,21 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       and belongs in every config — fold it into the pipeline as the headline output (Phase D/E).
 
 ### Phase D — Causal discovery upgrade (Q3)
+- [x] **Method zoo installed in one `causaldisco` env** (mamba; py-tetrad+JDK21, lingam, causal-learn
+      0.1.4.7, gcastle) and **cross-method smoke-tested on metacell CD14** (α=0.01, non-transformed):
+      **GFCI (Tetrad), FCI, and RCD (non-Gaussian, latent-aware) all independently pick the same
+      eQTL-validated peak→CD14 edge** `chr5:140638860-140639949__H3K4me2`; GFCI is far sparser than FCI
+      (1 vs 16 edges — the Q3 "score skeleton fixes density" claim); RCD flagged 26 latent-confounded
+      entries; CAM-UV disagreed (nonlinear, small n); GIN found no latent structure. See envs/README.md.
 - [ ] Wire GFCI (py-tetrad) into `causal_cli.py` as a method → PAG output; keep PC/FCI for comparison.
 - [ ] Add rank-fisherz and RCoT CI tests; make rank-fisherz the default; deprecate KCI to opt-in.
 - [ ] VST the gene-count node; remove count-family DAGMA presets (keep Gaussian DAGMA as sensitivity).
 - [ ] Add a pre-discovery step to regress out / condition on donor, batch, cell-cycle score.
 - [ ] Add donor-level block-bootstrap edge-mark stability reporting; make stability the headline output.
-- [ ] (Optional) Causal Dropout Model test-wise deletion for sparse peaks.
+- [ ] **Causal Dropout Model** — wire `zerodel_fisherz` (test-wise deletion, Dai et al. ICLR'24;
+      github.com/MarkDana/scRNA-Causal-Dropout) as an `--indep-test` option. Best for the raw-count /
+      sparse-peak regime (metacell averaging already removes most dropout zeros), so use as a sensitivity
+      cross-check, not on the metacell-log1p matrix. It is a drop-in CI test (causal-learn CIT interface).
 
 ### Phase E — Analysis (only after A–D)
 - [ ] Regenerate datasets on the chosen aggregation, at 300 kb (interpretable window).
@@ -196,6 +205,12 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Phase-D method zoo installed + cross-method-validated.** One centralized `causaldisco`
+  mamba env (py-tetrad + JDK 21, lingam, causal-learn, gcastle) covers all three requested directions:
+  Java suite (GFCI/RFCI/FCI-Max), non-sufficiency functional (RCD/CAM-UV/ParceLiNGAM), latent-structure
+  (GIN), and the Causal Dropout Model (test-wise-deletion CI, cloned). On metacell CD14 (α=0.01), GFCI +
+  FCI + RCD independently converge on the same eQTL-validated peak→CD14 edge — method triangulation atop
+  the data-axis triangulation. Env pinned in `envs/`.
 - **2026-07-09** **Combined aggregation overhaul + bake-off → winning config chosen.** Built
   non-overlapping metacells (native scanpy Leiden; `metacell_assign.py` + `build_metacell_matching_dir.py`;
   133 honest-n rows, dataset stage unchanged) and `bootstrap_stability.py`. Bake-off (CD14):
