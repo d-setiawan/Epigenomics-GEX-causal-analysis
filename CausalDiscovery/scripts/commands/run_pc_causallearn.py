@@ -1022,6 +1022,35 @@ def run_fci_search_bounded(
     return graph, get_color_edges(graph)
 
 
+def drop_collinear_columns(selected_df, cols, transform, standardize, threshold: float = 0.9999):
+    """Greedily drop feature columns that are near-perfectly collinear (|r| >= threshold)
+    with an already-kept column, on the SAME matrix discovery will see (post transform +
+    z-score). Perfectly collinear sparse peaks make the fisherz correlation matrix singular
+    ("Data correlation matrix is singular") -- common at small n with 70-90%-zero peaks.
+    Expression nodes are prioritized so a peak collinear with expression is dropped, not the
+    gene. Returns the columns to keep, in the original order."""
+    tdf = apply_transform(selected_df[cols], transform)
+    mdf = zscore_df(tdf) if standardize else tdf.copy()
+    X = mdf.to_numpy(dtype=float)
+    order = ([i for i, c in enumerate(cols) if c.startswith("expr__")] +
+             [i for i, c in enumerate(cols) if not c.startswith("expr__")])
+    kept: list[int] = []
+    for i in order:
+        xi = X[:, i]
+        if not np.isfinite(xi).all() or xi.std() <= 0:
+            continue
+        collinear = False
+        for j in kept:
+            r = np.corrcoef(xi, X[:, j])[0, 1]
+            if (not np.isfinite(r)) or abs(r) >= threshold:
+                collinear = True
+                break
+        if not collinear:
+            kept.append(i)
+    keep_set = set(kept)
+    return [c for i, c in enumerate(cols) if i in keep_set]
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description="Run a PC or FCI baseline on a locus matrix with causal-learn")
     p.add_argument("--repo-root", default=str(infer_repo_root()))
@@ -1148,6 +1177,20 @@ def main() -> int:
     n_rows_after_dropna = int(selected_df.shape[0])
     if selected_df.empty:
         raise ValueError("No rows remain after dropping missing values")
+
+    # Constraint-based methods invert the correlation matrix (fisherz); perfectly collinear
+    # sparse peaks make it singular. Drop the redundant columns (keep expression + one of
+    # each collinear group) so FCI/PC run on well-conditioned data.
+    if args.method in ("pc", "fci"):
+        keep_cols = drop_collinear_columns(selected_df, selected_cols, args.transform, args.standardize)
+        if len(keep_cols) < len(selected_cols):
+            for col in selected_cols:
+                if col not in keep_cols:
+                    dropped_rows.append({"column": col, "reason": "collinear"})
+            selected_cols = keep_cols
+            selected_df = selected_df[selected_cols].copy()
+            if len(selected_cols) < 2:
+                raise ValueError("Fewer than two columns remain after collinearity filtering")
 
     dagma_family = None
     resolved_dagma_loss = "mixed_family"
