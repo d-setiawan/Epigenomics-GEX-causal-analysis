@@ -156,6 +156,11 @@ def support_style(highlight_class: str) -> dict[str, str | float]:
             "linewidth": 3.4,
             "size_delta": 360.0,
         },
+        "eqtl_only": {
+            "edgecolor": "#16A085",
+            "linewidth": 3.4,
+            "size_delta": 360.0,
+        },
         "multi_source": {
             "edgecolor": "#D7263D",
             "linewidth": 4.0,
@@ -396,6 +401,8 @@ def source_family(source: str) -> str:
         return "re2g"
     if source.startswith("pchic"):
         return "pchic"
+    if source.startswith("eqtl"):
+        return "eqtl"
     if source.startswith("eperturb"):
         return "eperturbdb"
     if source.startswith("encode"):

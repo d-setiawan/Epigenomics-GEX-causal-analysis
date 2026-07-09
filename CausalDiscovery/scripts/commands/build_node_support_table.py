@@ -498,6 +498,8 @@ def source_family(source: str) -> str:
         return "re2g"
     if source.startswith("pchic"):
         return "pchic"
+    if source.startswith("eqtl"):
+        return "eqtl"
     if source.startswith("eperturb"):
         return "eperturbdb"
     if source.startswith("encode"):
@@ -523,6 +525,8 @@ def highlight_class_for_sources(sources: set[str]) -> str:
         return "re2g_only"
     if families == {"pchic"}:
         return "pchic_only"
+    if families == {"eqtl"}:
+        return "eqtl_only"
     return "none"
 
 

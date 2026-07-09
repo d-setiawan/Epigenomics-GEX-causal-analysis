@@ -123,8 +123,12 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - [x] **peak→gene, physical:** `build_pchic_gene_link_support.py` — Javierre PCHi-C `Mon≥5`, hg19→hg38
       lifted, source `pchic`. 86 monocyte gene-links for the panel; on CD14 it corroborates 15 nodes with
       rE2G (`multi_source`). Verified end-to-end.
-- [ ] **peak→gene, genetics:** eQTL Catalogue monocyte eQTL loader (BLUEPRINT/Fairfax/CEDAR; use SuSiE
-      credible sets); count an eQTL variant in a peak targeting the gene as support.
+- [x] **peak→gene, genetics:** `build_eqtl_gene_link_support.py` — eQTL Catalogue monocyte `ge` SuSiE
+      credible sets, filtered to target genes, each credible-set variant emitted as a `[pos,pos+1]`
+      interval; source `eqtl` (teal). **19 variant-links: CD14=17 + CSF1R=2, both from TLR-stimulated
+      monocytes (Quach_2016 Pam3CSK4/R848) — cell-type aligned but NOT resting-state aligned; IL1B has
+      no monocyte credible set anywhere.** Naive monocyte datasets (BLUEPRINT/Quach/Schmiedel/Randolph)
+      have 0 credible sets for the 3 targets. Completes the 3-axis suite (prediction+physical+genetics).
 - [ ] **peak-node:** BLUEPRINT monocyte histone ChIP loader (GRCh38, per mark) — "is this a real monocyte
       mark". Add Roadmap E029 chromHMM active-state overlap.
 - [ ] **peak-peak:** ChIP-Atlas colocalization + ReMap shared-`TF:biotype`; monocyte Hi-C loop co-membership.
@@ -177,6 +181,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Genetics axis added → 3-axis evaluation suite complete.**
+  `build_eqtl_gene_link_support.py` loads monocyte eQTL Catalogue SuSiE credible sets (source `eqtl`,
+  teal); wired into `run_gene_pipeline.py` (`--eqtl-tsv`, auto-detected). 3-axis node coverage now in
+  `PANEL_SUMMARY.md`: CD14 25 target-aware nodes (pred 8 / phys 15 / **gen 4**), CSF1R 5 (5/1/1),
+  IL1B 18 (5/17/0). Genetics support localises to the CD14 promoter/TMCO6-boundary peaks and every gene
+  node; the discovered peak→gene edges are unchanged (eQTL variants sit in the promoter, not in those
+  specific distal peaks). Cell-state caveat logged (support = TLR-stimulated monocytes).
 - **2026-07-08** **End-to-end pipeline spine landed** (`CausalDiscovery/PIPELINE.md`):
   `run_gene_pipeline.py` runs pc/fci/dagma on a gene → runs the target-aware support
   suite on each → cross-algorithm consensus with axis-aware verdicts;

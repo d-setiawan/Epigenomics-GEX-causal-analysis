@@ -217,6 +217,34 @@ CD14 promoter in monocytes (e.g. `chr5:140547304-140547778__H3K27ac`), and **15 
 `chr5:140638835-140639790__H3K4me3` stable-edge peak is NOT among them (it is the TMCO6 promoter,
 not a CD14 contact), consistent with rE2G.
 
+### eQTL Catalogue Monocyte eQTL (genetics peak->gene axis)
+
+The GENETICS axis: eQTL Catalogue fine-maps each gene's cis-eQTL to a SuSiE 95% credible set of
+variants. A credible-set variant that falls INSIDE a CUT&Tag peak, for a credible set targeting the
+edge's gene, is independent genetic evidence the peak carries regulatory sequence for that gene.
+
+```bash
+python3 CausalDiscovery/scripts/build_eqtl_gene_link_support.py \
+  --out-tsv Data/external/eqtl/eqtl_mon_gene_links.tsv   # all monocyte ge datasets, full credible sets
+```
+
+It reads eQTL Catalogue's `tabix_ftp_paths.tsv`, keeps monocyte `ge` datasets, downloads their
+`*.credible_sets.tsv.gz` (cached under `Data/external/eqtl/`, GRCh38-native — no liftOver), filters to
+the target Ensembl genes, and emits one `[pos,pos+1]` interval per credible-set variant. Feed it as the
+local named source `eqtl` (plot color teal, `#16A085`):
+
+```bash
+causal_cli.py support --graph-dir <dir> \
+  --external-support-tsv eqtl=Data/external/eqtl/eqtl_mon_gene_links.tsv
+```
+
+Result for the panel: **19 variant-links — CD14=17, CSF1R=2, IL1B=0.** ⚠️ **Cell-state caveat:** the
+only monocyte credible sets for CD14/CSF1R are from **TLR-stimulated** monocytes (Quach_2016
+Pam3CSK4_6h / R848_6h), not resting — cell-type aligned but not state aligned. Naive-monocyte datasets
+(BLUEPRINT QTD000021, Quach naive, Schmiedel, Randolph) have **zero** credible sets for the three
+targets; IL1B has none in any monocyte dataset. `--min-pip` tightens to well-localised variants; the
+CSF1R credible set is a single variant at PIP≈0.99, CD14's is 16 variants at the promoter (PIP≈0.08–0.16).
+
 ### Generic local named sources
 
 Any support-template TSV can be added as a first-class named source with
@@ -325,6 +353,7 @@ Validated edges are colored by support source:
 - green: JASPAR motif support only.
 - blue: ENCODE-rE2G only (`re2g` — the target-gene-aware monocyte gene-link source).
 - pink: BLUEPRINT monocyte PCHi-C only (`pchic` — physical promoter contact).
+- teal: eQTL Catalogue monocyte eQTL only (`eqtl` — genetics; credible-set variant in peak).
 - red: multiple source families (**this is the "two-or-more axes agree" high-confidence case**).
 - faint gray: no external support found.
 

@@ -16,8 +16,32 @@ from pathlib import Path
 import pandas as pd
 
 
+AXIS = {"re2g": "prediction", "pchic": "physical", "eqtl": "genetics"}
+
+
 def s(val) -> str:
     return val if isinstance(val, str) and val else "—"
+
+
+def axis_coverage(gene: str, pipeline_root: Path) -> dict:
+    """Target-aware node-level axis coverage from the fci graph's support matches."""
+    mpath = pipeline_root / gene / "fci" / "node_support_matches.tsv"
+    if not mpath.exists():
+        return dict(gene=gene, nodes=0, prediction=0, physical=0, genetics=0, ge2_axes=0, all3=0)
+    m = pd.read_csv(mpath, sep="\t")
+    m = m[m["source"].isin(AXIS) & (m["external_gene"].astype(str).str.upper() == gene)]
+    node_axes: dict[str, set] = {}
+    for _, r in m.iterrows():
+        node_axes.setdefault(r["node_name"], set()).add(AXIS[r["source"]])
+    vals = list(node_axes.values())
+    return dict(
+        gene=gene, nodes=len(vals),
+        prediction=sum("prediction" in v for v in vals),
+        physical=sum("physical" in v for v in vals),
+        genetics=sum("genetics" in v for v in vals),
+        ge2_axes=sum(len(v) >= 2 for v in vals),
+        all3=sum(len(v) >= 3 for v in vals),
+    )
 
 
 def main() -> int:
@@ -30,7 +54,7 @@ def main() -> int:
     a = p.parse_args()
     genes = [g.strip().upper() for g in a.genes.split(",") if g.strip()]
 
-    rows, peakgene = [], []
+    rows, peakgene, axis_rows = [], [], []
     for g in genes:
         cpath = a.pipeline_root / g / "edges_consensus.tsv"
         if not cpath.exists():
@@ -52,9 +76,11 @@ def main() -> int:
             peakgene.append(dict(gene=g, peak=peak, verdict=r["verdict"],
                                  algos=r["methods"], axes=s(r["axes"]),
                                  sources=s(r["target_aware_sources"])))
+        axis_rows.append(axis_coverage(g, a.pipeline_root))
 
     summ = pd.DataFrame(rows)
     pgdf = pd.DataFrame(peakgene)
+    axdf = pd.DataFrame(axis_rows)
     out_md = a.pipeline_root / "PANEL_SUMMARY.md"
     out_tsv = a.pipeline_root / "panel_peak_gene_edges.tsv"
     pgdf.to_csv(out_tsv, sep="\t", index=False)
@@ -65,6 +91,11 @@ def main() -> int:
         f.write(summ.to_markdown(index=False) + "\n\n")
         f.write("`pg_*` = peak→gene. `pg_multi` = found by ≥2 algorithms. "
                 "`pg_validated` = target-aware supported.\n\n")
+        f.write("## 3-axis node coverage (target-gene-aware support)\n\n")
+        f.write("How many discovered nodes each validation axis supports FOR THAT GENE "
+                "(prediction=rE2G, physical=PCHi-C, genetics=eQTL). `ge2_axes`/`all3` = nodes "
+                "corroborated by ≥2 / all 3 axes.\n\n")
+        f.write(axdf.to_markdown(index=False) + "\n\n")
         f.write("## peak→gene edges (the interpretable ones)\n\n")
         f.write((pgdf.to_markdown(index=False) if not pgdf.empty
                  else "_none discovered_") + "\n\n")

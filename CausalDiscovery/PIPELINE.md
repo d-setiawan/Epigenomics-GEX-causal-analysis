@@ -25,7 +25,8 @@ re-implemented):
 1. **Discovery** — for each algorithm, `causal_cli graph` on the gene's nearby-peak
    matrix → a graph (PAG for FCI, CPDAG for PC, weighted DAG for DAGMA).
 2. **Validation** — `causal_cli support` on every graph with the target-gene-aware
-   evaluation suite (ENCODE-rE2G + BLUEPRINT PCHi-C; eQTL slots in next).
+   evaluation suite, now 3-axis: **ENCODE-rE2G** (prediction) + **BLUEPRINT PCHi-C**
+   (physical) + **eQTL Catalogue** SuSiE credible sets (genetics).
 3. **Consensus** — collapse edges *across algorithms* and assign an **axis-aware
    verdict** (below). Outputs per gene: `edges_consensus.tsv`,
    `edges_per_method.tsv`, `pipeline_report.md`, `pipeline_manifest.json`.
@@ -67,6 +68,27 @@ so they stay `recurrent_unvalidated` — exactly the honesty the TMCO6 catch dem
 DAGMA (Gaussian) returned 0 edges on all three (consistent with the audit; it is a
 sensitivity check only).
 
+### 3-axis node coverage (how much each axis corroborates)
+
+Target-gene-aware support per discovered node (prediction=rE2G, physical=PCHi-C,
+genetics=eQTL); `ge2`/`all3` = nodes backed by ≥2 / all 3 axes:
+
+| gene | nodes | prediction | physical | genetics | ≥2 axes | all 3 |
+| --- | --- | --- | --- | --- | --- | --- |
+| CD14 | 25 | 8 | 15 | 4 | 1 | 1 |
+| CSF1R | 5 | 5 | 1 | 1 | 1 | 1 |
+| IL1B | 18 | 5 | 17 | 0 | 4 | 0 |
+
+The genetics axis localises to the **CD14 promoter / TMCO6 boundary** (3 peaks there
+carry CD14 eQTL credible-set variants) and to every gene node. It does **not** change
+the discovered peak→gene edge verdicts — the fine-mapped variants sit in the promoter,
+not inside the specific distal peaks FCI/PC connected to expression.
+
+> **eQTL cell-state caveat:** the only monocyte credible sets for CD14/CSF1R come from
+> **TLR-stimulated** monocytes (Quach_2016 Pam3CSK4/R848), not resting. Cell-type
+> aligned, not state aligned. IL1B has no monocyte credible set at all. Naive-monocyte
+> datasets (BLUEPRINT/Quach/Schmiedel/Randolph) have zero credible sets for the targets.
+
 ---
 
 ## Alternative paths (decision points to revisit)
@@ -81,7 +103,7 @@ driver defaults to; the alternative is what to swap in and re-run to compare.
 | 3 | **CI test** | `fisherz` on `rank_gaussian` | **RCoT** (nonlinearity guard) · KCI (retired — slow/brittle) · CMIknn audit | `--indep-test` |
 | 4 | **Window** | 300 kb (interpretable) | 1 Mb (more distal candidates, denser/noisier) | `--dataset-root` |
 | 5 | **Background knowledge** | `tiered_distal_promoter_expr` | `minimal_expr_sink` · `none` (see how much orientation is assumption-driven) | `--background-mode` |
-| 6 | **Validation axes** | rE2G + PCHi-C (2 of 3) | add **eQTL Catalogue** (genetics) → true 3-axis "≥2 agree"; add peak-peak (ChIP-Atlas/Hi-C) & peak-node (BLUEPRINT ChIP) validators | `--eqtl-tsv`; ROADMAP Phase B |
+| 6 | **Validation axes** | rE2G + PCHi-C + **eQTL** (all 3 peak→gene axes wired) | add peak-peak (ChIP-Atlas/Hi-C) & peak-node (BLUEPRINT ChIP) validators; state-match the eQTL (resting vs TLR-stimulated) | `--eqtl-tsv`; ROADMAP Phase B |
 | 7 | **Edge validation rule** | target-aware for peak→gene; peak-peak = unvalidated | once peak-peak validators exist, promote peak-peak to a target-aware rule | `build_node_support_table.py::records_for_edge` |
 | 8 | **Post-selection screen** | off (full peak set) | elastic-net screen with `--graph-split-fraction` (disjoint screen/graph rows) to cut leakage | `causal_cli elastic-net-screen` |
 | 9 | **Stability** | single run per algorithm | donor-level block-bootstrap edge-mark frequencies (Q3 headline output) | ROADMAP Phase D |

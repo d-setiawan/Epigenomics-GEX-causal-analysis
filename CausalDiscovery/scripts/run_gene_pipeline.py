@@ -389,7 +389,8 @@ def main() -> int:
                    default=_default_if_exists(repo_root / "Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv"))
     p.add_argument("--pchic-tsv", type=Path,
                    default=_default_if_exists(repo_root / "Data/external/pchic/pchic_mon_gene_links.tsv"))
-    p.add_argument("--eqtl-tsv", type=Path, default=None,
+    p.add_argument("--eqtl-tsv", type=Path,
+                   default=_default_if_exists(repo_root / "Data/external/eqtl/eqtl_mon_gene_links.tsv"),
                    help="eQTL Catalogue monocyte gene-link table (Phase B genetics axis).")
     p.add_argument("--node-context-preset", default="none",
                    choices=["none", "monocyte_encode", "monocyte_regulatory", "pbmc_encode"],
