@@ -3,6 +3,8 @@
 **Date:** 2026-07-09 · Gene: CD14 (300 kb) · Tools: `null_calibration.py`, `bootstrap_stability.py`.
 Decision rule (user): the winning config is the one whose REAL edges clear the NULL floor by the
 most, judged by the null-calibration + bootstrap-stability yardsticks.
+Literature grounding for why aggregation matters here:
+[../notes/aggregation_causal_discovery_litreview.md](../notes/aggregation_causal_discovery_litreview.md).
 
 ## The four things compared
 

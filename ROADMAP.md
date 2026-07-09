@@ -9,6 +9,8 @@ Changelog; when a decision changes, edit the Decision and note why in the Change
   [integration/README.md](integration/README.md) ·
   [CausalDiscovery/evaluation/run_audit_report.md](CausalDiscovery/evaluation/run_audit_report.md) ·
   [CausalDiscovery/evaluation/external_sources.md](CausalDiscovery/evaluation/external_sources.md) ·
+  [CausalDiscovery/evaluation/aggregation_bakeoff.md](CausalDiscovery/evaluation/aggregation_bakeoff.md) ·
+  [CausalDiscovery/notes/aggregation_causal_discovery_litreview.md](CausalDiscovery/notes/aggregation_causal_discovery_litreview.md) ·
   `notes/` (planning + identifiability).
 - Status date: **2026-07-08**. Genome build: **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical).
   Targets: **CSF1R, CD14, IL1B**. Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
