@@ -11,6 +11,7 @@ Changelog; when a decision changes, edit the Decision and note why in the Change
   [CausalDiscovery/evaluation/external_sources.md](CausalDiscovery/evaluation/external_sources.md) ·
   [CausalDiscovery/evaluation/aggregation_bakeoff.md](CausalDiscovery/evaluation/aggregation_bakeoff.md) ·
   [CausalDiscovery/notes/aggregation_causal_discovery_litreview.md](CausalDiscovery/notes/aggregation_causal_discovery_litreview.md) ·
+  [CausalDiscovery/notes/target_gene_selection.md](CausalDiscovery/notes/target_gene_selection.md) (validation-rich targets + cell-type pros/cons) ·
   `notes/` (planning + identifiability).
 - Status date: **2026-07-08**. Genome build: **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical).
   Targets: **CSF1R, CD14, IL1B**. Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
@@ -213,6 +214,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-09** **Target-gene validation-coverage analysis** (`notes/target_gene_selection.md` +
+  `evaluation/candidate_genes_validation_rich.tsv`). Ranked all genes by monocyte validation coverage
+  (genome-wide rE2G distal links + eQTL credible sets across the 11 monocyte datasets) × expression in
+  our RNA. **331 genes are both validation-rich (eQTL ≥5 datasets, rE2G distal ≥30) and expressed ≥15%**
+  — vs our current panel (CD14 1 eQTL dataset / CSF1R 2 / IL1B 0). Top validation-rich + well-expressed
+  myeloid targets: LSP1, PTPRJ, CTSC, CD52, CST3, PLCL1, CD151, RAPGEF1, BIN1, HLA-DQB1. Recommendation:
+  expand panel to ~10–15 of these (verify nearby peaks via the dataset stage next). Cell-type pros/cons
+  documented: stay monocyte for discovery; related-blood only as a labeled supporting tier; K562-CRISPR
+  switch only if goal becomes method-benchmarking (needs new data).
 - **2026-07-09** **Pipeline upgraded: GFCI + stability headline; Causal-Dropout CI added & assessed.**
   `run_gfci_tetrad.py` + `run_gene_pipeline.py --methods gfci` (causaldisco/JDK21); bootstrap
   stability-selection is now the report headline (top tier = stable AND validated). On metacell CD14 the
