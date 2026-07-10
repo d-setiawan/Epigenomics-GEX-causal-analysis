@@ -95,28 +95,65 @@ def download_gz_text(href: str, timeout: int) -> list[str]:
         return fh.read().splitlines()
 
 
+# Header column-name -> canonical field. Aliases reconcile the two rE2G BED
+# schema versions seen on the ENCODE portal: the 19-col legacy layout (CD14
+# monocyte) whose indices match COL above, and the 30-col current layout
+# (e.g. naive CD4/CD8 T cell) where TargetGene/ENSG/Score sit at different
+# positions. Column order therefore cannot be assumed; resolve it per file.
+_HEADER_ALIASES = {
+    "#chr": "chr", "chr": "chr",
+    "start": "start", "end": "end", "name": "name", "class": "class",
+    "TargetGene": "TargetGene",
+    "TargetGeneEnsemblID": "TargetGeneEnsemblID",
+    "TargetGeneEnsembl_ID": "TargetGeneEnsemblID",
+    "TargetGeneTSS": "TargetGeneTSS",
+    "isSelfPromoter": "isSelfPromoter",
+    "CellType": "CellType",
+    "Score": "Score",
+}
+
+
+def resolve_columns(lines: list[str]) -> dict[str, int]:
+    """Map field name -> column index from the BED '#'-header if present and
+    complete, else fall back to the hardcoded legacy COL layout."""
+    for line in lines:
+        if line.startswith("#"):
+            idx: dict[str, int] = {}
+            for i, raw in enumerate(line.split("\t")):
+                field = _HEADER_ALIASES.get(raw)
+                if field is not None and field not in idx:
+                    idx[field] = i
+            if all(k in idx for k in COL):
+                return idx
+            break
+        if line:  # first non-comment line and no usable header -> legacy layout
+            break
+    return dict(COL)
+
+
 def parse_bed_lines(lines: list[str], source_tag: str) -> list[dict[str, Any]]:
+    col = resolve_columns(lines)
     out: list[dict[str, Any]] = []
     for line in lines:
         if not line or line.startswith("#"):
             continue
         p = line.split("\t")
-        if len(p) <= COL["Score"]:
+        if len(p) <= col["Score"]:
             continue
         try:
-            score = float(p[COL["Score"]])
+            score = float(p[col["Score"]])
         except ValueError:
             continue
         out.append({
-            "chrom": p[COL["chr"]],
-            "start": int(p[COL["start"]]),
-            "end": int(p[COL["end"]]),
-            "gene": p[COL["TargetGene"]].strip().upper(),
-            "ensg": p[COL["TargetGeneEnsemblID"]],
-            "elem_class": p[COL["class"]],
-            "self_promoter": p[COL["isSelfPromoter"]],
-            "cell_type": p[COL["CellType"]],
-            "element_id": p[COL["name"]],
+            "chrom": p[col["chr"]],
+            "start": int(p[col["start"]]),
+            "end": int(p[col["end"]]),
+            "gene": p[col["TargetGene"]].strip().upper(),
+            "ensg": p[col["TargetGeneEnsemblID"]],
+            "elem_class": p[col["class"]],
+            "self_promoter": p[col["isSelfPromoter"]],
+            "cell_type": p[col["CellType"]],
+            "element_id": p[col["name"]],
             "score": score,
             "source_dataset": source_tag,
         })

@@ -58,8 +58,14 @@ def load_text(raw: bytes) -> io.TextIOBase:
     return io.StringIO(raw.decode("utf-8"))
 
 
-def monocyte_datasets(timeout: int) -> list[dict[str, str]]:
-    """Return monocyte `ge` datasets (dataset_id, study, condition, cs_url)."""
+def monocyte_datasets(timeout: int, restrict_ids: set[str] | None = None) -> list[dict[str, str]]:
+    """Return eQTL Catalogue datasets as (dataset_id, study, sample_group, condition, cs_url).
+
+    Default (``restrict_ids is None``): all monocyte `ge` datasets -- the original
+    monocyte behaviour, unchanged. When ``restrict_ids`` is given (e.g. the T-cell
+    panel passed via ``--datasets``), return EXACTLY those dataset ids regardless of
+    sample_group or quant_method, so non-monocyte biosamples are not filtered out.
+    """
     raw = fetch_bytes(METADATA_URL, timeout)
     fh = load_text(raw)
     header = fh.readline().rstrip("\n").split("\t")
@@ -67,10 +73,14 @@ def monocyte_datasets(timeout: int) -> list[dict[str, str]]:
     out = []
     for line in fh:
         f = line.rstrip("\n").split("\t")
-        if f[idx["quant_method"]] != "ge":
-            continue
-        if "monocyte" not in f[idx["sample_group"]].lower():
-            continue
+        if restrict_ids is not None:
+            if f[idx["dataset_id"]] not in restrict_ids:
+                continue
+        else:
+            if f[idx["quant_method"]] != "ge":
+                continue
+            if "monocyte" not in f[idx["sample_group"]].lower():
+                continue
         out.append({
             "dataset_id": f[idx["dataset_id"]],
             "study": f[idx["study_label"]],
@@ -107,7 +117,8 @@ def parse_variant(variant: str) -> tuple[str, int] | None:
 
 
 def build(genes: dict[str, str], datasets: list[dict[str, str]],
-          min_pip: float, cache_dir: Path, timeout: int) -> list[dict]:
+          min_pip: float, cache_dir: Path, timeout: int,
+          cell_label: str = "monocyte") -> list[dict]:
     ens_to_symbol = {v: k for k, v in genes.items()}
     rows: list[dict] = []
     for ds in datasets:
@@ -135,7 +146,7 @@ def build(genes: dict[str, str], datasets: list[dict[str, str]],
             rsid = f[col["rsid"]] if "rsid" in col else ""
             cs_id = f[col["cs_id"]] if "cs_id" in col else ""
             cs_size = f[col["cs_size"]] if "cs_size" in col else ""
-            biosample = f"{ds['study']} monocyte ({ds['condition']})"
+            biosample = f"{ds['study']} {cell_label} ({ds['condition']})"
             rows.append({
                 "chrom": chrom,
                 "start": pos,
@@ -162,7 +173,12 @@ def main() -> int:
     p.add_argument("--gene-map", default=None,
                    help="Override targets, e.g. 'CD14=ENSG00000170458,CSF1R=ENSG00000182578'")
     p.add_argument("--datasets", default=None,
-                   help="Comma-separated QTD ids to restrict to (default: all monocyte ge datasets).")
+                   help="Comma-separated QTD ids to restrict to (default: all monocyte ge "
+                        "datasets). When given, those exact ids are fetched regardless of "
+                        "sample_group, enabling non-monocyte panels (e.g. T-cell).")
+    p.add_argument("--cell-label", default="monocyte",
+                   help="Biosample cell-type label written into the support rows "
+                        "(default 'monocyte'; use e.g. 'tcell' for a T-cell panel).")
     p.add_argument("--naive-only", action="store_true",
                    help="Keep only naive (unstimulated) monocyte datasets. NB: yields 0 hits for the 3 targets.")
     p.add_argument("--min-pip", type=float, default=0.0,
@@ -178,15 +194,14 @@ def main() -> int:
             k, v = kv.split("=")
             genes[k.strip().upper()] = v.strip()
 
-    datasets = monocyte_datasets(a.timeout)
+    keep = {x.strip() for x in a.datasets.split(",")} if a.datasets else None
+    datasets = monocyte_datasets(a.timeout, restrict_ids=keep)
     if a.naive_only:
         datasets = [d for d in datasets if d["condition"].lower() == "naive"]
-    if a.datasets:
-        keep = {x.strip() for x in a.datasets.split(",")}
-        datasets = [d for d in datasets if d["dataset_id"] in keep]
-    print(f"[eqtl] {len(datasets)} monocyte ge datasets; targets={list(genes)}")
+    print(f"[eqtl] {len(datasets)} {a.cell_label} datasets; targets={list(genes)}")
 
-    rows = build(genes, datasets, a.min_pip, a.cache_dir, a.timeout)
+    rows = build(genes, datasets, a.min_pip, a.cache_dir, a.timeout,
+                 cell_label=a.cell_label)
 
     import pandas as pd
     df = pd.DataFrame(rows, columns=["chrom", "start", "end", "gene",
