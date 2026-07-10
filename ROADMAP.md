@@ -194,7 +194,14 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       with `--transform none`. See envs/README.md / commit.
 - [ ] Add rank-fisherz and RCoT CI tests; make rank-fisherz the default; deprecate KCI to opt-in.
 - [ ] VST the gene-count node; remove count-family DAGMA presets (keep Gaussian DAGMA as sensitivity).
-- [ ] Add a pre-discovery step to regress out / condition on donor, batch, cell-cycle score.
+- [~] **Condition on confounders + mechanistic orientation — IMPLEMENTED & verified (4 genes),
+      pending pipeline wiring.** Tiered background knowledge (tier0 confounders → tier1 peaks → tier2
+      gene) via causal-learn `BackgroundKnowledge`; confounders = per-metacell library depths
+      (already in the matrices). Result: every peak→gene edge becomes DIRECTED (CD14 1/4→4/4, IL4R
+      0/3→3/3, CD151/PTPRJ 0→all), all validated edges survive + directed, peak↔peak kept, `<->`
+      drops. See `notes/confounder_orientation_implementation.md` + `scripts/prototype_confounder_tiers.py`.
+      Remaining: wire into `run_pc_causallearn.py` + pipeline (support must treat `conf__*` as
+      confounders not peaks); add cell-cycle + donor confounders for deeper peak↔peak de-confounding.
 - [ ] Upgrade stability to donor-level block-bootstrap (needs donor labels on rows).
 
 ### Phase E — Analysis (only after A–D)
