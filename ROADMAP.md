@@ -194,14 +194,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       with `--transform none`. See envs/README.md / commit.
 - [ ] Add rank-fisherz and RCoT CI tests; make rank-fisherz the default; deprecate KCI to opt-in.
 - [ ] VST the gene-count node; remove count-family DAGMA presets (keep Gaussian DAGMA as sensitivity).
-- [~] **Condition on confounders + mechanistic orientation — IMPLEMENTED & verified (4 genes),
-      pending pipeline wiring.** Tiered background knowledge (tier0 confounders → tier1 peaks → tier2
-      gene) via causal-learn `BackgroundKnowledge`; confounders = per-metacell library depths
-      (already in the matrices). Result: every peak→gene edge becomes DIRECTED (CD14 1/4→4/4, IL4R
-      0/3→3/3, CD151/PTPRJ 0→all), all validated edges survive + directed, peak↔peak kept, `<->`
-      drops. See `notes/confounder_orientation_implementation.md` + `scripts/prototype_confounder_tiers.py`.
-      Remaining: wire into `run_pc_causallearn.py` + pipeline (support must treat `conf__*` as
-      confounders not peaks); add cell-cycle + donor confounders for deeper peak↔peak de-confounding.
+- [x] **Condition on confounders + mechanistic orientation — IMPLEMENTED & WIRED into the pipeline.**
+      `run_pc_causallearn.py --confounders depth` builds `conf__rna_depth`/`conf__chrom_depth` from the
+      matrix libsize columns and makes them ROOT nodes (via `build_background_knowledge`), on top of the
+      existing `expr→histone` orientation; threaded through `causal_cli graph`, `run_gene_pipeline.py`
+      (default `--confounders depth`, ON), and `bootstrap_stability.py`; `edge_kind()` classifies
+      `conf__*` edges as "confounder" (excluded from validation). Verified end-to-end on metacell CD14:
+      all 4 peak→gene edges DIRECTED + validated (4/4), conf→peak edge excluded, support unbroken.
+      Prototype: `scripts/prototype_confounder_tiers.py`; note: `notes/confounder_orientation_implementation.md`.
+- [ ] Add **cell-cycle** + **donor** confounders (deeper peak↔peak de-confounding) — pending the
+      donor-availability + cell-cycle investigation (in progress).
 - [ ] Upgrade stability to donor-level block-bootstrap (needs donor labels on rows).
 
 ### Phase E — Analysis (only after A–D)
