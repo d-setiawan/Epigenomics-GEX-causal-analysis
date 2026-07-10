@@ -36,7 +36,8 @@ def run_graph_edges(cli: Path, python_bin: str, matrix: Path, out_dir: Path,
         "--matrix-tsv", str(matrix), "--method", a.method,
         "--indep-test", a.indep_test, "--transform", a.transform,
         "--alpha", str(a.alpha), "--max-depth", str(a.max_depth),
-        "--background-mode", a.background_mode, "--out-dir", str(out_dir), "--no-plot",
+        "--background-mode", a.background_mode, "--confounders", getattr(a, "confounders", "none"),
+        "--out-dir", str(out_dir), "--no-plot",
     ]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
@@ -105,6 +106,8 @@ def main() -> int:
     p.add_argument("--alpha", type=float, default=0.05)
     p.add_argument("--max-depth", type=int, default=2)
     p.add_argument("--background-mode", default="tiered_distal_promoter_expr")
+    p.add_argument("--confounders", default="none",
+                   help="Observed confounders as root nodes, forwarded to causal_cli graph (pc/fci).")
     p.add_argument("--id-cols", default="sample_id,cell_rna,anchor_rank,support_mean_nn_distance,metacell_id")
     a = p.parse_args()
 

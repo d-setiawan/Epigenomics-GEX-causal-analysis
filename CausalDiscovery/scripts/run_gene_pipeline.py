@@ -91,7 +91,8 @@ def graph_cmd(cli: Path, python_bin: str, method: str, matrix: Path,
         "--no-plot",
     ]
     if method in ("pc", "fci"):
-        cmd += ["--indep-test", a.indep_test, "--max-depth", str(a.max_depth)]
+        cmd += ["--indep-test", a.indep_test, "--max-depth", str(a.max_depth),
+                "--confounders", a.confounders]
     if method == "dagma":
         # Q3 decision: keep only the continuous Gaussian DAGMA as a sensitivity check
         # (count-family presets were dropped).
@@ -167,6 +168,7 @@ def stability_cmd(script: Path, python_bin: str, matrix: Path, out_dir: Path,
         "--alpha", str(a.alpha),
         "--max-depth", str(a.max_depth),
         "--background-mode", a.background_mode,
+        "--confounders", a.confounders,
     ]
 
 
@@ -219,6 +221,11 @@ def merge_stability(consensus: pd.DataFrame, freq: dict[tuple, float],
 
 
 def edge_kind(node1: str, node2: str) -> str:
+    # Observed-confounder nodes (conf__*) are modeling covariates, not regulatory elements:
+    # any edge touching one is a "confounder" edge and is NOT validated or counted as a
+    # peak->gene / peak<->peak causal edge.
+    if node1.startswith("conf__") or node2.startswith("conf__"):
+        return "confounder"
     e1, e2 = node1.startswith("expr__"), node2.startswith("expr__")
     if e1 and e2:
         return "gene_gene"
@@ -588,6 +595,9 @@ def main() -> int:
     p.add_argument("--alpha", type=float, default=0.05)
     p.add_argument("--max-depth", type=int, default=2)
     p.add_argument("--background-mode", default="tiered_distal_promoter_expr")
+    p.add_argument("--confounders", default="depth",
+                   help="Observed confounders added as ROOT nodes (pc/fci): 'none' | 'depth' "
+                        "(per-metacell library depths, on by default) | 'depth,cellcycle' | 'depth,donor'.")
     p.add_argument("--dagma-w-threshold", type=float, default=0.3)
     # validation sources
     p.add_argument("--re2g-tsv", type=Path,

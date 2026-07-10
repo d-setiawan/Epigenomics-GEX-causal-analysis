@@ -413,6 +413,8 @@ def exact_pattern(node_name: str) -> str:
 
 
 def node_role(node_name: str) -> str:
+    if node_name.startswith("conf__"):
+        return "confounder"
     if node_name.startswith("expr__"):
         return "expr"
     if "__" not in node_name or "__H3" not in node_name:
@@ -426,8 +428,41 @@ def node_role(node_name: str) -> str:
     return "other"
 
 
+CONFOUNDER_MARKS = ["H3K27ac", "H3K27me3", "H3K4me1", "H3K4me2", "H3K4me3", "H3K9me3"]
+
+
+def build_confounder_columns(df: pd.DataFrame, mode: str) -> list[str]:
+    """Add observed-confounder columns (``conf__*``) to ``df`` in place and return their names.
+
+    ``mode`` (comma-separated): ``none`` -> []; ``depth`` -> per-metacell library depths
+    (RNA + mean chromatin), the technical confounders that drive both peak signal and expression
+    and are already present in the matrix as ``libsize__*`` columns. Other tokens (``cellcycle``,
+    ``donor``) are honored only if the corresponding covariate columns already exist in the matrix.
+    """
+    tokens = {t.strip() for t in str(mode).split(",") if t.strip() and t.strip() != "none"}
+    added: list[str] = []
+    if "depth" in tokens:
+        if "libsize__rna" in df.columns:
+            df["conf__rna_depth"] = np.log1p(df["libsize__rna"].astype(float))
+            added.append("conf__rna_depth")
+        mark_cols = [f"libsize__{m}" for m in CONFOUNDER_MARKS if f"libsize__{m}" in df.columns]
+        if mark_cols:
+            df["conf__chrom_depth"] = np.log1p(df[mark_cols].astype(float).mean(axis=1))
+            added.append("conf__chrom_depth")
+    for extra in ("cellcycle", "donor"):
+        if extra in tokens:
+            # honored if a precomputed covariate column is present (e.g. cc__s_score, donor__*)
+            for col in [c for c in df.columns if c.startswith(f"{extra[:4]}__") or c.startswith(f"{extra}__")]:
+                cc = f"conf__{col.split('__', 1)[-1]}"
+                if pd.api.types.is_numeric_dtype(df[col]):
+                    df[cc] = df[col].astype(float)
+                    added.append(cc)
+    return added
+
+
 def build_background_knowledge(selected_cols: list[str], mode: str) -> tuple[BackgroundKnowledge | None, list[dict[str, str]]]:
-    if mode == "none":
+    conf_nodes = [col for col in selected_cols if node_role(col) == "confounder"]
+    if mode == "none" and not conf_nodes:
         return None, []
 
     bk = BackgroundKnowledge()
@@ -449,6 +484,17 @@ def build_background_knowledge(selected_cols: list[str], mode: str) -> tuple[Bac
             for distal in distal_nodes:
                 bk.add_forbidden_by_pattern(exact_pattern(promoter), exact_pattern(distal))
                 rules.append({"rule_type": "forbidden", "from": promoter, "to": distal, "reason": "promoter_not_parent_of_distal"})
+
+    # Observed confounders are ROOTS: nothing (peak or gene) causes them. Forbidding every
+    # edge INTO a confounder makes it a source node, so FCI conditions on it (de-confounding)
+    # and it can only point OUT (conf -> peak, conf -> gene). Equivalent to placing the
+    # confounders in the lowest causal tier.
+    if conf_nodes:
+        non_conf = [col for col in selected_cols if col not in set(conf_nodes)]
+        for conf in conf_nodes:
+            for other in non_conf:
+                bk.add_forbidden_by_pattern(exact_pattern(other), exact_pattern(conf))
+                rules.append({"rule_type": "forbidden", "from": other, "to": conf, "reason": "confounder_is_root"})
 
     return bk, rules
 
@@ -1027,13 +1073,14 @@ def drop_collinear_columns(selected_df, cols, transform, standardize, threshold:
     with an already-kept column, on the SAME matrix discovery will see (post transform +
     z-score). Perfectly collinear sparse peaks make the fisherz correlation matrix singular
     ("Data correlation matrix is singular") -- common at small n with 70-90%-zero peaks.
-    Expression nodes are prioritized so a peak collinear with expression is dropped, not the
-    gene. Returns the columns to keep, in the original order."""
+    Confounder and expression nodes are prioritized so a peak collinear with them is dropped,
+    not the confounder/gene. Returns the columns to keep, in the original order."""
     tdf = apply_transform(selected_df[cols], transform)
     mdf = zscore_df(tdf) if standardize else tdf.copy()
     X = mdf.to_numpy(dtype=float)
-    order = ([i for i, c in enumerate(cols) if c.startswith("expr__")] +
-             [i for i, c in enumerate(cols) if not c.startswith("expr__")])
+    _keep_first = lambda c: c.startswith("conf__") or c.startswith("expr__")
+    order = ([i for i, c in enumerate(cols) if _keep_first(c)] +
+             [i for i, c in enumerate(cols) if not _keep_first(c)])
     kept: list[int] = []
     for i in order:
         xi = X[:, i]
@@ -1075,6 +1122,13 @@ def main() -> int:
     p.add_argument("--standardize", action="store_true", default=True)
     p.add_argument("--no-standardize", action="store_false", dest="standardize")
     p.add_argument("--background-mode", default="none", choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"])
+    p.add_argument(
+        "--confounders",
+        default="none",
+        help="Comma-separated observed confounders to add as ROOT nodes (pc/fci only): "
+             "'none' | 'depth' (per-metacell library depths from libsize__*) | 'depth,cellcycle' "
+             "| 'depth,donor' (cellcycle/donor honored only if those covariate columns exist).",
+    )
     p.add_argument("--min-unique", type=int, default=2)
     p.add_argument("--min-std", type=float, default=1e-8)
     p.add_argument("--max-depth", type=int, default=-1, help="Maximum conditioning-set size for PC skeleton search; -1 means no cap")
@@ -1142,6 +1196,13 @@ def main() -> int:
                 "expression_column": next((col for col in requested_cols if col.startswith("expr__")), None),
                 "peak_columns": [col for col in requested_cols if "__H3" in col and not col.startswith("libsize__")],
             }
+
+    # Observed confounders (root nodes) — pc/fci only. Built from the matrix's libsize columns
+    # and prepended so they enter discovery; build_background_knowledge makes them roots.
+    confounder_cols: list[str] = []
+    if args.method in {"pc", "fci"} and args.confounders != "none":
+        confounder_cols = build_confounder_columns(df, args.confounders)
+        requested_cols = confounder_cols + [c for c in requested_cols if c not in confounder_cols]
 
     missing_cols = [c for c in requested_cols if c not in df.columns]
     if missing_cols:

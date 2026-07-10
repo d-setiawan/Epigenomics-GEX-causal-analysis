@@ -327,6 +327,8 @@ def build_graph_args(project_root: Path, args) -> list[str]:
         args.transform,
         "--background-mode",
         args.background_mode,
+        "--confounders",
+        getattr(args, "confounders", "none"),
         "--min-unique",
         str(args.min_unique),
         "--min-std",
@@ -736,6 +738,9 @@ def add_shared_graph_args(p, *, include_method: bool = True, include_max_depth: 
     p.add_argument("--standardize", action="store_true", default=True)
     p.add_argument("--no-standardize", action="store_false", dest="standardize")
     p.add_argument("--background-mode", default="tiered_distal_promoter_expr", choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"])
+    p.add_argument("--confounders", default="none",
+                   help="Observed confounders as root nodes (pc/fci): 'none' | 'depth' (library "
+                        "depths) | 'depth,cellcycle' | 'depth,donor'. See run_pc_causallearn.py.")
     p.add_argument("--min-unique", type=int, default=2)
     p.add_argument("--min-std", type=float, default=1e-8)
     if include_max_depth:
