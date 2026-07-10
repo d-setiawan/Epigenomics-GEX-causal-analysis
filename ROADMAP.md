@@ -214,6 +214,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-10** **Built the full T-cell validation suite + FAIR comparison → keep monocyte**
+  (`evaluation/celltype_fair_comparison.md`). Generalized the eQTL/rE2G builders for any cell type
+  (backward-compatible), built T-cell rE2G (2.3M links, naive CD4+CD8), T-cell eQTL (18 resting
+  datasets), T-cell PCHi-C (nCD4+nCD8); T-cell gene selection → 286 validation-rich+expressed, picked 12
+  (BTN3A2/ERAP2/RNASET2/CTSW/JAML/… all rich on ≥2 axes). Ran the identical pipeline (n=245). **Result:
+  despite ~1.8× more cells AND a 3× richer validation suite, T-cell yielded FEWER validated stable edges
+  than monocyte (4 top-tier vs 7; 0.36 vs 0.47 per gene).** More n + more reference data did NOT produce
+  more validated causal edges — edge recovery is limited by per-gene effect size. T-cell edges lean
+  physical/PCHi-C vs monocyte's prediction/genetics. **Decision: monocyte stays primary; T-cell suite
+  kept for secondary/contrast use.**
 - **2026-07-09** **Monocyte-vs-T-cell power head-to-head** (`evaluation/celltype_power_comparison.md`).
   Built a T-cell metacell dataset (245 metacells vs monocyte 133, ~1.8×) on the same panel and compared
   calibration + bootstrap stability. Finding: **more cells ≠ uniformly more power** — T-cell wins where
