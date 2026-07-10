@@ -125,3 +125,58 @@ That combines the confounding removal of the factor model with the signal retent
 model. **Neither PC1-element nor unsupervised-FA is adopted; this is the design target to build next.**
 (Cosmetic prototype note: the factor `state` label is crude — it flags any H3K4me3 as "promoter";
 factors are actually locus-spanning mixes.)
+
+---
+
+## Fused variant (element nodes + regress-out global nuisance) — the closing test
+
+Prototype: `../scripts/prototype_fused_element_nuisance.py`. Build element nodes, then regress the
+**top-k global element-PCs** (the dominant shared modes) out of every element **and** the gene, then
+FCI/GFCI on the residuals. Nuisance PCs confirmed **gene-irrelevant** (|corr(PC, gene)| ≤ 0.16 for
+all genes), so removing them *should* be safe. The test: do validated gene→element edges survive,
+and does element↔element confounding drop?
+
+| gene | element FCI: edges (→gene) | **fused FCI: edges (→gene)** | validated edge survives? |
+| --- | --- | --- | --- |
+| CD14 | 8 (3) | **18 (1)** | yes (E09 rE2G) — but `<->` 1→12 |
+| IL4R | 6 (1) | **10 (1)** | yes (E05 PCHi-C) |
+| CD151 | 9 (1) | **17 (0)** | **no** (E19 promoter lost) |
+| PTPRJ | 1 (0) | **9 (0)** | n/a |
+
+**The naive fused approach BACKFIRES.** Regressing out data-driven PCs **inflated** the edge count
+in every gene (8→18, 6→10, 9→17, 1→9) and multiplied bidirected edges (CD14 `<->` 1→12) — the
+opposite of the goal. **Mechanism:** residualizing a set of variables on principal components
+*estimated from those same variables* forces the residuals to be orthogonal to the removed
+directions, which **induces spurious partial correlations** among them (a conditioning/collider
+artifact). Validated-edge survival was also only 2/4. So data-driven nuisance regression is not a
+valid confounder control here.
+
+Two things it *did* teach us: (1) validated gene→element edges are **partially robust** — CD14 and
+IL4R kept theirs even under an artifact-inducing transform; (2) it pinpoints the correct method.
+
+## CLEAR DIRECTION (conclusion of the modeling exploration)
+
+Across peak → element → factor → fused, the evidence converges on a specific, principled design:
+
+1. **Adopt element-level nodes** as the modeling unit. Merge co-located mark-peaks into regulatory
+   elements (interpretable chromatin-state labels; genes connect to their promoter + validated
+   enhancers). This is the only variant that both suppresses the peak↔peak confounding *and* keeps
+   the validated gene→element signal. *Open refinement:* PC1-collapse is lossy (marks are
+   semi-independent, explained var ~0.4) — replace it with a small per-element measurement model or
+   keep the 1–2 most informative marks per element.
+2. **Do NOT use data-driven nuisance regression / self-derived PCs.** Proven here to induce spurious
+   edges. Likewise, PCs cannot be added as conditioning *nodes* (they are linear combos of the
+   elements → singular).
+3. **Control confounders with MEASURED covariates as conditioning nodes** — the principled form of
+   ROADMAP Q3. Compute per-metacell **donor id, cell-cycle score, and library size / global
+   chromatin activity** from the RNA/chromatin, add them to the discovery variable set, and let FCI
+   condition on them. These are external to the elements (not collinear), so conditioning is valid
+   and removes the global cell-state confounding without the residualization artifact.
+4. **Use FCI, not GFCI, at this scale** — the score-based skeleton under-powers at ~15–24 nodes,
+   n=133 (GFCI repeatedly returned 0 edges).
+
+**Net:** element-level nodes + measured-covariate conditioning (donor/cell-cycle/library-size),
+discovered with FCI, is the design target. The PC1-element and both latent-factor variants
+(unsupervised FA, self-PC nuisance regression) are **rejected as production forms** but were
+necessary to locate this conclusion. Status remains exploratory — the measured-covariate step is
+the next build, and requires threading those covariates through the metacell + dataset stages.

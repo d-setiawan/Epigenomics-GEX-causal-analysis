@@ -220,10 +220,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   co-located mark-peaks → regulatory elements (PC1 activity + chromatin-state label) and reruns FCI/GFCI.
   Across 4 genes the confounding explosion collapses (`<->` 15→1, 34→0, 13→1, 5→0; edges drop 3–12×) and
   the surviving structure is interpretable: genes connect to their **promoter** + **validated enhancers**
-  (CD14 rE2G, IL4R PCHi-C); noise gene PTPRJ goes quiet. Limitation: PC1 collapse is lossy (explained var
-  ~0.4) and drops some validated edges. **Verdict: promising interpretability upgrade; the right
-  production form is an explicit latent-factor model (GIN/measurement model) + regress-out global
-  cell-state, not PC1 aggregation. Not adopted; exploring.**
+  (CD14 rE2G, IL4R PCHi-C); noise gene PTPRJ goes quiet. Explored 3 successors: (a) **latent-factor** (FA)
+  — factors explain gene R²≈0.05, unsupervised factorization captures the gene-IRRELEVANT global
+  confounders, so factor→gene edges vanish; (b) **fused** element + regress-out top global PCs — BACKFIRES
+  (edges inflate 8→18/6→10/9→17/1→9; residualizing on self-derived PCs induces spurious edges); validated
+  edges partially robust (2/4 survive). **CLEAR DIRECTION (closed): adopt element-level nodes + control
+  confounders with MEASURED covariates (donor/cell-cycle/library-size) as FCI conditioning nodes — NOT
+  data-driven PCs. Use FCI not GFCI at this scale. PC1-element/latent-factor/self-PC-nuisance all rejected
+  as production forms.** Next build = thread measured covariates through metacell+dataset stages (Q3).
+  Still exploratory; nothing wired into the pipeline.
 - **2026-07-10** **Built the full T-cell validation suite + FAIR comparison → keep monocyte**
   (`evaluation/celltype_fair_comparison.md`). Generalized the eQTL/rE2G builders for any cell type
   (backward-compatible), built T-cell rE2G (2.3M links, naive CD4+CD8), T-cell eQTL (18 resting
