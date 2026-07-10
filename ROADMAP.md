@@ -202,8 +202,14 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       `conf__*` edges as "confounder" (excluded from validation). Verified end-to-end on metacell CD14:
       all 4 peak→gene edges DIRECTED + validated (4/4), conf→peak edge excluded, support unbroken.
       Prototype: `scripts/prototype_confounder_tiers.py`; note: `notes/confounder_orientation_implementation.md`.
-- [ ] Add **cell-cycle** + **donor** confounders (deeper peak↔peak de-confounding) — pending the
-      donor-availability + cell-cycle investigation (in progress).
+- [x] **Cell-cycle + donor confounders — investigated, NOT needed** (2026-07-10). 5 donors exist
+      (HTO-multiplexed) but donor is (i) absent on RNA cells and (ii) **averaged out by metacells**
+      (purity ≈0.27 = random-mix floor; χ² donor×metacell p=0.43) — no cross-metacell variance to
+      confound. Monocytes are ~1–2% cycling; S/G2M scores don't correlate with the CD14 peaks. So the
+      **library-depth confounders are the right & sufficient observed set**; metacell aggregation
+      already neutralizes donor/batch. Implication: residual peak↔peak `<->` after depth-conditioning
+      is NOT donor/cell-cycle — it reflects *biological* shared drivers (TF programs / chromatin
+      domains), i.e. the novel object (MISSION §2), correctly represented as latent (PAG bidirected).
 - [ ] Upgrade stability to donor-level block-bootstrap (needs donor labels on rows).
 
 ### Phase E — Analysis (only after A–D)

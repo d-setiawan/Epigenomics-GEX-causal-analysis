@@ -46,14 +46,32 @@ available:** donor (metacell obs is empty — needs threading from raw cell meta
 4. **peak↔peak edges preserved** — the deliverable is kept; bidirected `<->` count drops (confounding
    partly resolved).
 
-## Limits / next
+## Donor & cell-cycle investigated (2026-07-10) — library depth is the right & sufficient set
 
-- The **2 depth confounders capture technical depth, not biological cell-state** — so peak↔peak
-  edges are only partly de-confounded (`<->` drops but many remain). Adding **cell-cycle score** and
-  **donor** (once threaded) should remove more of the shared-cell-state peak↔peak confounding,
-  leaving the credible element↔element structure (the novel object per MISSION §2).
-- The tiers **orient** the skeleton but don't prune it; stronger de-confounding needs the extra
-  confounders above.
+A parallel investigation checked whether **donor** or **cell-cycle** should be added:
+- **Donor: NO.** 5 donors exist (HTO-multiplexed: HTO5/7/9/10/13) but the label is on **chromatin
+  cells only** (RNA was never hashtagged) and, decisively, **metacells average donor out** — donor
+  purity per metacell ≈ 0.27 (random-mix floor 0.23), donor is statistically independent of metacell
+  (χ² p = 0.43). There is no cross-metacell donor variance to confound the edges; metacell
+  aggregation already neutralizes donor/batch by construction.
+- **Cell-cycle: NO (marginal).** Monocytes here are ~1–2% cycling (S/G2M scores near zero;
+  proliferation markers in ~1–2% of cells). S-score has a weak tie to CD14 *expression* (r = −0.24)
+  but **no correlation with the CD14 peaks** (max |r| ≈ 0.24, none > 0.3), so it can't act as a
+  confounder for the epigenomic edges.
+
+**Consequence:** the **per-metacell library depths are the right and sufficient observed-confounder
+set** for this metacell-level model — the confounder implementation is effectively complete. And a
+deeper point: since donor/cell-cycle are already averaged out, the peak↔peak `<->` edges that remain
+after depth-conditioning are **not** technical/donor/cell-cycle confounding — they reflect
+**biological shared drivers** (TF programs, chromatin domains), i.e. the novel object (MISSION §2),
+correctly represented as latent via the PAG bidirected edges (and pursued observationally via the
+element/latent-factor direction, not by adding more observed confounders).
+
+## Remaining
+
+- The tiers **orient** the skeleton but don't prune it; the residual peak↔peak is latent-biological
+  (above), so it is a target for the element-level / latent-factor modeling, not more observed
+  confounders.
 - GFCI knowledge (py-tetrad `Knowledge`) not yet wired — FCI carries the signal at this scale.
 
 ## Productionization plan (next build)
