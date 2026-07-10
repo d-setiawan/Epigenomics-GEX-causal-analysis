@@ -156,14 +156,14 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       133 complete) + `build_metacell_matching_dir.py` (emits a dataset-stage-compatible matching dir +
       pseudobulk metacell RNA h5ad; dataset stage runs unchanged). Metacell CD14 matrix = 133 honest-n rows.
 - [x] **Bake-off done → winning config = metacell + α=0.01 + bootstrap stability selection** (see
-      [evaluation/aggregation_bakeoff.md](evaluation/aggregation_bakeoff.md)). Metacell fixes calibration
+      [aggregation_bakeoff.md](CausalDiscovery/evaluation/aggregation_bakeoff.md)). Metacell fixes calibration
       (α=0.01 null/expected 3.0×→1.0×) and is the only config whose single-run graph beats the null p95
       (16 > 14); its stable peak→gene edges are externally validated by rE2G + eQTL.
 - [ ] (Optional refinement) metacell-to-metacell OT matching; mcRigor QC + library-size stabilization.
 - [x] **null-calibration false-positive test** built (`scripts/null_calibration.py`) and run on the kNN-avg
       baseline → **the current graphs are noise-dominated** (real edges ≈ α×pairs ≈ null floor for all 3
       genes; peak→gene edges occur as often under noise as in real data). See
-      [evaluation/null_calibration_findings.md](evaluation/null_calibration_findings.md). This reframes
+      [null_calibration_findings.md](CausalDiscovery/evaluation/null_calibration_findings.md). This reframes
       the plan: stability-selection + multiple-testing control are the PRIMARY fixes; metacells (honest n)
       are necessary but insufficient alone.
 - [ ] Implement `n_eff` estimators (participation ratio, reuse proxy) as a complementary diagnostic.

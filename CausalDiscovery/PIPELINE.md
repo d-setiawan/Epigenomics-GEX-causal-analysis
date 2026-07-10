@@ -1,5 +1,7 @@
 # End-to-End Causal Pipeline (test a gene → validate its edges)
 
+↑ [Central README](../README.md) · [MISSION](../MISSION.md) (why) · [ROADMAP](../ROADMAP.md) (plan) · [CausalDiscovery/README.md](README.md) (stage detail)
+
 This is the runnable spine that ties the whole project together: **give it a gene,
 it runs several causal-discovery algorithms and tells you which of their edges the
 evaluation suite can actually validate.** It is the concrete answer to the project

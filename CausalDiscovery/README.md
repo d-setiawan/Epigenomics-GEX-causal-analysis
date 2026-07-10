@@ -1,5 +1,7 @@
 # CausalDiscovery
 
+↑ [Central README](../README.md) · [MISSION](../MISSION.md) (why) · [ROADMAP](../ROADMAP.md) (plan) · [PIPELINE.md](PIPELINE.md) (end-to-end per-gene driver) · [evaluation/](evaluation/README.md) (validation)
+
 This directory contains the active causal-discovery workflow built from `scGLUE` `joint_v2` monocyte pseudo-pairs.
 
 ## Start Here

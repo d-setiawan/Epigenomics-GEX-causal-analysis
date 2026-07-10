@@ -1,4 +1,6 @@
-# Evaluation
+# Evaluation — validation working area
+
+↑ [Central README](../../README.md) · [MISSION](../../MISSION.md) · [ROADMAP](../../ROADMAP.md) — for evaluation *framing / methodology* see [../evaluation.md](../evaluation.md).
 
 This directory is the working area for external validation of the causal-discovery graphs.
 

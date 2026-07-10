@@ -1,4 +1,6 @@
-# Evaluation
+# Evaluation — framing & methodology
+
+↑ [Central README](../README.md) · [MISSION](../MISSION.md) · [ROADMAP](../ROADMAP.md) — the validation *working area* (sources, audit, bake-off, results) is [evaluation/](evaluation/README.md).
 
 This file collects practical ways to evaluate the current causal-discovery pipeline.
 

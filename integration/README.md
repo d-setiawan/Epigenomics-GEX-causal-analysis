@@ -1,5 +1,7 @@
 # Integration
 
+↑ [Central README](../README.md) · [MISSION](../MISSION.md) (why) · [ROADMAP](../ROADMAP.md) (plan)
+
 This directory contains the multi-omic integration layer used before causal discovery. The current project decision is:
 
 - `scGLUE` `joint_v2` is the active integration used for downstream pairing and graph discovery.
