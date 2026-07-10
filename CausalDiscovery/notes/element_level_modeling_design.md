@@ -71,3 +71,57 @@ low PC1 variance and the distal-confounding majority, is a **latent-factor / mea
 **Verdict:** element-level modeling is a promising interpretability upgrade and a strong argument
 that the peak↔peak edges are confounding, not regulation — but the right production form is an
 explicit latent-factor model, not PC1 aggregation. Keep exploring; do not wire into the pipeline yet.
+
+---
+
+## Latent-factor variant (the next step) — and what it revealed
+
+Prototype: `../scripts/prototype_latent_factor.py`. Treat the mark-peaks as **indicators of a few
+latent regulatory factors**: FactorAnalysis(K) on the peaks (K = #eigenvalues>1, Kaiser, capped 8),
+factor scores as latent variables, then FCI/GFCI on `{factors + gene}`. Interpret each factor by
+its top-loading peaks; report the gene-expression variance the factors explain (linear R²).
+
+| gene | K | **gene R² by factors** | factor→gene edges | factor↔factor edges |
+| --- | --- | --- | --- | --- |
+| CD14 | 8 | **0.06** | 1 (F0 loads the rE2G+eQTL-validated peaks → gene) | 0 |
+| CD151 | 8 | **0.06** | **0** | 2 |
+| IL4R | 8 | **0.04** | **0** (despite factors loading heavily on PCHi-C/rE2G peaks) | 5–8 |
+| PTPRJ | 7 | **0.16** | 1 (F5 → gene) | 5 |
+
+**The key finding — unsupervised factors capture the confounders, not the gene-driver.**
+The latent factors explain **~4–16% of gene-expression variance** (essentially chance for 7–8
+predictors at n=133). Factor analysis is unsupervised w.r.t. the gene, so it extracts the
+**dominant peak↔peak co-variation — which is the shared confounding** (cell-state / global activity
+spanning the whole locus; the factors' top peaks are 100 kb+ apart), *not* the gene-specific
+signal. Consequences:
+- **factor→gene edges mostly vanish** (0–1 per gene) even when a factor clearly loads on
+  externally-validated enhancers (IL4R F1 loads PCHi-C peaks at 0.74 and still has no gene edge).
+- The gene-relevant regulatory signal is a **small residual**, drowned out by the confounding modes.
+- GIN (data-driven latent discovery) independently finds only **1–2 latents** — agreeing the
+  dominant latent structure is low-dimensional and shared.
+
+## Three approaches compared
+
+| approach | #variables | confounding removed | **gene signal retained** | interpretable |
+| --- | --- | --- | --- | --- |
+| peak-level (current) | ~40 | no (92% peak↔peak, 49% `<->`) | yes (validated edges found) | low |
+| **element (PC1)** | ~15–24 | mostly | **yes** (promoter + validated enh → gene) | **high** |
+| latent-factor (FA) | ~7–8 | yes | **no** (R²≈0.05; factor→gene ≈ 0) | medium (factors span locus) |
+
+## Synthesis / recommended production direction
+
+Unsupervised global factorization **over-collapses**: it removes the peak↔peak edges by turning the
+confounders into variables, but in doing so it discards the gene-driving signal (the confounders
+dominate the variance). **Element-level modeling is the better abstraction** — it stays local and
+interpretable and keeps the promoter/validated-enhancer → gene edges — but PC1-collapse is lossy.
+
+The exploration triangulates to a clear recipe, which is really ROADMAP Q3 sharpened:
+1. **element-level nodes** (merge co-located marks; keep local, interpretable units), and
+2. **regress out the top global factors as explicit nuisance** (they are the cell-state/donor
+   confounders — the very modes FA surfaces), then
+3. run causal discovery on the residualized element nodes.
+
+That combines the confounding removal of the factor model with the signal retention of the element
+model. **Neither PC1-element nor unsupervised-FA is adopted; this is the design target to build next.**
+(Cosmetic prototype note: the factor `state` label is crude — it flags any H3K4me3 as "promoter";
+factors are actually locus-spanning mixes.)
