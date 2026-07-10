@@ -1,5 +1,9 @@
 # Epigenomics-GEX Causal Analysis
 
+> **New here? Read [MISSION.md](MISSION.md) first** — the scientific intent and *why this is novel*
+> (recovering the local causal *architecture* among a gene's regulatory elements, not just
+> enhancer→gene links). This README is the operational "how"; [ROADMAP.md](ROADMAP.md) is the plan.
+
 This repository connects single-cell gene expression with single-cell CUT&Tag histone-mark data for monocyte-focused causal graph discovery.
 
 The current active workflow is:
@@ -242,6 +246,9 @@ Elastic-net stability screening on the `log1p_norm` nearby-peak matrices is the 
 
 ## Documentation Map
 
+- [MISSION.md](MISSION.md) — **scientific intent & novelty**: the central question (local causal
+  *architecture* among regulatory elements), positioning vs rE2G/SCENIC+/Dictys, why the peak↔peak
+  edges are the contribution, and honest scope/limits. Read this to understand *why* the project exists.
 - [ROADMAP.md](ROADMAP.md) — **the living master plan**: current status, the three method decisions
   (validation databases, cell aggregation, causal-discovery algorithms), and the phased action list.
   Update it as decisions land and steps complete.

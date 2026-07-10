@@ -4,7 +4,8 @@
 Keep it in sync: when you finish an action, check its box and move a one-line note to the
 Changelog; when a decision changes, edit the Decision and note why in the Changelog.
 
-- Related docs: [README.md](README.md) · [CausalDiscovery/README.md](CausalDiscovery/README.md) ·
+- Related docs: **[MISSION.md](MISSION.md)** (scientific intent & novelty — read first) ·
+  [README.md](README.md) · [CausalDiscovery/README.md](CausalDiscovery/README.md) ·
   **[CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md)** (end-to-end driver + alternative paths) ·
   [integration/README.md](integration/README.md) ·
   [CausalDiscovery/evaluation/run_audit_report.md](CausalDiscovery/evaluation/run_audit_report.md) ·
