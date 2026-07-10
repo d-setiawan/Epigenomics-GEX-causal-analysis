@@ -214,6 +214,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; donor-level block-bootstrap stability.
 
 ## 4. Changelog
+- **2026-07-10** **EXPLORATORY: element-level causal modeling** (`notes/element_level_modeling_design.md`,
+  `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
+  **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges
+  co-located mark-peaks → regulatory elements (PC1 activity + chromatin-state label) and reruns FCI/GFCI.
+  Across 4 genes the confounding explosion collapses (`<->` 15→1, 34→0, 13→1, 5→0; edges drop 3–12×) and
+  the surviving structure is interpretable: genes connect to their **promoter** + **validated enhancers**
+  (CD14 rE2G, IL4R PCHi-C); noise gene PTPRJ goes quiet. Limitation: PC1 collapse is lossy (explained var
+  ~0.4) and drops some validated edges. **Verdict: promising interpretability upgrade; the right
+  production form is an explicit latent-factor model (GIN/measurement model) + regress-out global
+  cell-state, not PC1 aggregation. Not adopted; exploring.**
 - **2026-07-10** **Built the full T-cell validation suite + FAIR comparison → keep monocyte**
   (`evaluation/celltype_fair_comparison.md`). Generalized the eQTL/rE2G builders for any cell type
   (backward-compatible), built T-cell rE2G (2.3M links, naive CD4+CD8), T-cell eQTL (18 resting
