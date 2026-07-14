@@ -71,7 +71,8 @@ def bootstrap(cli, python_bin, df, id_cols, a, permute: bool, tag: str) -> dict:
                 freq[key] += 1
                 marks[key].append(str(r.get("edge_text", "")))
                 n1, n2 = key
-                kinds[key] = ("peak_gene" if (n1.startswith("expr__") ^ n2.startswith("expr__"))
+                kinds[key] = ("confounder" if (n1.startswith("conf__") or n2.startswith("conf__"))
+                              else "peak_gene" if (n1.startswith("expr__") ^ n2.startswith("expr__"))
                               else "gene_gene" if n1.startswith("expr__")
                               else "peak_peak")
             if (b + 1) % 10 == 0:

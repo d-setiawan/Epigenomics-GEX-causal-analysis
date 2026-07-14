@@ -1,5 +1,11 @@
 # Expanded-panel pipeline results (15 genes, metacell + GFCI + stability + 3-axis)
 
+> **⚠️ Superseded for the default pipeline** by
+> [expanded_panel_confounder_results.md](expanded_panel_confounder_results.md) (2026-07-14), which
+> re-runs the panel with confounder root-nodes + mechanistic orientation ON (`--confounders depth`)
+> — the current default. That run directs **19/19** peak→gene edges and keeps 11 validated. This
+> page is retained for the pre-confounder `gfci,fci` baseline and the GFCI comparison.
+
 **Date:** 2026-07-09. Dataset: `monocyte_cuttag_peak_genes_300kb_metacell_expanded` (133 metacells,
 window 300 kb). Pipeline: `--methods gfci,fci --stability-method fci --n-boot 30`. Validation suite:
 rE2G (prediction, genome-wide) + PCHi-C (physical, 15-gene) + eQTL (genetics, 15-gene, mostly naive).
