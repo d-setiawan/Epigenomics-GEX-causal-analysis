@@ -40,10 +40,15 @@ _META_DROP = {
 
 
 def is_feature_column(col: str) -> bool:
-    """Auto feature rule: gene expression (log1p) + all chr* peak columns; drop
-    raw_counts, libsize__*, support_*, harmonized_*, *_confidence, and metadata."""
+    """Auto feature rule: confounder roots (conf__*) + gene expression (log1p) +
+    all chr* peak columns; drop raw_counts, libsize__*, support_*, harmonized_*,
+    *_confidence, and metadata. conf__* columns are synthesized by
+    build_confounder_columns() before selection, so they only appear when
+    --confounders is on."""
     if col in _META_DROP:
         return False
+    if col.startswith("conf__"):
+        return True
     if col.startswith("chr"):
         return True
     if col.startswith("expr__") and col.endswith("_log1p"):
@@ -63,6 +68,81 @@ def select_columns(df: pd.DataFrame, columns_arg: str) -> list[str]:
     expr = [c for c in cols if c.startswith("expr__")]
     peaks = [c for c in cols if not c.startswith("expr__")]
     return expr + peaks
+
+
+# --- Confounder roots + mechanistic orientation, mirrored 1:1 from the FCI worker
+# (commands/run_pc_causallearn.py) so GFCI honors the SAME tiered background
+# knowledge. Tetrad `set_forbidden(FROM, TO)` == forbid FROM->TO, the same
+# direction convention as causal-learn `add_forbidden_by_pattern`.
+CONFOUNDER_MARKS = ["H3K27ac", "H3K27me3", "H3K4me1", "H3K4me2", "H3K4me3", "H3K9me3"]
+
+
+def node_role(node_name: str) -> str:
+    if node_name.startswith("conf__"):
+        return "confounder"
+    if node_name.startswith("expr__"):
+        return "expr"
+    if "__" not in node_name or "__H3" not in node_name:
+        return "other"
+    region = node_name.split("__", 1)[0].lower()
+    if "promoter" in region:
+        return "promoter"
+    if "enhancer" in region or "fire" in region or region.startswith("ure"):
+        return "distal"
+    return "other"
+
+
+def build_confounder_columns(df: pd.DataFrame, mode: str) -> list[str]:
+    """Synthesize conf__* root columns from libsize__* (mirror of the FCI worker):
+    conf__rna_depth = log1p(libsize__rna); conf__chrom_depth = log1p(mean mark depth)."""
+    tokens = {t.strip() for t in str(mode).split(",") if t.strip() and t.strip() != "none"}
+    added: list[str] = []
+    if "depth" in tokens:
+        if "libsize__rna" in df.columns:
+            df["conf__rna_depth"] = np.log1p(df["libsize__rna"].astype(float))
+            added.append("conf__rna_depth")
+        mark_cols = [f"libsize__{m}" for m in CONFOUNDER_MARKS if f"libsize__{m}" in df.columns]
+        if mark_cols:
+            df["conf__chrom_depth"] = np.log1p(df[mark_cols].astype(float).mean(axis=1))
+            added.append("conf__chrom_depth")
+    for extra in ("cellcycle", "donor"):
+        if extra in tokens:
+            for col in [c for c in df.columns
+                        if c.startswith(f"{extra[:4]}__") or c.startswith(f"{extra}__")]:
+                cc = f"conf__{col.split('__', 1)[-1]}"
+                if pd.api.types.is_numeric_dtype(df[col]):
+                    df[cc] = df[col].astype(float)
+                    added.append(cc)
+    return added
+
+
+def build_forbidden_pairs(selected: list[str], background_mode: str) -> list[tuple[str, str]]:
+    """Return (from, to) edges to FORBID, mirroring FCI build_background_knowledge:
+      * expr is a sink: forbid expr -> histone  (chromatin upstream of expression)
+      * tiered: also forbid promoter -> distal
+      * confounders are roots: forbid <anything> -> conf
+    """
+    conf_nodes = [c for c in selected if node_role(c) == "confounder"]
+    expr_nodes = [c for c in selected if node_role(c) == "expr"]
+    promoter_nodes = [c for c in selected if node_role(c) == "promoter"]
+    distal_nodes = [c for c in selected if node_role(c) == "distal"]
+    histone_nodes = (promoter_nodes + distal_nodes
+                     + [c for c in selected if node_role(c) == "other" and "__H3" in c])
+    pairs: list[tuple[str, str]] = []
+    if background_mode in {"minimal_expr_sink", "tiered_distal_promoter_expr"}:
+        for expr in expr_nodes:
+            for hist in histone_nodes:
+                pairs.append((expr, hist))
+    if background_mode == "tiered_distal_promoter_expr":
+        for promoter in promoter_nodes:
+            for distal in distal_nodes:
+                pairs.append((promoter, distal))
+    if conf_nodes:
+        non_conf = [c for c in selected if c not in set(conf_nodes)]
+        for conf in conf_nodes:
+            for other in non_conf:
+                pairs.append((other, conf))
+    return pairs
 
 
 def rank_gaussian(frame: pd.DataFrame) -> pd.DataFrame:
@@ -112,13 +192,50 @@ def parse_tetrad_edges(graph_str: str) -> list[dict]:
     return rows
 
 
-def run_gfci(sub_transformed: pd.DataFrame, alpha: float, penalty: float) -> str:
+def run_gfci(sub_transformed: pd.DataFrame, alpha: float, penalty: float,
+             forbidden_pairs: list[tuple[str, str]] | None = None) -> str:
+    """Run GFCI with background knowledge.
+
+    CRITICAL gotcha (verified 2026-07-15): Tetrad `Knowledge` matches variables by
+    a name spec that SILENTLY FAILS on our node names, which contain ':' and '-'
+    (e.g. `chr5:140638860-140639949__H3K4me3`). With such names, `set_forbidden` /
+    `add_to_tier` register but bind to nothing, so the search runs as if there were
+    no knowledge at all. Fix: rename every variable to a knowledge-safe token
+    (`V0`, `V1`, ...) before the search, then translate node names back in the
+    output graph string. With safe names the knowledge binds (isForbidden == True)
+    and the FGES skeleton becomes confounder-aware.
+
+    NOTE on orientation: in this Tetrad build `Gfci` consumes knowledge for the
+    (score-based) skeleton but does NOT propagate it to PAG *endpoint* orientation,
+    so cross-tier edges stay `o-o` even though the forbidden directions are
+    registered. (Tetrad's constraint-based FCI *does* orient them to `o->`.) The
+    directed chromatin->expression claims therefore come from the causal-learn FCI
+    primary; GFCI here contributes a confounder-aware, knowledge-constrained
+    *adjacency* set as a score-based sensitivity check.
+    """
+    import re
     from pytetrad.tools import TetradSearch as ts
-    search = ts.TetradSearch(sub_transformed)
+    pairs = forbidden_pairs or []
+    cols = list(sub_transformed.columns)
+    safe = {c: f"V{i}" for i, c in enumerate(cols)}
+    inv = {v: k for k, v in safe.items()}
+
+    search = ts.TetradSearch(sub_transformed.rename(columns=safe))
     search.use_sem_bic(penalty_discount=penalty)
     search.use_fisher_z(alpha=alpha)
+    # set_forbidden(FROM, TO) forbids the directed edge FROM->TO (adjacency may
+    # still appear). Names must be the safe tokens so Tetrad actually matches them.
+    for frm, to in pairs:
+        if frm in safe and to in safe:
+            search.set_forbidden(safe[frm], safe[to])
     search.run_gfci()
-    return str(search.get_string())
+
+    graph_str = str(search.get_string())
+    if inv:  # map V<i> tokens back to original node names (single word-boundary pass)
+        pat = re.compile(r"\b(" + "|".join(re.escape(v) for v in
+                         sorted(inv, key=len, reverse=True)) + r")\b")
+        graph_str = pat.sub(lambda m: inv[m.group(0)], graph_str)
+    return graph_str
 
 
 def main() -> int:
@@ -133,18 +250,34 @@ def main() -> int:
     p.add_argument("--columns", default="auto",
                    help="'auto' = expr__<GENE>_log1p + all chr* peaks; or a "
                         "comma-separated explicit list.")
+    p.add_argument("--confounders", default="none",
+                   help="Observed confounders as ROOT nodes: 'none' | 'depth' "
+                        "(per-metacell library depths from libsize__*) | 'depth,cellcycle' "
+                        "| 'depth,donor'. Synthesized as conf__* and added to the search.")
+    p.add_argument("--background-mode", default="none",
+                   choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"],
+                   help="Mechanistic orientation prior: forbid expr->chromatin (and, when "
+                        "tiered, promoter->distal). Mirrors the FCI worker.")
     a = p.parse_args()
 
     a.out_dir.mkdir(parents=True, exist_ok=True)
     df = pd.read_csv(a.matrix_tsv, sep="\t")
+    # Synthesize confounder roots (conf__*) from libsize__* BEFORE column selection
+    # so the auto rule (is_feature_column) picks them up as search variables.
+    confounder_cols = build_confounder_columns(df, a.confounders) if a.confounders != "none" else []
     selected = select_columns(df, a.columns)
+    # keep confounder roots first, matching the FCI selected_columns ordering
+    selected = [c for c in confounder_cols if c in selected] + \
+               [c for c in selected if c not in set(confounder_cols)]
     if len(selected) < 2:
         raise SystemExit(f"need >=2 feature columns, selected {selected}")
+
+    forbidden_pairs = build_forbidden_pairs(selected, a.background_mode)
 
     sub_raw = df[selected].apply(pd.to_numeric, errors="coerce").dropna(axis=0).reset_index(drop=True)
     sub_input = rank_gaussian(sub_raw) if a.transform == "rank_gaussian" else sub_raw.copy()
 
-    graph_str = run_gfci(sub_input, a.alpha, a.penalty_discount)
+    graph_str = run_gfci(sub_input, a.alpha, a.penalty_discount, forbidden_pairs)
     edges = parse_tetrad_edges(graph_str)
     edges_df = pd.DataFrame(edges, columns=["node1", "endpoint1", "node2", "endpoint2", "edge_text"])
 
@@ -179,6 +312,10 @@ def main() -> int:
             "penalty_discount": a.penalty_discount,
             "transform": a.transform,
             "columns": a.columns,
+            "confounders": a.confounders,
+            "background_mode": a.background_mode,
+            "n_confounder_nodes": len(confounder_cols),
+            "n_forbidden_pairs": len(forbidden_pairs),
         },
         "n_rows_before_dropna": int(len(df)),
         "n_rows_after_dropna": int(len(sub_raw)),

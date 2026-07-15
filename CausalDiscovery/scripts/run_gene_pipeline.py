@@ -129,6 +129,8 @@ def gfci_cmd(script: Path, gfci_python_bin: str, matrix: Path,
         "--alpha", str(a.gfci_alpha),
         "--penalty-discount", str(a.gfci_penalty_discount),
         "--transform", a.transform,
+        "--confounders", a.confounders,
+        "--background-mode", a.background_mode,
     ]
 
 

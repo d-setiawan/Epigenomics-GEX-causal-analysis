@@ -67,12 +67,33 @@ after depth-conditioning are **not** technical/donor/cell-cycle confounding — 
 correctly represented as latent via the PAG bidirected edges (and pursued observationally via the
 element/latent-factor direction, not by adding more observed confounders).
 
+## GFCI knowledge wiring (2026-07-15) — done, with two Tetrad gotchas
+
+GFCI (`run_gfci_tetrad.py`) now accepts `--confounders` + `--background-mode` and is threaded through
+`run_gene_pipeline.py gfci_cmd`, so `--methods gfci,fci --confounders depth` runs GFCI
+confounder-conditioned. Verified on CD14: GFCI now agrees with FCI on the genetics edge
+(`chr5:140638860-140639949__H3K4me2 → CD14`), promoting it to **VALIDATED_MULTI_ALGO (fci|gfci)**.
+Two findings worth recording:
+
+1. **Tetrad `Knowledge` silently no-ops on node names containing `:` / `-`.** Our peak names
+   (`chr5:140638860-140639949__H3K4me3`) fail Tetrad's variable-name spec matching, so
+   `set_forbidden`/`add_to_tier` register but bind to nothing — the search runs as if there were no
+   knowledge. **Fix:** rename every variable to a knowledge-safe token (`V0`, `V1`, …) before the
+   search, then translate node names back in the output graph string. With safe names the knowledge
+   binds (`isForbidden == True`) and the FGES skeleton becomes confounder-aware. Any earlier GFCI
+   knowledge attempt would have failed silently — check this first if GFCI ever "ignores" knowledge.
+2. **GFCI's `Gfci` uses knowledge for the skeleton but not for PAG endpoint orientation** (this Tetrad
+   build): cross-tier edges stay `o-o` even though the forbidden directions are registered. Tetrad's
+   constraint-based FCI *does* orient them (`o->`). So the **directed** chromatin→expression claims
+   come from the causal-learn FCI primary; GFCI contributes a confounder-aware, knowledge-constrained
+   *adjacency* set as a score-based sensitivity check (validation keys on adjacency, so GFCI edges
+   still validate and can be multi-algo).
+
 ## Remaining
 
 - The tiers **orient** the skeleton but don't prune it; the residual peak↔peak is latent-biological
   (above), so it is a target for the element-level / latent-factor modeling, not more observed
   confounders.
-- GFCI knowledge (py-tetrad `Knowledge`) not yet wired — FCI carries the signal at this scale.
 
 ## Productionization plan (next build)
 
