@@ -146,6 +146,16 @@ def load_motif_sets(motif_tsv: Path, min_score: float) -> dict[str, frozenset]:
             for p, g in df.groupby("peak")}
 
 
+def load_chip_sets(chip_tsv: Path, min_exp: int) -> dict[str, frozenset]:
+    """peak -> frozenset(bound TF) from ChIP-Atlas occupancy, requiring a TF to be
+    bound in >= min_exp experiments (guards against single-experiment noise)."""
+    if not chip_tsv or not Path(chip_tsv).exists():
+        return {}
+    df = pd.read_csv(chip_tsv, sep="\t")
+    df = df[df["n_experiments"] >= min_exp]
+    return {p: frozenset(g["tf"].astype(str)) for p, g in df.groupby("peak")}
+
+
 def _jaccard(a: frozenset, b: frozenset) -> float:
     if not a or not b:
         return 0.0
@@ -154,8 +164,10 @@ def _jaccard(a: frozenset, b: frozenset) -> float:
 
 
 def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
-                motif_sets: dict[str, frozenset] | None = None) -> pd.DataFrame:
+                motif_sets: dict[str, frozenset] | None = None,
+                chip_sets: dict[str, frozenset] | None = None) -> pd.DataFrame:
     motif_sets = motif_sets or {}
+    chip_sets = chip_sets or {}
     rows = []
     for gene in genes:
         peaks = gene_peaks(out_root, gene)
@@ -179,13 +191,18 @@ def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
             dist = abs(ca[3] - cb[3])
             klass = cls.get(frozenset((a, b)), "non_adjacent")
             ta, tb = motif_sets.get(a, frozenset()), motif_sets.get(b, frozenset())
+            ca, cb = chip_sets.get(a, frozenset()), chip_sets.get(b, frozenset())
             rows.append({"gene": gene, "peak_a": a, "peak_b": b, "distance": dist,
                          "edge_class": klass,
                          "pchic_hub": int(bool(hubs[a] & hubs[b])),
                          "motif_shared": int(bool(ta & tb)),
                          "motif_jaccard": _jaccard(ta, tb),
                          "motif_n_shared": len(ta & tb),
-                         "both_have_motifs": int(bool(ta) and bool(tb))})
+                         "both_have_motifs": int(bool(ta) and bool(tb)),
+                         "chip_shared": int(bool(ca & cb)),
+                         "chip_jaccard": _jaccard(ca, cb),
+                         "chip_n_shared": len(ca & cb),
+                         "both_have_chip": int(bool(ca) and bool(cb))})
     return pd.DataFrame(rows)
 
 
@@ -256,6 +273,11 @@ def main() -> int:
                     help="peak->TF motif hits from scan_peak_motifs.py (shared-TF axis).")
     ap.add_argument("--motif-score", type=float, default=0.90,
                     help="Min JASPAR relative score to count a TF motif hit.")
+    ap.add_argument("--chip-tsv", type=Path,
+                    default=repo / "CausalDiscovery/evaluation/peak_tf_chip.tsv",
+                    help="peak->bound-TF occupancy from build_chip_occupancy.py (shared-TF axis).")
+    ap.add_argument("--chip-min-exp", type=int, default=1,
+                    help="Min ChIP experiments binding a TF at a peak to count it bound.")
     ap.add_argument("--n-bins", type=int, default=8)
     ap.add_argument("--n-perm", type=int, default=2000)
     ap.add_argument("--seed", type=int, default=1234)
@@ -267,10 +289,12 @@ def main() -> int:
         genes = sorted(p.name for p in a.out_root.iterdir()
                        if (p / "edges_consensus.tsv").exists())
     motif_sets = load_motif_sets(a.motif_tsv, a.motif_score)
+    chip_sets = load_chip_sets(a.chip_tsv, a.chip_min_exp)
     print(f"[ppval] genes={len(genes)}  pchic={a.pchic_tsv.name}  "
-          f"motif={'yes ('+str(len(motif_sets))+' peaks @>='+str(a.motif_score)+')' if motif_sets else 'none'}")
+          f"motif={'yes ('+str(len(motif_sets))+' peaks)' if motif_sets else 'none'}  "
+          f"chip={'yes ('+str(len(chip_sets))+' peaks)' if chip_sets else 'none'}")
     hub = PchicHub(a.pchic_tsv)
-    pairs = build_pairs(a.out_root, genes, hub, motif_sets)
+    pairs = build_pairs(a.out_root, genes, hub, motif_sets, chip_sets)
     if pairs.empty:
         raise SystemExit("no candidate pairs built")
     a.report_dir.mkdir(parents=True, exist_ok=True)
@@ -280,8 +304,11 @@ def main() -> int:
     # (signature column, subset-mask, human label)
     sigs = [("pchic_hub", None, "PCHi-C shared hub (physical domain)")]
     if motif_sets:
-        sigs += [("motif_shared", "both_have_motifs", "shared TF: >=1 common motif"),
-                 ("motif_jaccard", "both_have_motifs", "shared TF: motif-set Jaccard")]
+        sigs += [("motif_shared", "both_have_motifs", "shared TF motif: >=1 common"),
+                 ("motif_jaccard", "both_have_motifs", "shared TF motif: Jaccard")]
+    if chip_sets:
+        sigs += [("chip_shared", "both_have_chip", "shared TF ChIP: >=1 co-bound"),
+                 ("chip_jaccard", "both_have_chip", "shared TF ChIP: Jaccard")]
 
     results = {}
     for sig, submask, label in sigs:

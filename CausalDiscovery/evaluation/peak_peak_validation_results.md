@@ -90,22 +90,55 @@ the **latent** class: graphical-lasso removes indirect paths through **observed*
 guarantee behind the 53% number. (A distance-penalized-glasso faithful-Cicero variant is the refinement
 to add.)
 
-## Interpretation after two biological axes — honest status
+## Axis 3 — ChIP-Atlas TF occupancy (2026-07-15, THE DECISIVE test): NEGATIVE
 
-The **methodological** novelty is supported: co-accessibility demonstrably conflates the direct vs
-latent-confounded distinction our PAG makes (strong contrast above). But the **biological identity** of
-the latent driver behind the `<->` edges is **not yet established**: neither shared physical domain
-(PCHi-C) nor shared TF-motif presence explains them above a distance-matched null. Three live
-possibilities, in order of what to test next:
-1. **Shared *TF occupancy* (not mere motif presence)** — ChIP-Atlas monocyte TF ChIP is the decisive
-   test; motif presence was too saturated to decide. **Do this next.**
-2. **A shared *global chromatin-activity* latent** (general "openness"/state co-varying many enhancers)
-   rather than a specific TF or domain. If ChIP-Atlas is also null, this is the likely story — and it
-   reshapes the claim: the `<->` edges are real shared-latent-cause structure, but the cause is global
-   state, which is either an honest biological finding (enhancers co-vary by state, not pairwise
-   regulation) or a residual confound to condition on.
-3. **Small-n PAG instability** — partially covered by the existing stability selection; revisit if 1–2
-   are null.
+`build_chip_occupancy.py` downloaded **515 monocyte-relevant TF ChIP experiments** (ChIP-Atlas hg38 —
+THP-1, U-937, primary Monocytes, CD14+; manifest `Data/external/chipatlas/monocyte_tf_experiments.tab`),
+intersected each with the panel peaks, and built peak→bound-TF occupancy: **7,948 occupancies over 402
+peaks, 73 TFs** (SPI1/PU.1, RUNX1, CEBPA/B, STAT1, EP300, FLI1, CTCF/RAD21…). This is actual TF
+*binding*, the fix for the motif-presence saturation.
+
+| signature | bidirected | null | matched diff | p |
+| --- | --- | --- | --- | --- |
+| ≥1 co-bound TF | 0.949 | 0.950 | +0.0001 | 1.00 |
+| TF-set **Jaccard** | 0.321 | 0.340 | **−0.009** | 1.00 |
+
+**Bidirected `<->` pairs are co-bound by NO more TFs than distance-matched non-edges** — marginally
+fewer. Unlike motif presence, the ChIP **Jaccard is not saturated** (0.32 with full dynamic range), so
+this is a genuine null, not a power artifact (same at ≥2-experiment occupancy). **The shared-TF
+hypothesis — that a `<->` edge means two enhancers share a specific latent regulator — is falsified for
+static binding.**
+
+## Interpretation after all THREE biological axes — the driver is not TF or domain
+
+| axis | mechanism tested | result |
+| --- | --- | --- |
+| PCHi-C hub | shared physical domain | negative |
+| JASPAR motif | shared TF motif (presence) | negative (saturated) |
+| **ChIP-Atlas** | **shared TF occupancy (binding)** | **negative (decisive, unsaturated)** |
+
+**Two findings stand, and they are consistent:**
+1. **Methodological (positive, holds):** the confounder-conditioned PAG separates direct from
+   latent-confounded element pairs; co-accessibility conflates them (53% of adjacencies are latent
+   `<->` — see contrast above). This is the novelty and it is intact.
+2. **Biological (a clear negative that is itself informative):** the residual co-dependence behind the
+   `<->` edges is **not** explained by a shared TF (binding *or* motif) or a shared physical domain.
+   The most parsimonious remaining driver is a **shared GLOBAL chromatin-activity / cell-state latent** —
+   the two enhancers co-vary because they are co-active across the same cell states, *not* because a
+   specific regulator or contact domain couples them. Note static TF binding (from reference ChIP)
+   *cannot* explain a *dynamic* co-variation in our metacells — so this negative is expected, and it
+   redirects the biology cleanly.
+
+**This maps onto MISSION §2's anticipated "independent contributors co-driven by shared state" outcome
+(vs strong pairwise enhancer hierarchy)** — a real, honest finding: near a gene, enhancers co-vary
+mainly through global activity state, not pairwise regulation or a shared specific TF.
+
+## Next — confirm the driver, then decide the framing
+- **Global-activity-latent probe (confirmatory, do next):** add a per-metacell **mean peak-accessibility**
+  covariate as an extra root and re-run discovery — if the `<->` edges collapse, we have *positively
+  identified* the latent driver as global state (turning three negatives into one positive ID). Reuses
+  the `--confounders` machinery.
+- Degree-matching in the null; **scale** for power; faithful distance-penalized-glasso Cicero.
 
 ## Queued / next
 - **chip_shared (ChIP-Atlas co-binding)** — the decisive shared-TF test (download monocyte TF ChIP).

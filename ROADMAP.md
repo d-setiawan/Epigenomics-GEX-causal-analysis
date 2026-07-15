@@ -75,18 +75,24 @@ incumbents occupy:
    method** — co-accessibility conflates bidirected (0.238) vs other-adjacent (0.255); 53% of the PAG's
    element↔element adjacencies are bidirected (latent), which co-access reports as links. (Python
    |Spearman| baseline; faithful distance-penalized-glasso Cicero is the refinement.)
-3. **ChIP-Atlas axis (NEXT, decisive):** shared TF *occupancy* (not motif presence) in monocyte ChIP —
-   the real shared-TF test. Add **degree-matching** to the null.
-4. **Global-activity-latent probe:** if ChIP-Atlas is also null, the `<->` driver is likely a shared
-   global chromatin-state latent, not a specific TF/domain — test per-metacell mean accessibility as the
-   candidate shared cause. (Reshapes the biological claim; see `peak_peak_validation_results.md`.)
+3. ✅ **ChIP-Atlas occupancy axis (decisive):** **NEGATIVE** — 515 monocyte TF ChIP experiments (73 TFs
+   incl. SPI1/CEBPA/RUNX1), `build_chip_occupancy.py`. Bidirected pairs share no more bound TFs than the
+   distance-matched null (Jaccard 0.321 vs 0.340, unsaturated). **Shared-TF hypothesis falsified for
+   static binding.** All three biological axes (domain, motif, occupancy) now null.
+4. **Global-activity-latent probe (NEXT, confirmatory):** all three negatives point to the `<->` driver
+   being a **shared global chromatin-activity/state latent**, not a specific TF/domain (static binding
+   can't explain dynamic co-variation). Add a per-metacell **mean peak-accessibility** root and re-run
+   discovery — if the `<->` edges collapse, the latent driver is *positively identified* as global state
+   (three negatives → one positive ID). Reuses `--confounders`.
 5. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
 6. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
    claim + a second validation axis (paused; `celltype_fair_comparison.md`).
 
-**Honest status:** the *methodological* novelty (co-access conflates what our PAG separates) holds; the
-*biological identity* of the latent driver behind `<->` edges is not yet established (PCHi-C + motif
-both null) — ChIP-Atlas (occupancy) then the global-activity-latent probe decide it.
+**Honest status:** the *methodological* novelty (co-access conflates what our PAG separates; 53% of
+adjacencies are latent) **holds**. The *biological identity* of the `<->` driver is now decided by
+elimination: **not** a shared TF (motif or occupancy) or physical domain — most likely **shared global
+activity state** (MISSION §2's "independent contributors co-driven by shared state" outcome). Confirm
+with the global-activity probe (item 4). See `peak_peak_validation_results.md`.
 
 **Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
 directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility
