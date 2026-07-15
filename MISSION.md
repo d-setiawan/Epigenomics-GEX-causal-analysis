@@ -58,12 +58,22 @@ The method is the contribution regardless of which biological answer emerges.
 | **SCENIC / ARACNE / co-expression** | correlational/MI GRNs | associational, not interventional-calculus causal; gene–gene, not cis-element |
 | **MOFA** (Argelaguet et al. 2018) | unsupervised multi-omics factors | descriptive latent factors, not causal (we tested this — factors capture confounders, not the gene-driver) |
 | **CRISPR / Perturb-seq** (Ray et al. 2025; Catarino & Stark 2018; Brosh et al. 2023) | perturb enhancers → measure necessity/hierarchy | the gold standard for element↔element causality — but requires perturbation; we target the same object *observationally* |
+| **Co-accessibility / co-activity** — Cicero (Pliner 2018), JRIM (Dong 2021), **Ziyani et al. 2023** (89k enhancer–enhancer co-activities from multiome) | undirected statistical dependence between elements | **our closest contrast + strongest hook**: they **explicitly concede** they cannot separate a *direct* element–element link from co-dependence via a **shared hidden driver**; undirected, no latent-cause edge. We resolve exactly that confound. |
+| **MIIC** (Verny et al. 2017, *PLoS Comput Biol*) | ancestral graph w/ **bidirected `<->` = latent common cause** on genomic data | THE precedent to own: bidirected-latent-cause is not new *in genomics* — but MIIC is **gene-level only** (no chromatin, no enhancers, no multiome) |
+| **CausalCell** (Wen et al. 2023, *eLife*) | PC/GES/GSP/DAGMA on scRNA-seq | causal-structure learning in single cell — but **assumes causal sufficiency (no latent), scRNA only, no chromatin/elements** |
+| **Squires & Uhler 2022** (*CLeaR*) | causal structure among **clusters sharing a latent parent** | theory foundation we *extend* to enhancer clusters; not multiome, not validated biologically |
 
-**The gap:** formal, latent-confounder-aware **causal discovery (constraint-based → PAG)** of the
-**local cis-regulatory architecture** (including element↔element structure) from **observational
-single-cell multi-omics**, is not an established approach. A direct search for
-"NOTEARS/structural-causal-model on single-cell multiome" and "causal discovery among regulatory
-elements" returns essentially nothing on-target.
+**The gap (sharpened after the 2026-07-15 competitive scan — see
+[notes/competitive_landscape_novelty.md](CausalDiscovery/notes/competitive_landscape_novelty.md)):**
+every latent-variable causal-discovery method (MIIC, CausalCell, Squires & Uhler, Luo 2025) works on
+**gene–gene expression**; every enhancer-level multiome method (SCENIC+, Cicero, Ziyani…) is
+**correlation/regression without latent-variable causal search**. The two literatures have **never
+been joined at the element level**, and never on scRNA + histone **CUT&Tag**. So the open unit is not
+"a PAG" and not "bidirected = latent cause" (both taken) but: **latent-variable causal discovery
+brought to enhancer-level multiome, which *operationalizes the shared-TF confound the co-accessibility
+field concedes it cannot resolve*, and validates the resulting bidirected co-regulation modules
+against orthogonal axes** (for which no accepted element↔element null yet exists — itself a
+contribution).
 
 ## 4. What is genuinely novel here (the claim)
 
@@ -80,6 +90,15 @@ elements" returns essentially nothing on-target.
    to avoid circularity.
 5. **Honesty:** a PAG (with explicit bidirected/latent-confounder edges), stability selection, and
    null calibration — the causal claims are conditional, falsifiable, and independently checked.
+
+**Framing guardrail (from the competitive scan):** do **not** headline "our PAG distinguishes
+directed/direct/bidirected edges" — that is the generic, defining output of FCI and invites "you ran
+an off-the-shelf algorithm." **Concede** the machinery (FCI taxonomy; MIIC already made
+bidirected-latent edges on gene data) and **relocate** the novelty to: (a) the **domain transfer** to
+enhancer-level multiome + the tiered mechanistic prior that makes the PAG orientable here; (b)
+**resolving the shared-latent-driver confound** the co-accessibility field names but leaves open; (c)
+**validating element↔element edges**, where no accepted null exists. Cite MIIC and Squires & Uhler
+up front as the lineage we extend.
 
 ## 5. Honest scope & limits
 
@@ -109,11 +128,18 @@ what makes them believable.
 
 ---
 
-*Key references (retrieved via OpenAlex, 2026-07-10; verify DOIs before formal citation):*
-ENCODE-rE2G encyclopedia — Gschwind et al. 2023 (*Nature*). SCENIC+ — Bravo González-Blas et al.
-2022. Dictys — Wang et al. 2023 (*Nat Methods*). MOFA — Argelaguet et al. 2018 (*Mol Syst Biol*).
-Enhancer necessity/sufficiency — Catarino & Stark 2018 (*Genes Dev*). Enhancer context-dependence —
-Brosh et al. 2023. Perturb-seq enhancer screens — Ray et al. 2025. Cohesin/3D enhancer-promoter —
-Guckelberger & Doughty 2024. Invariant causal prediction — Peters, Bühlmann & Meinshausen 2016
-(*JRSS-B*; not retrieved here). FCI/PAG causal-discovery foundations — see
-`CausalDiscovery/notes/aggregation_causal_discovery_litreview.md`.
+*Key references (verify DOIs before formal citation):* **Lineage to own up front** — MIIC (bidirected
+latent-cause on genomic data) Verny et al. 2017 (*PLoS Comput Biol* 13(9):e1005662); latent-factor
+cluster causal discovery — Squires & Uhler 2022 (*CLeaR*, arXiv:2207.01237); tiered-FCI w/ latent
+vars — Bang & Didelez 2025 (arXiv:2503.21526). **Closest contrasts** — Cicero (Pliner et al. 2018,
+*Mol Cell*), enhancer co-activity Ziyani et al. 2023 (*Commun Biol*), JRIM (Dong & Zhang 2021),
+CausalCell (Wen et al. 2023, *eLife*), latent-confounder GRN Luo et al. 2025 (arXiv:2501.10124).
+**Validation stack** — ENCODE-rE2G Gschwind et al. 2023 (*Nature*); ABC Fulco 2019 / Nasser 2021;
+eQTL Catalogue Kerimov 2021/2023; BLUEPRINT PCHi-C Javierre et al. 2016 (*Cell*); distance-matched
+null BENGI, Moore 2020. **eGRN incumbents** — SCENIC+ Bravo González-Blas et al. 2023 (*Nat Methods*);
+Dictys Wang et al. 2023; GRaNIE, FigR, CellOracle, Pando, DIRECT-NET, scMEGA. **Biology** — enhancer
+necessity/sufficiency Catarino & Stark 2018; context-dependence Brosh et al. 2023; Perturb-seq Ray et
+al. 2025; enhancer co-regulation via shared TF Malin & Hannenhalli 2013 (*NAR*). MOFA — Argelaguet et
+al. 2018. Invariant causal prediction — Peters, Bühlmann & Meinshausen 2016 (*JRSS-B*). Full ranked
+landscape + reviewer-objection counters:
+[CausalDiscovery/notes/competitive_landscape_novelty.md](CausalDiscovery/notes/competitive_landscape_novelty.md).
