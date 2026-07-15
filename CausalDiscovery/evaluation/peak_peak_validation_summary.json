@@ -1,0 +1,45 @@
+{
+  "n_genes": 15,
+  "n_pairs": 7042,
+  "signature": "pchic_hub",
+  "raw_rates": [
+    {
+      "edge_class": "bidirected",
+      "hub_rate": 0.07142857142857142,
+      "n_pairs": 126
+    },
+    {
+      "edge_class": "non_adjacent",
+      "hub_rate": 0.0657063060414523,
+      "n_pairs": 6803
+    },
+    {
+      "edge_class": "other_adjacent",
+      "hub_rate": 0.09734513274336283,
+      "n_pairs": 113
+    }
+  ],
+  "matched_tests": {
+    "bidirected": {
+      "n_pos": 126,
+      "n_neg": 6803,
+      "pos_sig_rate": 0.07142857142857142,
+      "neg_sig_rate": 0.0657063060414523,
+      "matched_rate_diff": 0.00816701501889182,
+      "perm_p": 1.0,
+      "n_perm_valid": 2000
+    },
+    "directed": {
+      "n_pos": 0
+    },
+    "other_adjacent": {
+      "n_pos": 113,
+      "n_neg": 6803,
+      "pos_sig_rate": 0.09734513274336283,
+      "neg_sig_rate": 0.0657063060414523,
+      "matched_rate_diff": 0.01893603592478918,
+      "perm_p": 1.0,
+      "n_perm_valid": 2000
+    }
+  }
+}
