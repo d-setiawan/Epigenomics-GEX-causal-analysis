@@ -66,18 +66,27 @@ incumbents occupy:
   **clean negative** → pushes toward the shared-TF mechanism —
   [evaluation/peak_peak_validation_results.md](CausalDiscovery/evaluation/peak_peak_validation_results.md).
 
-**The plan (element↔element validation is the keystone):**
-1. **Shared-TF axis** (`scan_peak_motifs.py` → `peak_peak_validator.py --motif-tsv`): do bidirected
-   `<->` pairs share JASPAR TF motifs above the distance-matched null? *(running)* — the direct test of
-   the shared-latent-TF hypothesis.
-2. **ChIP-Atlas axis:** co-binding by the same TF in monocyte ChIP (stronger than motif presence; needs
-   a download). Add **degree-matching** to the null once coverage allows.
-3. **Cicero contrast (the core novelty comparison):** run co-accessibility on the same metacell data;
-   show it collapses the direct-vs-latent-confounded distinction our PAG makes. (R monocle3/cicero not
-   installed → install or a faithful Python co-accessibility baseline.)
-4. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
-5. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
+**The plan (element↔element validation is the keystone) — updated 2026-07-15:**
+1. ✅ **Shared-TF motif axis** (`scan_peak_motifs.py` → `peak_peak_validator.py --motif-tsv`):
+   **NEGATIVE + saturated** — bidirected pairs don't share more JASPAR motifs than the distance-matched
+   null, and motif presence is too non-specific (90% of pairs share ≥1) to decide. Motif presence ≠ TF
+   binding → ChIP-Atlas is the decisive test.
+2. ✅ **Co-accessibility (Cicero) contrast** (`coaccess_contrast.py`): **STRONG POSITIVE for the
+   method** — co-accessibility conflates bidirected (0.238) vs other-adjacent (0.255); 53% of the PAG's
+   element↔element adjacencies are bidirected (latent), which co-access reports as links. (Python
+   |Spearman| baseline; faithful distance-penalized-glasso Cicero is the refinement.)
+3. **ChIP-Atlas axis (NEXT, decisive):** shared TF *occupancy* (not motif presence) in monocyte ChIP —
+   the real shared-TF test. Add **degree-matching** to the null.
+4. **Global-activity-latent probe:** if ChIP-Atlas is also null, the `<->` driver is likely a shared
+   global chromatin-state latent, not a specific TF/domain — test per-metacell mean accessibility as the
+   candidate shared cause. (Reshapes the biological claim; see `peak_peak_validation_results.md`.)
+5. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
+6. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
    claim + a second validation axis (paused; `celltype_fair_comparison.md`).
+
+**Honest status:** the *methodological* novelty (co-access conflates what our PAG separates) holds; the
+*biological identity* of the latent driver behind `<->` edges is not yet established (PCHi-C + motif
+both null) — ChIP-Atlas (occupancy) then the global-activity-latent probe decide it.
 
 **Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
 directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility

@@ -136,7 +136,26 @@ def gene_peaks(out_root: Path, gene: str) -> list[str]:
     return sorted(s)
 
 
-def build_pairs(out_root: Path, genes: list[str], hub: PchicHub) -> pd.DataFrame:
+def load_motif_sets(motif_tsv: Path, min_score: float) -> dict[str, frozenset]:
+    """peak -> frozenset(TF matrix_id) for hits at/above min_score."""
+    if not motif_tsv or not Path(motif_tsv).exists():
+        return {}
+    df = pd.read_csv(motif_tsv, sep="\t")
+    df = df[df["score"] >= min_score]
+    return {p: frozenset(g["matrix_id"].astype(str))
+            for p, g in df.groupby("peak")}
+
+
+def _jaccard(a: frozenset, b: frozenset) -> float:
+    if not a or not b:
+        return 0.0
+    u = len(a | b)
+    return len(a & b) / u if u else 0.0
+
+
+def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
+                motif_sets: dict[str, frozenset] | None = None) -> pd.DataFrame:
+    motif_sets = motif_sets or {}
     rows = []
     for gene in genes:
         peaks = gene_peaks(out_root, gene)
@@ -159,9 +178,14 @@ def build_pairs(out_root: Path, genes: list[str], hub: PchicHub) -> pd.DataFrame
                 continue  # intra-chromosome only (cis)
             dist = abs(ca[3] - cb[3])
             klass = cls.get(frozenset((a, b)), "non_adjacent")
-            shared = bool(hubs[a] & hubs[b])
+            ta, tb = motif_sets.get(a, frozenset()), motif_sets.get(b, frozenset())
             rows.append({"gene": gene, "peak_a": a, "peak_b": b, "distance": dist,
-                         "edge_class": klass, "pchic_hub": int(shared)})
+                         "edge_class": klass,
+                         "pchic_hub": int(bool(hubs[a] & hubs[b])),
+                         "motif_shared": int(bool(ta & tb)),
+                         "motif_jaccard": _jaccard(ta, tb),
+                         "motif_n_shared": len(ta & tb),
+                         "both_have_motifs": int(bool(ta) and bool(tb))})
     return pd.DataFrame(rows)
 
 
@@ -227,6 +251,11 @@ def main() -> int:
                     help="Comma-separated; default = every subdir with edges_consensus.tsv.")
     ap.add_argument("--report-dir", type=Path,
                     default=repo / "CausalDiscovery/evaluation")
+    ap.add_argument("--motif-tsv", type=Path,
+                    default=repo / "CausalDiscovery/evaluation/peak_tf_motifs.tsv",
+                    help="peak->TF motif hits from scan_peak_motifs.py (shared-TF axis).")
+    ap.add_argument("--motif-score", type=float, default=0.90,
+                    help="Min JASPAR relative score to count a TF motif hit.")
     ap.add_argument("--n-bins", type=int, default=8)
     ap.add_argument("--n-perm", type=int, default=2000)
     ap.add_argument("--seed", type=int, default=1234)
@@ -237,38 +266,44 @@ def main() -> int:
     else:
         genes = sorted(p.name for p in a.out_root.iterdir()
                        if (p / "edges_consensus.tsv").exists())
-    print(f"[ppval] genes={len(genes)}  pchic={a.pchic_tsv.name}")
+    motif_sets = load_motif_sets(a.motif_tsv, a.motif_score)
+    print(f"[ppval] genes={len(genes)}  pchic={a.pchic_tsv.name}  "
+          f"motif={'yes ('+str(len(motif_sets))+' peaks @>='+str(a.motif_score)+')' if motif_sets else 'none'}")
     hub = PchicHub(a.pchic_tsv)
-    pairs = build_pairs(a.out_root, genes, hub)
+    pairs = build_pairs(a.out_root, genes, hub, motif_sets)
     if pairs.empty:
         raise SystemExit("no candidate pairs built")
     a.report_dir.mkdir(parents=True, exist_ok=True)
     pairs.to_csv(a.report_dir / "peak_peak_pairs.tsv", sep="\t", index=False)
 
-    # raw (unmatched) signature rates by edge class
-    raw = (pairs.groupby("edge_class")["pchic_hub"]
-           .agg(["mean", "size"]).rename(columns={"mean": "hub_rate", "size": "n_pairs"}))
-    # distance-matched tests: bidirected vs null, and (contrast) directed vs null
-    tests = {c: matched_permutation_test(pairs, c, "pchic_hub", a.n_bins, a.n_perm, a.seed)
-             for c in ("bidirected", "directed", "other_adjacent")}
+    POS = ("bidirected", "directed", "other_adjacent")
+    # (signature column, subset-mask, human label)
+    sigs = [("pchic_hub", None, "PCHi-C shared hub (physical domain)")]
+    if motif_sets:
+        sigs += [("motif_shared", "both_have_motifs", "shared TF: >=1 common motif"),
+                 ("motif_jaccard", "both_have_motifs", "shared TF: motif-set Jaccard")]
 
-    summary = {
-        "n_genes": len(genes), "n_pairs": int(len(pairs)),
-        "signature": "pchic_hub",
-        "raw_rates": raw.reset_index().to_dict("records"),
-        "matched_tests": tests,
-    }
+    results = {}
+    for sig, submask, label in sigs:
+        pp = pairs[pairs[submask] == 1] if submask else pairs
+        raw = (pp.groupby("edge_class")[sig].agg(["mean", "size"])
+               .rename(columns={"mean": "rate", "size": "n_pairs"}))
+        tests = {c: matched_permutation_test(pp, c, sig, a.n_bins, a.n_perm, a.seed) for c in POS}
+        results[sig] = {"label": label, "n_pairs_used": int(len(pp)),
+                        "raw_rates": raw.reset_index().to_dict("records"),
+                        "matched_tests": tests}
+        print(f"\n=== {label}  [{sig}]  (n_pairs={len(pp)}) ===")
+        print(raw.to_string())
+        for c, t in tests.items():
+            if t.get("n_pos", 0) == 0:
+                print(f"  {c:15s}: no pairs"); continue
+            print(f"  {c:15s}: n={t['n_pos']:4d}  pos {t['pos_sig_rate']:.4f} vs null "
+                  f"{t['neg_sig_rate']:.4f}  matched_diff={t['matched_rate_diff']:+.4f}  "
+                  f"p={t['perm_p']:.4f}")
+
+    summary = {"n_genes": len(genes), "n_pairs": int(len(pairs)),
+               "motif_score_threshold": a.motif_score, "signatures": results}
     (a.report_dir / "peak_peak_validation_summary.json").write_text(json.dumps(summary, indent=2))
-
-    print("\n=== raw hub-rate by edge class (unmatched) ===")
-    print(raw.to_string())
-    print("\n=== distance-matched permutation test (vs non_adjacent) ===")
-    for c, t in tests.items():
-        if t.get("n_pos", 0) == 0:
-            print(f"  {c:15s} : no pairs"); continue
-        print(f"  {c:15s} : n={t['n_pos']:4d}  hub {t['pos_sig_rate']:.3f} vs null "
-              f"{t['neg_sig_rate']:.3f}  matched_diff={t['matched_rate_diff']:+.3f}  "
-              f"p={t['perm_p']:.4f}")
     return 0
 
 

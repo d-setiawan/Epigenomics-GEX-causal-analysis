@@ -1,45 +1,139 @@
 {
   "n_genes": 15,
   "n_pairs": 7042,
-  "signature": "pchic_hub",
-  "raw_rates": [
-    {
-      "edge_class": "bidirected",
-      "hub_rate": 0.07142857142857142,
-      "n_pairs": 126
+  "motif_score_threshold": 0.95,
+  "signatures": {
+    "pchic_hub": {
+      "label": "PCHi-C shared hub (physical domain)",
+      "n_pairs_used": 7042,
+      "raw_rates": [
+        {
+          "edge_class": "bidirected",
+          "rate": 0.07142857142857142,
+          "n_pairs": 126
+        },
+        {
+          "edge_class": "non_adjacent",
+          "rate": 0.0657063060414523,
+          "n_pairs": 6803
+        },
+        {
+          "edge_class": "other_adjacent",
+          "rate": 0.09734513274336283,
+          "n_pairs": 113
+        }
+      ],
+      "matched_tests": {
+        "bidirected": {
+          "n_pos": 126,
+          "n_neg": 6803,
+          "pos_sig_rate": 0.07142857142857142,
+          "neg_sig_rate": 0.0657063060414523,
+          "matched_rate_diff": 0.00816701501889182,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        },
+        "directed": {
+          "n_pos": 0
+        },
+        "other_adjacent": {
+          "n_pos": 113,
+          "n_neg": 6803,
+          "pos_sig_rate": 0.09734513274336283,
+          "neg_sig_rate": 0.0657063060414523,
+          "matched_rate_diff": 0.01893603592478918,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        }
+      }
     },
-    {
-      "edge_class": "non_adjacent",
-      "hub_rate": 0.0657063060414523,
-      "n_pairs": 6803
+    "motif_shared": {
+      "label": "shared TF: >=1 common motif",
+      "n_pairs_used": 6517,
+      "raw_rates": [
+        {
+          "edge_class": "bidirected",
+          "rate": 0.9,
+          "n_pairs": 120
+        },
+        {
+          "edge_class": "non_adjacent",
+          "rate": 0.8921708750198507,
+          "n_pairs": 6297
+        },
+        {
+          "edge_class": "other_adjacent",
+          "rate": 0.87,
+          "n_pairs": 100
+        }
+      ],
+      "matched_tests": {
+        "bidirected": {
+          "n_pos": 120,
+          "n_neg": 6297,
+          "pos_sig_rate": 0.9,
+          "neg_sig_rate": 0.8921708750198507,
+          "matched_rate_diff": 0.008648170586716094,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        },
+        "directed": {
+          "n_pos": 0
+        },
+        "other_adjacent": {
+          "n_pos": 100,
+          "n_neg": 6297,
+          "pos_sig_rate": 0.87,
+          "neg_sig_rate": 0.8921708750198507,
+          "matched_rate_diff": -0.027659913709046077,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        }
+      }
     },
-    {
-      "edge_class": "other_adjacent",
-      "hub_rate": 0.09734513274336283,
-      "n_pairs": 113
-    }
-  ],
-  "matched_tests": {
-    "bidirected": {
-      "n_pos": 126,
-      "n_neg": 6803,
-      "pos_sig_rate": 0.07142857142857142,
-      "neg_sig_rate": 0.0657063060414523,
-      "matched_rate_diff": 0.00816701501889182,
-      "perm_p": 1.0,
-      "n_perm_valid": 2000
-    },
-    "directed": {
-      "n_pos": 0
-    },
-    "other_adjacent": {
-      "n_pos": 113,
-      "n_neg": 6803,
-      "pos_sig_rate": 0.09734513274336283,
-      "neg_sig_rate": 0.0657063060414523,
-      "matched_rate_diff": 0.01893603592478918,
-      "perm_p": 1.0,
-      "n_perm_valid": 2000
+    "motif_jaccard": {
+      "label": "shared TF: motif-set Jaccard",
+      "n_pairs_used": 6517,
+      "raw_rates": [
+        {
+          "edge_class": "bidirected",
+          "rate": 0.1962458774314839,
+          "n_pairs": 120
+        },
+        {
+          "edge_class": "non_adjacent",
+          "rate": 0.2110097554731205,
+          "n_pairs": 6297
+        },
+        {
+          "edge_class": "other_adjacent",
+          "rate": 0.19018726730550675,
+          "n_pairs": 100
+        }
+      ],
+      "matched_tests": {
+        "bidirected": {
+          "n_pos": 120,
+          "n_neg": 6297,
+          "pos_sig_rate": 0.1962458774314839,
+          "neg_sig_rate": 0.2110097554731205,
+          "matched_rate_diff": -0.010520446503047806,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        },
+        "directed": {
+          "n_pos": 0
+        },
+        "other_adjacent": {
+          "n_pos": 100,
+          "n_neg": 6297,
+          "pos_sig_rate": 0.19018726730550678,
+          "neg_sig_rate": 0.2110097554731205,
+          "matched_rate_diff": -0.039390902642049086,
+          "perm_p": 1.0,
+          "n_perm_valid": 2000
+        }
+      }
     }
   }
 }

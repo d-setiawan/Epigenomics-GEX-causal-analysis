@@ -1,0 +1,37 @@
+{
+  "n_pairs_scored": 7042,
+  "coaccess_by_class": [
+    {
+      "edge_class": "bidirected",
+      "mean": 0.23793666926130505,
+      "median": 0.22052565928401835,
+      "n_pairs": 126
+    },
+    {
+      "edge_class": "non_adjacent",
+      "mean": 0.0635759816948733,
+      "median": 0.05416971560653768,
+      "n_pairs": 6803
+    },
+    {
+      "edge_class": "other_adjacent",
+      "mean": 0.2554010282792926,
+      "median": 0.23487822344580572,
+      "n_pairs": 113
+    }
+  ],
+  "link_quantile": 0.9,
+  "link_threshold": 0.14586313375491183,
+  "n_links": 705,
+  "link_class_pct": {
+    "non_adjacent": 67.4,
+    "bidirected": 17.3,
+    "other_adjacent": 15.3
+  },
+  "link_class_counts": {
+    "non_adjacent": 475,
+    "bidirected": 122,
+    "other_adjacent": 108
+  },
+  "adjacent_latent_fraction": 0.5271966527196653
+}
