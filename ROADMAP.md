@@ -14,8 +14,9 @@ Changelog; when a decision changes, edit the Decision and note why in the Change
   [CausalDiscovery/notes/aggregation_causal_discovery_litreview.md](CausalDiscovery/notes/aggregation_causal_discovery_litreview.md) ·
   [CausalDiscovery/notes/target_gene_selection.md](CausalDiscovery/notes/target_gene_selection.md) (validation-rich targets + cell-type pros/cons) ·
   `notes/` (planning + identifiability).
-- Status date: **2026-07-08**. Genome build: **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical).
-  Targets: **CSF1R, CD14, IL1B**. Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
+- Status date: **2026-07-15** (see **§0.5 Publication push** for the current effort). Genome build:
+  **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical). Panel: **15 validation-rich genes**.
+  Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
 
 ---
 
@@ -32,6 +33,56 @@ validator; it already flagged the "stable CD14 edge" peak as the **TMCO6 promote
 **Known problems to fix (from the audit):** 1 Mb graphs too dense; KCI slow/brittle & empty;
 count-family DAGMA empty 67% of the time; kNN-averaging inflates effective n; only ENCODE (of the
 old sources) is cell-type-aligned and none could validate peak→gene edges (now partly fixed by rE2G).
+
+---
+
+## 0.5 Publication push (2026-07-14 →) — the novelty & the plan
+
+**Single referenceable hub for the current publication effort.** Read with
+[MISSION.md](MISSION.md) (why/novel) and
+[CausalDiscovery/notes/competitive_landscape_novelty.md](CausalDiscovery/notes/competitive_landscape_novelty.md)
+(ranked competitors + reviewer counters).
+
+**The novelty, relocated (after the 2026-07-15 competitive scan).** Do NOT headline "our PAG
+distinguishes directed/direct/bidirected edges" — that is generic FCI, and MIIC (2017) already made
+bidirected latent-cause edges on *gene* data. The defensible claim is the combination none of the
+incumbents occupy:
+> **First latent-variable causal discovery (FCI/GFCI → PAG) at the *enhancer/chromatin-element* level
+> on single-cell multiome (scRNA + histone CUT&Tag), which *operationalizes the shared-latent-driver
+> confound that co-accessibility methods (Cicero/JRIM/Ziyani) concede they cannot resolve*, and
+> validates the resulting bidirected co-regulation modules against orthogonal axes (for which no
+> accepted element↔element null yet exists — itself a contribution).**
+
+**Done this push:**
+- ✅ Confounder root-nodes + mechanistic orientation wired as the **pipeline default** (`--confounders
+  depth`). Confounder set decided = **library depth only** (donor averaged out by metacells;
+  cell-cycle irrelevant for monocytes) — [notes/confounder_orientation_implementation.md](CausalDiscovery/notes/confounder_orientation_implementation.md).
+- ✅ **15-gene panel refreshed confounder-conditioned: 19/19 peak→gene edges directed, 11 validated
+  (all 3 axes), 5 stable+validated** — [evaluation/expanded_panel_confounder_results.md](CausalDiscovery/evaluation/expanded_panel_confounder_results.md).
+- ✅ **GFCI knowledge wired** (safe-name fix for Tetrad's `:`/`-` no-op; GFCI orients skeleton only, FCI
+  carries direction) — same notes doc.
+- ✅ **Novelty pinned** (competitive scan) + MISSION reframed.
+- ✅ **Peak↔peak validator framework + distance-matched null** built; axis 1 (PCHi-C physical hub) =
+  **clean negative** → pushes toward the shared-TF mechanism —
+  [evaluation/peak_peak_validation_results.md](CausalDiscovery/evaluation/peak_peak_validation_results.md).
+
+**The plan (element↔element validation is the keystone):**
+1. **Shared-TF axis** (`scan_peak_motifs.py` → `peak_peak_validator.py --motif-tsv`): do bidirected
+   `<->` pairs share JASPAR TF motifs above the distance-matched null? *(running)* — the direct test of
+   the shared-latent-TF hypothesis.
+2. **ChIP-Atlas axis:** co-binding by the same TF in monocyte ChIP (stronger than motif presence; needs
+   a download). Add **degree-matching** to the null once coverage allows.
+3. **Cicero contrast (the core novelty comparison):** run co-accessibility on the same metacell data;
+   show it collapses the direct-vs-latent-confounded distinction our PAG makes. (R monocle3/cicero not
+   installed → install or a faithful Python co-accessibility baseline.)
+4. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
+5. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
+   claim + a second validation axis (paused; `celltype_fair_comparison.md`).
+
+**Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
+directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility
+conflates; (3) a prioritized set of enhancer–enhancer co-regulation hypotheses for CRISPRi follow-up.
+Scope stays honest: observational, PAG-not-DAG, hypothesis-generating.
 
 ---
 
@@ -222,6 +273,17 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 ---
 
 ## 3. Decision log
+- **2026-07-15** **Novelty relocated** (competitive scan): concede the FCI edge-taxonomy + MIIC's
+  bidirected-latent precedent; lead with domain-transfer to enhancer-level multiome + resolving the
+  co-accessibility confound + element↔element validation. See §0.5.
+- **2026-07-15** **Peak↔peak validation = distance-matched permutation test** on the bidirected `<->`
+  edges. Axes: PCHi-C hub (done, negative), shared-TF motif (running), ChIP-Atlas, Cicero contrast.
+  Add degree-matching. Bidirected edges are the positive set; matched non-adjacent pairs the null.
+- **2026-07-15** **GFCI runs confounder-conditioned** but orients skeleton only (Tetrad `Gfci` doesn't
+  propagate knowledge to PAG endpoints; FCI does) → directed claims come from causal-learn FCI.
+- **2026-07-14** **Confounder set = library depth only**, wired as the pipeline default
+  (`--confounders depth`); donor rejected (metacells average it out, χ² p=0.43), cell-cycle rejected
+  (monocytes ~1–2% cycling). Residual peak↔peak after depth-conditioning is biological, not technical.
 - **2026-07-08** Identifiability target = local PAG/MAG (no causal sufficiency). *(pre-existing)*
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
