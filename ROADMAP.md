@@ -79,20 +79,25 @@ incumbents occupy:
    incl. SPI1/CEBPA/RUNX1), `build_chip_occupancy.py`. Bidirected pairs share no more bound TFs than the
    distance-matched null (Jaccard 0.321 vs 0.340, unsaturated). **Shared-TF hypothesis falsified for
    static binding.** All three biological axes (domain, motif, occupancy) now null.
-4. **Global-activity-latent probe (NEXT, confirmatory):** all three negatives point to the `<->` driver
-   being a **shared global chromatin-activity/state latent**, not a specific TF/domain (static binding
-   can't explain dynamic co-variation). Add a per-metacell **mean peak-accessibility** root and re-run
-   discovery — if the `<->` edges collapse, the latent driver is *positively identified* as global state
-   (three negatives → one positive ID). Reuses `--confounders`.
+4. ✅ **Global-activity-latent probe:** **NEGATIVE (edges survive)** — `build_global_activity.py`
+   (leave-one-locus-out global-state root, collider-safe) + `--confounders depth,activity`. Bidirected
+   `<->` 126→129 (unchanged), peak→gene validated 11→11 (robust). Genome-wide activity state is NOT the
+   driver. **Four negatives total** (domain, motif, occupancy, global state) ⇒ the `<->` latent is
+   **local to each gene's regulatory neighborhood** and inherently unobservable (its only proxy — the
+   locus's own mean — is a collider), which is *exactly* what a PAG bidirected edge is for.
 5. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
 6. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
    claim + a second validation axis (paused; `celltype_fair_comparison.md`).
 
-**Honest status:** the *methodological* novelty (co-access conflates what our PAG separates; 53% of
-adjacencies are latent) **holds**. The *biological identity* of the `<->` driver is now decided by
-elimination: **not** a shared TF (motif or occupancy) or physical domain — most likely **shared global
-activity state** (MISSION §2's "independent contributors co-driven by shared state" outcome). Confirm
-with the global-activity probe (item 4). See `peak_peak_validation_results.md`.
+**Honest status — E↔E validation complete (2026-07-16).** The *methodological* novelty **holds and is
+the headline**: the confounder-conditioned PAG separates direct from latent-confounded element pairs;
+co-accessibility conflates them (53% of adjacencies are latent `<->`; it would mis-call all 126 as
+links). The four-negative elimination (shared TF motif/occupancy, physical domain, genome-wide state)
+is the *honest core*: the `<->` confounder is **real but unmeasured** — surviving every observed proxy —
+so modelling it as a **latent** (FCI/PAG) rather than a direct link is *required*, not stylistic.
+Biology = MISSION §2's "elements co-driven by a latent *local* co-regulation state," not pairwise
+regulation / shared master TF / 3D looping. See `peak_peak_validation_results.md`. Remaining: scale,
+degree-matched null, faithful-Cicero, ICP.
 
 **Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
 directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility

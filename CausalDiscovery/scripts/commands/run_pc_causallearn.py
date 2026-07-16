@@ -449,6 +449,14 @@ def build_confounder_columns(df: pd.DataFrame, mode: str) -> list[str]:
         if mark_cols:
             df["conf__chrom_depth"] = np.log1p(df[mark_cols].astype(float).mean(axis=1))
             added.append("conf__chrom_depth")
+    if "activity" in tokens and "activity__global" in df.columns:
+        # per-metacell GLOBAL chromatin-activity latent (leave-one-locus-out,
+        # build_global_activity.py): a common-cause proxy for the shared state that
+        # may drive the bidirected peak<->peak edges. Standardized here.
+        v = df["activity__global"].astype(float)
+        sd = v.std(ddof=0) or 1.0
+        df["conf__global_activity"] = (v - v.mean()) / sd
+        added.append("conf__global_activity")
     for extra in ("cellcycle", "donor"):
         if extra in tokens:
             # honored if a precomputed covariate column is present (e.g. cc__s_score, donor__*)

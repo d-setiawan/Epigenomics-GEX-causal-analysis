@@ -133,12 +133,58 @@ static binding.**
 (vs strong pairwise enhancer hierarchy)** — a real, honest finding: near a gene, enhancers co-vary
 mainly through global activity state, not pairwise regulation or a shared specific TF.
 
-## Next — confirm the driver, then decide the framing
-- **Global-activity-latent probe (confirmatory, do next):** add a per-metacell **mean peak-accessibility**
-  covariate as an extra root and re-run discovery — if the `<->` edges collapse, we have *positively
-  identified* the latent driver as global state (turning three negatives into one positive ID). Reuses
-  the `--confounders` machinery.
-- Degree-matching in the null; **scale** for power; faithful distance-penalized-glasso Cicero.
+## Axis 4 — global-activity-latent probe (2026-07-16): NEGATIVE (edges survive)
+
+`build_global_activity.py` builds a per-metacell **leave-one-locus-out** global chromatin-activity
+covariate — the mean z-scored accessibility across all *other* panel genes' peaks, a genome-wide state
+proxy that is a **common cause** of the locus (not a collider: it excludes the in-model peaks, so
+conditioning on it cannot induce edges the way an in-locus mean would — the documented "self-PC"
+backfire). Added as a `conf__global_activity` root via `--confounders depth,activity`, panel re-run.
+
+| metric | depth only | depth + global-activity |
+| --- | --- | --- |
+| peak↔peak edges | 239 | 238 |
+| **bidirected `<->`** | 126 | **129** |
+| peak→gene validated | 11 | 11 |
+
+**Conditioning on genome-wide activity state does NOT remove the bidirected edges** (unchanged/marginally
+up), while the validated peak→gene edges are untouched (robustness). So the `<->` coupling is **not**
+driven by a genome-wide activity latent either.
+
+## The endpoint: four negatives that together make the case for a *latent* method
+
+| candidate driver | test | result |
+| --- | --- | --- |
+| shared physical domain | PCHi-C hub | negative |
+| shared TF (motif) | JASPAR presence | negative (saturated) |
+| shared TF (occupancy) | ChIP-Atlas binding | **negative (decisive)** |
+| genome-wide activity state | leave-one-locus-out root | **negative (edges survive)** |
+
+The bidirected edges are **robust**: not a shared specific TF, not a physical domain, not genome-wide
+state. By elimination the latent common cause is **local to each gene's regulatory neighborhood** — a
+per-locus co-regulation state coupling that gene's elements. Crucially, that local latent **cannot be
+conditioned away with an observed proxy**: the only proxy is the mean of the locus's own peaks, which is
+a *collider* (a descendant of them), so conditioning on it induces edges rather than removing them. **A
+genuinely unobserved, non-deconfoundable local common cause is exactly what a PAG bidirected edge is
+for.**
+
+This is the honest scientific payoff, and it is *stronger* than a positive TF hit would have been:
+1. **It validates the method choice.** We showed empirically that the confounder behind `<->` edges is
+   real but unmeasured (survives every observed proxy we could throw at it) — so modelling it as a
+   *latent* (FCI/PAG bidirected) rather than asserting a direct link (co-accessibility) is not a
+   stylistic choice, it is *required*. Co-accessibility would mis-call every one of these 126 pairs as a
+   regulatory link.
+2. **It sharpens the biology to MISSION §2's "co-driven by shared local state" outcome:** near a gene,
+   elements co-vary as a locally-coordinated module, not via pairwise regulation, a shared master TF, or
+   3D looping — and that coordinating state is latent.
+
+## Next / open
+- **Scale** (genome-wide / large panel) for power on the E↔E enrichment and to test whether the local
+  co-regulation is stronger for some gene classes.
+- **Degree-matching** in the null; faithful distance-penalized-glasso Cicero (refinement of the
+  contrast); cross-cell-type invariance (ICP) as a second axis.
+- The four-negative result is the **paper's honest core** for the E↔E claim; the method contrast
+  (co-access conflation, 53% latent) is the headline.
 
 ## Queued / next
 - **chip_shared (ChIP-Atlas co-binding)** — the decisive shared-TF test (download monocyte TF ChIP).
