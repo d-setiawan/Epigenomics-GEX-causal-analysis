@@ -101,3 +101,25 @@ guarantee behind the 53% number.
 
 Tetrad's `Gfci` does not propagate the `Knowledge` tiers to PAG endpoints (causal-learn's FCI does),
 so GFCI contributes multi-algorithm *adjacency* while **directed claims come from FCI**.
+
+## L11. Edge identities are partition-dependent
+
+Discovery runs on metacells, and the Leiden partition is one arbitrary draw. Re-clustering the same
+cells with a different random seed — same algorithm, same parameters, same n=133 — **loses 9 of 11
+validated peak→gene edges**. Across three partitions, **zero** validated edges survive all three; two
+CD14 edges survive two of three, and those are the project's flagship edges.
+
+**What it blocks.** Any claim of the form "peak X regulates gene Y" from a single partition. The
+aggregate counts (19 directed, 11 validated) *do* reproduce, so distribution-level claims are on firmer
+ground than individual-edge claims.
+
+**Why the current stability tier does not cover this.** Bootstrap stability selection resamples rows
+*within* a fixed partition, so it structurally cannot observe between-partition variance. The "5
+stable+validated" tier inherits the blind spot.
+
+**What we do instead.** Nothing yet — this is unresolved and is the current top priority. The proposed
+fix is an outer bootstrap over partitions (re-cluster K times, report edge frequency across partitions).
+Controls confirming the finding is real (pipeline determinism, identical peak universes) and the full
+numbers are in
+[partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
+

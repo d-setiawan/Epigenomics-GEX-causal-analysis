@@ -320,6 +320,26 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-20** **Edge identities are partition-dependent — scaling is on hold.** Re-clustering the
+  same cells with a different Leiden seed (same n, same everything else) loses 9 of 11 validated
+  peak→gene edges; across 3 partitions 0 survive all 3. Pipeline determinism and identical peak
+  universes were verified first, so the effect is attributable to the partition. Bootstrap stability
+  selection resamples rows *within* a partition and cannot see this. **Priority change: partition-level
+  (outer) bootstrap before scaling** — scaling would multiply a non-reproducible edge set.
+  [partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md) ·
+  [L11](LIMITATIONS.md#l11-edge-identities-are-partition-dependent).
+- **2026-07-20** **CI tests: rank-fisherz and RCoT already existed** (ROADMAP Q3 was mis-scoped).
+  `--transform rank_gaussian` + `fisherz` IS rank-fisherz and was already the pipeline default;
+  causal-learn ships `rcit`. Fixed `run_pc_causallearn.py`'s own contradicting defaults; KCI now opt-in.
+  Panel comparison: RCoT is far more conservative (11 → 3 validated at n=133) and nearly a strict
+  subset of fisherz. At n=240 its peak↔peak adjacencies recover strongly (224 → 477) but peak→gene does
+  not (3 → 2), so its conservatism there is not purely a power artifact. **Unresolved which to believe**
+  — deferred behind the partition question, which affects both arms.
+- **2026-07-20** **Power has a measured ceiling.** Usable n (complete metacells: all 6 marks + RNA)
+  peaks at 240 (target 400) vs 133 today, then falls to 154 at target 900. But 1.8× the rows produced
+  **identical** panel counts (19 peak→gene, 11 validated), consistent with the T-cell result that edge
+  recovery is limited by per-gene effect size, not n. Cost measured: median cells/metacell 95 → 36,
+  panel gene detection 96.3% → 91.0%.
 - **2026-07-20** **Donor is not a usable variable** (user-confirmed). RNA was never hashtagged and the
   chromatin HTO donors do not correspond to RNA donors, so no donor structure is shared across
   modalities. Consequences: donor-block bootstrap is *impossible* (closed, not pending);

@@ -31,6 +31,7 @@ The curated evidence tables in `outputs/` are tracked deliberately: they are wha
 
 - [results/peak_peak_validation_results.md](results/peak_peak_validation_results.md) — the four element↔element axes and the co-accessibility contrast.
 - [results/expanded_panel_confounder_results.md](results/expanded_panel_confounder_results.md) — the confounder-conditioned 15-gene panel.
+- **[results/partition_stability_findings.md](results/partition_stability_findings.md) — ⚠️ validated edge *identities* do not reproduce across metacell partitions. Read before citing any specific edge.**
 - [results/run_audit_report.md](results/run_audit_report.md) — saved-run audit and rigor tiers.
 - [results/evaluation_overview.md](results/evaluation_overview.md) — framing, validation layers, honesty rules.
 

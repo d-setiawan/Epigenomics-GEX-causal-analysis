@@ -1,0 +1,72 @@
+{
+  "shared_genes": [
+    "BIN1",
+    "CD14",
+    "CD151",
+    "CD52",
+    "CSF1R",
+    "CST3",
+    "CTSC",
+    "CTSH",
+    "IL1B",
+    "IL4R",
+    "LGALS2",
+    "LSP1",
+    "PLCL1",
+    "PTPRJ",
+    "RAPGEF1"
+  ],
+  "summary": [
+    {
+      "arm": "fisherz",
+      "genes": 15,
+      "peak_gene": 19,
+      "pg_directed": 19,
+      "pg_validated": 11,
+      "peak_peak": 239,
+      "pp_bidirected": 126
+    },
+    {
+      "arm": "rcit",
+      "genes": 15,
+      "peak_gene": 6,
+      "pg_directed": 6,
+      "pg_validated": 3,
+      "peak_peak": 224,
+      "pp_bidirected": 88
+    }
+  ],
+  "pg_jaccard": 0.25,
+  "pg_shared": 5,
+  "pg_only_fisherz": [
+    "CD14|chr5:140563832-140564962__H3K4me3|expr__CD14_log1p",
+    "CD14|chr5:140612011-140612339__H3K27ac|expr__CD14_log1p",
+    "CD151|chr11:797130-798344__H3K4me2|expr__CD151_log1p",
+    "CD151|chr11:841767-842901__H3K4me3|expr__CD151_log1p",
+    "CD52|chr1:26289150-26289429__H3K27ac|expr__CD52_log1p",
+    "CSF1R|chr5:150302102-150302543__H3K27me3|expr__CSF1R_log1p",
+    "IL4R|chr16:27203357-27204050__H3K27ac|expr__IL4R_log1p",
+    "IL4R|chr16:27242827-27243157__H3K4me2|expr__IL4R_log1p",
+    "IL4R|chr16:27401872-27402382__H3K4me3|expr__IL4R_log1p",
+    "PLCL1|chr2:197514978-197516211__H3K4me2|expr__PLCL1_log1p",
+    "PLCL1|chr2:197786015-197786538__H3K4me2|expr__PLCL1_log1p",
+    "PTPRJ|chr11:47766015-47767770__H3K4me2|expr__PTPRJ_log1p",
+    "PTPRJ|chr11:47847877-47848667__H3K27ac|expr__PTPRJ_log1p",
+    "RAPGEF1|chr9:131545976-131546756__H3K27me3|expr__RAPGEF1_log1p"
+  ],
+  "pg_only_rcit": [
+    "PTPRJ|chr11:47847793-47848703__H3K4me3|expr__PTPRJ_log1p"
+  ],
+  "validated_shared": 3,
+  "validated_only_fisherz": [
+    "CD14|chr5:140563832-140564962__H3K4me3|expr__CD14_log1p",
+    "CD14|chr5:140612011-140612339__H3K27ac|expr__CD14_log1p",
+    "CD151|chr11:841767-842901__H3K4me3|expr__CD151_log1p",
+    "CD52|chr1:26289150-26289429__H3K27ac|expr__CD52_log1p",
+    "IL4R|chr16:27203357-27204050__H3K27ac|expr__IL4R_log1p",
+    "IL4R|chr16:27242827-27243157__H3K4me2|expr__IL4R_log1p",
+    "IL4R|chr16:27401872-27402382__H3K4me3|expr__IL4R_log1p",
+    "PLCL1|chr2:197786015-197786538__H3K4me2|expr__PLCL1_log1p"
+  ],
+  "validated_only_rcit": []
+}
