@@ -182,6 +182,14 @@ def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
             cdf = pd.read_csv(ce, sep="\t")
             for _, r in cdf[cdf["edge_kind"] == "peak_peak"].iterrows():
                 cls[frozenset((str(r["node1"]), str(r["node2"])))] = edge_class(r["orientations"])
+        # PAG degree per peak = how many adjacent partners it has in the consensus graph.
+        # Hub peaks are adjacent to many others AND tend to carry more of any signature, so
+        # degree is a confound of the same kind as distance — see --degree-bins.
+        degree: dict[str, int] = defaultdict(int)
+        for key in cls:
+            for node in key:
+                degree[str(node)] += 1
+
         # precompute hub sets
         hubs = {p: hub.hubs(coords[p][0], coords[p][1], coords[p][2]) for p in peaks}
         for a, b in combinations(peaks, 2):
@@ -191,33 +199,49 @@ def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
             dist = abs(ca[3] - cb[3])
             klass = cls.get(frozenset((a, b)), "non_adjacent")
             ta, tb = motif_sets.get(a, frozenset()), motif_sets.get(b, frozenset())
-            ca, cb = chip_sets.get(a, frozenset()), chip_sets.get(b, frozenset())
+            cha, chb = chip_sets.get(a, frozenset()), chip_sets.get(b, frozenset())
+            da, db = degree[a], degree[b]
             rows.append({"gene": gene, "peak_a": a, "peak_b": b, "distance": dist,
                          "edge_class": klass,
+                         "deg_a": da, "deg_b": db,
+                         "deg_min": min(da, db), "deg_max": max(da, db), "deg_sum": da + db,
                          "pchic_hub": int(bool(hubs[a] & hubs[b])),
                          "motif_shared": int(bool(ta & tb)),
                          "motif_jaccard": _jaccard(ta, tb),
                          "motif_n_shared": len(ta & tb),
                          "both_have_motifs": int(bool(ta) and bool(tb)),
-                         "chip_shared": int(bool(ca & cb)),
-                         "chip_jaccard": _jaccard(ca, cb),
-                         "chip_n_shared": len(ca & cb),
-                         "both_have_chip": int(bool(ca) and bool(cb))})
+                         "chip_shared": int(bool(cha & chb)),
+                         "chip_jaccard": _jaccard(cha, chb),
+                         "chip_n_shared": len(cha & chb),
+                         "both_have_chip": int(bool(cha) and bool(chb))})
     return pd.DataFrame(rows)
 
 
 # ---------------------------------------------------------- distance-matched test
 def matched_permutation_test(pairs: pd.DataFrame, pos_class: str, sig: str,
-                             n_bins: int, n_perm: int, seed: int) -> dict:
-    """Within distance bins, compare signature rate of `pos_class` vs non_adjacent.
+                             n_bins: int, n_perm: int, seed: int,
+                             degree_bins: int = 0, degree_col: str = "deg_min") -> dict:
+    """Within matched bins, compare signature rate of `pos_class` vs non_adjacent.
     Statistic = signature-rate(pos) - signature-rate(matched null). Null: permute the
-    pos/neg label within each distance bin."""
+    pos/neg label within each bin.
+
+    Bins are quantiles of genomic distance — the dominant confound, since nearby peaks
+    share everything by proximity alone. With `degree_bins > 0` the bins become the cross
+    product of distance x PAG degree, controlling the second confound: hub peaks are both
+    more likely to be adjacent and more likely to carry any given signature. Matching on
+    degree asks the sharper question -- among pairs of equal separation AND equal
+    connectivity, do bidirected ones differ?"""
     sub = pairs[pairs["edge_class"].isin([pos_class, "non_adjacent"])].copy()
     if sub.empty or (sub["edge_class"] == pos_class).sum() == 0:
         return {"n_pos": 0}
     # distance bins from the pooled distribution (quantile edges)
     q = np.unique(np.quantile(sub["distance"], np.linspace(0, 1, n_bins + 1)))
     sub["bin"] = np.clip(np.searchsorted(q, sub["distance"], side="right") - 1, 0, len(q) - 2)
+    if degree_bins > 0 and degree_col in sub.columns:
+        dq = np.unique(np.quantile(sub[degree_col], np.linspace(0, 1, degree_bins + 1)))
+        if len(dq) > 2:  # degree has spread worth stratifying on
+            dbin = np.clip(np.searchsorted(dq, sub[degree_col], side="right") - 1, 0, len(dq) - 2)
+            sub["bin"] = sub["bin"].to_numpy() * len(dq) + dbin  # joint distance x degree cell
     is_pos = (sub["edge_class"] == pos_class).to_numpy()
     sigv = sub[sig].to_numpy().astype(float)
     binv = sub["bin"].to_numpy()
@@ -280,6 +304,11 @@ def main() -> int:
                     help="Min ChIP experiments binding a TF at a peak to count it bound.")
     ap.add_argument("--n-bins", type=int, default=8)
     ap.add_argument("--n-perm", type=int, default=2000)
+    ap.add_argument("--degree-bins", type=int, default=3,
+                    help="Also match the null on PAG degree (0 = distance-only, the pre-2026-07 "
+                         "behaviour). Hub peaks are both more adjacent and more signature-rich, so "
+                         "degree is a confound of the same kind as distance.")
+    ap.add_argument("--degree-col", default="deg_min", choices=["deg_min", "deg_max", "deg_sum"])
     ap.add_argument("--seed", type=int, default=1234)
     a = ap.parse_args()
 
@@ -315,21 +344,34 @@ def main() -> int:
         pp = pairs[pairs[submask] == 1] if submask else pairs
         raw = (pp.groupby("edge_class")[sig].agg(["mean", "size"])
                .rename(columns={"mean": "rate", "size": "n_pairs"}))
-        tests = {c: matched_permutation_test(pp, c, sig, a.n_bins, a.n_perm, a.seed) for c in POS}
+        tests = {c: matched_permutation_test(pp, c, sig, a.n_bins, a.n_perm, a.seed,
+                                             degree_bins=a.degree_bins, degree_col=a.degree_col)
+                 for c in POS}
+        # distance-only, for side-by-side comparison with the published numbers
+        tests_dist = {c: matched_permutation_test(pp, c, sig, a.n_bins, a.n_perm, a.seed,
+                                                  degree_bins=0)
+                      for c in POS}
         results[sig] = {"label": label, "n_pairs_used": int(len(pp)),
                         "raw_rates": raw.reset_index().to_dict("records"),
-                        "matched_tests": tests}
+                        "matched_tests": tests,
+                        "matched_tests_distance_only": tests_dist}
         print(f"\n=== {label}  [{sig}]  (n_pairs={len(pp)}) ===")
         print(raw.to_string())
         for c, t in tests.items():
             if t.get("n_pos", 0) == 0:
                 print(f"  {c:15s}: no pairs"); continue
+            td = tests_dist.get(c, {})
             print(f"  {c:15s}: n={t['n_pos']:4d}  pos {t['pos_sig_rate']:.4f} vs null "
-                  f"{t['neg_sig_rate']:.4f}  matched_diff={t['matched_rate_diff']:+.4f}  "
+                  f"{t['neg_sig_rate']:.4f}")
+            print(f"  {'':15s}  dist-only      diff={td.get('matched_rate_diff', float('nan')):+.4f}  "
+                  f"p={td.get('perm_p', float('nan')):.4f}")
+            print(f"  {'':15s}  dist+degree    diff={t['matched_rate_diff']:+.4f}  "
                   f"p={t['perm_p']:.4f}")
 
     summary = {"n_genes": len(genes), "n_pairs": int(len(pairs)),
-               "motif_score_threshold": a.motif_score, "signatures": results}
+               "motif_score_threshold": a.motif_score,
+               "degree_bins": a.degree_bins, "degree_col": a.degree_col,
+               "signatures": results}
     (a.report_dir / "peak_peak_validation_summary.json").write_text(json.dumps(summary, indent=2))
     return 0
 

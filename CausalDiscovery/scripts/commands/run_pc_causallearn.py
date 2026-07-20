@@ -1118,7 +1118,14 @@ def main() -> int:
     p.add_argument("--method", default="pc", choices=["pc", "fci", "dagma"])
     p.add_argument("--columns", default="auto", help="Comma-separated column list or 'auto'")
     p.add_argument("--alpha", type=float, default=0.05)
-    p.add_argument("--indep-test", default="kci")
+    # Default = rank-fisherz (this flag + --transform rank_gaussian): fast, calibrated, and
+    # captures monotone nonlinearity. 'rcit' is the nonlinearity guard (RCoT; randomized
+    # Fourier-feature approximation to KCI). KCI itself is opt-in only — slow and brittle at
+    # our n, and it returned empty graphs in the run audit. See docs/DECISIONS.md.
+    p.add_argument("--indep-test", default="fisherz",
+                   help="fisherz (with --transform rank_gaussian = rank-fisherz, the default) | "
+                        "rcit (RCoT nonlinearity guard) | kci (opt-in, slow) | fastkci | "
+                        "zerodel_fisherz (Causal Dropout, niche)")
     p.add_argument("--fastkci-k", type=int, default=3, help="Safe FastKCI mixture components; lower values reduce degenerate block failures.")
     p.add_argument("--fastkci-j", type=int, default=4, help="Safe FastKCI random partition repetitions.")
     p.add_argument("--fastkci-alpha-param", type=float, default=500.0, help="Safe FastKCI Dirichlet alpha parameter.")
@@ -1126,7 +1133,9 @@ def main() -> int:
     p.add_argument("--fastkci-fallback", default="rcit", choices=["rcit", "fisherz", "kci"], help="Fallback CI test if one FastKCI test fails.")
     p.add_argument("--stable", action="store_true", default=True)
     p.add_argument("--unstable", action="store_false", dest="stable")
-    p.add_argument("--transform", default="none", choices=["none", "rank_gaussian"])
+    # rank_gaussian = van der Waerden / nonparanormal transform. With --indep-test fisherz this
+    # IS rank-fisherz. Use --transform none for zerodel_fisherz (see the guard in main()).
+    p.add_argument("--transform", default="rank_gaussian", choices=["none", "rank_gaussian"])
     p.add_argument("--standardize", action="store_true", default=True)
     p.add_argument("--no-standardize", action="store_false", dest="standardize")
     p.add_argument("--background-mode", default="none", choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"])
