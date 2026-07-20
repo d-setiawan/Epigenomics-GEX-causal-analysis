@@ -1135,7 +1135,7 @@ def main() -> int:
         default="none",
         help="Comma-separated observed confounders to add as ROOT nodes (pc/fci only): "
              "'none' | 'depth' (per-metacell library depths from libsize__*) | 'depth,cellcycle' "
-             "| 'depth,donor' (cellcycle/donor honored only if those covariate columns exist).",
+             "(cellcycle honored only if that covariate column exists). NB: donor is UNAVAILABLE (no shared donor structure across modalities; see docs/LIMITATIONS.md L1).",
     )
     p.add_argument("--min-unique", type=int, default=2)
     p.add_argument("--min-std", type=float, default=1e-8)

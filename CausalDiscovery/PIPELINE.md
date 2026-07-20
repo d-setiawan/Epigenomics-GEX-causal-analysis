@@ -50,46 +50,22 @@ found by ≥2 algorithms) › `VALIDATED` › `recurrent_unvalidated` (≥2 algo
 no support) › `unvalidated`. Axes map: `re2g→prediction`, `pchic→physical`,
 `eqtl→genetics`; "≥2 axes agree" is the Q1 gold standard.
 
-> ⚠️ peak-peak edges are the majority of what discovery returns, but the suite has
-> **no target-aware peak-peak validator yet** (Phase B: ChIP-Atlas co-binding /
-> Hi-C loops). The pipeline reports them as `no_target_validator`, not "validated."
+> peak-peak edges are the majority of what discovery returns. The *support suite* still
+> reports them as `no_target_validator` (node-existence only) — a target-aware peak-peak
+> validator does not live here. Element↔element claims are instead tested by the dedicated
+> framework in [`Evaluation/`](../Evaluation/README.md): a distance-matched permutation
+> null across five axes.
 
-## Demonstrated run (300 kb kNN-avg baseline, fisherz + rank_gaussian, α=0.05, depth 2)
+## Current results
 
-| gene | adjacencies | peak→gene | ≥2-algo | target-aware validated |
-| --- | --- | --- | --- | --- |
-| **CD14** | 56 | 2 | 2 | **1** |
-| CSF1R | 10 | 0 | 0 | 0 |
-| IL1B | 6 | 1 | 1 | 0 |
+**This doc carries no result numbers** — they go stale. The results this driver produces
+are owned by:
 
-The one validated causal edge:
-**`chr5:140612012-140612249__H3K4me2 → CD14`** — found by *both* FCI and PC, and
-ENCODE-rE2G predicts that element regulates CD14 (prediction axis). The other
-peak→gene edges are reproducible across algorithms but have no target-aware support,
-so they stay `recurrent_unvalidated` — exactly the honesty the TMCO6 catch demanded.
-DAGMA (Gaussian) returned 0 edges on all three (consistent with the audit; it is a
-sensitivity check only).
-
-### 3-axis node coverage (how much each axis corroborates)
-
-Target-gene-aware support per discovered node (prediction=rE2G, physical=PCHi-C,
-genetics=eQTL); `ge2`/`all3` = nodes backed by ≥2 / all 3 axes:
-
-| gene | nodes | prediction | physical | genetics | ≥2 axes | all 3 |
-| --- | --- | --- | --- | --- | --- | --- |
-| CD14 | 25 | 8 | 15 | 4 | 1 | 1 |
-| CSF1R | 5 | 5 | 1 | 1 | 1 | 1 |
-| IL1B | 18 | 5 | 17 | 0 | 4 | 0 |
-
-The genetics axis localises to the **CD14 promoter / TMCO6 boundary** (3 peaks there
-carry CD14 eQTL credible-set variants) and to every gene node. It does **not** change
-the discovered peak→gene edge verdicts — the fine-mapped variants sit in the promoter,
-not inside the specific distal peaks FCI/PC connected to expression.
-
-> **eQTL cell-state caveat:** the only monocyte credible sets for CD14/CSF1R come from
-> **TLR-stimulated** monocytes (Quach_2016 Pam3CSK4/R848), not resting. Cell-type
-> aligned, not state aligned. IL1B has no monocyte credible set at all. Naive-monocyte
-> datasets (BLUEPRINT/Quach/Schmiedel/Randolph) have zero credible sets for the targets.
+- **[expanded_panel_confounder_results.md](../Evaluation/results/expanded_panel_confounder_results.md)**
+  — current default-pipeline headline (15-gene panel, confounder-conditioned).
+- **[peak_peak_validation_results.md](../Evaluation/results/peak_peak_validation_results.md)**
+  — element↔element axes and the co-accessibility contrast.
+- **[run_audit_report.md](../Evaluation/results/run_audit_report.md)** — saved-run audit, rigor tiers.
 
 ---
 
@@ -101,24 +77,26 @@ driver defaults to; the alternative is what to swap in and re-run to compare.
 | # | Stage | Current default | Alternative paths to try | Where |
 | --- | --- | --- | --- | --- |
 | 1 | **Aggregation** | kNN-avg (k=10) 300 kb baseline | SEACells metacells (non-overlapping) · metacell↔metacell OT · dist-weighted kNN · 1:1 pairs. Report n_eff + null calibration. | ROADMAP Phase C |
-| 2 | **Algorithm set** | `fci, pc` (+`dagma` sensitivity) | **GFCI** (py-tetrad, PAG — the Q3 primary, not yet wired) · RFCI · DirectLiNGAM/RCD/CAM-UV · fGES | `--methods`; ROADMAP Phase D |
+| 2 | **Algorithm set** | `fci, pc` (+`dagma` sensitivity) | **GFCI is wired** (`--methods gfci`, py-tetrad/JDK21) but orients the skeleton only, so directed claims come from FCI ([L10](../docs/LIMITATIONS.md#l10-gfci-orients-the-skeleton-only)) · RFCI · DirectLiNGAM/RCD/CAM-UV · fGES | `--methods`; ROADMAP Phase D |
 | 3 | **CI test** | `fisherz` on `rank_gaussian` | **RCoT** (nonlinearity guard) · KCI (retired — slow/brittle) · CMIknn audit | `--indep-test` |
 | 4 | **Window** | 300 kb (interpretable) | 1 Mb (more distal candidates, denser/noisier) | `--dataset-root` |
 | 5 | **Background knowledge** | `tiered_distal_promoter_expr` | `minimal_expr_sink` · `none` (see how much orientation is assumption-driven) | `--background-mode` |
 | 6 | **Validation axes** | rE2G + PCHi-C + **eQTL** (all 3 peak→gene axes wired) | add peak-peak (ChIP-Atlas/Hi-C) & peak-node (BLUEPRINT ChIP) validators; state-match the eQTL (resting vs TLR-stimulated) | `--eqtl-tsv`; ROADMAP Phase B |
 | 7 | **Edge validation rule** | target-aware for peak→gene; peak-peak = unvalidated | once peak-peak validators exist, promote peak-peak to a target-aware rule | `build_node_support_table.py::records_for_edge` |
 | 8 | **Post-selection screen** | off (full peak set) | elastic-net screen with `--graph-split-fraction` (disjoint screen/graph rows) to cut leakage | `causal_cli elastic-net-screen` |
-| 9 | **Stability** | single run per algorithm | donor-level block-bootstrap edge-mark frequencies (Q3 headline output) | ROADMAP Phase D |
+| 9 | **Stability** | bootstrap stability selection (row-subsampling) is the report headline | cell-state/cluster block bootstrap — *donor blocks are unavailable* ([L1](../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)) | ROADMAP Phase D |
 | 10 | **Node transform** | expr kept as `_log1p` column; peaks continuous | VST the gene count; drop count-family DAGMA (done) | ROADMAP Phase D |
 
-## Known limitations / honesty ledger
+## Known limitations
 
-- **n_eff not yet reported.** kNN-avg reuses cells → the effective sample size is
-  well below the row count; fisherz p-values are optimistic until Phase C lands.
-- **Only 2 of 3 peak→gene axes** are wired (prediction + physical). A single-axis
-  `VALIDATED` edge is weaker than a ≥2-axis one — the report shows the axis count.
-- **peak-peak edges dominate but can't be validated yet** — treat them as hypotheses.
-- **Bug fixed en route (2026-07-08):** the support engine derived the target gene
+Caveats are **not** duplicated here — they live in
+**[docs/LIMITATIONS.md](../docs/LIMITATIONS.md)**. The ones that bite this driver hardest:
+[L3 small n / n_eff](../docs/LIMITATIONS.md#l3-small-n-and-n_eff-is-not-reported) ·
+[L4 stability is row-subsampling](../docs/LIMITATIONS.md#l4-stability-is-row-subsampling-not-block-bootstrap) ·
+[L5 eQTL state mismatch](../docs/LIMITATIONS.md#l5-the-genetics-axis-is-cell-type-aligned-but-not-always-state-aligned) ·
+[L10 GFCI orients skeleton only](../docs/LIMITATIONS.md#l10-gfci-orients-the-skeleton-only).
+
+**Bug fixed en route (2026-07-08)** — kept because it explains a verdict change: the support engine derived the target gene
   from the expression node name and kept the quant suffix (`expr__CD14_log1p → gene
   "CD14_log1p"`), which silently failed every `same_gene` match. Fixed in
   `parse_graph_node` (strip `_log1p`/`_raw_counts`/…). This is what turned the CD14

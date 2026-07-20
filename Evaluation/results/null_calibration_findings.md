@@ -44,7 +44,7 @@ signal, in priority order:
 
 1. **Stability selection / bootstrap** *(primary)* — keep only edges that recur across
    resamples. Real edges recur; the ~47 noise edges flicker. This is the single biggest
-   separator and is already ROADMAP Q3 (donor-level block-bootstrap).
+   separator and is already ROADMAP Q3. *(Row-subsampling — donor blocks are unavailable, [L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable).)*
 2. **Multiple-testing control** — FDR or a much stricter α on the CI tests; directly cuts
    the α×pairs floor.
 3. **Fewer variables** — tighter window / elastic-net screen → fewer pairs → lower floor

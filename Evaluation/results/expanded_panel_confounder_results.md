@@ -78,13 +78,20 @@ CD52, IL4R ×3), **genetics** (CD14, CD151). CD14 alone spans all three.
 - **The peak↔peak layer is the novel object (MISSION §2).** 239 peak↔peak edges, 126 bidirected
   `<->`. Because metacell aggregation already averages out donor/batch and depth is conditioned as a
   root, the residual `<->` edges are **not** technical/donor confounding — they reflect biological
-  shared drivers (TF programs, chromatin domains), correctly left latent in the PAG. Target-aware
-  peak↔peak validation is the pending Phase-B build.
+  shared drivers (TF programs, chromatin domains), correctly left latent in the PAG. *(This was later
+  tested directly and held: four independent axes failed to explain the `<->` edges —
+  [peak_peak_validation_results.md](peak_peak_validation_results.md).)*
 
 ## Caveats
-- Multi-algo = **fci ∩ pc** (both constraint-based). GFCI is excluded until its `Knowledge` object is
-  wired to accept the tiers/confounders (Phase D); it cannot yet be run confounder-conditioned.
-- Stability is row-subsampling bootstrap (n_boot 50, thr 0.5), not donor-block.
-- eQTL for several genes is naive/resting monocyte; peak↔peak validation still unbuilt (Phase B).
+See [docs/LIMITATIONS.md](../../docs/LIMITATIONS.md) for the full ledger. Specific to this run:
+- Multi-algo = **fci ∩ pc** (both constraint-based). *(Updated 2026-07-15: GFCI's `Knowledge` object
+  has since been wired, so GFCI **can** now run confounder-conditioned — but it orients the skeleton
+  only, so directed claims still come from FCI —
+  [L10](../../docs/LIMITATIONS.md#l10-gfci-orients-the-skeleton-only). This panel predates that fix.)*
+- Stability is row-subsampling bootstrap (n_boot 50, thr 0.5) —
+  [L4](../../docs/LIMITATIONS.md#l4-stability-is-row-subsampling-not-block-bootstrap).
+- eQTL state alignment: [L5](../../docs/LIMITATIONS.md#l5-the-genetics-axis-is-cell-type-aligned-but-not-always-state-aligned).
+- *(Updated 2026-07-16: peak↔peak validation is no longer unbuilt — see
+  [peak_peak_validation_results.md](peak_peak_validation_results.md).)*
 - Raw artifacts: `CausalDiscovery/outputs/pipeline_confounder_panel/<GENE>/edges_consensus.tsv`;
   panel summary `.../panel_confounder_summary.tsv`.

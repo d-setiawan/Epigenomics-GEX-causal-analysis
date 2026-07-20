@@ -4,7 +4,7 @@
 Script: `../scripts/prototype_confounder_tiers.py`. Date: 2026-07-10.
 
 This is the first implementation step from [MISSION.md](../../docs/MISSION.md) and the original design
-(`notes/local_multiome_notears_plan.md`): observed confounders as **roots**, chromatin **upstream**
+([`docs/planning/local_multiome_notears_plan.md`](../../docs/planning/local_multiome_notears_plan.md)): observed confounders as **roots**, chromatin **upstream**
 of expression, gene does **not** cause chromatin — all encoded as one **tiered background-knowledge**
 object and given to FCI.
 
@@ -21,9 +21,10 @@ in both the `scrna_r` (0.1.4.5) and `causaldisco` (0.1.4.7) envs, so productioni
 
 **Confounders available now:** per-metacell **library sizes** already in every matrix —
 `conf__rna_depth = log(libsize__rna)`, `conf__chrom_depth = log(mean libsize__<mark>)`. These are
-the dominant *technical* confounders (depth drives both peak signal and expression). **Not yet
-available:** donor (metacell obs is empty — needs threading from raw cell metadata), cell-cycle
-(computable from metacell RNA — optional next).
+the dominant *technical* confounders (depth drives both peak signal and expression). **Not
+available:** donor — *not merely unthreaded but structurally absent*: RNA was never hashtagged and the
+chromatin HTO donors do not correspond to RNA donors, so no donor structure is shared across
+modalities ([L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)). Cell-cycle is computable from metacell RNA but was assessed as unnecessary.
 
 ## Result (metacell, n=133, 43–52 peaks)
 
@@ -49,11 +50,14 @@ available:** donor (metacell obs is empty — needs threading from raw cell meta
 ## Donor & cell-cycle investigated (2026-07-10) — library depth is the right & sufficient set
 
 A parallel investigation checked whether **donor** or **cell-cycle** should be added:
-- **Donor: NO.** 5 donors exist (HTO-multiplexed: HTO5/7/9/10/13) but the label is on **chromatin
-  cells only** (RNA was never hashtagged) and, decisively, **metacells average donor out** — donor
-  purity per metacell ≈ 0.27 (random-mix floor 0.23), donor is statistically independent of metacell
-  (χ² p = 0.43). There is no cross-metacell donor variance to confound the edges; metacell
-  aggregation already neutralizes donor/batch by construction.
+- **Donor: NOT APPLICABLE.** 5 donors exist on the chromatin side (HTO-multiplexed: HTO5/7/9/10/13)
+  but the label is on **chromatin cells only** — RNA was never hashtagged, and those chromatin donors
+  do not correspond to RNA donors, so **there is no donor structure shared across modalities**
+  ([L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)). Independently, **metacells average donor out** — donor purity per metacell ≈ 0.27
+  (random-mix floor 0.23), donor statistically independent of metacell (χ² p = 0.43). Donor is thus
+  neither available nor needed; metacell aggregation neutralizes donor/batch by construction.
+  *(Corrected 2026-07-20: earlier text implied donor was merely un-threaded and could be added later.
+  It cannot.)*
 - **Cell-cycle: NO (marginal).** Monocytes here are ~1–2% cycling (S/G2M scores near zero;
   proliferation markers in ~1–2% of cells). S-score has a weak tie to CD14 *expression* (r = −0.24)
   but **no correlation with the CD14 peaks** (max |r| ≈ 0.24, none > 0.3), so it can't act as a
@@ -102,6 +106,7 @@ Two findings worth recording:
    `BackgroundKnowledge`, pass to `fci`/`pc`.
 2. **Support/consensus must treat `conf__*` nodes as confounders, not peaks** — exclude them from
    peak→gene / peak↔peak validation and edge accounting.
-3. Thread through `causal_cli graph` + `run_gene_pipeline.py`; add a per-metacell **cell-cycle**
-   covariate (scanpy `score_genes_cell_cycle` on the metacell RNA) and, later, **donor** (majority
-   donor per metacell from raw cell metadata).
+3. Thread through `causal_cli graph` + `run_gene_pipeline.py`; optionally add a per-metacell
+   **cell-cycle** covariate (scanpy `score_genes_cell_cycle` on the metacell RNA). **Donor cannot be
+   added** — no shared donor structure exists across modalities ([L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)); the
+   `--confounders depth,donor` switch is inert.

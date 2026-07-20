@@ -46,13 +46,17 @@ Data flows left to right: **`Data/` → `Integration/` → `CausalDiscovery/` �
 
 ## Current setup
 
-See [docs/ROADMAP.md](docs/ROADMAP.md) for live status.
+Fixed choices only. Live status, rationale and open work: **[docs/ROADMAP.md](docs/ROADMAP.md)**.
 
-- Genome **GRCh38**; cell type **monocyte** (CD14+/classical); identifiability target **local PAG/MAG** (no causal sufficiency assumed).
-- Integration: **scGLUE `joint_v2`** (preferred over the scMRDR comparison for modality mixing).
-- Aggregation: **non-overlapping metacells** (replaced kNN-averaging — see the aggregation bake-off in `Evaluation/results/`).
-- Discovery: **FCI/GFCI → PAG** with bootstrap **stability selection** as the headline output; PC/DAGMA kept as comparisons.
-- Validation: **3 orthogonal, cell-type + target-gene aware axes** — prediction (ENCODE-rE2G), genetics (eQTL Catalogue), physical (BLUEPRINT PCHi-C) — plus the element↔element axes in `Evaluation/`.
+| | |
+| --- | --- |
+| Genome / cell type | GRCh38 · monocyte (CD14+/classical) |
+| Identifiability target | local PAG/MAG — no causal sufficiency assumed |
+| Integration | scGLUE `joint_v2` |
+| Aggregation | non-overlapping metacells (n=133) |
+| Discovery | FCI/GFCI → PAG, bootstrap stability selection as headline |
+| Validation | 3 axes peak→gene (rE2G · eQTL · PCHi-C) + element↔element framework |
+| Observed confounders | library depth only — donor is **not available** ([L1](docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)) |
 
 ## Quick start
 
@@ -74,6 +78,32 @@ Rebuild the integration input workspace (regenerates all symlinks into `Data/`):
 python Integration/scripts/setup_integration_workspace.py
 ```
 
+## Documentation ownership (read before editing any doc)
+
+Docs drift when the same fact is written in two places and only one gets updated. **Every fact has
+exactly one owner; everything else links to it.** When you update something, update the owner —
+never copy the content outward.
+
+| Fact | Owner — the only place it is written | Everyone else |
+| --- | --- | --- |
+| Why / novelty / competitive positioning | [docs/MISSION.md](docs/MISSION.md) | link |
+| Status · decisions · open work · changelog | [docs/ROADMAP.md](docs/ROADMAP.md) | link |
+| **Caveats & limitations** | [docs/LIMITATIONS.md](docs/LIMITATIONS.md) | link to `#lN` |
+| **Result numbers** | the relevant `*/results/*.md` | link — never restate |
+| Repo structure · quick start | this README | link |
+| How to run one section | that section's README | link |
+| Driver stages + axis-aware rule | [CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md) | link |
+
+Rules of thumb: a **results doc** carries numbers and gets *superseded*, never silently edited — add
+a dated correction instead. The **ROADMAP** carries verdicts and links, not tables. A **caveat**
+written outside LIMITATIONS.md is a bug.
+
+Check for drift before committing:
+
+```bash
+python docs/check_docs.py
+```
+
 ## Documentation map
 
 **Start here**
@@ -89,9 +119,7 @@ python Integration/scripts/setup_integration_workspace.py
 - [envs/README.md](envs/README.md) — pinned conda envs and which env runs which stage.
 
 **Research notes**
-- [docs/identifiability/](docs/identifiability) — identifiability derivations and FCI guarantees.
-- [docs/planning/](docs/planning) — earlier design plans (scGLUE→causal, local multiome NOTEARS).
-- [docs/reports/](docs/reports) — LaTeX reports (Spring 2026 final report, integration summary).
-- [docs/papers/](docs/papers) — reference PDFs (gitignored).
+- **[docs/README.md](docs/README.md)** — index of all project-level docs: theory (identifiability), earlier design plans, LaTeX reports, reference papers.
+- [docs/LIMITATIONS.md](docs/LIMITATIONS.md) — every known caveat (L1–L10), the single source of truth.
 - [CausalDiscovery/results/](CausalDiscovery/results) — modeling-design notes, competitive landscape, literature reviews.
 - [Evaluation/results/](Evaluation/results) — validation write-ups and the saved-run audit.

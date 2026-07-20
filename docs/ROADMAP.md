@@ -13,10 +13,15 @@ Changelog; when a decision changes, edit the Decision and note why in the Change
   [Evaluation/results/aggregation_bakeoff.md](../Evaluation/results/aggregation_bakeoff.md) ·
   [CausalDiscovery/results/aggregation_causal_discovery_litreview.md](../CausalDiscovery/results/aggregation_causal_discovery_litreview.md) ·
   [CausalDiscovery/results/target_gene_selection.md](../CausalDiscovery/results/target_gene_selection.md) (validation-rich targets + cell-type pros/cons) ·
-  `notes/` (planning + identifiability).
-- Status date: **2026-07-15** (see **§0.5 Publication push** for the current effort). Genome build:
+  **[LIMITATIONS.md](LIMITATIONS.md)** (every caveat — the only place they live) ·
+  [planning/](planning) + [identifiability/](identifiability).
+- Status date: **2026-07-20** (see **§0.5 Publication push** for the current effort). Genome build:
   **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical). Panel: **15 validation-rich genes**.
   Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
+
+> **Doc rule.** This file owns *status, decisions, open work, changelog*. It does **not** own result
+> numbers (those live in the `results/` docs it links to) or caveats (those live in
+> [LIMITATIONS.md](LIMITATIONS.md)). See the ownership table in [README.md](../README.md).
 
 ---
 
@@ -53,51 +58,41 @@ incumbents occupy:
 > validates the resulting bidirected co-regulation modules against orthogonal axes (for which no
 > accepted element↔element null yet exists — itself a contribution).**
 
-**Done this push:**
+**Done this push** *(verdicts only — the numbers live in the linked results docs)*:
 - ✅ Confounder root-nodes + mechanistic orientation wired as the **pipeline default** (`--confounders
-  depth`). Confounder set decided = **library depth only** (donor averaged out by metacells;
-  cell-cycle irrelevant for monocytes) — [notes/confounder_orientation_implementation.md](../CausalDiscovery/results/confounder_orientation_implementation.md).
-- ✅ **15-gene panel refreshed confounder-conditioned: 19/19 peak→gene edges directed, 11 validated
-  (all 3 axes), 5 stable+validated** — [evaluation/expanded_panel_confounder_results.md](../Evaluation/results/expanded_panel_confounder_results.md).
+  depth`). Confounder set decided = **library depth only** (donor not a usable variable —
+  [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable); cell-cycle irrelevant for monocytes) —
+  [confounder_orientation_implementation.md](../CausalDiscovery/results/confounder_orientation_implementation.md).
+- ✅ **15-gene panel refreshed confounder-conditioned** — orientation solved panel-wide, validation
+  holds → [expanded_panel_confounder_results.md](../Evaluation/results/expanded_panel_confounder_results.md).
 - ✅ **GFCI knowledge wired** (safe-name fix for Tetrad's `:`/`-` no-op; GFCI orients skeleton only, FCI
-  carries direction) — same notes doc.
+  carries direction — [L10](LIMITATIONS.md#l10-gfci-orients-the-skeleton-only)) — same notes doc.
 - ✅ **Novelty pinned** (competitive scan) + MISSION reframed.
-- ✅ **Peak↔peak validator framework + distance-matched null** built; axis 1 (PCHi-C physical hub) =
-  **clean negative** → pushes toward the shared-TF mechanism —
-  [evaluation/peak_peak_validation_results.md](../Evaluation/results/peak_peak_validation_results.md).
+- ✅ **Peak↔peak validator framework + distance-matched null** built —
+  [peak_peak_validation_results.md](../Evaluation/results/peak_peak_validation_results.md).
 
-**The plan (element↔element validation is the keystone) — updated 2026-07-15:**
-1. ✅ **Shared-TF motif axis** (`scan_peak_motifs.py` → `peak_peak_validator.py --motif-tsv`):
-   **NEGATIVE + saturated** — bidirected pairs don't share more JASPAR motifs than the distance-matched
-   null, and motif presence is too non-specific (90% of pairs share ≥1) to decide. Motif presence ≠ TF
-   binding → ChIP-Atlas is the decisive test.
-2. ✅ **Co-accessibility (Cicero) contrast** (`coaccess_contrast.py`): **STRONG POSITIVE for the
-   method** — co-accessibility conflates bidirected (0.238) vs other-adjacent (0.255); 53% of the PAG's
-   element↔element adjacencies are bidirected (latent), which co-access reports as links. (Python
-   |Spearman| baseline; faithful distance-penalized-glasso Cicero is the refinement.)
-3. ✅ **ChIP-Atlas occupancy axis (decisive):** **NEGATIVE** — 515 monocyte TF ChIP experiments (73 TFs
-   incl. SPI1/CEBPA/RUNX1), `build_chip_occupancy.py`. Bidirected pairs share no more bound TFs than the
-   distance-matched null (Jaccard 0.321 vs 0.340, unsaturated). **Shared-TF hypothesis falsified for
-   static binding.** All three biological axes (domain, motif, occupancy) now null.
-4. ✅ **Global-activity-latent probe:** **NEGATIVE (edges survive)** — `build_global_activity.py`
-   (leave-one-locus-out global-state root, collider-safe) + `--confounders depth,activity`. Bidirected
-   `<->` 126→129 (unchanged), peak→gene validated 11→11 (robust). Genome-wide activity state is NOT the
-   driver. **Four negatives total** (domain, motif, occupancy, global state) ⇒ the `<->` latent is
-   **local to each gene's regulatory neighborhood** and inherently unobservable (its only proxy — the
-   locus's own mean — is a collider), which is *exactly* what a PAG bidirected edge is for.
-5. **Scale for power:** 15 genes is a pilot; go genome-wide / large panel so E↔E enrichment has n.
-6. **(Lever) cross-cell-type invariance (ICP):** edges invariant monocyte↔T-cell = stronger causal
-   claim + a second validation axis (paused; `celltype_fair_comparison.md`).
+**The plan (element↔element validation is the keystone) — status 2026-07-20.** Verdicts only; all
+numbers, tables and reasoning live in
+**[peak_peak_validation_results.md](../Evaluation/results/peak_peak_validation_results.md)**.
+
+| # | Axis / test | Script | Verdict |
+| --- | --- | --- | --- |
+| 1 | shared physical domain (PCHi-C hub) | `peak_peak_validator.py` | ✅ done — **negative** |
+| 2 | shared TF, motif (JASPAR) | `scan_peak_motifs.py` | ✅ done — **negative** (saturated) |
+| 3 | shared TF, occupancy (ChIP-Atlas) | `build_chip_occupancy.py` | ✅ done — **negative, decisive** |
+| 4 | genome-wide activity latent | `build_global_activity.py` | ✅ done — **negative** (edges survive) |
+| 5 | co-accessibility contrast | `coaccess_contrast.py` | ✅ done — **strong positive for the method** |
+| 6 | **scale for power** | — | ⏳ **open, top priority** |
+| 7 | degree-matched null · faithful-Cicero | — | ⏳ open (refinements) |
+| 8 | cross-cell-type invariance (ICP) | — | ⏳ open — **now the project's invariance axis** (replaces donor-invariance, [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)); T-cell suite already built |
 
 **Honest status — E↔E validation complete (2026-07-16).** The *methodological* novelty **holds and is
-the headline**: the confounder-conditioned PAG separates direct from latent-confounded element pairs;
-co-accessibility conflates them (53% of adjacencies are latent `<->`; it would mis-call all 126 as
-links). The four-negative elimination (shared TF motif/occupancy, physical domain, genome-wide state)
-is the *honest core*: the `<->` confounder is **real but unmeasured** — surviving every observed proxy —
-so modelling it as a **latent** (FCI/PAG) rather than a direct link is *required*, not stylistic.
-Biology = MISSION §2's "elements co-driven by a latent *local* co-regulation state," not pairwise
-regulation / shared master TF / 3D looping. See `peak_peak_validation_results.md`. Remaining: scale,
-degree-matched null, faithful-Cicero, ICP.
+the headline**: the confounder-conditioned PAG separates direct from latent-confounded element pairs,
+which co-accessibility conflates. The four-negative elimination is the *honest core*: the `<->`
+confounder is **real but unmeasured** — it survives every observed proxy we could test — so modelling
+it as a **latent** (FCI/PAG) rather than a direct link is *required*, not stylistic. Biology =
+MISSION §2's "elements co-driven by a latent *local* co-regulation state," not pairwise regulation /
+shared master TF / 3D looping. Remaining: scale, degree-matched null, faithful-Cicero, ICP.
 
 **Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
 directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility
@@ -156,8 +151,16 @@ mcRigor (QC + graining hyperparameter) · OT matching (uniPort / FigR scOptMatch
 
 **Decision: PRIMARY = GFCI (→ PAG, latent-aware) via py-tetrad, with rank/nonparanormal fisherz as the
 default CI test and RCoT as the nonlinearity guard (retire KCI). Make all nodes continuous (VST the gene
-count) and DROP count-family DAGMA. Regress out/block global confounders (donor, batch, cell-cycle) before
-discovery. Report donor-level block-bootstrap edge-mark stability.**
+count) and DROP count-family DAGMA. Block the global confounders that are actually measurable before
+discovery. Report block-bootstrap edge-mark stability.**
+
+> **Amended 2026-07-20 (donor).** The original wording said "regress out donor/batch/cell-cycle" and
+> "report *donor-level* block-bootstrap". Donor is **not a usable variable** in this dataset — RNA was
+> never hashtagged and the chromatin HTO donors do not correspond to RNA donors, so no donor structure
+> is shared across modalities. Donor-block bootstrap is therefore *impossible, not pending*, and
+> donor-invariance is not an available route. Metacell aggregation already neutralizes donor/batch by
+> construction; **library depth is the right and sufficient observed confounder set**. Details:
+> [LIMITATIONS.md L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable).
 
 - **Primary:** GFCI (FGES skeleton + FCI orientation → PAG). Beats plain FCI on accuracy and directly fixes
   the "too dense" problem (FCI prunes from a complete graph; GFCI's score skeleton is sparser/more accurate).
@@ -166,11 +169,14 @@ discovery. Report donor-level block-bootstrap edge-mark stability.**
   linear in n) to be "nonlinearity-robust". CMIknn as an audit. This is the fix for the empty/brittle graphs.
 - **Secondary (cross-check the PAG):** RFCI/FCI+ (density robustness) and latent-aware LiNGAM variants
   **RCD** / **CAM-UV** (test confounding from the functional-model side). Caveat: FCI-family & RCD/CAM-UV
-  assume *sparse/local* latents; our donor/batch/cell-cycle are *global* → regress them out first.
+  assume *sparse/local* latents; global technical/state factors are handled by metacell aggregation
+  + depth roots first (donor itself is unavailable — [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)).
 - **Sensitivity (sufficiency-assuming, NOT identifiability):** fGES→CPDAG (isolates orientation lost to
   latents), DirectLiNGAM (on lightly-transformed, not Gaussianized, data), GOLEM/NOTEARS + Gaussian DAGMA.
-- **Stability:** donor-level **block bootstrap** (200–500×); report per-edge endpoint-mark frequencies
-  (`o`/`>`/`−`), lenient ≥0.5, strict ≈0.85. Optional: Causal Dropout Model test-wise deletion for sparse peaks.
+- **Stability:** **bootstrap** (200–500×); report per-edge endpoint-mark frequencies
+  (`o`/`>`/`−`), lenient ≥0.5, strict ≈0.85. *Row-subsampling — donor blocks are not available
+  ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)); a cell-state/cluster block is the only
+  upgrade path.* Optional: Causal Dropout Model test-wise deletion for sparse peaks.
 - Software: **py-tetrad/Tetrad** (GFCI, RFCI, fGES, bootstrap) · causal-learn (PC/FCI/LiNGAM) · lingam
   (RCD/CAM-UV) · RCIT (RCoT) · gCastle (NOTEARS/GOLEM) · TIGRAMITE (CMIknn).
 
@@ -206,7 +212,9 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       have 0 credible sets for the 3 targets. Completes the 3-axis suite (prediction+physical+genetics).
 - [ ] **peak-node:** BLUEPRINT monocyte histone ChIP loader (GRCh38, per mark) — "is this a real monocyte
       mark". Add Roadmap E029 chromHMM active-state overlap.
-- [ ] **peak-peak:** ChIP-Atlas colocalization + ReMap shared-`TF:biotype`; monocyte Hi-C loop co-membership.
+- [x] **peak-peak, ChIP-Atlas colocalization** — built and run (`build_chip_occupancy.py`, 515 monocyte
+      TF experiments / 73 TFs). Result **negative**; see §0.5 item 3.
+- [ ] **peak-peak, remaining sources:** ReMap shared-`TF:biotype`; monocyte Hi-C loop co-membership.
 - [x] **Axis-aware edge validation rule formalized** in the end-to-end driver
       (`run_gene_pipeline.py`): peak→gene edges validate only under
       `region_interval_with_matching_target_gene` (target-gene-aware); peak-peak
@@ -257,7 +265,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       `bootstrap_stability.py` and reports the top tier = edges BOTH bootstrap-stable AND target-aware
       validated. On metacell CD14: `chr5:140638860-140639949__H3K4me2→CD14` (stability 0.70, fci∩gfci,
       eQTL, VALIDATED_MULTI_ALGO) + `chr5:140591420-140591815__H3K4me3→CD14` (0.70, rE2G). *(Row
-      subsampling; upgrade to donor-level block-bootstrap once donor labels are threaded.)*
+      subsampling — donor blocks are unavailable, see [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable).)*
 - [x] **Causal Dropout Model added + assessed** — `--indep-test zerodel_fisherz` in
       `run_pc_causallearn.py` (test-wise deletion, raw zero-mask threaded). **Verdict: not usable as a
       default** — our peaks are 70–93% zero (metacell) / 98–99% (1:1/raw), so test-wise deletion starves
@@ -272,16 +280,20 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       (default `--confounders depth`, ON), and `bootstrap_stability.py`; `edge_kind()` classifies
       `conf__*` edges as "confounder" (excluded from validation). Verified end-to-end on metacell CD14:
       all 4 peak→gene edges DIRECTED + validated (4/4), conf→peak edge excluded, support unbroken.
-      Prototype: `scripts/prototype_confounder_tiers.py`; note: `notes/confounder_orientation_implementation.md`.
-- [x] **Cell-cycle + donor confounders — investigated, NOT needed** (2026-07-10). 5 donors exist
-      (HTO-multiplexed) but donor is (i) absent on RNA cells and (ii) **averaged out by metacells**
-      (purity ≈0.27 = random-mix floor; χ² donor×metacell p=0.43) — no cross-metacell variance to
-      confound. Monocytes are ~1–2% cycling; S/G2M scores don't correlate with the CD14 peaks. So the
-      **library-depth confounders are the right & sufficient observed set**; metacell aggregation
-      already neutralizes donor/batch. Implication: residual peak↔peak `<->` after depth-conditioning
-      is NOT donor/cell-cycle — it reflects *biological* shared drivers (TF programs / chromatin
-      domains), i.e. the novel object (MISSION §2), correctly represented as latent (PAG bidirected).
-- [ ] Upgrade stability to donor-level block-bootstrap (needs donor labels on rows).
+      Prototype: `scripts/prototype_confounder_tiers.py`; note: [`CausalDiscovery/results/confounder_orientation_implementation.md`](../CausalDiscovery/results/confounder_orientation_implementation.md).
+- [x] **Cell-cycle + donor confounders — investigated, NOT APPLICABLE** (2026-07-10, donor status
+      corrected 2026-07-20). Donor is **not a usable variable at all**: RNA was never hashtagged, and
+      the HTO donors on the chromatin side do not correspond to RNA donors — no donor structure is
+      shared across modalities. Where chromatin donor labels do exist, metacells average them out
+      (purity ≈0.27 = random-mix floor; χ² donor×metacell p=0.43). Monocytes are ~1–2% cycling; S/G2M
+      scores don't correlate with the CD14 peaks. So **library depth is the right & sufficient observed
+      set**. Implication: residual peak↔peak `<->` after depth-conditioning is NOT donor/cell-cycle —
+      it reflects *biological* shared drivers (TF programs / chromatin domains), i.e. the novel object
+      (MISSION §2), correctly represented as latent (PAG bidirected).
+      See [LIMITATIONS.md L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable).
+- [x] ~~Upgrade stability to donor-level block-bootstrap~~ — **closed as impossible, not pending**
+      (2026-07-20): there are no donor labels to block on ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)).
+      Stability stays row-subsampling; a cell-state/cluster block is the only available upgrade.
 
 ### Phase E — Analysis (only after A–D)
 - [ ] Regenerate datasets on the chosen aggregation, at 300 kb (interpretable window).
@@ -308,11 +320,18 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-20** **Donor is not a usable variable** (user-confirmed). RNA was never hashtagged and the
+  chromatin HTO donors do not correspond to RNA donors, so no donor structure is shared across
+  modalities. Consequences: donor-block bootstrap is *impossible* (closed, not pending);
+  donor-invariance removed as a MISSION pillar and **replaced by cross-cell-type invariance (ICP)**;
+  `--confounders depth,donor` is inert. Also implies pseudo-pairs are **not within-individual**, so the
+  genetics axis cannot recover genotype-driven chromatin↔expression covariation
+  ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable), [L2](LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual)).
 - **2026-07-08** Q3: GFCI primary (PAG); rank-fisherz + RCoT CI tests, retire KCI; drop count-DAGMA; block
-  global confounders; donor-level block-bootstrap stability.
+  global confounders; block-bootstrap stability. *(donor-level clause amended 2026-07-20 — see above.)*
 
 ## 4. Changelog
-- **2026-07-10** **EXPLORATORY: element-level causal modeling** (`notes/element_level_modeling_design.md`,
+- **2026-07-10** **EXPLORATORY: element-level causal modeling** ([`CausalDiscovery/results/element_level_modeling_design.md`](../CausalDiscovery/results/element_level_modeling_design.md),
   `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
   **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges
   co-located mark-peaks → regulatory elements (PC1 activity + chromatin-state label) and reruns FCI/GFCI.
@@ -354,7 +373,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   (commit e3e07e3). Also **corrected the cell-type record**: data is PBMC/blood (T 20.6k > monocyte 13.4k
   > NK > B > DC); monocyte was chosen for best scGLUE confidence (0.96), not exclusivity — switching
   discovery to T cell is free and would ease small-n.
-- **2026-07-09** **Target-gene validation-coverage analysis** (`notes/target_gene_selection.md` +
+- **2026-07-09** **Target-gene validation-coverage analysis** ([`CausalDiscovery/results/target_gene_selection.md`](../CausalDiscovery/results/target_gene_selection.md) +
   `evaluation/candidate_genes_validation_rich.tsv`). Ranked all genes by monocyte validation coverage
   (genome-wide rE2G distal links + eQTL credible sets across the 11 monocyte datasets) × expression in
   our RNA. **331 genes are both validation-rich (eQTL ≥5 datasets, rE2G distal ≥30) and expressed ≥15%**
@@ -416,5 +435,5 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   verified), and rE2G promoted to a first-class `--re2g-tsv`/`re2g` source (blue). kNN-averaged datasets
   kept as a labeled baseline (Phase C decision).
 - **2026-07-08** Created this roadmap. Completed earlier today: run audit + trust tiers; post-selection
-  `--graph-split-fraction`; notes/ moved into repo; empty skeleton dirs removed; cell-type alignment audit
+  `--graph-split-fraction`; planning notes moved into the repo; empty skeleton dirs removed; cell-type alignment audit
   of the evaluation suite; **ENCODE-rE2G monocyte gene-link source added** (caught the CD14→TMCO6 mis-assignment).

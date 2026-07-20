@@ -58,7 +58,7 @@ All three axes now yield validated stable edges: **prediction** (LSP1, PLCL1, CD
   (2 PCHi-C-validated stable edges). Both are stronger validated-edge yields than the original panel.
 
 ## Caveats
-- Stability is row-subsampling bootstrap (not yet donor-block).
+- Stability is row-subsampling bootstrap — donor blocks are unavailable ([L4](../../docs/LIMITATIONS.md#l4-stability-is-row-subsampling-not-block-bootstrap)).
 - eQTL for the new genes is mostly naive/resting monocyte (better state-match than the original panel's
   stimulated-only hits); still a minority from stimulated conditions.
 - peak-peak validation still unbuilt (Phase B).

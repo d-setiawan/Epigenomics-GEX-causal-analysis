@@ -56,6 +56,15 @@ python Integration/scripts/setup_integration_workspace.py
 
 Run this after anything moves under `Data/`; the workspace symlinks are absolute.
 
+### results/ — method notes
+
+- [scGLUE_start_guide.md](results/scGLUE_start_guide.md) — practical scGLUE setup and run guide.
+- [GLUE_notes.md](results/GLUE_notes.md) — working notes on GLUE behaviour.
+- [scglue_custom_joint_backend_native_semantics.md](results/scglue_custom_joint_backend_native_semantics.md) — semantics of the custom streaming guidance-graph backend.
+- [jianle_scMRDR_method_and_repo_comparison.md](results/jianle_scMRDR_method_and_repo_comparison.md) — the scMRDR comparison track, method + repo review.
+
+Per-method detail: [scripts/scglue/README.md](scripts/scglue/README.md) · [scripts/jianle/README.md](scripts/jianle/README.md).
+
 ## Active scGLUE Run
 
 The active integration run is:

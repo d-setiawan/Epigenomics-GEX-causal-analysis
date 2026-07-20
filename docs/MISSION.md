@@ -22,7 +22,8 @@ gene?* — is largely solved (see §3). We ask the **next** question:
 
 Concretely, for one gene we learn a **local causal graph** over {nearby peaks, observed
 confounders, gene expression} with edge types `C→A`, `C→Y`, **`A→A`**, `A→Y` (per the original
-design in `notes/local_multiome_notears_plan.md`). The **`A→A` (element↔element) structure is the
+design in [`docs/planning/local_multiome_notears_plan.md`](planning/local_multiome_notears_plan.md)).
+The **`A→A` (element↔element) structure is the
 novel object of study**, not a nuisance.
 
 ## 2. Why the peak↔peak edges ARE the point (not a distraction)
@@ -38,8 +39,10 @@ no established way to infer it **observationally** from multi-omics.
 Our earlier analysis found the raw peak↔peak edges are ~all confounded (49% bidirected, 1/243
 directed) — shared latent drivers (TF programs, chromatin domains, cell-state), not direct
 causation. **That is not a reason to delete them; it is the reason to model confounders.** Once we
-condition on observed confounders (donor/cell-cycle/library-size) and demand invariance across
-donors, the peak↔peak edges that *survive* are the credible candidates for **element-level causal
+condition on the observed confounders that are actually available (library depth — donor is not a
+usable variable, see [LIMITATIONS.md](LIMITATIONS.md#l1-donor-is-not-an-available-variable)) and
+demand invariance across **cell types**, the peak↔peak edges that *survive* are the credible
+candidates for **element-level causal
 dependence (enhancer hierarchy/co-regulation)** — the observational-causal-inference counterpart of
 what CRISPR measures. Either outcome is a real finding:
 - **few survive** → a gene's enhancers are largely *independent contributors co-driven by shared
@@ -64,7 +67,7 @@ The method is the contribution regardless of which biological answer emerges.
 | **Squires & Uhler 2022** (*CLeaR*) | causal structure among **clusters sharing a latent parent** | theory foundation we *extend* to enhancer clusters; not multiome, not validated biologically |
 
 **The gap (sharpened after the 2026-07-15 competitive scan — see
-[notes/competitive_landscape_novelty.md](../CausalDiscovery/results/competitive_landscape_novelty.md)):**
+[competitive_landscape_novelty.md](../CausalDiscovery/results/competitive_landscape_novelty.md)):**
 every latent-variable causal-discovery method (MIIC, CausalCell, Squires & Uhler, Luo 2025) works on
 **gene–gene expression**; every enhancer-level multiome method (SCENIC+, Cicero, Ziyani…) is
 **correlation/regression without latent-variable causal search**. The two literatures have **never
@@ -80,14 +83,15 @@ contribution).
 1. **Object:** the *local causal architecture* of a gene's cis-regulation — element→gene **and**
    element↔element — rather than a flat list of enhancer→gene links.
 2. **Method:** formal **constraint-based causal discovery** (FCI/GFCI → **PAG**, *no causal
-   sufficiency assumed*), with **observed confounders as root nodes** (donor/cell-cycle/library),
-   **mechanistic orientation constraints** (chromatin→expression), and **invariance across donors**
-   as the route to causal claims under unavoidable insufficiency.
+   sufficiency assumed*), with **observed confounders as root nodes** (library depth; donor and
+   cell-cycle were investigated and are not applicable — [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)),
+   **mechanistic orientation constraints** (chromatin→expression), and **invariance across cell
+   types** as the route to causal claims under unavoidable insufficiency.
 3. **Signal:** multi-**histone-mark** CUT&Tag (a regulatory *state*: active/poised/repressed),
    not just ATAC accessibility; aggregated into interpretable regulatory **elements**.
 4. **Validation:** triangulation across **three orthogonal axes** — prediction (rE2G), genetics
-   (eQTL), physical (PCHi-C) — plus donor-invariance, kept **independent** of the discovery priors
-   to avoid circularity.
+   (eQTL), physical (PCHi-C) — plus the element↔element axes and cross-cell-type invariance, kept
+   **independent** of the discovery priors to avoid circularity.
 5. **Honesty:** a PAG (with explicit bidirected/latent-confounder edges), stability selection, and
    null calibration — the causal claims are conditional, falsifiable, and independently checked.
 
@@ -102,23 +106,28 @@ up front as the lineage we extend.
 
 ## 5. Honest scope & limits
 
-- **Observational, not interventional.** Without monocyte CRISPR, every causal claim is conditional
-  on assumptions (Markov, faithfulness, the mechanistic constraints) + corroboration by independent
-  evidence + invariance. We state these; we do not claim perturbational proof.
-- **Causal insufficiency is permanent** — handled by PAG (bidirected edges) + confounder
-  conditioning + invariance, not by pretending it away.
-- **Small n** (≈133 metacells/gene) — hence stability selection, transforms, and the modeling
-  exploration below.
+The full ledger lives in **[LIMITATIONS.md](LIMITATIONS.md)** (single source of truth — do not
+restate caveats here). The headline four:
+
+- **Observational, not interventional** — every causal claim is conditional on assumptions plus
+  independent corroboration; no perturbational proof ([L6](LIMITATIONS.md#l6-observational-pag-not-dag)).
+- **Causal insufficiency is permanent** — handled by PAG bidirected edges, not pretended away.
+- **Small n** (≈133 metacells/gene) — hence stability selection ([L3](LIMITATIONS.md#l3-small-n-and-n_eff-is-not-reported)).
 - **Local, per-gene** graphs — not a genome-wide DAG.
 
 ## 6. How the current direction serves the mission
 
 The modeling exploration (`CausalDiscovery/results/element_level_modeling_design.md`) and the
 confounder/invariance discussion converge on the design the **original plan already specified**
-(`notes/local_multiome_notears_plan.md`): **element-level nodes + observed confounders (as roots) +
-mechanistic constraints + invariance across donors**, discovered with FCI and validated on
-independent axes. That is precisely the machinery needed to turn the confounded raw peak↔peak soup
-into credible element↔element causal architecture — i.e., to deliver §1's novel object.
+(`docs/planning/local_multiome_notears_plan.md`): **element-level nodes + observed confounders (as
+roots) + mechanistic constraints + invariance**, discovered with FCI and validated on independent
+axes. That is precisely the machinery needed to turn the confounded raw peak↔peak soup into credible
+element↔element causal architecture — i.e., to deliver §1's novel object.
+
+> **Correction (2026-07-20):** earlier drafts named *donor* invariance as this pillar. Donor is not a
+> usable variable in this dataset ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)), so the
+> invariance axis is **cross-cell-type** (monocyte↔T-cell, ICP). The T-cell suite is built; the ICP
+> run is open work in [ROADMAP](ROADMAP.md) §0.5.
 
 **Bottom line:** this project is not "peak→gene link prediction with extra steps." It is an attempt
 to read the **causal wiring among a gene's regulatory elements** off observational single-cell

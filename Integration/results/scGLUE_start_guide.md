@@ -50,7 +50,7 @@ Ensure all histone datasets use:
 Create a clean structure for integration work (outside Git repo if preferred):
 
 ```text
-notes/
+docs/
 Integration/
   data/
     rna/

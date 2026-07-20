@@ -260,7 +260,7 @@ def main() -> int:
     p.add_argument("--confounders", default="none",
                    help="Observed confounders as ROOT nodes: 'none' | 'depth' "
                         "(per-metacell library depths from libsize__*) | 'depth,cellcycle' "
-                        "| 'depth,donor'. Synthesized as conf__* and added to the search.")
+                        "Synthesized as conf__* and added to the search. NB: donor is UNAVAILABLE (no shared donor structure across modalities; see docs/LIMITATIONS.md L1).")
     p.add_argument("--background-mode", default="none",
                    choices=["none", "minimal_expr_sink", "tiered_distal_promoter_expr"],
                    help="Mechanistic orientation prior: forbid expr->chromatin (and, when "

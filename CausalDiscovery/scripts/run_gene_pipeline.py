@@ -599,7 +599,7 @@ def main() -> int:
     p.add_argument("--background-mode", default="tiered_distal_promoter_expr")
     p.add_argument("--confounders", default="depth",
                    help="Observed confounders added as ROOT nodes (pc/fci): 'none' | 'depth' "
-                        "(per-metacell library depths, on by default) | 'depth,cellcycle' | 'depth,donor'.")
+                        "(per-metacell library depths, on by default) | 'depth,cellcycle'. NB: donor is UNAVAILABLE (no shared donor structure across modalities; see docs/LIMITATIONS.md L1).")
     p.add_argument("--dagma-w-threshold", type=float, default=0.3)
     # validation sources
     p.add_argument("--re2g-tsv", type=Path,

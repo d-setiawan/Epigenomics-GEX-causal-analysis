@@ -26,7 +26,7 @@ Useful checks:
 - fine-label agreement across matched modalities
 - distribution of GLUE match distances
 - sensitivity to keeping only the closest matches
-- donor consistency, if donor labels are available
+- *(donor consistency is NOT available — no shared donor structure across modalities; see [LIMITATIONS L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable))*
 
 Two useful summaries are:
 

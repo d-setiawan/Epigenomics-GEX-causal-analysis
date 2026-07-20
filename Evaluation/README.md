@@ -34,19 +34,28 @@ The curated evidence tables in `outputs/` are tracked deliberately: they are wha
 - [results/run_audit_report.md](results/run_audit_report.md) — saved-run audit and rigor tiers.
 - [results/evaluation_overview.md](results/evaluation_overview.md) — framing, validation layers, honesty rules.
 
-This directory is the working area for external validation of the causal-discovery graphs.
+## The two evaluation questions
 
-## Current Evaluation Goal
+Graph variables are **uncurated** nearby CUT&Tag peaks; curated promoter/enhancer regions are never
+graph inputs, only evaluation annotations. That separation is what keeps validation independent of
+discovery. Two distinct questions, with different machinery:
 
-The active graph matrices are uncurated nearby CUT&Tag peak matrices. Curated promoter and enhancer regions are not graph variables in the current phase. Instead, they are used as evaluation annotations.
+**1. peak → gene — "is this element a real regulator *of this gene*?"**
+Triangulated across three orthogonal, cell-type + target-gene aware axes; an edge counts as validated
+when the support is target-gene-aware (≥2 axes agreeing is the gold standard).
 
-The main question is:
+| axis | source | builder |
+| --- | --- | --- |
+| prediction | ENCODE-rE2G | `build_re2g_gene_link_support.py` |
+| physical | BLUEPRINT PCHi-C | `build_pchic_gene_link_support.py` |
+| genetics | eQTL Catalogue SuSiE | `build_eqtl_gene_link_support.py` |
 
-$$
-\text{Do uncurated graph edges recover peaks that overlap literature-backed promoter/enhancer regions?}
-$$
+**2. peak ↔ peak — "what explains the latent common cause behind a bidirected edge?"**
+This is the project's novel object and has **no accepted community null**, so we built one: a
+distance-matched permutation test (`peak_peak_validator.py`) against which each candidate driver is
+tested. Current scope: 15-gene panel, confounder-conditioned metacell PAGs.
 
-For `CSF1R`, `CD14`, and `IL1B`, nearby peak metadata already records overlap with curated regions when those overlaps exist.
+Status of both lives in [results/](results) — see **Key results** above.
 
 ## Evidence Sources
 
