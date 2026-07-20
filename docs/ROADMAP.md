@@ -86,6 +86,14 @@ numbers, tables and reasoning live in
 | 7 | degree-matched null · faithful-Cicero | — | ⏳ open (refinements) |
 | 8 | cross-cell-type invariance (ICP) | — | ⏳ open — **now the project's invariance axis** (replaces donor-invariance, [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)); T-cell suite already built |
 
+> ⚠️ **Status superseded 2026-07-20.** The paragraph below was written when every axis returned
+> p = 1.00 — which turned out to be a broken permutation null, not evidence. The four negatives do
+> survive the fix, but a **sixth signature is significant and probably technical** (bidirected pairs
+> share the same histone mark, p=0.0005), which puts an unknown share of the 126 bidirected edges in
+> question. **E↔E validation is NOT complete.** Test six per-mark depth roots before writing this up:
+> [same_mark_finding.md](../Evaluation/results/same_mark_finding.md) ·
+> [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
+
 **Honest status — E↔E validation complete (2026-07-16).** The *methodological* novelty **holds and is
 the headline**: the confounder-conditioned PAG separates direct from latent-confounded element pairs,
 which co-accessibility conflates. The four-negative elimination is the *honest core*: the `<->`
