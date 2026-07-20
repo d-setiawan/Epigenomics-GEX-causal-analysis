@@ -5,6 +5,10 @@
 **The single source of truth for every input used by `Integration/`, `CausalDiscovery/`, and
 `Evaluation/`.** Nothing downstream should read sequencing data from anywhere else.
 
+> **Where did each dataset come from?** → **[results/data_sources.md](results/data_sources.md)** —
+> study, accession, and portal for every input. ⚠️ The **primary CUT&Tag/GEX origin is currently
+> unrecorded** and needs filling in; it cannot be recovered from the files.
+
 ## Layout
 
 ```

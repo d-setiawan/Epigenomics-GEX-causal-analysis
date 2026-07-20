@@ -13,6 +13,15 @@ Cross-cutting docs that belong to no single pipeline section. Section-specific d
 | **[ROADMAP.md](ROADMAP.md)** | live status, decisions, open work, changelog. §0.5 = publication push. |
 | **[LIMITATIONS.md](LIMITATIONS.md)** | every caveat, L1–L10. The *only* place caveats are written. |
 
+## Progress updates — [updates/](updates)
+
+Point-in-time summaries written for someone outside the day-to-day. Each is a **snapshot**: never
+edit an old update to reflect new results — write a new one.
+
+- [2026-07-20 — mentor update](updates/2026-07-20_mentor_update.md): evaluation layer complete;
+  3-axis peak→gene triangulation, the element↔element framework, four negative axes + the
+  co-accessibility contrast, and what remains before scaling.
+
 ## Theory — [identifiability/](identifiability)
 
 - [project_identifiability_guarantees.md](identifiability/project_identifiability_guarantees.md) — the full guarantee analysis for this project's design.

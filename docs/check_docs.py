@@ -38,6 +38,11 @@ STALE_PATHS = [
     (r"CausalDiscovery/notes/", "CausalDiscovery/notes/ -> CausalDiscovery/results/"),
     (r"CausalDiscovery/outputs/evaluation/", "-> Evaluation/outputs/"),
     (r"(?<![/\w])notes/(?!\w*\.py)", "notes/ -> docs/ (or <section>/results/)"),
+]
+
+# Stale-path rules that must NOT fire for docs living inside docs/, where `../X.md`
+# is the correct way to reach a sibling of the docs root.
+STALE_PATHS_OUTSIDE_DOCS = [
     (r"\]\(\.\./MISSION\.md\)", "MISSION.md now lives in docs/"),
     (r"\]\(\.\./ROADMAP\.md\)", "ROADMAP.md now lives in docs/"),
 ]
@@ -111,7 +116,10 @@ def main() -> int:
                 problems.append(f"[anchor] {rel}\n           no heading '#{anchor}' in {path_part}")
 
         # 2. stale paths
-        for pat, fix in STALE_PATHS:
+        rules = list(STALE_PATHS)
+        if not rel.startswith("docs/"):
+            rules += STALE_PATHS_OUTSIDE_DOCS
+        for pat, fix in rules:
             for m in re.finditer(pat, text):
                 line = text[: m.start()].count("\n") + 1
                 problems.append(f"[path]   {rel}:{line}\n           '{m.group(0)}' — {fix}")
