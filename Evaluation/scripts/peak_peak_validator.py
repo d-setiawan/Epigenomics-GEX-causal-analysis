@@ -201,10 +201,16 @@ def build_pairs(out_root: Path, genes: list[str], hub: PchicHub,
             ta, tb = motif_sets.get(a, frozenset()), motif_sets.get(b, frozenset())
             cha, chb = chip_sets.get(a, frozenset()), chip_sets.get(b, frozenset())
             da, db = degree[a], degree[b]
+            # same assay channel? NB this is dual-use: it is a candidate BIOLOGICAL signature
+            # (co-regulated elements sharing a chromatin state) AND a candidate TECHNICAL
+            # confound (same mark = same assay/library; we condition on MEAN chromatin depth,
+            # not per-mark depth). See results/ before interpreting.
+            same_mark = int(str(a).split("__")[-1] == str(b).split("__")[-1])
             rows.append({"gene": gene, "peak_a": a, "peak_b": b, "distance": dist,
                          "edge_class": klass,
                          "deg_a": da, "deg_b": db,
                          "deg_min": min(da, db), "deg_max": max(da, db), "deg_sum": da + db,
+                         "same_mark": same_mark,
                          "pchic_hub": int(bool(hubs[a] & hubs[b])),
                          "motif_shared": int(bool(ta & tb)),
                          "motif_jaccard": _jaccard(ta, tb),
@@ -268,7 +274,14 @@ def matched_permutation_test(pairs: pd.DataFrame, pos_class: str, sig: str,
         perm = is_pos.copy()
         for b in np.unique(binv):
             idx = np.where(binv == b)[0]
-            rng.shuffle(perm[idx])  # shuffle labels within bin
+            # NB: rng.shuffle(perm[idx]) is a NO-OP -- fancy indexing returns a copy, so the
+            # shuffle mutates a temporary and is discarded. Must shuffle a copy and assign back.
+            # (That bug silently made every permutation score the unshuffled labels, so
+            # null == obs for all draws and every p-value came out to exactly 1.0. Fixed
+            # 2026-07-20; all element<->element p-values before that date are invalid.)
+            block = perm[idx]
+            rng.shuffle(block)
+            perm[idx] = block
         null[i] = stat(perm)
     null = null[~np.isnan(null)]
     p = float((1 + np.sum(null >= obs)) / (1 + len(null))) if len(null) else np.nan
@@ -337,7 +350,8 @@ def main() -> int:
                  ("motif_jaccard", "both_have_motifs", "shared TF motif: Jaccard")]
     if chip_sets:
         sigs += [("chip_shared", "both_have_chip", "shared TF ChIP: >=1 co-bound"),
-                 ("chip_jaccard", "both_have_chip", "shared TF ChIP: Jaccard")]
+                 ("chip_jaccard", "both_have_chip", "shared TF ChIP: Jaccard"),
+            ("same_mark", None, "same assay channel (histone mark)")]
 
     results = {}
     for sig, submask, label in sigs:

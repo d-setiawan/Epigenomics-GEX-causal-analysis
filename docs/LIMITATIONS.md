@@ -123,3 +123,22 @@ Controls confirming the finding is real (pipeline determinism, identical peak un
 numbers are in
 [partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
 
+## L12. Per-mark technical depth is not conditioned on
+
+We enter two observed technical confounders: `conf__rna_depth` and `conf__chrom_depth`. The second is
+`log1p(mean library size across the six histone-mark channels)` — **a single averaged variable**. Depth
+variation *specific to one assay channel* is therefore uncontrolled, even though the per-mark library
+sizes (`libsize__<MARK>`) are present in every matrix.
+
+**Why this now matters.** Bidirected `<->` pairs are strongly enriched for being measured on the **same
+histone mark** (43.7% vs 29.2% distance-matched, p = 0.0005; robust to degree matching). Two peaks from
+the same assay share that assay's per-metacell technical fluctuation, which would induce covariation
+with no directional structure — exactly what FCI reports as a latent common cause. The enrichment is
+specific to the bidirected class (the `o-o` class shows +0.037, p = 0.16), which is what a shared
+*unmodelled confounder* predicts.
+
+**What it puts at risk.** Some unknown fraction of the 126 bidirected edges — the project's novel object.
+
+**What we do instead.** Nothing yet. The direct test is to replace `conf__chrom_depth` with six
+per-mark depth roots and re-run: if the bidirected count and the same-mark enrichment both drop, the
+effect was technical. Detail: [same_mark_finding.md](../Evaluation/results/same_mark_finding.md).

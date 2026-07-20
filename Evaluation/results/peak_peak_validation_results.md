@@ -1,4 +1,34 @@
-# Peak↔peak (element↔element) validation — first axis (PCHi-C physical hub)
+# Peak↔peak (element↔element) validation
+
+> ## ⚠️ CORRECTION 2026-07-20 — all p-values below this banner predate a bug fix
+>
+> The permutation null was broken: `rng.shuffle(perm[idx])` is a **no-op** (fancy indexing
+> returns a copy, so the shuffle mutated a temporary and was discarded). Every "permutation"
+> therefore scored the *unshuffled* labels, giving `null == obs` on every draw and a p-value of
+> exactly `(1+n)/(1+n) = 1.0000` for every signature. **Every `p = 1.00` in this document is an
+> artifact, not evidence.** Fixed in `peak_peak_validator.py`; the tell was five independent
+> signatures all returning exactly 1.0000.
+>
+> **The effect sizes were always computed correctly**, and re-running with a working null leaves
+> the headline conclusion intact — but adds a significant new result. Corrected numbers:
+>
+> | signature (vs bidirected) | matched diff | p (dist) | p (dist+degree) |
+> | --- | --- | --- | --- |
+> | PCHi-C shared hub | +0.008 | 0.281 | 0.085 |
+> | shared TF motif (≥1) | −0.017 | 0.951 | 0.920 |
+> | shared TF motif (Jaccard) | −0.011 | 0.777 | 0.733 |
+> | shared TF ChIP (≥1) | +0.000 | 0.469 | 0.376 |
+> | shared TF ChIP (Jaccard) | −0.009 | 0.679 | 0.550 |
+> | **same assay channel (histone mark)** | **+0.143** | **0.0005** | **0.0010** |
+>
+> **The four biological negatives survive** — that conclusion is unchanged and now rests on real
+> p-values rather than a broken test. **But a sixth signature is strongly positive:** bidirected
+> pairs share the same histone mark far more often than distance-matched non-edges (43.7% vs
+> 29.2%). This is **dual-use and probably technical** — see
+> [`same_mark_finding.md`](same_mark_finding.md) and
+> [LIMITATIONS L12](../../docs/LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
+> Do not cite the four-negative endpoint as complete until that is resolved.
+
 
 **Date:** 2026-07-15. Script: `../scripts/peak_peak_validator.py`. Panel:
 `outputs/pipeline_confounder_panel` (15 genes, confounder-conditioned FCI). This is the keystone for

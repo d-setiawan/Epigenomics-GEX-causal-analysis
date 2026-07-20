@@ -320,6 +320,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-20** **Permutation null was broken; four negatives survive, but a positive signature
+  appeared.** `rng.shuffle(perm[idx])` is a no-op (fancy indexing copies), so every permutation scored
+  unshuffled labels and every element↔element p-value was exactly 1.00 — an artifact, not evidence.
+  Fixed. Re-run: the four biological axes remain null (p 0.28–0.95), **but bidirected pairs are
+  strongly enriched for sharing the same histone mark** (43.7% vs 29.2%, p=0.0005). Most likely
+  **technical**: `conf__chrom_depth` is the *mean* across marks, so per-mark depth is uncontrolled, and
+  a shared unmodelled confounder is exactly what produces bidirected edges. **Test before scaling or
+  writing up:** six per-mark depth roots instead of one averaged root.
+  [same_mark_finding.md](../Evaluation/results/same_mark_finding.md) ·
+  [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
 - **2026-07-20** **Edge identities are partition-dependent — scaling is on hold.** Re-clustering the
   same cells with a different Leiden seed (same n, same everything else) loses 9 of 11 validated
   peak→gene edges; across 3 partitions 0 survive all 3. Pipeline determinism and identical peak
