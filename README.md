@@ -98,11 +98,24 @@ Rules of thumb: a **results doc** carries numbers and gets *superseded*, never s
 a dated correction instead. The **ROADMAP** carries verdicts and links, not tables. A **caveat**
 written outside LIMITATIONS.md is a bug.
 
-Check for drift before committing:
+Drift is checked automatically by the pre-commit hook (enable once per clone:
+`git config core.hooksPath .githooks`), or manually:
 
 ```bash
 python docs/check_docs.py
 ```
+
+## Where did this number come from?
+
+Any result can be traced back to the raw data it derives from:
+
+```bash
+python docs/provenance.py --gene CD14        # --list to see what's traceable
+```
+
+It walks the manifests each run wrote — pipeline → dataset → pairing → metacells → scGLUE run →
+per-mark matrices → raw CUT&Tag/GEX — and labels every hop `[recorded]` or `[CONVENTION]` so an
+inferred link is never mistaken for a documented one. See [docs/README.md](docs/README.md#tooling).
 
 ## Documentation map
 
