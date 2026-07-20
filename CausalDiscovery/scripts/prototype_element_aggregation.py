@@ -16,7 +16,7 @@ Then rerun GFCI + FCI on {element activities + gene expression} and compare stru
 Run in the causaldisco env with JAVA_HOME set (for GFCI):
   JAVA_HOME=/home/dgsetiawan/anaconda3/envs/causaldisco \
   /home/dgsetiawan/anaconda3/envs/causaldisco/bin/python \
-  CausalDiscovery/scripts/prototype_element_aggregation.py --gene CD14
+  CausalDiscovery/scripts/prototypes/prototype_element_aggregation.py --gene CD14
 """
 from __future__ import annotations
 import argparse, re, sys, warnings

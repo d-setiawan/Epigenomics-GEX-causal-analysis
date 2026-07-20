@@ -131,7 +131,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description="Build cell-type-restricted metacells from joint scGLUE outputs")
     p.add_argument("--repo-root", default=str(infer_repo_root()))
     p.add_argument("--run-id", default="joint_v2")
-    p.add_argument("--train-dir", default=None, help="Default: integration/outputs/scglue/joint/<RUN_ID>/train")
+    p.add_argument("--train-dir", default=None, help="Default: Integration/outputs/scglue/joint/<RUN_ID>/train")
     p.add_argument(
         "--label-tsv",
         default=None,
@@ -164,7 +164,7 @@ def main() -> int:
     train_dir = (
         resolve_path(repo_root, args.train_dir)
         if args.train_dir
-        else repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train"
+        else repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train"
     )
     label_tsv = (
         resolve_path(repo_root, args.label_tsv)

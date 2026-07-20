@@ -538,8 +538,8 @@ def main() -> int:
     p.add_argument("--run-id", default="joint_v2")
     p.add_argument("--matching-dir", default=None, help="Default: CausalDiscovery/outputs/scglue_pairings/<RUN_ID>/harmonized_coarse__monocyte__rna_anchor")
     p.add_argument("--gene-panel", default="CausalDiscovery/configs/gene_panels/monocyte_cuttag_peak_genes.tsv")
-    p.add_argument("--manifest", default="integration/manifests/scglue_input_manifest.tsv")
-    p.add_argument("--rna-h5ad", default=None, help="Default: integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
+    p.add_argument("--manifest", default="Integration/manifests/scglue_input_manifest.tsv")
+    p.add_argument("--rna-h5ad", default=None, help="Default: Integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
     p.add_argument("--window-bp", type=int, default=10000)
     p.add_argument("--marks", default=DEFAULT_MARKS)
     p.add_argument("--target-sum", type=float, default=1e4)
@@ -559,7 +559,7 @@ def main() -> int:
     rna_h5ad = (
         resolve_path(repo_root, args.rna_h5ad)
         if args.rna_h5ad
-        else repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
+        else repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
     )
 
     if not matched_path.exists():

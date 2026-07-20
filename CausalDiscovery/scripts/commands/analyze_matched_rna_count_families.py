@@ -196,7 +196,7 @@ def main() -> int:
     rna_h5ad = (
         resolve_path(repo_root, args.rna_h5ad)
         if args.rna_h5ad
-        else repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
+        else repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
     )
     out_dir = (
         resolve_path(repo_root, args.out_dir)

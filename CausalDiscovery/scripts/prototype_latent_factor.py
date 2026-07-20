@@ -40,9 +40,9 @@ def rank_gaussian(x):
 def load_validated_intervals(gene, repo="."):
     """Union of validated (target-aware) intervals for this gene across rE2G/eQTL/PCHi-C."""
     iv = []
-    srcs = [("Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv", "re2g"),
-            ("Data/external/eqtl/eqtl_mon_gene_links.tsv", "eqtl"),
-            ("Data/external/pchic/pchic_mon_gene_links.tsv", "pchic")]
+    srcs = [("Data/raw/external/re2g/re2g_cd14_monocyte_gene_links.tsv", "re2g"),
+            ("Data/raw/external/eqtl/eqtl_mon_gene_links.tsv", "eqtl"),
+            ("Data/raw/external/pchic/pchic_mon_gene_links.tsv", "pchic")]
     import os
     for path, tag in srcs:
         if not os.path.exists(path):

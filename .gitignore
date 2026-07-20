@@ -1,50 +1,57 @@
-# Raw fragment files (large local inputs)
-Data/*/*_histone_fragments.tsv
-Data/*/*_histone_fragments.tsv.gz
-Data/*/*_fragments.tsv
-Data/*/*_fragments.tsv.gz
+# =============================================================================
+# Tracked: source (scripts/), configs, manifests, and write-ups (results/, docs/).
+# Not tracked: raw inputs, run outputs, download caches — all regenerable from
+# the scripts in each section.
+# =============================================================================
 
-# Python runtime/cache artifacts
-__pycache__/
-*.py[cod]
-.pytest_cache/
-
-# Local graphify index and reports
-graphify-out/
-
-# Pipeline outputs (all histone modification folders)
-Data/*/outputs/
+# --- Data/ -------------------------------------------------------------------
+# Raw sequencing inputs (large, local). ADT/HTO count tables and chromsizes stay
+# tracked; only the bulky fragment files are ignored.
+Data/raw/*/*_histone_fragments.tsv
+Data/raw/*/*_histone_fragments.tsv.gz
+Data/raw/*/*_fragments.tsv
+Data/raw/*/*_fragments.tsv.gz
 
 # Downloaded GEX inputs (large local files)
-Data/GexData/
+Data/raw/GexData/
 
-# Downloaded external evidence databases
-Data/external/eperturbdb/*
-!Data/external/eperturbdb/.gitkeep
+# Per-mark preprocessing products (regenerate with Data/scripts/)
+Data/outputs/
 
-# Downloaded ENCODE-rE2G monocyte gene-link tables (regenerate with build_re2g_gene_link_support.py)
-Data/external/re2g/
+# Downloaded external evidence databases. Each regenerates from an
+# Evaluation/scripts/build_*_support.py builder.
+Data/raw/external/eperturbdb/*
+!Data/raw/external/eperturbdb/.gitkeep
+Data/raw/external/re2g/
+Data/raw/external/chains/
+Data/raw/external/pchic/
+Data/raw/external/eqtl/
+Data/raw/external/eqtl_tcell/
 
-# liftOver chain files (auto-downloaded from UCSC by scripts/liftover.py)
-Data/external/chains/
+# --- Integration/ ------------------------------------------------------------
+# Workspace symlinks, run outputs, logs.
+# Rebuild with Integration/scripts/setup_integration_workspace.py
+Integration/outputs/
 
-# Downloaded external-evidence caches (ENCODE portal / SCREEN; regenerated on demand)
-CausalDiscovery/evaluation/external/cache/encode_*
-CausalDiscovery/evaluation/external/cache/*.bed.gz
-
-# Sandbox analysis outputs
-sandbox_outputs/
-
-# Integration runtime artifacts (keep scripts/configs/manifests tracked)
-integration/workspace/
-integration/outputs/
-integration/logs/
-
-# Causal discovery run outputs
+# --- CausalDiscovery/ --------------------------------------------------------
 CausalDiscovery/outputs/*
 !CausalDiscovery/outputs/.gitkeep
 
-# LaTeX build intermediates (keep .tex/.pdf/.md and figures under notes/)
+# --- Evaluation/ -------------------------------------------------------------
+# The curated evidence tables behind the results write-ups (peak_peak_pairs.tsv,
+# peak_tf_chip.tsv, peak_tf_motifs.tsv, *_summary.json) ARE tracked — they are
+# small and are what the claims in results/ rest on.
+# Ignored: the download cache and the per-run outputs of repeated searches.
+Evaluation/outputs/external/cache/
+Evaluation/outputs/bootstrap_stability/
+Evaluation/outputs/graph_stability/
+Evaluation/outputs/null_calibration/
+
+# --- docs/ -------------------------------------------------------------------
+# Reference PDFs (54M, third-party)
+docs/papers/
+
+# LaTeX build intermediates (keep .tex/.pdf/.md and figures under docs/reports/)
 *.aux
 *.log
 *.fls
@@ -52,11 +59,13 @@ CausalDiscovery/outputs/*
 *.synctex.gz
 *.out
 
+# --- misc --------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+graphify-out/
+sandbox_outputs/
+hs_err_pid*.log
+
 # Windows "mark of the web" metadata files
 *:Zone.Identifier
-
-# BLUEPRINT PCHi-C gene-link tables (regenerate with build_pchic_gene_link_support.py)
-Data/external/pchic/
-
-# eQTL Catalogue monocyte credible sets + gene-link table (regenerate with build_eqtl_gene_link_support.py)
-Data/external/eqtl/

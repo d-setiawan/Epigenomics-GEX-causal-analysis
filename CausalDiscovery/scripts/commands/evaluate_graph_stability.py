@@ -606,7 +606,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="Root containing method-first graph outputs.",
     )
     parser.add_argument("--graph-dir", action="append", default=[], help="Explicit graph directory to include. May be repeated.")
-    parser.add_argument("--out-dir", default="CausalDiscovery/outputs/evaluation/graph_stability/latest")
+    parser.add_argument("--out-dir", default="Evaluation/outputs/graph_stability/latest")
     parser.add_argument(
         "--group-cols",
         default="dataset,gene,method,family_config",

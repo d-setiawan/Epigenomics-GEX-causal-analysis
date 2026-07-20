@@ -44,7 +44,7 @@ def main() -> int:
     import scanpy as sc
     import anndata as ad
 
-    train_dir = a.train_dir or repo_root / f"integration/outputs/scglue/joint/{a.run_id}/train"
+    train_dir = a.train_dir or repo_root / f"Integration/outputs/scglue/joint/{a.run_id}/train"
     emb = pd.read_csv(train_dir / "all_cells_glue_embeddings.tsv", sep="\t")
     labels = pd.read_csv(train_dir / "validation" / "joint_harmonized_label_transfer.tsv", sep="\t")
 

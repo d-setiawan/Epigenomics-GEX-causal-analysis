@@ -34,7 +34,7 @@ def main() -> int:
     p.add_argument("--assignments", type=Path,
                    default=repo_root / "CausalDiscovery/outputs/metacells/joint_v2/cell_metacell_assignments.tsv")
     p.add_argument("--rna-h5ad", type=Path,
-                   default=repo_root / "integration/outputs/scglue/joint/joint_v2/train/modalities/rna_with_glue.h5ad")
+                   default=repo_root / "Integration/outputs/scglue/joint/joint_v2/train/modalities/rna_with_glue.h5ad")
     p.add_argument("--marks", default="H3K27ac,H3K27me3,H3K4me1,H3K4me2,H3K4me3,H3K9me3")
     p.add_argument("--out-dir", type=Path,
                    default=repo_root / "CausalDiscovery/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__metacell")

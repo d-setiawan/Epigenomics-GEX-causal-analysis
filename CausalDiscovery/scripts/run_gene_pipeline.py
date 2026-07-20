@@ -603,11 +603,11 @@ def main() -> int:
     p.add_argument("--dagma-w-threshold", type=float, default=0.3)
     # validation sources
     p.add_argument("--re2g-tsv", type=Path,
-                   default=_default_if_exists(repo_root / "Data/external/re2g/re2g_cd14_monocyte_gene_links.tsv"))
+                   default=_default_if_exists(repo_root / "Data/raw/external/re2g/re2g_cd14_monocyte_gene_links.tsv"))
     p.add_argument("--pchic-tsv", type=Path,
-                   default=_default_if_exists(repo_root / "Data/external/pchic/pchic_mon_gene_links.tsv"))
+                   default=_default_if_exists(repo_root / "Data/raw/external/pchic/pchic_mon_gene_links.tsv"))
     p.add_argument("--eqtl-tsv", type=Path,
-                   default=_default_if_exists(repo_root / "Data/external/eqtl/eqtl_mon_gene_links.tsv"),
+                   default=_default_if_exists(repo_root / "Data/raw/external/eqtl/eqtl_mon_gene_links.tsv"),
                    help="eQTL Catalogue monocyte gene-link table (Phase B genetics axis).")
     p.add_argument("--node-context-preset", default="none",
                    choices=["none", "monocyte_encode", "monocyte_regulatory", "pbmc_encode"],

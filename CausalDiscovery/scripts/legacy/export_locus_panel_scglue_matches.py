@@ -136,8 +136,8 @@ def main() -> int:
     p.add_argument("--run-id", default="joint_v2")
     p.add_argument("--matching-dir", default=None, help="Default: CausalDiscovery/outputs/scglue_pairings/<RUN_ID>/harmonized_coarse__monocyte__rna_anchor")
     p.add_argument("--locus-config", action="append", required=True, help="TSV with region definitions; repeat for multiple loci")
-    p.add_argument("--manifest", default="integration/manifests/scglue_input_manifest.tsv")
-    p.add_argument("--rna-h5ad", default=None, help="Default: integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
+    p.add_argument("--manifest", default="Integration/manifests/scglue_input_manifest.tsv")
+    p.add_argument("--rna-h5ad", default=None, help="Default: Integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
     p.add_argument("--out-base", default=None, help="Default: CausalDiscovery/outputs/locus_matrices_matched/<RUN_ID>")
     p.add_argument("--marks", default="H3K27ac,H3K27me3,H3K4me1,H3K4me2,H3K4me3,H3K9me3")
     p.add_argument("--target-sum", type=float, default=1e4)
@@ -155,7 +155,7 @@ def main() -> int:
     rna_h5ad = (
         resolve_path(repo_root, args.rna_h5ad)
         if args.rna_h5ad
-        else repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
+        else repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
     )
     out_base = (
         resolve_path(repo_root, args.out_base)

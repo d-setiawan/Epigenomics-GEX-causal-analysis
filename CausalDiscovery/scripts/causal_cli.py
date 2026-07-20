@@ -498,7 +498,7 @@ def apply_support_preset(args) -> None:
 
     if preset == "local_eperturbdb":
         if not getattr(args, "eperturbdb_dir", None):
-            args.eperturbdb_dir = "Data/external/eperturbdb"
+            args.eperturbdb_dir = "Data/raw/external/eperturbdb"
         return
 
     raise SystemExit(f"Unsupported support preset: {preset}")
@@ -826,7 +826,7 @@ def add_external_support_args(p, *, include_online_support_flag: bool = False, o
     p.add_argument("--external-support-url", action="append", default=[])
     p.add_argument("--external-support-tsv", action="append", default=[],
                    help="Additional local template TSV as SOURCE=PATH (e.g. pchic=...tsv).")
-    p.add_argument("--external-cache-dir", default="CausalDiscovery/evaluation/external/cache")
+    p.add_argument("--external-cache-dir", default="Evaluation/outputs/external/cache")
     p.add_argument("--max-online-records", type=int, default=None)
     p.add_argument("--min-overlap-bp", type=int, default=1)
 
@@ -873,7 +873,7 @@ def main() -> int:
     p_dataset.add_argument("--run-id", default="joint_v2")
     p_dataset.add_argument("--matching-dir", default=None)
     p_dataset.add_argument("--gene-panel", type=Path, default=default_gene_panel(project_root))
-    p_dataset.add_argument("--manifest", default="integration/manifests/scglue_input_manifest.tsv")
+    p_dataset.add_argument("--manifest", default="Integration/manifests/scglue_input_manifest.tsv")
     p_dataset.add_argument("--rna-h5ad", default=None)
     p_dataset.add_argument("--window-bp", type=int, default=10000)
     p_dataset.add_argument("--marks", default="H3K27ac,H3K27me3,H3K4me1,H3K4me2,H3K4me3,H3K9me3")
@@ -996,7 +996,7 @@ def main() -> int:
     p_evaluate = sub.add_parser("evaluate", help="Evaluate edge stability and support across saved graph runs.")
     p_evaluate.add_argument("--methods-root", default="CausalDiscovery/outputs/methods")
     p_evaluate.add_argument("--graph-dir", action="append", default=[])
-    p_evaluate.add_argument("--out-dir", default="CausalDiscovery/outputs/evaluation/graph_stability/latest")
+    p_evaluate.add_argument("--out-dir", default="Evaluation/outputs/graph_stability/latest")
     p_evaluate.add_argument("--group-cols", default="dataset,gene,method,family_config")
     p_evaluate.add_argument("--methods", default=None)
     p_evaluate.add_argument("--datasets", default=None)

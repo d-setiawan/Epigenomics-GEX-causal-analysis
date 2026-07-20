@@ -92,7 +92,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--matrix-tsv", type=Path, required=True)
     p.add_argument("--label", default="matrix")
-    p.add_argument("--out-dir", type=Path, default=repo_root / "CausalDiscovery/outputs/evaluation/bootstrap_stability")
+    p.add_argument("--out-dir", type=Path, default=repo_root / "Evaluation/outputs/bootstrap_stability")
     p.add_argument("--n-boot", type=int, default=100)
     p.add_argument("--subsample-frac", type=float, default=0.8)
     p.add_argument("--with-replacement", action="store_true", help="Bootstrap w/ replacement instead of subsample.")

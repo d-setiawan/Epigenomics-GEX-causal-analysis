@@ -1,8 +1,25 @@
 # CausalDiscovery
 
-↑ [Central README](../README.md) · [MISSION](../MISSION.md) (why) · [ROADMAP](../ROADMAP.md) (plan) · [PIPELINE.md](PIPELINE.md) (end-to-end per-gene driver) · [evaluation/](evaluation/README.md) (validation)
+↑ [Central README](../README.md) · [MISSION](../docs/MISSION.md) (why) · [ROADMAP](../docs/ROADMAP.md) (plan) · [PIPELINE.md](PIPELINE.md) (end-to-end per-gene driver) · [Evaluation/](../Evaluation/README.md) (validation)
 
 This directory contains the active causal-discovery workflow built from `scGLUE` `joint_v2` monocyte pseudo-pairs.
+
+## Layout
+
+```
+CausalDiscovery/
+├── scripts/     code
+│   ├── causal_cli.py          the single CLI: match | dataset | graph | support
+│   ├── run_gene_pipeline.py   end-to-end per-gene driver (see PIPELINE.md)
+│   ├── commands/              the implementations the CLI dispatches to
+│   ├── prototypes/            exploratory modeling probes, not part of the pipeline
+│   └── legacy/                superseded scripts, kept for reference
+├── configs/     gene panels and per-locus region definitions
+├── outputs/     datasets, graphs, pipeline runs — gitignored
+└── results/     modeling-design notes, literature reviews, competitive landscape
+```
+
+Validation of what this section produces lives in [`Evaluation/`](../Evaluation/README.md).
 
 ## Start Here
 
@@ -66,8 +83,8 @@ regulatory evidence and write support-aware plots:
 > also has ~zero immune content and **zero `Gene (literature)` rows for CSF1R/CD14/IL1B**, so it
 > cannot validate peak-to-gene edges for our genes. Net: the suite gives cell-type-aligned
 > peak-node / peak-peak interval support but **cannot** validate peak-to-gene edges for our
-> panel. Details and options: [evaluation/run_audit_report.md](evaluation/run_audit_report.md)
-> and [evaluation/external_sources.md](evaluation/external_sources.md).
+> panel. Details and options: [Evaluation/results/run_audit_report.md](../Evaluation/results/run_audit_report.md)
+> and [Evaluation/results/external_sources.md](../Evaluation/results/external_sources.md).
 
 Support outputs are written into each graph directory:
 
@@ -90,7 +107,7 @@ python3 CausalDiscovery/scripts/causal_cli.py plot \
   --graph-dir <graph_dir> \
   --online-support \
   --support-preset monocyte_regulatory \
-  --eperturbdb-dir Data/external/eperturbdb \
+  --eperturbdb-dir Data/raw/external/eperturbdb \
   --layout local \
   --max-edges -1
 ```
@@ -342,7 +359,7 @@ The DAGMA implementation lives in:
 
 - `scripts/commands/dagma_mixed_family.py`
 - `scripts/commands/run_pc_causallearn.py`
-- `notes/dagma_mixed_family_implementation.md`
+- `results/dagma_mixed_family_implementation.md`
 
 DAGMA family presets:
 
@@ -524,9 +541,9 @@ python3 CausalDiscovery/scripts/causal_cli.py plot \
 Evaluation notes live in:
 
 - `evaluation.md`
-- `evaluation/README.md`
-- `evaluation/graph_evaluation_pipeline.md`
-- `evaluation/literature_review_graph_evaluation.md`
+- `../Evaluation/README.md`
+- `../Evaluation/results/graph_evaluation_pipeline.md`
+- `../Evaluation/results/literature_review_graph_evaluation.md`
 
 The most important current evaluation question is whether uncurated nearby peak graphs recover literature-backed promoter or enhancer regions through overlap annotations, rather than forcing those curated regions into the graph as variables.
 
@@ -539,7 +556,7 @@ python3 CausalDiscovery/scripts/causal_cli.py \
   --methods pc,fci \
   --datasets joint_v2_monocyte_cuttag_peak_genes_300kb \
   --genes cd14 \
-  --out-dir CausalDiscovery/outputs/evaluation/graph_stability/cd14_pc_fci_300kb
+  --out-dir Evaluation/outputs/graph_stability/cd14_pc_fci_300kb
 ```
 
 This writes edge-frequency, pairwise Jaccard, orientation-consistency, and curated-region-support summaries from existing graph output directories.

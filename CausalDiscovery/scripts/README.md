@@ -12,8 +12,8 @@ Use `causal_cli.py` for the active workflow.
 - `causal_cli.py graph`: run one `PC`, `FCI`, or `DAGMA` graph job and write a plot.
 - `causal_cli.py graph --online-support --fetch-encode-pbmc`: run graph discovery, fetch external evidence, and render the final plot with validated edges highlighted.
 - `causal_cli.py graph --online-support --support-preset monocyte_regulatory`: run graph discovery with the default monocyte regulatory evidence bundle.
-- `causal_cli.py plot --online-support --support-preset local_eperturbdb`: rebuild local ePerturbDB support from `Data/external/eperturbdb` and render validated/support-highlighted graph edges.
-- `causal_cli.py plot --online-support --support-preset monocyte_regulatory --eperturbdb-dir Data/external/eperturbdb`: combine local ePerturbDB with online ENCODE/JASPAR support for an existing graph.
+- `causal_cli.py plot --online-support --support-preset local_eperturbdb`: rebuild local ePerturbDB support from `Data/raw/external/eperturbdb` and render validated/support-highlighted graph edges.
+- `causal_cli.py plot --online-support --support-preset monocyte_regulatory --eperturbdb-dir Data/raw/external/eperturbdb`: combine local ePerturbDB with online ENCODE/JASPAR support for an existing graph.
 - `causal_cli.py sweep`: run many `PC`/`FCI` graph jobs across genes, methods, and depths.
 - `causal_cli.py dagma-sweep`: run many DAGMA jobs across genes, family configs, and regularization settings.
 - `causal_cli.py organize-outputs`: migrate older graph directories into the method-first output tree.
@@ -93,7 +93,7 @@ python3 CausalDiscovery/scripts/causal_cli.py plot \
   --graph-dir <graph_dir> \
   --online-support \
   --support-preset monocyte_regulatory \
-  --eperturbdb-dir Data/external/eperturbdb \
+  --eperturbdb-dir Data/raw/external/eperturbdb \
   --layout local \
   --max-edges -1
 ```
@@ -237,7 +237,7 @@ python3 CausalDiscovery/scripts/causal_cli.py \
   --methods pc,fci \
   --datasets joint_v2_monocyte_cuttag_peak_genes_300kb \
   --genes cd14 \
-  --out-dir CausalDiscovery/outputs/evaluation/graph_stability/cd14_pc_fci_300kb
+  --out-dir Evaluation/outputs/graph_stability/cd14_pc_fci_300kb
 ```
 
 The evaluator reads existing `run_summary.json`, `*_edges.tsv`, and nearby-peak metadata files. It writes run-level graph metrics, normalized edge tables, pairwise Jaccard comparisons, edge-frequency summaries, and a short Markdown report.

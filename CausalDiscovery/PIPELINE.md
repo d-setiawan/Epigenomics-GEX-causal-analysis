@@ -1,6 +1,6 @@
 # End-to-End Causal Pipeline (test a gene → validate its edges)
 
-↑ [Central README](../README.md) · [MISSION](../MISSION.md) (why) · [ROADMAP](../ROADMAP.md) (plan) · [CausalDiscovery/README.md](README.md) (stage detail)
+↑ [Central README](../README.md) · [MISSION](../docs/MISSION.md) (why) · [ROADMAP](../docs/ROADMAP.md) (plan) · [CausalDiscovery/README.md](README.md) (stage detail)
 
 This is the runnable spine that ties the whole project together: **give it a gene,
 it runs several causal-discovery algorithms and tells you which of their edges the
@@ -9,7 +9,7 @@ question and the thing to grow as Phases C/D land.
 
 Driver: [`scripts/run_gene_pipeline.py`](scripts/run_gene_pipeline.py) ·
 Panel roll-up: [`scripts/summarize_pipeline_panel.py`](scripts/summarize_pipeline_panel.py) ·
-Method decisions & phase plan: [`../ROADMAP.md`](../ROADMAP.md).
+Method decisions & phase plan: [`../ROADMAP.md`](../docs/ROADMAP.md).
 
 ---
 

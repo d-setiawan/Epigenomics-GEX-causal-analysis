@@ -244,8 +244,8 @@ def main() -> int:
     p.add_argument("--run-id", default="joint_v2")
     p.add_argument("--matching-dir", default=None, help="Default: CausalDiscovery/outputs/scglue_pairings/<RUN_ID>/harmonized_coarse__monocyte__rna_anchor")
     p.add_argument("--locus-config", required=True, help="TSV with region definitions")
-    p.add_argument("--manifest", default="integration/manifests/scglue_input_manifest.tsv")
-    p.add_argument("--rna-h5ad", default=None, help="Default: integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
+    p.add_argument("--manifest", default="Integration/manifests/scglue_input_manifest.tsv")
+    p.add_argument("--rna-h5ad", default=None, help="Default: Integration/outputs/scglue/joint/<RUN_ID>/train/modalities/rna_with_glue.h5ad")
     p.add_argument("--out-dir", default=None, help="Default: CausalDiscovery/outputs/locus_matrices_matched/<RUN_ID>/<LOCUS_ID>")
     p.add_argument("--marks", default="H3K27ac,H3K27me3,H3K4me1,H3K4me2,H3K4me3,H3K9me3")
     p.add_argument("--target-sum", type=float, default=1e4)
@@ -264,7 +264,7 @@ def main() -> int:
     rna_h5ad = (
         resolve_path(repo_root, args.rna_h5ad)
         if args.rna_h5ad
-        else repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
+        else repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train/modalities/rna_with_glue.h5ad"
     )
 
     if not matched_path.exists():
@@ -308,7 +308,7 @@ def main() -> int:
     region_bin_rows: list[dict] = []
     for row in manifest.to_dict(orient="records"):
         mark = str(row["mark"])
-        chrom_h5ad = repo_root / f"integration/outputs/scglue/joint/{args.run_id}/train/modalities/chrom_{mark}_with_glue.h5ad"
+        chrom_h5ad = repo_root / f"Integration/outputs/scglue/joint/{args.run_id}/train/modalities/chrom_{mark}_with_glue.h5ad"
         if args.chrom_source != "raw" and chrom_h5ad.exists():
             x, barcodes, features = load_chrom_counts_from_h5ad(chrom_h5ad)
             source_used = "h5ad"

@@ -6,9 +6,9 @@ Pinned environment specs for reproducibility. Captured 2026-07-08.
 
 | Stage | Env | Why |
 | --- | --- | --- |
-| scGLUE integration (`integration/`) | **`scrna_r`** | scglue 0.2.3, scanpy, snapatac2, torch |
+| scGLUE integration (`Integration/`) | **`scrna_r`** | scglue 0.2.3, scanpy, snapatac2, torch |
 | Causal discovery graph runs (`causal_cli.py graph/sweep/dagma-sweep`) | **`scrna_r`** | causal-learn 0.1.4.5, dagma (pinned git commit) |
-| CUT&Tag preprocessing (`sc_scripts/`) | **`scrna_r`** | snapatac2 2.8.0 (fixed-bin / peak matrices) |
+| CUT&Tag preprocessing (`Data/scripts/`) | **`scrna_r`** | snapatac2 2.8.0 (fixed-bin / peak matrices) |
 | CLI orchestration, elastic-net screen, external support, evaluate/plot | **base** | only needs pandas / scikit-learn / numpy / matplotlib / networkx / statsmodels |
 | (secondary causal env, newer causal-learn 0.1.4.7) | `cvbench` | optional cross-check |
 | **Phase D causal-discovery method zoo** (GFCI/RFCI/FCI-Max, RCD/CAM-UV/DirectLiNGAM, GIN, NOTEARS, Causal-Dropout CI) | **`causaldisco`** | one centralized env: py-tetrad + JDK 21, lingam, causal-learn 0.1.4.7, gcastle |
