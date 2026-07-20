@@ -11,6 +11,7 @@ Cross-cutting docs that belong to no single pipeline section. Section-specific d
 | --- | --- |
 | **[MISSION.md](MISSION.md)** | why this project is novel — the claim, the competitive positioning. **Read first.** |
 | **[ROADMAP.md](ROADMAP.md)** | live status, decisions, open work, changelog. §0.5 = publication push. |
+| **[DECISIONS.md](DECISIONS.md)** | *why* the pipeline is built this way — the reasoning behind each choice. Start here when returning to the project. |
 | **[LIMITATIONS.md](LIMITATIONS.md)** | every caveat, L1–L10. The *only* place caveats are written. |
 
 ## Progress updates — [updates/](updates)

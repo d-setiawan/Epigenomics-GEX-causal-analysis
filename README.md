@@ -1,9 +1,12 @@
 # Epigenomics-GEX Causal Analysis
 
-> **New here? Read [docs/MISSION.md](docs/MISSION.md) first** — the scientific intent and *why this
-> is novel* (recovering the local causal **architecture** among a gene's regulatory elements, not
-> just enhancer→gene links). This README is the operational hub;
-> [docs/ROADMAP.md](docs/ROADMAP.md) is the live plan, decisions, and status.
+> **New here, or picking this back up after time away? Read these two:**
+> **[docs/MISSION.md](docs/MISSION.md)** — the scientific intent and *why this is novel* (recovering the
+> local causal **architecture** among a gene's regulatory elements, not just enhancer→gene links), then
+> **[docs/DECISIONS.md](docs/DECISIONS.md)** — *why the pipeline looks the way it does*: the diagnostic
+> that forced each choice, the alternatives rejected, and what each one cost.
+>
+> This README is the operational hub; [docs/ROADMAP.md](docs/ROADMAP.md) is the live plan and status.
 
 Single-cell gene expression (scRNA) + single-cell CUT&Tag histone marks → **local causal graphs**
 for monocyte gene regulation. For one target gene we learn a causal graph over its nearby chromatin
@@ -87,7 +90,8 @@ never copy the content outward.
 | Fact | Owner — the only place it is written | Everyone else |
 | --- | --- | --- |
 | Why / novelty / competitive positioning | [docs/MISSION.md](docs/MISSION.md) | link |
-| Status · decisions · open work · changelog | [docs/ROADMAP.md](docs/ROADMAP.md) | link |
+| Status · open work · changelog · one-line decisions | [docs/ROADMAP.md](docs/ROADMAP.md) | link |
+| **Decision *rationale*** (why, options, cost) | [docs/DECISIONS.md](docs/DECISIONS.md) | link |
 | **Caveats & limitations** | [docs/LIMITATIONS.md](docs/LIMITATIONS.md) | link to `#lN` |
 | **Result numbers** | the relevant `*/results/*.md` | link — never restate |
 | Repo structure · quick start | this README | link |
@@ -121,6 +125,7 @@ inferred link is never mistaken for a documented one. See [docs/README.md](docs/
 
 **Start here**
 - [docs/MISSION.md](docs/MISSION.md) — scientific intent & novelty (the *why*). **Read first.**
+- [docs/DECISIONS.md](docs/DECISIONS.md) — **why the pipeline looks like this**: each decision, the diagnostic that forced it, the options rejected, and the cost.
 - [docs/ROADMAP.md](docs/ROADMAP.md) — living master plan: status, method decisions, phased actions, changelog. §0.5 is the publication-push hub.
 
 **How each stage works**
