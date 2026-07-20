@@ -1,214 +1,211 @@
-# Project update — monocyte chromatin→expression causal discovery
+# Project update — causal discovery with latent confounding on single-cell data
 
-**Date:** 2026-07-20 · **Since last update:** the evaluation layer was just getting started
-(ePerturbDB had been added as a first support source).
+**Date:** 2026-07-20 · **Since we last spoke:** the evaluation layer was just starting.
+*(Revised 2026-07-20 for a methods audience, and to incorporate a reproducibility result found after
+the first draft — see §4.)*
 
-**One-line:** the validation layer is now built and has been run to completion — including on the
-element↔element edges, which are the novel object. The headline is a **methodological positive** with
-an **honest biological negative**, and I think both are publishable. What remains is scale.
-
-Figures regenerate from committed evidence tables via
-`Evaluation/scripts/make_summary_figures.py`; every number below comes from
-`Evaluation/results/` or `panel_confounder_summary.tsv`.
+**In one paragraph.** We run constraint-based causal discovery (FCI → PAG) on a small per-target
+problem: ~43 covariates, 2 observed confounders, 1 outcome, n ≈ 133. The covariates are measurements of
+regulatory activity at genomic locations near the target; the outcome is the target's expression level.
+Causal sufficiency is certainly violated — unmeasured regulatory proteins drive many covariates at
+once — so we use FCI rather than a DAG learner, and the **bidirected edges (explicit latent common
+causes) are the object of interest**, not a nuisance. Two results below: the method claim is solid, and
+a reproducibility problem in the sample construction is the current blocker.
 
 ---
 
-## 1. Where the evaluation layer went
+## 1. The setup, without the biology
 
-| Then (last update) | Now |
+| in the paper's language | what it is statistically |
 | --- | --- |
-| ePerturbDB as first support source | **dropped** — 0 hits for CSF1R/CD14/IL1B; perturbation DBs are a confirmed dead end for our targets |
-| single, gene-agnostic support | **3 orthogonal axes**, each cell-type *and* target-gene aware |
-| edges "supported" if any interval overlapped | **axis-aware verdict tiers** — overlap alone no longer counts as validation |
-| no element↔element validation | **full framework + 5 tests run** |
+| target gene | the outcome variable *Y* |
+| nearby chromatin "peaks" | ~43 covariates *X₁…X₄₃*, each measuring regulatory activity at one genomic location |
+| 6 histone marks | 6 measurement channels; a location can appear once per channel |
+| sequencing depth | 2 observed technical confounders, entered as **root nodes** |
+| enhancer → gene regulation | a directed edge *Xᵢ → Y* |
+| "element↔element architecture" | the edge structure **among the covariates** — the novel part |
 
-**The 3-axis triangulation (peak→gene).** An edge counts as validated only under
-`region_interval_with_matching_target_gene` — the element must be supported *as a regulator of that
-specific gene*:
+One extra wrinkle worth knowing: **the covariates and the outcome are measured in different cells.**
+Two separate assays. We align them in a shared latent space (a VAE-style embedding), cluster cells into
+disjoint groups, and aggregate each group into one row. That construction step is where §4's problem
+lives.
 
-| axis | source | scale |
-| --- | --- | --- |
-| prediction | ENCODE-rE2G (monocyte) | 667k links |
-| physical | BLUEPRINT PCHi-C (`Mon`, hg19→hg38 lifted) | 86 gene-links for the panel |
-| genetics | eQTL Catalogue SuSiE credible sets | 19 variant-links |
-
-**Why the strictness mattered.** rE2G immediately caught that our then-flagship "stable CD14 edge"
-peak is the **TMCO6 promoter**, not CD14's. That one catch is why the rule is now target-gene-aware
-throughout: *trust no promoter→expression edge without target-gene evidence.*
+**Mechanistic prior.** We add a tiered constraint: confounders → covariates → outcome. Chromatin state
+precedes transcription, and the outcome cannot cause a covariate measured in a different cell. This
+forbids orientations we know are impossible; it does *not* encode which covariate matters.
 
 ---
 
-## 2. Two problems found and fixed before any of this could be trusted
+## 2. Where the evaluation went since last time
 
-These were prerequisites — the validation numbers would have been meaningless without them.
-
-**(a) The graphs were noise-dominated.** A null-calibration test (permute every feature, re-run FCI,
-compare edge counts) showed real edge counts sitting *inside* the null band for all three original
-genes — edges were tracking α×pairs, not signal. Cause: kNN-averaging reuses cells, so the effective
-sample size was far below the row count and the CI tests were badly over-confident.
-
-*Fix:* non-overlapping **metacells** (n=133, each cell used once) + **bootstrap stability selection**.
-That fixed calibration (α=0.01 null/expected 3.0× → 1.0×) and cleanly separates signal from noise
-(real: 12–57 stable edges; null: 0, max frequency 0.12–0.22).
-
-**(b) Orientation was mostly unresolved.** Most peak→gene edges came back with ambiguous marks.
-
-*Fix:* observed confounders (library depth) as **root nodes** plus a tiered mechanistic prior
-(chromatin upstream of expression). Result below.
-
----
-
-## 3. Current panel result (15 genes, confounder-conditioned)
-
-![Panel yield](../../Evaluation/results/figures/fig3_panel_yield.png)
-
-| metric | count |
+| then | now |
 | --- | --- |
-| peak→gene edges | **19** (across 11 of 15 genes) |
-| **directed `chromatin → expression`** | **19 / 19 (100%)** |
-| target-aware validated | **11 (58%)** — all directed and multi-algorithm (fci ∩ pc) |
-| stable **and** validated (top tier) | **5** |
-| peak↔peak edges | 239 — of which **126 bidirected `<->`** |
-| confounder edges absorbed by depth roots | 45 |
+| one perturbation database as evidence | **dropped** — zero coverage for our targets |
+| an edge "supported" if its location overlapped anything annotated | **support must name the same outcome variable** |
+| no evaluation at all of the covariate-covariate edges | **a full framework + 5 tests** |
 
-All three axes yield validated edges (prediction: CD14 ×2, LSP1, CD52, PLCL1 · physical: CD14, LSP1,
-CD52, IL4R ×3 · genetics: CD14, CD151). CD14 alone is supported on all three.
-
-Two honesty notes: 4 of 15 genes yield **no** peak→gene edge at all, and database-rich genes don't
-automatically validate (PTPRJ: 2 directed edges, 0 validated). Conditioning also *pruned* spurious
-edges — PTPRJ dropped 4→2 as depth-driven covariation was reattributed to the confounder roots
-rather than fabricating a chromatin→gene link.
+The tightening was forced by a concrete failure: our then-flagship edge pointed at a regulatory element
+that is real — but belongs to a *different* gene. Under the loose rule it validated. The rule is now
+"the reference must link this element **to this specific outcome**," which that edge fails.
 
 ---
 
-## 4. The element↔element layer — the novel object
+## 3. Result A — directed edges *Xᵢ → Y*
 
-92% of what discovery returns is peak↔peak, and roughly half of it is **bidirected `<->`** — the PAG's
-statement that *a latent common cause*, not a direct link, explains the dependence. That is the thing
-no existing method reports, so it needed its own validation. There is **no accepted community null**
-for element↔element claims, so we built one: a **distance-matched permutation test** (genomic distance
-is the dominant confound — nearby peaks share everything by chance — so labels are permuted within
-distance bins, 2000 permutations).
+19 such edges across 15 targets. **All 19 are oriented** (the mechanistic prior resolves what the data
+alone leaves ambiguous). 11 of 19 have external support from independent reference databases.
 
-Then we asked what the latent actually *is*, and tested four candidates.
+Three independent reference sources, each with a different failure mode, so agreement is meaningful:
+a predictive model, a physical-contact assay, and a genetic-association catalogue. None of them is
+used anywhere in fitting the graph.
 
-![Four negative axes](../../Evaluation/results/figures/fig1_ee_axes_negative.png)
+**But see §4 before trusting the list of 11.**
 
-| candidate driver | test | result |
+---
+
+## 4. ⚠️ The reproducibility problem (found today)
+
+Recall that rows are *constructed*: cells are clustered into disjoint groups, and each group becomes
+one sample. The clustering has a random seed.
+
+I re-ran everything with **a different seed** — same algorithm, same parameters, same n = 133, same
+covariates:
+
+| | seed 0 | seed 1 | overlap |
+| --- | --- | --- | --- |
+| supported *Xᵢ → Y* edges | 11 | 4 | **2** |
+
+**Nine of eleven supported edges do not survive re-clustering.** Across three different partitions,
+**zero** edges appear in all three.
+
+Two controls first, which is what makes this attributable:
+- **Determinism** — same data, same settings reproduces the edge set exactly. Not algorithmic noise.
+- **Same covariates** — both arms select the identical 43 covariates. Not a variable-selection artifact.
+
+So it is the partition itself.
+
+**Why our stability check missed it.** We do bootstrap stability selection — but it resamples **rows
+within a fixed partition**. Between-partition variance is invisible to it by construction. That is a
+real gap, and I think a general one: aggregating cells into constructed samples is near-universal in
+this literature, and I have not seen anyone bootstrap *over the aggregation*.
+
+**What survives is reassuring.** The 2 edges that persist across partitions are exactly the two most
+externally-corroborated ones. The headline results are the robust ones; the tail is not.
+
+**Also worth noting:** aggregate counts were extremely stable (19 edges / 11 supported reproduced
+exactly at a different aggregation level). **Distribution-level claims held; individual-edge claims did
+not.** That distinction matters for what we can write.
+
+**Proposed fix:** an outer bootstrap over partitions — re-cluster K times, report edge frequency across
+partitions. Redefines "stable edge" as the quantity the claims actually rest on.
+
+---
+
+## 5. Result B — the latent edges, and what the numbers mean
+
+*This is the part worth reading closely; it's the contribution.*
+
+FCI found **239 edges among covariates**. Their marks:
+
+| mark | reading | count |
 | --- | --- | --- |
-| shared physical domain | PCHi-C shared bait/hub | negative |
-| shared TF (motif) | JASPAR, 150 motifs, 44.5k hits | negative — and **saturated** (90% of *all* pairs share ≥1 motif, so this axis can't discriminate) |
-| **shared TF (occupancy)** | **ChIP-Atlas, 515 monocyte TF experiments, 73 TFs** | **negative — decisive** (Jaccard 0.321 vs 0.340 null, unsaturated, so this is a real null, not a power artifact) |
-| genome-wide activity state | leave-one-locus-out global-state root (collider-safe by construction) | **negative — edges survive** (126 → 129) |
+| `<->` | **an unmeasured variable drives both** | **126 (53%)** |
+| `o-o` | related, orientation undetermined | 113 |
+| `-->` | one causes the other | 0 |
 
-**All four negative.** The shared-TF hypothesis is falsified for static binding.
+So **over half of the covariate-covariate structure is explicitly flagged as confounded** — and none is
+inferred as direct causation.
 
-### The positive: co-accessibility conflates what the PAG separates
+### 5a. Trying to identify the latent — four negatives
 
-![Co-accessibility contrast](../../Evaluation/results/figures/fig2_coaccess_contrast.png)
+A bidirected edge asserts a latent exists. The obvious next question is *what is it?* We had four
+substantive candidates and tested each against a **distance-matched permutation null**: compare
+bidirected pairs to non-adjacent pairs **at the same genomic separation**, permuting labels within
+distance strata (2,000 permutations).
 
-Running Cicero-style co-accessibility on the *same* data:
+Distance matching is essential — nearby locations share everything by proximity, so an unmatched test
+returns a false positive on essentially any signature. It immediately caught one: the contact-domain
+signature looked mildly positive raw (7.1% vs 6.6%) and went to zero once matched.
 
-| PAG edge class | mean co-access \|ρ\| | n |
+| candidate latent | matched effect | p |
 | --- | --- | --- |
-| bidirected `<->` (latent) | **0.238** | 126 |
-| other adjacent (o-o) | **0.255** | 113 |
-| non-adjacent (pruned) | 0.064 | 6803 |
+| shared physical contact domain | +0.008 | 1.00 |
+| shared binding motif | −0.017 | 1.00 |
+| shared measured protein occupancy | +0.000 | 1.00 |
+| genome-wide activity state | edges unchanged (126 → 129) | — |
 
-Co-accessibility gives the latent-confounded and the other adjacent pairs **essentially the same
-score** — it cannot separate them. Taking its top decile as "links": **67% are pairs the PAG prunes**,
-and **53% of the PAG's element↔element adjacencies are bidirected** — i.e. co-accessibility would
-report all 126 latent pairs as regulatory links.
+All four null. Also robust to matching on **graph degree** as well as distance (hub covariates are both
+more connected and more signature-rich — that confound is controlled too).
 
-**The robustness caveat, stated up front:** raw co-accessibility doesn't prune indirect paths through
-*observed* peaks, and Cicero's graphical-lasso would remove many of that 67%. So the unassailable part
-of the contrast is the **latent** class specifically: graphical-lasso removes indirect paths through
-observed variables but **cannot** remove a shared *latent* driver. That is the theoretical guarantee
-behind the 53%.
+**Why this is an argument rather than a failure.** Had we found "protein P binds both," the honest move
+would be to *measure P and put it in the model as an observed variable* — and the edge would stop being
+latent. Instead the coupling survives every observable proxy we can construct. That supports the claim
+that the confounder is **real but genuinely unmeasurable at this resolution**, which is precisely the
+situation a bidirected edge is designed to represent.
 
-### What the four negatives actually buy us
+*Honest caveat:* one axis (motif) was a weak test — 90% of *all* pairs share a motif, so it had no
+discriminating power. The occupancy axis had full dynamic range and is the trustworthy null.
 
-I initially read them as a failure. I now think they are the stronger result:
+### 5b. The positive result — what the incumbent method cannot do
 
-> The bidirected edges are **robust to every observed proxy we could test** — not a shared TF, not a
-> physical domain, not genome-wide state. By elimination the latent common cause is **local to each
-> gene's regulatory neighbourhood**. And a local latent is **inherently non-deconfoundable**: the only
-> available proxy is the mean of the locus's own peaks, which is a *collider* (a descendant), so
-> conditioning on it *induces* edges rather than removing them — we confirmed this empirically in an
-> earlier prototype.
+The standard approach in this field is thresholded correlation between locations. Run it on the same
+data:
 
-**A genuinely unobserved, non-deconfoundable local common cause is exactly what a PAG bidirected edge
-is for.** So the elimination doesn't fail to validate the edges — it demonstrates that modelling them
-as *latent* is **required**, not stylistic. Biologically this lands on "a gene's elements co-vary as a
-locally-coordinated module driven by a latent state," not pairwise enhancer regulation, a shared
-master TF, or 3D looping.
+| pair type | mean \|Spearman ρ\| |
+| --- | --- |
+| bidirected (confounded) | **0.238** |
+| other adjacent | **0.255** |
+| non-adjacent (pruned) | 0.064 |
 
----
+**0.238 vs 0.255 — indistinguishable.** Correlation cannot separate the confounded pairs from the
+possibly-direct ones. It sees one population; we resolve two.
 
-## 5. What is novel, and what is not
+Taking the top decile of correlations as "links" (705 of them): **67% are pairs our method prunes
+entirely**, 17% are the confounded class, 15% genuinely adjacent. So two-thirds of what correlation
+calls a link is indirect, and another sixth is confounded.
 
-Worth being explicit, because a reviewer will be.
-
-**Not novel — concede up front:** the PAG edge taxonomy (generic FCI); "bidirected = latent common
-cause" on genomic data (**MIIC**, Verny 2017 — but gene-level only); enhancer→gene link prediction
-(ABC/ENCODE-rE2G — largely solved); causal discovery on scRNA (CausalCell — but assumes causal
-sufficiency); co-accessibility between elements (Cicero/JRIM/Ziyani); latent-parent cluster theory
-(Squires & Uhler 2022 — the lineage we extend).
-
-**Novel — the combination none of them occupy:**
-
-1. **Domain transfer.** Latent-variable causal discovery (FCI/GFCI → PAG) at the **enhancer/element**
-   level on scRNA + histone **CUT&Tag**. Both literatures exist; they have never been joined here.
-2. **Resolving the confound the neighbours concede.** Co-accessibility papers explicitly state they
-   cannot separate a direct element–element link from a shared hidden driver. We do — and quantify it.
-3. **An element↔element validation framework where no accepted null exists** — itself a contribution.
-4. **The elimination result**: the latent is real, local, and unmeasured.
-5. **A tiered mechanistic prior that makes the PAG orientable here** — 19/19 directed.
+**The theoretically clean part:** a graphical-lasso variant would remove the indirect ones — but it
+**cannot** remove a shared *latent* driver. That's a guarantee, not an empirical claim, and it's why we
+restrict the headline to the latent class.
 
 ---
 
-## 6. Corrections to earlier assumptions
+## 6. What's novel, and what isn't
 
-- **Donor is not a usable variable.** RNA was never hashtagged, and the chromatin HTO donors don't
-  correspond to RNA donors, so no donor structure is shared across modalities. Consequences:
-  donor-block bootstrap is *impossible* (not pending), and **donor-invariance is out as a
-  method pillar** — replaced by **cross-cell-type invariance (ICP)**, for which the T-cell suite is
-  already built.
-- **Follow-on I'd like your read on:** if the modalities don't share donors, then a paired row combines
-  expression and chromatin *from different individuals*, aligned on cell state rather than genotype —
-  which would mean the **genetics (eQTL) axis cannot recover genotype-driven covariation in
-  principle**. It fits an observation we'd logged as a quiet null: eQTL support localises to the CD14
-  promoter but never changes a peak→gene verdict. **This is my inference, not an established result**,
-  and it affects how we frame the genetics axis.
-- **Monocyte vs T-cell:** we built the full T-cell validation suite and ran an identical pipeline. Despite
-  ~1.8× more cells and a 3× richer reference suite, T-cell yielded **fewer** validated stable edges
-  (4 vs 7). More data and more reference material did not produce more validated causal edges — edge
-  recovery is limited by per-gene effect size. Monocyte stays primary.
+**Not novel — worth conceding up front:** the PAG edge taxonomy (that's just FCI); "bidirected = latent
+common cause" on genomic data (MIIC, 2017 — but gene-level only); the predictive task of linking
+regulatory elements to genes (largely solved); causal discovery on single-cell expression (done, but
+assuming causal sufficiency); correlation-based coupling between elements (the incumbent).
 
----
-
-## 7. What remains
-
-| # | Item | Why it matters |
-| --- | --- | --- |
-| **1** | **Scale the panel** (genome-wide / few hundred genes) | 15 genes is a pilot; every enrichment number needs n. **This is the only item that changes the paper.** |
-| 2 | rank-fisherz + RCoT CI tests | flagged as "the biggest lever" for graph quality; current default assumes near-linearity |
-| 3 | Degree-matched null; faithful distance-penalized-glasso Cicero | direct answers to the two most obvious reviewer objections |
-| 4 | Cross-cell-type invariance (ICP) | now carries the invariance argument that donor used to |
-| 5 | peak-node validator (BLUEPRINT ChIP + Roadmap chromHMM) | "is this a real monocyte mark" — the one validator tier never built |
-
-**Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
-directed-vs-bidirected distinction, validated where co-accessibility conflates; (3) a prioritized set
-of enhancer–enhancer co-regulation hypotheses for CRISPRi follow-up. Scope stays honest:
-observational, PAG-not-DAG, hypothesis-generating.
-
-**Question for you:** does the "four negatives ⇒ the latent is real but local and unmeasurable" framing
-hold up as a *result* in your view, or does it read as a null finding that needs a positive companion
-before it's publishable? That judgement decides whether we scale next or hunt for a positive
-element↔element signature first.
+**Novel — the combination:**
+1. **Latent-variable causal discovery at the regulatory-element level** on this data type. Both
+   literatures exist; they have not been joined here.
+2. **Operationalizing a confound the incumbent literature explicitly concedes it cannot resolve** — and
+   quantifying it (53%).
+3. **A validation framework where no accepted null exists** — the distance-matched (now also
+   degree-matched) test is itself a contribution.
+4. **The elimination result:** the latent is real, local, and unmeasurable.
+5. Possibly now: **partition-level instability of aggregation-based causal discovery** (§4), which may
+   be a general methods finding rather than only our bug.
 
 ---
 
-*Supporting detail:* [`peak_peak_validation_results.md`](../../Evaluation/results/peak_peak_validation_results.md) ·
-[`expanded_panel_confounder_results.md`](../../Evaluation/results/expanded_panel_confounder_results.md) ·
-[`LIMITATIONS.md`](../LIMITATIONS.md) · [`ROADMAP.md`](../ROADMAP.md) §0.5
+## 7. Two things I'd value your judgement on
+
+1. **Does §4 kill the edge-level claims, or reframe them?** My read: distribution-level results survive
+   (they reproduced exactly), individual-edge claims need the outer bootstrap before they can be
+   stated. But you have better calibration than I do on how a reviewer treats "our headline number is
+   reproducible but its constituents aren't."
+
+2. **Is the four-negative result (§5a) publishable as a result?** It's an elimination argument, not a
+   positive finding. It makes the case that latent-variable modelling is *required* here, but a
+   reviewer could read it as "we looked and found nothing." That judgement decides whether we scale up
+   next or first hunt for a positive signature.
+
+**Current plan:** hold scaling until the partition-stability fix is in — scaling a non-reproducible
+edge set would multiply the problem rather than resolve it.
+
+---
+
+*Detail:* `partition_stability_findings.md` · `peak_peak_validation_results.md` ·
+`expanded_panel_confounder_results.md` · `LIMITATIONS.md`
