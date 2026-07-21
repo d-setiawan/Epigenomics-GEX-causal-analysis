@@ -139,6 +139,13 @@ specific to the bidirected class (the `o-o` class shows +0.037, p = 0.16), which
 
 **What it puts at risk.** Some unknown fraction of the 126 bidirected edges — the project's novel object.
 
-**What we do instead.** Nothing yet. The direct test is to replace `conf__chrom_depth` with six
-per-mark depth roots and re-run: if the bidirected count and the same-mark enrichment both drop, the
-effect was technical. Detail: [same_mark_finding.md](../Evaluation/results/same_mark_finding.md).
+**Update 2026-07-21 — depth is refuted, but the concern is not closed.** Ran the direct test:
+`--confounders depth_permark` (six per-mark depth roots instead of one averaged). The enrichment
+**survived** (+0.105, p=0.0025) and the bidirected count rose (126→135), so per-mark sequencing depth
+is **not** the explanation. What remains is a subtler artifact depth cannot capture: within a metacell,
+same-mark peaks are quantified from the **same cells**, so they share their whole measurement substrate,
+not just total depth. That is a metacell-construction confound, and the split-half test (quantify each
+peak from disjoint halves of the mark's cells) is the discriminator against the biological reading —
+not yet run. So per-mark depth **should** be conditioned on (it is the more correct root set), but it
+does not resolve the same-mark question. Detail:
+[same_mark_finding.md](../Evaluation/results/same_mark_finding.md).

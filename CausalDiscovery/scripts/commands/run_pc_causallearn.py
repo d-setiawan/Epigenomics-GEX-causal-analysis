@@ -441,12 +441,25 @@ def build_confounder_columns(df: pd.DataFrame, mode: str) -> list[str]:
     """
     tokens = {t.strip() for t in str(mode).split(",") if t.strip() and t.strip() != "none"}
     added: list[str] = []
-    if "depth" in tokens:
+    # 'depth'         -> RNA depth + ONE averaged chromatin depth (conf__chrom_depth).
+    # 'depth_permark' -> RNA depth + SIX per-mark chromatin depth roots. Use this to test
+    #                    whether same-mark bidirected enrichment is technical: the averaged
+    #                    root leaves per-mark (per-assay) depth fluctuation uncontrolled, which
+    #                    can induce a `<->` edge between two peaks on the same channel.
+    #                    See Evaluation/results/same_mark_finding.md. Mutually exclusive with
+    #                    'depth'; if both are given, per-mark wins (it is the superset).
+    if "depth" in tokens or "depth_permark" in tokens:
         if "libsize__rna" in df.columns:
             df["conf__rna_depth"] = np.log1p(df["libsize__rna"].astype(float))
             added.append("conf__rna_depth")
         mark_cols = [f"libsize__{m}" for m in CONFOUNDER_MARKS if f"libsize__{m}" in df.columns]
-        if mark_cols:
+        if "depth_permark" in tokens:
+            for m in CONFOUNDER_MARKS:
+                col = f"libsize__{m}"
+                if col in df.columns:
+                    df[f"conf__depth_{m}"] = np.log1p(df[col].astype(float))
+                    added.append(f"conf__depth_{m}")
+        elif mark_cols:
             df["conf__chrom_depth"] = np.log1p(df[mark_cols].astype(float).mean(axis=1))
             added.append("conf__chrom_depth")
     if "activity" in tokens and "activity__global" in df.columns:

@@ -97,12 +97,18 @@ def build_confounder_columns(df: pd.DataFrame, mode: str) -> list[str]:
     conf__rna_depth = log1p(libsize__rna); conf__chrom_depth = log1p(mean mark depth)."""
     tokens = {t.strip() for t in str(mode).split(",") if t.strip() and t.strip() != "none"}
     added: list[str] = []
-    if "depth" in tokens:
+    # 'depth_permark' = six per-mark depth roots (vs one averaged); see the FCI worker + L12.
+    if "depth" in tokens or "depth_permark" in tokens:
         if "libsize__rna" in df.columns:
             df["conf__rna_depth"] = np.log1p(df["libsize__rna"].astype(float))
             added.append("conf__rna_depth")
         mark_cols = [f"libsize__{m}" for m in CONFOUNDER_MARKS if f"libsize__{m}" in df.columns]
-        if mark_cols:
+        if "depth_permark" in tokens:
+            for m in CONFOUNDER_MARKS:
+                if f"libsize__{m}" in df.columns:
+                    df[f"conf__depth_{m}"] = np.log1p(df[f"libsize__{m}"].astype(float))
+                    added.append(f"conf__depth_{m}")
+        elif mark_cols:
             df["conf__chrom_depth"] = np.log1p(df[mark_cols].astype(float).mean(axis=1))
             added.append("conf__chrom_depth")
     if "activity" in tokens and "activity__global" in df.columns:

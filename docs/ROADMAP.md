@@ -328,6 +328,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-21** **Same-mark enrichment is real, not a depth artifact — one technical alternative
+  left.** Tested it: `--confounders depth_permark` (six per-mark depth roots vs one averaged). The
+  same-mark enrichment on bidirected pairs **survived** (+0.105, p=0.0025) and bidirected count rose
+  (126→135); validated peak→gene unchanged (11). So per-assay sequencing depth is **refuted** as the
+  cause. Remaining alternative to biology: **shared measurement substrate** — within a metacell,
+  same-mark peaks are quantified from the same cells, which depth only summarizes. Discriminator is a
+  split-half rebuild (not a config change), not yet run. Net: the positive signature is genuine; its
+  biological-vs-technical status is narrowed but open.
+  [same_mark_finding.md](../Evaluation/results/same_mark_finding.md) ·
+  [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
 - **2026-07-20** **Permutation null was broken; four negatives survive, but a positive signature
   appeared.** `rng.shuffle(perm[idx])` is a no-op (fancy indexing copies), so every permutation scored
   unshuffled labels and every element↔element p-value was exactly 1.00 — an artifact, not evidence.
