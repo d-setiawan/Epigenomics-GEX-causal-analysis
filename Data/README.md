@@ -6,8 +6,9 @@
 `Evaluation/`.** Nothing downstream should read sequencing data from anywhere else.
 
 > **Where did each dataset come from?** → **[results/data_sources.md](results/data_sources.md)** —
-> study, accession, and portal for every input. ⚠️ The **primary CUT&Tag/GEX origin is currently
-> unrecorded** and needs filling in; it cannot be recovered from the files.
+> study/dataset, accession, and portal for every input. Both primary sources are now confirmed:
+> chromatin = scCUT&Tag-pro (GSE195725, Zhang et al. 2022); RNA = 10x *10k Human PBMC 5' v3 Ultima*.
+> They are **separate datasets** (different donors), which is the basis of LIMITATIONS L1/L2.
 
 ## Layout
 

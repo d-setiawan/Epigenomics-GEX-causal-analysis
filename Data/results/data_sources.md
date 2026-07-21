@@ -43,30 +43,53 @@ Matched against the publication and the GEO record on every checkable dimension:
 *One loose end:* our H3K4me1 has 6,393 cells, below the published 8,232 minimum — most likely a
 different replicate or a post-QC count. Worth a sentence in the methods, not a reason to doubt the match.
 
-## Primary RNA data — ⚠️ ORIGIN STILL UNRECORDED
+## Primary RNA data — ✅ CONFIRMED (2026-07-21)
 
-**This is a separate dataset and still needs a citation.** It is **not** part of GSE195725.
+**10x Genomics — *10k Human PBMCs, 5' v3, Ultima* (single-cell gene expression demonstration
+dataset).** Portal: <https://www.10xgenomics.com/datasets/10k_Human_PBMC_5p_v3_Ultima> · healthy-donor
+PBMC · Gene Expression only (**not** multiome).
 
-| Local path | Contents | Origin |
-| --- | --- | --- |
-| `raw/GexData/GEX_feature_cell_matrix_HDF5.h5` | scRNA-seq, **9,506 cells**, GRCh38, 10x CellRanger HDF5 | **UNKNOWN — to fill in** |
-| `raw/GexData/GEX_sample_barcodes.csv` | 9,506 barcodes | same |
-| `raw/GexData/cell_type_annotation.tar.gz` | cell-type labels (10x Cloud Analysis output format) | same |
+This is a **separate dataset** from the chromatin data (GSE195725) — different lab, different assay,
+different donor. That is the crux of the donor question, now settled by provenance rather than inference.
 
-Record: **study/paper (+DOI) · accession · portal URL · download date · sample/library IDs.**
+| Local path | Contents |
+| --- | --- |
+| `raw/GexData/GEX_feature_cell_matrix_HDF5.h5` | scRNA-seq, 9,506 cells × 38,606 genes, GRCh38 |
+| `raw/GexData/GEX_sample_barcodes.csv` | 9,506 barcodes |
+| `raw/GexData/cell_type_annotation.tar.gz` | cell-type labels (10x Cloud Analysis format) |
 
-> **This closes the loop on the donor question.** The chromatin data is 5 hashed donors from
-> GSE195725; the RNA is a *different* 9,506-cell PBMC experiment. So the two modalities genuinely
-> share no individuals — which is exactly what
-> [LIMITATIONS L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable) states and what
-> makes [L2](../../docs/LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual) (pseudo-pairs are
-> cross-individual) a structural fact rather than a suspicion.
+### How it was confirmed — exact, from file metadata
 
-<details><summary>Ruled out: scNanoSeq-CUT&Tag</summary>
+The h5's own attributes name the dataset directly (not a probabilistic match):
+
+| h5 attribute | value |
+| --- | --- |
+| `library_ids` | **`10k_Human_PBMC_5p_v3_Ultima`** — the exact dataset slug in the URL |
+| `chemistry_description` | `Single Cell 5' R2-only v3` — matches "5' v3" |
+| `software_version` | `cellranger-9.0.1` — matches the portal's "Cell Ranger v9.0.1" |
+| genome / feature types | GRCh38 / Gene Expression only |
+| cells | 9,506 (a "10k" dataset after CellRanger cell-calling) |
+
+The file was produced directly from that 10x dataset by Cell Ranger 9.0.1.
+
+**Citation note:** this is a 10x Genomics *demonstration* dataset, not a peer-reviewed publication.
+Cite it as the vendor dataset (name + URL + "10x Genomics, Cell Ranger 9.0.1, accessed <date>"), and
+record the download date. There is no DOI. The `cell_type_annotation.tar.gz` is in 10x Cloud Analysis
+format and was likely produced by 10x's annotation pipeline on this dataset; confirm before citing the
+labels' provenance separately.
+
+> **This closes the donor question by provenance.** The chromatin data is 5 hashed donors from
+> GSE195725 (Zhang et al.); the RNA is a 10x demonstration PBMC run from an unrelated donor. The two
+> modalities share no individuals **by construction** — which is what
+> [LIMITATIONS L1](../../docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable) states and what makes
+> [L2](../../docs/LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual) (pseudo-pairs are
+> cross-individual) a fact about the data rather than a suspicion.
+
+<details><summary>Ruled out: scNanoSeq-CUT&Tag as the chromatin source</summary>
 
 `docs/papers/Nano-seq_CutTag.pdf` (Li et al., *Nat Methods* 21:2044–2057, 2024) was an earlier
-candidate. It is a **nanopore long-read** CUT&Tag method paper with no ADT/HTO multimodal design, and
-does not match the 173-antibody panel or the six-mark PBMC structure. **Not the source.**
+candidate for the **chromatin** data. It is a nanopore long-read CUT&Tag method paper with no ADT/HTO
+multimodal design, and does not match the 173-antibody panel or six-mark PBMC structure. Not the source.
 </details>
 
 ---
