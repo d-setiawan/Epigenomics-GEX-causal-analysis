@@ -1,6 +1,6 @@
 # Partition stability: validated edge *identities* do not reproduce
 
-**Date:** 2026-07-20. **Status: serious, unresolved — read before citing any specific edge.**
+**Date:** 2026-07-20, pilot 2026-07-21. **Status: confirmed; partition-bootstrap machinery built and piloted (see below). Read before citing any specific edge.**
 Scripts: `Evaluation/scripts/compare_panels.py`, `CausalDiscovery/scripts/metacell_resolution_sweep.py`.
 
 ## The question
@@ -125,6 +125,42 @@ decision — but K=5 on the current 15-gene panel is affordable and would settle
 This is arguably a methodological contribution rather than only a fix: metacell aggregation is
 near-universal in single-cell causal discovery, and if partition choice dominates edge recovery, that
 is worth reporting on its own.
+
+## Partition-bootstrap PILOT (2026-07-21) — machinery works; instability confirmed with n controlled
+
+`CausalDiscovery/scripts/partition_bootstrap.py` builds K partitions (Leiden seeds) end-to-end
+(metacells → matching → dataset → panel, resumable) and reports each edge's recovery frequency across
+partitions. Pilot: **K=3 seeds × 6 validated-edge genes** (CD14, IL4R, LSP1, PLCL1, CD52, CD151),
+`--confounders depth_permark`.
+
+**n is controlled** — the three partitions have 133 / 132 / 130 complete metacells, so anything below
+is the *zoning effect*, not a sample-size effect.
+
+| seed (partition) | peak→gene | validated | peak↔peak | bidirected | same-mark rate |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 13 | 11 | 133 | 83 | 0.361 |
+| 1 | 4 | 3 | 144 | 86 | 0.360 |
+| 2 | 7 | 3 | 145 | 87 | 0.333 |
+
+Two findings, pointing in opposite directions — which is the whole story:
+
+1. **Individual edges are severely partition-unstable.** Same data, same n, only the Leiden seed
+   differs → peak→gene yield swings **13 / 4 / 7**. Across the 3 partitions, **ZERO peak→gene edges are
+   recovered in all three**; only 3 edges appear in 2 of 3; 18 appear in just one. Even the flagship
+   CD14 edges do not survive all three. `CORE (all partitions) = 0`.
+2. **The distributional biology IS partition-stable.** The same-mark bidirected rate is **0.36 / 0.36 /
+   0.33** across the three partitions, and bidirected counts are tight (83 / 86 / 87). The positive
+   signature ([same_mark_finding.md](same_mark_finding.md)) reproduces across partitions even though the
+   individual edges do not — direct confirmation of "distributions reproduce, identities don't."
+
+**Sobering corollary:** seed 0 — the partition every prior result used — is **edge-rich** (13) relative
+to re-seeds (4, 7). The project's "11 validated edges" headline came from an unusually productive
+partition. Single-partition edge counts are not trustworthy; the frequency table is.
+
+**Design lesson for the full run:** `CORE = found in 100% of partitions` is too strict (0 at K=3, worse
+at higher K). Report the frequency **distribution** and pick a **threshold** (stability-selection style,
+e.g. recovered in ≥50–80% of partitions), not all-or-nothing. The full run (K≈10 × 15 genes) is needed
+for frequency resolution.
 
 ## Consequences for the plan
 
