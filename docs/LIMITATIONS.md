@@ -156,3 +156,25 @@ caveats there (n=55, single cell type, correlational).
 in only **4/10** (mean +0.046, negative in 3); the two strong partitions include the canonical seed 0.
 It is not a technical artifact where it appears, but it is **partition-fragile and cannot be claimed as
 an established signature**. See [partition_bootstrap_results.md](../Evaluation/results/partition_bootstrap_results.md).
+
+## L13. Peaks are histone-mark peaks, not ATAC; validation is enhancer/ATAC-derived
+
+The covariates are **per-histone-mark CUT&Tag peaks** (H3K27ac, H3K4me1/2/3 = active; H3K27me3, H3K9me3
+= repressive), not ATAC open-chromatin peaks. Consequences:
+
+- A "peak" is region **+ chromatin state**, so one genomic locus can appear as up to 6 separate
+  variables (one per mark). Same-locus different-mark covariation is biologically expected (active
+  elements carry H3K27ac + H3K4me1 together) — relevant to the same-mark analysis
+  ([same_mark_finding.md](../Evaluation/results/same_mark_finding.md)).
+- The three validation axes (ENCODE-rE2G, BLUEPRINT PCHi-C, eQTL) are **enhancer / ATAC / genetics**
+  derived. Validating a histone-mark peak against them is really "does this interval correspond to a
+  known regulatory element of this gene" — coherent for **active** marks (which do mark enhancers), a
+  **category error** for repressive marks (H3K27me3/H3K9me3 are not enhancers, so an enhancer-gene
+  database cannot meaningfully confirm them).
+
+**Empirically this is mostly self-correcting:** across the 10-partition run, 91/94 peak→gene edges land
+on active marks and 55 of 56 validated edges are on active marks; only **1** validated edge is on a
+repressive mark (H3K27me3) — a genuine but negligible category error. The mechanistic prior + FCI route
+almost all expression-linked edges to active marks, which is biologically right. Still: repressive-mark
+peaks should be excluded from (or flagged in) peak→gene validation, and the write-up must say "histone
+CUT&Tag peaks," never "ATAC/accessibility."
