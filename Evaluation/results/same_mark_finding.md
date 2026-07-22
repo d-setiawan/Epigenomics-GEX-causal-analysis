@@ -1,16 +1,20 @@
-# The same-mark enrichment — a real positive signature, source not yet settled
+# The same-mark enrichment — the project's positive biological signature
 
-**Date:** 2026-07-20, **updated 2026-07-21 with the per-mark depth result (§ RESULT below).**
-**Status: the obvious technical explanation is refuted; one subtler technical alternative remains
-open.** Found while looking for a *positive* element↔element signature, immediately after fixing a bug
-that had invalidated every previous p-value (see the correction banner in
+**Date:** 2026-07-20, **updated 2026-07-21 with two technical-confound tests, both negative.**
+**Status: both technical explanations we could construct are refuted. The signal is biological
+(metacell-level / cell-state), modulo n=55 and single-cell-type caveats.** Found while looking for a
+*positive* element↔element signature, immediately after fixing a bug that had invalidated every
+previous p-value (see the correction banner in
 [peak_peak_validation_results.md](peak_peak_validation_results.md)).
 
-> **TL;DR (2026-07-21):** the enrichment is **real**, not a p-value artifact and not a sequencing-depth
-> artifact — it survives conditioning on six per-mark depth roots (p=0.0025). It is now down to
-> **biological co-regulation** vs **shared measurement substrate** (same-mark peaks are quantified from
-> the same cells within a metacell). The sections below marked *(pre-result)* were written before the
-> test and predicted "probably depth"; that prediction was wrong. See § RESULT.
+> **TL;DR (2026-07-21, both tests done):** bidirected `<->` pairs are enriched for sharing the same
+> histone mark (43.7% vs 29.2%, p=0.0005 on a working null). Two technical explanations were tested and
+> **both refuted**: (1) per-mark sequencing depth — enrichment survives six per-mark depth roots
+> (p=0.0025); (2) shared measurement substrate — the same-mark correlation **fully survives** when the
+> two peaks are quantified from *disjoint* cells within each metacell (split-half test, 104% of excess
+> preserved over 20 splits). What remains is **genuine metacell-level (cell-state) co-variation of
+> same-chromatin-state elements** — MISSION §2's predicted positive signature. Caveats: n=55 same-mark
+> bidirected pairs, moderate effect, single cell type, correlational not perturbational.
 
 ## The result
 
@@ -102,10 +106,47 @@ depth artifact — but it is **not established**, because shared measurement sub
 alternative. The two make the same prediction under distance matching, so distance matching cannot
 separate them.
 
-**Next discriminator (not yet run): split-half.** Quantify each same-mark peak in a pair from
-**disjoint halves** of the mark's cells within each metacell. If the covariation persists, the cells
-genuinely co-vary in state → biological. If it collapses, it was shared substrate → technical. This
-needs rebuilding matrices from cell-level fragments, so it is a real build, not a config change.
+## RESULT 2 (2026-07-21) — split-half: NOT shared cell substrate either
+
+`Evaluation/scripts/split_half_substrate_test.py`. Within each metacell, split that metacell's mark-M
+cells into two **disjoint** halves H1/H2 and quantify every peak from each half. For a peak pair:
+`rho_same = corr(peak_i from H1, peak_j from H1)` (share cells) vs
+`rho_cross = corr(peak_i from H1, peak_j from H2)` (disjoint cells). Substrate → rho_cross collapses;
+biology → both halves estimate the same metacell state, so rho_cross ≈ rho_same. Reuses the pipeline's
+own per-cell quantifier, averaged over **20 random splits** (single-split is too noisy at this n).
+
+| pairs | rho_same (share cells) | rho_cross (disjoint cells) |
+| --- | --- | --- |
+| non-adjacent same-mark (baseline) | 0.052 | 0.052 |
+| **bidirected same-mark** | **0.137** | **0.140** |
+| bidirected cross-mark (control) | 0.150 | 0.157 |
+
+Excess of bidirected same-mark over baseline: same-half **+0.085**, cross-half **+0.088** → **≈104% of
+the excess survives** measuring the two peaks from disjoint cells. Breaking the shared cells does
+**nothing** to the correlation. So the same-mark bidirected correlation is **not** shared per-cell
+substrate — it is metacell-level (cell-state) covariation.
+
+*(A first single-split run suggested ~28% substrate, but that was split noise — the cross-mark control
+behaved anomalously at single-split. Averaging over 20 splits removed it and the control settled.)*
+
+## Where this leaves the same-mark signature — resolved, biological
+
+| candidate explanation | test | result |
+| --- | --- | --- |
+| p-value artifact | fixed the permutation bug | ✗ refuted (real, p=0.0005) |
+| per-mark sequencing depth | six per-mark depth roots (RESULT 1) | ✗ refuted (survives, p=0.0025) |
+| shared cell substrate | split-half, disjoint cells (RESULT 2) | ✗ refuted (104% survives) |
+| **biological (shared cell-state co-regulation)** | remaining, positively consistent | ✓ the surviving explanation |
+
+This is **the project's positive element↔element signature** — the thing the four-negative axes could
+not supply. Bidirected edges preferentially connect elements in the **same chromatin state**, and that
+co-variation is genuine cell-state signal, not any technical artifact we could construct. It is exactly
+MISSION §2's "elements co-driven by a shared local co-regulation state."
+
+**Honest limits:** n=55 same-mark bidirected pairs; the effect is moderate (0.137 vs 0.052 baseline);
+one cell type; and this is a correlational/graphical result, not perturbational. "Same mark" is also a
+coarse proxy for chromatin state (it is the assay channel, which tracks state but is not identical to
+it). Worth confirming at scale (more genes → more bidirected pairs) once partition-stability is handled.
 
 ---
 

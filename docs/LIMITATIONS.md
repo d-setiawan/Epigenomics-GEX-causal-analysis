@@ -139,13 +139,13 @@ specific to the bidirected class (the `o-o` class shows +0.037, p = 0.16), which
 
 **What it puts at risk.** Some unknown fraction of the 126 bidirected edges — the project's novel object.
 
-**Update 2026-07-21 — depth is refuted, but the concern is not closed.** Ran the direct test:
-`--confounders depth_permark` (six per-mark depth roots instead of one averaged). The enrichment
-**survived** (+0.105, p=0.0025) and the bidirected count rose (126→135), so per-mark sequencing depth
-is **not** the explanation. What remains is a subtler artifact depth cannot capture: within a metacell,
-same-mark peaks are quantified from the **same cells**, so they share their whole measurement substrate,
-not just total depth. That is a metacell-construction confound, and the split-half test (quantify each
-peak from disjoint halves of the mark's cells) is the discriminator against the biological reading —
-not yet run. So per-mark depth **should** be conditioned on (it is the more correct root set), but it
-does not resolve the same-mark question. Detail:
-[same_mark_finding.md](../Evaluation/results/same_mark_finding.md).
+**Update 2026-07-21 — RESOLVED, biological.** Two technical explanations were tested and both
+refuted: (1) per-mark sequencing depth — the enrichment survives six per-mark depth roots (p=0.0025);
+(2) shared cell substrate — a split-half test (quantify the two peaks from *disjoint* cells within each
+metacell, 20-split averaged) shows the same-mark bidirected correlation **fully survives** breaking the
+shared cells (104% of the excess preserved). So the same-mark enrichment is genuine metacell-level
+(cell-state) covariation, not a depth or substrate artifact — the project's positive element↔element
+signature. This limitation is downgraded to a recommendation: **prefer `--confounders depth_permark`**
+(per-mark roots) as the more correct conditioning, though it does not change the same-mark conclusion.
+Full evidence chain: [same_mark_finding.md](../Evaluation/results/same_mark_finding.md). Remaining
+caveats there (n=55, single cell type, correlational).

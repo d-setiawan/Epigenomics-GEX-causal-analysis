@@ -328,6 +328,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-21** **Same-mark enrichment RESOLVED as biological — the positive E↔E signature.** The
+  split-half substrate test (quantify the two peaks from *disjoint* cells within each metacell, 20-split
+  averaged) shows the same-mark bidirected correlation **fully survives** breaking the shared cells
+  (rho 0.137→0.140; ≈104% of excess over baseline preserved). Combined with the earlier per-mark depth
+  refutation, **both technical explanations are out**; the remaining explanation is genuine
+  metacell-level cell-state co-variation. So bidirected edges preferentially connect elements in the
+  same chromatin state, and it is real signal — MISSION §2's predicted positive outcome, and the
+  positive characterisation the four-negative axes could not supply. Caveats: n=55 same-mark bidirected
+  pairs, one cell type, correlational. [same_mark_finding.md](../Evaluation/results/same_mark_finding.md) ·
+  [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
 - **2026-07-21** **Aggregation literature survey → the partition-instability finding is novel, and the
   fix is a novel contribution.** Cited survey
   ([aggregation_partition_dependence_survey.md](../CausalDiscovery/results/aggregation_partition_dependence_survey.md)):
