@@ -71,6 +71,10 @@ def build_partition(seed: int, genes: list[str], target_mc: int, window_bp: int,
             "--gene-panel", "CausalDiscovery/configs/gene_panels/monocyte_expanded_peak_genes.tsv",
             "--window-bp", str(window_bp), "--out-root", str(ds_root)], log)
     for g in genes:
+        # guard: a bad token (e.g. a stray dir name) would otherwise crash the whole run
+        if not (ds_root / g.lower()).is_dir():
+            print(f"[partition_bootstrap] skip {g!r} — no dataset dir under {ds_root.name}", flush=True)
+            continue
         if (panel / g / "edges_consensus.tsv").exists():
             continue
         sh([PY, "CausalDiscovery/scripts/run_gene_pipeline.py", "--gene", g,
