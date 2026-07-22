@@ -99,6 +99,14 @@ claims and damaging for the panel-level count.
 - The effect size (9/11 lost) is far larger than run-to-run noise, and determinism was verified, so it
   is unlikely to be an artifact.
 
+## Literature context (2026-07-21)
+
+A cited survey —
+[aggregation_partition_dependence_survey.md](../../CausalDiscovery/results/aggregation_partition_dependence_survey.md)
+— found this failure mode is **largely uncharacterized**: it is a textbook Modifiable Areal Unit Problem
+(the "zoning effect"), and **bootstrapping over metacell partitions appears genuinely undone**, so the
+fix below is both a rigor step and a defensible methods contribution.
+
 ## Proposed fix — partition-level (outer) bootstrap
 
 Replace, or wrap, the current within-partition bootstrap:

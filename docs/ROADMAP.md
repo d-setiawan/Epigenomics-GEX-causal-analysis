@@ -328,6 +328,21 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-21** **Aggregation literature survey → the partition-instability finding is novel, and the
+  fix is a novel contribution.** Cited survey
+  ([aggregation_partition_dependence_survey.md](../CausalDiscovery/results/aggregation_partition_dependence_survey.md)):
+  (i) the specific failure — edge set flips under re-seeding while aggregate counts stay stable — is
+  **essentially uncharacterized** in the metacell literature (mcRigor studies *bad* metacells, not
+  seed-variance among valid partitions; the field's robustness claim is about *global* structure, which
+  does not protect fine CI/PAG edges). (ii) It is a textbook **Modifiable Areal Unit Problem** (MAUP:
+  scale + zoning effects) / ecological fallacy / aggregation bias — 50+ yrs of cross-field precedent, all
+  prescribing "report sensitivity across partitions, never trust one." (iii) **Bootstrapping over metacell
+  partitions with edge-frequency reporting appears genuinely undone** → defensible novel-in-context
+  contribution, and reframes "9/11 edges flip" from a bug into a headline stability statistic. (iv)
+  Partition-free alternatives exist for cross-validation (dropout-aware test-wise-deletion FCI, Dai et al.
+  ICLR 2024; ZiG-DAGs; ZICO; Hurdle DAGs — the last also a CLeaR paper). **Implication for the plan:** the
+  partition-bootstrap (was "option A") is both the rigor fix the biology needs AND a publishable method;
+  do it before scaling.
 - **2026-07-21** **Same-mark enrichment is real, not a depth artifact — one technical alternative
   left.** Tested it: `--confounders depth_permark` (six per-mark depth roots vs one averaged). The
   same-mark enrichment on bidirected pairs **survived** (+0.105, p=0.0025) and bidirected count rose
