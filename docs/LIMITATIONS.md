@@ -118,10 +118,11 @@ ground than individual-edge claims.
 stable+validated" tier inherits the blind spot.
 
 **What we do instead.** Nothing yet — this is unresolved and is the current top priority. The proposed
-fix is an outer bootstrap over partitions (re-cluster K times, report edge frequency across partitions).
-Controls confirming the finding is real (pipeline determinism, identical peak universes) and the full
-numbers are in
-[partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
+fix is an outer bootstrap over partitions — **now built and run at K=10**
+([partition_bootstrap_results.md](../Evaluation/results/partition_bootstrap_results.md)): no peak→gene
+edge is recovered in all 10 partitions, 68% of edges appear in a single partition, and the most robust
+validated edge (rE2G-supported CD14 H3K4me3) is found in 6/10. Report edges by recovery frequency, not
+from one partition. Background: [partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
 
 ## L12. Per-mark technical depth is not conditioned on
 
@@ -149,3 +150,9 @@ signature. This limitation is downgraded to a recommendation: **prefer `--confou
 (per-mark roots) as the more correct conditioning, though it does not change the same-mark conclusion.
 Full evidence chain: [same_mark_finding.md](../Evaluation/results/same_mark_finding.md). Remaining
 caveats there (n=55, single cell type, correlational).
+
+**Correction 2026-07-22 (partition bootstrap).** The "resolved as biological" verdict above was from a
+3-seed pilot and was **partition-lucky**. Across 10 partitions the same-mark enrichment is significant
+in only **4/10** (mean +0.046, negative in 3); the two strong partitions include the canonical seed 0.
+It is not a technical artifact where it appears, but it is **partition-fragile and cannot be claimed as
+an established signature**. See [partition_bootstrap_results.md](../Evaluation/results/partition_bootstrap_results.md).

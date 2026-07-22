@@ -1,20 +1,23 @@
-# The same-mark enrichment — the project's positive biological signature
+# The same-mark enrichment — a weak, partition-fragile tendency (NOT the headline signature)
 
-**Date:** 2026-07-20, **updated 2026-07-21 with two technical-confound tests, both negative.**
-**Status: both technical explanations we could construct are refuted. The signal is biological
-(metacell-level / cell-state), modulo n=55 and single-cell-type caveats.** Found while looking for a
-*positive* element↔element signature, immediately after fixing a bug that had invalidated every
-previous p-value (see the correction banner in
-[peak_peak_validation_results.md](peak_peak_validation_results.md)).
+**Date:** 2026-07-20, tech-confound tests 2026-07-21, **partition test 2026-07-22 (this changes the
+conclusion).** **Status: not a technical artifact, but NOT partition-robust — significant in only 4 of
+10 metacell partitions. Cannot be claimed as an established positive signature.**
 
-> **TL;DR (2026-07-21, both tests done):** bidirected `<->` pairs are enriched for sharing the same
-> histone mark (43.7% vs 29.2%, p=0.0005 on a working null). Two technical explanations were tested and
-> **both refuted**: (1) per-mark sequencing depth — enrichment survives six per-mark depth roots
-> (p=0.0025); (2) shared measurement substrate — the same-mark correlation **fully survives** when the
-> two peaks are quantified from *disjoint* cells within each metacell (split-half test, 104% of excess
-> preserved over 20 splits). What remains is **genuine metacell-level (cell-state) co-variation of
-> same-chromatin-state elements** — MISSION §2's predicted positive signature. Caveats: n=55 same-mark
-> bidirected pairs, moderate effect, single cell type, correlational not perturbational.
+> ## ⚠️ CORRECTION 2026-07-22 — read this first
+>
+> On 2026-07-21 this doc concluded, from a **3-seed pilot**, that the same-mark enrichment was
+> "resolved as biological — the project's positive signature." The full **10-partition** bootstrap
+> ([partition_bootstrap_results.md](partition_bootstrap_results.md)) shows that was **partition-lucky**:
+> distance-matched same-mark enrichment is significant (p<0.05) in only **4/10** partitions, mean effect
+> **+0.046** (range −0.013 to +0.105), and the two strongest partitions are seed 0 and seed 1 — seed 0
+> being the canonical partition every prior result used.
+>
+> **What survives:** the technical-confound tests below (per-mark depth, split-half) still show that
+> *where* the enrichment appears it is not a depth or shared-cell-substrate artifact. So there may be a
+> real but **weak** effect (mean > 0). **What does not survive:** headlining it as an established,
+> robust biological signature. It is partition-fragile. The sections below marked "biological /
+> resolved" predate this correction and are superseded by it.
 
 ## The result
 

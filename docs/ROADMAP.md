@@ -328,7 +328,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
-- **2026-07-21** **Same-mark enrichment RESOLVED as biological — the positive E↔E signature.** The
+- **2026-07-22** **Partition bootstrap (K=10 × 15 genes) — the honest denominator, and it revises two
+  claims.** No peak→gene edge is recovered in all 10 partitions; 68% appear in exactly one; seed 0 (the
+  canonical partition) is an 18-edge outlier vs median 9, so "11 validated edges" was partition-lucky.
+  Defensible stable list: 2 edges ≥50%, 9 ≥30%, headed by the rE2G-validated CD14 H3K4me3 edge (6/10).
+  **Correction:** the same-mark enrichment, called "resolved biological" on 07-21 from a 3-seed pilot,
+  is significant in only **4/10** partitions (mean +0.046) — partition-fragile, not an established
+  signature. Robust: aggregate bidirected counts (112–139) and the co-accessibility contrast. The
+  strongest result is the instability itself (a MAUP in single-cell causal discovery).
+  [partition_bootstrap_results.md](../Evaluation/results/partition_bootstrap_results.md).
+- **2026-07-21** **[SUPERSEDED by 07-22 above] Same-mark enrichment resolved as biological — the positive E↔E signature.** The
   split-half substrate test (quantify the two peaks from *disjoint* cells within each metacell, 20-split
   averaged) shows the same-mark bidirected correlation **fully survives** breaking the shared cells
   (rho 0.137→0.140; ≈104% of excess over baseline preserved). Combined with the earlier per-mark depth
