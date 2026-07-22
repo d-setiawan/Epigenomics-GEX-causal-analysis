@@ -328,6 +328,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-22** **Simulation: aggregation degrades causal identifiability (the mechanism behind
+  everything).** Planted a known cell-level graph, ran production discovery verbatim. Fully identifiable
+  at the cell level (distinguish=1.00: keeps true causes, prunes confounded peaks) but **collapses under
+  metacell aggregation** monotonically with cells-per-metacell (1.00 → 0.42 as collinearity between a
+  causal peak and its confounded twin climbs 0.59 → 0.98). At matched rows, raw cells beat metacells. So
+  the thin/fragile real-data biology is an **aggregation ceiling, not power**. Grunfeld–Griliches/MAUP
+  trade-off made concrete. Caveat: sim cells Gaussian, real cells sparse (why we aggregated) → fix is
+  dropout-aware discovery (Dai 2024/ZiG-DAGs/ZICO/Hurdle) or smaller metacells, both testable in this harness.
+  [simulation_identifiability_results.md](../Evaluation/results/simulation_identifiability_results.md).
 - **2026-07-22** **Partition bootstrap (K=10 × 15 genes) — the honest denominator, and it revises two
   claims.** No peak→gene edge is recovered in all 10 partitions; 68% appear in exactly one; seed 0 (the
   canonical partition) is an 18-edge outlier vs median 9, so "11 validated edges" was partition-lucky.

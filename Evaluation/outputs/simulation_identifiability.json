@@ -1,0 +1,51 @@
+{
+  "config": {
+    "n_metacells": 133,
+    "n_draws": 6,
+    "k_partitions": 4,
+    "b_direct": 0.7,
+    "c_state": 0.0,
+    "depth_eff": 0.5,
+    "noise": 1.0
+  },
+  "cell_level_distinguish": 1.0,
+  "cpm_sweep": [
+    {
+      "cells_per_mc": 2,
+      "n_cells": 266,
+      "distinguish_freq": 0.9166666666666666,
+      "collinearity": 0.7051107395831407
+    },
+    {
+      "cells_per_mc": 4,
+      "n_cells": 532,
+      "distinguish_freq": 1.0,
+      "collinearity": 0.8287975296133993
+    },
+    {
+      "cells_per_mc": 8,
+      "n_cells": 1064,
+      "distinguish_freq": 0.875,
+      "collinearity": 0.8856588864194039
+    },
+    {
+      "cells_per_mc": 16,
+      "n_cells": 2128,
+      "distinguish_freq": 0.75,
+      "collinearity": 0.9314607825718951
+    },
+    {
+      "cells_per_mc": 32,
+      "n_cells": 4256,
+      "distinguish_freq": 0.5416666666666666,
+      "collinearity": 0.9617585960248508
+    },
+    {
+      "cells_per_mc": 64,
+      "n_cells": 8512,
+      "distinguish_freq": 0.4166666666666667,
+      "collinearity": 0.9818373644496264
+    }
+  ],
+  "verdict": "AGGREGATION DEGRADES IDENTIFIABILITY. The structure is fully identifiable at the cell level (1.00); aggregation induces collinearity between causal and confounded peaks that grows with cells/metacell (0.71->0.98) and collapses recovery (0.92->0.42). At matched rows, raw cells beat metacells. => the thin real-data biology is an AGGREGATION CEILING, not pure power. (Caveat: sim cells are Gaussian; real single cells are sparse, which is why aggregation was adopted -> the fix is dropout-aware discovery / smaller metacells.)"
+}

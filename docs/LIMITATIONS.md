@@ -122,7 +122,7 @@ fix is an outer bootstrap over partitions — **now built and run at K=10**
 ([partition_bootstrap_results.md](../Evaluation/results/partition_bootstrap_results.md)): no peak→gene
 edge is recovered in all 10 partitions, 68% of edges appear in a single partition, and the most robust
 validated edge (rE2G-supported CD14 H3K4me3) is found in 6/10. Report edges by recovery frequency, not
-from one partition. Background: [partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
+from one partition. **Mechanism (2026-07-22 simulation):** aggregation induces collinearity between causal and confounded elements that collapses the causation-vs-confounding distinction — identifiable at the cell level, lost after aggregation ([simulation_identifiability_results.md](../Evaluation/results/simulation_identifiability_results.md)). Background: [partition_stability_findings.md](../Evaluation/results/partition_stability_findings.md).
 
 ## L12. Per-mark technical depth is not conditioned on
 

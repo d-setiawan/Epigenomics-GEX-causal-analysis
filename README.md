@@ -8,6 +8,20 @@
 >
 > This README is the operational hub; [docs/ROADMAP.md](docs/ROADMAP.md) is the live plan and status.
 
+>
+> **Current status (2026-07-22) — the project has pivoted methods-forward.** Rigorous testing found
+> that single-partition metacell causal discovery is **not reproducible** (re-clustering the cells
+> changes which edges are recovered), and a controlled simulation shows **why**: metacell aggregation
+> induces collinearity between causal and confounded elements that collapses the causation-vs-confounding
+> distinction — identifiable at the cell level, lost after aggregation. The strongest contribution is now
+> this **methodological finding + the partition-bootstrap that quantifies it** (a Modifiable Areal Unit
+> Problem in single-cell causal discovery, apparently uncharacterized), with a *small* partition-stable
+> edge list and the co-accessibility contrast as the applied biology. Start with
+> [docs/ROADMAP.md](docs/ROADMAP.md) §changelog and these results:
+> [partition_bootstrap_results](Evaluation/results/partition_bootstrap_results.md) ·
+> [simulation_identifiability_results](Evaluation/results/simulation_identifiability_results.md) ·
+> [aggregation survey](CausalDiscovery/results/aggregation_partition_dependence_survey.md).
+
 Single-cell gene expression (scRNA) + single-cell CUT&Tag histone marks → **local causal graphs**
 for monocyte gene regulation. For one target gene we learn a causal graph over its nearby chromatin
 peaks, observed confounders, and its expression, then test the edges against orthogonal biological
