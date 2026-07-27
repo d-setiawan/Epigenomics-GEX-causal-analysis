@@ -328,6 +328,18 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
 - **2026-07-08** Q1: triangulate peak→gene across rE2G(prediction)+PCHi-C(physical)+eQTL(genetics); node/
   peak-peak via BLUEPRINT ChIP + ChIP-Atlas/Hi-C; ≥2 axes = validated; perturbation DBs dropped.
 - **2026-07-08** Q2: replace kNN-averaging with non-overlapping SEACells metacells (+metacell OT); report n_eff.
+- **2026-07-27** **Biology-first pivot via score-based search + Markov verification (professor's
+  suggestions).** Wired BOSS/BOSS-FCI/GRaSP-FCI/PC-max/CCD + the Markov Checker (Tetrad). Findings:
+  (i) the Markov Checker shows constraint-based FCI's dense graph MISFITS the data (ks_ind=0.000, 10.6%
+  of implied indeps violated) — the peak↔peak confounding explosion was largely an FCI artifact; sparse
+  score-based graphs fit far better. (ii) BOSS-FCI does NOT fix partition instability (aggregation
+  property, algorithm-robust). (iii) BUT the three algorithms converge on the same 28-edge set, and
+  intersecting with external validation yields an **8-edge confident set**, each supported four ways
+  (multi-algorithm + partition-recurrence + external DB + directed). Flagship: CD14 chr5:140591420→CD14
+  (all methods, 6/10 partitions, directed 6/6, rE2G). Biology-first is viable as a *high-confidence
+  shortlist* under four-way verification, not a network.
+  [consensus_biology_results.md](../Evaluation/results/consensus_biology_results.md) ·
+  [professor_suggestions_and_boss_pivot.md](../CausalDiscovery/results/professor_suggestions_and_boss_pivot.md).
 - **2026-07-22** **Simulation: aggregation degrades causal identifiability (the mechanism behind
   everything).** Planted a known cell-level graph, ran production discovery verbatim. Fully identifiable
   at the cell level (distinguish=1.00: keeps true causes, prunes confounded peaks) but **collapses under

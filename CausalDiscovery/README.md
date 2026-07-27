@@ -29,6 +29,7 @@ Validation of what this section produces lives in [`Evaluation/`](../Evaluation/
 - [target_gene_selection.md](results/target_gene_selection.md) — validation-rich target ranking + cell-type pros/cons.
 - [aggregation_causal_discovery_litreview.md](results/aggregation_causal_discovery_litreview.md) — why aggregation choice matters for CI-test-based discovery.
 - **[aggregation_partition_dependence_survey.md](results/aggregation_partition_dependence_survey.md)** — cited survey: partition-dependence is a Modifiable Areal Unit Problem; partition-bootstrap for single-cell causal discovery appears novel.
+- **[professor_suggestions_and_boss_pivot.md](results/professor_suggestions_and_boss_pivot.md)** — score-based search (BOSS) + Markov-checker verification; the biology-first pivot.
 - [dagma_mixed_family_implementation.md](results/dagma_mixed_family_implementation.md) — DAGMA count-family notes (kept as sensitivity only).
 - [monocyte_candidate_loci.md](results/monocyte_candidate_loci.md) · [csf1r_locus.md](results/csf1r_locus.md) — locus-level background.
 
