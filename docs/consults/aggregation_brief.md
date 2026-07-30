@@ -118,11 +118,17 @@ unusually well:
    skeleton search is **score-based** (GFCI's FGES phase), so the CI-test combination would cover our
    constraint-based runs and the orientation step but not the score-based skeleton directly — does that
    part need its own score-level aggregation?
-2. **Dependence between samples.** Our partitions are re-clusterings of the *same* cells, so they are
-   **not independent** — which the Fisher combination assumes. Is the right fix to build the partitions
-   from **disjoint folds of cells** (restoring genuine independence at the cost of coarser resolution
-   per fold), or to keep overlapping partitions and use a dependent-p-value combination (e.g. Brown's
-   method)? We don't have intuition for which trades off better here.
+2. **Dependence between samples — and why the clean fix may not be available to us.** Combining tests
+   across partitions is only valid if the per-partition p-values are independent, and ours are not:
+   every partition re-clusters the *same* cells. The clean fix would be to build each partition from a
+   **disjoint subset of cells**, so the samples genuinely are independent — but that looks infeasible at
+   our scale. `n` is already marginal (~133 on all the data), the outcome modality is only ~14% of the
+   cells, and splitting into `K` folds leaves each fold with **at most ~`n/K` usable rows** (fewer in
+   practice — a usable metacell needs a cell from every channel, which gets harder as clusters shrink).
+   Even a handful of folds drops each fold to ~40–60 rows, below what FCI's conditional-independence
+   tests support at ~tens of covariates. That seems to force us back onto **overlapping, dependent**
+   partitions. How would you handle the dependence there — or is the independent-sample route simply not
+   viable at this `n`, and we need a different construction?
 3. **The shared-structure assumption.** It is most defensible across partitions at the *same*
    resolution/`n`; across different aggregation levels the effective variables may shift. Would you
    restrict the combination to same-resolution partitions, or is there a principled way to combine
