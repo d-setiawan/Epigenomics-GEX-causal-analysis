@@ -12,7 +12,8 @@ data*, ICML 2009.
 
 ## 1. The estimand
 
-For each target we run **constraint-based causal discovery (FCI → PAG)** on a small problem:
+For each target we run **constraint-based and score-based-hybrid causal discovery** — FCI, and GFCI (a
+score-based FGES skeleton search followed by FCI-style orientation), both → **PAG** — on a small problem:
 
 - **outcome** *Y* — a scalar (the target's expression level),
 - **covariates** *X₁…Xₚ*, `p` on the order of tens (~13–53; 43 in our running example) — each a
@@ -113,7 +114,10 @@ unusually well:
 1. **Is the framing right?** Should we treat "which metacell partition" as a nuisance to *marginalise
    over* via your combined-CI-test construction, rather than a hyperparameter to *select*? Our current
    plan is heuristic — count the fraction of partitions an edge appears in — and your method looks like
-   the principled replacement (one graph, sound type-I-error interpretation).
+   the principled replacement (one graph, sound type-I-error interpretation). One wrinkle: part of our
+   skeleton search is **score-based** (GFCI's FGES phase), so the CI-test combination would cover our
+   constraint-based runs and the orientation step but not the score-based skeleton directly — does that
+   part need its own score-level aggregation?
 2. **Dependence between samples.** Our partitions are re-clusterings of the *same* cells, so they are
    **not independent** — which the Fisher combination assumes. Is the right fix to build the partitions
    from **disjoint folds of cells** (restoring genuine independence at the cost of coarser resolution
