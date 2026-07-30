@@ -23,6 +23,15 @@ edit an old update to reflect new results — write a new one.
   3-axis peak→gene triangulation, the element↔element framework, four negative axes + the
   co-accessibility contrast, and what remains before scaling.
 
+## Consults — [consults/](consults)
+
+Self-contained briefs written to share with an outside expert for advice. Abstracted (no biology),
+portable (no repo-relative links in the body).
+
+- [aggregation_brief.md](consults/aggregation_brief.md) — how we construct samples (disjoint metacell
+  aggregation in a shared latent space) and the partition-dependence problem, framed against
+  Tillman (2009) *Structure learning with independent non-identically distributed data* (ICML).
+
 ## Theory — [identifiability/](identifiability)
 
 - [project_identifiability_guarantees.md](identifiability/project_identifiability_guarantees.md) — the full guarantee analysis for this project's design.
