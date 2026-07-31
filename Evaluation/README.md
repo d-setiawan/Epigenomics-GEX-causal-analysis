@@ -35,6 +35,7 @@ The curated evidence tables in `outputs/` are tracked deliberately: they are wha
 - **[results/same_mark_finding.md](results/same_mark_finding.md) — ⚠️ the one significant element↔element signature, and it is probably technical. Blocks the four-negative endpoint.**
 - **[results/simulation_identifiability_results.md](results/simulation_identifiability_results.md) — the pivotal sim: cell-level identifiable, aggregation collapses it (the mechanism).**
 - **[results/partition_bootstrap_results.md](results/partition_bootstrap_results.md) — ⚠️ DEFINITIVE partition test (K=10): no edge in all 10 partitions; the stable-edge list; same-mark enrichment is partition-fragile (4/10). Read before citing any edge.**
+- **[results/pairing_artifact_findings.md](results/pairing_artifact_findings.md) — is the cross-assay pairing manufacturing our bidirected edges? no evidence for the unpairing artifact (weak null, 2/10 partitions); legal-PAG and continuum-geometry threats still live.**
 - [results/partition_stability_findings.md](results/partition_stability_findings.md) — how the partition-instability was found (3-seed controls + pilot); background for the K=10 result.
 - [results/run_audit_report.md](results/run_audit_report.md) — saved-run audit and rigor tiers.
 - [results/evaluation_overview.md](results/evaluation_overview.md) — framing, validation layers, honesty rules.
