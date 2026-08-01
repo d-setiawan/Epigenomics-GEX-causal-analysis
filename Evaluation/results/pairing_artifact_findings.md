@@ -223,3 +223,75 @@ direct-outcome recall against every other search in every arm, at a real but mod
 If that holds, the 53%-bidirected headline is a property of FCI's behaviour rather than a finding about
 chromatin, and the defensible contribution shifts to: **recover structure that survives the
 construction, and restrict claims to the same-channel pairs where it provably does.**
+
+---
+
+## 8. The 53% is implementation-specific (2026-08-01) — the decisive real-data result
+
+Ran the Tetrad family on the **identical** input matrices (same 46 columns, same 133 rows, same
+`rank_gaussian` transform, same depth 2, same depth-confounder roots, same tiered background knowledge)
+and varied only the search and α:
+
+| config | edges | **bidirected** | **bi_frac** | `o-o` | oriented | peak→gene |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Tetrad FCI, α=0.01 | 705 | 6 | **0.009** | 100 | 599 | 30 |
+| Tetrad FCI-CP, α=0.01 | 705 | 7 | **0.010** | 95 | 603 | 30 |
+| **Tetrad FCI, α=0.05** | 845 | 78 | **0.092** | 86 | 681 | 43 |
+| Tetrad GFCI | 65 | 0 | **0.000** | 49 | 16 | 1 |
+| Tetrad BFCI | 71 | 0 | **0.000** | 45 | 26 | 2 |
+| Tetrad BFCI-CP | 71 | 0 | **0.000** | 45 | 26 | 2 |
+| **causal-learn FCI, α=0.05 (production)** | 258 | 126 | **0.488** | 113 | 19 | 19 |
+
+**At matched α=0.05, two implementations of the same algorithm on the same data differ 5.3× in
+bidirected fraction: 9.2% (Tetrad) vs 48.8% (causal-learn).** Tetrad finds *more* total edges (845 vs
+258) and orients vastly more of them (681 vs 19), while producing far fewer bidirected marks.
+
+**The legal-PAG question is answered, and it is not the explanation.** `guarantee_pag=True` moves
+Tetrad FCI from 6 to 7 bidirected edges out of 705 — no effect. The advisor's "legalizing halves the
+bidirected fraction" does not reproduce here because Tetrad barely produces bidirected edges to begin
+with. The gap is between *implementations*, not between legal and illegal PAGs.
+
+### What this means for the project
+
+**The "53% of element↔element adjacencies are latent common causes" headline does not survive an
+implementation change.** It is substantially a property of causal-learn's FCI, not of monocyte
+chromatin. Every downstream claim resting on the bidirected class — the four-negative elimination, the
+co-accessibility contrast's 53% figure, MISSION §2's "novel object" — inherits that dependence.
+
+This is independent of, and converges with, the advisor's simulation result that FCI's bidirected edges
+are largely false positives (BFCI `bi_frac` ≈0.03; LV-Heuristic exactly 0.000 by construction).
+
+*Caveat:* implementations differ in orientation-rule completeness and possible-d-sep handling, so the
+gap is expected to be nonzero — but a 5.3× difference in the quantity carrying the headline is not a
+detail. Which implementation is *correct* is not settled here; what is settled is that the number is
+not implementation-invariant and cannot be reported as a property of the data.
+
+## 9. LV-Heuristic in the multi-channel setting
+
+Same dense multi-channel design as §6, adding LV-Heuristic (PAG of the BOSS DAG — pure scoring,
+sufficiency assumed, **no bidirected edges by construction**). Scored against `G_matched`, the truth
+matched data can actually recover:
+
+| search | `dir_same` | `dir_cross` | n_edges | n_bi | adj_prec |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| FCI | 0.444 | 0.162 | 17.7 | 3.4 | 0.926 |
+| BFCI-CP | 0.456 | 0.129 | 12.5 | 0.1 | 0.923 |
+| **LV-Heuristic** | **0.833** | **0.325** | 45.2 | **0.0** | **0.925** |
+
+**LVH recovers 1.88× the same-channel and 2.01× the cross-channel direct edges of FCI — at
+indistinguishable precision** (0.925 vs 0.926). Note this differs from the advisor's report of a
+precision cost (≈0.78 vs ≈0.93); the likely reason is the reference graph. He scored against `G_cell`;
+these are scored against `G_matched`. **Against the truth matched data can actually attain, LVH's
+precision penalty disappears.**
+
+Across pairing arms, LVH separates the two edge classes cleanly:
+
+| LVH | true | matched | permuted |
+| --- | ---: | ---: | ---: |
+| `dir_same` | 0.800 | 0.833 | 0.867 |
+| `dir_cross` | 0.789 | 0.325 | **0.005** |
+
+**Same-channel recall is flat across every arm (~0.80–0.87) — the pairing does not touch it.
+Cross-channel collapses 0.789 → 0.325 → 0.005.** That is the sharpest statement of the identifiability
+result: *what is recoverable is same-channel structure, and it is recoverable regardless of how the
+cross-assay pairing is done.*
