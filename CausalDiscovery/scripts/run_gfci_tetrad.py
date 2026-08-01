@@ -206,6 +206,7 @@ def parse_tetrad_edges(graph_str: str) -> list[dict]:
 
 
 def run_gfci(sub_transformed: pd.DataFrame, alpha: float, penalty: float,
+             algo: str = "gfci",
              forbidden_pairs: list[tuple[str, str]] | None = None) -> str:
     """Run GFCI with background knowledge.
 
@@ -241,7 +242,20 @@ def run_gfci(sub_transformed: pd.DataFrame, alpha: float, penalty: float,
     for frm, to in pairs:
         if frm in safe and to in safe:
             search.set_forbidden(safe[frm], safe[to])
-    search.run_gfci()
+    if algo == "gfci":
+        search.run_gfci()
+    elif algo == "fci":
+        search.run_fci()
+    elif algo == "fci-cp":
+        search.run_fci(guarantee_pag=True)
+    elif algo == "bfci":
+        # BFCI (BOSS skeleton + FCI orientation). guarantee_pag=False is the
+        # plain variant; True is "BFCI-CP", which legalizes the PAG.
+        search.run_bfci(guarantee_pag=False)
+    elif algo == "bfci-cp":
+        search.run_bfci(guarantee_pag=True)
+    else:
+        raise ValueError(f"unknown algo {algo!r}")
 
     graph_str = str(search.get_string())
     if inv:  # map V<i> tokens back to original node names (single word-boundary pass)
@@ -258,6 +272,10 @@ def main() -> int:
     p.add_argument("--out-dir", type=Path, required=True)
     p.add_argument("--alpha", type=float, default=0.01)
     p.add_argument("--penalty-discount", type=float, default=2.0)
+    p.add_argument("--algo", default="gfci", choices=["gfci", "fci", "fci-cp", "bfci", "bfci-cp"],
+                   help="bfci-cp = BFCI with guaranteePag(true): legalizes the PAG. "
+                        "Bidirected marks are our headline object, so an illegal PAG "
+                        "directly threatens their interpretation.")
     p.add_argument("--transform", default="rank_gaussian",
                    choices=["none", "rank_gaussian"])
     p.add_argument("--columns", default="auto",
@@ -290,7 +308,7 @@ def main() -> int:
     sub_raw = df[selected].apply(pd.to_numeric, errors="coerce").dropna(axis=0).reset_index(drop=True)
     sub_input = rank_gaussian(sub_raw) if a.transform == "rank_gaussian" else sub_raw.copy()
 
-    graph_str = run_gfci(sub_input, a.alpha, a.penalty_discount, forbidden_pairs)
+    graph_str = run_gfci(sub_input, a.alpha, a.penalty_discount, a.algo, forbidden_pairs)
     edges = parse_tetrad_edges(graph_str)
     edges_df = pd.DataFrame(edges, columns=["node1", "endpoint1", "node2", "endpoint2", "edge_text"])
 

@@ -1,7 +1,9 @@
 # Is the cross-assay pairing manufacturing our bidirected edges?
 
-**Date:** 2026-07-31. **Status: no evidence for the unpairing artifact — a weak null result, not a
-refutation. Two open threats remain (legal-PAG, continuum geometry).**
+**Date:** 2026-07-31, extended 2026-08-01. **Status: the composition test we designed turned out to have
+no power (§3 correction). What the simulation *did* settle is an identifiability asymmetry —
+same-channel structure survives the construction, cross-channel does not (§6) — plus an algorithm
+result that reframes the project's headline (§7).**
 
 > **Self-correction, same day.** The first version of this doc claimed the artifact was "refuted"
 > (OR = 1.87, p = 7.3e-04). That statistic was computed on `peak_peak_pairs.tsv`, which comes from the
@@ -83,12 +85,20 @@ peak↔peak edges, against the non-adjacent baseline within each partition):
 
 **What this does and does not support.** The artifact hypothesis predicts a *cross*-mark enrichment
 (negative diff). We never observe a meaningful negative — the worst partition is −0.015, and the
-distribution is centred positive. So there is **no evidence for the cross-mark enrichment the artifact
-predicts**, and the sign runs consistently the other way.
+distribution is centred positive.
 
-But this is a **null result against the artifact, not positive evidence for biology**. The effect is
-weak, mostly non-significant per-partition, and its strong form was partition luck. It cannot carry a
-claim on its own.
+> ### ⚠️ Second correction (2026-08-01): this test has no power, in either direction
+>
+> The multi-channel simulation (§6) was built to check whether the artifact actually *leaves* a
+> channel-composition signature. **It does not.** In the bidirected-rich regime, the fraction of
+> bidirected edges that are same-channel is essentially identical under `true` and `matched` pairing
+> (continuum 0.142 → 0.154; discrete 0.149 → 0.117; baseline 0.105). The construction does not
+> differentially move bidirected edges between same- and cross-channel pairs.
+>
+> So the same-/cross-mark composition test **cannot distinguish artifact from biology at all** — the
+> premise behind it (that unpairing would push bidirected edges onto cross-channel pairs) is false.
+> This section is retained as a record of a test that turned out to be uninformative; it should not be
+> cited as evidence in either direction. The live question moved to §6 and §7.
 
 *(Pooling the ten partitions to gain power is exactly the move the advisor warned against — they
 re-cluster the same cells, so they are not independent replicates and combining their p-values
@@ -145,3 +155,71 @@ sign alone.
 Secondary arms worth adding: a **two-latent** generator (a global state plus a locus-local state) to
 test whether the pipeline can distinguish them — that is MISSION §2's actual claim, and elimination on
 real data cannot settle it.
+
+---
+
+## 6. The multi-channel simulation (2026-08-01) — what it settled
+
+Built `paircheck/multichannel.py` to close the gap in §2: covariates spread across **M channels**, the
+outcome in its own, cells split M+1 ways disjointly, and a cluster contributes a row only if it holds a
+cell from **every** channel (our completeness rule). The derived truth generalizes the advisor's
+`G_matched`: **cross-channel direct edges are severed** (disjoint cells ⇒ independent residuals),
+same-channel ones retained.
+
+Dense regime (p=19, 6 covariate channels, `p_state_parent`=0.7, K=133, 4 data × 3 cluster seeds):
+
+| geometry | pairing | `dir_same` | `dir_cross` |
+| --- | --- | ---: | ---: |
+| discrete | true | 0.213 | **0.337** |
+| discrete | **matched** | 0.435 | **0.188** (−44%) |
+| discrete | permuted | 0.889 | **0.002** |
+| continuum | true | 0.361 | **0.241** |
+| continuum | **matched** | 0.472 | **0.104** (−57%) |
+| continuum | permuted | 0.833 | **0.007** |
+
+**The identifiability result.** Matched (cross-assay) pairing destroys 44–57% of *cross-channel* direct
+edges while leaving *same-channel* direct edges intact. The permuted arm drives cross-channel recall to
+≈0 while same-channel stays high — the control behaviour that makes the effect attributable to the
+pairing rather than to aggregation generally.
+
+*(`dir_same` rising from `true` to `matched` is a density artifact, not a gain: severing cross-channel
+edges thins the graph, so the surviving same-channel edges face less competition from alternative
+conditioning sets. Read the `true`→`matched` contrast within a column, not across columns.)*
+
+**Translated to our data:** same-mark peak↔peak structure is the part of the element↔element layer this
+construction can recover. Cross-mark pairs — **70.5% of our candidate pairs** — largely cannot be, and
+peak→gene edges sit in the same severed regime.
+
+## 7. The algorithm discrepancy — and a reframing
+
+Running the panel across the Tetrad family (new `tetrad-current.jar`, 2026-07-31 build, via
+`run_gfci_tetrad.py --algo`):
+
+| algo | edges | **bidirected** | `o-o` | oriented | peak→gene w/ arrowhead |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GFCI | 65 | **0** | 49 | 16 | 0 |
+| BFCI | 71 | **0** | 45 | 26 | 2 |
+| BFCI-CP | 71 | **0** | 45 | 26 | 2 |
+| causal-learn FCI *(our pipeline)* | ~239 peak↔peak | **126 (53%)** | 113 | 0 | — |
+
+Two things follow.
+
+**(a) BFCI substantially repairs [L10](../../docs/LIMITATIONS.md#l10-gfci-orients-the-skeleton-only).**
+GFCI left cross-tier edges at `o-o`; BFCI orients 26 vs 16 and produces peak→gene edges *with
+arrowheads*. BFCI-CP is byte-identical to BFCI here — there were no bidirected edges to legalize, so the
+"legalizing halves the bidirected fraction" threat did not fire in this family.
+
+**(b) Only FCI produces bidirected edges at all.** Every score-based search returns zero on the same
+data. In the advisor's simulation the same pattern holds with ground truth available: BFCI `bi_frac`
+≈0.03, LV-Heuristic exactly 0.000, and FCI's bidirected edges are largely **false positives**.
+
+**The reframing this invites.** The value of a latent-variable search may be the structure it recovers
+*despite* latents, not the latents it claims to *identify*. LV-Heuristic — the PAG of the BOSS DAG, pure
+scoring, sufficiency assumed, no bidirected edges by construction — roughly **doubles** adjacency and
+direct-outcome recall against every other search in every arm, at a real but modest precision cost
+(≈0.78 vs ≈0.93). Critically, **the pairing contrast survives the search change**: permuted
+`direct_outcome_rec` 0.023 vs matched 0.501.
+
+If that holds, the 53%-bidirected headline is a property of FCI's behaviour rather than a finding about
+chromatin, and the defensible contribution shifts to: **recover structure that survives the
+construction, and restrict claims to the same-channel pairs where it provably does.**
