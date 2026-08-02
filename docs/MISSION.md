@@ -36,9 +36,9 @@ and context-dependence** (Catarino & Stark 2018 on enhancer necessity/sufficienc
 architecture is today accessible almost only through **CRISPR/synthetic perturbation** — there is
 no established way to infer it **observationally** from multi-omics.
 
-Our earlier analysis found the raw peak↔peak edges are ~all confounded (49% bidirected, 1/243
-directed) — shared latent drivers (TF programs, chromatin domains, cell-state), not direct
-causation. **That is not a reason to delete them; it is the reason to model confounders.** Once we
+Our earlier analysis found the raw peak↔peak edges are ~all confounded — shared latent drivers
+(TF programs, chromatin domains, cell-state), not direct causation. **That is not a reason to
+delete them; it is the reason to model confounders.** Once we
 condition on the observed confounders that are actually available (library depth — donor is not a
 usable variable, see [LIMITATIONS.md](LIMITATIONS.md#l1-donor-is-not-an-available-variable)) and
 demand invariance across **cell types**, the peak↔peak edges that *survive* are the credible
@@ -50,6 +50,16 @@ what CRISPR measures. Either outcome is a real finding:
 - **some survive** → candidate **enhancer hierarchy/dependence discoverable without perturbation.**
 
 The method is the contribution regardless of which biological answer emerges.
+
+> **2026-08-02 — this now has an answer, and it is "some survive".** Filtering peak↔peak edges by
+> **stability across metacell partitions** leaves 41 cross-mark adjacencies over the 15-gene panel
+> that are enriched for PCHi-C shared promoter hubs against a distance- **and** degree-matched null,
+> and that beat edges which were found but did *not* survive re-partitioning. Two caveats that
+> narrow the claim below what §2 anticipated: the surviving object is an **adjacency**, not an
+> orientation — no cross-mark edge is partition-stable as a directed edge at any aggregation
+> resolution — and the bidirected *fraction* that motivated this section is
+> implementation-specific rather than a property of the data. Numbers and controls:
+> [crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
 
 ## 3. Positioning against the literature (what is NOT our novelty)
 
