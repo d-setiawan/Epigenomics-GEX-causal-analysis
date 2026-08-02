@@ -66,6 +66,20 @@ FACTS = [
     (r"no target-aware peak-peak validator yet|peak-peak edges .{0,40}can'?t be validated",
      "The element<->element validator exists (Evaluation/scripts/peak_peak_validator.py).",
      set()),
+    (r"screen(ing|)[^.\n]{0,60}signal[- ]share[^.\n]{0,60}(improve|stabilis|stabiliz|fix)",
+     "Signal-share screening was tested and FAILED: at matched panel size it produced fewer "
+     "edges than random subsets and zero partition-stable edges "
+     "(Evaluation/results/crossmark_identifiability.md S6, LIMITATIONS L15).",
+     {"docs/LIMITATIONS.md", "Evaluation/results/crossmark_identifiability.md"}),
+    (r"proportionality completion[^.\n]{0,60}(licensed|justified|validated|holds)",
+     "Sigma_within ~ c*Sigma_between does NOT transfer across marks: leave-one-mark-out "
+     "R^2 = 0.013 (continuum) / 0.211 (discrete). The completion is refuted "
+     "(Evaluation/results/crossmark_identifiability.md S5c).",
+     {"Evaluation/results/crossmark_identifiability.md"}),
+    (r"cross-mark[^.\n]{0,50}same[- ]scale|same-mark and cross-mark[^.\n]{0,40}comparable",
+     "Same-mark covariance entries carry a sampling term that cross-mark entries do not "
+     "(LIMITATIONS L14). They are not on the same scale and must not be compared directly.",
+     {"docs/LIMITATIONS.md", "Evaluation/results/crossmark_identifiability.md"}),
 ]
 
 

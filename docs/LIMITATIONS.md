@@ -178,3 +178,47 @@ repressive mark (H3K27me3) — a genuine but negligible category error. The mech
 almost all expression-linked edges to active marks, which is biologically right. Still: repressive-mark
 peaks should be excluded from (or flagged in) peak→gene validation, and the write-up must say "histone
 CUT&Tag peaks," never "ATAC/accessibility."
+
+## L14. Same-mark and cross-mark covariances are not on the same scale
+
+A metacell holds cells from every assay, and variable *j* is averaged over that metacell's
+**mark-ch(j) cells only**. Two variables of the same mark are averaged over the *same* cells; two
+variables of different marks over *disjoint* cells. So the sampling noise of the metacell mean
+contributes to the covariance of a same-mark pair and contributes **nothing** to a cross-mark pair,
+while still inflating both variances:
+
+```
+Cov(X_j, X_k) = Sigma_between[j,k] + 1{same mark} * E_c[ Sigma_within[j,k] / n(c) ]
+```
+
+Every same-mark entry of the covariance fed to FCI/BOSS therefore carries a positive term that no
+cross-mark entry carries, and every cross-mark **correlation** is attenuated by the inflated
+denominator with no compensating numerator. This is an artifact of the assay design, not a property of
+chromatin, and it is sufficient on its own to make same-mark edges easier to find than cross-mark ones.
+
+In simulation the effect is direct and large: at matched cells-per-variable, removing cell *sharing*
+drops same-mark adjacency recall from 0.803 to 0.054, and **thinning** cells per metacell *raises*
+same-mark recall (0.532 → 0.803) because a smaller n means a larger noise term. Any comparison of
+same-mark against cross-mark findings must account for this.
+See [crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
+
+## L15. Most panel variables carry no between-state signal
+
+Splitting each variable's metacell-level variance into real between-state signal and the sampling
+noise of averaging ~11 cells per mark per metacell, the median variable's signal share across the panel
+(442 variables, 15 genes) is **−0.017**: its entire between-metacell variance is accounted for by
+sampling noise. Only ~19% exceed a share of 0.10 and ~12% exceed 0.25.
+
+This is a precondition, not a modelling preference: a variable with no between-state signal has no
+structure for any search to recover, and it still occupies every conditioning set. It bounds what any
+change of algorithm, CI test, or graph class can achieve on the current metacell design, and it is the
+covariance-level statement of the noise-domination finding.
+
+**Signal share is itself partition-dependent** — for CD14, 3–9 variables clear 0.10 on a single
+partition but only 2 clear it on the cross-partition median. The instability documented in
+[L11](#l11-edge-identities-are-partition-dependent) reaches one level below the edges, into which
+variables qualify as signal-carrying at all.
+
+**Screening on signal share does not fix it.** At matched panel size, screened panels produced fewer
+edges than random subsets and **zero** partition-stable edges.
+See [crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
