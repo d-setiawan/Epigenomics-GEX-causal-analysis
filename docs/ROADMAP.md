@@ -434,6 +434,21 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   global confounders; block-bootstrap stability. *(donor-level clause amended 2026-07-20 — see above.)*
 
 ## 4. Changelog
+
+- **2026-08-02 — Cross-mark identifiability settled; metacell resolution identified as the real lever.**
+  Asked whether cross-mark structure can be claimed with identifiability or with validation, by
+  changing what the LV search consumes. Three interventions tried and all rejected under controls:
+  signal-share screening (fewer edges than random subsets at matched size, zero stable edges),
+  proportionality completion (refuted, leave-one-mark-out R² ≈ 0), and de-attenuated covariance
+  (identical to raw once edge count is matched). Root cause is upstream of the search: the median
+  panel variable has no between-state signal at all ([L15](LIMITATIONS.md#l15-most-panel-variables-carry-no-between-state-signal)),
+  and same-mark vs cross-mark covariances are not on the same scale
+  ([L14](LIMITATIONS.md#l14-same-mark-and-cross-mark-covariances-are-not-on-the-same-scale)).
+  **Positive:** a matched-power permutation null confirms the surviving cross-mark edges are real.
+  **Actionable:** metacell resolution is the lever, and the current setting is at the wrong end of the
+  curve. Numbers in
+  [Evaluation/results/crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
+  *Open:* run the discovery pipeline at 25–45 metacells and check whether the rows still support FCI.
 - **2026-07-10** **EXPLORATORY: element-level causal modeling** ([`CausalDiscovery/results/element_level_modeling_design.md`](../CausalDiscovery/results/element_level_modeling_design.md),
   `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
   **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges

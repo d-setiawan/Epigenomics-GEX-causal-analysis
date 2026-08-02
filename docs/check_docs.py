@@ -76,7 +76,10 @@ FACTS = [
      "R^2 = 0.013 (continuum) / 0.211 (discrete). The completion is refuted "
      "(Evaluation/results/crossmark_identifiability.md S5c).",
      {"Evaluation/results/crossmark_identifiability.md"}),
-    (r"cross-mark[^.\n]{0,50}same[- ]scale|same-mark and cross-mark[^.\n]{0,40}comparable",
+    # Match the ASSERTION only.  Requiring "are/is" immediately before the claim
+    # keeps this off the true negated form ("are not on the same scale") and off
+    # the hyphenated heading anchor, both of which are correct statements.
+    (r"cross-mark[^.\n]{0,40}\b(are|is) (on the same scale|directly comparable)",
      "Same-mark covariance entries carry a sampling term that cross-mark entries do not "
      "(LIMITATIONS L14). They are not on the same scale and must not be compared directly.",
      {"docs/LIMITATIONS.md", "Evaluation/results/crossmark_identifiability.md"}),
