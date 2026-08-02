@@ -95,6 +95,11 @@ def main():
     ap.add_argument("--n-perm", type=int, default=20000)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="crossmark_external_validation.tsv")
+    ap.add_argument("--edges-out", default=None,
+                    help="write the partition-stable cross-mark edge list, "
+                         "annotated with distance, PAG degree and PCHi-C hub "
+                         "status. This is the actual finding; the p-values only "
+                         "say the list is enriched.")
     a = ap.parse_args()
 
     import jpype
@@ -169,6 +174,18 @@ def main():
     if n_pos < 5:
         raise SystemExit(f"only {n_pos} stable cross-mark pairs matched the peak "
                          f"universe — too few to test")
+
+    if a.edges_out:
+        ed = pairs[pairs.stability_class == "stable_cross"].copy()
+        ed["mark_a"] = ed.peak_a.str.rsplit("__", n=1).str[-1]
+        ed["mark_b"] = ed.peak_b.str.rsplit("__", n=1).str[-1]
+        ed = ed[["gene", "peak_a", "peak_b", "mark_a", "mark_b", "distance",
+                 "deg_min", "deg_max", "pchic_hub", "edge_class"]]
+        ed = ed.sort_values(["pchic_hub", "gene", "distance"],
+                            ascending=[False, True, True])
+        ed.to_csv(a.edges_out, sep="\t", index=False)
+        print(f"wrote {a.edges_out}  ({len(ed)} stable cross-mark edges, "
+              f"{int(ed.pchic_hub.sum())} on a shared PCHi-C hub)")
 
     rows = []
     for ref in ("non_adjacent", "unstable_adjacent"):

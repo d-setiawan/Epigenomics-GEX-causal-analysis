@@ -510,6 +510,36 @@ partition-stable as a directed edge at any resolution (§10). Nor a cell-level
 direct effect: matched pairing severs cross-channel direct edges, and the claim
 lives at cell-state level. "Shares a physical domain" is not "causes".
 
+## 12. The edge list
+
+The p-values in §11 say the list is enriched; the list itself is the finding.
+Written to
+[`data/crossmark_stable_edges.tsv`](data/crossmark_stable_edges.tsv) — 41 edges
+over 11 genes, annotated with distance, PAG degree, PCHi-C hub status, and how
+the production single-partition run classified the same pair.
+
+**These are distal pairs, not same-locus co-occurrence.** Median separation is
+**125 kb** and 39/41 exceed 10 kb, so this is not the "one element, several
+marks" effect flagged in
+[LIMITATIONS L13](../../docs/LIMITATIONS.md#l13-peaks-are-histone-mark-peaks-not-atac-validation-is-enhanceratac-derived).
+Of the 7 hub edges, 6 exceed 10 kb (median 62 kb); the single 102 bp pair is the
+one genuinely same-locus case.
+
+**All 7 hub edges pair two ACTIVE marks** — H3K27ac×H3K4me2 (4), H3K27ac×H3K4me3
+(2), H3K4me2×H3K4me3 (1) — against 32/41 active-active among the stable set as a
+whole. Active regulatory elements sharing a promoter hub is the biologically
+expected pattern, and no repressive mark appears among the hub edges, which is
+the right outcome given that an enhancer-contact database cannot meaningfully
+confirm H3K27me3/H3K9me3.
+
+**16 of the 41 were never found by the production pipeline** (classified
+`non_adjacent` in its consensus), against 17 `bidirected` and 8 `other_adjacent`.
+Running the search across metacell partitions and keeping what repeats therefore
+recovers edges a single-partition run misses — and those recovered edges are part
+of the set carrying the hub enrichment.
+
+Hub edges concentrate in IL1B (3), IL4R (3) and RAPGEF1 (1).
+
 ---
 
 ## Reproduce
@@ -539,8 +569,10 @@ python Evaluation/scripts/crossmark_deattenuated_stability.py --permute
 # the same, at coarser metacell resolutions (S10)
 python Evaluation/scripts/crossmark_deattenuated_stability.py --permute --merge-to 45
 
-# do the stable cross-mark edges carry a PCHi-C hub signature? (S11)
-python Evaluation/scripts/crossmark_external_validation.py
+# do the stable cross-mark edges carry a PCHi-C hub signature? (S11, S12)
+python Evaluation/scripts/crossmark_external_validation.py \
+    --degree-bins 3 --n-bins 6 \
+    --edges-out Evaluation/results/data/crossmark_stable_edges.tsv
 ```
 
 `real_data_deconvolution.py` reconciles its reconstruction against the shipped
