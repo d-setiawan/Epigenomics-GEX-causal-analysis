@@ -1,8 +1,16 @@
 # Cross-mark structure: what blocks it, and what unblocks it
 
-**Status: in progress (2026-08-02).** Sections 1–4 are complete and reproducible.
-Sections 5–6 are being filled as runs land; numbers there are marked PROVISIONAL
-until the full grid finishes.
+**Status: 2026-08-02.** Complete. Section 8 covers the five genes whose
+permutation null finished (LGALS2 still running).
+
+**Bottom line.** Cross-mark structure here is *not* identifiable by changing what
+the LV search consumes — screening, completion, and de-attenuation all fail under
+proper controls (§6, §5c, §7), because the metacell matrix carries almost no
+between-state signal to begin with (§2). But cross-mark adjacencies *are*
+detectable and reproducible: 24 partition-stable cross-mark edges against 0 under
+a matched-power permutation null (§8). The lever that would change the
+identifiability picture is upstream — metacell resolution, where the current
+setting is measurably at the wrong end of the curve (§9).
 
 Scope: whether cross-mark (peak↔peak across assays, and peak→gene) structure can
 be claimed either with identifiability or with validation, and what has to change
@@ -290,24 +298,101 @@ signal to begin with, and no transformation of a covariance creates information
 that the aggregation destroyed. The lever that would matter is upstream (cells per
 metacell, quantification, or coarser aggregation), not the search.
 
-## 8. IN PROGRESS — are the surviving cross-mark edges real?
+## 8. The surviving cross-mark edges ARE real (positive result)
 
-The raw arm does yield partition-stable cross-mark edges (1–8 per gene). Whether
-those are signal is a separate question from whether de-attenuation helps, and it
-needs a null.
+De-attenuation adds nothing (§7), but the raw arm does yield partition-stable
+cross-mark edges. Whether *those* are signal is a separate question, and it needs
+a null.
 
-Running: a **permutation arm** that reassigns metacell labels at random within each
-mark after the first. Each mark keeps its own metacell size distribution, every
-variable keeps its marginal, and the whole aggregation apparatus is preserved —
-only the correspondence *between* marks is destroyed. Cross-mark edges that remain
-partition-stable under this are produced by the aggregation itself, not by shared
-cell state.
+The **permutation arm** reassigns metacell labels at random within each mark after
+the first. Each mark keeps its own metacell size distribution, every variable
+keeps its marginal, and the entire aggregation apparatus is preserved — only the
+correspondence *between* marks is destroyed. Cross-mark edges that stay
+partition-stable under this would have been produced by the apparatus itself.
+
+Two properties make this a usable null, and both hold empirically:
+edges per partition are unchanged (so it is not a power comparison), and
+**same-mark** stable edges survive (permutation preserves within-mark
+correspondence, so they should).
+
+Partition-stable cross-mark edges, real data vs null, α=0.05, FCI depth 2:
+
+| gene | edges/partition (real / null) | **cross-mark stable: real** | **null** |
+|---|---|---|---|
+| CD14 | 29.8 / 30.3 | 1 | **0** |
+| CD151 | 41.2 / 41.1 | 7 | **0** |
+| CD52 | 42.7 / 42.3 | 8 | **0** |
+| IL4R | 24.8 / 21.4 | 6 | **0** |
+| PTPRJ | 7.5 / 8.1 | 2 | **0** |
+| **total** | matched | **24** | **0** |
+
+**24 partition-stable cross-mark edges across five genes, against zero under a
+matched-power null.** Edge counts per partition agree closely in every gene, so
+this is not a power difference. CD151, CD52 and IL4R carry the result; CD14 (1)
+and PTPRJ (2) are individually uninformative.
+
+So cross-mark structure here is **detectable and reproducible even though it is
+not identifiable** by any of the covariance repairs in §5–§7. Those are different
+questions and they have different answers.
+
+What these edges support is an **adjacency** claim — "these two marks covary
+across cell states beyond what the pairing apparatus manufactures" — at the level
+of metacell (cell-state) variation. They do **not** support an orientation, and
+they do not license a cell-level direct effect: matched pairing severs
+cross-channel direct edges, and the same-mark/cross-mark scale asymmetry
+([LIMITATIONS L14](../../docs/LIMITATIONS.md#l14-same-mark-and-cross-mark-covariances-are-not-on-the-same-scale))
+is still present in the covariance these were found in.
+
+LGALS2 was still running when this was written and is not included.
+
+## 9. The lever that does work: metacell resolution
+
+If the binding constraint is signal per variable (§2) and the noise term is
+`Sigma_within / n`, then coarser metacells buy signal directly and cost rows.
+That is a tradeoff with a computable optimum, and the current setting is at the
+wrong end of it.
+
+`Evaluation/scripts/crossmark_resolution_tradeoff.py` agglomerates the *existing*
+metacells by their mean profiles (Ward), which holds the embedding, the cells and
+the completeness rule fixed so that only granularity varies. Pooled over CD14,
+CD151, IL4R:
+
+| metacells | rows | cells/mark | median signal share | **usable (>0.25)** | usable (>0.50) |
+|---|---|---|---|---|---|
+| **133 (current)** | 133 | 10.0 | **−0.012** | **10.4%** | 3.7% |
+| 100 | 100 | 11.7 | −0.001 | 12.4% | 4.5% |
+| 80 | 80 | 12.8 | +0.015 | 18.6% | 4.5% |
+| 60 | 60 | 13.8 | +0.046 | 24.7% | 8.5% |
+| 45 | 45 | 19.3 | +0.091 | 39.1% | 13.3% |
+| **35** | 35 | 22.0 | **+0.209** | **49.2%** | 22.8% |
+| 25 | 25 | 28.0 | +0.159 | 43.9% | 30.9% |
+| 18 | 18 | 23.0 | +0.104 | 41.3% | 25.6% |
+
+Between 133 and 35 metacells the median variable goes from carrying **no**
+between-state signal to carrying +0.209, and the fraction of usable variables
+rises **4.7×** (10.4% → 49.2%). The price is 133 rows → 35.
+
+The curve flattens below ~35 and the median share stops improving, because merging
+past that point starts destroying between-state variance as well as noise. So 25–45
+is the region worth testing, not the extreme.
+
+This is a lower bound: merging existing metacells is a coarse proxy for
+re-clustering at a lower resolution, which has the same cells available and can
+place boundaries better.
+
+**Whether 35 rows can support FCI is the open question**, and it is the one worth
+answering next — the current design trades 3.8× the rows for roughly a fifth of
+the usable variables, and §2 says the rows are being spent on variables that have
+nothing to contribute.
 
 ---
 
 ## Reproduce
 
 ```bash
+# metacell resolution tradeoff (the actionable one)
+python Evaluation/scripts/crossmark_resolution_tradeoff.py
+
 # signal-share audit across the panel
 python Evaluation/scripts/crossmark_snr_panel.py --out snr_panel.tsv
 
@@ -322,6 +407,9 @@ python Evaluation/scripts/crossmark_experiment.py --depth 2
 
 # screening vs random at matched size, across 11 partitions
 python Evaluation/scripts/crossmark_screening_stability.py --threshold 0.10
+
+# de-attenuation vs an edge-matched raw arm, plus the permutation null
+python Evaluation/scripts/crossmark_deattenuated_stability.py --permute
 ```
 
 `real_data_deconvolution.py` reconciles its reconstruction against the shipped
