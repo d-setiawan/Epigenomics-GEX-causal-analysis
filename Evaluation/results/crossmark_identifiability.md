@@ -403,18 +403,23 @@ Whether these rows can still support FCI is the question §10 answers.
 
 Acting on §9 — running the full stability harness with each partition's metacells
 agglomerated to a target count, permutation null included, everything else
-identical (`--merge-to`). CD151, 11 partitions, edges stable in ≥6:
+identical (`--merge-to`). Three genes, 11 partitions, edges stable in ≥6.
 
-| metacells | edges/partition | **cross-mark stable** | null | λ\* | **directed stable** |
-|---|---|---|---|---|---|
-| **133 (current)** | 41.2 | **7** | 0 | 0.149 | **0** |
-| 60 | 31.1 | 2 | 0 | 0.008 | **0** |
-| 45 | 29.7 | 2 | 0 | 0.000 | **0** |
-| 35 | 28.3 | 1 | 0 | 0.000 | **0** |
-| 25 | 20.9 | **0** | 0 | 0.000 | **0** |
+Partition-stable **cross-mark** edges (raw arm):
 
-**Coarsening monotonically destroys cross-mark edge recovery.** 133 metacells is
-the best of the tested points, not the worst. Signal share per variable rises as
+| metacells | CD151 | CD52 | IL4R | **total** | null | λ\* | **directed stable** |
+|---|---|---|---|---|---|---|---|
+| **133 (current)** | 7 | 8 | 6 | **21** | 0 | 0.14–0.22 | **0** |
+| 60 | 2 | 1 | 2 | **5** | 0 | 0.01–0.11 | **0** |
+| 45 | 2 | 0 | 1 | **3** | 0 | 0.00–0.05 | **0** |
+| 25 | 0 | 0 | 0 | **0** | 0 | 0.000 | **0** |
+
+(CD151 alone at 35 metacells: 1. The decline is monotonic in every gene
+separately, not only in the total.)
+
+**Coarsening monotonically destroys cross-mark edge recovery**, in all three genes
+independently: 21 stable cross-mark edges at 133 metacells, 5 at 60, 3 at 45, none
+at 25. 133 metacells is the best of the tested points, not the worst. Signal share per variable rises as
 metacells coarsen (§9) but the row count falls faster, and partition stability —
 the thing an edge claim actually rests on — collapses with it. By 25 metacells
 nothing repeats across partitions at all.
@@ -428,8 +433,8 @@ ill-conditioned to subtract any of the noise term, so de-attenuation is not mere
 unhelpful there but inadmissible.
 
 **And the identifiability answer, directly.** *No* cross-mark edge is
-partition-stable **as a directed edge** at any resolution, including the current
-one. Adjacencies repeat; orientations never do. That is the cleanest available
+partition-stable **as a directed edge** in any gene at any resolution, including
+the current one — 0 out of 0 across all twelve gene x resolution cells. Adjacencies repeat; orientations never do. That is the cleanest available
 statement that the cross-mark claim this design supports is adjacency and not
 direction, and it does not depend on any of the covariance arguments in §1–§7.
 
