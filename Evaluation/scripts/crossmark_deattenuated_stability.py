@@ -128,25 +128,68 @@ def fci_on_cov(Sig, names, n, alpha, depth):
     s.setDepth(int(depth)); s.setStable(True)
     s.setCompleteRuleSetUsed(True); s.setVerbose(False)
     g = s.search()
-    out = set()
+    out, directed = set(), set()
     for e in g.getEdges():
         u, v = back[str(e.getNode1().getName())], back[str(e.getNode2().getName())]
-        out.add((u, v) if u < v else (v, u))
-    return out
+        eu, ev = str(e.getEndpoint1()), str(e.getEndpoint2())
+        key = (u, v) if u < v else (v, u)
+        out.add(key)
+        # A definitively DIRECTED mark (tail at one end, arrowhead at the
+        # other) is what an identifiability claim needs; `o-o` and `<->` are
+        # not orientations.  Tracked separately from adjacency because the two
+        # questions have had different answers throughout this analysis.
+        if {eu, ev} == {"TAIL", "ARROW"}:
+            directed.add(key)
+    return out, directed
 
 
-def summarise(edge_sets, min_k):
-    cnt = {}
-    for es in edge_sets:
-        for e in es:
+def merge_metacells(assign, order, cols, cell_vals, cell_bc, target):
+    """
+    Coarsen a partition by merging its metacells, Ward on their mean profiles.
+
+    This holds the embedding, the cells, and the completeness rule fixed and
+    varies only granularity, so a comparison across `target` is a comparison of
+    aggregation level and not of clustering method.  Returns a modified
+    assignment table plus the new (smaller) list of groups.
+    """
+    from scipy.cluster.hierarchy import fcluster, linkage
+
+    if target <= 0 or target >= len(order):
+        return assign, order
+    prof = build_matrix(cols, cell_vals, cell_bc, assign, order)
+    keep = np.isfinite(prof).all(axis=0)
+    if keep.sum() < 2:
+        return assign, order
+    P = prof[:, keep]
+    P = (P - P.mean(0)) / np.clip(P.std(0), 1e-9, None)
+    lab = fcluster(linkage(P, method="ward"), t=target, criterion="maxclust")
+    mapping = {m: int(lab[i]) for i, m in enumerate(order)}
+
+    out = assign.copy()
+    out["metacell_id"] = out["metacell_id"].map(mapping)
+    out = out[out["metacell_id"].notna()]
+    out["metacell_id"] = out["metacell_id"].astype(int)
+    return out, sorted(out["metacell_id"].unique())
+
+
+def summarise(results, min_k):
+    """`results` is a list of (adjacency_set, directed_set), one per partition."""
+    cnt, dcnt = {}, {}
+    for adj, dirc in results:
+        for e in adj:
             cnt[e] = cnt.get(e, 0) + 1
+        for e in dirc:
+            dcnt[e] = dcnt.get(e, 0) + 1
     stable = {e for e, c in cnt.items() if c >= min_k}
+    stable_dir = {e for e, c in dcnt.items() if c >= min_k}
     cross = lambda e: e[0].rsplit("__", 1)[1] != e[1].rsplit("__", 1)[1]
-    return dict(mean_edges=float(np.mean([len(es) for es in edge_sets])),
+    return dict(mean_edges=float(np.mean([len(a) for a, _ in results])),
                 n_seen=len(cnt), n_stable=len(stable),
                 frac_stable=len(stable) / len(cnt) if cnt else float("nan"),
                 n_stable_cross=sum(cross(e) for e in stable),
                 n_stable_same=sum(not cross(e) for e in stable),
+                n_stable_directed=len(stable_dir),
+                n_stable_dir_cross=sum(cross(e) for e in stable_dir),
                 stable_edges=sorted(stable))
 
 
@@ -173,6 +216,11 @@ def main():
                          "mark's own metacell structure, and the whole "
                          "aggregation apparatus")
     ap.add_argument("--permute-seed", type=int, default=0)
+    ap.add_argument("--merge-to", type=int, default=0,
+                    help="agglomerate each partition's metacells to this many "
+                         "groups before building the matrix (0 = leave alone). "
+                         "Trades rows for cells-per-metacell, i.e. for signal "
+                         "per variable; see crossmark_resolution_tradeoff.py")
     ap.add_argument("--out", default="crossmark_deattenuated_stability.tsv")
     a = ap.parse_args()
 
@@ -216,10 +264,14 @@ def main():
             sets["permuted"] = []
         lams = []
         cache = []
+        min_rows = 20 if a.merge_to else 30
         for n, _ in parts:
-            X = build_matrix(cols, cell_vals, cell_bc, assigns[n], orders[n])
+            an, on = (merge_metacells(assigns[n], orders[n], cols, cell_vals,
+                                      cell_bc, a.merge_to)
+                      if a.merge_to else (assigns[n], orders[n]))
+            X = build_matrix(cols, cell_vals, cell_bc, an, on)
             good = np.isfinite(X).all(axis=1)
-            if good.sum() < 30:
+            if good.sum() < min_rows:
                 continue
             live = X[good].std(axis=0) > 1e-9
             if live.sum() < 5:
@@ -228,7 +280,7 @@ def main():
             names = [cols[j] for j in sub]
             ch = ch_all[sub]
             raw, noise = decompose([cols[j] for j in sub], ch, cell_vals, cell_bc,
-                                   assigns[n], orders[n], X[:, sub], good)
+                                   an, on, X[:, sub], good)
             lam = lambda_star(raw, noise, a.max_cond)
             lams.append(lam)
             nrow = int(good.sum())
@@ -245,15 +297,15 @@ def main():
                 # surviving here are produced by the aggregation apparatus
                 # itself, not by shared cell state.
                 rng = np.random.default_rng(a.permute_seed + hash(n) % 10000)
-                pa = assigns[n].copy()
+                pa = an.copy()
                 for mk in sorted(pa["mark"].unique())[1:]:
                     sel = pa["mark"] == mk
                     pa.loc[sel, "metacell_id"] = rng.permutation(
                         pa.loc[sel, "metacell_id"].to_numpy())
                 Xp = build_matrix([cols[j] for j in sub], cell_vals, cell_bc,
-                                  pa, orders[n])
+                                  pa, on)
                 gp = np.isfinite(Xp).all(axis=1)
-                if gp.sum() >= 30 and np.all(Xp[gp].std(axis=0) > 1e-9):
+                if gp.sum() >= min_rows and np.all(Xp[gp].std(axis=0) > 1e-9):
                     sets["permuted"].append(fci_on_cov(
                         np.cov(rank_gaussian(Xp[gp]), rowvar=False),
                         names, int(gp.sum()), a.alpha, a.depth))
@@ -268,11 +320,11 @@ def main():
         # RAW arm's alpha until it emits the same number of edges per partition,
         # then compare.  Only a difference that survives this is attributable to
         # the covariance rather than to an effectively looser threshold.
-        target = float(np.mean([len(s) for s in sets["deattenuated"]]))
+        target = float(np.mean([len(s[0]) for s in sets["deattenuated"]]))
         lo, hi, alpha_m = a.alpha, 0.9, a.alpha
         for _ in range(8):
             mid = 0.5 * (lo + hi)
-            got = np.mean([len(fci_on_cov(r, nm, nr, mid, a.depth))
+            got = np.mean([len(fci_on_cov(r, nm, nr, mid, a.depth)[0])
                            for r, nm, nr in cache])
             if got < target:
                 lo, alpha_m = mid, mid
@@ -284,17 +336,20 @@ def main():
                                for r, nm, nr in cache]
         print(f"  edge-matched raw arm: alpha {a.alpha} -> {alpha_m:.4f}")
         print(f"\n{gene}: {len(cols)} vars, {len(sets['raw'])} partitions, "
-              f"lambda* median {np.median(lams):.3f}")
+              f"lambda* median {np.median(lams):.3f}"
+              + (f", merged to {a.merge_to}" if a.merge_to else ""))
         for arm, es in sets.items():
+            if not es:
+                continue
             s = summarise(es, a.min_k)
             s.update(gene=gene, arm=arm, n_vars=len(cols),
-                     lam=float(np.median(lams)))
+                     lam=float(np.median(lams)), merge_to=a.merge_to)
             rows.append(s)
             print(f"    {arm:13s} edges/part {s['mean_edges']:6.1f}   "
                   f"stable(>={a.min_k}) {s['n_stable']:3d}   "
-                  f"frac {s['frac_stable']:.3f}   "
-                  f"cross-mark stable {s['n_stable_cross']:3d}   "
-                  f"same {s['n_stable_same']:3d}")
+                  f"cross {s['n_stable_cross']:3d}   same {s['n_stable_same']:3d}   "
+                  f"| DIRECTED stable {s['n_stable_directed']:3d}  "
+                  f"cross {s['n_stable_dir_cross']:3d}")
 
     df = pd.DataFrame(rows)
     df.drop(columns=["stable_edges"]).to_csv(a.out, sep="\t", index=False)
@@ -307,8 +362,15 @@ def main():
                               stable=("n_stable", "mean"),
                               frac_stable=("frac_stable", "mean"),
                               stable_cross=("n_stable_cross", "mean"),
-                              stable_same=("n_stable_same", "mean"))
+                              stable_same=("n_stable_same", "mean"),
+                              stable_directed=("n_stable_directed", "mean"),
+                              stable_dir_cross=("n_stable_dir_cross", "mean"))
     print(g.round(3).to_string())
+    print("\nTOTALS (summed over genes)")
+    tot = df.groupby("arm").agg(cross=("n_stable_cross", "sum"),
+                                same=("n_stable_same", "sum"),
+                                dir_cross=("n_stable_dir_cross", "sum"))
+    print(tot.to_string())
 
     # which cross-mark edges survive in the de-attenuated arm
     for _, r in df[df.arm == "deattenuated"].iterrows():

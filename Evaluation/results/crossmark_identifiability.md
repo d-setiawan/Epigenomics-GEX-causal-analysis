@@ -1,16 +1,24 @@
 # Cross-mark structure: what blocks it, and what unblocks it
 
-**Status: 2026-08-02.** Complete. Section 8 covers the five genes whose
-permutation null finished (LGALS2 still running).
+**Status: 2026-08-02.** Complete. §8 covers the five genes whose permutation null
+finished (LGALS2 excluded). §9 carries a same-day correction, superseded by §10.
 
-**Bottom line.** Cross-mark structure here is *not* identifiable by changing what
-the LV search consumes — screening, completion, and de-attenuation all fail under
-proper controls (§6, §5c, §7), because the metacell matrix carries almost no
-between-state signal to begin with (§2). But cross-mark adjacencies *are*
-detectable and reproducible: 24 partition-stable cross-mark edges against 0 under
-a matched-power permutation null (§8). The lever that would change the
-identifiability picture is upstream — metacell resolution, where the current
-setting is measurably at the wrong end of the curve (§9).
+**Bottom line.** Cross-mark structure here is *not* identifiable. Nothing that
+changes what the LV search consumes recovers it — screening, completion, and
+de-attenuation all fail under proper controls (§6, §5c, §7) — and coarsening the
+metacells, which the signal-share curve suggested, makes it strictly worse (§10).
+The direct statement: **no cross-mark edge is partition-stable as a *directed*
+edge at any resolution tested**, including the current one.
+
+Cross-mark **adjacencies**, by contrast, are detectable and reproducible: 24
+partition-stable cross-mark edges against 0 under a matched-power permutation
+null (§8). That is the claim this design supports — "these marks covary across
+cell states beyond what the pairing apparatus manufactures" — and it is a claim
+about adjacency at cell-state level, not about direction or cell-level effect.
+
+The root cause sits upstream of any search: the median panel variable carries no
+between-state signal at all (§2), and same-mark and cross-mark covariance entries
+are not on the same scale by construction (§1).
 
 Scope: whether cross-mark (peak↔peak across assays, and peak→gene) structure can
 be claimed either with identifiability or with validation, and what has to change
@@ -345,7 +353,16 @@ is still present in the covariance these were found in.
 
 LGALS2 was still running when this was written and is not included.
 
-## 9. The lever that does work: metacell resolution
+## 9. Metacell resolution: signal share improves, edge recovery does not
+
+> **Correction 2026-08-02 (same day).** This section originally presented ~35
+> metacells as the operating point to move to, on the strength of the signal-share
+> curve below, and left "whether 35 rows can support FCI" as the open question.
+> **That question has since been answered, and the answer is no** — see §10. The
+> signal-share curve is correct and reproducible; the recommendation drawn from it
+> was wrong. Signal share per variable is not the objective. Read §9 as a
+> diagnostic of *why* the current design is noisy, and §10 for what happens when
+> you act on it.
 
 If the binding constraint is signal per variable (§2) and the noise term is
 `Sigma_within / n`, then coarser metacells buy signal directly and cost rows.
@@ -380,10 +397,45 @@ This is a lower bound: merging existing metacells is a coarse proxy for
 re-clustering at a lower resolution, which has the same cells available and can
 place boundaries better.
 
-**Whether 35 rows can support FCI is the open question**, and it is the one worth
-answering next — the current design trades 3.8× the rows for roughly a fifth of
-the usable variables, and §2 says the rows are being spent on variables that have
-nothing to contribute.
+Whether these rows can still support FCI is the question §10 answers.
+
+## 10. Coarsening destroys edge recovery, and nothing orients at any resolution
+
+Acting on §9 — running the full stability harness with each partition's metacells
+agglomerated to a target count, permutation null included, everything else
+identical (`--merge-to`). CD151, 11 partitions, edges stable in ≥6:
+
+| metacells | edges/partition | **cross-mark stable** | null | λ\* | **directed stable** |
+|---|---|---|---|---|---|
+| **133 (current)** | 41.2 | **7** | 0 | 0.149 | **0** |
+| 60 | 31.1 | 2 | 0 | 0.008 | **0** |
+| 45 | 29.7 | 2 | 0 | 0.000 | **0** |
+| 35 | 28.3 | 1 | 0 | 0.000 | **0** |
+| 25 | 20.9 | **0** | 0 | 0.000 | **0** |
+
+**Coarsening monotonically destroys cross-mark edge recovery.** 133 metacells is
+the best of the tested points, not the worst. Signal share per variable rises as
+metacells coarsen (§9) but the row count falls faster, and partition stability —
+the thing an edge claim actually rests on — collapses with it. By 25 metacells
+nothing repeats across partitions at all.
+
+The unmerged row is a re-run through the same code path as the merged ones and
+reproduces the §7/§8 numbers exactly (raw 9 stable / 7 cross, de-attenuated 13/10,
+edge-matched 13/10, permuted 1/0), so the comparison is like-for-like.
+
+λ\* falls to 0.000 by 45 metacells: with that few rows the covariance is too
+ill-conditioned to subtract any of the noise term, so de-attenuation is not merely
+unhelpful there but inadmissible.
+
+**And the identifiability answer, directly.** *No* cross-mark edge is
+partition-stable **as a directed edge** at any resolution, including the current
+one. Adjacencies repeat; orientations never do. That is the cleanest available
+statement that the cross-mark claim this design supports is adjacency and not
+direction, and it does not depend on any of the covariance arguments in §1–§7.
+
+So §9's signal-share optimum is a real property of the data and the wrong
+objective to optimise. The two curves point in opposite directions, and edge
+stability is the one that matters.
 
 ---
 
@@ -410,6 +462,9 @@ python Evaluation/scripts/crossmark_screening_stability.py --threshold 0.10
 
 # de-attenuation vs an edge-matched raw arm, plus the permutation null
 python Evaluation/scripts/crossmark_deattenuated_stability.py --permute
+
+# the same, at coarser metacell resolutions (S10)
+python Evaluation/scripts/crossmark_deattenuated_stability.py --permute --merge-to 45
 ```
 
 `real_data_deconvolution.py` reconciles its reconstruction against the shipped
