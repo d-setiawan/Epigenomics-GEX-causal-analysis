@@ -14,9 +14,9 @@ edge at any resolution tested**, including the current one.
 Cross-mark **adjacencies**, by contrast, hold up under two independent nulls.
 41 partition-stable cross-mark edges over the 15-gene panel survive a
 matched-power permutation null (§8), and they are enriched for **PCHi-C shared
-promoter hubs** against a distance-matched null — 17.1% vs 6.3% for non-edges
-(p = 0.008) and vs 7.5% for edges found but not partition-stable (p = 0.020)
-(§11). That second contrast is the informative one: stability selects biology,
+promoter hubs** against a distance- *and* degree-matched null — 17.1% vs 6.3% for
+non-edges (p = 0.002) and vs 7.5% for edges found but not partition-stable
+(p = 0.004) (§11). That second contrast is the informative one: stability selects biology,
 not merely strong correlations.
 
 So the supported claim is an **adjacency** claim at cell-state level: these
@@ -468,12 +468,20 @@ partition-stable (§10) — adjacency is what survived.
 **Full panel (15 genes, the pre-specified unit of analysis).** 41 stable
 cross-mark pairs, 7042 candidate pairs:
 
-| reference | stable hub rate | reference rate | matched diff | **perm p** |
+| reference | stable hub rate | reference rate | distance-matched | **+ degree-matched** |
 |---|---|---|---|---|
-| non_adjacent (n=5566) | **17.1%** | 6.3% | +0.108 | **0.0079** |
-| unstable_adjacent (n=1435) | **17.1%** | 7.5% | +0.097 | **0.0204** |
+| non_adjacent (n=5566) | **17.1%** | 6.3% | +0.108, p=0.0079 | **+0.116, p=0.0022** |
+| unstable_adjacent (n=1435) | **17.1%** | 7.5% | +0.097, p=0.0204 | **+0.109, p=0.0036** |
 
-**Both are significant, including the demanding one.** The second row compares
+The degree-matched columns are the ones to quote. PAG degree is a live confound
+here and cuts the same way as distance: a peak adjacent to many others is both
+more likely to produce a partition-stable edge *and* more likely to overlap a
+PCHi-C fragment, since both track how active and well-covered the region is. The
+right-hand columns bin jointly on distance x degree, so the label is permuted only
+among pairs matched on both. **The enrichment survives and in fact strengthens** —
+degree was slightly masking it, not manufacturing it.
+
+**Both are significant under both matchings, including the demanding one.** The second row compares
 stable cross-mark edges against edges that were *found but did not survive
 re-partitioning* — same search, same data, same distance bins, differing only in
 whether the edge repeated across metacell boundaries. Stable edges carry 2.3x the
