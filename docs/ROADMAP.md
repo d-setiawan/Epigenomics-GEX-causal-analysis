@@ -445,10 +445,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   and same-mark vs cross-mark covariances are not on the same scale
   ([L14](LIMITATIONS.md#l14-same-mark-and-cross-mark-covariances-are-not-on-the-same-scale)).
   **Positive:** a matched-power permutation null confirms the surviving cross-mark edges are real.
-  **Actionable:** metacell resolution is the lever, and the current setting is at the wrong end of the
-  curve. Numbers in
+  **Resolution tested and rejected:** coarsening the metacells (25–60) raises signal share per variable
+  but destroys partition stability faster, so the current 133 is the best point tested. **No cross-mark
+  edge is partition-stable as a *directed* edge at any resolution** — adjacency claims are supported,
+  orientation claims are not. Numbers in
   [Evaluation/results/crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
-  *Open:* run the discovery pipeline at 25–45 metacells and check whether the rows still support FCI.
+  *Open:* the remaining levers are upstream of aggregation entirely — quantification (region-level
+  rather than per-peak, to raise per-variable counts) or more cells per assay. Neither is a search change.
 - **2026-07-10** **EXPLORATORY: element-level causal modeling** ([`CausalDiscovery/results/element_level_modeling_design.md`](../CausalDiscovery/results/element_level_modeling_design.md),
   `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
   **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges
