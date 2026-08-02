@@ -450,8 +450,13 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   edge is partition-stable as a *directed* edge at any resolution** — adjacency claims are supported,
   orientation claims are not. Numbers in
   [Evaluation/results/crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
-  *Open:* the remaining levers are upstream of aggregation entirely — quantification (region-level
-  rather than per-peak, to raise per-variable counts) or more cells per assay. Neither is a search change.
+  **Biology result:** the 41 partition-stable cross-mark adjacencies (15-gene panel) are enriched for
+  PCHi-C shared promoter hubs against a distance-matched null — significant both vs non-edges and, more
+  tellingly, vs edges found but *not* partition-stable. Stability selects biology, not just strong
+  correlations. The claim is adjacency at cell-state level ("shared physical domain"), never orientation.
+  *Open:* the remaining levers for identifiability are upstream of aggregation entirely — quantification
+  (region-level rather than per-peak, to raise per-variable counts) or more cells per assay. Neither is a
+  search change. Extending the peak↔peak validation to the motif/ChIP axes would sharpen the biology claim.
 - **2026-07-10** **EXPLORATORY: element-level causal modeling** ([`CausalDiscovery/results/element_level_modeling_design.md`](../CausalDiscovery/results/element_level_modeling_design.md),
   `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
   **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges

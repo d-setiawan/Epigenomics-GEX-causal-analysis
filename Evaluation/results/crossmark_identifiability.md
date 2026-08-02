@@ -1,7 +1,8 @@
 # Cross-mark structure: what blocks it, and what unblocks it
 
 **Status: 2026-08-02.** Complete. §9 carries a same-day correction, superseded by
-§10. §11 is a negative and is underpowered — read it before quoting §8.
+§10. §11 reports the full 15-gene panel and supersedes an earlier underpowered
+six-gene pass recorded in the same section.
 
 **Bottom line.** Cross-mark structure here is *not* identifiable. Nothing that
 changes what the LV search consumes recovers it — screening, completion, and
@@ -10,14 +11,17 @@ metacells, which the signal-share curve suggested, makes it strictly worse (§10
 The direct statement: **no cross-mark edge is partition-stable as a *directed*
 edge at any resolution tested**, including the current one.
 
-Cross-mark **adjacencies** are reproducible: 31 partition-stable cross-mark edges
-over six genes against 0 under a matched-power permutation null (§8). But
-reproducible is not the same as biological — against a PCHi-C shared-hub
-signature with a distance-matched null they run ~2x the null rate and **do not
-reach significance** (p = 0.10 vs non-adjacent pairs, p = 0.20 vs found-but-
-unstable pairs, n = 31) (§11). So the supported claim is narrow: these
-adjacencies are not manufactured by the aggregation apparatus. They are not yet
-shown to correspond to known physical domain structure.
+Cross-mark **adjacencies**, by contrast, hold up under two independent nulls.
+41 partition-stable cross-mark edges over the 15-gene panel survive a
+matched-power permutation null (§8), and they are enriched for **PCHi-C shared
+promoter hubs** against a distance-matched null — 17.1% vs 6.3% for non-edges
+(p = 0.008) and vs 7.5% for edges found but not partition-stable (p = 0.020)
+(§11). That second contrast is the informative one: stability selects biology,
+not merely strong correlations.
+
+So the supported claim is an **adjacency** claim at cell-state level: these
+element pairs sit in shared physical domains. Not orientation, and not a
+cell-level direct effect.
 
 The root cause sits upstream of any search: the median panel variable carries no
 between-state signal at all (§2), and same-mark and cross-mark covariance entries
@@ -461,27 +465,42 @@ The positive class is the *partition-stable cross-mark* set rather than the `<->
 mark class the validator normally scores, because orientation was never
 partition-stable (§10) — adjacency is what survived.
 
-31 stable cross-mark pairs over six genes, 5498 candidate pairs:
+**Full panel (15 genes, the pre-specified unit of analysis).** 41 stable
+cross-mark pairs, 7042 candidate pairs:
 
 | reference | stable hub rate | reference rate | matched diff | **perm p** |
 |---|---|---|---|---|
-| non_adjacent (n=4377) | 9.7% | 4.9% | +0.054 | **0.102** |
-| unstable_adjacent (n=1090) | 9.7% | 6.0% | +0.042 | **0.205** |
+| non_adjacent (n=5566) | **17.1%** | 6.3% | +0.108 | **0.0079** |
+| unstable_adjacent (n=1435) | **17.1%** | 7.5% | +0.097 | **0.0204** |
 
-**Neither is significant.** The direction is right and the effect is not small —
-roughly double the hub rate — but with 31 positives the test cannot resolve it.
+**Both are significant, including the demanding one.** The second row compares
+stable cross-mark edges against edges that were *found but did not survive
+re-partitioning* — same search, same data, same distance bins, differing only in
+whether the edge repeated across metacell boundaries. Stable edges carry 2.3x the
+shared-hub rate of unstable ones after distance matching. **Partition stability is
+selecting biology, not merely strong correlations.**
 
-The second row is the more demanding and the more informative one: it compares
-stable edges against edges that were *found but did not survive re-partitioning*.
-A +0.042 difference at p = 0.20 is consistent with partition stability selecting
-mildly better edges, and equally consistent with it selecting merely stronger
-correlations. This analysis cannot separate those.
+*Disclosure of sequence.* A first pass on six genes gave 31 positives at a 9.7%
+hub rate, p = 0.102 and 0.205 — reported here because it was run first, not
+because it is the analysis. Extending to all 15 genes is a move to the complete
+panel, not a search over subsets, and it is the result to quote. Note that both
+the count and the rate changed (31 -> 41 positives, 9.7% -> 17.1%), so this was
+not purely a power gain: the nine added genes carry a higher hub rate among their
+stable cross-mark edges. With per-gene yields of 0-8 that spread is expected, but
+it means the six-gene pass should be read as underpowered rather than as an
+independent replication.
 
-**What this does and does not license.** The permutation null (§8) supports
-"these cross-mark adjacencies are not manufactured by the pairing apparatus".
-It does not support "these cross-mark adjacencies are known regulatory
-contacts". Reaching the second needs more positives — more genes, since the
-per-gene yield is 1–8 — not a different statistic.
+**What this licenses.** Two independent nulls now support the cross-mark
+adjacencies: the permutation null (§8) says they are not manufactured by the
+pairing apparatus, and the distance-matched PCHi-C test says they are enriched for
+shared promoter hubs relative both to non-edges and to unstable edges. Together
+that is an evidenced claim that partition-stable cross-mark adjacencies pick out
+element pairs sitting in shared physical domains.
+
+**What it still does not license.** Orientation — no cross-mark edge is
+partition-stable as a directed edge at any resolution (§10). Nor a cell-level
+direct effect: matched pairing severs cross-channel direct edges, and the claim
+lives at cell-state level. "Shares a physical domain" is not "causes".
 
 ---
 
