@@ -34,9 +34,27 @@ portable (no repo-relative links in the body).
 
 ## Theory — [identifiability/](identifiability)
 
+What FCI's guarantees are, in general.
+
 - [project_identifiability_guarantees.md](identifiability/project_identifiability_guarantees.md) — the full guarantee analysis for this project's design.
 - [identifiability_guarantees_intro.md](identifiability/identifiability_guarantees_intro.md) — introduction to what is and isn't identifiable here.
 - [fci_identifiability_summary.md](identifiability/fci_identifiability_summary.md) — what FCI/PAG output does and does not license.
+
+## Theory — [theory/](theory)
+
+What *this data construction* does to those guarantees. Derivations with the algebra worked through,
+each connected to the measurement that tested it. Start at [theory/README.md](theory/README.md).
+
+- [01_aggregation_algebra.md](theory/01_aggregation_algebra.md) — the covariance the search actually
+  receives; attenuation; why partition instability is a corollary rather than a separate problem.
+- [02_identifiability.md](theory/02_identifiability.md) — why same-mark pairs keep their orientations
+  and cross-mark pairs cannot; the rank bound on the between-metacell covariance.
+- [03_algorithms.md](theory/03_algorithms.md) — PC / FCI / GFCI / BOSS / BFCI / LV-Heuristic in
+  equations, and why two implementations of FCI disagree 5.3×.
+- [04_simulation.md](theory/04_simulation.md) — the controlled contrasts, and seven predictions
+  against their outcomes.
+- [05_synthesis.md](theory/05_synthesis.md) — four repairs, why each failed, and the estimator the
+  surviving claim rests on.
 
 ## Earlier design plans — [planning/](planning)
 
