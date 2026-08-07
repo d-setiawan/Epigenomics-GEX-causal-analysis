@@ -33,7 +33,9 @@ non-Gaussian model classes are strictly **worse** on this evaluation, not better
 The root cause sits upstream of any search: same-mark and cross-mark covariance
 entries are not on the same scale by construction (§1), and the peak × cell
 matrices are 0.5–1.5% dense, so a given (peak, metacell) has ~0.1 expected
-detections (§13). The median panel variable's estimated between-state signal
+detections (§13). A count-calibrated simulation shows the asymmetry is
+**depth-invariant** — a 100× depth increase triples same-mark recovery and leaves
+cross-mark flat (§16b), because cross-mark pairs were never jointly observed. The median panel variable's estimated between-state signal
 share is ~0 under both a Gaussian and a count-native estimator, and no
 non-Gaussian view rescues a variable the Gaussian one discards. **But see §14:**
 the count *test* is far too underpowered at these depths to license "there is no
@@ -698,9 +700,97 @@ choice tested.
 negatively**: transform (§15, no material difference), likelihood (§15, strictly
 worse), and variable granularity (§13, no change). Combined with §5–§7
 (covariance repairs) and §10 (aggregation resolution), every lever internal to
-the search and its inputs has been tested. What remains is outside it: more
-counts per variable (§14 puts the requirement at roughly 450× current depth for
-the count test to become usable), or a different assay.
+the search and its inputs has been tested.
+
+§16 then tests the one remaining lever — more counts — in a count-calibrated
+simulator against ground truth, and finds it **does not rescue cross-mark
+structure** either. Read §16b before quoting depth as a route forward.
+
+## 16. A count-realistic simulator, and what it says about depth
+
+§5 and §15 never met: every simulation conclusion here was drawn on the pairing
+harness's **dense Gaussian** data (`V = A V + Gamma C + e`, continuous, always
+non-zero), while the transform and model-class question is entirely about
+1%-dense counts. `crossmark_count_simulator.py` closes that gap by adding an
+observation layer under the existing causal layer, so the ground-truth DAG is
+still known:
+
+```
+C                          latent cell state
+V = A V + Gamma C + e      cell-level chromatin ACTIVITY; A is the true DAG
+lambda_ij = depth_i * exp(beta * V_ij + alpha_j)
+Y_ij ~ 1{Poisson(lambda_ij) > 0}
+```
+
+`alpha_j` is bisected per peak to hit a target detection rate and `depth_i` is
+lognormal, so the observation layer is pinned to the measured assay while `beta`
+and depth stay free.
+
+**The simulator is calibrated against the real panel before being used for
+anything** (`--realism-only`):
+
+| statistic | simulated | real (CD151) |
+|---|---|---|
+| detection rate per peak (median) | 0.0157 | 0.0126 |
+| detection IQR | 0.0063–0.0278 | 0.0043–0.0211 |
+| fraction of non-zero counts > 1 | 0.000 | 0.015 |
+| per-cell depth log-sd | 0.66 | 0.66 |
+
+Two calibration facts drove the design. Per-peak detection rates had to be drawn
+from a distribution, not pinned to a common median — the real IQR is a five-fold
+spread and a homogeneous panel would flatter any method. And the observation is
+**Bernoulli, not Poisson**: 98.5% of real non-zero counts are exactly 1, and a
+Poisson layer produced ~4× too many multi-counts. That single fact also explains
+§15's otherwise-surprising result that the `detection` transform, which discards
+magnitude entirely, performs on par — there is almost no magnitude to discard.
+
+### 16a. The model-class finding reproduces against ground truth
+
+Scored on true edge recovery rather than a proxy, at realistic sparsity (30
+variables, 133 metacells, 14 cells per metacell per mark, 3 seeds):
+
+| test | rec_cross @×1 | ×3 | ×10 | ×30 | ×100 |
+|---|---|---|---|---|---|
+| fisherz | 0.058 | **0.085** | 0.112 | **0.076** | 0.090 |
+| dg_lrt | **0.064** | 0.075 | **0.115** | 0.073 | 0.090 |
+| bf_lrt | 0.044 | 0.045 | 0.051 | 0.053 | 0.039 |
+
+**The nonparametric test is worst at every depth**, and Gaussian rank-fisherz and
+the degenerate-Gaussian LRT trade places within noise. That is the §15 real-data
+ordering, reproduced independently against known truth — so it is a property of
+the regime, not of the PCHi-C proxy metric.
+
+### 16b. Depth fixes same-mark and does NOT fix cross-mark
+
+| depth | detection | **rec_same** | **rec_cross** | precision |
+|---|---|---|---|---|
+| ×1 (real) | 0.013 | 0.080 | 0.055 | 0.128 |
+| ×3 | 0.031 | 0.094 | 0.068 | 0.125 |
+| ×10 | 0.081 | 0.100 | 0.092 | 0.165 |
+| ×30 | 0.224 | 0.203 | 0.068 | 0.166 |
+| ×100 | 0.349 | **0.249** | **0.073** | 0.169 |
+
+Over a 100-fold depth increase, same-mark recall triples (0.080 → 0.249) while
+**cross-mark recall stays flat** (0.055 → 0.073, non-monotone, peaking mid-range
+at 0.092).
+
+The mechanism is §1, now shown to be depth-invariant. Sequencing depth reduces
+the sampling noise of a metacell mean, which helps wherever the two variables
+were measured on the *same* cells. Cross-mark pairs were measured on *disjoint*
+cells, so their direct dependence was destroyed by the assay design, not by
+measuring shallowly — and no amount of depth restores information that was never
+jointly observed.
+
+**This corrects the "remaining levers" statement recorded in §15 and the
+ROADMAP.** More counts per variable was listed there as one of the two options
+left for cross-mark identifiability. It is now shown to be **insufficient**: it
+buys same-mark recovery and a little precision, and leaves cross-mark where it
+was. The lever that remains is an assay that measures multiple marks *in the same
+cell* — which is a different experiment, not a different analysis.
+
+Absolute performance is modest throughout (cross-mark recall ≤ 0.09, precision
+≤ 0.17 even at ×100), so this is a statement about ordering and about which
+constraint binds, not a claim that any configuration solves the problem.
 
 ---
 
@@ -714,6 +804,13 @@ python Evaluation/scripts/crossmark_variable_granularity.py
 # can the count test even detect signal at these depths? (S14 -- run this
 # before quoting any zero from the one above)
 python Evaluation/scripts/crossmark_power_check.py --totals 11 79 500 5000
+
+# count-realistic simulator: calibration first, then the depth sweep (S16)
+PAIRCHECK_DIR=<dir containing paircheck/> \
+  python Evaluation/scripts/crossmark_count_simulator.py --realism-only
+PAIRCHECK_DIR=<dir containing paircheck/> \
+  python Evaluation/scripts/crossmark_count_simulator.py \
+    --p 30 --depth-scales 1 3 10 30 100 --n-seeds 3
 
 # transform x model class, evaluated on edges (S15)
 python Evaluation/scripts/crossmark_modelclass.py --transform pseudobulk --test fisherz --permute

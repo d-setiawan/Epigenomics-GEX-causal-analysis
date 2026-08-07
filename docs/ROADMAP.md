@@ -454,9 +454,15 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   PCHi-C shared promoter hubs against a distance-matched null — significant both vs non-edges and, more
   tellingly, vs edges found but *not* partition-stable. Stability selects biology, not just strong
   correlations. The claim is adjacency at cell-state level ("shared physical domain"), never orientation.
-  *Open:* the remaining levers for identifiability are upstream of aggregation entirely — quantification
-  (region-level rather than per-peak, to raise per-variable counts) or more cells per assay. Neither is a
-  search change. Extending the peak↔peak validation to the motif/ChIP axes would sharpen the biology claim.
+  **Transform and model class also tested and rejected** (2026-08-02): pseudobulk and detection-rate
+  transforms give the same answer as log1p(CPM) (a robustness result), and non-Gaussian tests are
+  strictly worse — hub enrichment falls monotonically as the CI test gains flexibility. Reproduced in a
+  count-calibrated simulator against ground truth.
+  **Depth is not the answer either.** In that simulator a 100× depth increase triples same-mark edge
+  recovery and leaves cross-mark recovery flat, because cross-mark pairs were never measured in the same
+  cells. *Open:* the only remaining route to cross-mark identifiability is an assay that profiles
+  multiple marks **in the same cell** — a different experiment, not a different analysis. Extending the
+  peak↔peak validation to the motif/ChIP axes would sharpen the biology claim.
 - **2026-07-10** **EXPLORATORY: element-level causal modeling** ([`CausalDiscovery/results/element_level_modeling_design.md`](../CausalDiscovery/results/element_level_modeling_design.md),
   `scripts/prototype_element_aggregation.py`). Diagnosed that ~92% of edges are peak↔peak and are
   **confounding, not regulation** (49% bidirected `<->`, only 1/243 directed). Prototype merges
