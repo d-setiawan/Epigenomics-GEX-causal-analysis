@@ -237,6 +237,96 @@ def run_fci(X, names, alpha, depth_lim, test):
     return out
 
 
+def stability_vs_truth(cells, sim, Y, dep, ch, chan_idx, A_mask, names,
+                       n_partitions, n_clusters, transform, test, alpha,
+                       search_depth, min_k, rng, Gamma_mask=None):
+    """
+    Is partition stability actually a good edge selector?
+
+    The biology claim rests on it: §8 keeps edges recovered in >= min_k of 11
+    metacell partitions, and §11 shows those are enriched for PCHi-C hubs.  Hub
+    enrichment is a proxy, and with ground truth available the question can be
+    asked directly.  But it must be asked against the RIGHT target.
+
+    Two targets, because they are not the same claim:
+
+      direct         A[i,j] != 0 -- a cell-level direct causal edge.  Matched
+                     pairing structurally severs cross-CHANNEL direct edges
+                     (§5a), so for cross-mark pairs this target is unreachable by
+                     construction and every cross-mark edge found is a false
+                     positive.  Precision against it is therefore a statement
+                     about same-mark structure only.
+
+      shared_latent  exists k with Gamma[i,k] != 0 and Gamma[j,k] != 0 -- the two
+                     elements are driven by a common latent state dimension.
+                     THIS is the simulation analogue of a shared PCHi-C promoter
+                     hub, which is what §11 actually validated: two peaks looping
+                     to a common bait share a domain, i.e. a common driver, not a
+                     direct link between them.  It is also what MISSION §2 names
+                     as the object of interest.
+
+    Scoring §11's claim against `direct` would be a category error -- and running
+    it that way first is how the distinction surfaced.
+    """
+    p = A_mask.shape[0]
+    direct = set()
+    for i in range(p):
+        for j in range(p):
+            if A_mask[i, j]:
+                u, v = names[i], names[j]
+                direct.add((u, v) if u < v else (v, u))
+
+    shared = set()
+    if Gamma_mask is not None:
+        for i in range(p):
+            for j in range(i + 1, p):
+                if np.any(Gamma_mask[i] & Gamma_mask[j]):
+                    u, v = names[i], names[j]
+                    shared.add((u, v) if u < v else (v, u))
+    truth = direct
+
+    counts = {}
+    n_ok = 0
+    for r in range(n_partitions):
+        labels = sim.cluster_labels(cells, n_clusters, seed=50_000 + r, oracle=False)
+        X = aggregate_counts(Y, dep, labels, ch, chan_idx, transform)
+        if X.shape[0] < 30:
+            continue
+        live = X.std(axis=0) > 1e-9
+        if live.sum() < 5:
+            continue
+        idx = np.flatnonzero(live)
+        try:
+            est = run_fci(rank_gaussian(X[:, idx]), [names[j] for j in idx],
+                          alpha, search_depth, test)
+        except Exception:
+            continue
+        for e in est:
+            counts[e] = counts.get(e, 0) + 1
+        n_ok += 1
+
+    if n_ok < 5:
+        return None
+    stable = {e for e, c in counts.items() if c >= min_k}
+    unstable = {e for e, c in counts.items() if c < min_k}
+    cross = lambda e: ch[names.index(e[0])] != ch[names.index(e[1])]
+    sc, uc = {e for e in stable if cross(e)}, {e for e in unstable if cross(e)}
+    pr = lambda s, tru: (len(s & tru) / len(s)) if s else float("nan")
+
+    return dict(
+        n_partitions=n_ok, n_seen=len(counts),
+        n_stable=len(stable), n_unstable=len(unstable), n_stable_cross=len(sc),
+        # target 1: cell-level direct edge (unreachable for cross-mark by design)
+        prec_stable=pr(stable, direct), prec_unstable=pr(unstable, direct),
+        prec_all=pr(set(counts), direct),
+        prec_stable_cross=pr(sc, direct), prec_unstable_cross=pr(uc, direct),
+        # target 2: shared latent driver -- the analogue of a shared PCHi-C hub
+        sl_stable=pr(stable, shared), sl_unstable=pr(unstable, shared),
+        sl_all=pr(set(counts), shared),
+        sl_stable_cross=pr(sc, shared), sl_unstable_cross=pr(uc, shared),
+        sl_base=(len(shared) / (p * (p - 1) / 2)) if p > 1 else float("nan"))
+
+
 def score(est, A_mask, ch, names):
     """Recall and precision of true direct edges, split by channel type."""
     same_t, cross_t = set(), set()
@@ -287,6 +377,11 @@ def main():
                     help="spread of per-peak detection rates; 1.15 reproduces "
                          "the measured 0.43%%-2.11%% IQR")
     ap.add_argument("--realism-only", action="store_true")
+    ap.add_argument("--stability", action="store_true",
+                    help="validate the partition-stability selection rule "
+                         "against ground truth instead of sweeping estimators")
+    ap.add_argument("--n-partitions", type=int, default=11)
+    ap.add_argument("--min-k", type=int, default=6)
     ap.add_argument("--out", default="crossmark_count_sim.tsv")
     a = ap.parse_args()
 
@@ -310,7 +405,7 @@ def main():
                             avg_degree=a.avg_degree, p_state_parent=0.3,
                             geometry=a.geometry)
         cells = sim.draw_cells(cfg, seed=1000 + seed)
-        A_mask, _ = sim.structure_masks(cells)
+        A_mask, G_mask = sim.structure_masks(cells)
         rng = np.random.default_rng(7000 + seed)
         ch = assign_channels(a.p, a.n_channels, rng)
         chan_idx = split_cells_by_channel(cells.V.shape[0], n_ch_total, rng)
@@ -324,6 +419,29 @@ def main():
                                  label=f"(seed {seed}, depth x{ds:g})" if seed == 0 else "")
             if a.realism_only:
                 continue
+
+            if a.stability:
+                for tf in a.transforms:
+                    for test in a.tests:
+                        st = stability_vs_truth(
+                            cells, sim, Y, dep, ch, chan_idx, A_mask, names,
+                            a.n_partitions, a.n_clusters, tf, test, a.alpha,
+                            a.search_depth, a.min_k, rng, Gamma_mask=G_mask)
+                        if st is None:
+                            continue
+                        st.update(seed=seed, depth_scale=ds, transform=tf, test=test)
+                        rows.append(st)
+                        print(f"  [x{ds:<5g} {tf:<11s} {test:<8s}] "
+                              f"seen={st['n_seen']:3d} stable={st['n_stable']:3d} "
+                              f"(cross {st['n_stable_cross']:2d})  "
+                              f"DIRECT s={st['prec_stable']:.3f}/u={st['prec_unstable']:.3f}  "
+                              f"SHARED-LATENT s={st['sl_stable']:.3f}/"
+                              f"u={st['sl_unstable']:.3f} "
+                              f"cross s={st['sl_stable_cross']:.3f}/"
+                              f"u={st['sl_unstable_cross']:.3f} "
+                              f"base={st['sl_base']:.3f}")
+                continue
+
             for tf in a.transforms:
                 X = aggregate_counts(Y, dep, labels, ch, chan_idx, tf)
                 if X.shape[0] < 30:
@@ -358,6 +476,31 @@ def main():
     df.to_csv(a.out, sep="\t", index=False)
     print(f"\nwrote {a.out}  ({len(df)} runs)")
     if df.empty:
+        return
+
+    if a.stability:
+        print("\n=== IS PARTITION STABILITY A GOOD EDGE SELECTOR? (vs ground truth) ===")
+        print("  the decisive column is prec_stable vs prec_unstable: edges that")
+        print("  survived re-partitioning against edges the SAME search found and")
+        print("  dropped.  That is the simulation analogue of §11's contrast.")
+        g = df.groupby(["depth_scale"]).agg(
+            seen=("n_seen", "mean"), stable=("n_stable", "mean"),
+            stable_cross=("n_stable_cross", "mean"),
+            dir_stable=("prec_stable", "mean"), dir_unstable=("prec_unstable", "mean"),
+            sl_stable=("sl_stable", "mean"), sl_unstable=("sl_unstable", "mean"),
+            sl_stable_cross=("sl_stable_cross", "mean"),
+            sl_unstable_cross=("sl_unstable_cross", "mean"),
+            sl_base=("sl_base", "mean"))
+        print(g.round(3).to_string())
+        print("\n  TARGET 1 -- cell-level DIRECT edge (unreachable for cross-mark by design):")
+        print(f"    stable {df.prec_stable.mean():.3f}   unstable {df.prec_unstable.mean():.3f}"
+              f"   lift {df.prec_stable.mean()/max(df.prec_unstable.mean(),1e-9):.2f}x")
+        print("  TARGET 2 -- SHARED LATENT DRIVER (the analogue of a shared PCHi-C hub):")
+        print(f"    stable {df.sl_stable.mean():.3f}   unstable {df.sl_unstable.mean():.3f}"
+              f"   base rate {df.sl_base.mean():.3f}"
+              f"   lift {df.sl_stable.mean()/max(df.sl_unstable.mean(),1e-9):.2f}x")
+        print(f"    cross-mark only: stable {df.sl_stable_cross.mean():.3f}"
+              f"   unstable {df.sl_unstable_cross.mean():.3f}")
         return
 
     print("\n=== DOES MODEL CLASS MATTER AT REALISTIC SPARSITY? (depth x1) ===")

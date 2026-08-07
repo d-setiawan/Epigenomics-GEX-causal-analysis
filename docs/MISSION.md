@@ -58,7 +58,14 @@ The method is the contribution regardless of which biological answer emerges.
 > narrow the claim below what §2 anticipated: the surviving object is an **adjacency**, not an
 > orientation — no cross-mark edge is partition-stable as a directed edge at any aggregation
 > resolution — and the bidirected *fraction* that motivated this section is
-> implementation-specific rather than a property of the data. Numbers and controls:
+> implementation-specific rather than a property of the data.
+>
+> **The mechanism §2 proposes is the one that validates.** In a count-calibrated simulation with
+> known ground truth, the stability rule selects pairs sharing a **latent driver** in 6/6 runs
+> (1.74× for cross-mark pairs) and shows **no** selection for direct element-to-element edges
+> (3/6 runs, p = 0.62). "Shared TF program or chromatin domain, not direct causation" is therefore
+> the correct reading of these edges, measured rather than assumed — but the handle on it is
+> partition stability, not the bidirected mark. Numbers and controls:
 > [crossmark_identifiability.md](../Evaluation/results/crossmark_identifiability.md).
 
 ## 3. Positioning against the literature (what is NOT our novelty)

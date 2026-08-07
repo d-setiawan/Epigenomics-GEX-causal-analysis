@@ -22,7 +22,10 @@ not merely strong correlations.
 
 So the supported claim is an **adjacency** claim at cell-state level: these
 element pairs sit in shared physical domains. Not orientation, and not a
-cell-level direct effect.
+cell-level direct effect. Simulation against ground truth confirms this is the
+right reading rather than a hedge: the stability rule selects **shared-latent-
+driver** pairs in 6/6 runs (1.74× cross-mark) and shows **no** selection for
+direct causal edges (3/6, p = 0.62) (§17).
 
 That claim is **robust to the data representation**: three quite different
 transforms (mean-of-logs, pooled-count log, and pure detection rate) give 36–42
@@ -792,6 +795,59 @@ Absolute performance is modest throughout (cross-mark recall ≤ 0.09, precision
 ≤ 0.17 even at ×100), so this is a statement about ordering and about which
 constraint binds, not a claim that any configuration solves the problem.
 
+## 17. Partition stability selects SHARED DRIVERS, not direct edges
+
+The whole biology claim rests on one selection rule — keep edges recovered in ≥6
+of 11 metacell partitions — and on real data that rule could only be judged
+against a proxy (§11, PCHi-C hub enrichment). The count-realistic simulator has
+ground truth, so it can be judged directly. Same rule, same 11 partitions, same
+α and depth (`--stability`, 3 seeds × 2 depths).
+
+Two targets, because they are not the same claim and conflating them is a
+category error:
+
+- **direct** — `A[i,j] ≠ 0`, a cell-level direct causal edge. Matched pairing
+  structurally severs cross-*channel* direct edges (§5a), so for cross-mark pairs
+  this target is unreachable by construction.
+- **shared latent** — some state dimension `k` has `Γ[i,k] ≠ 0` and `Γ[j,k] ≠ 0`:
+  the two elements are driven by a common latent. **This is the simulation
+  analogue of a shared PCHi-C promoter hub** — two peaks looping to a common bait
+  share a domain and hence a driver, not a direct link between them.
+
+| target | stable wins | stable | unstable | base | lift | paired-t p |
+|---|---|---|---|---|---|---|
+| direct causal edge | **3/6** | 0.144 | 0.112 | — | 1.28× | **0.62** |
+| **shared latent driver** | **6/6** | **0.512** | 0.306 | 0.261 | **1.67×** | **0.031** |
+| shared latent, cross-mark | **6/6** | **0.529** | 0.304 | — | **1.74×** | — |
+
+**Partition stability does not select direct causal edges** — it wins in half the
+runs and loses in the other half, exactly as a rule with no purchase on that
+target would. **It does select shared-driver pairs, in every run**, at 1.67× the
+rate of edges the same search found and dropped, and 1.96× the panel base rate.
+
+The cross-mark lift of **1.74×** is the simulation counterpart of the real-data
+figure — 0.171 vs 0.075, **2.3×** (§11). Same direction, same order of magnitude,
+recovered against known truth rather than a proxy database.
+
+**What this settles.** The §11 enrichment was open to a deflationary reading:
+stable edges might just be strong correlations that happen to sit near PCHi-C
+fragments. Ground truth rules that out. The rule selects a specific and correct
+object — element pairs sharing a latent driver — and it does so at cross-mark
+pairs, where §16b showed no direct-edge information survives the assay design at
+any depth.
+
+**And it retro-justifies the framing in [MISSION §2](../../docs/MISSION.md).** That
+section names the peak↔peak edges surviving confounder conditioning as candidates
+for shared latent drivers — TF programs, chromatin domains — rather than direct
+element-to-element causation. That is precisely the object the selection rule is
+now shown to recover. The earlier `bidirected`-mark framing was the wrong
+handle on the right object: stability, not the edge mark, is what identifies it.
+
+**Scope.** Six runs, so the paired t is thin; the 6/6 sign consistency carries as
+much of the weight (sign test p = 0.031, same value). Absolute precision depends
+strongly on the simulated Γ density (base rate ranges 0.115–0.428 across seeds),
+so the *lift* is the transferable quantity, not the level.
+
 ---
 
 ## Reproduce
@@ -811,6 +867,11 @@ PAIRCHECK_DIR=<dir containing paircheck/> \
 PAIRCHECK_DIR=<dir containing paircheck/> \
   python Evaluation/scripts/crossmark_count_simulator.py \
     --p 30 --depth-scales 1 3 10 30 100 --n-seeds 3
+
+# does partition stability select TRUE edges? (S17, needs ground truth)
+PAIRCHECK_DIR=<dir containing paircheck/> \
+  python Evaluation/scripts/crossmark_count_simulator.py --stability \
+    --p 30 --depth-scales 1 10 --n-seeds 3 --n-partitions 11 --min-k 6
 
 # transform x model class, evaluated on edges (S15)
 python Evaluation/scripts/crossmark_modelclass.py --transform pseudobulk --test fisherz --permute
