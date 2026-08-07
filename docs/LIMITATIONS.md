@@ -210,9 +210,22 @@ noise of averaging ~11 cells per mark per metacell, the median variable's signal
 sampling noise. Only ~19% exceed a share of 0.10 and ~12% exceed 0.25.
 
 This is a precondition, not a modelling preference: a variable with no between-state signal has no
-structure for any search to recover, and it still occupies every conditioning set. It bounds what any
-change of algorithm, CI test, or graph class can achieve on the current metacell design, and it is the
-covariance-level statement of the noise-domination finding.
+structure for any search to recover, and it still occupies every conditioning set.
+
+**The underlying cause is sparsity.** The peak x cell matrices are **0.5-1.5% dense** (verified from
+the matrix headers). A peak is detected in ~1% of cells and a metacell holds ~11 cells per mark, so a
+given (peak, metacell) has ~0.1 expected detections — most of the metacell matrix is zero because
+nothing was observed, not because absence was measured. Pooling adjacent peaks raises counts and
+detection ~7x without moving signal share at all.
+
+**Scope limit on this caveat.** The estimate is ~0 under a Gaussian share, a count-native Poisson
+dispersion, and a distribution-free test alike, and no non-Gaussian view rescues a variable the
+Gaussian one discards (0 of 442). But the count *test* at these depths rejects 0.000 under its own
+null and never reaches 80% power even for a 20-fold swing, so **"no between-state signal" must not be
+stated as established absence** — the defensible claim is that this design cannot resolve it. Marginal
+per-variable power is also much weaker than pairwise-association power, which is why externally
+validated cross-mark adjacencies coexist with marginally invisible variables. Do not use this caveat
+to rule out algorithm, CI-test, or model-class changes; test those at the edge level.
 
 **Signal share is itself partition-dependent** — for CD14, 3–9 variables clear 0.10 on a single
 partition but only 2 clear it on the cross-partition median. The instability documented in

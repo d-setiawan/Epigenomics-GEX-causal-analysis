@@ -1,8 +1,9 @@
 # Cross-mark structure: what blocks it, and what unblocks it
 
-**Status: 2026-08-02.** Complete. §9 carries a same-day correction, superseded by
-§10. §11 reports the full 15-gene panel and supersedes an earlier underpowered
-six-gene pass recorded in the same section.
+**Status: 2026-08-02.** Complete. Two same-day corrections are recorded inline:
+§9 (superseded by §10) and **§14, which withdraws a claim made in §13**. §11
+reports the full 15-gene panel and supersedes an earlier underpowered six-gene
+pass recorded in the same section.
 
 **Bottom line.** Cross-mark structure here is *not* identifiable. Nothing that
 changes what the LV search consumes recovers it — screening, completion, and
@@ -23,9 +24,14 @@ So the supported claim is an **adjacency** claim at cell-state level: these
 element pairs sit in shared physical domains. Not orientation, and not a
 cell-level direct effect.
 
-The root cause sits upstream of any search: the median panel variable carries no
-between-state signal at all (§2), and same-mark and cross-mark covariance entries
-are not on the same scale by construction (§1).
+The root cause sits upstream of any search: same-mark and cross-mark covariance
+entries are not on the same scale by construction (§1), and the peak × cell
+matrices are 0.5–1.5% dense, so a given (peak, metacell) has ~0.1 expected
+detections (§13). The median panel variable's estimated between-state signal
+share is ~0 under both a Gaussian and a count-native estimator, and no
+non-Gaussian view rescues a variable the Gaussian one discards. **But see §14:**
+the count *test* is far too underpowered at these depths to license "there is no
+signal" — only "this design cannot resolve it".
 
 Scope: whether cross-mark (peak↔peak across assays, and peak→gene) structure can
 be claimed either with identifiability or with validation, and what has to change
@@ -540,12 +546,112 @@ of the set carrying the hub enrichment.
 
 Hub edges concentrate in IL1B (3), IL4R (3) and RAPGEF1 (1).
 
+## 13. Is the noise-domination finding an artefact of the Gaussian framing?
+
+§2's signal share is a **variance** decomposition on log1p(CPM) values, so it
+presupposes that variance is the right measure of information. For sparse counts
+that is a real assumption: under a Poisson-like model Var ≈ mean, so counting
+noise mechanically consumes the variance of exactly the low-count features a
+count-native model might still learn from. A second-moment statistic cannot by
+itself rule out signal living in the count distribution.
+
+So the same question was asked four ways
+(`Evaluation/scripts/crossmark_count_signal.py`), three of them not variance
+decompositions — a count-native Poisson dispersion on **pooled** counts, a
+Poisson deviance test, and a distribution-free Kruskal-Wallis:
+
+| measure | result |
+|---|---|
+| median gaussian_share (current) | −0.017 |
+| median poisson_share (count-native) | −0.141 |
+| gaussian_share > 0.25 | 11.8% |
+| poisson_share > 0.25 | 6.8% |
+| **variables the count test rescues** | **0 of 442** |
+
+The count-native view is if anything harsher, and **not one variable that the
+Gaussian view calls dead is revived by it**. Rank correlation between the two
+shares is only +0.073, so they are not simply the same statistic rewritten —
+they disagree at the variable level while agreeing on the aggregate picture.
+
+**The reason is sparsity, and it is severe.** The peak × cell matrices are
+**0.5–1.5% dense**, verified directly from the matrix headers and independent of
+any extraction code here. A peak is detected in roughly 1% of cells and a
+metacell holds ~11 cells per mark, so the expected number of detections for a
+given (peak, metacell) is ~0.1. Most of the metacell matrix is zero because
+nothing was ever observed there, not because a state was measured as absent.
+
+**Pooling peaks into coarser variables does not rescue it**
+(`crossmark_variable_granularity.py`, adjacent peaks of the same mark merged):
+
+| level | n vars | median counts | detection | median span | gaussian_share |
+|---|---|---|---|---|---|
+| peak (current) | 442 | 11 | 0.6% | 0.6 kb | −0.017 |
+| merge2 | 236 | 28 | 1.5% | 27 kb | −0.017 |
+| merge4 | 135 | 56 | 2.9% | 90 kb | −0.008 |
+| merge8 | 83 | 79 | 4.4% | 224 kb | −0.008 |
+| whole mark | 64 | 74 | 3.8% | 306 kb | −0.015 |
+
+Counts and detection rise ~7×; signal share does not move. The extra reads
+pooling brings in are not carrying between-state information.
+
+## 14. CORRECTION — the count test is underpowered, so its zeros prove nothing
+
+§13 originally also reported that **0.0%** of variables showed rate variation
+beyond counting noise, at every granularity, and treated that as evidence of
+absence. **That claim is withdrawn.** A test that cannot fire returns 0% whether
+or not signal exists, and this one cannot fire.
+
+`crossmark_power_check.py` simulates from each variable's **own** observed
+per-metacell depths and totals, so the null is the actual design:
+
+| total counts | rejection at α=.05 under H0 | calibration | MDE (80% power) |
+|---|---|---|---|
+| **11 (median peak)** | **0.000** | conservative | **never reached, even σ=3** |
+| 79 (merge8) | 0.004 | conservative | σ = 2.0 |
+| 500 | 0.181 | anti-conservative | σ = 0.5 |
+| 5000 | 0.052 | calibrated | σ = 0.25 |
+
+At the observed depth the Poisson deviance test rejects **zero** times under its
+own null and never reaches 80% power even for a 20-fold between-metacell swing.
+It would take roughly **450× more counts per variable** for the test to be both
+calibrated and sensitive to a realistic state effect. The 500-count row is also
+unusable in the other direction — 18% false positives.
+
+What survives §13 after this correction:
+
+- **Stands:** the count-native *effect-size* estimates (poisson_share) and the
+  Gaussian share agree, and no non-Gaussian view rescues a variable the Gaussian
+  view discards (0 of 442). The sparsity figures are direct measurements.
+- **Withdrawn:** any use of "0.0% significant" as evidence that between-state
+  variation is absent. The honest statement is that this design cannot resolve
+  it, which is a statement about the assay, not about chromatin.
+
+**This does not touch the empirical findings.** §8's permutation null, §10's
+resolution curve, §11's PCHi-C enrichment and §12's edge list are direct
+measurements on pipeline output, not inferences from the count model. They stand
+unchanged.
+
+It also means the marginal audits must **not** be used to pre-judge whether a
+different transform or model class would help — marginal per-variable power is
+far weaker than pairwise-association power across 133 metacells, which is exactly
+how 41 externally-validated cross-mark adjacencies coexist with variables that
+are marginally indistinguishable from noise. That question is asked at the edge
+level instead (`crossmark_modelclass.py`).
+
 ---
 
 ## Reproduce
 
 ```bash
-# metacell resolution tradeoff (the actionable one)
+# is the noise finding an artefact of the Gaussian framing? (S13)
+python Evaluation/scripts/crossmark_count_signal.py
+python Evaluation/scripts/crossmark_variable_granularity.py
+
+# can the count test even detect signal at these depths? (S14 -- run this
+# before quoting any zero from the one above)
+python Evaluation/scripts/crossmark_power_check.py --totals 11 79 500 5000
+
+# metacell resolution tradeoff
 python Evaluation/scripts/crossmark_resolution_tradeoff.py
 
 # signal-share audit across the panel
