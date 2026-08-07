@@ -24,6 +24,12 @@ So the supported claim is an **adjacency** claim at cell-state level: these
 element pairs sit in shared physical domains. Not orientation, and not a
 cell-level direct effect.
 
+That claim is **robust to the data representation**: three quite different
+transforms (mean-of-logs, pooled-count log, and pure detection rate) give 36–42
+stable cross-mark edges at hub rates of 0.167–0.171, all significant (§15). And
+non-Gaussian model classes are strictly **worse** on this evaluation, not better
+— hub enrichment falls monotonically as the test gains flexibility (§15).
+
 The root cause sits upstream of any search: same-mark and cross-mark covariance
 entries are not on the same scale by construction (§1), and the peak × cell
 matrices are 0.5–1.5% dense, so a given (peak, metacell) has ~0.1 expected
@@ -638,6 +644,64 @@ how 41 externally-validated cross-mark adjacencies coexist with variables that
 are marginally indistinguishable from noise. That question is asked at the edge
 level instead (`crossmark_modelclass.py`).
 
+## 15. Transform and model class, tested at the edge level
+
+§14 established that the marginal audits cannot answer this, so the transform and
+model-class axes were run through the full evaluation used for every other claim
+here: partition-stable cross-mark adjacencies over 11 partitions, a within-mark
+permutation null, and PCHi-C hub enrichment under distance × degree matching
+(`crossmark_modelclass.py`, all 15 genes).
+
+**Transform** — how cell-level counts become a metacell value. `mean_log1p` is
+the pipeline's (mean of per-cell log1p(CPM)); `pseudobulk` pools counts and depth
+*first* then normalises; `detection` keeps only the fraction of cells with a
+non-zero count. **Model class** — `fisherz` is rank-based Gaussian partial
+correlation; `dg_lrt` is the degenerate-Gaussian LRT for mixed
+discrete/continuous data; `bf_lrt` is a nonparametric basis-function LRT.
+
+| transform | test | stable cross-mark | null | hub rate | vs non-adj | vs unstable |
+|---|---|---|---|---|---|---|
+| **mean_log1p** | **fisherz** | **41** | **0** | **0.171** | **0.0022** | **0.0036** |
+| pseudobulk | fisherz | 42 | 0 | 0.167 | 0.0059 | 0.0113 |
+| detection | fisherz | 36 | 0 | 0.167 | 0.0050 | 0.0151 |
+| mean_log1p | dg_lrt | 38 | 0 | 0.132 | 0.0247 | 0.0429 |
+| mean_log1p | bf_lrt | 29 | 2 | 0.103 | 0.1327 | 0.1148 |
+| pseudobulk | bf_lrt | 29 | 2 | 0.103 | 0.0899 | 0.0848 |
+
+The baseline arm was re-run through this script's independent code path and
+reproduces the §11 numbers exactly (41 edges, p = 0.0022 / 0.0036), so the
+comparison is like-for-like.
+
+**The transform barely matters, and that is a robustness result.** Three quite
+different representations — a mean of logs, a pooled-count log, and a pure
+presence rate that discards magnitude entirely — give 36–42 stable cross-mark
+edges at hub rates of 0.167–0.171, all significant against both references. The
+finding in §11 is not an artefact of the log1p(CPM) choice. `pseudobulk` is the
+better-motivated statistic for 1%-dense counts and is marginally ahead on edge
+count, but nothing here justifies changing the pipeline for it.
+
+**Non-Gaussian tests are worse, monotonically.** Hub enrichment falls 0.171
+(fisherz) → 0.132 (dg_lrt) → 0.103 (bf_lrt), and the nonparametric arm loses
+significance entirely (p = 0.13) while leaking 2 edges into the permutation null
+that the Gaussian arms do not. The *rate* drops and not merely the p-value, so
+this is not just the smaller positive count costing power — the edges those tests
+find are genuinely less hub-enriched.
+
+The reading: at n = 133 with weak dependence, flexibility is not free. A
+nonparametric test spends degrees of freedom on nonlinearity that either is not
+there or is not estimable at this sample size, and pays for it in exactly the
+currency that matters. Rank-based Gaussian partial correlation is not a
+convenient simplification here; on this evaluation it is the best-performing
+choice tested.
+
+**So all three axes of the "different model class" question are now closed
+negatively**: transform (§15, no material difference), likelihood (§15, strictly
+worse), and variable granularity (§13, no change). Combined with §5–§7
+(covariance repairs) and §10 (aggregation resolution), every lever internal to
+the search and its inputs has been tested. What remains is outside it: more
+counts per variable (§14 puts the requirement at roughly 450× current depth for
+the count test to become usable), or a different assay.
+
 ---
 
 ## Reproduce
@@ -650,6 +714,10 @@ python Evaluation/scripts/crossmark_variable_granularity.py
 # can the count test even detect signal at these depths? (S14 -- run this
 # before quoting any zero from the one above)
 python Evaluation/scripts/crossmark_power_check.py --totals 11 79 500 5000
+
+# transform x model class, evaluated on edges (S15)
+python Evaluation/scripts/crossmark_modelclass.py --transform pseudobulk --test fisherz --permute
+python Evaluation/scripts/crossmark_modelclass.py --transform mean_log1p --test bf_lrt --permute
 
 # metacell resolution tradeoff
 python Evaluation/scripts/crossmark_resolution_tradeoff.py
