@@ -1,50 +1,46 @@
 # scConfluence and scMTR-seq pilot
 
-_Completed 2026-11-01. All six fixed GPU fits, scientific readouts and independent reviews completed; reliable causal recovery was not established._
+Completed November 1, 2026. Six fixed GPU fits tested a count-input scConfluence adaptation on two cached synthetic worlds and one scMTR-seq sublibrary. The empirical pilot supplies a held-out paired reference for observed counts. Direct causal recovery remains unestablished.
 
 ## Results and next step
 
-The [causal reliability report](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_causal_reliability_v1/RESULTS.md)
-contains all synthetic count/activity comparisons, direction stress tests,
-subsamples and empirical outcomes. The [state report](state_readout.md) records
-the separate integration diagnostics. scConfluence improved collider matching
-in one seed, but the second seed gave approximately random matching in both
-worlds. The only full-count cross-assay adjacency recovered by a new simulated
-fit connected two shared-state decoys; it was not a direct biological edge.
+scConfluence improved collider matching in one seed. The second seed gave
+approximately random matching in both worlds. The only full-count cross-assay
+adjacency recovered by a new simulated fit joined two shared-state decoys.
+The fixed-pool state report and graph integrity review are in Git. The full
+per-arm count/activity tables were written to the historical run cache under
+`20261101_causal_reliability_v1/RESULTS.md`. [State report](state_readout.md) · [Graph integrity review](final_integrity_review.json) · [Simulation protocol](../../../reproduce/records/integration_recoverability/integration_validation/20261101_causal_reliability_v1/protocol.json).
 
 The real-data pilot showed partial histone–histone pair-rank correspondence,
 weak RNA–histone correspondence and inconsistent differentiation-day transfer.
 Its sparse paired-count panel provided no positive cross-assay graph reference.
-The independently reproduced [artificial-null check](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/RESULTS.md)
-exposed a concrete sparse-count calibration problem in the current RIT/RCIT–FCI
-readout. Empty graphs and repeated edges therefore cannot substantiate causal
-recovery here. These findings concern this fixed count-input adaptation and
-small promoter-only cohort, not every published configuration or all scMTR data.
+The independent artificial-null check found recurrent graph edges after
+independently permuting assay blocks. Sparse-count CI calibration therefore
+limits interpretation of both the paired reference and the learned graph in
+this small promoter-only cohort. [Paired and random control audit](reviews/empirical_scoring_audit.json) · [Artificial-null replay](reviews/empirical_product_null_audit.json).
 
-The next algorithmic priority is to develop and validate a count-CI calibration
-that handles sparse detection and ties, using these cached count arrays and
-negative controls before more integration fitting. Merely switching the
-installed RIT permutation flag is insufficient: the
-[source review](reviews/installed_rit_review_addendum.json) records its strict-tail
-and missing plus-one behavior. No CI method, threshold or fitted model was
-changed after observing the present results.
+For this readout, the open calibration question is how sparse detection and
+ties affect the independence test. The installed RIT permutation code used
+a strict tail and omitted a plus-one correction. The later exact-model study
+addressed a different question by estimating shared-state transport directly
+from unpaired counts. [RIT source audit](reviews/installed_rit_review_addendum.json) · [Exact-model transport experiment](../../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md).
 
 The [execution receipts](execution_results.json), [state review](state_review_summary.json)
 and [final integrity review](final_integrity_review.json) bind the completed
 models, exports, readouts and independent audits. The original frozen simulation
 suite remains a separate, incomplete study.
 
-The user authorized testing a different integration algorithm and scMTR-seq,
-with independent agents testing causal-discovery reliability. The learner still
-receives only RNA, H3K27ac, H3K4me3 and permitted gene/region annotation. Genuine
-cell pairing and day labels are reserved for evaluation. No simulated worlds
-are generated or replaced.
+The learner received only RNA, H3K27ac, H3K4me3 and permitted gene/region
+annotation. Genuine cell pairing and differentiation day were available only
+to the evaluator. The handoff verified that the public scMTR S1 cohort and all
+six learner H5AD files could be rebuilt. GPU training is recorded in the
+original execution receipts. [Cohort and restore instructions](../../../pipelines/empirical/data/scmtr_seq/README.md) · [Handoff verification](../../../reproduce/VERIFICATION.md).
 
 ## Fixed algorithm comparison
 
-Use scConfluence commit `14d81e2ca679e161ec5c6806103a66c14fcdcd9a`, with an explicit
-correction of its pair-loss accumulation bug. The correction must preserve all
-three pair contributions and their gradients, independently of pair ordering.
+The pilot used scConfluence commit `14d81e2ca679e161ec5c6806103a66c14fcdcd9a`, with a
+correction to its pair-loss accumulation. The correction preserves all
+three pair contributions and their gradients independently of pair ordering.
 Original source and license are preserved beside the local adapter. This is a
 count-input adaptation of the published architecture, not a replication of its
 PC-based high-dimensional experiments.
@@ -64,19 +60,17 @@ The initial synthetic comparison reuses informative `linear_chain_0` and
 observed files; training cells and feature IDs are restricted to those already
 retained in the frozen scGLUE preprocessing. Reference PCA/LSI values are not
 used. Existing full-count and compressed scGLUE fits provide the baselines.
-New exports must cover the already frozen discovery pools; poor coverage cannot
-be hidden by shrinking those pools.
+The export checks required complete coverage of the frozen discovery pools.
 
 ## Reliability checks
 
-On simulation, assess the fixed nine-node panels against the known activity
-graph and measurement-count PAG. The primary recovery endpoint uses counts;
-latent activity is a diagnostic control. Exact biological directions remain an
-identifiability stress test. Retain paired, random-assignment and true-state
-controls, as well as three independently subsampled 80% assay pools with
-rematching. These few subsamples give coarse conditional stability, not
-confidence intervals, false-discovery control or independent biological
-replication. Model seeds are repeated fits of each world.
+The simulation compared each fixed nine-node panel with the known activity
+graph and the measurement-count PAG. Counts determined the primary endpoint.
+Latent activity supplied a diagnostic control, and exact biological directions
+were an identifiability stress test. The evaluation included paired, random
+and true-state controls, plus three independent 80% subsamples with rematching.
+These estimate conditional stability within each world. Each model seed is a
+repeat fit on that world.
 
 The existing RCIT/FCI settings remain fixed: alpha 0.01, HBE approximation,
 100/5 random features, canonical-query seed 0 and minimum 20 cells. Matching
@@ -92,23 +86,21 @@ The published DNA-filtered source population contains 2,444 canonical cells.
 RNA tags encode days 0–3; they are not a generic suffix to discard. The authors'
 dominant-tag logic and exact sublibrary linkage are checked before joining.
 
-Freeze a seeded canonical-ID split with seed 2718: reserve 600 source cells for
-evaluation, then assign remaining cells evenly to disjoint RNA/ac/me3 training
-pools before applying QC using only each cell's observed assay. RNA QC is at
+The canonical-ID split used seed 2718. It reserved 600 source cells for
+evaluation and assigned the remaining cells evenly to disjoint RNA/ac/me3
+training pools before QC on each cell's observed assay. RNA QC is at
 least 1,000 counts and 500 detected genes, a dominant valid RT-tag fraction above
 0.5 and mitochondrial fraction at most 5%. Histone QC requires at least 250
 fragments in the assigned mark. Complete-case QC is permitted only for the
 paired evaluation target, whose population must be reported explicitly.
 
-Use existing GRCh38 GENCODE annotation for fixed ±2 kb gene-TSS promoter counts.
+The pilot used existing GRCh38 GENCODE annotation for fixed ±2 kb gene-TSS promoter counts.
 This pilot studies promoter-associated structure; distal regulation is outside
-its feature representation. Select the nine-node evaluation panel as three
-non-overlapping genes using only unpaired training detection: at least 10% in
-RNA, 5% in each mark, and 20 detected cells per assay. Order eligible genes by
-SHA256 of `20261101_causal_panel_v1|` plus the unversioned Ensembl ID. Insufficient
-eligible genes is a reported failure, not a reason to lower thresholds after
-seeing results. Exclude panel genes, aliases and overlapping promoter features
-from integration encoders and cost construction.
+its feature representation. The nine-node panel used three non-overlapping
+genes with at least 10% detection in RNA, 5% in each mark and 20 detected cells
+per assay in unpaired training data. Ordering used the SHA256 of
+`20261101_causal_panel_v1|` plus the unversioned Ensembl ID. The encoders and
+cost calculation excluded panel genes, aliases and overlapping promoters.
 
 Learner-facing IDs are opaque and assay-specific. Canonical pairing and day
 metadata are separate evaluator artifacts. The source already imposed a
@@ -151,25 +143,21 @@ The [GPU API check](gpu_api_check.json) passed native fitting, exact checkpoint
 roundtrip and held-out export. The [input preflight](input_preflight.json) covers
 all three dataset inputs. No cells were dropped in that preflight.
 
-The fixed [simulation controls](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_causal_reliability_v1/BASELINE_RESULTS.md)
-and [empirical controls](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/BASELINE_RESULTS.md)
-are already complete. They separate paired-count limitations from integration
-performance. [L19](../LIMITATIONS.md#l19-scmtr-seq-pilot-agreement-is-not-causal-ground-truth)
-records the empirical interpretation boundary.
+The simulation and empirical controls specify how to compare paired counts,
+random assignments and the fitted matching within each study. The empirical
+audit records the replayed controls and their outcomes. [Simulation protocol](../../../reproduce/records/integration_recoverability/integration_validation/20261101_causal_reliability_v1/protocol.json) · [Empirical protocol](../../../reproduce/records/integration_recoverability/integration_validation/20261101_scmtr_reliability_v1/protocol.json) · [Control replay](reviews/empirical_scoring_audit.json) · [Interpretation boundary](../LIMITATIONS.md#l19-scmtr-seq-pilot-agreement-is-not-causal-ground-truth).
 
 ## Exploratory check of the causal readout
 
 After the primary random control produced cross-assay edges, a separate
-[product-coupling null protocol](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/protocol.json)
+[product-coupling null protocol](../../../reproduce/records/integration_recoverability/integration_validation/20261101_scmtr_product_null_audit_v1/protocol.json)
 fixed seeds 10000–10049 before executing them. It permutes the existing full
 595-cell assay blocks independently, preserves all within-assay measurements,
 and retains the same panel, RCIT/FCI settings and failure handling. This is a
 post-primary diagnostic, not a new simulation world or a tuning stage.
 
-The [null summary](../../../pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/summary.json)
-records every graph, the cross-edge-count distribution and edge recurrence.
-An [independent replay](reviews/empirical_product_null_audit.json) rebuilt all
-50 assignments and count arrays from the original source-cell matrices and
-reproduced every graph edge, endpoint and summary value. These artificial-null
-frequencies are not biological false-discovery rates. No threshold or model
-setting was changed from these outcomes.
+The independent replay rebuilt all 50 assignments and count arrays from the
+original source-cell matrices. It reproduced every graph edge, endpoint and
+summary value. The tracked audit contains the cross-edge-count distribution
+and edge recurrence under artificial independent pairing. These frequencies
+describe the null construction on this cohort. [Independent replay and null summary](reviews/empirical_product_null_audit.json).

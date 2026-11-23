@@ -1,29 +1,39 @@
 # Research and project documentation
 
-↑ [Central README](../../README.md) · ownership rules: [README.md → Documentation ownership](../../README.md#documentation-ownership-read-before-editing-any-doc)
-
-Project-wide research and decision documents live here. Workflow-specific methods and results remain with their owning pipeline stage.
-
-The latest [nonlinear repair and count-model program](nonlinear_repair_2026_11_15/README.md)
-links its [scientific synthesis](nonlinear_repair_2026_11_15/SYNTHESIS.md), completed
-count experiments and [independent requirement audit](nonlinear_repair_2026_11_15/reviews/FINAL_REQUIREMENT_AUDIT.md).
-
-The [nonlinear literature recheck](nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md)
-corrects the earlier nonlinear coverage and revisits the flagged assumptions.
-The preceding [unpaired-assay identification program](research_program_2026_11_14/README.md)
-collects the observation and target contract, theorem applicability decisions,
-formal proofs and existing-input experiments. Its
-[requirement ledger](research_program_2026_11_14/REQUIREMENTS.md) preserves the
-earlier review record and links the permanent evidence.
+This index connects the empirical results, the identifiability arguments and the experiments that tested them. For a narrative across the studies, start with the [November 22 research recap](../reports/2026-11-22-unpaired-assay-recap.md). For commands and available inputs, start with the [transfer guide](../../TRANSFER.md).
 
 ## Start here
 
-| Doc | Owns |
+| Question | Guide |
 | --- | --- |
-| **[MISSION.md](MISSION.md)** | why this project is novel — the claim, the competitive positioning. **Read first.** |
-| **[ROADMAP.md](ROADMAP.md)** | live status, decisions, open work, changelog. §0.5 = publication push. |
-| **[DECISIONS.md](DECISIONS.md)** | *why* the pipeline is built this way — the reasoning behind each choice. Start here when returning to the project. |
-| **[LIMITATIONS.md](LIMITATIONS.md)** | every caveat, L1–L19. The *only* place caveats are written. |
+| What are we trying to recover? | [Mission](MISSION.md) |
+| What has been completed and what remains open? | [Roadmap](ROADMAP.md) |
+| Why did we change methods or change the target? | [Decisions](DECISIONS.md) |
+| Which assumptions limit each claim? | [Limitations and observation boundaries](LIMITATIONS.md) |
+| Which files own the detailed results? | [Documentation ownership](../../README.md#documentation-ownership-read-before-editing-any-doc) |
+
+## From unpaired integration to count transport
+
+| Study | How to read the result |
+| --- | --- |
+| Integration evidence | The [nonidentification study](integration_identifiability_2026_11_01/README.md) and [literature audit](integration_literature_scope_2026_11_01/README.md) distinguish state alignment from same-cell structure. The [scConfluence/scMTR-seq pilot](scconfluence_scmtr_pilot_2026_11_01/README.md) used held-out pairs for evaluation. |
+| Published linear source model | The [Sturma replication](sturma_pilot_2026_11_01/README.md), [count-aware pilot](count_mdcrl_2026_11_01/README.md), [extension comparison](count_extensions_2026_11_01/README.md) and [dimension follow-up](count_rank20_2026_11_01/README.md) distinguish within-assay count improvements from evidence for source matching across assays. |
+| November 14 identification program | The [study record](research_program_2026_11_14/README.md) and [requirement ledger](research_program_2026_11_14/REQUIREMENTS.md) document the observation model and experiments. The [Lean record](research_program_2026_11_14/lean/README.md) checks finite observationally equivalent models, direct-effect counterexamples and conditions that restrict the joint. The [nonlinear literature recheck](nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md) revises the original coverage assessment. |
+| November 15 count-model program | The [study record](nonlinear_repair_2026_11_15/README.md), [synthesis](nonlinear_repair_2026_11_15/SYNTHESIS.md) and [requirement audit](nonlinear_repair_2026_11_15/reviews/FINAL_REQUIREMENT_AUDIT.md) document the analytic transport corollaries and the initial count experiments. The [Lean companion](nonlinear_repair_2026_11_15/lean/README.md) checks the two-atom moment algebra, equal-weight ambiguity and a scalar contrast. The full population transport argument is in the [analytic proof](nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md). |
+| Finite-sample demonstration | The [initial existing-world test](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_DEMONSTRATION.md), [exact-model comparison](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_MATCHED.md) and [count-informed source search](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md) follow the theory studies. The last search passed the specified criteria on nine reused worlds of known dimension. The [novelty audit](count_transport_novelty_2026_11_15/README.md) traces the population result to prior work. |
+
+The two November theory programs and their Lean guides belong to hash-verified historical study trees. Read their statements about pending experiments as of the study date. The finite-sample reports above document the subsequent estimation work. For the scope of the independent checkout replay, see the [November 22 verification record](../../reproduce/VERIFICATION.md).
+
+For individual theorem checks in the November 14 record, the [primary-paper locators](research_program_2026_11_14/literature/PRIMARY_LOCATORS.md) link the literature to its assumptions. The [mixture alignment argument](research_program_2026_11_14/theory/MIXTURE_ALIGNMENT_BOUNDARY.md), its [independent review](research_program_2026_11_14/reviews/MIXTURE_ALIGNMENT_INDEPENDENT_REVIEW.md) and the [adversarial synthesis review](research_program_2026_11_14/reviews/SYNTHESIS_ADVERSARIAL_REVIEW.md) explain specific limits. The November 15 [initial inventory](nonlinear_repair_2026_11_15/INITIAL_INVENTORY.md) and [independent literature-coverage review](nonlinear_repair_2026_11_15/reviews/LITERATURE_COVERAGE_INDEPENDENT_REVIEW.md) document the follow-up.
+
+<details>
+<summary>Original count-study protocols and audited source snapshots</summary>
+
+The November count studies preserve the [C01 shared-state protocol](nonlinear_repair_2026_11_15/plans/C01_COUNT_STATE_VALIDATION.md), [C02 observed-count DCRL protocol](nonlinear_repair_2026_11_15/plans/C02_DCRL_VALIDATION.md) and [C03 results](nonlinear_repair_2026_11_15/experiments/C03/RESULTS.md). For the design history, compare the [DCRL candidate](nonlinear_repair_2026_11_15/plans/DCRL_CANDIDATE_DESIGN.md), [first C02 plan](nonlinear_repair_2026_11_15/experiments/C02/prefit_revisions/v1/plan_snapshot.md) and [review of that first plan](nonlinear_repair_2026_11_15/reviews/c02_independent_prefit/REVIEW_V1.md). The [Zhang–Kileel proposal](nonlinear_repair_2026_11_15/plans/ZHANG_KILEEL_CANDIDATE.md) records the initial tensor-moment design.
+
+The literature audits saved selected files from the authors’ repositories. The upstream READMEs describe those full repositories and can reference files omitted from the local snapshots. The November 14 sources include [differential independence](research_program_2026_11_14/literature/sources/csdi_code/README.md) and [content–style learning with unknown latent dimensions](research_program_2026_11_14/literature/sources/shrestha_code/README.md). The November 15 sources include [CoMP](nonlinear_repair_2026_11_15/sources/comp_root/README.md), [DCRL](nonlinear_repair_2026_11_15/sources/dcrl_root/README.md), [PT-SEM](nonlinear_repair_2026_11_15/sources/ptsem_root/README.md) and [mixture moment estimation](nonlinear_repair_2026_11_15/sources/zk_meitd_root/README.md).
+
+</details>
 
 ## Progress updates — [updates/](../reports/updates)
 
@@ -57,7 +67,7 @@ What *this data construction* does to those guarantees. Derivations with the alg
 each connected to the measurement that tested it. Start at [theory/README.md](theory/README.md).
 
 - [01_aggregation_algebra.md](theory/01_aggregation_algebra.md) — the covariance the search actually
-  receives; attenuation; why partition instability is a corollary rather than a separate problem.
+  receives, attenuation and sampling variation across partitions.
 - [02_identifiability.md](theory/02_identifiability.md) — matched-pair assumptions, missing
   cross-assay residual dependence, and the rank bound on between-metacell covariance.
 - [03_algorithms.md](theory/03_algorithms.md) — PC / FCI / GFCI / BOSS / BFCI / LV-Heuristic in
@@ -78,7 +88,7 @@ each connected to the measurement that tested it. Start at [theory/README.md](th
 
 ## Simulation design
 
-The active integration-recoverability study is now organized with the simulation workflows: [design](../../pipelines/simulation/integration_recoverability/design.md). Project status remains in [ROADMAP](ROADMAP.md#integration-recoverability-design-2026-09-23).
+The [original integration design](../../pipelines/simulation/integration_recoverability/design.md) and its [extended simulation plan](integration_recoverability_extended_plan.md) specify the early benchmarks. The [aggregation restart plan](aggregation_restart_plan.md) explains the two research tracks. The [simulation index](../../pipelines/simulation/README.md) gives the current entry points.
 
 The [completed validation review](integration_validation_2026_10_25/reviews/objective_completion_final_audit_2026_10_26.md)
 links the final evidence. Earlier scoped reviews are retained for provenance:
@@ -91,15 +101,15 @@ links the final evidence. Earlier scoped reviews are retained for provenance:
 
 ## Earlier design plans — [planning/](planning)
 
-Superseded in places, kept because they define the target design the project converged back onto.
+These plans document the original biological targets and workflow before the observation limits and count-transport tests were established.
 
-- [local_multiome_notears_plan.md](planning/local_multiome_notears_plan.md) — the original local-causal-discovery design (`C→A`, `C→Y`, `A→A`, `A→Y`); MISSION §1 still cites it.
+- [local_multiome_notears_plan.md](planning/local_multiome_notears_plan.md) — the original local-causal-discovery design (`C→A`, `C→Y`, `A→A`, `A→Y`). See the [current mission](MISSION.md).
 - [scGLUE_to_causal_discovery_plan.md](planning/scGLUE_to_causal_discovery_plan.md) — the integration→discovery hand-off plan.
 
 ## Reports & references
 
-- [reports/](../reports) — LaTeX write-ups (Spring 2026 final report, joint_v2 integration summary, scATAC/scRNA summary).
-- [papers/](papers) — reference PDFs (gitignored, not redistributed).
+- [Reports index](../reports/README.md) links the November research recap, the historical PDFs and the July mentor update.
+- Local reference PDFs live under `papers/` when available. The [literature inventory](nonlinear_recheck_2026_11_14/NONLINEAR_INVENTORY.md) and [prior-art audit](count_transport_novelty_2026_11_15/README.md) are available in the checkout.
 
 ## Tooling
 
@@ -129,5 +139,4 @@ enables it once:
 git config core.hooksPath .githooks
 ```
 
-It runs `check_docs.py` only when markdown is staged, and blocks the commit on drift
-(`git commit --no-verify` bypasses it).
+It runs `check_docs.py` when Markdown is staged. The checker also scans historical source snapshots and can report unavailable upstream assets, machine-local source-line citations and unlinked audit files there. [Transfer verification](../../reproduce/VERIFICATION.md)

@@ -15,13 +15,11 @@ and derives an illustrative transport problem whose unique optimum selects an
 incorrect coupling. Its toy transport loss is explicitly separate from the
 published and locally adapted scConfluence objectives.
 
-This is a qualified population statement, not a conclusion from failed fits
-or a claim that all restricted models are impossible. The proof also covers
-nonlinear transformations and count observations, distinguishes biological
-direct edges from measured PAG adjacencies, and preserves positive cases under
-explicit restrictions. The [literature review](literature/FOCUSED_REVIEW.md)
-places it in the established statistical-matching problem; no novelty is claimed.
-Operational scope is owned by [L18](../LIMITATIONS.md#l18-latent-space-aggregation-does-not-reconstruct-the-missing-joint-distribution).
+The proof concerns population information. It covers nonlinear transformations
+and count observations, and distinguishes biological direct edges from
+measured PAG adjacencies. Its obstruction applies whenever two admissible
+causal mechanisms have identical observable inputs. Restricting the model can
+remove that ambiguity for a particular target. [Statistical-matching literature](literature/FOCUSED_REVIEW.md) · [Project interpretation](../LIMITATIONS.md#l18-latent-space-aggregation-does-not-reconstruct-the-missing-joint-distribution).
 
 ## Verification and independent perspectives
 
@@ -33,7 +31,7 @@ Operational scope is owned by [L18](../LIMITATIONS.md#l18-latent-space-aggregati
 | Exact symbolic identities and two concrete model checks | [verify_algebra.py](verify_algebra.py), [receipt](symbolic_verification.json) |
 | Exact literature queries, raw records and bibliography verification | [search log](literature/SEARCH_LOG.md), [citation checks](literature/citation_verification.json), [manifest](literature/review_manifest.json) |
 | Modern-objective proof, global Gaussian transport optimum and cycle example | [modern_objective_math.md](reviews/modern_objective_math.md) |
-| scGLUE and scConfluence objectives, local versions and paper/source differences | [modern_scglue_scconfluence.md](reviews/modern_scglue_scconfluence.md) |
+| scGLUE and scConfluence objectives, local versions and paper/source differences | [Method audit](reviews/modern_scglue_scconfluence.md) · [Draft review](reviews/modern_scglue_scconfluence_draft_review.md) · [Pinned sources and paths](reviews/modern_scglue_scconfluence_sources.json) |
 | Paper-consistent scMRDR objective, input information and pinned-source verification | [modern_scmrdr.md](reviews/modern_scmrdr.md) |
 
 The symbolic check verifies the covariance matrix, invariant observed blocks,
@@ -43,11 +41,13 @@ extended check also verifies the transport derivatives, optimal correlation,
 penalty limits and reflection identities. It does
 not replace the written proof or automatically certify its assumptions.
 
-Run from the repository root using the existing environment:
+Run this check from the repository root with SymPy installed. The script writes
+its JSON receipt beside its source, so this command uses a fresh directory.
 
 ```bash
-/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python \
-  project_resources/research/integration_identifiability_2026_11_01/verify_algebra.py
+scratch=$(mktemp -d)
+cp project_resources/research/integration_identifiability_2026_11_01/verify_algebra.py "$scratch/"
+python "$scratch/verify_algebra.py"
 ```
 
 No datasets were downloaded or generated, no integration fits were run, and no
@@ -62,5 +62,11 @@ every cross-assay edge becomes bidirected or that stable directed outputs are
 impossible. The [project guarantee draft](../identifiability/project_identifiability_guarantees.md)
 now distinguishes convergence to a state-mean distribution from convergence to
 the biological joint, and adds the missing joint-completion requirement.
-Current navigation and the [roadmap](../ROADMAP.md) point to this proof before
-further model tuning. Historical experimental numbers are preserved.
+The later E2 corollary gives a positive case. A known product-Poisson
+measurement model, full-column-rank linear log-rate maps and a common law of
+independent non-Gaussian unit-variance sources without nonidentity
+signed-permutation symmetries identify transport on the supported
+log-rate subspaces. A finite-count estimator passed the transport criteria
+in nine reused exact-model worlds with one to three sources and known
+dimension. Direct cross-assay regulatory edges remain outside that experiment's
+target. [E2 assumptions and proof](../nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md) · [Simulation criteria and results](../../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md).

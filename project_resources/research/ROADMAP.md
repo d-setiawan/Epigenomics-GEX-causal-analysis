@@ -1,10 +1,24 @@
-# Project Roadmap — Monocyte Chromatin→Expression Causal Discovery
+# Project roadmap for unpaired histone and RNA assays
 
-**This is the living master plan. Update it as decisions are made and steps are completed.**
-Keep it in sync: when you finish an action, check its box and move a one-line note to the
-Changelog; when a decision changes, edit the Decision and note why in the Changelog.
+## Current position as of November 22, 2026
 
-- Related project_resources/research: **[MISSION.md](MISSION.md)** (scientific intent & novelty — read first) ·
+The biological question is which relationships among local regulatory elements and RNA a collection of disjoint assays can support. The evidence now has two parts. The general unpaired problem admits different within-cell structures with identical observed distributions. A more restrictive shared-source model identifies how assay intensities change together on the supported latent space. [Mission](MISSION.md) · [Observation contract](research_program_2026_11_14/theory/OBSERVATION_TARGET_CONTRACT.md) · [Unequal-width corollary](nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md)
+
+| Workstream | Status and evidence |
+| --- | --- |
+| Raw-count transport | A count-informed search with unpaired calibration passed all prespecified targets on the nine reused exact-model worlds. The previous labeling experiment and the plain unbounded comparison had lower recovery. The original sparse simulation panels did not establish cross-assay recovery. [Source search](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md) · [Original panels](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_DEMONSTRATION.md) |
+| Integration and aggregation | The bounded integration validation and scMTR-seq S1 pilot are complete. The larger frozen integration benchmark remains incomplete. The separate CA-BOSS series is parked. The empirical monocyte evidence supports shared promoter context for partition-stable adjacencies. [Integration ledger](../../pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md) · [S1 pilot](scconfluence_scmtr_pilot_2026_11_01/README.md) · [CA-BOSS](../../pipelines/simulation/unpaired_multimodal/README.md) · [Aggregation controls](../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md) |
+| Reproduction | The November 22 transfer restored the existing inputs, reproduced the full earlier matched count experiment and exercised one follow-up source-search fit. The complete 9/9 follow-up is documented in the original study. [Transfer guide](../../TRANSFER.md) · [Checks and outstanding replay scope](../../reproduce/VERIFICATION.md) |
+
+### Open questions
+
+- How well can these existing counts determine the source dimension and distinguish source distributions? The finite-sample positive control supplied the dimension. Individual three-source starts still varied substantially. [Fit diagnostics](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md) · [L20](LIMITATIONS.md#l20-scope-of-the-exact-model-count-benchmark)
+- Which assumptions about the count observation process and common source law are defensible in the sparse panels? The positive control provides a benchmark against which to interpret the negative existing-panel experiments. [Count extensions](count_extensions_2026_11_01/README.md) · [Novelty and scope](count_transport_novelty_2026_11_15/README.md)
+- Which aggregation operators preserve variation in state means across partitions, and how much information do they lose within an assay? Assess the biological alignment first. Detection of a direct cross-assay edge requires a model in which that edge can be identified from the allowed inputs. [Two-track plan](aggregation_restart_plan.md) · [Aggregation derivation](theory/06_latent_space_aggregation.md)
+
+The entries below retain their original decision dates. Phrases such as “current direction” in those entries refer to that date.
+
+- Historical project references:- Related project_resources/research: **[MISSION.md](MISSION.md)** (scientific intent & novelty — read first) ·
   [README.md](../../README.md) · [Analysis/README.md](../../pipelines/empirical/analysis/README.md) ·
   **[Analysis/PIPELINE.md](../../pipelines/empirical/analysis/PIPELINE.md)** (end-to-end driver + alternative paths) ·
   [Integration/README.md](../../pipelines/empirical/integration/README.md) ·
@@ -15,7 +29,7 @@ Changelog; when a decision changes, edit the Decision and note why in the Change
   [Analysis/results/target_gene_selection.md](../../pipelines/empirical/analysis/results/target_gene_selection.md) (validation-rich targets + cell-type pros/cons) ·
   **[LIMITATIONS.md](LIMITATIONS.md)** (every caveat — the only place they live) ·
   [planning/](planning) + [identifiability/](identifiability).
-- Historical real-data setup date: **2026-07-20** (see the two-goal update below for current work). Genome build:
+- Historical real-data setup date: **2026-07-20**. Genome build:
   **GRCh38/hg38**. Cell type: **monocyte** (CD14+/classical). Panel: **15 validation-rich genes**.
   Identifiability target: **local PAG/MAG (no causal sufficiency assumed)**.
 
@@ -358,6 +372,8 @@ promotion.
 
 ## 0. Where we are
 
+This section and the following numbered phases describe the July 2026 empirical workflow. The November status and open questions are above.
+
 **Pipeline:** scCUT&Tag preprocessing → scGLUE `joint_v2` integration → RNA-anchor pairing →
 nearby-peak matrices → PC/FCI/DAGMA → external biological support.
 
@@ -374,28 +390,14 @@ old sources) is cell-type-aligned and none could validate peak→gene edges (now
 
 ## 0.5 Publication push (2026-07-14 →) — the novelty & the plan
 
-**Single referenceable hub for the current publication effort.** Read with
-[MISSION.md](MISSION.md) (why/novel) and
-[Analysis/results/competitive_landscape_novelty.md](../../pipelines/empirical/analysis/results/competitive_landscape_novelty.md)
-(ranked competitors + reviewer counters).
-
-**The novelty, relocated (after the 2026-07-15 competitive scan).** Do NOT headline "our PAG
-distinguishes directed/direct/bidirected edges" — that is generic FCI, and MIIC (2017) already made
-bidirected latent-cause edges on *gene* data. The defensible claim is the combination none of the
-incumbents occupy:
-> **First latent-variable causal discovery (FCI/GFCI → PAG) at the *enhancer/chromatin-element* level
-> on single-cell multiome (scRNA + histone CUT&Tag), which *operationalizes the shared-latent-driver
-> confound that co-accessibility methods (Cicero/JRIM/Ziyani) concede they cannot resolve*, and
-> validates the resulting bidirected co-regulation modules against orthogonal axes (for which no
-> accepted element↔element null yet exists — itself a contribution).**
+This July proposal asked whether a local PAG could distinguish direct regulatory effects from shared latent drivers. Subsequent partition controls showed support for shared promoter context among stable peak pairs. They did not settle the causal mechanism for an individual edge. The earlier competitive scan is a historical rationale. The current mission and separate count-model prior-art audit set out the claims supported today. [Competitive scan](../../pipelines/empirical/analysis/results/competitive_landscape_novelty.md) · [Cross-mark controls](../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md) · [Mission](MISSION.md) · [Prior-art audit](count_transport_novelty_2026_11_15/README.md)
 
 **Done this push** *(verdicts only — the numbers live in the linked results project_resources/research)*:
 - Confounder root-nodes + mechanistic orientation wired as the **pipeline default** (`--confounders
   depth`). Confounder set decided = **library depth only** (donor not a usable variable —
   [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable); cell-cycle irrelevant for monocytes) —
   [confounder_orientation_implementation.md](../../pipelines/empirical/analysis/results/confounder_orientation_implementation.md).
-- **15-gene panel refreshed confounder-conditioned** — orientation solved panel-wide, validation
-  holds → [expanded_panel_confounder_results.md](../../pipelines/empirical/evaluation/results/expanded_panel_confounder_results.md).
+- **15-gene panel refreshed confounder-conditioned** — the specified prior oriented the selected peak–gene edges → [expanded_panel_confounder_results.md](../../pipelines/empirical/evaluation/results/expanded_panel_confounder_results.md).
 - **GFCI knowledge wired** (safe-name fix for Tetrad's `:`/`-` no-op; GFCI orients skeleton only, FCI
   carries direction — [L10](LIMITATIONS.md#l10-gfci-orients-the-skeleton-only)) — same notes doc.
 - **Novelty pinned** (competitive scan) + MISSION reframed.
@@ -413,9 +415,9 @@ numbers, tables and reasoning live in
 | 3 | shared TF, occupancy (ChIP-Atlas) | `build_chip_occupancy.py` | done — **negative, decisive** |
 | 4 | genome-wide activity latent | `build_global_activity.py` | done — **negative** (edges survive) |
 | 5 | co-accessibility contrast | `coaccess_contrast.py` | done — **strong positive for the method** |
-| 6 | **scale for power** | — | ⏳ **open, top priority** |
-| 7 | degree-matched null · faithful-Cicero | — | ⏳ open (refinements) |
-| 8 | cross-cell-type invariance (ICP) | — | ⏳ open — **now the project's invariance axis** (replaces donor-invariance, [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)); T-cell suite already built |
+| 6 | **scale for power** | — | **open, top priority** |
+| 7 | degree-matched null · faithful-Cicero | — | open (refinements) |
+| 8 | cross-cell-type invariance (ICP) | — | open — **now the project's invariance axis** (replaces donor-invariance, [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)); T-cell suite already built |
 
 > **Status superseded 2026-07-20.** The paragraph below was written when every axis returned
 > p = 1.00 — which turned out to be a broken permutation null, not evidence. The four negatives do
@@ -425,18 +427,7 @@ numbers, tables and reasoning live in
 > [same_mark_finding.md](../../pipelines/empirical/evaluation/results/same_mark_finding.md) ·
 > [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
 
-**Honest status — E↔E validation complete (2026-07-16).** The *methodological* novelty **holds and is
-the headline**: the confounder-conditioned PAG separates direct from latent-confounded element pairs,
-which co-accessibility conflates. The four-negative elimination is the *honest core*: the `<->`
-confounder is **real but unmeasured** — it survives every observed proxy we could test — so modelling
-it as a **latent** (FCI/PAG) rather than a direct link is *required*, not stylistic. Biology =
-MISSION §2's "elements co-driven by a latent *local* co-regulation state," not pairwise regulation /
-shared master TF / 3D looping. Remaining: scale, degree-matched null, faithful-Cicero, ICP.
-
-**Target paper shape:** (1) the confounder-conditioned element-level PAG pipeline; (2) the
-directed-vs-bidirected distinction validated by *distinct* biological signatures co-accessibility
-conflates; (3) a prioritized set of enhancer–enhancer co-regulation hypotheses for CRISPRi follow-up.
-Scope stays honest: observational, PAG-not-DAG, hypothesis-generating.
+The July 16 interpretation treated a bidirected endpoint as evidence for a specific latent biological mechanism. Later controls found sensitivity to the PAG implementation and the metacell partition. A defensible empirical result is enrichment of stable cross-mark pairs for shared promoter contacts under a distance- and degree-matched null. The original endpoint class and the biological mechanism for a particular pair remain distinct. [Matched analysis](../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md)
 
 ---
 
@@ -478,7 +469,7 @@ transport matching. QC with mcRigor; stabilize library size; report effective sa
 Why: our PC/FCI/DAGMA statistics are explicit functions of `n`. Overlapping neighbor-averaging (a) reuses
 cells → dependent rows → inflates `n` (`n_eff ≪ 1887`) → type-I error blow-up (denser, false graphs), and
 (b) shrinks within-feature variance → kills the signal CI tests use. Non-overlapping metacells use each
-cell once (`n_rows ≈ n_eff`). Regression-based GRN tools tolerate overlap; CI-test/score-based discovery
+cell once. The effective sample size remains unmeasured ([L3](LIMITATIONS.md#l3-small-n-and-n_eff-is-not-reported)). Regression-based GRN tools tolerate overlap; CI-test/score-based discovery
 does not — so this matters more for us. Metacells aren't free: control **library-size-driven spurious
 correlations** (LSMetacell idea) and **heterogeneous "dubious" metacells** (mcRigor). Accept that honest
 `n` is small (~25–150) — if it's too small for FCI, that is itself a reportable result.
@@ -493,13 +484,7 @@ default CI test and RCoT as the nonlinearity guard (retire KCI). Make all nodes 
 count) and DROP count-family DAGMA. Block the global confounders that are actually measurable before
 discovery. Report block-bootstrap edge-mark stability.**
 
-> **Amended 2026-07-20 (donor).** The original wording said "regress out donor/batch/cell-cycle" and
-> "report *donor-level* block-bootstrap". Donor is **not a usable variable** in this dataset — RNA was
-> never hashtagged and the chromatin HTO donors do not correspond to RNA donors, so no donor structure
-> is shared across modalities. Donor-block bootstrap is therefore *impossible, not pending*, and
-> donor-invariance is not an available route. Metacell aggregation already neutralizes donor/batch by
-> construction; **library depth is the right and sufficient observed confounder set**. Details:
-> [LIMITATIONS.md L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable).
+> **Donor metadata, corrected September 10.** RNA and chromatin have no verified common donor identifier. Chromatin hashtags distinguish technical groups. The available metadata support row-subsampling and technical sensitivity checks. The effects of unmeasured donor or batch on the fitted rows remain unresolved. [Provenance](../../pipelines/empirical/data/results/data_sources.md#provenance-correction-2026-09-10) · [L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)
 
 - **Primary:** GFCI (FGES skeleton + FCI orientation → PAG). Beats plain FCI on accuracy and directly fixes
   the "too dense" problem (FCI prunes from a complete graph; GFCI's score skeleton is sparser/more accurate).
@@ -620,16 +605,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
       `conf__*` edges as "confounder" (excluded from validation). Verified end-to-end on metacell CD14:
       all 4 peak→gene edges DIRECTED + validated (4/4), conf→peak edge excluded, support unbroken.
       Prototype: `scripts/prototype_confounder_tiers.py`; note: [`Analysis/results/confounder_orientation_implementation.md`](../../pipelines/empirical/analysis/results/confounder_orientation_implementation.md).
-- [x] **Cell-cycle + donor confounders — investigated, NOT APPLICABLE** (2026-07-10, donor status
-      corrected 2026-07-20). Donor is **not a usable variable at all**: RNA was never hashtagged, and
-      the HTO donors on the chromatin side do not correspond to RNA donors — no donor structure is
-      shared across modalities. Where chromatin donor labels do exist, metacells average them out
-      (purity ≈0.27 = random-mix floor; χ² donor×metacell p=0.43). Monocytes are ~1–2% cycling; S/G2M
-      scores don't correlate with the CD14 peaks. So **library depth is the right & sufficient observed
-      set**. Implication: residual peak↔peak `<->` after depth-conditioning is NOT donor/cell-cycle —
-      it reflects *biological* shared drivers (TF programs / chromatin domains), i.e. the novel object
-      (MISSION §2), correctly represented as latent (PAG bidirected).
-      See [LIMITATIONS.md L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable).
+- [x] **Cell-cycle and donor metadata reviewed.** The chromatin HTOs record technical tag groups. The separate 10x RNA experiment has no verified common donor map. S/G2M scores had little signal in the CD14 comparison. Depth was included as a technical covariate. Residual depth-adjusted edges can still reflect technical or biological common causes. [Provenance correction](../../pipelines/empirical/data/results/data_sources.md#provenance-correction-2026-09-10) · [Limitations](LIMITATIONS.md#l1-donor-is-not-an-available-variable)
 - [x] ~~Upgrade stability to donor-level block-bootstrap~~ — **closed as impossible, not pending**
       (2026-07-20): there are no donor labels to block on ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable)).
       Stability stays row-subsampling; a cell-state/cluster block is the only available upgrade.
@@ -689,16 +665,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   signature. Robust: aggregate bidirected counts (112–139) and the co-accessibility contrast. The
   strongest result is the instability itself (a MAUP in single-cell causal discovery).
   [partition_bootstrap_results.md](../../pipelines/empirical/evaluation/results/partition_bootstrap_results.md).
-- **2026-07-21** **[SUPERSEDED by 07-22 above] Same-mark enrichment resolved as biological — the positive E↔E signature.** The
-  split-half substrate test (quantify the two peaks from *disjoint* cells within each metacell, 20-split
-  averaged) shows the same-mark bidirected correlation **fully survives** breaking the shared cells
-  (rho 0.137→0.140; ≈104% of excess over baseline preserved). Combined with the earlier per-mark depth
-  refutation, **both technical explanations are out**; the remaining explanation is genuine
-  metacell-level cell-state co-variation. So bidirected edges preferentially connect elements in the
-  same chromatin state, and it is real signal — MISSION §2's predicted positive outcome, and the
-  positive characterisation the four-negative axes could not supply. Caveats: n=55 same-mark bidirected
-  pairs, one cell type, correlational. [same_mark_finding.md](../../pipelines/empirical/evaluation/results/same_mark_finding.md) ·
-  [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on).
+- **2026-07-21, superseded by the July 22 partition comparison.** The split-half check preserved the same-mark correlation in the original partition. It tested one shared-cell artifact. The ten-partition analysis found that the enrichment was sensitive to the partition, leaving its biological interpretation open. [Original finding](../../pipelines/empirical/evaluation/results/same_mark_finding.md) · [L12](LIMITATIONS.md#l12-per-mark-technical-depth-is-not-conditioned-on)
 - **2026-07-21** **Aggregation literature survey → the partition-instability finding is novel, and the
   fix is a novel contribution.** Cited survey
   ([aggregation_partition_dependence_survey.md](../../pipelines/empirical/analysis/results/aggregation_partition_dependence_survey.md)):
@@ -751,20 +718,16 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   — deferred behind the partition question, which affects both arms.
 - **2026-07-20** **Power has a measured ceiling.** Usable n (complete metacells: all 6 marks + RNA)
   peaks at 240 (target 400) vs 133 today, then falls to 154 at target 900. But 1.8× the rows produced
-  **identical** panel counts (19 peak→gene, 11 validated), consistent with the T-cell result that edge
-  recovery is limited by per-gene effect size, not n. Cost measured: median cells/metacell 95 → 36,
+  **identical** panel counts (19 peak→gene, 11 validated), although the identities changed. These comparisons do not isolate the effect of sample size. Cost measured: median cells/metacell 95 → 36,
   panel gene detection 96.3% → 91.0%.
-- **2026-07-20** **Donor is not a usable variable** (user-confirmed). RNA was never hashtagged and the
-  chromatin HTO donors do not correspond to RNA donors, so no donor structure is shared across
-  modalities. Consequences: donor-block bootstrap is *impossible* (closed, not pending);
-  donor-invariance removed as a MISSION pillar and **replaced by cross-cell-type invariance (ICP)**;
-  `--confounders depth,donor` is inert. Also implies pseudo-pairs are **not within-individual**, so the
-  genetics axis cannot recover genotype-driven chromatin↔expression covariation
-  ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable), [L2](LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual)).
+- **2026-07-20, corrected September 10.** The two experiments have no verified cross-assay donor identifier. HTO labels on the chromatin side describe technical groups. This precludes a donor block bootstrap from the available metadata. A cross-cell-type comparison measures sensitivity to changing the cell population. [Donor audit](LIMITATIONS.md#l1-donor-is-not-an-available-variable) · [Pseudo-pairing limits](LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual)
 - **2026-07-08** Q3: GFCI primary (PAG); rank-fisherz + RCoT CI tests, retire KCI; drop count-DAGMA; block
   global confounders; block-bootstrap stability. *(donor-level clause amended 2026-07-20 — see above.)*
 
 ## 4. Changelog
+
+- **2026-11-22.** Published the clean-checkout transfer record, including the extent of the matched simulation replay and the source-search smoke test. [Verification](../../reproduce/VERIFICATION.md)
+- **2026-11-15.** On the reused exact-model worlds, the count-informed, calibration-selected search recovered the prespecified shared-state targets across all three source dimensions. [Search results](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
 
 - **2026-08-02 — Cross-mark identifiability settled; metacell resolution identified as the real lever.**
   Asked whether cross-mark structure can be claimed with identifiability or with validation, by
@@ -815,8 +778,7 @@ Ordered so decisions/foundations precede analysis. Do NOT start bulk analysis un
   datasets), T-cell PCHi-C (nCD4+nCD8); T-cell gene selection → 286 validation-rich+expressed, picked 12
   (BTN3A2/ERAP2/RNASET2/CTSW/JAML/… all rich on ≥2 axes). Ran the identical pipeline (n=245). **Result:
   despite ~1.8× more cells AND a 3× richer validation suite, T-cell yielded FEWER validated stable edges
-  than monocyte (4 top-tier vs 7; 0.36 vs 0.47 per gene).** More n + more reference data did NOT produce
-  more validated causal edges — edge recovery is limited by per-gene effect size. T-cell edges lean
+  than monocyte (4 top-tier vs 7; 0.36 vs 0.47 per gene).** The difference is descriptive because the populations, genes and reference coverage also changed. T-cell edges lean
   physical/PCHi-C vs monocyte's prediction/genetics. **Decision: monocyte stays primary; T-cell suite
   kept for secondary/contrast use.**
 - **2026-07-09** **Monocyte-vs-T-cell power head-to-head** (`evaluation/celltype_power_comparison.md`).

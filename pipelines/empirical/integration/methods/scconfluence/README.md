@@ -1,11 +1,9 @@
 # scConfluence count-input pilot
 
 This isolated adapter runs the pinned upstream scConfluence architecture with
-RNA, H3K27ac and H3K4me3 count inputs. It is a prospective adaptation for this
-project, not an established histone causal-discovery method. The published
-high-dimensional experiments used compressed inputs and different observation
-models; this pilot uses full retained features and NB reconstruction for all
-three assays.
+RNA, H3K27ac and H3K4me3 count inputs. Its published high-dimensional experiments used compressed inputs. The project adaptation receives all retained features and uses negative-binomial reconstruction for each assay.
+
+The fixed pilot completed six GPU fits across two cached synthetic worlds and the scMTR-seq S1 cohort, each with two seeds. Matching varied by seed. The one recovered full-count synthetic cross-assay adjacency joined shared-state decoys. In S1, the paired 595-cell panel yielded no positive cross-assay adjacency under the specified graph readout. [Study and reliability results](../../../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
 
 The upstream source is preserved under [upstream/](upstream/) at commit
 `14d81e2ca679e161ec5c6806103a66c14fcdcd9a`. [UPSTREAM.json](upstream/UPSTREAM.json)
@@ -110,7 +108,7 @@ these artifacts to its predeclared protocol and verify common evaluation pools.
 
 ## Runtime and checks
 
-The workspace-local pilot environment uses Python 3.11, NumPy 1.26.4, AnnData
+The [recorded pilot requirements](../../../../../envs/requirements-scconfluence-pilot-2026-11-01.txt) document Python packages for the historical fit. The pilot used Python 3.11, NumPy 1.26.4, AnnData
 0.10.9, MuData 0.3.1, POT 0.9.6.post1, GeomLoss 0.2.6, PyTorch 2.10.0 and
 PyTorch Lightning 2.6.1. Python 3.11 is an explicit deviation from the pinned
 package's Python `<3.11` metadata, whose comment attributes that bound to an old
@@ -124,7 +122,7 @@ exact reference selection, train-only transformations, invalid counts,
 degenerate guide rejection, a real two-epoch native CPU fit with mixed
 minibatches, checkpoint reload, held-out export and tamper/no-overwrite guards.
 These tiny fixtures are software checks, not new scientific simulation worlds.
-The root study runner owns all actual serialized GPU jobs and result scoring.
+The [study runner](../../../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/run_fixed_pilot.py) ran the serialized GPU jobs and scoring. The November transfer rebuilt the cohort and learner H5ADs. Full GPU training was outside that replay. [Transfer verification](../../../../../reproduce/VERIFICATION.md)
 
 Source methods and interpretation are discussed in the [prior review](../../../../../project_resources/research/integration_followup_2026_10_31/alternative_methods.md),
 the [paper](https://doi.org/10.1038/s41467-024-51382-x), and the

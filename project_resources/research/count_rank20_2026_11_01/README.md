@@ -2,7 +2,7 @@
 
 Completed and independently audited: all 54 arms ran, with no accepted
 cross-assay moment pair. Removing the computational ceiling did not resolve
-source instability or fingerprint disagreement. See [RESULTS.md](RESULTS.md).
+source instability or fingerprint disagreement. [Results](RESULTS.md) · [Independent review of fit decisions](reviews/fit_decision_review.md)
 
 This is a separate exploratory follow-up to the
 [225-arm count-extension study](../count_extensions_2026_11_01/README.md).
@@ -32,7 +32,11 @@ validation. Earlier protocols and artifacts remain unchanged.
 
 The [original method](../count_extensions_2026_11_01/METHOD.md) supplies all
 equations; its cap-six rule is replaced by the cap-twenty rule only here.
-[RESULTS.md](RESULTS.md) owns the follow-up outcomes.
+[RESULTS.md](RESULTS.md) owns the follow-up outcomes. The later exact-model
+experiment supplied the latent dimension (one, two or three) and estimated
+transport in all nine reused worlds. Its known source count and generative
+assumptions differ from estimating dimension and matching sources on these
+300-feature panels. [Exact-model experiment](../../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md).
 
 ## Records and execution
 
@@ -41,13 +45,17 @@ equations; its cap-six rule is replaced by the cap-twenty rule only here.
 - [Evaluation summary](evaluation_v1/summary.json) and [evaluation seal](evaluation_v1/provenance.json).
 - [Original data manifest](../count_extensions_2026_11_01/data_v1/manifest.json).
 
-Run order, from this directory in a separate study copy with no existing outputs:
+Git preserves the shared data manifest and fit and evaluation records. Replay
+requires the cached or reconstructed 300-feature panel arrays and the pinned
+Sturma learner. Restore them in the same relative study layout, activate the
+compatible `scrna_r` environment, and run from a separate study copy with fresh
+output directories. [Source restoration](../../../TRANSFER.md#other-simulation-tracks-and-historical-runs) · [Environment guide](../../../envs/README.md).
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -u apply_extensions.py
+  python -u apply_extensions.py
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -u evaluate_extensions.py
+  python -u evaluate_extensions.py
 ```
 
 The scripts refuse output overwrite. Two CPU workers and one BLAS thread per

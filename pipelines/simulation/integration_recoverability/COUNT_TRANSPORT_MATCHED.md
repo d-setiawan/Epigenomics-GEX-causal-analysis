@@ -209,13 +209,13 @@ cells and true parameters are exclusively evaluation information.
 ## Records
 
 - [Primary plan](runs/count_transport_matched_v1/PLAN.md), [protocol](runs/count_transport_matched_v1/protocol.json), [generation seal](runs/count_transport_matched_v1/generation_seal.json) and [fit seal](runs/count_transport_matched_v1/fit_seal.json).
-- [Primary full evaluation](runs/count_transport_matched_v1/evaluation.json), [selected comparisons](runs/count_transport_matched_v1/comparison.tsv), [aggregate results](runs/count_transport_matched_v1/aggregate.tsv) and [evaluation seal](runs/count_transport_matched_v1/evaluation_seal.json).
+- [selected comparisons](runs/count_transport_matched_v1/comparison.tsv), [aggregate results](runs/count_transport_matched_v1/aggregate.tsv) and [evaluation seal](runs/count_transport_matched_v1/evaluation_seal.json).
 - [Scientific review](runs/count_transport_matched_v1/REVIEW.md), [independent numerical replay](runs/count_transport_matched_v1/NUMERICAL_REVIEW.json) and [vector figure](runs/count_transport_matched_v1/recovery.svg).
-- [Exploratory follow-up protocol](runs/count_transport_labels_v1/protocol.json), [all 36 fits and selection seal](runs/count_transport_labels_v1/fit_seal.json), [full evaluation](runs/count_transport_labels_v1/evaluation.json), [comparison table](runs/count_transport_labels_v1/comparison.tsv) and [evaluation seal](runs/count_transport_labels_v1/evaluation_seal.json).
+- [Exploratory follow-up protocol](runs/count_transport_labels_v1/protocol.json), [seal for all 36 fits and the selections](runs/count_transport_labels_v1/fit_seal.json), [comparison table](runs/count_transport_labels_v1/comparison.tsv) and [evaluation seal](runs/count_transport_labels_v1/evaluation_seal.json).
 - [Generator/runner](count_transport_matched.py), [convergence driver](count_transport_converged.py), [evaluator](count_transport_matched_evaluate.py) and [label optimizer](count_transport_label_optimizer.py).
 - [Earlier mismatched-world results](COUNT_TRANSPORT_DEMONSTRATION.md), retained separately.
 
 The combined implementation passed **87 focused tests**. The primary numerical replay checked
 274 hashes and 864,000 selected paired-row predictions; bootstrap quantiles were
 not independently recomputed. Sources and outputs from earlier experiments were
-preserved. Reproduction commands and environment details are in the frozen plans.
+preserved. The primary and labeling runs produced detailed `evaluation.json` files in their respective run caches. The [matched run guide](runs/count_transport_matched_v1/README.md) and [labeling run guide](runs/count_transport_labels_v1/README.md) identify the records available in a checkout. The [transfer guide](../../../TRANSFER.md) includes a portable matched replay.

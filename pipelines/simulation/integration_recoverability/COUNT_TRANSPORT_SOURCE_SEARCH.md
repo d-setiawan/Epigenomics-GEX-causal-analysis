@@ -197,7 +197,6 @@ sources and artifacts were preserved.
 - [Frozen plan](runs/count_transport_search_v1/PLAN.md) and
   [protocol](runs/count_transport_search_v1/protocol.json).
 - [Fit and selection seal](runs/count_transport_search_v1/fit_seal.json),
-  [full evaluation](runs/count_transport_search_v1/evaluation.json),
   [comparison table](runs/count_transport_search_v1/comparison.tsv),
   [aggregates](runs/count_transport_search_v1/aggregate.tsv), and
   [evaluation seal](runs/count_transport_search_v1/evaluation_seal.json).
@@ -210,3 +209,4 @@ sources and artifacts were preserved.
   [experiment driver](count_transport_search_run.py), and
   [optimizer tests](tests/test_count_transport_source_search.py).
 
+The full `evaluation.json` is a generated run-cache artifact. The comparison tables, numerical audit and hash in the evaluation seal can be inspected from a checkout. For a new run, follow the [portable replay instructions](../../../TRANSFER.md#exact-model-simulation-on-cpu).

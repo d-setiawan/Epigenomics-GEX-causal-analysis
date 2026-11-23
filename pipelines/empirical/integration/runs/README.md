@@ -1,15 +1,5 @@
 # Integration runs
 
-Each run writes to a unique directory here. The run ID includes the method and
-the run name, for example `scglue_joint_v2` or `scmrdr_scMRDR_gaussian`. Existing
-artifacts were moved from the old method-specific output tree without changing
-their contents.
+Each full-data integration writes a local directory named for the method and run ID. Historical PBMC runs include `scglue_joint_v2` and `scmrdr_scMRDR_gaussian`. Their saved-embedding comparison and protein-marker checks are available in the [alignment report](../results/biological_alignment_2026-09-16.md).
 
-For new experiments, keep the resolved run configuration under
-[`../configs/runs/`](../configs/runs/), add its input-manifest reference and
-environment to the run record, and use a new run ID. Do not write into an
-existing run directory. Cross-run comparisons belong in
-[`../comparisons/`](../comparisons/).
-
-Run artifacts are gitignored; keep small configs and comparison summaries
-tracked with the integration stage.
+Fitted weights, embeddings and large run directories are excluded from Git. To train from the restored PBMC inputs, use a fresh run ID because the legacy wrappers can overwrite stage outputs. Keep the resolved invocation in the [run configurations](../configs/runs/README.md). Cross-run artifacts go under `integration/comparisons/`, and portable summaries go under [integration results](../results/). [Restore and run](../../../../TRANSFER.md)

@@ -24,14 +24,14 @@ The [separate evaluator](evaluate_count_sources.py) opens heldout references onl
 
 The 36 arms reuse scMTR-seq S1 and two cached simulation worlds, RNA/H3K27ac/H3K4me3, two exposure treatments, two estimators, two original-data seeds and one permutation-control seed. There are 24 original-data arms and 12 controls. No new biological data, project worlds, features or modalities were added. The fit stage used approximately five minutes of CPU computation in the existing `scrna_r` environment; no packages or GPU configuration changed.
 
-The data are the unchanged [frozen count panels](../sturma_pilot_2026_11_01/data_pilot_v1/manifest.json). The original simulation focal graphs are not the truth for these background latent factors. Real paired cells remain evaluator-only and supply moment comparisons, not causal ground truth.
+The frozen panels comprise background features. The simulation's focal graph describes a different feature set, and the held-out paired cells provide empirical moment comparisons. Git retains the panel manifest, fitting decisions and evaluation summaries. Replaying the fits requires the cached or reconstructed count arrays and the pinned Sturma upstream clone. [Panel manifest](../sturma_pilot_2026_11_01/data_pilot_v1/manifest.json) · [Restore instructions](../../../TRANSFER.md#other-simulation-tracks-and-historical-runs).
 
-Useful checks from this directory, using the existing environment:
+With the upstream clone in place, run the fixture tests from this directory in the active `scrna_r` environment. The two original audit scripts listed below write receipts. Run them in a replay copy with the fitted arrays available. [Environment guide](../../../envs/README.md).
 
 ```bash
-/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest -q test_count_sources.py test_apply_counts.py test_evaluate_count_sources.py
-/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python reviews/verify_count_algebra.py
-/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python reviews/audit_count_fits.py
+python -m pytest -q test_count_sources.py test_apply_counts.py test_evaluate_count_sources.py
+python reviews/verify_count_algebra.py
+python reviews/audit_count_fits.py
 ```
 
 `apply_counts.py` and `evaluate_count_sources.py` refuse to overwrite their output directories. Preserve these results; use a separately versioned study/protocol for another scientific comparison. The [fit provenance](runs_v1/provenance.json) and [evaluation provenance](evaluation_v1/provenance.json) bind inputs, sources and artifacts to this run.
@@ -40,8 +40,8 @@ Useful checks from this directory, using the existing environment:
 
 - [Theory and implementation](reviews/theory_implementation_review.md), with [independent algebra checks](reviews/count_algebra_audit.json).
 - [Algorithm choices and literature](reviews/algorithm_options.md) and [runner review](reviews/runner_review.md).
-- [Data and evaluation contract](reviews/data_protocol_review.md), [training-split diagnostics](reviews/training_split_diagnostics.json), and [evaluator validation](reviews/evaluator_validation.json).
+- [Data and evaluation contract](reviews/data_protocol_review.md), [training-split diagnostics](reviews/training_split_diagnostics.json), and [evaluator validation](reviews/evaluator_validation.json) and [review of the held-out readout](reviews/evaluation_readout_review.md).
 - [Replay of all 36 fitted decision paths](reviews/audit_count_fits.json).
 - [Heldout metric replay](reviews/count_metric_audit.json), [data and evaluator audit](reviews/data_and_evaluation_audit.json), and [final interpretation review](reviews/result_interpretation_review.md).
 
-The remaining limitations are explicit: the Poisson kernel, affine independent-source rate model and exposure assumptions are unverified for these data; finite fingerprints do not establish equality of full source laws; and a successful source match would still require additional model conditions for latent graph recovery. See [the derivations](METHOD.md) and [project boundary L18](../LIMITATIONS.md#l18-latent-space-aggregation-does-not-reconstruct-the-missing-joint-distribution).
+The Poisson kernel, affine independent-source rate model and exposure assumptions are unverified on these panels. A finite fingerprint compares selected features of a source distribution. Translating a source match into a latent causal graph requires further model assumptions. The subsequent 225-arm extension and 54-arm dimension follow-up also returned zero source pairs passing the moment test. [Derivations](METHOD.md) · [Extension results](../count_extensions_2026_11_01/RESULTS.md) · [Dimension follow-up](../count_rank20_2026_11_01/RESULTS.md) · [Observation limit](../LIMITATIONS.md#l18-latent-space-aggregation-does-not-reconstruct-the-missing-joint-distribution).

@@ -1,8 +1,12 @@
 # Archive
 
-Historical material retained during the repository reorganization. Archived
-documents are kept for context; current workflow instructions live in the
-pipeline READMEs.
+The [former combined evaluation guide](Evaluation_README_pre_split.md) records the layout used before empirical validation and simulation were split. Its paths and instructions refer to that historical layout.
 
-The former combined evaluation guide is preserved as
-[Evaluation_README_pre_split.md](Evaluation_README_pre_split.md).
+| Looking for | Current location |
+| --- | --- |
+| External support for an empirical peak or peak–gene link | [Empirical evaluation](../../pipelines/empirical/evaluation/README.md) |
+| Effects of averaging, matching or repartitioning cells | [Aggregation and identifiability](../../pipelines/simulation/aggregation_identifiability/README.md) |
+| Cached multimodal worlds and CA-BOSS results | [Unpaired multimodal benchmark](../../pipelines/simulation/unpaired_multimodal/README.md) |
+| Tests of integration and count-based recovery | [Integration recoverability](../../pipelines/simulation/integration_recoverability/README.md) |
+
+Dated research studies and their reviews are indexed separately. [Research index](../research/README.md)

@@ -1,6 +1,10 @@
 # Integration recoverability: observed results
 
-_Updated 2026-11-01. Simple three-seed first pass complete with one CI failure; extended benchmark incomplete._
+_Original integration results through November 1, 2026. The simple three-seed first pass completed with one CI failure. The extended benchmark remains incomplete._
+
+For the subsequent raw-count experiments, see the [existing-world demonstration](COUNT_TRANSPORT_DEMONSTRATION.md) and [exact-model source search](COUNT_TRANSPORT_SOURCE_SEARCH.md). Those experiments measured transport and prediction under a specific count model. [Clean-checkout replay scope](../../../reproduce/VERIFICATION.md)
+
+The results tables are part of Git. Detailed readouts, logs and fit receipts linked under `runs/` in this historical report require the original run cache. [Input and replay guide](../../../TRANSFER.md)
 
 ## scConfluence and scMTR-seq follow-up
 
@@ -1508,7 +1512,7 @@ the frozen assessment operator subsequently stopped at a count-calibration
 failure in `linear_collider_3`. Continued `constrained_chain_1` attempts retained
 their native CUDA failures and partial outputs. The bounded retry has now
 completed both regimes, bringing the original suite to 118 of 178 model fits.
-See the [current execution snapshot](IMPLEMENTATION_STATUS.md#current-execution-snapshot-2026-10-26)
+See the [October 26 execution snapshot](IMPLEMENTATION_STATUS.md#earlier-execution-snapshot-2026-10-26)
 for the completed, separate integration-validation matrix. Remaining work includes
 unfinished assessment conditions, final synthesis, and their independent
 reviews. The frozen schedule lists 178

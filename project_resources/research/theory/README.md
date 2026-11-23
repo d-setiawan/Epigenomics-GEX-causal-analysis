@@ -1,55 +1,39 @@
 # Theory: what metacell aggregation does to causal discovery
 
-The latest [nonlinear repair and count-model program](../nonlinear_repair_2026_11_15/README.md)
-contains replacement identification statements, independent proof reviews and
-completed existing-count experiments. Its
-[synthesis](../nonlinear_repair_2026_11_15/SYNTHESIS.md) separates conditional
-nonlinear/count recovery from the unresolved biological causal target.
+**What can an unpaired assay tell us about a cell-level edge?** Even perfect
+matching on biological state leaves the within-state cross-assay covariance
+unobserved. Two causal models can therefore agree on every learner-visible
+assay law and disagree about a direct edge. The proof states the observation
+contract and shows how it applies to scGLUE, scMRDR and scConfluence. [Population
+counterexample](07_unpaired_integration_nonidentifiability.md) · [Integration objectives](08_modern_integration_objectives.md).
 
-The [nonlinear recheck](../nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md)
-corrects omissions in the earlier nonlinear theorem coverage and separately
-reviews the literal variability premise and possible revisions.
+**What can a shared-state model recover?** E/E2 identify transport between
+assay log-rate subspaces under a known product-Poisson channel, full-rank
+log-linear maps and a shared law of independent non-Gaussian unit-variance
+sources without signed-permutation ambiguities. Recovering the count joint
+also requires independent cross-assay observation noise given the shared
+sources. The corollary combines established count-mixture and linear alignment
+results. [Square case](../nonlinear_repair_2026_11_15/theory/COMP_COUNT_SHARED_TRANSPORT.md) · [Unequal-width case](../nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md) · [Novelty assessment](../count_transport_novelty_2026_11_15/README.md).
 
-The preceding [unpaired-assay identification program](../research_program_2026_11_14/README.md)
-adds an explicit observation/target contract, primary-theorem applicability
-review and a pinned Lean project. Its
-[requirement ledger](../research_program_2026_11_14/REQUIREMENTS.md) preserves
-the earlier review record; the notes below retain their original scope.
+**Where has that worked?** In a binary-source special case with known
+dimension, a count-based estimator passed the transport, covariance and
+predictive-score criteria in all nine reused worlds. These worlds had one to
+three sources and 12,000 unpaired fitting cells per assay. Cross-assay causal
+direction and transport on empirical counts remain open. The earlier Sturma
+and count-correction studies tested source matching on the original sparse
+panels. [Exact-model positive control](../../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
+· [Native Sturma results](../sturma_pilot_2026_11_01/README.md) · [Count correction](../count_mdcrl_2026_11_01/README.md) · [Count extensions](../count_extensions_2026_11_01/README.md) · [Dimension follow-up](../count_rank20_2026_11_01/README.md).
 
-A derivation companion. Empirical results and population identification
-arguments are separate evidence. Start with the
-[2026-11-01 unpaired-integration proof](07_unpaired_integration_nonidentifiability.md)
-for the current information boundary and its exceptions. Notes 01–05 retain
-the earlier aggregation model and empirical history; their claims require that
-model's stated conditions.
-
-The [method-specific companion](08_modern_integration_objectives.md) applies
-that proof to scGLUE, scMRDR and scConfluence objectives, including an exact
-example in which optimal transport selects an incorrect residual coupling.
-
-The [broader literature review](../integration_literature_scope_2026_11_01/REVIEW.md)
-maps these limits to published methods and positive identification theorems.
-In particular, a restricted unpaired model can identify a shared latent causal
-graph; the broad-class counterexample is not a universal impossibility claim.
-The subsequent [Sturma replication and count application](../sturma_pilot_2026_11_01/README.md)
-tests the native method while keeping its published-model result separate from
-its application to our existing measurements.
-The [count-aware extension](../count_mdcrl_2026_11_01/METHOD.md) makes the
-measurement-noise hypothesis explicit and distinguishes its finite-sample
-estimator from population identification under a known Poisson kernel. Its
-[results](../count_mdcrl_2026_11_01/RESULTS.md) do not establish cross-assay recovery.
-The subsequent [extension method](../count_extensions_2026_11_01/METHOD.md)
-derives NB/zero-mask corrections, source shrinkage and generating-function
-orientation. Its [known-kernel population note](../count_extensions_2026_11_01/reviews/kernel_population_identifiability.md)
-keeps within-assay law identification separate from cross-assay coupling.
-The [dimension follow-up](../count_rank20_2026_11_01/README.md) tests the full
-empirically selected dimensions without treating them as known biological rank.
+The published-method review and subsequent theory studies identify which
+assumptions suffice for each target. The November 14 recheck records omissions
+in the initial nonlinear review. [Scoping review](../integration_literature_scope_2026_11_01/README.md)
+· [Observation and target contract](../research_program_2026_11_14/README.md) · [Nonlinear recheck](../nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md) · [Theorem review and study results](../nonlinear_repair_2026_11_15/README.md).
 
 ## Read in order
 
-| | |
+| Note | What it covers |
 |---|---|
-| [01 — The aggregation algebra](01_aggregation_algebra.md) | The generative model, the covariance the search actually receives, attenuation, and why partition instability is a *corollary* rather than a separate problem |
+| [01 — The aggregation algebra](01_aggregation_algebra.md) | The model for averaged observations, correlation attenuation and how sampling noise can change an estimate across partitions |
 | [02 — Identifiability under matched pairing](02_identifiability.md) | Common-cell linear equations versus missing cross-assay residual coupling; corrected graph/PAG scope and the between-metacell rank bound |
 | [03 — What each algorithm actually does](03_algorithms.md) | PC / FCI / GFCI / BOSS / BFCI / LV-Heuristic in equations, the score and CI test they share, and why two "FCI" implementations disagree 5.3× |
 | [04 — The simulation](04_simulation.md) | Design, the controlled contrasts, and every result matched against the prediction it was built to test |
@@ -60,43 +44,43 @@ empirically selected dimensions without treating them as known biological rank.
 
 ## The story in one page
 
-Six histone marks are six **separate assays on separate cells**. A metacell holds some cells from
-each, and variable $j$ is averaged over that metacell's channel-$\mathrm{ch}(j)$ cells only. Write
-the analysis matrix as a population metacell mean plus a sampling deviation, $X_{cj} = \mu_{cj} +
-\xi_{cj}$. Because two variables of the same mark are averaged over the *same* cells and two
-variables of different marks over *disjoint* cells,
+In the original PBMC design, six histone marks and RNA come from separate
+assays. Consider a fixed biological stratum $c$ with $n_{c,a}$ independently
+sampled cells in assay $a$. Each feature in that assay is averaged over the
+same cells. Across assays the samples are independent given $c$. Write
+$\Sigma^B_{jk}$ for the covariance of the two stratum means across strata and
+$\Sigma^W_{c,jk}$ for within-stratum cell-level covariance. Under this model,
 
-$$\operatorname{Cov}(X_j, X_k) \;=\; \Sigma^{B}_{jk} \;+\; \mathbf{1}\!\left[\mathrm{ch}(j)=\mathrm{ch}(k)\right]\cdot \mathbb{E}_c\!\left[\frac{\Sigma^{W}_{jk}}{n_{c}}\right].$$
+$$
+\operatorname{Cov}(X_j,X_k)
+=\Sigma^B_{jk}
++\mathbf 1_{\{\mathrm{ch}(j)=\mathrm{ch}(k)\}}
+\mathbb E_c\!\left[\frac{\Sigma^W_{c,jk}}{n_{c,\mathrm{ch}(j)}}\right].
+$$
 
-This decomposition assumes independent disjoint sampling within fixed state
-strata. It motivates the following distinctions; it is not by itself a proof
-of particular PAG endpoints or empirical instability.
+Features from the same assay retain a contribution from within-stratum
+covariance. For features from different assays, only the covariance of stratum
+means survives. Sampling variation still affects both variances. Thus the
+correlation between the aggregates equals the correlation between the
+stratum means times $\sqrt{\lambda_j\lambda_k}$, where $\lambda_j$ is the
+fraction of aggregate variance attributable to variation in feature $j$'s
+stratum mean. This identity for fixed strata is a reference model for examining
+learned partitions. [Aggregation derivation](01_aggregation_algebra.md).
 
-1. **Same-mark and cross-mark entries are not on the same scale.** Same-mark carries a term
-   cross-mark does not. This is a property of the assay design, not of chromatin.
-2. **Cross-mark correlations are attenuated**, because the noise enters both variances in the
-   denominator and nothing in the numerator. The attenuation factor is the *reliability*
-   $\lambda_j$, and measuring it on real data gives a median of $\approx 0$: with ~11 cells per
-   mark per metacell, the typical variable's entire between-metacell variance is sampling noise.
-3. **Weak between-state signal can make partitions unstable.** Repartitioning
-   changes sampling deviations. This supplies a possible mechanism, not a
-   universal prediction about the output of a graph algorithm.
-4. **Original cross-assay structure needs an identifying assumption.** Shared
-   means can induce dependence among constructed aggregates. This does not
-   force bidirected PAG endpoints or preclude stable wrong arrows. Note 07
-   proves the precise broad-class limitation without relying on benchmark
-   failures.
-5. **Stable associations can remain useful.** The historical cross-mark audit
-   reports recurrent adjacencies and external-support enrichment. Those are
-   association and validation results, not proof of biological direct effects;
-   the owning report below supplies the numbers and controls.
+The PBMC audit covered 442 features in 133 complete metacells, with a median
+of about 11 cells per mark per metacell. The median estimated signal share was
+−0.017. A population variance fraction cannot be negative. At this depth,
+the typical feature's estimated between-metacell variation was difficult to
+distinguish from sampling variation. Some adjacencies recurred across
+partitions and had external promoter-contact enrichment. That evidence supports
+shared-state association. Direct regulatory effects require an additional
+identifying assumption. [Panel measurements and controls](../../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md).
 
 ## Where the numbers are owned
 
-Per the repo's [documentation ownership rule](../../../README.md), result numbers are owned by the
-`*/results/*.md` project_resources/research and caveats by [LIMITATIONS.md](../LIMITATIONS.md). Figures are reproduced
-here **only** where a derivation needs them side by side with the algebra that predicts them; the
-owning documents are authoritative and are linked at each point:
+The following reports give the original data, thresholds and evaluation
+procedures behind the aggregation notes. Cross-study qualifications are in
+the [limitations register](../LIMITATIONS.md).
 
 - [crossmark_identifiability.md](../../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md) — the
   signal-share audit, the estimator arms, the resolution curve, the nulls, the edge list
@@ -104,9 +88,8 @@ owning documents are authoritative and are linked at each point:
   the original partition-instability result and the K=3 pilot
 - [pairing_artifact_findings.md](../../../pipelines/simulation/unpaired_multimodal/results/pairing_artifact_findings.md) — the
   implementation gap and the multi-channel simulation
-- [LIMITATIONS.md](../LIMITATIONS.md) — L11 (partition dependence), L14 (covariance scale
-  asymmetry), L15 (most variables carry no signal), L17 (integration validation), and L18
-  (latent-space aggregation does not reconstruct the missing joint distribution)
+- [LIMITATIONS.md](../LIMITATIONS.md) covers partition dependence (L11), covariance differences
+  across assays (L14), limited power for between-state variation (L15), integration
+  validation (L17) and the missing same-cell joint (L18).
 
-Related: [identifiability/](../identifiability) covers FCI's guarantees in general; this folder
-covers what *this* data construction does to them.
+For the general assumptions behind FCI, see the [identifiability notes](../identifiability).

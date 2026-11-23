@@ -84,12 +84,25 @@ gtf=pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.p
 bash pipelines/empirical/integration/methods/scglue/run_joint_pipeline.sh transfer_scglue "$gtf"
 ```
 
-For scMRDR, apply its joint pipeline to the rebuilt workspace and the same GTF.
+For the historical PBMC scMRDR-style comparison, the joint wrapper takes a
+fresh run ID and reads the rebuilt workspace. Its default uses the native
+assay features.
+
+```bash
+bash pipelines/empirical/integration/methods/scmrdr/run_joint_pipeline.sh transfer_scmrdr
+```
+
+For the optional shared-gene representation, pass the restored GTF to
+`run_build_gene_feature_universe.sh`. Its `joint_gene_feature_manifest.tsv`
+is a preprocessing input to a separate joint run via
+`--preprocess-arg --gene-feature-manifest --preprocess-arg PATH`.
+The paper-consistent simulation adapter has its own entry point.
+[scMRDR method guide](pipelines/empirical/integration/methods/scmrdr/README.md)
+
 The analysis and evaluation guides cover graph execution and the download
 builders for external evidence. The scMTR-seq builders create a separate cohort
 from its restored raw data. Its historical provenance is stored in `records/`
 so it cannot block the builders from creating their output directories.
-[scMRDR](pipelines/empirical/integration/methods/scmrdr/README.md) ·
 [Analysis](pipelines/empirical/analysis/README.md) ·
 [Evaluation](pipelines/empirical/evaluation/README.md) ·
 [scMTR-seq cohort](pipelines/empirical/data/scmtr_seq/README.md)

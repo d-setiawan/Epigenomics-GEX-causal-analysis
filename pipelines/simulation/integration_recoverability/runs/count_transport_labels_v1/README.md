@@ -1,17 +1,18 @@
-# Exploratory Bernoulli-label optimization follow-up
+# Exploratory Bernoulli-label optimization
 
-See the [combined results report](../../COUNT_TRANSPORT_MATCHED.md). This run
-reuses the nine already-assessed exact-model worlds at 12,000 fitting cells per
-assay. It changes the probability parameterization/domain, preserves the physical
-initial models, and applies one global source-label canonicalization after fitting.
+The November 15 labeling experiment reused the same nine assessed exact-model worlds, 12,000
+fitting cells per assay and four physical initial models per world. It expanded the parameter
+range, allowed both Bernoulli label orientations, and applied one global relabeling after
+fitting. All 36 starts met the numerical convergence criterion. The unpaired
+calibration-selected models met full recovery in 3/3 one-source worlds, 0/3 two-source worlds
+and 0/3 three-source worlds. In each of the six higher-dimensional groups, the generating
+parameters attained a better training objective than the selected fit.
+[Combined results report](../../COUNT_TRANSPORT_MATCHED.md) ·
+[Per-world results](comparison.tsv) · [Aggregate results](aggregate.tsv)
 
-All 36 starts converged numerically. Calibration-selected full recovery is 3/3
-for one source, 0/3 for two and 0/3 for three. Every higher-dimensional fit remains
-suboptimal relative to the feasible true parameters. This is exploratory
-estimator evidence, not a theorem counterexample or causal-direction result.
-
-The [plan](PLAN.md), [protocol](protocol.json), [fit seal](fit_seal.json),
-[evaluation](evaluation.json), [evaluation seal](evaluation_seal.json),
-[scientific review](REVIEW.md) and [numerical audit](NUMERICAL_REVIEW.json)
-preserve the full record. No new counts or biological measurements were used
-in this follow-up, and the primary experiment remains unchanged.
+The Git checkout includes the plan, protocol, fit and evaluation receipts, and independent
+reviews. The original run cache contains the fitted models and full evaluation. The later
+count-informed search reused these worlds as well. [Plan](PLAN.md) · [Protocol](protocol.json) ·
+[Fit seal](fit_seal.json) · [Evaluation seal](evaluation_seal.json) ·
+[Scientific review](REVIEW.md) · [Numerical audit](NUMERICAL_REVIEW.json) ·
+[Source-search results](../count_transport_search_v1/README.md)

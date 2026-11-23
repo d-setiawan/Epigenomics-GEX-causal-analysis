@@ -3,13 +3,15 @@
 ↑ [Central README](../../README.md) · [MISSION](MISSION.md) (what we're trying to do) ·
 [ROADMAP](ROADMAP.md) (what's next) · [LIMITATIONS](LIMITATIONS.md) (what it can't do)
 
-**Read this if you're picking the project back up.** ROADMAP records *what* was decided in one line
-each; this file records **why**, and **how we found out** — the diagnostic that forced each choice,
-the alternatives we rejected, and where the code lives. Most decisions here were not made up front;
-they were made because something broke and we went looking.
+The numbered sections record choices made for the original empirical pipeline. Later experiments exposed two distinct questions. Which relationships do the marginal assay counts determine at the population level? Can an estimator recover them at the available sample size?
 
-Every decision follows the same shape: **a problem we could measure → options → what we picked and
-why**. Where a number appears, it comes from the results doc linked at the end of that section.
+## Why we tested shared-state transport
+
+A peak and a transcript from independent cell samples can covary across matched states even when their within-state, same-cell dependence is unknown. Running a graph learner on a chosen coupling gives an answer for those constructed rows. This motivated testing integration against known couplings and using ambiguous worlds as controls. [Aggregation argument](theory/06_latent_space_aggregation.md) · [Unpaired counterexamples](theory/07_unpaired_integration_nonidentifiability.md) · [Integration results](../../pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md)
+
+The E/E2 model restricts the possible couplings. Distinct source distributions can align log intensities across assays, and the known count channel ties the observations to their latent rate laws. We tested a known-dimension binary-source subclass to distinguish failure to fit the likelihood from failure of population identification. On the same worlds, a count-informed search with several starts selected by unpaired calibration recovered more often than the unbounded fit initialized from the old starts. These choices changed the estimator’s ability to fit the model. The targets were transport, covariance and prediction. [Corollary](nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md) · [Exact-model comparison](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_MATCHED.md) · [Source search and failures by start](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
+
+The November 22 transfer prioritized a clean CPU replay, checksum-verified inputs and portable launch commands. The distinction between a completed scientific run and the portion independently repeated at handoff is recorded in the [transfer verification](../../reproduce/VERIFICATION.md).
 
 **Contents**
 [1. Local per-gene graphs](#1-why-local-per-gene-graphs-and-not-one-big-network) ·
@@ -43,7 +45,7 @@ would swamp everything. A per-gene graph over ~40 nearby peaks + confounders + e
 the data can actually speak to.
 
 **What we give up.** No trans-regulation, no cross-locus structure. We say this explicitly — the claim
-is *local* causal architecture, per gene ([LIMITATIONS L6](LIMITATIONS.md#l6-observational-pag-not-dag)).
+is structure in each gene’s local regulatory neighborhood ([LIMITATIONS L6](LIMITATIONS.md#l6-observational-pag-not-dag)).
 
 **How.** A 300 kb window around each gene's TSS (interpretable range for enhancer–promoter contacts).
 1 Mb was tried and produced graphs that were too dense to interpret.
@@ -52,26 +54,14 @@ is *local* causal architecture, per gene ([LIMITATIONS L6](LIMITATIONS.md#l6-obs
 
 ## 2. Why scGLUE for integration
 
-**The problem.** Chromatin and RNA are measured in *different cells*. Nothing can be correlated until
-the two modalities live in a shared space.
-
-**Options.** scGLUE (graph-linked unified embedding) vs. a scMRDR-style model (the "Jianle" track).
-
-**What decided it.** A direct measurement of how well each mixes the modalities — the fraction of each
-cell's nearest neighbours that come from its *own* modality. Lower is better (cells sit next to cells
-from the other modality rather than clustering by assay):
+In the original PBMC pipeline, RNA and histone marks were measured in separate cells. scGLUE and the scMRDR-style implementation offered candidate common embeddings. An early comparison measured how often a cell's nearest neighbors belonged to its own assay.
 
 | Run | same-modality neighbour fraction | silhouette by modality |
 | --- | --- | --- |
 | **scGLUE `joint_v2`** | **0.2548** | −0.0122 |
 | scMRDR_gaussian | 0.5693 | −0.0984 |
 
-scMRDR left cells largely clustered by assay (0.57 — barely better than not integrating), which would
-make any downstream pairing meaningless. scGLUE won on the metric that matters for our use.
-
-**Kept, not deleted.** The scMRDR track stays as a comparison so the choice remains checkable.
-
-📁 `pipelines/empirical/integration/methods/scglue/` · [Integration README](../../pipelines/empirical/integration/README.md)
+The lower same-assay neighbor fraction prompted the historical choice of scGLUE for constructing rows. A later check using held-out proteins found both concordant and reversed biological contrasts between assay pairs. The saved scMRDR comparator also had limitations. Mixing is therefore a diagnostic of assay separation. Biological correspondence and causal recovery require their own tests. [Integration guide](../../pipelines/empirical/integration/README.md) · [Biological alignment baseline](../../pipelines/empirical/integration/results/biological_alignment_2026-09-16.md)
 
 ---
 
@@ -83,16 +73,11 @@ We don't have that — no cell has both.
 **What we do.** Use the shared scGLUE latent space to match RNA profiles with chromatin profiles that
 occupy the same region of that space, producing synthetic joint rows ("pseudo-pairs").
 
-**What this buys and costs.** It buys a joint matrix. It costs within-individual coupling: the pairing
-aligns on *cell state*, not genotype or donor
-([LIMITATIONS L2](LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual)) — the chromatin data is
-from GSE195725's hashed donors and the RNA is a separate PBMC experiment
-([data_sources.md](../../pipelines/empirical/data/results/data_sources.md)). So the covariation we can recover is
-state-driven, not genotype-driven.
+Matching supplies a matrix for the empirical analysis and imposes a coupling between assays. Where biological state is aligned, its means can covary across assays. The coupling of cell-specific deviations remains unobserved. Chromatin hashtags record technical groups, and the separate RNA experiment has no verified common donor map. [Sample provenance](../../pipelines/empirical/data/results/data_sources.md) · [Pseudo-pairing limits](LIMITATIONS.md#l2-pseudo-pairs-are-not-within-individual)
 
 ---
 
-## 4. Why metacells replaced kNN-averaging — the noise-domination story
+## 4. Why metacells replaced kNN-averaging (the noise-domination story)
 
 *This is the decision worth understanding in full; it's the one that changed the most downstream.*
 
@@ -145,8 +130,8 @@ graph beat the null's 95th percentile (16 edges vs 14).
 several genes yield no edges at all. We took an honest small *n* over a dishonest large one — if 133 is
 too few for FCI, that is itself a reportable result rather than something to paper over.
 
-📁 `pipelines/empirical/analysis/scripts/metacell_assign.py`, `build_metacell_matching_dir.py` ·
-📊 [aggregation_bakeoff.md](../../pipelines/simulation/aggregation_identifiability/results/aggregation_bakeoff.md),
+`pipelines/empirical/analysis/scripts/metacell_assign.py`, `build_metacell_matching_dir.py` ·
+[aggregation_bakeoff.md](../../pipelines/simulation/aggregation_identifiability/results/aggregation_bakeoff.md),
 [null_calibration_findings.md](../../pipelines/empirical/evaluation/results/null_calibration_findings.md)
 
 ---
@@ -159,17 +144,13 @@ appear because of which rows you happened to have.
 **What we do.** Re-run discovery on many resamples (n_boot = 50, 70% subsample) and report each edge's
 **recurrence frequency**. Edges appearing in ≥50% of resamples are "stable".
 
-**Why it's the primary signal/noise separator.** Run the same procedure on permuted (null) data:
-real data gives 12–57 stable edges; the null gives **0 stable edges**, with maximum single-edge
-frequency 0.12–0.22. Real structure recurs; noise flickers. That separation is much cleaner than any
-single-run threshold, which is why the pipeline's top tier is "stable **and** validated" rather than
-just "found".
+The historical fixed-partition comparison found 12–57 stable edges on the analyzed data and zero after the tested permutations, with a maximum null edge frequency of 0.12–0.22. Recurrence under resampling was therefore useful for screening in that partition. Changing the partition tested a separate source of variation and changed many edge identities. [Partition comparison](../../pipelines/empirical/evaluation/results/partition_stability_findings.md)
 
 **The limitation.** It's row-subsampling, not a block bootstrap. Donor blocks would be the standard
 upgrade, and they are **impossible here** — there are no donor labels to block on
 ([L1](LIMITATIONS.md#l1-donor-is-not-an-available-variable), [L4](LIMITATIONS.md#l4-stability-is-row-subsampling-not-block-bootstrap)).
 
-📁 `pipelines/empirical/analysis/scripts/bootstrap_stability.py`
+`pipelines/empirical/analysis/scripts/bootstrap_stability.py`
 
 ---
 
@@ -184,20 +165,9 @@ chromatin context all drive multiple peaks at once and none of them are in our m
 it has, so it invents direct peak→peak edges that are really "both driven by something we didn't
 measure". You get a confident, wrong graph.
 
-**What FCI does instead.** FCI outputs a **PAG**, whose edge marks encode what the data can and cannot
-determine:
+**How to interpret the output.** FCI returns a partial ancestral graph (PAG). Under its assumptions, fixed endpoints are shared across compatible maximal ancestral graphs. An arrowhead at a node rules out ancestry of the other endpoint under the usual no-selection interpretation. A circle leaves the endpoint unresolved. Two arrowheads can be compatible with latent confounding. An adjacency may represent an inducing path through unmeasured variables. A fitted endpoint on constructed metacells cannot by itself establish direct regulation or name a hidden cause. [FCI interpretation](identifiability/fci_identifiability_summary.md) · [Project limits](LIMITATIONS.md#l6-observational-pag-not-dag)
 
-| mark | meaning |
-| --- | --- |
-| `A --> B` | A causes B (no latent confounder on this pair) |
-| `A <-> B` | **a latent common cause** drives both — *not* a direct link |
-| `A o-o B` | related, direction undetermined |
-
-The `<->` edge is the honest representation of "something unmeasured explains this". **This is the
-project's novel object** — not a nuisance to be cleaned up (see [MISSION](MISSION.md) §2).
-
-**What we give up.** A PAG is weaker than a DAG: some edges stay undetermined. We accept that, because
-the alternative is a stronger claim that isn't true. DAGMA is kept only as a sensitivity check.
+DAGMA served as a sensitivity analysis. The results for a single algorithm are especially fragile when changing the metacell partition also changes the identities of selected edges. [Partition evidence](../../pipelines/empirical/evaluation/results/partition_stability_findings.md)
 
 ---
 
@@ -207,75 +177,34 @@ the alternative is a stronger claim that isn't true. DAGMA is kept only as a sen
 too dense at our sample size.
 
 **Why GFCI.** GFCI builds the skeleton with a *score-based* search (FGES) first, then applies FCI-style
-orientation. The score-based skeleton is sparser and more accurate — on metacell CD14, GFCI returned
-1 edge where FCI returned 28. Independent agreement between different algorithm families is also
-evidence in itself: GFCI, FCI, and RCD independently picked the same eQTL-validated peak→CD14 edge.
+orientation. On metacell CD14, GFCI returned one edge where FCI returned 28. GFCI, FCI and RCD picked the same peak–CD14 adjacency with target-aware eQTL support. Agreement across methods describes sensitivity to the learner. Accuracy on the biological graph is unknown.
 
 **The catch we hit.** Tetrad's `Gfci` does **not** propagate background-knowledge tiers to the PAG
 endpoints (causal-learn's FCI does). So GFCI runs confounder-conditioned but leaves cross-tier edges
 undetermined.
 
-**The resolution.** GFCI contributes **multi-algorithm adjacency**; **directed claims come from FCI**.
-Both are reported, and the limitation is written down rather than hidden
+**The resolution.** GFCI contributes an adjacency comparison. FCI contributes endpoint estimates under the specified orientation constraints. Both are reported
 ([L10](LIMITATIONS.md#l10-gfci-orients-the-skeleton-only)).
 
 *Debugging note worth keeping:* Tetrad's `Knowledge` object silently binds to nothing when variable
 names contain `:` or `-` — which every genomic coordinate does (`chr5:140638860-140639949`). It fails
 without erroring. Fixed by renaming variables to safe tokens before the search and mapping back after.
 
-📁 `pipelines/empirical/analysis/scripts/run_gfci_tetrad.py`
+`pipelines/empirical/analysis/scripts/run_gfci_tetrad.py`
 
 ---
 
 ## 8. Why library depth as root nodes, plus a mechanistic prior
 
-**The problem.** Two of them, actually.
+RNA and chromatin library depths can affect observed counts and create associations. The empirical graph includes depth variables as roots. A separate ordering assumption permits chromatin-to-expression edges and forbids the reverse direction in this analysis. The tier encodes a biological hypothesis. Different cells in the two assays provide no temporal evidence for that direction.
 
-*(a) A technical confounder.* Sequencing depth drives both peak signal and expression. Two variables
-that both scale with depth look dependent even when nothing biological connects them.
-
-*(b) Unresolved orientation.* FCI returned mostly ambiguous marks on peak→gene edges. Observational data
-alone often cannot orient an edge — but we have real mechanistic knowledge the algorithm doesn't.
-
-**What we do.**
-1. Add `conf__rna_depth` and `conf__chrom_depth` as **root nodes** — variables allowed to cause others
-   but not be caused. Now depth-driven covariation is attributed to depth instead of fabricating a
-   chromatin→gene link.
-2. Add a **tiered background prior**: confounders → peaks → expression. Chromatin state is upstream of
-   transcription; expression cannot cause a histone mark measured in a different cell. This forbids
-   edge directions we know are impossible.
-
-**Why this is legitimate and not circularity.** The prior encodes *mechanism* (chromatin precedes
-transcription), not *the answer* (which peak regulates which gene). Validation evidence is kept strictly
-independent of it — no database informs the graph.
-
-**Did it work?** Both aims. Orientation: **19/19 peak→gene edges directed** across the panel, up from a
-mix of ambiguous marks. Confounding: PTPRJ dropped from 4 peak→gene edges to 2 — depth-driven
-covariation reattributed to the roots. Importantly, **no validated edge was lost**.
-
-📁 `run_pc_causallearn.py --confounders depth` ·
-📊 [expanded_panel_confounder_results.md](../../pipelines/empirical/evaluation/results/expanded_panel_confounder_results.md)
+In the historical 15-gene panel the prior oriented all 19 selected peak–gene edges. Depth adjustment also changed which edges were selected at PTPRJ. External peak–gene evidence assesses support for a pair. It does not independently test the direction assigned by the tier. [Implementation and measured outcomes](../../pipelines/empirical/evaluation/results/expanded_panel_confounder_results.md) · [PAG limitations](LIMITATIONS.md#l6-observational-pag-not-dag)
 
 ---
 
 ## 9. Why donor and cell-cycle are *not* in the model
 
-Both were investigated as candidate confounders and both were rejected — for different reasons.
-
-**Donor: not available.** Not a modelling choice — a data fact. The RNA cells were never hashtagged, and
-the chromatin HTO donors belong to a different experiment than the RNA
-([data_sources.md](../../pipelines/empirical/data/results/data_sources.md)). No donor structure is shared across modalities, so
-there is nothing to condition on. Separately, even on the chromatin side metacells average donor out:
-donor purity per metacell ≈ 0.27 against a random-mix floor of 0.23, and donor is statistically
-independent of metacell (χ², p = 0.43). **Donor confounding is handled by aggregation, not conditioning.**
-
-**Cell-cycle: irrelevant here.** Monocytes are ~1–2% cycling; S/G2M scores are near zero and don't
-correlate with the CD14 peaks. Adding it would cost a variable and buy nothing.
-
-**Why this matters for the main claim.** If donor and batch are already neutralised by aggregation, then
-the peak↔peak `<->` edges that survive depth-conditioning are **not technical artifacts** — which is
-what licenses reading them as biological. That argument is load-bearing for
-[MISSION](MISSION.md) §2, and it's why we tested it four more ways (§12–14).
+No verified donor identifier connects RNA and chromatin in the PBMC data. The chromatin HTO labels describe technical groups. Mixing of those labels inside metacells cannot establish that aggregation removed donor or batch effects. The CD14 monocyte analysis also found little cycling signal in the available cell-cycle scores. These findings explain which covariates the historical fit used. Correlations can remain after depth adjustment, and their biological or technical cause can be unidentified. [Provenance correction](../../pipelines/empirical/data/results/data_sources.md#provenance-correction-2026-09-10) · [Donor limitations](LIMITATIONS.md#l1-donor-is-not-an-available-variable)
 
 ---
 
@@ -293,7 +222,7 @@ meaningful:
 | physical | BLUEPRINT PCHi-C | contact ≠ regulation; sparse coverage |
 | genetics | eQTL Catalogue | needs a common variant in the right place |
 
-An edge counts as validated on ≥1 axis; ≥2 agreeing is the gold standard.
+The historical tables call an edge “validated” when at least one axis supports that specific pair. Agreement on two axes adds corroboration while the causal direction remains open.
 
 **Why "target-gene-aware" is the crucial qualifier.** Early on, an edge counted as supported if the peak
 overlapped *any* annotated regulatory element. rE2G immediately showed why that's too weak: our
@@ -308,7 +237,7 @@ That one catch set the standing rule: **trust no promoter→expression edge with
 they're reported as `no_target_validator`, never "validated". That gap is exactly what §12–14 were built
 to fill.
 
-📁 `pipelines/simulation/unpaired_multimodal/scripts/build_{re2g,pchic,eqtl}_gene_link_support.py`
+`pipelines/simulation/unpaired_multimodal/scripts/build_{re2g,pchic,eqtl}_gene_link_support.py`
 
 ---
 
@@ -345,56 +274,19 @@ differ?*
 After distance matching the effect vanished (p = 1.00) — the raw signal was pure distance artifact. The
 null caught a false positive we would otherwise have reported.
 
-**Known gap.** Matching is on distance only; **degree-matching is not implemented**
-([L7](LIMITATIONS.md#l7-elementelement-validation-has-no-accepted-null)).
-
-📁 `pipelines/empirical/evaluation/scripts/peak_peak_validator.py`
+The later cross-mark analysis matched on both distance and graph degree and used other observed edges as a comparison group. Partition-stable edges were enriched for contacts to a shared promoter under those controls. [Distance and degree controls](../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md) · [Scope of the null](LIMITATIONS.md#l7-elementelement-validation-has-no-accepted-null)
 
 ---
 
 ## 13. Why we benchmark against co-accessibility
 
-**The problem.** "Our method separates direct from latent-confounded element pairs" is only interesting
-against the thing people currently use. Co-accessibility (Cicero and successors) is that thing.
-
-**Why it's the right comparison.** Those papers **explicitly concede** they cannot distinguish a direct
-element–element link from co-dependence via a shared hidden driver. That's precisely the gap our method
-addresses, so the comparison is on their stated terms, not a strawman.
-
-**What we found.** On the same data, co-accessibility scores bidirected (latent) pairs at 0.238 and other
-adjacent pairs at 0.255 — statistically indistinguishable. It cannot separate them. **53% of the PAG's
-element↔element adjacencies are bidirected**, so co-accessibility would report all 126 latent pairs as
-regulatory links.
-
-**Where we're careful.** Our baseline is |Spearman|, not a faithful Cicero — a distance-penalized
-graphical lasso would remove many of the indirect pairs. So we restrict the headline claim to what is
-theoretically guaranteed: **graphical lasso removes indirect paths through *observed* variables but
-cannot remove a shared *latent* driver.** The latent class is the unassailable part
-([L8](LIMITATIONS.md#l8-the-co-accessibility-contrast-uses-a-spearman-baseline)).
-
-📁 `pipelines/empirical/evaluation/scripts/coaccess_contrast.py`
+The empirical comparison asked whether absolute Spearman correlation distinguished pairs assigned different PAG endpoints. The average scores for bidirected and other adjacent pairs were similar (0.238 and 0.255). This describes two fitted edge classes and one correlation baseline. The true mechanism for each biological pair is unknown. A direct comparison with a full distance-penalized co-accessibility method would address a different question. [Comparison and validation results](../../pipelines/empirical/evaluation/results/peak_peak_validation_results.md) · [Limitations](LIMITATIONS.md#l8-the-co-accessibility-contrast-uses-a-spearman-baseline)
 
 ---
 
 ## 14. Why the global-activity probe leaves the locus out
 
-**The question.** Having ruled out shared TF and shared domain, the remaining candidate was a global
-chromatin-activity/cell-state latent. Test: condition on it and see whether the `<->` edges disappear.
-
-**The trap — and why the obvious version backfires.** The intuitive proxy for "how active is this locus"
-is the mean of the locus's own peaks. **That is a collider.** It's a *descendant* of the peaks, not a
-cause. Conditioning on a common effect *induces* dependence between its parents — so this doesn't remove
-edges, it manufactures them. We learned this the hard way: an earlier prototype regressed out
-self-derived principal components and edge counts *inflated* (8→18, 6→10, 9→17, 1→9).
-
-**The fix.** Build the proxy from peaks **outside** the gene's own locus — the mean z-scored accessibility
-across all *other* panel genes' peaks. That's a plausible common cause of the locus and, by construction,
-not a descendant of it. Collider-safe.
-
-**Result.** Bidirected edges 126 → 129 (unchanged), validated peak→gene 11 → 11. Genome-wide activity is
-**not** the driver.
-
-📁 `pipelines/empirical/analysis/scripts/build_global_activity.py`
+A summary calculated from the tested peaks can induce dependence when used as a covariate. Earlier self-derived principal components inflated the graph’s edge counts. The revised probe used the mean standardized signal from peaks at other panel loci. Under that proxy, the reported bidirected count changed from 126 to 129, and the number of externally supported peak–gene pairs stayed at 11. The check tests this particular proxy. An unmeasured global or local biological driver remains possible. [Probe and evaluation](../../pipelines/empirical/evaluation/results/peak_peak_validation_results.md)
 
 ---
 
@@ -412,7 +304,7 @@ validation-rich and expressed ≥15%. We took ~15 of the best that also had usab
 the answer we want. A validation-rich gene that yields nothing is a reportable negative — and several
 do: 4 of 15 produce no peak→gene edge at all, and PTPRJ produces 2 directed edges with 0 validated.
 
-📁 `pipelines/empirical/analysis/configs/gene_panels/` · 📊 [target_gene_selection.md](../../pipelines/empirical/analysis/results/target_gene_selection.md)
+`pipelines/empirical/analysis/configs/gene_panels/` · [target_gene_selection.md](../../pipelines/empirical/analysis/results/target_gene_selection.md)
 
 ---
 
@@ -429,15 +321,7 @@ ran the identical pipeline at n = 245 metacells.
 **The result, which was not what we expected.** Despite ~1.8× more cells and a ~3× richer reference
 suite, T cell yielded **fewer** validated stable edges: 4 vs 7 (0.36 vs 0.47 per gene).
 
-**What we learned.** More data and more reference material did not produce more validated causal edges.
-**Edge recovery is limited by per-gene effect size**, not by sample size. That's a useful negative — it
-means "just add cells" is not the lever, and it's part of why *scale* is now about more **genes**, not
-more cells per gene.
-
-**Decision.** Monocyte stays primary; the T-cell suite is retained for the cross-cell-type invariance
-(ICP) test, which is now the project's invariance axis.
-
-📊 [celltype_fair_comparison.md](../../pipelines/empirical/evaluation/results/celltype_fair_comparison.md)
+Monocytes remained the primary empirical panel. The T-cell comparison also changed the population, assayed genes and reference coverage, so it does not isolate a sample-size or effect-size explanation. It provides a cross-cell-type sensitivity check. Treating cell types as valid invariance environments would require additional assumptions about which mechanisms are shared. [Cell-type comparison](../../pipelines/empirical/evaluation/results/celltype_fair_comparison.md) · [Sampling limits](LIMITATIONS.md#l1-donor-is-not-an-available-variable)
 
 ---
 

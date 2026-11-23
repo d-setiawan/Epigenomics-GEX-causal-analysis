@@ -118,7 +118,7 @@ when correspondence is destroyed. The matched result is compatible with
 shared-state association; this comparison alone does not establish the source
 of each recovered adjacency or an identifiable orientation.
 
-## 4. The rank bound on $\Sigma^{B}$ — and why it does not transfer to real data
+## 4. The rank bound on $\Sigma^{B}$ and why it does not transfer to real data
 
 The obvious repair for [01](01_aggregation_algebra.md)'s scale asymmetry is to subtract the noise
 term and work with $\Sigma^{B}$ directly. There is a structural obstruction, and it is worth knowing

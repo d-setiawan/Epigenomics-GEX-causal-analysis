@@ -143,7 +143,7 @@ falls by 59% under matched pairing and to essentially zero when correspondence i
 [02](02_identifiability.md) §1 and §2 side by side in one table, and it is the cleanest statement of
 the identifiability asymmetry available.
 
-## 6. Test 4 — the proportionality completion, refuted
+## 6. Test 4, the proportionality completion (refuted)
 
 [01 §4](01_aggregation_algebra.md#4-the-central-result) leaves the cross-mark block of $\Sigma^{W}$
 structurally unobservable. One route to completing it assumes within- and between-state covariation
@@ -170,12 +170,12 @@ on it.
 
 | # | prediction (source) | outcome |
 |---|---|---|
-| 1 | removing cell sharing collapses same-mark recall to cross-mark level ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | ✅ $0.803 \to 0.054$ at matched cells/variable |
-| 2 | *fewer* cells per metacell **raises** same-mark recall ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | ✅ $0.532 \to 0.803$ with rows fixed |
-| 3 | zeroing the cross-block **worsens** cross-mark recovery ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | ✅ $0.119 \to 0.063$ |
-| 4 | same-channel recall is invariant to the pairing arm ([02 §1](02_identifiability.md#1-same-mark-pairs-keep-their-structure)) | ✅ 0.800 / 0.833 / 0.867 |
-| 5 | cross-channel recall collapses under matched pairing ([02 §2](02_identifiability.md#2-cross-mark-pairs-lose-theirs)) | ✅ 0.789 → 0.325 → 0.005 |
-| 6 | $\operatorname{rank}(\Sigma^{B}) \le d$ when clustering depends only on $C$ ([02 §4](02_identifiability.md#4-the-rank-bound-on-sigmab-and-why-it-does-not-transfer-to-real-data)) | ✅ eff-rank $2.01$ at $d = 3$ |
+| 1 | removing cell sharing collapses same-mark recall to cross-mark level ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | $0.803 \to 0.054$ at matched cells/variable |
+| 2 | *fewer* cells per metacell **raises** same-mark recall ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | $0.532 \to 0.803$ with rows fixed |
+| 3 | zeroing the cross-block **worsens** cross-mark recovery ([01 §7](01_aggregation_algebra.md#7-what-this-predicts-before-any-simulation)) | $0.119 \to 0.063$ |
+| 4 | same-channel recall is invariant to the pairing arm ([02 §1](02_identifiability.md#1-common-cell-averaging-preserves-a-linear-structural-equation)) | 0.800 / 0.833 / 0.867 |
+| 5 | cross-channel recall collapses under matched pairing ([02 §2](02_identifiability.md#2-cross-mark-pairs-lose-theirs)) | 0.789 → 0.325 → 0.005 |
+| 6 | $\operatorname{rank}(\Sigma^{B}) \le d$ when clustering depends only on $C$ ([02 §4](02_identifiability.md#4-the-rank-bound-on-sigmab-and-why-it-does-not-transfer-to-real-data)) | eff-rank $2.01$ at $d = 3$ |
 
 **Six predictions, six confirmations.** The covariance model in [01](01_aggregation_algebra.md) is
 not a story told after the fact; it forecast each of these before the arms were run, and predictions

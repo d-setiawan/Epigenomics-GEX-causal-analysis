@@ -1,6 +1,6 @@
 # scGLUE Method Track
 
-This folder contains the scGLUE-specific Python implementations. The active integration run for the project is `joint_v2`.
+This implementation produced the historical PBMC embedding `joint_v2` from the 10x RNA and six CUT&Tag datasets. The November handoff reproduced preprocessing and checked the rebuilt workspace. Fitted model weights and cell embeddings are generated locally. [Restore commands](../../../../../TRANSFER.md) · [Verification](../../../../../reproduce/VERIFICATION.md)
 
 ## Role In The Project
 
@@ -13,33 +13,33 @@ scGLUE gives us a shared latent space across RNA and six single-cell CUT&Tag mar
 - `H3K4me3`
 - `H3K9me3`
 
-The latent space is used for RNA-anchored one-to-one pseudo-pairing in `Analysis`. The graph matrices themselves are generated later from raw clean CUT&Tag bin signal over mark-specific CUT&Tag peaks.
+The [analysis stage](../../../analysis/README.md) used the coordinates for one-to-one pseudo-pairs, RNA-anchored averages and metacells. The graph matrices derive their measurements from RNA counts and clean CUT&Tag bins over mark-specific peaks.
 
-## Active Workflow
+## PBMC workflow
 
 Python stages:
 
-1. `scripts/preprocess_joint_scglue.py`
-2. `scripts/build_guidance_graph_joint_scglue.py`
-3. `scripts/train_joint_scglue.py`
-4. `scripts/validate_joint_scglue.py`
-5. `scripts/export_causal_inputs_joint_scglue.py`
+1. [preprocess_joint_scglue.py](preprocess_joint_scglue.py)
+2. [build_guidance_graph_joint_scglue.py](build_guidance_graph_joint_scglue.py)
+3. [train_joint_scglue.py](train_joint_scglue.py)
+4. [validate_joint_scglue.py](validate_joint_scglue.py)
+5. [export_causal_inputs_joint_scglue.py](export_causal_inputs_joint_scglue.py)
 
-Shell wrappers from repo root:
+Run from the repository root after restoring and preprocessing PBMC counts. Choose a fresh run ID when repeating the fit. The following staged and combined commands are alternatives. The historical `joint_v2` manifest recorded `compute_consistency: false`. The examples explicitly request this optional diagnostic. [Handoff instructions](../../../../../TRANSFER.md)
 
 ```bash
-bash pipelines/empirical/integration/methods/scglue/run_preprocess_joint.sh joint_v2
-bash pipelines/empirical/integration/methods/scglue/run_build_graph_joint.sh joint_v2 /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz
-bash pipelines/empirical/integration/methods/scglue/run_train_joint.sh joint_v2 --max-epochs 120 --compute-consistency
-bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh joint_v2 --cell-type-level harmonized_coarse --transfer-labels
+bash pipelines/empirical/integration/methods/scglue/run_preprocess_joint.sh pbmc_scglue_replay
+bash pipelines/empirical/integration/methods/scglue/run_build_graph_joint.sh pbmc_scglue_replay pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz
+bash pipelines/empirical/integration/methods/scglue/run_train_joint.sh pbmc_scglue_replay --max-epochs 120 --compute-consistency
+bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh pbmc_scglue_replay --cell-type-level harmonized_coarse --transfer-labels
 ```
 
 The all-in-one wrapper is:
 
 ```bash
 bash pipelines/empirical/integration/methods/scglue/run_joint_pipeline.sh \
-  joint_v2 \
-  /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
+  pbmc_scglue_replay \
+  pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz \
   --graph-arg --backend --graph-arg custom \
   --graph-arg --window-bp --graph-arg 50000 \
   --graph-arg --gene-region --graph-arg promoter \
@@ -74,7 +74,7 @@ Important stage outputs:
 - `train/validation/umap_by_modality.png`: UMAP colored by modality.
 - `train/validation/joint_harmonized_label_transfer.tsv`: optional transferred labels from RNA to chromatin cells.
 
-For `joint_v2`, the validation metrics currently support using scGLUE over the scMRDR comparison run for downstream pairing.
+In `joint_v2`, within-mark neighbors conserved protein signals. Cross-mark results depended on the two marks compared. For example, matched H3K27me3 to H3K4me1 neighbors gave an adjusted T–myeloid correlation of −0.564. A lower same-modality neighbor fraction alone cannot establish that states align. [Alignment report](../../results/biological_alignment_2026-09-16.md)
 
 ## Guidance Graph Backends
 
@@ -87,17 +87,17 @@ The guidance graph uses genomic proximity between RNA genes and chromatin bins/f
 
 ## Label Harmonization
 
-Build a label harmonization template:
+The RNA label mapping is [tracked](../../manifests/rna_label_harmonization.tsv). To inspect a regenerated template, write to a new output path.
 
 ```bash
-bash pipelines/empirical/integration/methods/scglue/run_build_label_harmonization_template.sh --force
+bash pipelines/empirical/integration/methods/scglue/run_build_label_harmonization_template.sh --out-tsv /tmp/pbmc_harmonization_review.tsv
 ```
 
 Then validate with transferred labels:
 
 ```bash
 NUMBA_CACHE_DIR=/tmp/numba_scglue_validation \
-bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh joint_v2 \
+bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh pbmc_scglue_replay \
   --cell-type-level harmonized_coarse \
   --transfer-labels
 ```
@@ -109,15 +109,15 @@ The current Analysis workflow uses the harmonized coarse `monocyte` label for ps
 `export_causal_inputs_joint_scglue.py` is retained for older scGLUE-feature-based exports:
 
 ```bash
-bash pipelines/empirical/integration/methods/scglue/run_export_causal_inputs_joint.sh joint_v2 CSF1R,CD14,IL1B
+bash pipelines/empirical/integration/methods/scglue/run_export_causal_inputs_joint.sh pbmc_scglue_replay CSF1R,CD14,IL1B
 ```
 
-The active graph workflow no longer starts from this export. It starts from `pipelines/empirical/analysis/scripts/causal_cli.py match` and then generates nearby CUT&Tag peak datasets from the matched cells.
+The nearby-peak workflow reads the selected pairing or metacell table and quantifies the peak intervals from counts. [Analysis inputs and units](../../../analysis/README.md#observational-units-and-inputs)
 
 ## Legacy Pilot Scripts
 
 These are retained for debugging and backward compatibility:
 
-- `scripts/preprocess_pilot_scglue.py`
-- `scripts/build_guidance_graph_pilot_scglue.py`
-- `scripts/train_pilot_scglue.py`
+- [preprocess_pilot_scglue.py](preprocess_pilot_scglue.py)
+- [build_guidance_graph_pilot_scglue.py](build_guidance_graph_pilot_scglue.py)
+- [train_pilot_scglue.py](train_pilot_scglue.py)

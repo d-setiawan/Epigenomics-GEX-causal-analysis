@@ -2,7 +2,9 @@
 
 ↑ [Central README](../../../README.md) · [MISSION](../../../project_resources/research/MISSION.md) (why) · [ROADMAP](../../../project_resources/research/ROADMAP.md) (plan) · [PIPELINE.md](PIPELINE.md) (end-to-end per-gene driver) · [Evaluation/](../evaluation/README.md) (validation)
 
-This directory contains the active causal-discovery workflow built from `scGLUE` `joint_v2` monocyte pseudo-pairs.
+This stage estimates locus graphs from PBMC monocyte RNA and six separately measured CUT&Tag marks. The historical `scGLUE joint_v2` embedding supports several choices of observational unit. Among 15 genes, the 133- and 240-metacell partitions each produced 11 externally supported peak–gene edges, with no shared edge identities. Treat individual edges as candidates whose stability depends on the aggregation. [Partition stability findings](../evaluation/results/partition_stability_findings.md)
+
+The examples below use generated embeddings, matching tables and matrix roots. The November transfer verified the source counts and preprocessing. Replaying later stages requires a compatible fitted embedding or the original cache. [Restore inputs and train](../../../TRANSFER.md) · [Verification record](../../../reproduce/VERIFICATION.md)
 
 ## Layout
 
@@ -37,9 +39,7 @@ Scripts reference: [scripts/README.md](scripts/README.md) · superseded code: [s
 
 ## Start Here
 
-Use the single CLI entrypoint for active work:
-
-- `scripts/causal_cli.py`
+Use the [per-gene driver](scripts/run_gene_pipeline.py) to run several discovery methods on the same locus matrix and annotate the resulting edges. It accepts an explicit `--dataset-root`. The [pipeline guide](PIPELINE.md) covers the driver, including the separate py-tetrad GFCI route. The [stage CLI](scripts/causal_cli.py) builds a matching table, exports matrices and runs individual PC, FCI and DAGMA jobs.
 
 The script tree is organized as:
 
@@ -49,32 +49,15 @@ The script tree is organized as:
 - `scripts/run_dagma_log1p_gaussian.sh`: convenience DAGMA script for Gaussian/Gaussian runs.
 - `scripts/run_dagma_rawcounts_family_presets.sh`: convenience DAGMA script for raw-count mixed-family presets.
 
-## Current Workflow
+## Observational units and inputs
 
-The active pipeline is:
+| Unit used by a graph | Construction | Interpretation |
+| --- | --- | --- |
+| One-to-one pseudo-pair | Match each RNA anchor to a neighbor in each mark, without replacement within each mark. | Each row joins measurements from different cells at similar estimated states. |
+| RNA-anchored neighbor average | Average the nearest cells in each mark for each RNA anchor. | Nearby RNA anchors can reuse chromatin cells. |
+| Metacell | Assign cells to nonoverlapping groups using the embedding and aggregate each available assay within the group. | Each row estimates group means. Changing the partition can change which edges appear. |
 
-$$
-\text{scGLUE joint latent space}
-\rightarrow
-\text{monocyte RNA-anchored pseudo-pairs}
-\rightarrow
-\text{nearby CUT\&Tag peak matrices}
-\rightarrow
-\text{locus-level graph discovery}
-\rightarrow
-\text{external biological support}
-$$
-
-The important design choices are:
-
-- Pairing is done once in the `scGLUE` latent space.
-- The current cell type is `monocyte`.
-- Each row is one RNA-anchored pseudo-paired sample.
-- Candidate graph nodes are mark-specific CUT&Tag peaks near each target gene.
-- Peak signal is quantified from raw clean fixed-bin matrices.
-- Curated literature regions are retained as evaluation annotations, not mixed into the graph matrices.
-- External support is computed after graph discovery; it does not constrain PC,
-  FCI, or DAGMA graph exploration.
+The embedding defines candidate neighbors. The nearby-peak exporter quantifies mark-specific intervals from the clean fixed-bin signal. The graph includes the target expression and candidate peaks. Literature regions and other sources used for support enter after discovery. See the [aggregation analysis](../../../project_resources/research/aggregation_restart_plan.md) for the distinction between covariance of state means and same-cell cross-assay covariance.
 
 ## External Support Layer
 
@@ -90,15 +73,7 @@ regulatory evidence and write support-aware plots:
 - `encode_screen`: online ENCODE SCREEN cCRE Registry intervals.
 - `jaspar`: online JASPAR motif matrices plus UCSC hg38 sequence retrieval.
 
-> **Cell-type alignment caveat (2026-07).** Only the ENCODE Portal source is cell-type-gated
-> (use `monocyte_encode` / `monocyte_regulatory`, which query `CD14-positive monocyte`; ENCODE
-> has 159 such GRCh38 peak beds). `encode_screen`, `jaspar`, and all `eperturbdb` sources apply
-> **no** cell-type filter, so they can credit a monocyte edge with off-target evidence. ePerturbDB
-> also has ~zero immune content and **zero `Gene (literature)` rows for CSF1R/CD14/IL1B**, so it
-> cannot validate peak-to-gene edges for our genes. Net: the suite gives cell-type-aligned
-> peak-node / peak-peak interval support but **cannot** validate peak-to-gene edges for our
-> panel. Details and options: [Evaluation/results/run_audit_report.md](../evaluation/results/run_audit_report.md)
-> and [Evaluation/results/external_sources.md](../evaluation/results/external_sources.md).
+The original July evidence audit found no ePerturbDB literature-target rows for CSF1R, CD14 or IL1B, and several interval/motif sources were cell-type agnostic. For target-specific peak–gene evidence, the per-gene driver also accepts monocyte rE2G predictions, PCHi-C contacts and eQTL credible sets. The support tables used must be present or supplied when running the driver. [Original audit](../evaluation/results/run_audit_report.md) · [Evidence sources](../evaluation/results/external_sources.md) · [Driver](scripts/run_gene_pipeline.py)
 
 Support outputs are written into each graph directory:
 
@@ -109,16 +84,13 @@ edge_support.tsv
 support_report.md
 ```
 
-Peak-to-expression edge validation requires a peak interval match with a
-matching external target gene. This prevents interval-only annotations from
-overstating peak-to-gene support. Peak-to-peak edges can be supported by
-interval or motif evidence from ENCODE, JASPAR, or ePerturbDB TF overlap.
+The support engine requires both a peak interval and its external target gene for a peak–expression match. For peak–peak candidates it annotates intervals or motifs at the endpoints. The [peak–peak evaluation](../evaluation/results/peak_peak_validation_results.md) separately tests evidence for the relationship between those intervals.
 
 Use local ePerturbDB downloads plus the monocyte regulatory online preset:
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
-  --graph-dir <graph_dir> \
+  --graph-dir "${GRAPH_DIR:?set GRAPH_DIR to a saved graph directory}" \
   --online-support \
   --support-preset monocyte_regulatory \
   --eperturbdb-dir pipelines/empirical/data/raw/external/eperturbdb \
@@ -130,7 +102,7 @@ For local ePerturbDB only:
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
-  --graph-dir <graph_dir> \
+  --graph-dir "${GRAPH_DIR:?set GRAPH_DIR to a saved graph directory}" \
   --online-support \
   --support-preset local_eperturbdb
 ```
@@ -138,7 +110,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
 Plot colors use orange for ePerturbDB, purple for ENCODE, green for JASPAR, red
 for multi-source support, and faint gray for unvalidated edges.
 
-## Active Inputs
+## Historical inputs and generated paths
 
 Pairing root:
 
@@ -154,7 +126,7 @@ RNA-anchor neighbor-averaged pairing root:
 pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10
 ```
 
-The neighbor-averaged pairing keeps all monocyte RNA anchors and averages each CUT&Tag mark over the $10$ nearest chromatin neighbors in scGLUE space. The current generated averaged matrices have `1887` RNA-anchor rows.
+The neighbor-averaged pairing keeps all monocyte RNA anchors and averages each CUT&Tag mark over the $10$ nearest chromatin neighbors in scGLUE space. The historical averaged matrices had 1,887 RNA-anchor rows.
 
 Gene panel:
 
@@ -162,7 +134,7 @@ Gene panel:
 pipelines/empirical/analysis/configs/gene_panels/monocyte_cuttag_peak_genes.tsv
 ```
 
-Active genes:
+The original nearby-peak panel contains three genes.
 
 - `CSF1R`
 - `CD14`
@@ -184,7 +156,7 @@ pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_gene
 pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_1mb_rna_anchor_average_k10_rawcounts
 ```
 
-These are the current broad-window roots for graph testing. They use mark-specific CUT&Tag peaks within TSS $\pm 1$ Mb, quantified from the raw clean fixed-bin matrices. The first root stores normalized/log-transformed peak values, while the second stores raw peak counts.
+These are the broad-window roots used for the historical comparison. They use mark-specific CUT&Tag peaks within TSS $\pm 1$ Mb, quantified from the raw clean fixed-bin matrices. The first root stores normalized/log-transformed peak values, while the second stores raw peak counts.
 
 Nonzero-filtered versions:
 
@@ -252,7 +224,7 @@ Raw counts are not directly comparable across cells because library sizes differ
 
 ### Screening Plan
 
-The active expression-informed peak-culling layer is association screening with elastic net stability selection. The screen fits each gene separately:
+The expression-informed screen uses elastic-net stability selection. The screen fits each gene separately:
 
 $$
 \mathrm{expr}_{g,\log 1p} \sim \text{nearby CUT\&Tag peaks}
@@ -260,7 +232,7 @@ $$
 
 on the unfiltered `log1p_norm` `average_k10` matrix. Elastic net is preferred over pure lasso because nearby peaks are correlated by genomic distance and chromatin state; pure lasso can pick one arbitrary proxy from a correlated group, while elastic net can retain groups more smoothly.
 
-The planned screen should estimate selection frequency across repeated subsamples:
+The screen estimates selection frequency across repeated subsamples:
 
 $$
 \pi_j = \Pr(\hat{\beta}_j \ne 0)
@@ -292,11 +264,11 @@ Run the elastic-net screen with:
 PYTHON_BIN="$(which python)" bash pipelines/empirical/analysis/scripts/run_elasticnet_screen_average_k10.sh
 ```
 
-#### Clean post-selection: `--graph-split-fraction`
+#### Row holdout with `--graph-split-fraction`
 
 By default the screen keeps every row in the screened matrix, so peak selection and
 graph discovery share samples (exploratory only; the existing `..._elasticnet_top30_crossfit`
-runs are this kind). To get clean post-selection inference, hold out a disjoint graph split:
+runs use this design). The following command reserves graph rows before peak selection.
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py elastic-net-screen \
@@ -305,27 +277,11 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py elastic-net-screen \
   --graph-split-fraction 0.3
 ```
 
-Peaks are selected on the `screen` split (here `1 - 0.3` of rows); the screened matrix
-written for downstream `graph`/`sweep`/`dagma-sweep` contains **only** the disjoint `graph`
-split rows. Selection and graph learning therefore never share samples, so the downstream
-conditional-independence tests / DAGMA scores are not biased by the selection step. The split
-is deterministic (`--split-random-state`), recorded per gene in
-`*_elasticnet_sample_split.tsv`, and summarized under `sample_split` in each `run_summary.json`.
-Output roots and report dirs gain a `_graphsplit<pct>` suffix so split runs never clobber the
-shared-sample ones.
+With `--graph-split-fraction 0.3`, the screen uses 70% of the rows and the graph uses the other 30%. The seed (`--split-random-state`), per-gene assignments (`*_elasticnet_sample_split.tsv`) and `sample_split` in each `run_summary.json` record that partition. The derived root gains a `_graphsplit<pct>` suffix. In an RNA-anchored neighbor average, two different rows can contain measurements from the same chromatin cell. A holdout of rows alone therefore leaves uncertainty about the calibration of subsequent tests.
 
-### Current Next Steps
+### Interpreting the screening comparisons
 
-The immediate goal is to reduce overly dense `PC` and `FCI` graphs using both structural filters and expression-informed screening. The current staged plan is:
-
-- first compare structural nonzero filters `nz001`, `nz005`, and `nz010`
-- run `PC` and `FCI` with `fisherz` on the normalized roots before using slower kernel tests
-- use smaller significance thresholds such as $\alpha \in \{0.001, 0.005, 0.01\}$ when graphs remain dense
-- increase conditioning depth only after node counts are lower, starting with depths $1$, $2$, and $3$
-- reserve `KCI` or `fastkci` for smaller candidate sets because kernel conditional-independence tests are computationally expensive and numerically brittle on large peak matrices
-- compare elastic-net screened graphs against the structural-filter baselines
-
-If elastic-net screening is used, prefer split or cross-fit screening so that peak selection and graph discovery are not performed on the exact same sample split.
+The `nz001`, `nz005` and `nz010` roots test sensitivity to sparse-peak filtering. The unfiltered and elastic-net roots test sensitivity to expression-informed selection. Results about a particular peak also depend on which cells enter each aggregate. [Metacell partition comparison](../evaluation/results/partition_stability_findings.md) · [Empirical null calibration](../evaluation/results/null_calibration_findings.md)
 
 ## Output Layout
 
@@ -367,7 +323,7 @@ The active graph runner supports:
 - `FCI + fisherz` and `FCI + KCI`
 - repo-local mixed-family `DAGMA`
 
-The default biological background mode is `tiered_distal_promoter_expr`, which prevents gene-to-peak edges while allowing peak-to-peak and peak-to-gene edges. This is important because expression should behave as a sink in these local epigenomic graphs.
+The default biological background mode is `tiered_distal_promoter_expr`, which prevents gene-to-peak edges while allowing peak-to-peak and peak-to-gene edges. A peak-to-expression orientation may therefore reflect an imposed restriction.
 
 The DAGMA implementation lives in:
 
@@ -395,7 +351,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py match --run-id joint_
 Build RNA-anchor $k$-neighbor averaging tables:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python match-average \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py match-average \
   --run-id joint_v2 \
   --n-neighbors 10 \
   --neighbor-weight-mode uniform
@@ -425,7 +381,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py dataset \
 Generate an RNA-anchor neighbor-averaged dataset:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python dataset \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py dataset \
   --run-id joint_v2 \
   --matching-dir pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10 \
   --window-bp 300000 \
@@ -552,20 +508,12 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
   --layout local
 ```
 
-Evaluation notes live in:
-
-- `evaluation.md`
-- `../pipelines/empirical/evaluation/README.md`
-- `../pipelines/empirical/evaluation/results/graph_evaluation_pipeline.md`
-- `../pipelines/empirical/evaluation/results/literature_review_graph_evaluation.md`
-
-The most important current evaluation question is whether uncurated nearby peak graphs recover literature-backed promoter or enhancer regions through overlap annotations, rather than forcing those curated regions into the graph as variables.
+The [evaluation guide](../evaluation/README.md), [graph evaluation protocol](../evaluation/results/graph_evaluation_pipeline.md) and [literature review](../evaluation/results/literature_review_graph_evaluation.md) distinguish target-specific evidence, interval overlap and partition stability.
 
 Saved graph runs can be compared with:
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py \
-  --python-bin /home/dgsetiawan/anaconda3/bin/python \
   evaluate \
   --methods pc,fci \
   --datasets joint_v2_monocyte_cuttag_peak_genes_300kb \

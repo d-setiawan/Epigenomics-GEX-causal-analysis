@@ -1,6 +1,6 @@
 # Scripts
 
-Use `causal_cli.py` for the active workflow.
+The [per-gene driver](run_gene_pipeline.py) takes a locus matrix from a chosen dataset root, runs discovery and joins external support. The [stage CLI](causal_cli.py) exposes the individual operations. The examples below use generated PBMC `joint_v2` artifacts. A fresh checkout must first restore counts and train or supply an integration run. [Pipeline guide](../PIPELINE.md) · [Transfer guide](../../../../TRANSFER.md)
 
 ## What To Run
 
@@ -10,9 +10,9 @@ Use `causal_cli.py` for the active workflow.
 - `causal_cli.py filter-dataset`: copy an existing nearby-peak dataset root while keeping only peaks that pass a structural filter such as $p_\mathrm{nonzero} > 0.01$.
 - `causal_cli.py elastic-net-screen`: create an expression-associated elastic-net screened dataset root.
 - `causal_cli.py graph`: run one `PC`, `FCI`, or `DAGMA` graph job and write a plot.
-- `causal_cli.py graph --online-support --fetch-encode-pbmc`: run graph discovery, fetch external evidence, and render the final plot with validated edges highlighted.
+- `causal_cli.py graph --online-support --fetch-encode-pbmc`: run graph discovery, fetch external evidence, and render the final plot with externally supported edges highlighted.
 - `causal_cli.py graph --online-support --support-preset monocyte_regulatory`: run graph discovery with the default monocyte regulatory evidence bundle.
-- `causal_cli.py plot --online-support --support-preset local_eperturbdb`: rebuild local ePerturbDB support from `pipelines/empirical/data/raw/external/eperturbdb` and render validated/support-highlighted graph edges.
+- `causal_cli.py plot --online-support --support-preset local_eperturbdb`: rebuild local ePerturbDB support from `pipelines/empirical/data/raw/external/eperturbdb` and highlight edges with matching external evidence.
 - `causal_cli.py plot --online-support --support-preset monocyte_regulatory --eperturbdb-dir pipelines/empirical/data/raw/external/eperturbdb`: combine local ePerturbDB with online ENCODE/JASPAR support for an existing graph.
 - `causal_cli.py sweep`: run many `PC`/`FCI` graph jobs across genes, methods, and depths.
 - `causal_cli.py dagma-sweep`: run many DAGMA jobs across genes, family configs, and regularization settings.
@@ -34,7 +34,9 @@ Convenience shell scripts:
 
 ## Directory Layout
 
-- `causal_cli.py`: the only script most users should call directly.
+- [run_gene_pipeline.py](run_gene_pipeline.py) runs a multi-method locus analysis. Its optional GFCI path needs py-tetrad and JDK 21.
+- [causal_cli.py](causal_cli.py) runs individual stages.
+- [metacell_assign.py](metacell_assign.py) and [build_metacell_matching_dir.py](build_metacell_matching_dir.py) prepare nonoverlapping group assignments for aggregation.
 - `commands/`: implementation modules used by the CLI.
 - `legacy/`: older scripts retained for reference.
 
@@ -61,7 +63,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py match --run-id joint_
 Build RNA-anchor averaged-neighbor mappings:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python match-average \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py match-average \
   --run-id joint_v2 \
   --n-neighbors 10 \
   --neighbor-weight-mode uniform
@@ -90,7 +92,7 @@ Rebuild biological support and plot one saved graph:
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
-  --graph-dir <graph_dir> \
+  --graph-dir "${GRAPH_DIR:?set GRAPH_DIR to a saved graph directory}" \
   --online-support \
   --support-preset monocyte_regulatory \
   --eperturbdb-dir pipelines/empirical/data/raw/external/eperturbdb \
@@ -101,18 +103,12 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py plot \
 This writes `node_support.tsv`, `node_support_matches.tsv`,
 `edge_support.tsv`, and `support_report.md` into `<graph_dir>` before plotting.
 
-Edge validation rules:
-
-- Peak-to-expression: requires peak interval support plus a matching external
-  target gene, mainly from ePerturbDB.
-- Peak-to-peak: accepts interval or motif support from ENCODE, JASPAR, or
-  ePerturbDB TF-overlap records.
-- Unvalidated edges remain in the plot but are drawn faint gray.
+For peak–expression support, the external source must connect the peak interval to the same target gene. The per-gene driver accepts rE2G, PCHi-C and eQTL tables for this purpose. For peak–peak candidates, the plot annotates source overlap at either endpoint. Evidence for the relationship between the two endpoints has a separate distance-matched evaluation. [Evidence sources](../../evaluation/results/external_sources.md) · [Peak–peak results](../../evaluation/results/peak_peak_validation_results.md)
 
 Generate the RNA-anchor averaged-neighbor dataset:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python dataset \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py dataset \
   --run-id joint_v2 \
   --matching-dir pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10 \
   --window-bp 300000 \
@@ -232,7 +228,6 @@ Evaluate saved graph runs:
 
 ```bash
 python3 pipelines/empirical/analysis/scripts/causal_cli.py \
-  --python-bin /home/dgsetiawan/anaconda3/bin/python \
   evaluate \
   --methods pc,fci \
   --datasets joint_v2_monocyte_cuttag_peak_genes_300kb \
@@ -255,4 +250,4 @@ Current version:
 - select elastic-net hyperparameters by average rank across held-out RMSE and $R^2$
 - compare screened graphs against unfiltered, `nz005`, and `nz010` graphs
 
-Do not interpret an elastic-net-selected peak as causal by itself. Selection uses the expression outcome, so downstream graph inference should be treated as post-selection and exploratory unless a held-out or cross-fit graph-learning step is used.
+Elastic-net selection uses the expression outcome. Cross-fit scores summarize the screen. The optional `--graph-split-fraction` holds out rows for graph learning. RNA-anchored neighbor averages may still share the same underlying chromatin cells across row splits. [Screening and holdout details](../README.md#row-holdout-with---graph-split-fraction)

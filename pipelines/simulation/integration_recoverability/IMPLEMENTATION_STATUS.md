@@ -1,18 +1,22 @@
 # Integration recoverability: implementation record
 
-_Updated 2026-11-01. The original extended benchmark remains incomplete._
+_Original integration suite and extensions through November 1, 2026. The original extended benchmark remains incomplete._
+
+The later exact-model count-transport experiments used a different estimator and recovery target. Their nine-world result is reported in the [November 15 source search](COUNT_TRANSPORT_SOURCE_SEARCH.md). The [November 22 verification](../../../reproduce/VERIFICATION.md) identifies which experiments were repeated from a clean checkout. Neither follow-up changes the completed-fit count in this ledger.
+
+The detailed links under `runs/` in this historical ledger point into the original run cache. The [transfer guide](../../../TRANSFER.md) lists the inputs and receipts available from a checkout.
 
 ---
 
 ## Scope and completion rule
 
-The current work is the [unpaired-integration proof](../../../project_resources/research/theory/07_unpaired_integration_nonidentifiability.md),
+The November 1 theory work was the [unpaired-integration proof](../../../project_resources/research/theory/07_unpaired_integration_nonidentifiability.md),
 with independent reviews and exact algebra checks linked in its
 [research record](../../../project_resources/research/integration_identifiability_2026_11_01/README.md).
 This is a theory pivot, with no new fits or generated datasets. It does not
 complete or restart the unfinished frozen benchmark.
 
-The latest experimental work is the [scConfluence/scMTR-seq pilot](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md),
+The November 1 experimental follow-up was the [scConfluence/scMTR-seq pilot](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md),
 following the completed [count-input comparison](COUNT_INPUT_FOLLOWUP.md) and
 [integration-validation supplement](INTEGRATION_VALIDATION.md). The new pilot
 adds causal reliability readouts on two cached worlds and a separately authorized

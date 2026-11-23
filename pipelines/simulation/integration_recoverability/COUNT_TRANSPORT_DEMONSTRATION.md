@@ -158,11 +158,9 @@ benchmarks.
 ## Artifacts and reproduction
 
 - [Frozen plan](runs/count_transport_demo_v1/PLAN.md) and [protocol with source/input hashes](runs/count_transport_demo_v1/protocol.json).
-- [All 96 fits and frozen selections](runs/count_transport_demo_v1/fit_seal.json).
-- [Full evaluation](runs/count_transport_demo_v1/evaluation.json), [evaluation seal](runs/count_transport_demo_v1/evaluation_seal.json) and [selected metrics CSV](runs/count_transport_demo_v1/selected_metrics.csv).
+- [Hash record for all 96 fits and frozen selections](runs/count_transport_demo_v1/fit_seal.json).
+- The [evaluation seal](runs/count_transport_demo_v1/evaluation_seal.json) records the original detailed outputs. The run cache contains `evaluation.json` and `selected_metrics.csv`.
 - [Scientific and implementation review](runs/count_transport_demo_v1/REVIEW.md) and [independent numerical replay](runs/count_transport_demo_v1/NUMERICAL_REVIEW.json).
 - [Model](count_transport_model.py), [fit runner](count_transport_run.py), [evaluator](count_transport_evaluate.py) and [tests](tests/).
 
-Use `/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python` and the commands in the
-frozen plan. Existing sealed outputs cannot be overwritten. Reproduction needs
-the already-cached inputs, which were not copied or regenerated here.
+The [run guide](runs/count_transport_demo_v1/README.md) explains the original cache requirements and how to inspect the evidence from a checkout. The [transfer guide](../../../TRANSFER.md) covers the existing world bank and the separate exact-model replay.

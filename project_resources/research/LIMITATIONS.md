@@ -1,12 +1,6 @@
 # Limitations & honesty ledger
 
-**Owner doc:** this file is the *single home* for every known caveat. Other project_resources/research must **link here**
-rather than restate a limitation, so a caveat can never be fixed in one place and left stale in
-three. ↑ [Central README](../../README.md) · [MISSION](MISSION.md) · [ROADMAP](ROADMAP.md)
-
-Each entry: what the limit is → what it blocks → what we do instead.
-
----
+This ledger records limits that affect how a result may be interpreted. L1–L17 cover experimental provenance, local graphs, biological evaluation and the CA-BOSS benchmark. L18 gives the missing-joint argument, L19 covers the scMTR-seq holdout and L20 covers the positive count-transport experiment. [Project overview](../../README.md) · [Mission](MISSION.md) · [Roadmap](ROADMAP.md)
 
 ## L1. Donor is not an available variable
 
@@ -32,7 +26,7 @@ donor labels and a shared cross-assay donor map are not established. See the
   a valid ICP environment: biological mechanisms may differ between cell types.
   The T-cell suite is already built
   ([celltype_fair_comparison.md](../../pipelines/empirical/evaluation/results/celltype_fair_comparison.md)); the ICP run
-  itself is still open (ROADMAP §0.5).
+  was a historical proposal. See the [current roadmap](ROADMAP.md).
 - Retain library depth as an observed technical covariate and explicitly report
   unmeasured batch, donor and state effects. Hashtag mixing across metacells does
   **not** show that donor/batch effects are removed or that depth is sufficient.
@@ -63,10 +57,7 @@ state-associated comparisons, not establish direct regulation.
 
 ## L3. Small n, and n_eff is not reported
 
-≈133 metacells per gene. Honest but small — hence stability selection and transforms. The
-`n_eff` diagnostic (participation ratio / reuse proxy) is still unimplemented, so for any legacy
-kNN-averaged result the effective sample size is well below the row count and fisherz p-values are
-optimistic. The current metacell datasets are non-overlapping, so `n_rows ≈ n_eff` there.
+The historical monocyte analysis used about 133 metacells per gene. RNA-anchored rows can reuse chromatin cells, which makes nominal row counts optimistic for inference. The non-overlapping construction removes that reuse. Shared state, partitions and technical effects can still induce dependence among rows. An effective sample size was not established for either construction. [Calibration evidence](../../pipelines/simulation/aggregation_identifiability/results/aggregation_bakeoff.md)
 
 ## L4. Stability is row-subsampling, not block bootstrap
 
@@ -82,25 +73,15 @@ datasets (BLUEPRINT/Quach/Schmiedel/Randolph) have zero credible sets for those 
 
 ## L6. Observational, PAG not DAG
 
-Without monocyte CRISPR, every causal claim is conditional on assumptions (Markov, faithfulness, the
-mechanistic orientation constraints) plus corroboration by independent evidence. Causal insufficiency
-is permanent and is *handled* — via PAG bidirected edges — not assumed away. Output is
-hypothesis-generating: a prioritized set of element↔element hypotheses for CRISPRi follow-up.
+FCI describes features shared by an equivalence class under assumptions about the joint distribution, sampling, Markov structure and faithfulness. Here the cross-assay rows are constructed. A PAG computed on them can reflect the matching rule, and an orientation can follow from a tier supplied by the analyst. Independent biological support for a pair does not identify a direct intervention effect. [Observation and identifiability](theory/07_unpaired_integration_nonidentifiability.md) · [Integration-specific analysis](theory/08_modern_integration_objectives.md)
 
 ## L7. Element↔element validation has no accepted null
 
-There is no community-standard null for element↔element claims, which is why we built the
-distance-matched permutation framework. Current null matches on **genomic distance only**;
-degree-matching is not yet implemented. See
-[peak_peak_validation_results.md](../../pipelines/empirical/evaluation/results/peak_peak_validation_results.md).
+The reference distribution depends on which genomic properties are preserved. The initial validator matched pairs on distance. The later shared-promoter analysis also matched on graph degree and compared partition-stable pairs with other observed edges. Those tests evaluate enrichment for a measured feature in the specified comparison set. [Initial validator](../../pipelines/empirical/evaluation/results/peak_peak_validation_results.md) · [Distance- and degree-matched analysis](../../pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md)
 
 ## L8. The co-accessibility contrast uses a |Spearman| baseline
 
-Not a faithful Cicero. Raw co-accessibility does not prune indirect paths through *observed* peaks,
-so a distance-penalized graphical-lasso would remove many of the non-adjacent false positives. The
-**method-fair** part of the contrast is the *latent* class: graphical-lasso removes indirect paths
-through observed variables but cannot remove a shared latent driver. That is the theoretical
-guarantee behind the 53% number.
+The original comparison scored pairs using absolute Spearman correlation. A distance-penalized graphical model would estimate a different quantity. The comparison measured whether correlations separated edge classes assigned by the fitted PAG. Neither the scores nor the assigned endpoint classes give biological ground truth for confounding. [Co-accessibility analysis](../../pipelines/empirical/evaluation/results/peak_peak_validation_results.md)
 
 ## L9. Panel scale is a pilot
 
@@ -108,8 +89,7 @@ guarantee behind the 53% number.
 
 ## L10. GFCI orients the skeleton only
 
-Tetrad's `Gfci` does not propagate the `Knowledge` tiers to PAG endpoints (causal-learn's FCI does),
-so GFCI contributes multi-algorithm *adjacency* while **directed claims come from FCI**.
+In the historical pipeline, the Tetrad GFCI implementation did not propagate the specified tiers to the reported PAG endpoints in the same way as causal-learn FCI. GFCI supplied an adjacency comparison. Peak–gene directions reported by the tier-constrained FCI run depend on that orientation prior. [Implementation decision](DECISIONS.md#7-why-gfci-was-added-and-why-fci-still-carries-direction)
 
 ## L11. Edge identities are partition-dependent
 
@@ -118,58 +98,13 @@ cells with a different random seed — same algorithm, same parameters, same n=1
 validated peak→gene edges**. Across three partitions, **zero** validated edges survive all three; two
 CD14 edges survive two of three, and those are the project's flagship edges.
 
-**What it blocks.** Any claim of the form "peak X regulates gene Y" from a single partition. The
-aggregate counts (19 directed, 11 validated) *do* reproduce, so distribution-level claims are on firmer
-ground than individual-edge claims.
-
-**Why the current stability tier does not cover this.** Bootstrap stability selection resamples rows
-*within* a fixed partition, so it structurally cannot observe between-partition variance. The "5
-stable+validated" tier inherits the blind spot.
-
-**What we do instead.** Nothing yet — this is unresolved and is the current top priority. The proposed
-fix is an outer bootstrap over partitions — **now built and run at K=10**
-([partition_bootstrap_results.md](../../pipelines/empirical/evaluation/results/partition_bootstrap_results.md)): no peak→gene
-edge is recovered in all 10 partitions, 68% of edges appear in a single partition, and the most robust
-validated edge (rE2G-supported CD14 H3K4me3) is found in 6/10. Report edges by recovery frequency, not
-from one partition. **Mechanism (2026-07-22 simulation):** aggregation induces collinearity between causal and confounded elements that collapses the causation-vs-confounding distinction — identifiable at the cell level, lost after aggregation ([simulation_identifiability_results.md](../../pipelines/simulation/aggregation_identifiability/results/simulation_identifiability_results.md)). Background: [partition_stability_findings.md](../../pipelines/empirical/evaluation/results/partition_stability_findings.md).
+Changing resolution from 133 to 240 metacells produced 11 externally supported peak–gene edges at both resolutions, with zero identities in common. The ten-partition check found two to eleven externally supported edges per partition. Fixed-partition row subsampling misses this source of uncertainty. Of 59 distinct peak–gene edges, 68% appeared in only one partition and none in all ten. The most recurrent externally supported edge, an H3K4me3 peak near CD14, appeared in six. Report both the reference support and the recovery frequency. [Seed and resolution comparison](../../pipelines/empirical/evaluation/results/partition_stability_findings.md) · [Ten-partition results](../../pipelines/empirical/evaluation/results/partition_bootstrap_results.md) · [Simulation mechanism](../../pipelines/simulation/aggregation_identifiability/results/simulation_identifiability_results.md)
 
 ## L12. Per-mark technical depth is not conditioned on
 
-We enter two observed technical confounders: `conf__rna_depth` and `conf__chrom_depth`. The second is
-`log1p(mean library size across the six histone-mark channels)` — **a single averaged variable**. Depth
-variation *specific to one assay channel* is therefore uncontrolled, even though the per-mark library
-sizes (`libsize__<MARK>`) are present in every matrix.
+The default historical fit includes RNA depth and one averaged chromatin depth across six histone marks. Measurements from the same mark can share technical variation specific to that assay. The sensitivity fit included the six per-mark depth variables available in the matrices. [Technical controls](../../pipelines/empirical/evaluation/results/same_mark_finding.md)
 
-**Why this now matters.** Bidirected `<->` pairs are strongly enriched for being measured on the **same
-histone mark** (43.7% vs 29.2% distance-matched, p = 0.0005; robust to degree matching). Two peaks from
-the same assay share that assay's per-metacell technical fluctuation, which would induce covariation
-with no directional structure — exactly what FCI reports as a latent common cause. The enrichment is
-specific to the bidirected class (the `o-o` class shows +0.037, p = 0.16), which is what a shared
-*unmodelled confounder* predicts.
-
-**What it puts at risk.** Some unknown fraction of the 126 bidirected edges — the project's novel object.
-
-**Update 2026-07-21 — RESOLVED, biological.** Two technical explanations were tested and both
-refuted: (1) per-mark sequencing depth — the enrichment survives six per-mark depth roots (p=0.0025);
-(2) shared cell substrate — a split-half test (quantify the two peaks from *disjoint* cells within each
-metacell, 20-split averaged) shows the same-mark bidirected correlation **fully survives** breaking the
-shared cells (104% of the excess preserved). So the same-mark enrichment is genuine metacell-level
-(cell-state) covariation, not a depth or substrate artifact — the project's positive element↔element
-signature. This limitation is downgraded to a recommendation: **prefer `--confounders depth_permark`**
-(per-mark roots) as the more correct conditioning, though it does not change the same-mark conclusion.
-Full evidence chain: [same_mark_finding.md](../../pipelines/empirical/evaluation/results/same_mark_finding.md). Remaining
-caveats there (n=55, single cell type, correlational).
-
-**Correction 2026-07-22 (partition bootstrap).** The "resolved as biological" verdict above was from a
-3-seed pilot and was **partition-lucky**. Across 10 partitions the same-mark enrichment is significant
-in only **4/10** (mean +0.046, negative in 3); the two strong partitions include the canonical seed 0.
-It is not a technical artifact where it appears, but it is **partition-fragile and cannot be claimed as
-an established signature**. See [partition_bootstrap_results.md](../../pipelines/empirical/evaluation/results/partition_bootstrap_results.md).
-
-**Further correction 2026-09-10.** Passing the tested depth and split-half checks
-does not rule out all technical artifacts or establish biological causation.
-The earlier phrase “not a technical artifact” is too broad. Biological alignment
-also requires review independently of those checks; see [L17](#l17-biological-integration-is-not-established-by-modality-mixing).
+In the original partition, bidirected peak pairs were enriched for being measured on the same mark (43.7% versus 29.2% under distance matching). The enrichment persisted with per-mark depth roots and in the split-half check using disjoint cells to quantify the two peaks. Across ten partitions, however, the enrichment was significant in only four and changed sign in three. The tested depth and shared-cell explanations did not account for the original observation. Its identity as a biological signature remains unresolved. [Ten-partition analysis](../../pipelines/empirical/evaluation/results/partition_bootstrap_results.md) · [Biological alignment limits](#l17-biological-integration-is-not-established-by-modality-mixing)
 
 ## L13. Peaks are histone-mark peaks, not ATAC; validation is enhancer/ATAC-derived
 
@@ -514,3 +449,11 @@ replicates. The [study record](scconfluence_scmtr_pilot_2026_11_01/README.md)
 preserves the input contract, objective corrections, outcomes and independent
 reviews. These limits qualify the pilot rather than establishing that the
 whole dataset or every alternative readout is unusable.
+
+## L20. Scope of the exact-model count benchmark
+
+The E/E2 corollaries concern population laws. Their restrictions include a known product-Poisson observation channel, full-column-rank linear maps on log rates, and a common distribution of independent, non-Gaussian, unit-variance sources with no nonidentity signed-permutation symmetry. They identify transport on supported log-rate subspaces. Specifying a shared draw and independent measurement noise across assays conditional on it also fixes a model-implied count joint. Similar source distributions, unknown noise or population shifts can alter what can be identified or estimated. [Reviewed corollary](nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md) · [Prior-art assessment](count_transport_novelty_2026_11_15/README.md)
+
+The finite-sample study supplied the source count and reused nine exact-model worlds with one to three independent binary sources. Each assay contributed 12,000 unpaired fitting cells and 2,000 unpaired calibration cells. A separate 4,000-cell paired cohort was reserved for evaluation. The pass rule checked covariance, transport on the supported subspaces and conditional prediction. It did not test a regulatory edge direction or measure error over the entire joint distribution. Four outer starts and selection by calibration likelihood were part of the procedure. Individual fits could fail, and the predictive bootstrap conditions on the fitted model. [Protocol and findings](../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
+
+Success on these previously inspected worlds is an existence demonstration under the tested model. Performance with unknown dimension, other source laws and biological model mismatch remains open. The November transfer reproduced the full earlier matched comparison and one later source-search fit. Independent recomputation of the original search scores and a fresh complete repeat are distinct checks. [Numerical review](../../pipelines/simulation/integration_recoverability/runs/count_transport_search_v1/NUMERICAL_REVIEW.json) · [Transfer verification](../../reproduce/VERIFICATION.md)

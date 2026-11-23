@@ -2,33 +2,18 @@
 
 ↑ [Central README](../../../README.md) · [Empirical pipeline](../README.md) · [MISSION](../../../project_resources/research/MISSION.md) (why) · [ROADMAP](../../../project_resources/research/ROADMAP.md) (plan)
 
-This directory contains the multi-omic integration layer used before causal discovery.
-The existing real-data setup is:
+This directory fits shared coordinates across RNA and chromatin assays and evaluates the neighborhoods they imply. Two empirical studies supply different checks.
 
-- `scGLUE` `joint_v2` is the historical baseline used for downstream pairing and graph discovery; its biological alignment is under review.
-- `Jianle` / `scMRDR_gaussian` is kept as a comparison track.
-- Older pilot scripts are useful for debugging only.
+- **PBMC monocytes.** The historical `scGLUE joint_v2` embedding and the repo-native `scMRDR_gaussian` comparator used separate RNA and CUT&Tag cells with no verified matched donors. Protein measurements held outside fitting show that some cross-mark neighborhoods reversed the T–myeloid contrast, even when neighborhoods within each mark conserved it. [Input provenance](../data/README.md) · [Alignment report](results/biological_alignment_2026-09-16.md)
+- **scMTR-seq S1.** The [scConfluence pilot](methods/scconfluence/README.md) used disjoint learner cells and reserved the original pairing for evaluation. Its sparse 595-cell paired panel produced no positive cross-assay graph reference. Two cached synthetic worlds tested the same adapter against known truth with two seeds apiece. [Cohort](../data/scmtr_seq/README.md) · [Results and independent checks](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
 
-For isolated run directories and configuration templates, see the
-[run registry](runs/README.md) and [run configuration guide](configs/runs/README.md).
-
-The separate [scConfluence count-input pilot](methods/scconfluence/README.md)
-uses the newly authorized [scMTR-seq cohort](../data/scmtr_seq/README.md) and two
-cached simulations. The [study record](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
-tracks fixed fits and independent causal reliability checks. Pairing and day
-labels remain evaluator-only; see [L19](../../../project_resources/research/LIMITATIONS.md#l19-scmtr-seq-pilot-agreement-is-not-causal-ground-truth).
-
-The subsequent [count-source extension comparison](../../../project_resources/research/count_extensions_2026_11_01/README.md)
-and [selected-dimension follow-up](../../../project_resources/research/count_rank20_2026_11_01/README.md)
-test observation models and source estimation directly on the existing assay
-counts. Their independently checked readouts distinguish within-assay
-covariance, cross-assay source consistency and the separate causal target.
+The [transfer guide](../../../TRANSFER.md) covers source restoration, preprocessing and a new integration run. The November replay verified all 24 compared PBMC preprocessing products, 27 workspace checks and six scMTR learner H5ADs. Full GPU model training remains outside that replay. [Verification](../../../reproduce/VERIFICATION.md) · [Run registry](runs/README.md) · [Run configurations](configs/runs/README.md)
 
 ## Biological integration review — 2026-09-10
 
 The biology track audits the existing data and integration before accepting
 further biological interpretation. It is separate from the
-[aggregation agent's work](../../../project_resources/research/aggregation_restart_plan.md), and CA-BOSS remains paused.
+[aggregation study](../../../project_resources/research/aggregation_restart_plan.md), and CA-BOSS remains paused.
 Measured results and the method shortlist are in the
 [biological foundation review](../data/results/biological_foundation_review_2026-09-10.md);
 status is in [ROADMAP](../../../project_resources/research/ROADMAP.md#two-goals-2026-09-10).
@@ -45,55 +30,24 @@ No integration or label files were changed. Diagnostic commands live in the
 
 ## Controlled validation execution — 2026-09-16
 
-The user authorized execution using existing data. Three saved-embedding
-evaluations are complete: matched scGLUE/scMRDR and full-cohort scGLUE.
+Three saved-embedding evaluations used the matched scGLUE and repo-native scMRDR cohort and the full scGLUE cohort.
 Within-assay protein conservation and cross-assay agreement are now measured
 separately, with depth/hashtag sensitivity, conditional shuffles and reserved
 assessment outcomes. Independent review reproduced key effects from raw ADTs.
 Results and commands are in the
 [alignment baseline and rerun protocol](results/biological_alignment_2026-09-16.md).
 
-Seven isolated H5AD inputs preserve counts and PCA/LSI while avoiding the dense
-RNA `X`; their `X` explicitly contains raw counts. Historical inputs/results
-are unchanged. CUDA was verified with a real GPU tensor calculation outside the
-sandbox. Twenty-three tests pass. No new integration has yet been trained or
-promoted; current-environment controls precede feature/guidance experiments.
+Seven isolated PBMC H5AD inputs preserved counts and PCA/LSI, with raw counts stored in `X`. The September report records 23 tests and a CUDA tensor check in its original environment. It assessed existing models.
 
-## Simulation design before causal aggregation
+## Simulation before causal aggregation
 
-The [integration recoverability protocol](../../simulation/integration_recoverability/README.md)
-defines a count-based comparison before aggregation. Both its simple and
-extended designs are now in implementation, using native scGLUE and the new
-paper-consistent scMRDR adapter. See the
-[execution record](../../simulation/integration_recoverability/IMPLEMENTATION_STATUS.md)
-for current scope, completed checks, and pending scientific results.
+The [integration recoverability benchmark](../../simulation/integration_recoverability/README.md) compares native scGLUE with a paper-consistent scMRDR adapter. Development fits and the count-input supplement yielded results, while the original extended assessment remains incomplete. The [execution record](../../simulation/integration_recoverability/IMPLEMENTATION_STATUS.md) identifies which arms ran.
+
+The [exact-model source search](../../simulation/integration_recoverability/runs/count_transport_search_v1/README.md) is a separate restricted-model experiment. Its simulations test when information in assay marginals can identify finite latent components. Applying its conclusions to these PBMC and scMTR measurements would require establishing the same assumptions for the empirical data.
 
 ## What Integration Does
 
-The integration stage puts RNA cells and single-cell CUT&Tag cells into a shared latent space. We do not make the modalities biologically identical; we use the latent space to find plausible cross-modality neighbors, then the causal-discovery code builds RNA-anchored pseudo-pairs.
-
-The active downstream pipeline uses:
-
-$$
-\text{RNA and CUT\&Tag preprocessing}
-\rightarrow
-\text{scGLUE joint latent space}
-\rightarrow
-\text{monocyte one-to-one pseudo-pairs}
-\rightarrow
-\text{nearby CUT\&Tag peak matrices}
-$$
-
-The graph-discovery matrices are generated under `pipelines/empirical/analysis/`, not directly from the older integration causal-export helper.
-
-Integration and aggregation solve different problems. The embedding supplies an
-estimated state geometry; downstream matching or metacell averaging supplies a
-coupling between cells that were never jointly measured. The coupling does not by
-itself reconstruct same-cell covariance or preserve causal conditional
-independences. See the
-[latent-space aggregation derivation](../../../project_resources/research/theory/06_latent_space_aggregation.md)
-and the owned claim boundary in
-[L18](../../../project_resources/research/LIMITATIONS.md#l18-latent-space-aggregation-does-not-reconstruct-the-missing-joint-distribution).
+The embedding estimates shared biological state. An RNA anchor, its matched chromatin neighbor and a metacell each define a different way to build a row for graph discovery. Even perfect state alignment can reveal how two assays' conditional means vary together while leaving the dependence between their residuals within each state unknown. For the derivation and explicit counterexamples, see [latent-space aggregation](../../../project_resources/research/theory/06_latent_space_aggregation.md) and [the unpaired integration result](../../../project_resources/research/theory/07_unpaired_integration_nonidentifiability.md).
 
 The [modern-objective analysis](../../../project_resources/research/theory/08_modern_integration_objectives.md)
 audits the scGLUE, paper-consistent scMRDR and scConfluence inputs/losses and
@@ -163,7 +117,7 @@ Per-method detail: [scGLUE](methods/scglue/README.md) · [scMRDR](methods/scmrdr
 
 ## Existing scGLUE Run
 
-The reviewed baseline run is [`runs/scglue_joint_v2/`](runs/scglue_joint_v2/).
+The reviewed PBMC baseline was stored locally at `runs/scglue_joint_v2/`. The tracked [alignment report](results/biological_alignment_2026-09-16.md) records the cohort and protein-marker comparisons.
 
 Its important outputs include:
 
@@ -187,13 +141,7 @@ These metrics address modality separation, not correct cell-state correspondence
 
 ## Running scGLUE
 
-Historical workflow commands, from the repository root. Controlled reruns are
-now authorized under the September 16 protocol, but no new training has yet
-completed. **Do not execute these examples over historical `joint_v2` outputs:**
-the old wrappers can overwrite files. Use fresh, isolated run directories.
-The example below requests `--compute-consistency`, but the saved
-`joint_v2/train/train_summary.json` records `compute_consistency: false` and no
-consistency TSV; it must not be cited as a completed check.
+Use a fresh run ID in the restored PBMC workspace. These wrappers can overwrite stage outputs. The examples below request the optional `--compute-consistency` diagnostic. The saved `joint_v2` training summary recorded this option as false. [Restore and preprocess](../../../TRANSFER.md)
 
 ```bash
 python3 pipelines/empirical/integration/scripts/setup_integration_workspace.py
@@ -204,8 +152,8 @@ The full joint pipeline wrapper is:
 
 ```bash
 bash pipelines/empirical/integration/methods/scglue/run_joint_pipeline.sh \
-  joint_v2 \
-  /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
+  pbmc_scglue_replay \
+  pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz \
   --graph-arg --backend --graph-arg custom \
   --graph-arg --window-bp --graph-arg 50000 \
   --graph-arg --gene-region --graph-arg promoter \
@@ -220,10 +168,10 @@ bash pipelines/empirical/integration/methods/scglue/run_joint_pipeline.sh \
 Use the stage wrappers if you need to rerun only one step:
 
 ```bash
-bash pipelines/empirical/integration/methods/scglue/run_preprocess_joint.sh joint_v2
-bash pipelines/empirical/integration/methods/scglue/run_build_graph_joint.sh joint_v2 /absolute/path/to/gencode.gtf.gz
-bash pipelines/empirical/integration/methods/scglue/run_train_joint.sh joint_v2 --max-epochs 120 --compute-consistency
-bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh joint_v2 --cell-type-level harmonized_coarse --transfer-labels
+bash pipelines/empirical/integration/methods/scglue/run_preprocess_joint.sh pbmc_scglue_replay
+bash pipelines/empirical/integration/methods/scglue/run_build_graph_joint.sh pbmc_scglue_replay pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz
+bash pipelines/empirical/integration/methods/scglue/run_train_joint.sh pbmc_scglue_replay --max-epochs 120 --compute-consistency
+bash pipelines/empirical/integration/methods/scglue/run_validate_joint.sh pbmc_scglue_replay --cell-type-level harmonized_coarse --transfer-labels
 ```
 
 The custom guidance-graph backend is preferred for full multi-mark runs because it streams edge construction instead of holding a large global graph in memory.
@@ -234,14 +182,14 @@ The important comparison run is:
 
 - `runs/scmrdr_scMRDR_gaussian/`
 
-This track converts or aligns modalities into a shared feature representation and trains a scMRDR-style model with reconstruction, alignment, and geometry-preservation terms. It is useful for checking whether scGLUE is actually giving better modality mixing, but it is not the current causal-discovery base.
+The historical shell wrappers train a repo-native approximation with reconstruction, alignment and geometry-preservation terms. The separate [paper-consistent simulation adapter](methods/scmrdr/paper_faithful/README.md) implements the audited model.
 
 Common commands:
 
 ```bash
-bash pipelines/empirical/integration/methods/scmrdr/run_preprocess_joint.sh scMRDR_gaussian
-bash pipelines/empirical/integration/methods/scmrdr/run_train_joint.sh scMRDR_gaussian --max-epochs 200
-bash pipelines/empirical/integration/methods/scmrdr/run_validate_joint.sh scMRDR_gaussian --transfer-labels
+bash pipelines/empirical/integration/methods/scmrdr/run_preprocess_joint.sh pbmc_scmrdr_replay
+bash pipelines/empirical/integration/methods/scmrdr/run_train_joint.sh pbmc_scmrdr_replay --max-epochs 200
+bash pipelines/empirical/integration/methods/scmrdr/run_validate_joint.sh pbmc_scmrdr_replay --transfer-labels
 ```
 
 The gene-feature universe helper can build shared gene-space matrices for Jianle experiments:
@@ -249,7 +197,7 @@ The gene-feature universe helper can build shared gene-space matrices for Jianle
 ```bash
 bash pipelines/empirical/integration/methods/scmrdr/run_build_gene_feature_universe.sh \
   gene_space_v1 \
-  /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
+  pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz \
   --gene-universe-mode union_linked \
   --gene-region promoter \
   --promoter-len 2000 \
@@ -258,23 +206,9 @@ bash pipelines/empirical/integration/methods/scmrdr/run_build_gene_feature_unive
 
 ## Hand-Off To Causal Discovery
 
-Causal discovery now starts from `scGLUE` `joint_v2` embeddings and matched sample tables in:
+The [analysis stage](../analysis/README.md) defines the observation unit before graph discovery. Its one-to-one comparator used `outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor` under the analysis directory. Other analyses used RNA-anchored averages or nonoverlapping metacells. The `peaks_bed` intervals define candidate peaks, and the clean fixed-bin matrices provide the signal within them. The older `run_export_causal_inputs_joint.sh` exports features directly from scGLUE and is retained for historical comparisons.
 
-- `pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor`
-
-The downstream datasets use CUT&Tag peak definitions and quantify those peaks from the raw clean fixed-bin matrices. That means `peaks_bed` defines candidate regulatory intervals, while `bins_bed` and the bin matrices provide the actual per-cell signal used to quantify each peak.
-
-The older scGLUE causal export wrapper still exists:
-
-```bash
-bash pipelines/empirical/integration/methods/scglue/run_export_causal_inputs_joint.sh joint_v2 CSF1R,CD14,IL1B
-```
-
-But this is not the active monocyte nearby-peak graph workflow anymore.
-
-## Alternative Next Directions
-
-Two mentor-discussed directions are now explicitly tracked here.
+## Historical design alternatives
 
 ### Causal Dropout
 
@@ -302,7 +236,7 @@ This is documented as a candidate direction only; no dataset or graph command cu
 
 ### RNA-Anchor Neighbor Averaging
 
-The current main pipeline uses RNA-anchored one-to-one pseudo-pairs without replacement. A new alternative mapping strategy now keeps RNA cells as anchors and averages each CUT&Tag modality over the $k$ nearest chromatin neighbors in scGLUE space.
+The one-to-one comparator selected chromatin cells without replacement. The neighbor-average comparator keeps each RNA cell as an anchor and averages its nearest chromatin neighbors separately for each mark. Different anchors can reuse chromatin cells.
 
 Conceptually:
 
@@ -318,18 +252,18 @@ $$
 
 This avoids forcing every chromatin cell to be used at most once. It also allows all monocyte RNA anchors to remain in the dataset.
 
-The current generated $k=10$, uniform-weight version is:
+The historical $k=10$ uniform-weight example used the following generated paths.
 
 - `pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10`
 - `pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10`
 - `pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10_rawcounts`
 
-The matching table contains `1887` RNA anchor rows, compared with `1561` rows in the current one-to-one pseudo-pair table.
+The historical matching tables contained 1,887 averaged RNA anchor rows and 1,561 one-to-one rows. The commands below assume that the `joint_v2` model and matching artifacts are available locally.
 
 Commands:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python match-average \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py match-average \
   --run-id joint_v2 \
   --n-neighbors 10 \
   --neighbor-weight-mode uniform
@@ -338,7 +272,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dg
 Generate the log-normalized alternative dataset:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python dataset \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py dataset \
   --run-id joint_v2 \
   --matching-dir pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10 \
   --window-bp 300000 \
@@ -348,7 +282,7 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dg
 Generate the raw-count alternative dataset:
 
 ```bash
-python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dgsetiawan/anaconda3/bin/python dataset \
+python3 pipelines/empirical/analysis/scripts/causal_cli.py dataset \
   --run-id joint_v2 \
   --matching-dir pipelines/empirical/analysis/outputs/scglue_pairings/joint_v2/harmonized_coarse__monocyte__rna_anchor_neighbor_average_k10 \
   --window-bp 300000 \
@@ -356,4 +290,4 @@ python3 pipelines/empirical/analysis/scripts/causal_cli.py --python-bin /home/dg
   --out-root pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_rna_anchor_average_k10_rawcounts
 ```
 
-These roots can be passed to the same downstream `graph`, `sweep`, and `dagma-sweep` commands through `--dataset-root`.
+Use `--dataset-root` with `sweep` or `dagma-sweep`. For an individual `graph` call, pass the locus matrix with `--matrix-tsv`. [Command examples](../analysis/scripts/README.md)

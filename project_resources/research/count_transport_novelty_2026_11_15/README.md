@@ -62,7 +62,7 @@ Lopez 2024 is the comparative-DGM paper, not PLN-Tree. PLN-Tree is by Chaussard,
 
 “We derive an application-specific count-data corollary by composing established Poisson-mixture and linear-ICA alignment results, and express the induced transport on unequal-dimensional assay subspaces.”
 
-Keep the result as a documented modeling foundation. Do not describe it as a new general nonlinear causal-identification theorem, a first unpaired alignment result, or a demonstrated recovery algorithm. A future contribution would need a substantive advance, such as a justified relaxation of the model or an estimation/stability result with evidence under the permitted data design. None is established by this audit.
+The November 15 audit assessed the population argument. The later source-search experiment tested a finite-sample estimator on a binary-source special case with known dimension. With 12,000 unpaired fitting cells per assay, it met the prespecified criteria for shared-state transport and cross-assay count relationships in all nine reused worlds. The experiment used distinct source frequencies for alignment. The population result's theoretical provenance, generalization to new worlds and recovery of biological causal edges are separate questions. [Exact-model design and results](../../../pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md).
 
 ## Scope and reproducibility
 

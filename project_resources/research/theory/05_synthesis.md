@@ -55,7 +55,7 @@ CD14, 3–9 variables clear $\lambda > 0.10$ on any single partition but only **
 cross-partition median. The instability documented for edges reaches down into which variables even
 qualify as signal-carrying.
 
-## 2. Repair 2 — de-attenuated covariance. **Equivalent to raising $\alpha$.**
+## 2. Repair 2. De-attenuated covariance equivalent to raising $\alpha$
 
 Subtract the noise term at the largest admissible strength: $\hat\Sigma(\lambda) = \hat\Sigma^{X} -
 \lambda\hat N$, with $\lambda^{*}$ the largest value keeping the condition number bounded.

@@ -1,23 +1,13 @@
 # Jianle / scMRDR Method Track
 
-This folder contains both the historical repo-native scMRDR-style comparison
-and the new [paper-consistent adapter](paper_faithful/README.md). The integration
-recoverability benchmark uses the latter. Its architecture, losses, source
-provenance, training corrections, and tests are documented in that audit.
-The existing shell wrappers below still run the historical approximation;
-their outputs must not be presented as paper-faithful scMRDR results.
+The PBMC comparison used the repository's Jianle approximation. The later integration recoverability benchmark used a separate adapter derived from the published model. Choose the implementation that matches the result being reproduced.
 
-## Role In The Project
+| Implementation | Data and evidence |
+| --- | --- |
+| Historical shell pipeline in this directory | The saved `scmrdr_scMRDR_gaussian` PBMC run was compared with scGLUE `joint_v2`. Analysis of the protein panel found discrepancies in cross-mark neighborhoods in both methods. [Alignment report](../../results/biological_alignment_2026-09-16.md) |
+| [Paper-consistent adapter](paper_faithful/README.md) | The simulation benchmark used this implementation and its frozen shared-coordinate export. The [model and objective review](../../../../../project_resources/research/integration_identifiability_2026_11_01/reviews/modern_scmrdr.md) records the inspected source and adapter-guide hashes. See the [execution record](../../../../simulation/integration_recoverability/IMPLEMENTATION_STATUS.md) for the scientific readouts and outstanding assessment. |
 
-This method is not the active causal-discovery base. It is the comparison track used to sanity-check the scGLUE integration decision.
-
-The important current run is:
-
-```text
-pipelines/empirical/integration/runs/scmrdr_scMRDR_gaussian
-```
-
-Compared with `scGLUE` `joint_v2`, this run showed weaker cross-modality mixing by same-modality neighbor fraction, so downstream monocyte pseudo-pairing currently uses scGLUE instead.
+To run the paper adapter's focused checks in an activated empirical environment from the repository root, use `python -m unittest discover -s pipelines/empirical/integration/methods/scmrdr/paper_faithful/tests -p 'test_*.py'`. See the [environment guide](../../../../../envs/README.md) for dependencies.
 
 ## What This Track Implements
 
@@ -27,7 +17,7 @@ The Jianle / scMRDR path includes:
 - scMRDR-style training with reconstruction, latent alignment, and geometry-preservation objectives.
 - Shared-gene feature-universe construction from histone peak matrices.
 - Optional feature-availability masks for shared-gene training.
-- Optional decoder conditioning on covariates such as `batch_id` and `donor_id`.
+- Optional decoder covariates when measured. The empirical sources have no verified donor matching across RNA and chromatin.
 - Validation outputs modeled after the scGLUE validation reports.
 
 This track does not currently provide the active graph-discovery export.
@@ -36,10 +26,10 @@ This track does not currently provide the active graph-discovery export.
 
 Python implementations:
 
-- `scripts/preprocess_joint_jianle.py`
-- `scripts/train_joint_jianle.py`
-- `scripts/validate_joint_jianle.py`
-- `scripts/build_joint_gene_feature_universe.py`
+- [preprocess_joint_jianle.py](preprocess_joint_jianle.py)
+- [train_joint_jianle.py](train_joint_jianle.py)
+- [validate_joint_jianle.py](validate_joint_jianle.py)
+- [build_joint_gene_feature_universe.py](build_joint_gene_feature_universe.py)
 
 Shell wrappers from repo root:
 
@@ -51,24 +41,24 @@ Shell wrappers from repo root:
 
 ## Running The Comparison Workflow
 
-Set up the integration workspace first:
+Restore and preprocess the PBMC counts following the [transfer guide](../../../../../TRANSFER.md). The command below regenerates the input manifest and workspace symlinks after a move.
 
 ```bash
 python3 pipelines/empirical/integration/scripts/setup_integration_workspace.py
 ```
 
-Run the staged comparison workflow:
+For the historical approximation, use a fresh run ID for either the stage-by-stage example or the combined wrapper.
 
 ```bash
-bash pipelines/empirical/integration/methods/scmrdr/run_preprocess_joint.sh scMRDR_gaussian
-bash pipelines/empirical/integration/methods/scmrdr/run_train_joint.sh scMRDR_gaussian --max-epochs 200
-bash pipelines/empirical/integration/methods/scmrdr/run_validate_joint.sh scMRDR_gaussian --transfer-labels
+bash pipelines/empirical/integration/methods/scmrdr/run_preprocess_joint.sh pbmc_scmrdr_replay
+bash pipelines/empirical/integration/methods/scmrdr/run_train_joint.sh pbmc_scmrdr_replay --max-epochs 200
+bash pipelines/empirical/integration/methods/scmrdr/run_validate_joint.sh pbmc_scmrdr_replay --transfer-labels
 ```
 
 Or run the wrapper:
 
 ```bash
-bash pipelines/empirical/integration/methods/scmrdr/run_joint_pipeline.sh scMRDR_gaussian \
+bash pipelines/empirical/integration/methods/scmrdr/run_joint_pipeline.sh pbmc_scmrdr_replay \
   --train-arg --max-epochs --train-arg 200 \
   --train-arg --learning-rate --train-arg 1e-3 \
   --train-arg --batch-size --train-arg 256
@@ -81,7 +71,7 @@ The gene-feature helper converts histone peak matrices into gene-level feature m
 ```bash
 bash pipelines/empirical/integration/methods/scmrdr/run_build_gene_feature_universe.sh \
   gene_space_v1 \
-  /absolute/path/to/gencode.v49.primary_assembly.annotation.gtf.gz \
+  pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz \
   --gene-universe-mode union_linked \
   --gene-region promoter \
   --promoter-len 2000 \
@@ -123,4 +113,4 @@ Important outputs:
 
 ## Interpretation
 
-Use this track to ask whether a non-scGLUE integration strategy gives similar biological neighborhoods. For the current project state, scGLUE is preferred because it mixes modalities more effectively and supports the monocyte pseudo-pairing workflow used by causal discovery.
+The PBMC metrics quantify compartment mixing and protein-score agreement. Direct cross-assay edge identification requires an additional link between these neighborhoods and the missing same-cell measurements. The project tests that distinction in the [integration benchmark](../../../../simulation/integration_recoverability/README.md).

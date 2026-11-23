@@ -2,23 +2,22 @@
 
 ↑ [Central README](../../../README.md) · [MISSION](../../../project_resources/research/MISSION.md) (why) · [ROADMAP](../../../project_resources/research/ROADMAP.md) (plan)
 
-**The single source of truth for every input used by Integration, Analysis, and
-Evaluation.** Nothing downstream should read sequencing data from anywhere else.
-
-> **Where did each dataset come from?** → **[results/data_sources.md](results/data_sources.md)** —
-> study/dataset, accession, and portal for every input. Historical monocyte inputs:
-> chromatin = scCUT&Tag-pro (GSE195725, Zhang et al. 2022); RNA = 10x *10k Human PBMC 5' v3 Ultima*.
-> They are **separate datasets with no verified donor matching**. The September 10
-> provenance correction distinguishes hashtags from donors; see
-> [L1](../../../project_resources/research/LIMITATIONS.md#l1-donor-is-not-an-available-variable).
+The historical PBMC workflow uses six scCUT&Tag-pro chromatin libraries (GSE195725, Zhang et al. 2022) and the separate 10x *10k Human PBMC 5′ v3 Ultima* RNA library. Donor matching across studies has not been verified. CUT&Tag hashtags are technical labels, and ADT measurements are reserved for biological checks on alignment. [Source inventory](results/data_sources.md) · [Donor provenance](../../../project_resources/research/LIMITATIONS.md#l1-donor-is-not-an-available-variable)
 
 ## scMTR-seq pilot (2026-11-01)
 
-The [scMTR-seq S1 pilot](scmtr_seq/README.md), authorized on 2026-11-01, is a
-separate paired-reference dataset for evaluating unpaired integration. Its
-learner inputs contain only RNA, H3K27ac and H3K4me3, with disjoint training
-cells. Pairing and differentiation-day metadata are isolated for evaluation.
-The historical monocyte inputs below remain unchanged.
+The separate H9 endoderm pilot partitions an originally paired sublibrary into disjoint learner cohorts for RNA, H3K27ac and H3K4me3. The evaluator alone can rejoin the held-out 595 cells and inspect differentiation day. The retained source, split and panel are documented in the [scMTR-seq data guide](scmtr_seq/README.md).
+
+## Restore the inputs
+
+From the repository root in the empirical environment, run the following to rebuild PBMC preprocessing and the integration workspace. The restoration manifest supplies the pinned GENCODE annotation. [Environment](../../../envs/README.md) · [Transfer commands](../../../TRANSFER.md)
+
+```bash
+python reproduce/restore_inputs.py pbmc reference
+bash reproduce/preprocess_pbmc.sh
+```
+
+The fresh-export check matched all 24 compared preprocessing files across six marks and passed 27 workspace checks. scMTR-seq has its own restoration target and cohort builders. [Verification record](../../../reproduce/VERIFICATION.md)
 
 ## Biological review (2026-09-10)
 
@@ -89,14 +88,11 @@ pipelines/empirical/data/
 └── results/    interpretation + QC write-ups
 ```
 
-`raw/` vs `outputs/` is the important split: **`raw/` is what we were given, `outputs/` is what our
-code made.** Everything in `outputs/` is reproducible by re-running `scripts/`.
+`raw/` holds source material. The preprocessing recipe above writes cleaned barcodes, called peak intervals and count matrices to `outputs/<MARK>/`. The dated biological diagnostics have their own commands above.
 
 ## What's tracked in git
 
-Most of `pipelines/empirical/data/` is gitignored — it is large and regenerable. Tracked: the ADT/HTO count tables,
-`chromsizes`, and the ChIP-Atlas experiment manifest. Ignored: fragment files, `GexData/`, all of
-`outputs/`, and every downloaded external DB.
+The tracked PBMC raw inputs are the ADT/HTO tables, hg38 chromosome sizes and the ChIP-Atlas experiment manifest. The large fragment files, 10x RNA files, generated matrices and downloaded evidence databases are stored outside Git. scMTR-seq has its own tracked source receipts, protocol and split summaries.
 
 ## Preprocessing
 
@@ -108,7 +104,7 @@ Env: **`scrna_r`** (snapatac2 for the fixed-bin / peak matrices) — see [envs/]
 
 ## External evidence databases (`raw/external/`)
 
-Downloaded reference data used by `pipelines/empirical/evaluation/`. Each regenerates from a builder script:
+Evaluation uses the following local evidence sources. The table lists the corresponding builder or manual download.
 
 | Folder | Contents | Rebuild with |
 | --- | --- | --- |

@@ -1,219 +1,63 @@
 # Epigenomics-GEX Causal Analysis
 
-This project studies local regulatory structure using existing single-cell RNA
-and CUT&Tag histone measurements. Empirical pipelines handle preprocessing,
-integration, causal discovery and biological evaluation. Separate simulations
-study what structure survives integration and aggregation of unpaired cells.
+Which relationships between histone marks and RNA can we recover when each assay measures different cells? We study this at individual gene loci in human blood cells, with simulations where the same-cell biology is known. A shared state can explain why two assays change together. A direct peak–gene edge makes a stronger claim about what happens within a cell. [Project mission](project_resources/research/MISSION.md)
 
 ## Start here
 
-- [Mission](project_resources/research/MISSION.md),
-  [decisions](project_resources/research/DECISIONS.md), and
-  [limitations](project_resources/research/LIMITATIONS.md) explain the scientific scope.
-- [Pipeline map](pipelines/README.md) connects the runnable workflows.
-- [Git transfer and reproduction guide](TRANSFER.md) covers environment setup,
-  verified input downloads and simulation replay.
+- For the scientific story, read the [research recap through 22 November 2026](project_resources/reports/2026-11-22-unpaired-assay-recap.md).
+- For the evidence and open questions, see the [roadmap](project_resources/research/ROADMAP.md), [decision rationale](project_resources/research/DECISIONS.md) and [limitations](project_resources/research/LIMITATIONS.md).
+- To run an analysis from a checkout, start with the [transfer guide](TRANSFER.md) and [verification record](reproduce/VERIFICATION.md).
 
 ## Research status
 
-The latest [exact-model count-source search](pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
-meets the shared-state transport and cross-assay count recovery criteria in all nine existing
-one-, two- and three-source worlds using raw counts, multiple starts and
-unpaired calibration selection. Parameter boxes and cumulative optimization
-budgets are absent. Individual starts remain unreliable; the report preserves
-all failures and independent audits. This is a known-dimension, matched-model
-simulation result, not general cross-assay causal-direction recovery.
+| Question | What the records support |
+| --- | --- |
+| Can unpaired raw counts recover relationships carried by a common latent state? | **Yes in the exact-model experiment.** The calibration-selected source search passed the covariance, transport and prediction criteria in **9/9 reused worlds** with one to three sources and the correct source count supplied. The unbounded fit in the new coordinates, initialized from the old starts, passed **5/9**. Success varied across individual starts. [Experiment and per-world scores](pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md) |
+| What makes that possible? | With a known product-Poisson count model, full-column-rank linear log-rate maps and a common law of independent non-Gaussian sources distinguishable under signed permutations, the assay laws identify transport on the supported log-rate subspaces. A common latent draw and independent measurement noise across assays given that draw also determine a model-implied count joint. An earlier test on background features from two cached simulations did not establish this recovery. [Corollary](project_resources/research/nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md) · [Earlier count experiment](pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_DEMONSTRATION.md) |
+| Does alignment identify direct cross-assay effects? | Even perfect state alignment leaves the within-state coupling open in the general unpaired problem. The scGLUE, scMRDR-style and scConfluence studies did not establish reliable recovery of causal edges. The bounded integration validation is complete. The broader frozen integration suite recorded **118/178** scheduled model fits. [Population counterexample](project_resources/research/theory/07_unpaired_integration_nonidentifiability.md) · [Validation](pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md) · [Execution ledger](pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md) |
+| What survives in the biological analysis? | Partition-stable cross-mark adjacencies in the monocyte panel were enriched for shared promoter contacts. Cross-mark directions varied across partitions. The separate scMTR-seq S1 pilot reserved paired observations for evaluation and exposed sparse-count calibration problems. [Monocyte evidence](pipelines/simulation/aggregation_identifiability/results/crossmark_identifiability.md) · [S1 pilot](project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md) |
 
-The [nonlinear repair and count-model program](project_resources/research/nonlinear_repair_2026_11_15/README.md)
-contains the expanded literature review, independently checked identification
-results and completed experiments on existing count inputs. Its
-[synthesis](project_resources/research/nonlinear_repair_2026_11_15/SYNTHESIS.md) and
-[requirement audit](project_resources/research/nonlinear_repair_2026_11_15/reviews/FINAL_REQUIREMENT_AUDIT.md)
-distinguish conditional population recovery from the empirical results.
-Reliable cross-assay causal recovery remains unestablished.
-
-The [nonlinear literature recheck](project_resources/research/nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md)
-corrects gaps in the earlier theorem coverage and distinguishes the papers
-with assumption issues from other nonlinear identification approaches.
-
-The preceding [unpaired-assay identification program](project_resources/research/research_program_2026_11_14/README.md)
-connects the observation contract, primary theorem review, Lean proofs and
-existing-input experiments. Its [requirement ledger](project_resources/research/research_program_2026_11_14/REQUIREMENTS.md)
-preserves the earlier review record and evidence; the recheck above corrects
-its nonlinear coverage. Earlier frozen studies remain intact.
-
-The preceding work is the [count-source extension comparison](project_resources/research/count_extensions_2026_11_01/README.md)
-and its [selected-dimension follow-up](project_resources/research/count_rank20_2026_11_01/README.md).
-It tests noise models, depth treatment, source estimation and larger nested
-feature panels using the existing observations. Independent agents check the
-algebra, fit decisions and heldout readouts. Within-assay covariance gains are
-reported separately from cross-assay source matching and causal recovery.
-Neither completed block accepted a cross-assay source pair under the fixed
-rules; raising the computational dimension ceiling did not resolve this.
-
-The preceding [count-aware source pilot](project_resources/research/count_mdcrl_2026_11_01/README.md)
-introduced explicit Poisson correction with a matched-dimension comparison.
-It improved a narrower within-assay covariance task but did not recover
-supported cross-assay sources or a causal graph on the existing panels.
-
-The preceding [Sturma unpaired causal-representation pilot](project_resources/research/sturma_pilot_2026_11_01/README.md) contains
-a reduced native replication followed by a frozen application to existing counts,
-with independent source, implementation and result reviews. It separates recovery
-under the published linear model from the outcome on our sparse count panels.
-
-The [integration literature and identification review](project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md)
-distinguishes general nonidentification from published positive results for
-restricted unpaired latent models. The [population proof](project_resources/research/theory/07_unpaired_integration_nonidentifiability.md)
-establishes why general cross-assay direct-structure recovery can fail even with
-perfect state alignment. Its [research record](project_resources/research/integration_identifiability_2026_11_01/README.md)
-links independent reviews and symbolic checks. Those theory studies are separate
-from the subsequent Sturma fitting experiment.
-
-The [method-specific companion](project_resources/research/theory/08_modern_integration_objectives.md)
-connects this proof to the objectives of scGLUE, scMRDR and scConfluence.
-
-The [scConfluence/scMTR-seq pilot](project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
-completed a count-input integration comparison on cached simulations and a
-separate real-data holdout, with independent reviews. It exposed integration
-seed instability and a sparse-count causal-test calibration problem. It does
-not replace the historical monocyte setup or establish reliable causal recovery.
-
-The bounded [integration-validation study](pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md)
-is complete; the broader frozen simulation benchmark remains unfinished.
-Use its [execution record](pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md)
-for current results and remaining work. State alignment has not established
-reliable cross-assay causal recovery.
-
-The empirical biology track retains its
-[reviewed alignment baseline](pipelines/empirical/integration/results/biological_alignment_2026-09-16.md).
-The [CA-BOSS track](pipelines/simulation/unpaired_multimodal/README.md) is parked;
-its code, cached worlds, results and negative controls remain available.
-[ROADMAP](project_resources/research/ROADMAP.md) records the project history and
-scientific priorities. Result numbers belong to the linked result reports.
+The November 22 clean-checkout replay reproduced the full *earlier matched comparison* and exercised one fit from the later source search. The complete 9/9 result and its independent numerical audit come from the original November 15 search. [Transfer verification](reproduce/VERIFICATION.md)
 
 ## Repository structure
 
-The repository is organized around two workflow families and shared project resources:
-
-```text
-pipelines/empirical/    data → integration → analysis → evaluation
-pipelines/simulation/   aggregation, unpaired multimodal, and integration-recoverability studies
-project_resources/      research, reports, shared outputs, and archive
-envs/                   pinned environments used by both workflow families
-```
-
-Start with the [pipeline map](pipelines/README.md). The empirical pipeline’s
-[`data/`](pipelines/empirical/data/README.md) directory remains the source of
-truth for biological inputs. Each integration run has a separate directory
-under [`integration/runs/`](pipelines/empirical/integration/runs/) so new method
-and parameter experiments can be compared without overwriting one another.
-The former combined Evaluation area is divided between empirical validation and
-the simulation tracks that produced the formal worlds and runs.
+| Area | What to find there |
+| --- | --- |
+| [Empirical pipeline](pipelines/empirical/README.md) | Data provenance, integration methods, local graph analysis and external biological evidence |
+| [Simulation pipelines](pipelines/simulation/README.md) | Aggregation controls, the parked CA-BOSS benchmark and integration-recoverability studies |
+| [Project resources](project_resources/README.md) | Mission, theory, study reviews, reports and archive |
+| [Environments](envs/README.md) | CPU replay requirements, Linux empirical environment and study-specific overlays |
+| [Reproduction](TRANSFER.md) | Input restoration, replay commands and checks completed on a clean export |
 
 ## Pipeline at a glance
 
-`CUT&Tag preprocessing → scGLUE joint integration → metacell pairing → nearby-peak matrices → causal discovery (FCI/GFCI · PC · DAGMA) → edge validation`
+The historical monocyte workflow preprocesses CUT&Tag, integrates the cells with RNA, constructs metacells, screens nearby peaks, fits local graphs and compares selected edges with external evidence. Simulations let us check separately which results come from the underlying biology, the counts, the matching rule and the graph learner. [Pipeline map](pipelines/README.md)
 
 ## Existing real-data setup
 
-Historical monocyte configuration. The separate scMTR-seq pilot is linked above.
-Live status, rationale and open work: **[ROADMAP](project_resources/research/ROADMAP.md)**.
-
-| | |
-| --- | --- |
-| Genome / cell type | GRCh38 · monocyte (CD14+/classical) |
-| Desired graph target | local PAG/MAG; its biological joint is not certified by integration |
-| Integration | scGLUE `joint_v2`; biological review tracked in [ROADMAP](project_resources/research/ROADMAP.md#two-goals-2026-09-10) |
-| Aggregation | non-overlapping metacells (n=133) |
-| Discovery | FCI/GFCI → PAG, bootstrap stability selection as headline |
-| Validation | 3 axes peak→gene (rE2G · eQTL · PCHi-C) + element↔element framework |
-| Observed confounders | library depth only; donor identity is not verified ([L1](project_resources/research/LIMITATIONS.md#l1-donor-is-not-an-available-variable)) |
+The PBMC analysis uses six histone marks from GSE195725 and RNA from a separate 10x experiment. A shared donor identifier has not been verified. The chromatin hashtags identify technical groups. The separate scMTR-seq S1 study uses RNA, H3K27ac and H3K4me3, with disjoint cells during fitting. [PBMC provenance](pipelines/empirical/data/results/data_sources.md) · [S1 cohort](pipelines/empirical/data/scmtr_seq/README.md)
 
 ## Quick start
 
-End-to-end per-gene run (discovery + stability + 3-axis validation):
+From the repository root, the exact-model CPU tests require Python 3.11 and no biological downloads.
 
 ```bash
-python pipelines/empirical/analysis/scripts/run_gene_pipeline.py --gene CD14 \
-  --dataset-root pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_metacell \
-  --methods gfci,fci --stability-method fci
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r envs/requirements-replay-cpu.txt
+python -m pytest -q pipelines/simulation/integration_recoverability/tests/test_count_transport*.py
 ```
 
-Individual stages run through the single CLI — `causal_cli.py match | dataset | graph | support`.
-See [Analysis/README.md](pipelines/empirical/analysis/README.md) for the CLI and
-[Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) for the full driver.
-
-Rebuild the integration input workspace (regenerates all symlinks into `pipelines/empirical/data/`):
-
-```bash
-python pipelines/empirical/integration/scripts/setup_integration_workspace.py
-```
+For a full simulation replay, use a new run ID and choose the stage in the transfer guide. For a biological run, restore and preprocess the inputs first. The per-gene driver requires the prepared peak–gene matrices. [Replay and restore commands](TRANSFER.md) · [Empirical driver](pipelines/empirical/analysis/PIPELINE.md)
 
 ## Documentation ownership (read before editing any doc)
 
-Docs drift when the same fact is written in two places and only one gets updated. **Every fact has
-exactly one owner; everything else links to it.** When you update something, update the owner —
-never copy the content outward.
-
-| Fact | Owner — the only place it is written | Everyone else |
-| --- | --- | --- |
-| Why / novelty / competitive positioning | [project_resources/research/MISSION.md](project_resources/research/MISSION.md) | link |
-| Status · open work · changelog · one-line decisions | [project_resources/research/ROADMAP.md](project_resources/research/ROADMAP.md) | link |
-| **Decision *rationale*** (why, options, cost) | [project_resources/research/DECISIONS.md](project_resources/research/DECISIONS.md) | link |
-| **Caveats & limitations** | [project_resources/research/LIMITATIONS.md](project_resources/research/LIMITATIONS.md) | link to `#lN` |
-| **Result numbers** | the relevant `*/results/*.md` | link — never restate |
-| **Data origin and sample identity** | [Data/results/data_sources.md](pipelines/empirical/data/results/data_sources.md) | link |
-| Repo structure · quick start | this README | link |
-| How to run one section | that section's README | link |
-| Driver stages + axis-aware rule | [Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) | link |
-
-Rules of thumb: a **results doc** carries numbers and gets *superseded*, never silently edited — add
-a dated correction instead. The **ROADMAP** carries verdicts and links, not tables. A **caveat**
-written outside LIMITATIONS.md is a bug.
-
-Drift is checked automatically by the pre-commit hook (enable once per clone:
-`git config core.hooksPath .githooks`), or manually:
-
-```bash
-python project_resources/research/check_docs.py
-```
+The [mission](project_resources/research/MISSION.md) defines the questions and evidence standard. The [roadmap](project_resources/research/ROADMAP.md) owns project status, [decisions](project_resources/research/DECISIONS.md) records the rationale and the [limitations ledger](project_resources/research/LIMITATIONS.md) qualifies each claim. Dataset provenance belongs to the data stage. Detailed scores, denominators, controls and audit receipts belong to the study that produced them. Link to those records when summarizing a result. Dated plans, source snapshots and hash-verified study records preserve the version used for that study. To inspect a guide as it appeared in the November 22 handoff before this documentation refresh, use `git show 8338034:path/to/README.md`.
 
 ## Where did this number come from?
 
-Any result can be traced back to the raw data it derives from:
-
-```bash
-python project_resources/research/provenance.py --gene CD14        # --list to see what's traceable
-```
-
-It walks the manifests each run wrote — pipeline → dataset → pairing → metacells → scGLUE run →
-per-mark matrices → raw CUT&Tag/GEX — and labels every hop `[recorded]` or `[CONVENTION]` so an
-inferred link is never mistaken for a documented one. See [project_resources/research/README.md](project_resources/research/README.md#tooling).
+For a saved empirical run, `python project_resources/research/provenance.py --gene CD14` follows recorded and inferred links through the original manifests. For a simulation result, start at the study's comparison table, evaluation seal and review. Checkout contents and files generated during a run are described in the transfer guide. [Research tools](project_resources/research/README.md#tooling) · [Count-search records](pipelines/simulation/integration_recoverability/runs/count_transport_search_v1/README.md)
 
 ## Documentation map
 
-**Start here**
-
-- [project_resources/research/MISSION.md](project_resources/research/MISSION.md) — scientific intent & novelty (the *why*). **Read first.**
-- [project_resources/research/DECISIONS.md](project_resources/research/DECISIONS.md) — **why the pipeline looks like this**: each decision, the diagnostic that forced it, the options rejected, and the cost.
-- [project_resources/research/ROADMAP.md](project_resources/research/ROADMAP.md) — living master plan: status, method decisions, phased actions, changelog. §0.5 is the publication-push hub.
-
-**How each stage works**
-
-- [Data/README.md](pipelines/empirical/data/README.md) — inputs and CUT&Tag preprocessing → peaks + matrices.
-- [Integration/README.md](pipelines/empirical/integration/README.md) — scGLUE baseline under review and scMRDR comparison.
-- [Analysis/README.md](pipelines/empirical/analysis/README.md) — pairing, nearby-peak matrices, the discovery CLI, screening.
-- [Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) — end-to-end per-gene driver.
-- [Evaluation/README.md](pipelines/empirical/evaluation/README.md) — validation axes and the evidence sources.
-- [envs/README.md](envs/README.md) — pinned conda envs and which env runs which stage.
-
-**Research notes**
-
-- [Biological foundation review](pipelines/empirical/data/results/biological_foundation_review_2026-09-10.md) — existing-data QC, ADT consistency, and data/integration candidates.
-- [Latent-space aggregation](project_resources/research/theory/06_latent_space_aggregation.md) — why integrated state
-  geometry does not itself reconstruct the missing same-cell joint distribution, and what the next
-  aggregation benchmark must identify.
-- **[project_resources/research/README.md](project_resources/research/README.md)** — index of project-level research notes, theory, earlier design plans, reports, and reference papers.
-- [project_resources/research/LIMITATIONS.md](project_resources/research/LIMITATIONS.md) — every known caveat, the single source of truth.
-- [Analysis/results/](pipelines/empirical/analysis/results) — modeling-design notes, competitive landscape, literature reviews.
-- [Evaluation/results/](pipelines/empirical/evaluation/results) — validation write-ups and the saved-run audit.
+The [research index](project_resources/research/README.md) connects the theory, literature, simulation designs and independent reviews. The [pipeline index](pipelines/README.md) links the operating instructions for each stage. The [reports index](project_resources/reports/README.md) links shareable summaries and dated presentations.

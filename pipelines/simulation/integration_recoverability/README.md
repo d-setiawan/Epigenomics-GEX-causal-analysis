@@ -1,169 +1,100 @@
 # Integration recoverability
 
-_First-pass protocol, 2026-09-23; implementation active from 2026-10-03_
+What cross-assay relationships can RNA, H3K27ac and H3K4me3 identify when each assay measures
+different cells? The count-source experiments test recovery under an explicit model of the
+shared state. The integration benchmark tests whether scGLUE or scMRDR followed by cell matching
+can reproduce a reference relationship. These designs score different targets.
+[Count-source results](COUNT_TRANSPORT_SOURCE_SEARCH.md) · [Integration results](RESULTS.md)
 
----
+## Count-informed source search
 
-## Count-informed source search, 2026-11-15
+In the November 15 experiment the latent dimension was supplied, independent asymmetric
+Bernoulli sources generated each assay’s log rates through a full-column-rank linear map, and
+counts were conditionally independent Poisson measurements. These assumptions restrict which
+joint distribution is compatible with the separate assay marginals. Fitting used 12,000 unpaired
+cells per assay per world, with four outer starts and selection on unpaired calibration data.
+Paired counts were available only to the evaluator.
+[Observation model and identification assumptions](../../../project_resources/research/nonlinear_repair_2026_11_15/theory/COMP_TALL_MATRIX_COROLLARY.md)
+· [Count-source experiment](runs/count_transport_search_v1/README.md)
 
-The [unbounded source-search comparison](COUNT_TRANSPORT_SOURCE_SEARCH.md) is
-complete. Reusing the same nine exact-model worlds, count-based initialization,
-multiple starts and unpaired calibration selection meet the shared-state
-transport and cross-assay count recovery criteria in **9/9 worlds**, including **3/3 each** with one,
-two and three sources. New coordinates and removal of parameter boxes with the
-old starting points recover 5/9; the earlier labeling experiment recovered 3/9.
-Selected informed fits have worst-pair covariance errors of 1.73%–4.46% and
-transport errors of 1.97%–5.02%.
+| Supplied source dimension | Earlier labeling study | Unbounded fit with original starts | Count-informed source search |
+| --- | ---: | ---: | ---: |
+| 1 | 3/3 | 3/3 | 3/3 |
+| 2 | 0/3 | 2/3 | 3/3 |
+| 3 | 0/3 | 0/3 | 3/3 |
+| **Worlds passing every assay-pair criterion** | **3/9** | **5/9** | **9/9** |
 
-Single starts remain unreliable: only 5/12 three-source informed starts meet
-the continuous-error and numerical criteria. The report preserves all attempts,
-the 36,134-iteration maximum, 112 passing tests and independent scientific and
-numerical audits. This is a positive demonstration with known source dimension
-on reused, exactly matched worlds. It does not establish global optimality,
-biological realism or causal-direction recovery.
+The criteria cover the map between assays’ shared log-rate subspaces, cross-assay count
+covariance, and prediction of one assay’s counts from another. Across nine selected informed
+fits the worst-pair relative error ranged from 1.73% to 4.46% for covariance and from 1.97% to
+5.02% for transport. Only 5/12 individual three-source informed starts met the continuous-error
+and numerical checks. Bootstrap intervals for full recovery were computed for selected fits. All
+nine worlds had been assessed previously. Unknown dimension, model mismatch, performance in new
+populations and causal direction remain open.
+[Per-world results](runs/count_transport_search_v1/comparison.tsv) ·
+[Full evaluation criteria](COUNT_TRANSPORT_SOURCE_SEARCH.md)
 
-## Exact-model E/E2 test, 2026-11-15
+Two earlier experiments help interpret the improvement. On the exact-model bank the baseline
+recovered the one-source cases, while higher-dimensional fits stopped at demonstrably suboptimal
+solutions. In the separate demonstration on two cached integration worlds with different
+generating mechanisms, the fitted cross-assay predictor performed worse than its own target
+marginal and cross-assay covariance error exceeded that of predicting zero. The finite-sample
+results depend on both model specification and optimization.
+[Exact-model baseline and labeling follow-up](COUNT_TRANSPORT_MATCHED.md) ·
+[Mismatched-world demonstration](COUNT_TRANSPORT_DEMONSTRATION.md)
 
-The [matched simulation and optimization experiment](COUNT_TRANSPORT_MATCHED.md)
-is the preceding experiment. It generates counts exactly within the corollary's model and fits
-without total iteration/evaluation budgets. The one-source case recovers the
-target in all three 12,000-cell settings. Higher-dimensional fits converge but
-remain demonstrably suboptimal. A separately sealed exploratory change allowing
-both Bernoulli label orientations does not establish full higher-dimensional
-recovery. The report distinguishes transport, covariance and prediction; it
-includes all outcomes, a figure, 87 passing tests and independent numerical and
-scientific reviews. This supports a restricted positive example without claiming
-general causal recovery or treating estimator failure as a theorem refutation.
+For general disjoint sampling, the observed marginals allow several cross-assay residual
+couplings even if shared state is known. Aligning cells by state can recover the between-state
+component when the alignment is accurate. State alignment alone leaves the within-state residual
+dependence undetermined.
+[Identification boundary](../../../project_resources/research/theory/07_unpaired_integration_nonidentifiability.md)
+·
+[Latent-space aggregation](../../../project_resources/research/theory/06_latent_space_aggregation.md)
 
-## Count-transport demonstration, 2026-11-15
+## Integration benchmark and follow-ups
 
-The [E/E2 estimator experiment](COUNT_TRANSPORT_DEMONSTRATION.md) is complete:
-96 count-native fits on two cached worlds, with paired cells used only after
-selection for evaluation. The strict and affine models improved within-assay
-calibration likelihood but worsened cross-assay predictions and covariance recovery. Neither recovered
-useful cross-assay dependence; causal recovery remains unestablished. The report
-separates this empirical failure from the population corollary, documents model
-mismatch and convergence limits, and links all sealed outcomes and independent
-reviews. No new worlds or biological data were generated.
+| Study | Recorded outcome |
+| --- | --- |
+| Frozen scGLUE/scMRDR suite | **118/178** completed model fits, comprising all 94 simple/development fits and 24 assessment fits. The assessment stopped with incomplete coverage. The results retain count-calibration, numerical and native-runtime failures. Final world-level synthesis remains pending. [Execution record](IMPLEMENTATION_STATUS.md) · [Observed results](RESULTS.md) |
+| Integration-validation supplement | All 16 selection and 16 confirmation fits completed on cached worlds. Low state-matching error could coincide with weak decoder transfer. For one realistic unrestricted-chain world, scMRDR’s state gap ranged from 0.1246 to 1.4446 across two seeds. [Confirmation matrix and diagnostics](INTEGRATION_VALIDATION.md) |
+| Full-feature scGLUE encoder | Four fits compared native full-feature inputs with RNA PCA and chromatin LSI on two development worlds at one seed. Worst-pair state gaps improved from 0.1476 to 0.1365 and from 0.1312 to 0.1228. Some decoder directions worsened. The follow-up measured state alignment and decoder transfer. [Count-input comparison](COUNT_INPUT_FOLLOWUP.md) |
+| scConfluence pilot | Six fits covered two cached simulation worlds and a separate empirical paired-count reference from scMTR-seq. Sparse count controls exposed false adjacencies under the null. The pilot did not establish reliable causal recovery. [Pilot record](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md) · [Simple benchmark CI audit](SPARSE_CI_AUDIT.md) |
 
-## Current priority: establish the identification boundary
+The last three studies have separate fit inventories from the 178 planned baseline fits. A
+successful alignment or decoder readout alone does not determine the missing same-cell
+dependence or causal graph.
 
-The [2026-11-01 theory pivot](../../../project_resources/research/theory/07_unpaired_integration_nonidentifiability.md)
-proves a general limitation for original cross-assay structure under strictly
-disjoint sampling, even with oracle state. It explicitly preserves restricted
-positive cases and distinguishes the shuffled paired-reference design. The
-[research record](../../../project_resources/research/integration_identifiability_2026_11_01/README.md)
-contains independent reviews and symbolic checks. No new worlds or integration
-fits are part of this work. Earlier validation studies remain below.
+## Reproducing the recorded work
 
-## Completed integration-validation follow-ups
+The CPU replay can regenerate the deterministic matched-model inputs, repeat the baseline, and
+then run the count-informed search under a fresh run ID. The November 22 clean-checkout
+verification reproduced all 46 generator hashes and the full baseline’s aggregate recovery
+counts, passed 112 scoped CPU tests, and completed one source-search fit. The full nine-world
+search result comes from the November 15 run. The integration-bank check regenerated two world
+manifests byte for byte. [Replay guide](../../../TRANSFER.md) ·
+[Verification record](../../../reproduce/VERIFICATION.md)
 
-The [2026-11-01 scConfluence/scMTR-seq pilot](../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
-adds a fixed count-input alternative and independent causal-discovery checks.
-It reuses two cached simulation worlds and keeps the newly authorized real-data
-pilot separate. All six fits and independent reviews are complete. The reports
-distinguish state alignment, count-measurement graph recovery and agreement
-with a real paired-count reference, and identify a sparse-count CI calibration
-problem. Reliable causal recovery remains unestablished.
-
-The [2026-10-31 count-input follow-up](COUNT_INPUT_FOLLOWUP.md) compares fresh
-scGLUE PCA/LSI and native full-feature encoders on two cached development worlds.
-All four GPU fits and independent numerical reviews are complete. Full-feature
-input reduces the worst-pair state gap from 0.1476 to 0.1365 in the linear world
-and from 0.1312 to 0.1228 in the collider world; weakest decoder transfer and
-neighbor coverage also improve. Some individual decoder directions worsen.
-This is a two-world, one-seed input-pipeline comparison, not evidence of reliable
-causal recovery. The follow-up also records the verified CUDA workaround,
-alternative integration methods and current-data viability review. It preserves
-the earlier validation study and all frozen scientific sources.
-
-The [integration-validation supplement](INTEGRATION_VALIDATION.md), started
-2026-10-25, tests a small scGLUE/scMRDR hyperparameter screen on cached
-development worlds before any new causal-recovery tests. It reports state
-transport error, fixed decoder transfer, within-assay geometry retention and
-neighbor hubness separately. Its theoretical bounds concern smooth functions
-of shared state and their finite-pool covariance; they do not certify
-cross-assay residual coupling.
-
-The original frozen benchmark below remains available as a separate baseline.
-It has 118 completed model manifests; its stopped assessment execution, retained
-calibration failure, and earlier native CUDA failures are recorded in
-[implementation status](IMPLEMENTATION_STATUS.md). All sixteen selection fits
-are complete. The independently checked
-[two-world selection](INTEGRATION_VALIDATION.md#frozen-two-world-selection)
-chooses scGLUE `lam_align=0.2` and scMRDR's recorded baseline. All sixteen
-confirmation fits have completed with these fixed settings and passed scoped
-independent review. Matching and decoder-transfer diagnostics
-remain separate. No new validation worlds or measured datasets are used.
-
-The [completed constrained-chain confirmations](INTEGRATION_VALIDATION.md#informative-constrained-chain-confirmation)
-show that low state-matching error can coexist with poor direct decoder
-transfer. The report keeps these findings separate and gives an analytic
-example of why the diagnostics can disagree.
-
-The [realistic unrestricted-chain comparison](INTEGRATION_VALIDATION.md#realistic-unrestricted-chain-confirmation)
-also exposes seed instability: scMRDR's state gap changes from 0.1246 to
-1.4446, with the latter worse than expected random matching. Independent
-native and numerical reviews confirm this result without finding an audited
-input, configuration or calculation mismatch.
-The [complete descriptive comparison](INTEGRATION_VALIDATION.md#descriptive-comparison-across-confirmation-conditions)
-keeps this failure and the decoder disagreements visible. It does not establish
-reliable causal recovery.
-
-The [bounded baseline continuation](INTEGRATION_VALIDATION.md#separate-baseline-continuation)
-completed after matrix validation, using its original settings and preserving
-the earlier failed attempts. Both count regimes have completed models and
-recovery reports with scoped independent scientific and artifact reviews.
-The helper exited with code 0 after its two prescribed stages. This
-continuation brings the original suite to 118 of 178 completed model fits;
-the rest of that benchmark remains unfinished.
-The [completion review](../../../project_resources/research/integration_validation_2026_10_25/reviews/objective_completion_final_audit_2026_10_26.md)
-reconciles the validation work, research, conditional theory and bounded
-simulation continuation. Completion of this task does not establish reliable
-cross-assay causal recovery.
+The original suite’s model payloads and full evaluation files reside in its run cache. The
+handoff includes a schedule and synthesis protocol, while each count run has a tracked index of
+its available evidence.
+[Suite schedule](../../../reproduce/records/integration_recoverability/suite/schedule_v1.json) ·
+[Synthesis protocol snapshot](../../../reproduce/records/integration_recoverability/suite/synthesis_protocol_v1.json)
+· [Demo](runs/count_transport_demo_v1/README.md) ·
+[Matched baseline](runs/count_transport_matched_v1/README.md) ·
+[Labeling study](runs/count_transport_labels_v1/README.md) ·
+[Source search](runs/count_transport_search_v1/README.md)
 
 ## What this experiment should answer
 
-Can our current integration-plus-matching pipelines recover the dependence
-pattern of one small nonlinear biological network when the assays observe
-different cells from the same population?
-
-Start with a small causal network, realistic assay sparsity, and the two
-integration methods we already use. Do not start with a large collection of
-worlds or a neural-network simulator. A useful first result identifies whether
-the difficulty appears in count measurement, state alignment, or the chosen
-matching/readout procedure.
-
-The [extended benchmark](../../../project_resources/research/integration_recoverability_extended_plan.md)
-is now also authorized for implementation. Follow the
-[execution record](IMPLEMENTATION_STATUS.md) for implemented stages, actual runs,
-and remaining work; the protocol below is not itself a results report.
-The completed three-seed simple comparison and the primary results for all
-six causal development worlds are in [observed results](RESULTS.md). All six simple integrations ran;
-one downstream count-CI numerical failure is retained explicitly. Shared-state
-alignment improved, but reliable cross-assay causal recovery was not established.
-The [chain-world seed and guidance controls](RESULTS.md#development-chain-worlds-seeds-and-guidance-controls)
-are complete and independently reviewed. All 94 simple/development model fits
-and the shared-state ablation reviews are complete. All declared secondary
-development diagnostics have run and their supplementary/synthesis reviews
-passed. The phase-E lock and independent post-execution verification are saved;
-the frozen serial assessment block was subsequently started. Both count regimes of all three
-linear-chain assessment worlds have completed and passed scoped independent
-review; the
-[partial assessment results](RESULTS.md#first-locked-assessment-condition-linear-chain-1-realistic-counts)
-retain weak count recovery and numerical failures explicitly. Final
-assessment results and world-level synthesis remain pending; see the dated
-execution status above rather than treating this historical paragraph as a
-live-process report. The
-[secondary matching protocol](SECONDARY_DIAGNOSTICS_PROTOCOL.md) and
-[world-level synthesis protocol](SUITE_SYNTHESIS_PROTOCOL.md) document the
-additional validation and reporting requirements; their implementation is
-not evidence that those analyses are complete.
-The earlier [discussion draft](design.md)
-remains available as historical context; this README supersedes its first-pass
-choices without replacing that draft.
-The [latent-space aggregation note](../../../project_resources/research/theory/06_latent_space_aggregation.md)
-contains the underlying identifiability discussion.
+The September 23 first-pass protocol below specifies the original integration-plus-matching
+test. It starts with a small nonlinear network and measures where dependence changes between
+latent biological activities, sparse count measurements, and cell-matched count rows. Six
+simple-world fits and the primary development comparisons were subsequently executed. The
+broader, frozen assessment is partial as described above.
+[Original design discussion](design.md) ·
+[Extended benchmark plan](../../../project_resources/research/integration_recoverability_extended_plan.md)
+· [Matching diagnostics](SECONDARY_DIAGNOSTICS_PROTOCOL.md) ·
+[World-level scoring plan](SUITE_SYNTHESIS_PROTOCOL.md)
 
 | Component | First-pass decision |
 | --- | --- |
@@ -177,12 +108,6 @@ contains the underlying identifiability discussion.
 | Aggregation | None |
 | Dataset | One cached population of 6,000 cells |
 | Repeats | Three integration seeds per method, after technical validation |
-
-The initial deliverables were documentation only. Implementation now includes
-the frozen simulator, empirical count calibration, native frozen preprocessing,
-integration adapters, and truth-aware evaluation. Completion still requires the
-declared runs and their stage-specific results. No repository reorganization
-is performed by this benchmark implementation.
 
 ## The biological model
 
@@ -348,8 +273,7 @@ Measurement parameters are frozen before the benchmark population is drawn.
 Draw 6,000 cells from the same frozen biological model. Randomly partition them
 into three disjoint groups of 2,000 cells. Each group exposes only one assay.
 Use independent random streams for population sampling, measurement, assay
-assignment, and integration training, and record their seeds in the future
-run manifest.
+assignment, and integration training, and record their seeds in the run manifest.
 
 | Learner-visible | Evaluator-only |
 | --- | --- |
@@ -440,28 +364,19 @@ original same-cell activity graph.
 
 ## Evaluation and interpretation
 
-Use PC with nonlinear RCIT for the activity diagnostics and FCI with the same
-test for count diagnostics, initially at $\alpha=0.01$. The existing
-[discovery command](../../empirical/analysis/scripts/commands/run_pc_causallearn.py)
-provides the relevant interfaces. Pin the underlying CI-test implementation,
-version, and random seed; record whether its RCIT interface selects an RCoT
-variant. Do not silently substitute Fisher-Z or the fallback-enabled FastKCI
-wrapper. These tests are diagnostic tools, not a guarantee of valid calibration
-for extremely sparse counts.[^3]
-
-Keep raw counts in the saved readout, and use a fixed elementwise $\log(1+C)$
-transform for count CI inputs. The future adapter must apply log1p exactly once
-and invoke the linked command with `--transform none`, `--indep-test rcit`,
-`--alpha 0.01`, `--background-mode none`, `--confounders none`, and an explicit
-list of the six scored columns. Activity diagnostics use the unlogged activities
-with `--transform none`. Do not inherit the command's default rank-Gaussian
-transform or add an expression-sink prior.
+The evaluator runs PC on unlogged activities and FCI on count measurements using the
+causal-learn backend. The recorded simple-world configuration used RCIT with the HBE
+approximation, $\alpha=0.01$ and seed 0. The evaluator takes raw integer counts, applies
+$\log(1+C)$ once, and uses explicit named variables with no directional prior. It records the
+test configuration, individual queries and numerical failures. Sparse-count tests and
+feature-dependent matching limit the interpretation of their nominal p-values.[^3]
+[Evaluator](evaluate.py) · [Recorded configuration and null behavior](SPARSE_CI_AUDIT.md)
 
 Do not introduce total-count normalization into that readout. Constant features,
 too few eligible cells, non-finite tests, and
 training failures are explicit failed/undefined outcomes, not empty graphs.
 
-The compact report should contain:
+The protocol calls for these readouts.
 
 - Mean absolute state difference for each anchor-to-mark assignment.
 - Cross-assay pairwise dependence and its difference from the paired reference,
@@ -473,7 +388,7 @@ The compact report should contain:
   dependence through assay depth.
 - Results for every training seed, retained cells/features, runtime, and failures.
 
-Apply these interpretation rules:
+Interpret the readouts according to the observation model.
 
 1. **Activity and count graphs are different targets.** Noisy count proxies need
    not preserve $A\perp R\mid B$. Do not score every count adjacency against the
@@ -502,66 +417,20 @@ success. A chain's arrows are not established by its skeleton alone. Shared-stat
 hyperedges and ambiguity-set metrics are deferred, not fabricated from a
 clustering or a pairwise graph.
 
-Completion of the eventual first pass means delivering valid controls and a
-clear diagnosis, including negative or measurement-limited outcomes. It does
-not mean obtaining a predetermined favorable graph.
-
 ## Repository placement and deferred work
 
-The organizational layout supplied for this project is:
-
-```text
-pipelines/
-├── empirical/
-│   ├── data/
-│   ├── integration/
-│   │   ├── methods/
-│   │   │   ├── scglue/
-│   │   │   └── scmrdr/
-│   │   ├── configs/
-│   │   ├── manifests/
-│   │   ├── runs/<run-id>/
-│   │   └── comparisons/
-│   ├── analysis/
-│   └── evaluation/
-└── simulation/
-    ├── aggregation_identifiability/
-    ├── unpaired_multimodal/
-    │   ├── worlds/
-    │   ├── discovery/
-    │   ├── scoring/
-    │   ├── runs/
-    │   └── results/
-    └── integration_recoverability/
-
-project_resources/
-├── research/
-├── reports/
-└── archive/
-
-envs/
-```
-
-The repository reorganization is separate work already present in the worktree.
-This documentation change does not move files, create all the illustrated
-subdirectories, or retire previous results. Future inputs, configurations, runs,
-and results for this experiment belong under this simulation track.
-
-The extended design retains held-out assessment, multiple graph families,
-neural mechanisms, exact ambiguity controls, broader false-positive
-calibration, and additional information-retention diagnostics. Aggregation
-comparisons, population shifts, six-mark expansion, and algorithm tuning do
-not enter this first pass.
-
-Independent methodological review informed the separation of biological and
-measurement truth, guidance exclusion, and the limitations of state matching.
-Implementation and executed-stage evidence are recorded separately in the
-[execution record](IMPLEMENTATION_STATUS.md).
+The integration track contains the simulation, integration adapters, evaluation code and reports
+for these experiments. The extended design includes held-out assessment, multiple graph
+families, neural mechanisms, ambiguity controls and false-positive calibration. The aggregation
+and CA-BOSS studies are separate tracks. [Pipeline map](../../README.md) ·
+[Extended design](../../../project_resources/research/integration_recoverability_extended_plan.md)
+· [Aggregation study](../aggregation_identifiability/README.md) ·
+[CA-BOSS](../unpaired_multimodal/README.md)
 
 ## References
 
-[^1]: scGLUE documentation. Stage 2: Model training. https://scglue.readthedocs.io/en/latest/training.html
+[^1]: The scGLUE training interface accepts assay inputs and a guidance graph. [scGLUE model training](https://scglue.readthedocs.io/en/latest/training.html)
 
-[^2]: scMRDR authors' implementation. https://github.com/sjl-sjtu/scMRDR . See the linked local comparison for differences from this repository's model.
+[^2]: The local adapter documents its deviations from the published implementation. [Authors’ scMRDR repository](https://github.com/sjl-sjtu/scMRDR)
 
-[^3]: Tetrad manual. Tests and scores by type. https://tetrad-manual.readthedocs.io/en/latest/tests-and-scores-catalog.html . The proposed first-pass command is the local causal-learn interface, not a claim that the two libraries use identical implementations.
+[^3]: The simple benchmark used the local causal-learn implementation. Its version, RCIT settings and sparse-input behavior are documented in the [CI audit](SPARSE_CI_AUDIT.md).

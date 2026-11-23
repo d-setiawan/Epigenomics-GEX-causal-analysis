@@ -2,7 +2,7 @@
 
 This directory prepares one human scMTR-seq sublibrary for an integration
 recoverability test using RNA, H3K27ac, and H3K4me3 counts. scMTR-seq is the
-measurement technology; the integration algorithm is tested separately. The
+measurement technology. The scConfluence pilot used the prepared counts to test integration. The
 learner receives artificially disjoint training cells. Original same-cell
 identities and differentiation-day labels are available only to evaluation.
 
@@ -63,7 +63,7 @@ each assay, so matching row positions do not disclose original pairing.
 No original barcode, RT tag, day, or shared cell identifier enters a learner
 matrix or feature cost.
 
-The existing local GENCODE v49 annotation identifies GRCh38 explicitly. Of
+The GENCODE v49 annotation restored by the input manifest identifies GRCh38 explicitly. Of
 30,234 RNA Ensembl IDs, 29,361 match after version removal; restricting to
 chr1–22/X/Y yields 29,338 gene-level promoters. Each promoter is the fixed
 zero-based half-open window `[TSS-2000, TSS+2000)`, clipped at coordinate zero.
@@ -133,8 +133,7 @@ The evaluator's `paired_panel_counts.npz` columns follow
 genes in the table's hash-selection order. Rows follow `paired_panel_rows.tsv`.
 Per-assay panel arrays follow the corresponding learner row order.
 
-Using the existing `scrna_r` environment, the commands for a fresh output
-directory are:
+From the repository root in the empirical `scrna_r` environment, use the following commands in a fresh checkout. [Environment guide](../../../../envs/README.md)
 
 ```bash
 python reproduce/restore_inputs.py reference scmtr
@@ -161,5 +160,4 @@ The H5AD bridge tests also reject changed inputs and check count, row-order,
 annotation, and metadata roundtrips. A fresh read of the original RNA matrix
 exactly reproduced the retained sparse collapse and barcode winners; see
 [RNA cache reproduction](metadata/RNA_cache_reproduction.json).
-Large downloaded/generated count files are retained locally and excluded from
-version control; source receipts, protocols, and summaries are retained.
+On transfer, all seven source files matched, the cohort was rebuilt, and all six learner H5AD hashes matched the original artifacts. Receipts containing the new absolute location had new hashes. The historical pilot found no cross-assay adjacency in the held-out paired panel with its specified test. [Fresh-export verification](../../../../reproduce/VERIFICATION.md) · [Pilot readout](../../../../project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
