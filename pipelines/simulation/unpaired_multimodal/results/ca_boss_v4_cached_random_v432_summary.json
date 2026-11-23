@@ -1,0 +1,174 @@
+{
+  "algorithm": "CA-BOSS v4.32",
+  "cached_data_only": true,
+  "change": {
+    "axis_route_candidate_pair_count": 1,
+    "axis_route_remains_exact_assay_local_group": true,
+    "candidate_pairs_are_joint_alternatives": true,
+    "candidate_pairs_may_be_expanded_as_edges": false,
+    "changes_direct_candidates": false,
+    "changes_state_v427_membership": false,
+    "changes_v431_selection": false,
+    "fixed_rule": "v431_retained_axis_route_remains_exact_or_v431_retained_state_route_is_represented_as_two_by_two_selected_competing_parent_cross_sibling_collider_structure_equivalence",
+    "numeric_threshold_fitted": false,
+    "schema_version": "assay_local_loading_group_structure_equivalence.v4.32",
+    "state_route_candidate_pair_count": 4,
+    "state_route_exact_pair_identified": false,
+    "truth_required_for_application": false
+  },
+  "date": "2026-09-01",
+  "formal_binding": {
+    "block_runner_schema_version": "shared_state_subspace_v4.block_runner.v15",
+    "global_pretruth_extension_schema_version": "layered_state_evidence_v4.global_pretruth_extension.v13",
+    "layered_block_validation_schema_version": "layered_state_evidence_v4.block_validation.v14",
+    "layered_candidate_schema_version": "layered_state_evidence_v4.frozen_candidate.v12",
+    "layered_provenance_schema_version": "layered_state_evidence_v4.v12",
+    "layered_scorer_schema_version": "layered_state_evidence_v4.scorer.v16",
+    "layered_validation_protocol_schema_version": "layered_state_evidence_v4.validation_protocol.v20",
+    "replay_schema_version": "ca_boss_v4.cached_layered_random_replay.v9",
+    "shared_state_block_validation_schema_version": "shared_state_subspace_v4.block_validation.v14",
+    "shared_state_global_freeze_schema_version": "shared_state_subspace_v4.global_pretruth_freeze.v14",
+    "shared_state_scorer_schema_version": "shared_state_subspace_v4.scorer.v14",
+    "shared_state_validation_protocol_schema_version": "shared_state_subspace_v4.validation_protocol.v16",
+    "structure_equivalence_source_is_in_joint_executable_closure": true,
+    "world_reliability_schema_version": "layered_state_evidence_v4.world_reliability.v10"
+  },
+  "fresh_locked_claim": false,
+  "identifiability_boundary": {
+    "cell_specific_cross_assay_direction": "not_identifiable_from_disjoint_cells",
+    "estimand": "one_assay_local_shared_state_loading_structure_hypothesis_with_mutually_alternative_pairs",
+    "exact_cross_assay_feature_pairing": "not_claimed",
+    "exact_state_route_assay_local_pairing": "not_claimed",
+    "paired_cells_or_external_data_used": false,
+    "scientific_gain": "replace_false_exact_pair_claims_with_calibrated_structural_equivalence_without_adding_edges"
+  },
+  "nested_full_cache_audit": {
+    "all_gates_passed": true,
+    "outer_source_blocks": 7,
+    "random_cached_audit_panels": 5,
+    "random_cached_audit_world_evaluations": 60,
+    "truth_within_assay_shared_state_groups": 906,
+    "v431_nominal_point_baseline": {
+      "false_negative_groups": 152,
+      "false_positive_groups": 3,
+      "precision": 0.9960369881109643,
+      "recall": 0.8322295805739515,
+      "selected_groups": 757,
+      "sentinel_groups": 0,
+      "true_positive_groups": 754
+    },
+    "v432_set_valued_hypotheses": {
+      "candidate_pairs_if_improperly_expanded": 2968,
+      "candidate_pairs_were_expanded_as_edges": false,
+      "coverage_precision": 1.0,
+      "coverage_recall": 0.8355408388520972,
+      "exact_axis_loading_groups": 20,
+      "false_negative_truth_groups": 149,
+      "matched_unique_truth_groups": 757,
+      "selected_hypotheses": 757,
+      "sentinel_contaminated_hypotheses": 0,
+      "state_structure_equivalence_hyperedges": 737,
+      "unmatched_hypotheses": 0
+    },
+    "worlds": 151
+  },
+  "new_modalities_or_variables_added": false,
+  "new_worlds_or_datasets_created": false,
+  "production_cached_replay": {
+    "all_phase_a_successful": true,
+    "all_phase_b_successful": true,
+    "all_structure_equivalence_contracts_safe": true,
+    "candidate_pair_alternatives": 1190,
+    "candidate_pairs_were_expanded_as_edges": false,
+    "direct_precision": 1.0,
+    "direct_recall": 1.0,
+    "evaluations": 60,
+    "full_layered_reliability_successes": 60,
+    "loading_hypothesis_coverage_precision": 1.0,
+    "loading_hypothesis_coverage_recall": 0.8388888888888889,
+    "loading_matched_unique_truth_groups": 302,
+    "loading_nominal_v431_false_groups": 0,
+    "loading_nominal_v431_pair_precision": 1.0,
+    "loading_nominal_v431_pair_recall": 0.8388888888888889,
+    "loading_nominal_v431_true_groups": 302,
+    "loading_sentinel_members": 0,
+    "loading_truth_groups": 360,
+    "panel_size": 12,
+    "selected_exact_axis_loading_groups": 6,
+    "selected_hypotheses": 302,
+    "selected_state_structure_equivalence_hyperedges": 296,
+    "selection_matches_v431_exactly": true,
+    "selection_seeds": [
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024
+    ],
+    "unique_worlds": 44,
+    "unmatched_hypotheses": 0
+  },
+  "production_panel_artifacts": [
+    {
+      "phase_a_manifest_sha256": "5920470373f467f87ac2dc71c4cbcfdf5231740d9c63af62708a720d1dca6e5c",
+      "phase_b_summary_payload_sha256": "fc3f3e1b95296e2c621c3dc07054f1ff0e024006cd467b51fa7df0ec9c028b3f",
+      "phase_b_summary_sha256": "ed845257f972e0f05f3d43cf9cd694aa085da07c3a5574124fdd1ee23ed7b35a",
+      "selection_seed": 20261020
+    },
+    {
+      "phase_a_manifest_sha256": "07be9ae532d1ed406f6ab4e48f5811122c66258b4ad2311e618197dc870dab52",
+      "phase_b_summary_payload_sha256": "ef891654ef3dd4399e30bffb35eb4bbb0cdbe1f1a0cd19d19bc54d00d23d1a17",
+      "phase_b_summary_sha256": "1628096b13134a5e7df9ff30956c6cea698bc4f4f9b81f6f7f69eb6dd6e92dcd",
+      "selection_seed": 20261021
+    },
+    {
+      "phase_a_manifest_sha256": "7498b4a58cae698862c50e8c1e2b111935521bc4ddc0a635b4f6ee5367668b9d",
+      "phase_b_summary_payload_sha256": "dfe0ee495133a28684d352812ccd91fb67bab0155a10dccdd7542a75f984c416",
+      "phase_b_summary_sha256": "b27c6df3fe4943ee66e05999b6ffbc937bfa14a39f4947d17c8d473ccb7677f6",
+      "selection_seed": 20261022
+    },
+    {
+      "phase_a_manifest_sha256": "4dac5807cf941465b752c416d5942612d342623c2ba84eb5b5ff21dbef812a3a",
+      "phase_b_summary_payload_sha256": "e9d2e3fb00cf775aed2cbf15a08033ae26eea8cdc333c6c0f0df555f0361f733",
+      "phase_b_summary_sha256": "fbd0acb0b2565b534750de173dc43b90ec19e080bee2e61c64781d3c44c841d0",
+      "selection_seed": 20261023
+    },
+    {
+      "phase_a_manifest_sha256": "4c86ce71848f14b50ed16a39e973966c32988c520b3cb5e85a3946973b7b4d17",
+      "phase_b_summary_payload_sha256": "7af4adfaa1c8f5bdc95acdc5320f893681010bbce1d15100a77c6422b1a88d92",
+      "phase_b_summary_sha256": "5c3491cbe99c084dc9bc21785b26a05f84c682ba044de9c228a3273c7dc439a7",
+      "selection_seed": 20261024
+    }
+  ],
+  "remaining_observational_ambiguity": {
+    "exact_state_route_pairs_abstained": 737,
+    "fixed_threshold_recommended": false,
+    "reason": "role_blind_observables_do_not_separate_selected_and_competing_parent_or_sibling_and_collider_roles",
+    "represented_as": "one_two_by_two_assay_local_structure_equivalence_hypothesis_per_state_route_group"
+  },
+  "retrospective_development_only": true,
+  "schema_version": "ca_boss_v4.cached_random_v432_summary.v1",
+  "source_sha256": {
+    "audit_nested_loading_group_structure_equivalence_v4.py": "e54bffee2ad3c0bf1cf1eabbc99df588eee6b555cdb82ada7f123d7dad5825b8",
+    "layered_state_evidence_v4.py": "43279cb18350b8531da99b96a6466a218184307c9fc63a60b76234360d49f928",
+    "loading_group_structure_equivalence_v4.py": "35a8313d48e46045afca38f269fc36035a525aa912d3b267f6c178024970fe56",
+    "replay_cached_layered_state_v4.py": "406da743f78ab6e3d43132351259bee7c43c067b6ae9914dde763d4deb724a42",
+    "run_shared_state_subspace_block_v4.py": "0515364792f7f3f96e3912458ba3ff3093a616f3800de970f5d0bb5554c8549f",
+    "score_layered_state_evidence_v4.py": "5a7bc5f21fc6f7add33a27e45534bdaa8962885f739db5ee143aa4b61eb3e4cc",
+    "score_shared_state_subspace_v4.py": "6a4695729d3c5bf5da50807e5561e145af7d9ea17b27405a36c3e1d088a38ab1"
+  },
+  "summary_payload_sha256": "de0471f2590ba8844cc4d9268916bb75c104b4d4b9930fe31415b58ccacdab7c",
+  "two_phase_nested_audit_artifact": {
+    "fixed_equivalence_rule_artifact_sha256": "1f628ee77c90813f7b159404cc1e876a7185b8cfb9bd830838db326c9ef26c04",
+    "phase_a_manifest_sha256": "873a74f19f784e3879cfc414756ed860898917990f9e976cd963569ead6cb81c",
+    "phase_b_summary_payload_sha256": "d23c7e4a7a289c63a77f5ebe4b8350c37f5b4052c319238ae6c8853e2f628302",
+    "phase_b_summary_sha256": "6afa6e78f3b4f96692c69ae2ede6bdf7e7b0ead1bb87282ea981afe92276b96d"
+  },
+  "verification": {
+    "full_evaluation_tests_passed": 508,
+    "full_evaluation_warnings": 62,
+    "production_cached_replay_panels": 5,
+    "production_world_evaluations": 60,
+    "two_phase_full_cache_audit_completed": true
+  }
+}

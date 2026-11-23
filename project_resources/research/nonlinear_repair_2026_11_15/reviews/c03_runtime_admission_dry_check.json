@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-11-15T21:41:06.097611+00:00",
+  "status": "passed",
+  "scope": "Runtime-only admission dry check; evaluator main not invoked and no test inputs read",
+  "all_original_nonruntime_fields_match": true,
+  "exact_allowed_runtime_matches": true,
+  "library_byte_hashes_verified": 3,
+  "original_sources_unchanged": true,
+  "source_sha256": {
+    "runtime_amendment.py": "ffae5f75b8b181e7c9d20b26107d8f3a94aa40f82f6fcb601e5751ae4280d053",
+    "runtime_admission.json": "5ca48fcbe594a179ce9644505454dfb1af0b5bbe78e1954f11b6306cdd3a68b8",
+    "test_runtime_amendment.py": "c97bb1b71ca2a769e32b71745923c3651d7d5d6c8ca03d9aacdd24a80d123382"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "scope": "Exact algebra identities; the written observation-law argument supplies the proof.",
+  "domain": "0 <= rho < 1; positive depths; positive integer n; positive OT penalty and -1 < coupling < 1",
+  "symbolic_identities": [
+    "joint_covariance",
+    "assay_A_law_covariance_invariant",
+    "assay_B_law_covariance_invariant",
+    "first_leading_minor",
+    "second_leading_minor",
+    "positive_definiteness_determinant",
+    "conditional_XY",
+    "conditional_SX",
+    "conditional_SY",
+    "intervention_derivative",
+    "reverse_model_same_joint",
+    "poisson_count_covariance",
+    "paired_shuffled_mean_covariance",
+    "paired_shuffled_residual_mean_covariance",
+    "transport_first_derivative",
+    "transport_second_derivative",
+    "transport_optimal_stationarity",
+    "transport_penalty_three",
+    "transport_zero_penalty_limit",
+    "transport_infinite_penalty_limit",
+    "gaussian_log_density_ratio_expectation",
+    "reflection_cycle",
+    "reflection_preserves_distances"
+  ],
+  "concrete_models": [
+    "rho=0",
+    "rho=1/2"
+  ],
+  "python": "3.11.14",
+  "sympy": "1.14.0",
+  "source_sha256": "971c83460db2171d28c38824fdb4e8d94f09ff5930eb4ba214a33ca0cc561e62",
+  "sampled_cells": 0,
+  "fitted_models": 0
+}

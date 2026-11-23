@@ -1,0 +1,81 @@
+{
+  "date_utc": "2026-11-15T20:06:30.792285+00:00",
+  "scope": "Read-only hash verification of prior studies; no scientific re-evaluation",
+  "checks": [
+    {
+      "label": "prior_program_immutable_artifacts",
+      "files": 87,
+      "mismatches": []
+    },
+    {
+      "label": "prior_recheck_artifacts",
+      "files": 7,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1",
+      "files": 452,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1/source",
+      "files": 3,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1/support",
+      "files": 5,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/evaluation_v1",
+      "files": 451,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/evaluation_v1/source",
+      "files": 4,
+      "mismatches": [],
+      "semantic_label_to_path": {
+        "evaluator": "project_resources/research/count_extensions_2026_11_01/evaluate_extensions.py",
+        "utilities": "project_resources/research/count_mdcrl_2026_11_01/evaluate_count_sources.py",
+        "fit_seal": "project_resources/research/count_extensions_2026_11_01/runs_v1/provenance.json",
+        "protocol": "project_resources/research/count_extensions_2026_11_01/protocol.json"
+      }
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1",
+      "files": 110,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1/source",
+      "files": 3,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1/support",
+      "files": 5,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/evaluation_v1",
+      "files": 109,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/evaluation_v1/source",
+      "files": 4,
+      "mismatches": [],
+      "semantic_label_to_path": {
+        "evaluator": "project_resources/research/count_extensions_2026_11_01/evaluate_extensions.py",
+        "utilities": "project_resources/research/count_mdcrl_2026_11_01/evaluate_count_sources.py",
+        "fit_seal": "project_resources/research/count_rank20_2026_11_01/runs_v1/provenance.json",
+        "protocol": "project_resources/research/count_rank20_2026_11_01/protocol.json"
+      }
+    }
+  ],
+  "issues": [],
+  "status": "passed",
+  "audit_note": "First mechanical pass treated evaluator semantic labels as filenames; corrected using evaluate_extensions.py:443. All actual files were preserved."
+}

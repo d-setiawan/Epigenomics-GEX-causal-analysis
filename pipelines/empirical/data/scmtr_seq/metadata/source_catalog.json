@@ -1,0 +1,45 @@
+{
+  "study": "scMTR-seq human endoderm differentiation, S1 processed sublibrary",
+  "series": "GSE277778",
+  "DNA_sample": "GSM8529544",
+  "RNA_sample": "GSM8529552",
+  "organism": "Homo sapiens",
+  "cell_line": "H9",
+  "pooled_timepoints": [
+    "D0",
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "biological_replicate": "Unresolved in selected released metadata; S1 is a technical sublibrary, not a biological replicate label",
+  "paper": {
+    "doi": "10.1126/sciadv.adu3308",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12327464/"
+  },
+  "sample_metadata_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529544",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529552"
+  ],
+  "pairing_evidence": "GEO explicitly identifies the paired RNA and DNA samples; pinned author figure3 scripts define first three split-pool barcode parts plus S1 as canonical identity and resolve RNA RT tags before joining",
+  "author_commit": "0469c082532680d9c9152e0a365acf8dba781fe3",
+  "author_source_receipts": "author_sources.json",
+  "RT_resolution": "Choose highest matrix count RT-tag row per canonical cell; require dominant fraction >0.5 and tag01..04 for RNA QC. Matrix-count fraction is a documented proxy for author read-summary fraction, not exact replication of unpublished read-summary QC.",
+  "unresolved_collision": "Same-day doublets and split-pool barcode collisions cannot be excluded solely from released counts",
+  "feature_reference_format": "GEO .csv.gz filenames actually contain gzipped XLSX workbooks; extracted selected endoderm rows without inferring antibody IDs from filenames",
+  "inherited_source_QC": "Authors prepare.DNA.fragments.R filters cells on >=2500 total DNA observations across six targets before exporting mark-specific fragments; cannot remove that inherited use of unavailable targets",
+  "new_analysis_modalities": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "other_measured_targets_not_downloaded": [
+    "H3K4me1",
+    "H3K27me3",
+    "H3K36me3",
+    "IgG"
+  ],
+  "genome": "GRCh38",
+  "reference_annotation": "Existing local GENCODEv49 (Ensembl115), not a new biological measurement",
+  "source_identity_checks": "Downloaded lengths+SHA256 and full gzip reads; no independent GEO publisher checksum advertised",
+  "transport_limitation": "Transient empty HTTP bodies on tiny feature-reference downloads were rejected; failed partials and original failure report retained; successful bounded retries validated Content-Length."
+}

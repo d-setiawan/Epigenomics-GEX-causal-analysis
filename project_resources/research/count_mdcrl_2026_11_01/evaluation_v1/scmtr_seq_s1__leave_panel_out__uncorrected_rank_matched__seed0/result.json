@@ -1,0 +1,652 @@
+{
+  "all_assay_match_count": 0,
+  "arm": "scmtr_seq_s1__leave_panel_out__uncorrected_rank_matched__seed0",
+  "arrays_sha256": "2a66f25dd226a4efc6da42a1b2ba7a08721b47d814d1faeca9aec68e5812d0cb",
+  "causal_recovery_claim": false,
+  "control": "original",
+  "dataset": "scmtr_seq_s1",
+  "evaluation_status": "complete",
+  "exposure": "leave_panel_out",
+  "fit_result_sha256": "185f7c4131cb7fd5e9538d0734dba368058b98730b6cb24e50c9023497d84d69",
+  "fit_status": "completed",
+  "graph_status": "fewer_than_two_all_assay_candidates",
+  "method": "uncorrected_rank_matched",
+  "pair_match_count": 0,
+  "ranks": {
+    "H3K27ac": 0,
+    "H3K4me3": 0,
+    "RNA": 0
+  },
+  "real_cross_assay": {
+    "H3K27ac__H3K4me3": {
+      "accepted_pair_sources": 0,
+      "endpoint_source_fits": {
+        "H3K27ac": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        },
+        "H3K4me3": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        }
+      },
+      "interpretation": "observed joint moment agreement; not causal truth",
+      "paired_cells": 595,
+      "primary": {
+        "model": {
+          "entries": 900,
+          "mae": 0.026291505806341903,
+          "rmse": 0.06342114077904543,
+          "status": "ok"
+        },
+        "paired_cell_bootstrap": {
+          "fraction_is_not_a_p_value": true,
+          "fraction_with_positive_improvement": 0.0,
+          "interval": "2.5% and 97.5% percentile; conditional on the frozen fit; descriptive",
+          "model_rmse_percentiles": [
+            0.05408209710769668,
+            0.08200344710406224,
+            0.13594542671348644
+          ],
+          "replicates": 200,
+          "rmse_improvement_percentiles": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 3000,
+          "zero_rmse_percentiles": [
+            0.05408209710769668,
+            0.08200344710406224,
+            0.13594542671348644
+          ]
+        },
+        "relative_rmse_improvement_over_zero": 0.0,
+        "rmse_improvement_over_zero": 0.0,
+        "zero": {
+          "entries": 900,
+          "mae": 0.026291505806341903,
+          "rmse": 0.06342114077904543,
+          "status": "ok"
+        }
+      },
+      "secondary_pearson": {
+        "mask_does_not_change_primary": true,
+        "model": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        },
+        "total_pairs": 900,
+        "undefined_model_variance_features": {
+          "H3K27ac": 30,
+          "H3K4me3": 30
+        },
+        "undefined_test_variance_features": {
+          "H3K27ac": 0,
+          "H3K4me3": 0
+        },
+        "valid_pairs": 0,
+        "zero": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        }
+      },
+      "zero_predictor_due_to_no_accepted_sources": true,
+      "zero_predictor_meaning": "Empty-candidate default; not an estimated independence conclusion"
+    },
+    "RNA__H3K27ac": {
+      "accepted_pair_sources": 0,
+      "endpoint_source_fits": {
+        "H3K27ac": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        },
+        "RNA": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        }
+      },
+      "interpretation": "observed joint moment agreement; not causal truth",
+      "paired_cells": 595,
+      "primary": {
+        "model": {
+          "entries": 900,
+          "mae": 0.02687230451117047,
+          "rmse": 0.04472528503081773,
+          "status": "ok"
+        },
+        "paired_cell_bootstrap": {
+          "fraction_is_not_a_p_value": true,
+          "fraction_with_positive_improvement": 0.0,
+          "interval": "2.5% and 97.5% percentile; conditional on the frozen fit; descriptive",
+          "model_rmse_percentiles": [
+            0.047909398335252214,
+            0.060597946228090824,
+            0.08144579758218405
+          ],
+          "replicates": 200,
+          "rmse_improvement_percentiles": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 3000,
+          "zero_rmse_percentiles": [
+            0.047909398335252214,
+            0.060597946228090824,
+            0.08144579758218405
+          ]
+        },
+        "relative_rmse_improvement_over_zero": 0.0,
+        "rmse_improvement_over_zero": 0.0,
+        "zero": {
+          "entries": 900,
+          "mae": 0.02687230451117047,
+          "rmse": 0.04472528503081773,
+          "status": "ok"
+        }
+      },
+      "secondary_pearson": {
+        "mask_does_not_change_primary": true,
+        "model": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        },
+        "total_pairs": 900,
+        "undefined_model_variance_features": {
+          "H3K27ac": 30,
+          "RNA": 30
+        },
+        "undefined_test_variance_features": {
+          "H3K27ac": 0,
+          "RNA": 0
+        },
+        "valid_pairs": 0,
+        "zero": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        }
+      },
+      "zero_predictor_due_to_no_accepted_sources": true,
+      "zero_predictor_meaning": "Empty-candidate default; not an estimated independence conclusion"
+    },
+    "RNA__H3K4me3": {
+      "accepted_pair_sources": 0,
+      "endpoint_source_fits": {
+        "H3K4me3": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        },
+        "RNA": {
+          "reason": "zero sources requested",
+          "requested_rank": 0,
+          "status": "ok"
+        }
+      },
+      "interpretation": "observed joint moment agreement; not causal truth",
+      "paired_cells": 595,
+      "primary": {
+        "model": {
+          "entries": 900,
+          "mae": 0.024063875696313783,
+          "rmse": 0.03822694042985167,
+          "status": "ok"
+        },
+        "paired_cell_bootstrap": {
+          "fraction_is_not_a_p_value": true,
+          "fraction_with_positive_improvement": 0.0,
+          "interval": "2.5% and 97.5% percentile; conditional on the frozen fit; descriptive",
+          "model_rmse_percentiles": [
+            0.0419143817024387,
+            0.05140476078691237,
+            0.07011064551022628
+          ],
+          "replicates": 200,
+          "rmse_improvement_percentiles": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed": 3000,
+          "zero_rmse_percentiles": [
+            0.0419143817024387,
+            0.05140476078691237,
+            0.07011064551022628
+          ]
+        },
+        "relative_rmse_improvement_over_zero": 0.0,
+        "rmse_improvement_over_zero": 0.0,
+        "zero": {
+          "entries": 900,
+          "mae": 0.024063875696313783,
+          "rmse": 0.03822694042985167,
+          "status": "ok"
+        }
+      },
+      "secondary_pearson": {
+        "mask_does_not_change_primary": true,
+        "model": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        },
+        "total_pairs": 900,
+        "undefined_model_variance_features": {
+          "H3K4me3": 30,
+          "RNA": 30
+        },
+        "undefined_test_variance_features": {
+          "H3K4me3": 0,
+          "RNA": 0
+        },
+        "valid_pairs": 0,
+        "zero": {
+          "entries": 0,
+          "mae": null,
+          "rmse": null,
+          "status": "unscorable"
+        }
+      },
+      "zero_predictor_due_to_no_accepted_sources": true,
+      "zero_predictor_meaning": "Empty-candidate default; not an estimated independence conclusion"
+    }
+  },
+  "source_seed": 0,
+  "within_assay": {
+    "H3K27ac": {
+      "diagonal_training_baseline_full": {
+        "entries": 900,
+        "mae": 0.059740076001109504,
+        "rmse": 0.6555021355582314,
+        "status": "ok"
+      },
+      "diagonal_training_baseline_offdiagonal": {
+        "entries": 870,
+        "mae": 0.02134509708727337,
+        "rmse": 0.05426899512987757,
+        "status": "ok"
+      },
+      "fit_mean_rate": [
+        0.013394666906130483,
+        0.01694734786366142,
+        0.0237648454128406,
+        0.012983943274203477,
+        0.016859579317168687,
+        0.017481171684251288,
+        0.01851308374781153,
+        0.016941900144809792,
+        0.011593697304492296,
+        0.02327739673343056,
+        0.0183598980196365,
+        0.011015456868036969,
+        0.004454168535145255,
+        0.024086888666854406,
+        0.026392355875463604,
+        0.006776156379769378,
+        0.01805667860168539,
+        0.012054181336830424,
+        0.023988929788525983,
+        0.030560545062822936,
+        0.01223450548807382,
+        0.037388156435813134,
+        0.007632909892308073,
+        0.008835760891255302,
+        0.024909684729238286,
+        0.011582108796433023,
+        0.006829510793985585,
+        0.015475114647703438,
+        0.010469445712003136,
+        0.010076162672678234
+      ],
+      "model_full": {
+        "entries": 900,
+        "mae": 0.08254770933515669,
+        "rmse": 0.721233628830714,
+        "status": "ok"
+      },
+      "model_offdiagonal": {
+        "entries": 870,
+        "mae": 0.02134509708727337,
+        "rmse": 0.05426899512987757,
+        "status": "ok"
+      },
+      "scale": "source-fit observed-rate SDs; covariance ddof=0",
+      "standardized_mean_rmse": 0.09506032530998003,
+      "status": "ok",
+      "test_all_panel_zero_cells": 362,
+      "test_cells": 595,
+      "test_detected_cells_per_feature": [
+        9,
+        17,
+        20,
+        9,
+        7,
+        13,
+        13,
+        7,
+        8,
+        15,
+        9,
+        17,
+        13,
+        10,
+        12,
+        5,
+        10,
+        7,
+        17,
+        21,
+        8,
+        10,
+        9,
+        2,
+        5,
+        6,
+        12,
+        5,
+        4,
+        9
+      ],
+      "test_mean_rate": [
+        0.009864227661681291,
+        0.029608553721568752,
+        0.02094815596091412,
+        0.021677476249948667,
+        0.01039151298384069,
+        0.022771274039778935,
+        0.018529659277465818,
+        0.014791470770131864,
+        0.01155945477509368,
+        0.025951038150918006,
+        0.015201016719967392,
+        0.019304081249409695,
+        0.022901482734756225,
+        0.014257265551439411,
+        0.016554487425378052,
+        0.0075450398176731,
+        0.012294162134946425,
+        0.011466216653701981,
+        0.02138000430796299,
+        0.0365502719949469,
+        0.012367567112348045,
+        0.01460221347729135,
+        0.007914853783723835,
+        0.0028119360698111604,
+        0.01183848335457197,
+        0.010713584179832552,
+        0.01573202067788445,
+        0.006539588512801271,
+        0.006262874445130845,
+        0.011715137648786952
+      ]
+    },
+    "H3K4me3": {
+      "diagonal_training_baseline_full": {
+        "entries": 900,
+        "mae": 0.048914308418185476,
+        "rmse": 0.2279450255915804,
+        "status": "ok"
+      },
+      "diagonal_training_baseline_offdiagonal": {
+        "entries": 870,
+        "mae": 0.023901347792214946,
+        "rmse": 0.04400864337247705,
+        "status": "ok"
+      },
+      "fit_mean_rate": [
+        0.00873800489178789,
+        0.014900454050054756,
+        0.03204962012598131,
+        0.028391874658496498,
+        0.010668501481784453,
+        0.035965034524464944,
+        0.008068794053002525,
+        0.024119647750570124,
+        0.013026212417269948,
+        0.017486850808026918,
+        0.018449585846521264,
+        0.013211049273622153,
+        0.0408004702562809,
+        0.020192336348705528,
+        0.010990681692935786,
+        0.035878562999114225,
+        0.015338470931218099,
+        0.015667260749431797,
+        0.02315423982586513,
+        0.02340406955430031,
+        0.010779967725996577,
+        0.016930150713034345,
+        0.010708980856665195,
+        0.02125436090516481,
+        0.0246215336186486,
+        0.021836066162722153,
+        0.040499060087542484,
+        0.007005623801676547,
+        0.01013205627543525,
+        0.019277501260206963
+      ],
+      "model_full": {
+        "entries": 900,
+        "mae": 0.06736877142582973,
+        "rmse": 0.3273436601066074,
+        "status": "ok"
+      },
+      "model_offdiagonal": {
+        "entries": 870,
+        "mae": 0.023901347792214946,
+        "rmse": 0.04400864337247705,
+        "status": "ok"
+      },
+      "scale": "source-fit observed-rate SDs; covariance ddof=0",
+      "standardized_mean_rmse": 0.07060846824185081,
+      "status": "ok",
+      "test_all_panel_zero_cells": 325,
+      "test_cells": 595,
+      "test_detected_cells_per_feature": [
+        7,
+        8,
+        17,
+        19,
+        11,
+        15,
+        17,
+        20,
+        6,
+        10,
+        10,
+        15,
+        22,
+        18,
+        10,
+        28,
+        5,
+        18,
+        25,
+        13,
+        8,
+        6,
+        16,
+        13,
+        22,
+        5,
+        20,
+        11,
+        20,
+        10
+      ],
+      "test_mean_rate": [
+        0.011157222327543851,
+        0.009425700291140232,
+        0.019946733610441244,
+        0.025592135761015978,
+        0.017201194090577302,
+        0.02151728925870456,
+        0.020544373432106394,
+        0.02110529066201437,
+        0.007716169156646647,
+        0.011198955162748717,
+        0.01088978061922589,
+        0.024428951311077023,
+        0.03030296427528223,
+        0.02703342236514233,
+        0.01492232755940961,
+        0.035446167144955736,
+        0.009303445927929052,
+        0.02343769623519523,
+        0.026858884762430018,
+        0.018998192085615876,
+        0.005109494173514672,
+        0.008631800579149456,
+        0.024180570381307543,
+        0.018797369105505408,
+        0.030127660229102304,
+        0.004914060921008776,
+        0.02490881772201157,
+        0.013807105319770155,
+        0.029688844623142863,
+        0.007826054194162815
+      ]
+    },
+    "RNA": {
+      "diagonal_training_baseline_full": {
+        "entries": 900,
+        "mae": 0.06155603970312133,
+        "rmse": 0.30722219065221196,
+        "status": "ok"
+      },
+      "diagonal_training_baseline_offdiagonal": {
+        "entries": 870,
+        "mae": 0.03404363899889919,
+        "rmse": 0.0784869677243453,
+        "status": "ok"
+      },
+      "fit_mean_rate": [
+        0.018685040581882386,
+        0.5259249013781389,
+        1.449862143818097,
+        0.12788733769474625,
+        0.09383642697390278,
+        0.09171638495324283,
+        0.44651404467370287,
+        0.25083078820414123,
+        0.031185588430375735,
+        0.5183554346680915,
+        0.24311726517819052,
+        0.09178359082363809,
+        0.025921517023065884,
+        0.11131486795008656,
+        1.2607054194962763,
+        0.01548804222566469,
+        0.6698545923385945,
+        0.5962870762943613,
+        0.26037111207790015,
+        0.9724538348108724,
+        0.03881291135711713,
+        0.45180447718208605,
+        4.676589214765575,
+        2.830792697538537,
+        2.725788191376342,
+        0.2939885076264758,
+        0.12019265945006206,
+        0.24452519066092263,
+        1.5949956817799187,
+        0.9793798144718572
+      ],
+      "model_full": {
+        "entries": 900,
+        "mae": 0.07984926996530924,
+        "rmse": 0.39361526769409083,
+        "status": "ok"
+      },
+      "model_offdiagonal": {
+        "entries": 870,
+        "mae": 0.03404363899889919,
+        "rmse": 0.0784869677243453,
+        "status": "ok"
+      },
+      "scale": "source-fit observed-rate SDs; covariance ddof=0",
+      "standardized_mean_rmse": 0.0526077105423346,
+      "status": "ok",
+      "test_all_panel_zero_cells": 18,
+      "test_cells": 595,
+      "test_detected_cells_per_feature": [
+        8,
+        126,
+        242,
+        13,
+        16,
+        41,
+        111,
+        72,
+        17,
+        84,
+        57,
+        9,
+        6,
+        15,
+        185,
+        12,
+        154,
+        132,
+        41,
+        219,
+        9,
+        72,
+        440,
+        325,
+        311,
+        52,
+        16,
+        65,
+        259,
+        160
+      ],
+      "test_mean_rate": [
+        0.02464074973990113,
+        0.5630995192529348,
+        1.425644894871216,
+        0.05501175663683734,
+        0.07673834918591398,
+        0.16428393961552112,
+        0.404247395112981,
+        0.2974149030566074,
+        0.03967995491643528,
+        0.45581180582383013,
+        0.28014213271159893,
+        0.05297261193280498,
+        0.0040993435017152545,
+        0.06187941549010111,
+        1.0260834901820777,
+        0.02011697459624599,
+        0.5305383787056228,
+        0.573927784602695,
+        0.19062680517700162,
+        1.051754833728347,
+        0.019504828418894796,
+        0.40328530979190463,
+        4.611443872297249,
+        2.4203876778606066,
+        2.6166712272560884,
+        0.23628844554961054,
+        0.12476172210157654,
+        0.24564956838718982,
+        1.72774593012512,
+        0.8861775411972214
+      ]
+    }
+  }
+}

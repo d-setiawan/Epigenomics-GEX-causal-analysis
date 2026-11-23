@@ -1,0 +1,1228 @@
+{
+  "checks_passed": 151,
+  "conditions": {
+    "informative": {
+      "common_cells_per_assay": {
+        "H3K27ac": 957,
+        "H3K4me3": 957,
+        "RNA": 957
+      },
+      "failed_diagnostics": [],
+      "failed_integrations": [],
+      "methods": {
+        "scglue": {
+          "checkpoint_sha256": "91ad0cf0c0f93ace5bbac61593b31375a2b289dacf9a7d7b8a7a9fdd8931b33d",
+          "discovery_exports": {
+            "H3K27ac": {
+              "rows": 1000,
+              "sha256": "426c573a313be131e9f0b0f618cf11b53eac6334d199f314b77e556b37d5915d",
+              "shared_shape": [
+                1000,
+                30
+              ]
+            },
+            "H3K4me3": {
+              "rows": 1000,
+              "sha256": "5433a6a598253263a5f8e66a738a872dae69f36162c1d8bebcc8ed7b9be77b58",
+              "shared_shape": [
+                1000,
+                30
+              ]
+            },
+            "RNA": {
+              "rows": 957,
+              "sha256": "91299d19da7677269c6464a485b9b4ef53d08bfa3653bc9b65b43f92e9d75e80",
+              "shared_shape": [
+                957,
+                30
+              ]
+            }
+          },
+          "model_manifest_sha256": "3e101679c981182b5cdff47eb88d55f522e0489d1c06e39b4ca74c69b7876080",
+          "public_export_seal_sha256": "019dd085c7486c9b74614407a7d8c612a19ee75d3433782428a748ff82c06874",
+          "recomputed": {
+            "activities": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 1,
+                "n_predicted": 1,
+                "n_true": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.6666666666666666,
+                "false_negative": 5,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 5,
+                "n_true": 10,
+                "precision": 1.0,
+                "recall": 0.5,
+                "true_positive": 5
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.0,
+                "false_negative": 0,
+                "false_positive": 1,
+                "n_predicted": 1,
+                "n_true": 0,
+                "precision": 0.0,
+                "recall": null,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.5333333333333333,
+                "false_negative": 12,
+                "false_positive": 2,
+                "n_predicted": 10,
+                "n_true": 20,
+                "precision": 0.8,
+                "recall": 0.4,
+                "true_positive": 8
+              },
+              "exact_endpoints": {
+                "f1": 0.42105263157894735,
+                "false_negative": 16,
+                "false_positive": 6,
+                "n_predicted": 14,
+                "n_true": 24,
+                "precision": 0.5714285714285714,
+                "recall": 0.3333333333333333,
+                "true_positive": 8
+              },
+              "oracle_target": "activity_projection",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "H3K4me3_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "TAIL"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_decoy",
+                    "RNA_decoy"
+                  ]
+                }
+              ],
+              "status": "ok"
+            },
+            "counts": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 2,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.0,
+                "false_negative": 12,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 0,
+                "n_true": 12,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.0,
+                "false_negative": 24,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 24,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.0,
+                "false_negative": 24,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 24,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "exact_endpoints": {
+                "f1": 0.09090909090909091,
+                "false_negative": 40,
+                "false_positive": 0,
+                "n_predicted": 2,
+                "n_true": 42,
+                "precision": 1.0,
+                "recall": 0.047619047619047616,
+                "true_positive": 2
+              },
+              "oracle_target": "count_measurement_pag",
+              "predicted_cross_assay_edges": [],
+              "status": "ok"
+            }
+          }
+        },
+        "scmrdr": {
+          "checkpoint_sha256": "2a9b634e13a53759a8055d53c732c01c16651afd88459465c02a58277a6a97d7",
+          "discovery_exports": {
+            "H3K27ac": {
+              "rows": 1000,
+              "sha256": "94ce6b831cd754dea1c2c809b31a9bc7f6f1f5b0a374840d9d4438c4aa57533e",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            },
+            "H3K4me3": {
+              "rows": 1000,
+              "sha256": "8bc1d35a4e8e3bf5dfdb214e8ef6e609a93ca500d724a0f2ade774af9b11db81",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            },
+            "RNA": {
+              "rows": 1000,
+              "sha256": "3acf1475916a7e7f4de1a6b3de426507f89cb14985f2f7299a2f2f35e3ed7ebb",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            }
+          },
+          "model_manifest_sha256": "7c0c2372ba7a4e414b1ef8374154d028ed66208aee5f40de057e0a34b1eb4a6a",
+          "public_export_seal_sha256": "a176e59f8dbfd4b30671436c21b4c9f2be803c45e84f9710a79d2019544153c1",
+          "recomputed": {
+            "activities": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 2,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.75,
+                "false_negative": 4,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 6,
+                "n_true": 10,
+                "precision": 1.0,
+                "recall": 0.6,
+                "true_positive": 6
+              },
+              "cross_assay_arrowheads": {
+                "f1": null,
+                "false_negative": 0,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 0,
+                "precision": null,
+                "recall": null,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.75,
+                "false_negative": 8,
+                "false_positive": 0,
+                "n_predicted": 12,
+                "n_true": 20,
+                "precision": 1.0,
+                "recall": 0.6,
+                "true_positive": 12
+              },
+              "exact_endpoints": {
+                "f1": 0.631578947368421,
+                "false_negative": 12,
+                "false_positive": 2,
+                "n_predicted": 14,
+                "n_true": 24,
+                "precision": 0.8571428571428571,
+                "recall": 0.5,
+                "true_positive": 12
+              },
+              "oracle_target": "activity_projection",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "H3K4me3_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "H3K4me3_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_decoy",
+                    "RNA_decoy"
+                  ]
+                }
+              ],
+              "status": "ok"
+            },
+            "counts": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 2,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.15384615384615385,
+                "false_negative": 11,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 1,
+                "n_true": 12,
+                "precision": 1.0,
+                "recall": 0.08333333333333333,
+                "true_positive": 1
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.0,
+                "false_negative": 24,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 24,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.0,
+                "false_negative": 24,
+                "false_positive": 2,
+                "n_predicted": 2,
+                "n_true": 24,
+                "precision": 0.0,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "exact_endpoints": {
+                "f1": 0.08695652173913043,
+                "false_negative": 40,
+                "false_positive": 2,
+                "n_predicted": 4,
+                "n_true": 42,
+                "precision": 0.5,
+                "recall": 0.047619047619047616,
+                "true_positive": 2
+              },
+              "oracle_target": "count_measurement_pag",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "H3K4me3_core"
+                  ]
+                }
+              ],
+              "status": "ok"
+            }
+          }
+        }
+      },
+      "report_sha256": "e7baa6d9f549dabeef40bb16554ba0d7b6192333a16d8f199a3ab5ca4c0fe8b7",
+      "status": "completed",
+      "world_manifest_sha256": "6eca9f39ff411a13cf293ac225e922af9df3c991feacf6455eccc702fbbf9ae2"
+    },
+    "realistic": {
+      "common_cells_per_assay": {
+        "H3K27ac": 738,
+        "H3K4me3": 738,
+        "RNA": 738
+      },
+      "failed_diagnostics": [
+        "scglue_seed0/counts"
+      ],
+      "failed_integrations": [],
+      "methods": {
+        "scglue": {
+          "checkpoint_sha256": "427a4716789322ea9a934c4ec7d2dc3be7040b99e433c981530c2dff51224f45",
+          "discovery_exports": {
+            "H3K27ac": {
+              "rows": 1000,
+              "sha256": "42fa4bff7d6b5894414c68c7189a44b79a7e55081f1c35a56fe348d0db5b23d1",
+              "shared_shape": [
+                1000,
+                30
+              ]
+            },
+            "H3K4me3": {
+              "rows": 1000,
+              "sha256": "3a26ede9f626d77107a57e02f9f80db95f20e407b7937331ca993c59ecf0d57f",
+              "shared_shape": [
+                1000,
+                30
+              ]
+            },
+            "RNA": {
+              "rows": 738,
+              "sha256": "8a1fc1eabaa6c301317762ad933cd133effce0f539beecf39c1984c87c8ce558",
+              "shared_shape": [
+                738,
+                30
+              ]
+            }
+          },
+          "model_manifest_sha256": "607350952b52e4317ebaa9672c82d2e682cef7ac4b378c9ae992ea755bcb3978",
+          "public_export_seal_sha256": "de26f1823ce86213b9866d2bb14deed89cddbbc4bcb2a594f2e1d19921f54c41",
+          "recomputed": {
+            "activities": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 1,
+                "n_predicted": 1,
+                "n_true": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.6666666666666666,
+                "false_negative": 5,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 5,
+                "n_true": 10,
+                "precision": 1.0,
+                "recall": 0.5,
+                "true_positive": 5
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.0,
+                "false_negative": 0,
+                "false_positive": 1,
+                "n_predicted": 1,
+                "n_true": 0,
+                "precision": 0.0,
+                "recall": null,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.5333333333333333,
+                "false_negative": 12,
+                "false_positive": 2,
+                "n_predicted": 10,
+                "n_true": 20,
+                "precision": 0.8,
+                "recall": 0.4,
+                "true_positive": 8
+              },
+              "exact_endpoints": {
+                "f1": 0.42105263157894735,
+                "false_negative": 16,
+                "false_positive": 6,
+                "n_predicted": 14,
+                "n_true": 24,
+                "precision": 0.5714285714285714,
+                "recall": 0.3333333333333333,
+                "true_positive": 8
+              },
+              "oracle_target": "activity_projection",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "TAIL"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "H3K4me3_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_decoy",
+                    "RNA_decoy"
+                  ]
+                }
+              ],
+              "status": "ok"
+            },
+            "counts": {
+              "biological_directed_stress_test": null,
+              "cross_assay_adjacency": null,
+              "error": "Eigenvalues did not converge",
+              "error_type": "LinAlgError",
+              "exact_endpoints": null,
+              "status": "failed"
+            }
+          }
+        },
+        "scmrdr": {
+          "checkpoint_sha256": "9661315cf24c9ba1105ab25112507aa7ff711dd5ba7f4adcc23041f2eac526ba",
+          "discovery_exports": {
+            "H3K27ac": {
+              "rows": 1000,
+              "sha256": "813359a695f21f3d955bb09dc0b615d6db457b9ee8951adca3a45105f6a64f32",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            },
+            "H3K4me3": {
+              "rows": 1000,
+              "sha256": "00130dbd05342e8f772734cfad2c47f84fe986dbc4d9ed63b617b9a18a38b920",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            },
+            "RNA": {
+              "rows": 1000,
+              "sha256": "09f29b52a5a2f9be63ff503f082ee3757f4d0986889076826c8e98e6284d9b99",
+              "shared_shape": [
+                1000,
+                20
+              ]
+            }
+          },
+          "model_manifest_sha256": "afe7a7d23ca2557174b30997ff8e80224b530a67f33814f78e1c9c4d4bf9c240",
+          "public_export_seal_sha256": "3a4723d23c657e43dc4ad3304bef0957a5333237ebb01e618884095aab0b51c7",
+          "recomputed": {
+            "activities": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 4,
+                "n_predicted": 4,
+                "n_true": 2,
+                "precision": 0.0,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.75,
+                "false_negative": 4,
+                "false_positive": 0,
+                "false_positive_rate": 0.0,
+                "n_predicted": 6,
+                "n_true": 10,
+                "precision": 1.0,
+                "recall": 0.6,
+                "true_positive": 6
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.0,
+                "false_negative": 0,
+                "false_positive": 5,
+                "n_predicted": 5,
+                "n_true": 0,
+                "precision": 0.0,
+                "recall": null,
+                "true_positive": 0
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.1875,
+                "false_negative": 17,
+                "false_positive": 9,
+                "n_predicted": 12,
+                "n_true": 20,
+                "precision": 0.25,
+                "recall": 0.15,
+                "true_positive": 3
+              },
+              "exact_endpoints": {
+                "f1": 0.15,
+                "false_negative": 21,
+                "false_positive": 13,
+                "n_predicted": 16,
+                "n_true": 24,
+                "precision": 0.1875,
+                "recall": 0.125,
+                "true_positive": 3
+              },
+              "oracle_target": "activity_projection",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "TAIL"
+                  ],
+                  "nodes": [
+                    "H3K27ac_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "H3K4me3_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "TAIL",
+                    "ARROW"
+                  ],
+                  "nodes": [
+                    "H3K27ac_decoy",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "TAIL"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "TAIL",
+                    "ARROW"
+                  ],
+                  "nodes": [
+                    "H3K4me3_decoy",
+                    "RNA_decoy"
+                  ]
+                }
+              ],
+              "status": "ok"
+            },
+            "counts": {
+              "biological_directed_stress_test": {
+                "f1": 0.0,
+                "false_negative": 2,
+                "false_positive": 0,
+                "n_predicted": 0,
+                "n_true": 2,
+                "precision": null,
+                "recall": 0.0,
+                "true_positive": 0
+              },
+              "cross_assay_adjacency": {
+                "f1": 0.2222222222222222,
+                "false_negative": 10,
+                "false_positive": 4,
+                "false_positive_rate": 0.26666666666666666,
+                "n_predicted": 6,
+                "n_true": 12,
+                "precision": 0.3333333333333333,
+                "recall": 0.16666666666666666,
+                "true_positive": 2
+              },
+              "cross_assay_arrowheads": {
+                "f1": 0.07142857142857142,
+                "false_negative": 23,
+                "false_positive": 3,
+                "n_predicted": 4,
+                "n_true": 24,
+                "precision": 0.25,
+                "recall": 0.041666666666666664,
+                "true_positive": 1
+              },
+              "cross_assay_exact_endpoints": {
+                "f1": 0.05555555555555555,
+                "false_negative": 23,
+                "false_positive": 11,
+                "n_predicted": 12,
+                "n_true": 24,
+                "precision": 0.08333333333333333,
+                "recall": 0.041666666666666664,
+                "true_positive": 1
+              },
+              "exact_endpoints": {
+                "f1": 0.16666666666666666,
+                "false_negative": 37,
+                "false_positive": 13,
+                "n_predicted": 18,
+                "n_true": 42,
+                "precision": 0.2777777777777778,
+                "recall": 0.11904761904761904,
+                "true_positive": 5
+              },
+              "oracle_target": "count_measurement_pag",
+              "predicted_cross_assay_edges": [
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_core",
+                    "RNA_sentinel"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_sentinel",
+                    "RNA_core"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "CIRCLE",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_sentinel",
+                    "RNA_decoy"
+                  ]
+                },
+                {
+                  "endpoints": [
+                    "ARROW",
+                    "CIRCLE"
+                  ],
+                  "nodes": [
+                    "H3K4me3_sentinel",
+                    "RNA_sentinel"
+                  ]
+                }
+              ],
+              "status": "ok"
+            }
+          }
+        }
+      },
+      "report_sha256": "99e399c040dceb35055dad006508ed3b81397562ef2a5536f6eed443442270bb",
+      "status": "completed_with_failures",
+      "world_manifest_sha256": "6eca9f39ff411a13cf293ac225e922af9df3c991feacf6455eccc702fbbf9ae2"
+    }
+  },
+  "created_utc": "2026-10-25T23:11:29.321599+00:00",
+  "label": "frozen-baseline follow-up; excluded from new hyperparameter selection",
+  "limitations": [
+    "No causal tests, oracle construction, matching or integration rerun. Adjacency/endpoint counts recomputed directly from already-saved graphs and matching embedded oracle targets.",
+    "Private probe/assessment/truth NPZ files were not opened or rehashed. Their recorded hashes were reconciled against existing manifest metadata where available; public exports/checkpoints/source/JSON were rehashed.",
+    "Checkpoint binaries were hashed without deserializing model state. Public NPZ cell IDs and array headers were read, not latent values or count/activity/state arrays.",
+    "Biological directed-edge agreement remains a separately labeled identifiability stress test and is distinct from count-PAG adjacency/endpoint agreement."
+  ],
+  "new_validation_selection_use": "prohibited; this review is outside the integration-validation study",
+  "recorded_private_extra_input_bindings_checked_without_binary_access": {
+    "informative": 22,
+    "realistic": 22
+  },
+  "status": "passed_scoped_frozen_baseline_followup_audit",
+  "summary": [
+    {
+      "activity_cross_assay_adjacency": {
+        "f1": 0.6666666666666666,
+        "false_negative": 5,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 5,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.5,
+        "true_positive": 5
+      },
+      "count_biological_directed_stress_test": null,
+      "count_cross_assay_adjacency": null,
+      "count_cross_assay_arrowheads": null,
+      "count_exact_endpoints": null,
+      "count_failure": "Eigenvalues did not converge",
+      "count_status": "failed",
+      "method": "scglue",
+      "regime": "realistic"
+    },
+    {
+      "activity_cross_assay_adjacency": {
+        "f1": 0.75,
+        "false_negative": 4,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.6,
+        "true_positive": 6
+      },
+      "count_biological_directed_stress_test": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_cross_assay_adjacency": {
+        "f1": 0.2222222222222222,
+        "false_negative": 10,
+        "false_positive": 4,
+        "false_positive_rate": 0.26666666666666666,
+        "n_predicted": 6,
+        "n_true": 12,
+        "precision": 0.3333333333333333,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "count_cross_assay_arrowheads": {
+        "f1": 0.07142857142857142,
+        "false_negative": 23,
+        "false_positive": 3,
+        "n_predicted": 4,
+        "n_true": 24,
+        "precision": 0.25,
+        "recall": 0.041666666666666664,
+        "true_positive": 1
+      },
+      "count_exact_endpoints": {
+        "f1": 0.16666666666666666,
+        "false_negative": 37,
+        "false_positive": 13,
+        "n_predicted": 18,
+        "n_true": 42,
+        "precision": 0.2777777777777778,
+        "recall": 0.11904761904761904,
+        "true_positive": 5
+      },
+      "count_failure": null,
+      "count_status": "ok",
+      "method": "scmrdr",
+      "regime": "realistic"
+    },
+    {
+      "activity_cross_assay_adjacency": {
+        "f1": 0.6666666666666666,
+        "false_negative": 5,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 5,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.5,
+        "true_positive": 5
+      },
+      "count_biological_directed_stress_test": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_cross_assay_adjacency": {
+        "f1": 0.0,
+        "false_negative": 12,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 0,
+        "n_true": 12,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_cross_assay_arrowheads": {
+        "f1": 0.0,
+        "false_negative": 24,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 24,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_exact_endpoints": {
+        "f1": 0.09090909090909091,
+        "false_negative": 40,
+        "false_positive": 0,
+        "n_predicted": 2,
+        "n_true": 42,
+        "precision": 1.0,
+        "recall": 0.047619047619047616,
+        "true_positive": 2
+      },
+      "count_failure": null,
+      "count_status": "ok",
+      "method": "scglue",
+      "regime": "informative"
+    },
+    {
+      "activity_cross_assay_adjacency": {
+        "f1": 0.75,
+        "false_negative": 4,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.6,
+        "true_positive": 6
+      },
+      "count_biological_directed_stress_test": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_cross_assay_adjacency": {
+        "f1": 0.15384615384615385,
+        "false_negative": 11,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 1,
+        "n_true": 12,
+        "precision": 1.0,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "count_cross_assay_arrowheads": {
+        "f1": 0.0,
+        "false_negative": 24,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 24,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "count_exact_endpoints": {
+        "f1": 0.08695652173913043,
+        "false_negative": 40,
+        "false_positive": 2,
+        "n_predicted": 4,
+        "n_true": 42,
+        "precision": 0.5,
+        "recall": 0.047619047619047616,
+        "true_positive": 2
+      },
+      "count_failure": null,
+      "count_status": "ok",
+      "method": "scmrdr",
+      "regime": "informative"
+    }
+  ],
+  "verified_checks": [
+    "frozen assessment world identity",
+    "frozen source pins",
+    "frozen world bank",
+    "frozen calibration",
+    "realistic report input fingerprint",
+    "realistic world/source/truth-metadata binding",
+    "realistic cohort and regime",
+    "realistic strict CI backend bindings",
+    "stage identity oracle_activity",
+    "stage identity oracle_counts",
+    "realistic embedded oracle cache bindings",
+    "realistic scglue embedded model/export receipt",
+    "realistic scglue checkpoint and public seal",
+    "realistic scglue public seal scope",
+    "realistic scglue public export discovery/H3K27ac.npz",
+    "realistic scglue public export discovery/H3K4me3.npz",
+    "realistic scglue public export discovery/RNA.npz",
+    "realistic scglue public export train/H3K27ac.npz",
+    "realistic scglue public export train/H3K4me3.npz",
+    "realistic scglue public export train/RNA.npz",
+    "realistic scglue public export val/H3K27ac.npz",
+    "realistic scglue public export val/H3K4me3.npz",
+    "realistic scglue public export val/RNA.npz",
+    "realistic scglue public receipt embedding_manifest.json",
+    "realistic native scGLUE fit/export binding",
+    "realistic scglue report discovery export H3K27ac",
+    "realistic scglue selected pool subset H3K27ac",
+    "realistic scglue report discovery export H3K4me3",
+    "realistic scglue selected pool subset H3K4me3",
+    "realistic scglue report discovery export RNA",
+    "realistic scglue selected pool subset RNA",
+    "stage identity discovery_scglue_seed0",
+    "realistic scglue saved graph stage",
+    "stage identity assignment_method_scglue_seed0",
+    "realistic scglue assignment stage",
+    "realistic scglue counts failure remains unavailable",
+    "realistic scglue activities graph panel",
+    "realistic scglue activities independent cross adjacency counts",
+    "realistic scglue activities exact endpoint counts",
+    "realistic scglue activities biological directed stress",
+    "realistic scmrdr embedded model/export receipt",
+    "realistic scmrdr checkpoint and public seal",
+    "realistic scmrdr public seal scope",
+    "realistic scmrdr public export discovery/H3K27ac.npz",
+    "realistic scmrdr public export discovery/H3K4me3.npz",
+    "realistic scmrdr public export discovery/RNA.npz",
+    "realistic scmrdr public export train/H3K27ac.npz",
+    "realistic scmrdr public export train/H3K4me3.npz",
+    "realistic scmrdr public export train/RNA.npz",
+    "realistic scmrdr public export val/H3K27ac.npz",
+    "realistic scmrdr public export val/H3K4me3.npz",
+    "realistic scmrdr public export val/RNA.npz",
+    "realistic scmrdr public receipt discovery/artifact_receipt.json",
+    "realistic scmrdr public receipt train/artifact_receipt.json",
+    "realistic scmrdr public receipt val/artifact_receipt.json",
+    "realistic paper scMRDR baseline configuration",
+    "realistic paper gene transform binding",
+    "realistic scmrdr report discovery export H3K27ac",
+    "realistic scmrdr selected pool subset H3K27ac",
+    "realistic scmrdr report discovery export H3K4me3",
+    "realistic scmrdr selected pool subset H3K4me3",
+    "realistic scmrdr report discovery export RNA",
+    "realistic scmrdr selected pool subset RNA",
+    "stage identity discovery_scmrdr_paper_seed0",
+    "realistic scmrdr saved graph stage",
+    "stage identity assignment_method_scmrdr_paper_seed0",
+    "realistic scmrdr assignment stage",
+    "realistic scmrdr counts graph panel",
+    "realistic scmrdr counts independent cross adjacency counts",
+    "realistic scmrdr counts exact endpoint counts",
+    "realistic scmrdr counts biological directed stress",
+    "realistic scmrdr activities graph panel",
+    "realistic scmrdr activities independent cross adjacency counts",
+    "realistic scmrdr activities exact endpoint counts",
+    "realistic scmrdr activities biological directed stress",
+    "informative report input fingerprint",
+    "informative world/source/truth-metadata binding",
+    "informative cohort and regime",
+    "informative strict CI backend bindings",
+    "stage identity oracle_activity",
+    "stage identity oracle_counts",
+    "informative embedded oracle cache bindings",
+    "informative scglue embedded model/export receipt",
+    "informative scglue checkpoint and public seal",
+    "informative scglue public seal scope",
+    "informative scglue public export discovery/H3K27ac.npz",
+    "informative scglue public export discovery/H3K4me3.npz",
+    "informative scglue public export discovery/RNA.npz",
+    "informative scglue public export train/H3K27ac.npz",
+    "informative scglue public export train/H3K4me3.npz",
+    "informative scglue public export train/RNA.npz",
+    "informative scglue public export val/H3K27ac.npz",
+    "informative scglue public export val/H3K4me3.npz",
+    "informative scglue public export val/RNA.npz",
+    "informative scglue public receipt embedding_manifest.json",
+    "informative native scGLUE fit/export binding",
+    "informative scglue report discovery export H3K27ac",
+    "informative scglue selected pool subset H3K27ac",
+    "informative scglue report discovery export H3K4me3",
+    "informative scglue selected pool subset H3K4me3",
+    "informative scglue report discovery export RNA",
+    "informative scglue selected pool subset RNA",
+    "stage identity discovery_scglue_seed0",
+    "informative scglue saved graph stage",
+    "stage identity assignment_method_scglue_seed0",
+    "informative scglue assignment stage",
+    "informative scglue counts graph panel",
+    "informative scglue counts independent cross adjacency counts",
+    "informative scglue counts exact endpoint counts",
+    "informative scglue counts biological directed stress",
+    "informative scglue activities graph panel",
+    "informative scglue activities independent cross adjacency counts",
+    "informative scglue activities exact endpoint counts",
+    "informative scglue activities biological directed stress",
+    "informative scmrdr embedded model/export receipt",
+    "informative scmrdr checkpoint and public seal",
+    "informative scmrdr public seal scope",
+    "informative scmrdr public export discovery/H3K27ac.npz",
+    "informative scmrdr public export discovery/H3K4me3.npz",
+    "informative scmrdr public export discovery/RNA.npz",
+    "informative scmrdr public export train/H3K27ac.npz",
+    "informative scmrdr public export train/H3K4me3.npz",
+    "informative scmrdr public export train/RNA.npz",
+    "informative scmrdr public export val/H3K27ac.npz",
+    "informative scmrdr public export val/H3K4me3.npz",
+    "informative scmrdr public export val/RNA.npz",
+    "informative scmrdr public receipt discovery/artifact_receipt.json",
+    "informative scmrdr public receipt train/artifact_receipt.json",
+    "informative scmrdr public receipt val/artifact_receipt.json",
+    "informative paper scMRDR baseline configuration",
+    "informative paper gene transform binding",
+    "informative scmrdr report discovery export H3K27ac",
+    "informative scmrdr selected pool subset H3K27ac",
+    "informative scmrdr report discovery export H3K4me3",
+    "informative scmrdr selected pool subset H3K4me3",
+    "informative scmrdr report discovery export RNA",
+    "informative scmrdr selected pool subset RNA",
+    "stage identity discovery_scmrdr_paper_seed0",
+    "informative scmrdr saved graph stage",
+    "stage identity assignment_method_scmrdr_paper_seed0",
+    "informative scmrdr assignment stage",
+    "informative scmrdr counts graph panel",
+    "informative scmrdr counts independent cross adjacency counts",
+    "informative scmrdr counts exact endpoint counts",
+    "informative scmrdr counts biological directed stress",
+    "informative scmrdr activities graph panel",
+    "informative scmrdr activities independent cross adjacency counts",
+    "informative scmrdr activities exact endpoint counts",
+    "informative scmrdr activities biological directed stress",
+    "realistic metadata-only extra input bindings (22 entries)",
+    "informative metadata-only extra input bindings (22 entries)"
+  ],
+  "world_id": "linear_collider_1"
+}

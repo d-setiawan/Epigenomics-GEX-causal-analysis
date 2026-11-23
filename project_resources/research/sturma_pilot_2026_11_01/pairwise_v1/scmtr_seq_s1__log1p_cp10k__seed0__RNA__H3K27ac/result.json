@@ -1,0 +1,25 @@
+{
+  "representation": "log1p_cp10k",
+  "ica_seed": 0,
+  "control": "original",
+  "assays": [
+    "RNA",
+    "H3K27ac"
+  ],
+  "parent_result": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0/result.json",
+  "original_three_assay_adjusted_alpha": 9.259259259259259e-06,
+  "shared_source_count": 0,
+  "pair_adjusted_alpha": 2.777777777777778e-05,
+  "joint_factors": [],
+  "joint_signs": [],
+  "source_count_at_original_global_alpha": 0,
+  "graph_status": "no_shared_sources",
+  "valid_feature_pairs": 900,
+  "total_feature_pairs": 900,
+  "correlation_rmse": 0.037492762052128446,
+  "zero_correlation_rmse": 0.037492762052128446,
+  "rmse_improvement_over_zero": 0.0,
+  "status": "completed",
+  "warnings": [],
+  "arrays_sha256": "c81ea0a45717427fb9eae3f309f4da892695238344ab2471e4d95ac2210d0b5b"
+}

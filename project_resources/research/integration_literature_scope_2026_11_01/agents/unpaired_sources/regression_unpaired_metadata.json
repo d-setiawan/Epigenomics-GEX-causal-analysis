@@ -1,0 +1,261 @@
+{
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "params": {
+    "query": "DOI:10.1186/s13059-022-02726-7",
+    "format": "json",
+    "pageSize": 10,
+    "resultType": "core"
+  },
+  "status_code": 200,
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "DOI:10.1186/s13059-022-02726-7",
+      "resultType": "core",
+      "cursorMark": "*",
+      "pageSize": 10,
+      "sort": "",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "35854350",
+          "source": "MED",
+          "pmid": "35854350",
+          "pmcid": "PMC9295346",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9295346"
+            ]
+          },
+          "doi": "10.1186/s13059-022-02726-7",
+          "title": "Integration of single-cell multi-omics data by regression analysis on unpaired observations.",
+          "authorString": "Yuan Q, Duren Z.",
+          "authorList": {
+            "author": [
+              {
+                "fullName": "Yuan Q",
+                "lastName": "Yuan",
+                "firstName": "Qiuyue",
+                "initials": "Q",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-1305-9656"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Center for Human Genetics and Department of Genetics and Biochemistry, Clemson University, Greenwood, SC, 29646, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Duren Z",
+                "lastName": "Duren",
+                "firstName": "Zhana",
+                "initials": "Z",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0003-4685-811X"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Center for Human Genetics and Department of Genetics and Biochemistry, Clemson University, Greenwood, SC, 29646, USA. zduren@clemson.edu."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "authorIdList": {
+            "authorId": [
+              {
+                "type": "ORCID",
+                "value": "0000-0002-1305-9656"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0003-4685-811X"
+              }
+            ]
+          },
+          "dataLinksTagsList": {
+            "dataLinkstag": [
+              "supporting_data",
+              "related_data"
+            ]
+          },
+          "journalInfo": {
+            "issue": "1",
+            "volume": "23",
+            "journalIssueId": 3385752,
+            "dateOfPublication": "2022 Jul",
+            "monthOfPublication": 7,
+            "yearOfPublication": 2022,
+            "journal": {
+              "medlineAbbreviation": "Genome Biol",
+              "title": "Genome biology",
+              "essn": "1474-760X",
+              "issn": "1474-7596",
+              "nlmid": "100960660",
+              "isoabbreviation": "Genome Biol"
+            },
+            "printPublicationDate": "2022-07-01"
+          },
+          "pubYear": "2022",
+          "pageInfo": "160",
+          "abstractText": "Despite recent developments, it is hard to profile all multi-omics single-cell data modalities on the same cell. Thus, huge amounts of single-cell genomics data of unpaired observations on different cells are generated. We propose a method named UnpairReg for the regression analysis on unpaired observations to integrate single-cell multi-omics data. On real and simulated data, UnpairReg provides an accurate estimation of cell gene expression where only chromatin accessibility data is available. The cis-regulatory network inferred from UnpairReg is highly consistent with eQTL mapping. UnpairReg improves cell type identification accuracy by joint analysis of single-cell gene expression and chromatin accessibility data.",
+          "affiliation": "Center for Human Genetics and Department of Genetics and Biochemistry, Clemson University, Greenwood, SC, 29646, USA.",
+          "publicationStatus": "epublish",
+          "language": "eng",
+          "pubModel": "Electronic",
+          "pubTypeList": {
+            "pubType": [
+              "research-article",
+              "Journal Article",
+              "Research Support, N.I.H., Extramural"
+            ]
+          },
+          "grantsList": {
+            "grant": [
+              {
+                "agency": "NIGMS NIH HHS",
+                "acronym": "GM",
+                "grantId": "P20 GM139769",
+                "orderIn": 0
+              },
+              {
+                "agency": "National Institute of General Medical Sciences",
+                "grantId": "P20 GM139769",
+                "orderIn": 0
+              }
+            ]
+          },
+          "meshHeadingList": {
+            "meshHeading": [
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Chromatin",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "GE",
+                      "qualifierName": "genetics"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Regression Analysis"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Genomics"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Single-Cell Analysis"
+              }
+            ]
+          },
+          "keywordList": {
+            "keyword": [
+              "Cis-regulatory Network",
+              "Single-cell Multi-omics",
+              "Regression Model On Unpaired Observations"
+            ]
+          },
+          "chemicalList": {
+            "chemical": [
+              {
+                "name": "Chromatin",
+                "registryNumber": "0"
+              }
+            ]
+          },
+          "subsetList": {
+            "subset": [
+              {
+                "code": "IM",
+                "name": "Index Medicus"
+              }
+            ]
+          },
+          "fullTextUrlList": {
+            "fullTextUrl": [
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Unpaywall",
+                "url": "https://genomebiology.biomedcentral.com/counter/pdf/10.1186/s13059-022-02726-7"
+              },
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1186/s13059-022-02726-7"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9295346"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9295346?pdf=render"
+              }
+            ]
+          },
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 19,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "EMBL"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasData": "Y",
+          "license": "cc by",
+          "authMan": "N",
+          "epmcAuthMan": "N",
+          "nihAuthMan": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "geo"
+            ]
+          },
+          "dateOfCompletion": "2022-07-21",
+          "dateOfCreation": "2022-07-19",
+          "dateOfRevision": "2025-02-22",
+          "electronicPublicationDate": "2022-07-19",
+          "firstPublicationDate": "2022-07-19",
+          "firstIndexDate": "2022-07-21",
+          "fullTextReceivedDate": "2025-02-04",
+          "hasEvaluations": "N"
+        }
+      ]
+    }
+  }
+}

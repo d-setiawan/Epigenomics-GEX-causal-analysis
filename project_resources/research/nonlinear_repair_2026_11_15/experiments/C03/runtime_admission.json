@@ -1,0 +1,40 @@
+{
+  "allowed_threadpools": [
+    {
+      "architecture": "Haswell",
+      "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-56d6093b.so",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "threading_layer": "pthreads",
+      "user_api": "blas",
+      "version": "0.3.29"
+    },
+    {
+      "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libmkl_rt.so.2",
+      "internal_api": "mkl",
+      "num_threads": 1,
+      "prefix": "libmkl_rt",
+      "threading_layer": "intel",
+      "user_api": "blas",
+      "version": "2025.3-Product"
+    },
+    {
+      "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libomp.so",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "user_api": "openmp",
+      "version": null
+    }
+  ],
+  "date_utc": "2026-11-15T21:40:11.560607+00:00",
+  "fit_seal_sha256": "16b043cc977279f2dda3b000d4da523f568497d44e0f9b1c4d6b0899e4d7c5f9",
+  "library_sha256": {
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libmkl_rt.so.2": "221e89c09644d546cdc6505fc1fdecdf6490a4c57f7da6ca3b48a1c96c4860bd",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libomp.so": "60c91a7600c44bbec337d49cea7faeb484d62d5fba60072fd6d3a5f9def9903c",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-56d6093b.so": "0bd815d04b6b54990e3cccc7528fbb696456d09569f533d0390c13f0cdc4dd4a"
+  },
+  "protocol_sha256": "49c0f068cb213fefc555824bbbfeee36b55c12ef9fef6b8c1e0ee733b6ef8f68",
+  "scope": "Evaluator-only import-order provenance repair. No parameter, source, prediction, numerical evaluator, dataset or original protocol edits. Full base environment remains only partially sealed."
+}

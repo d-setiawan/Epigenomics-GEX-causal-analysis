@@ -1,0 +1,93 @@
+{
+  "verifier_script": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "verifier_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "scope": "five selected primary works; final memo DOI-set equality checked separately",
+  "records": [
+    {
+      "label": "scConfluence",
+      "doi": "10.1038/s41467-024-51382-x",
+      "verified": true,
+      "metadata": {
+        "title": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+        "authors": "Samaran, J., Peyr\u00e9, G., Cantini, L.",
+        "year": "2024",
+        "journal": "Nature Communications",
+        "volume": "15",
+        "pages": "",
+        "doi": "10.1038/s41467-024-51382-x"
+      },
+      "verified_utc": "2026-11-01T01:16:01.530313+00:00"
+    },
+    {
+      "label": "uniPort",
+      "doi": "10.1038/s41467-022-35094-8",
+      "verified": true,
+      "metadata": {
+        "title": "A unified computational framework for single-cell data integration with optimal transport",
+        "authors": "Cao, K., Gong, Q., Hong, Y., et al.",
+        "year": "2022",
+        "journal": "Nature Communications",
+        "volume": "13",
+        "pages": "",
+        "doi": "10.1038/s41467-022-35094-8"
+      },
+      "verified_utc": "2026-11-01T01:16:01.611882+00:00"
+    },
+    {
+      "label": "UINMF",
+      "doi": "10.1038/s41467-022-28431-4",
+      "verified": true,
+      "metadata": {
+        "title": "UINMF performs mosaic integration of single-cell multi-omic datasets using nonnegative matrix factorization",
+        "authors": "Kriebel, A., Welch, J.",
+        "year": "2022",
+        "journal": "Nature Communications",
+        "volume": "13",
+        "pages": "",
+        "doi": "10.1038/s41467-022-28431-4"
+      },
+      "verified_utc": "2026-11-01T01:16:01.782753+00:00"
+    },
+    {
+      "label": "Pamona",
+      "doi": "10.1093/bioinformatics/btab594",
+      "verified": true,
+      "metadata": {
+        "title": "Manifold alignment for heterogeneous single-cell multi-omics data integration using Pamona",
+        "authors": "Cao, K., Hong, Y., Wan, L.",
+        "year": "2021",
+        "journal": "Bioinformatics",
+        "volume": "38",
+        "pages": "211-219",
+        "doi": "10.1093/bioinformatics/btab594"
+      },
+      "verified_utc": "2026-11-01T01:16:01.932983+00:00"
+    },
+    {
+      "label": "histone_benchmark",
+      "doi": "10.1186/s13059-026-04071-5",
+      "verified": true,
+      "metadata": {
+        "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+        "authors": "Naqing, F., Yuan, Q., Duren, Z.",
+        "year": "2026",
+        "journal": "Genome Biology",
+        "volume": "27",
+        "pages": "",
+        "doi": "10.1186/s13059-026-04071-5"
+      },
+      "verified_utc": "2026-11-01T01:16:02.017783+00:00"
+    }
+  ],
+  "final_memo_sha256": "af0d635c34fb79543915f76665911d687681e29f8d551338561da81be9534aea",
+  "final_memo_unique_dois": [
+    "10.1038/s41467-022-28431-4",
+    "10.1038/s41467-022-35094-8",
+    "10.1038/s41467-024-51382-x",
+    "10.1093/bioinformatics/btab594",
+    "10.1186/s13059-026-04071-5"
+  ],
+  "verified_unique_dois": 5,
+  "unresolved_dois": [],
+  "final_memo_doi_set_matches": true
+}

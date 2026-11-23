@@ -1,0 +1,147 @@
+{
+  "version": "1",
+  "pip_version": "26.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/28/19/089a65c4cf7ea407ab001846989b44cf83bc488a6e1fe68e950607251720/factor_analyzer-0.5.1.tar.gz",
+        "archive_info": {
+          "hash": "sha256=03703cd128ee9f91c9bd191a452b06e4a28296b5a24d11823ebb5d8250e8fdf6",
+          "hashes": {
+            "sha256": "03703cd128ee9f91c9bd191a452b06e4a28296b5a24d11823ebb5d8250e8fdf6"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "factor_analyzer",
+        "version": "0.5.1",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "keywords",
+          "license-file",
+          "maintainer",
+          "maintainer-email",
+          "provides-extra",
+          "requires-dist",
+          "summary"
+        ],
+        "summary": "A Factor Analysis tool written in Python",
+        "description": "FactorAnalyzer\n--------------\n\n.. image:: https://gitlab.com/EducationalTestingService/factor_analyzer/badges/main/pipeline.svg\n   :target: https://gitlab.com/EducationalTestingService/factor_analyzer/-/pipelines\n   :alt: Build status\n\n.. image:: https://codecov.io/gh/EducationalTestingService/factor_analyzer/branch/main/graph/badge.svg\n   :target: https://codecov.io/gh/EducationalTestingService/factor_analyzer\n   :alt: Code coverage\n\n.. image:: https://anaconda.org/ets/factor_analyzer/badges/version.svg\n   :target: https://anaconda.org/ets/factor_analyzer/\n   :alt: Conda version\n\n.. image:: https://img.shields.io/pypi/v/factor_analyzer\n   :target: https://pypi.org/project/factor-analyzer/\n   :alt: PyPI version\n\n.. image:: https://img.shields.io/readthedocs/factor_analyzer/latest.svg\n   :target: https://factor-analyzer.readthedocs.io/\n   :alt: Docs\n\n.. image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white\n   :target: https://github.com/pre-commit/pre-commit\n   :alt: Pre-commit checks\n\n\nThis is a Python module to perform exploratory and factor analysis (EFA), with several\noptional rotations. It also includes a class to perform confirmatory factor\nanalysis (CFA), with certain pre-defined constraints. In exploratory factor analysis,\nfactor extraction can be performed using a variety of estimation techniques. The\n``factor_analyzer`` package allows users to perform EFA using either (1) a minimum\nresidual (MINRES) solution, (2) a maximum likelihood (ML) solution, or (3) a principal\nfactor solution. However, CFA can only be performed using an ML solution.\n\nBoth the EFA and CFA classes within this package are fully compatible with `scikit-learn`.\nPortions of this code are ported from the excellent R library `psych`, and the `sem`\npackage provided inspiration for the CFA class.\n\nPlease see the `official documentation <https://factor-analyzer.readthedocs.io/en/latest/index.html>`__ for additional details.\n\n\nDescription\n-----------\n\nExploratory factor analysis (EFA) is a statistical technique used to\nidentify latent relationships among sets of observed variables in a\ndataset. In particular, EFA seeks to model a large set of observed\nvariables as linear combinations of some smaller set of unobserved,\nlatent factors. The matrix of weights, or factor loadings, generated\nfrom an EFA model describes the underlying relationships between each\nvariable and the latent factors.\n\nConfirmatory factor analysis (CFA), a closely associated technique, is\nused to test an a priori hypothesis about latent relationships among sets\nof observed variables. In CFA, the researcher specifies the expected pattern\nof factor loadings (and possibly other constraints), and fits a model according\nto this specification.\n\nTypically, a number of factors (K) in an EFA or CFA model is selected\nsuch that it is substantially smaller than the number of variables. The\nfactor analysis model can be estimated using a variety of standard\nestimation methods, including but not limited MINRES or ML.\n\nFactor loadings are similar to standardized regression coefficients, and\nvariables with higher loadings on a particular factor can be interpreted\nas explaining a larger proportion of the variation in that factor. In the\ncase of EFA, factor loading matrices are usually rotated after the factor\nanalysis model is estimated in order to produce a simpler, more interpretable\nstructure to identify which variables are loading on a particular factor.\n\nTwo common types of rotations are:\n\n1. The **varimax** rotation, which rotates the factor loading matrix so\n   as to maximize the sum of the variance of squared loadings, while\n   preserving the orthogonality of the loading matrix.\n\n2. The **promax** rotation, a method for oblique rotation, which builds\n   upon the varimax rotation, but ultimately allows factors to become\n   correlated.\n\nThis package includes a ``factor_analyzer`` module with a stand-alone\n``FactorAnalyzer`` class. The class includes ``fit()`` and ``transform()``\nmethods that enable users to perform factor analysis and score new data\nusing the fitted factor model. Users can also perform optional rotations\non a factor loading matrix using the ``Rotator`` class.\n\nThe following rotation options are available in both ``FactorAnalyzer``\nand ``Rotator``:\n\n    (a) varimax (orthogonal rotation)\n    (b) promax (oblique rotation)\n    (c) oblimin (oblique rotation)\n    (d) oblimax (orthogonal rotation)\n    (e) quartimin (oblique rotation)\n    (f) quartimax (orthogonal rotation)\n    (g) equamax (orthogonal rotation)\n    (h) geomin_obl (oblique rotation)\n    (i) geomin_ort (orthogonal rotation)\n\nIn addition, the package includes a ``confirmatory_factor_analyzer``\nmodule with a stand-alone ``ConfirmatoryFactorAnalyzer`` class. The\nclass includes ``fit()`` and ``transform()``  that enable users to perform\nconfirmatory factor analysis and score new data using the fitted model.\nPerforming CFA requires users to specify in advance a model specification\nwith the expected factor loading relationships. This can be done using\nthe ``ModelSpecificationParser`` class.\n\nNote that the ``ConfirmatoryFactorAnalyzer`` class is very experimental at this point,\nso use it with caution, especially if your data are highly non-normal.\n\nExamples\n--------\n\nExploratory factor analysis example.\n\n.. code:: python\n\n  In [1]: import pandas as pd\n     ...: from factor_analyzer import FactorAnalyzer\n\n  In [2]: df_features = pd.read_csv('tests/data/test02.csv')\n\n  In [3]: fa = FactorAnalyzer(rotation=None)\n\n  In [4]: fa.fit(df_features)\n  Out[4]:\n  FactorAnalyzer(bounds=(0.005, 1), impute='median', is_corr_matrix=False,\n                 method='minres', n_factors=3, rotation=None, rotation_kwargs={},\n                 use_smc=True)\n\n  In [5]: fa.loadings_\n  Out[5]:\n  array([[-0.12991218,  0.16398151,  0.73823491],\n         [ 0.03899558,  0.04658425,  0.01150343],\n         [ 0.34874135,  0.61452341, -0.07255666],\n         [ 0.45318006,  0.7192668 , -0.0754647 ],\n         [ 0.36688794,  0.44377343, -0.01737066],\n         [ 0.74141382, -0.15008235,  0.29977513],\n         [ 0.741675  , -0.16123009, -0.20744497],\n         [ 0.82910167, -0.20519428,  0.04930817],\n         [ 0.76041819, -0.23768727, -0.12068582],\n         [ 0.81533404, -0.12494695,  0.17639684]])\n\n  In [6]: fa.get_communalities()\n  Out[6]:\n  array([0.5887579 , 0.00382308, 0.50452402, 0.72841182, 0.33184336,\n         0.66208429, 0.61911037, 0.73194557, 0.64929612, 0.71149718])\n\nConfirmatory factor analysis example.\n\n.. code:: python\n\n  In [1]: import pandas as pd\n\n  In [2]: from factor_analyzer import (ConfirmatoryFactorAnalyzer,\n     ...:                              ModelSpecificationParser)\n\n  In [3]: df_features = pd.read_csv('tests/data/test11.csv')\n\n  In [4]: model_dict = {\"F1\": [\"V1\", \"V2\", \"V3\", \"V4\"],\n     ...:               \"F2\": [\"V5\", \"V6\", \"V7\", \"V8\"]}\n  In [5]: model_spec = ModelSpecificationParser.parse_model_specification_from_dict(df_features,\n     ...:                                                                           model_dict)\n\n  In [6]: cfa = ConfirmatoryFactorAnalyzer(model_spec, disp=False)\n\n  In [7]: cfa.fit(df_features.values)\n\n  In [8]: cfa.loadings_\n  Out[8]:\n  array([[0.99131285, 0.        ],\n         [0.46074919, 0.        ],\n         [0.3502267 , 0.        ],\n         [0.58331488, 0.        ],\n         [0.        , 0.98621042],\n         [0.        , 0.73389239],\n         [0.        , 0.37602988],\n         [0.        , 0.50049507]])\n\n  In [9]: cfa.factor_varcovs_\n  Out[9]:\n  array([[1.        , 0.17385704],\n         [0.17385704, 1.        ]])\n\n  In [10]: cfa.transform(df_features.values)\n  Out[10]:\n  array([[-0.46852166, -1.08708035],\n         [ 2.59025301,  1.20227783],\n         [-0.47215977,  2.65697245],\n         ...,\n         [-1.5930886 , -0.91804114],\n         [ 0.19430887,  0.88174818],\n         [-0.27863554, -0.7695101 ]])\n\nRequirements\n------------\n\n-  Python 3.8 or higher\n-  ``numpy``\n-  ``pandas``\n-  ``scipy``\n-  ``scikit-learn``\n\nContributing\n------------\n\nContributions to ``factor_analyzer`` are very welcome. Please file an issue\nin the repository if you would like to contribute.\n\nYou can install the development requirements in a virtual environment with:\n\n.. code-block:: bash\n\n   python -m pip install -e .[dev]\n   pre-commit install\n\nInstallation\n------------\n\nYou can install this package via ``pip`` with:\n\n``$ pip install factor_analyzer``\n\nAlternatively, you can install via ``conda`` with:\n\n``$ conda install -c ets factor_analyzer``\n\nLicense\n-------\n\nGNU General Public License (>= 2)\n",
+        "keywords": [
+          "factor",
+          "analysis"
+        ],
+        "home_page": "https://github.com/EducationalTestingService/factor_analyzer",
+        "author": "Jeremy Biggs",
+        "author_email": "jeremy.m.biggs@gmail.com",
+        "maintainer": "Nitin Madnani",
+        "maintainer_email": "nmadnani@ets.org",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Intended Audience :: Science/Research",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Topic :: Scientific/Engineering",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Operating System :: Unix",
+          "Operating System :: MacOS",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11"
+        ],
+        "requires_dist": [
+          "pandas",
+          "scipy",
+          "numpy",
+          "scikit-learn",
+          "pre-commit; extra == \"dev\""
+        ],
+        "provides_extra": [
+          "dev"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/6b/0d/467f1fc5ba6693e4acaa5b5caa88438574c9ec83fe6688b8e601cc0b3841/causal_learn-0.1.4.8-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=8c8d408c0b2fecdf150584cbcd8271efeb590e692b8e7f6f67ed215339a094e6",
+          "hashes": {
+            "sha256": "8c8d408c0b2fecdf150584cbcd8271efeb590e692b8e7f6f67ed215339a094e6"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.2",
+        "name": "causal-learn",
+        "version": "0.1.4.8",
+        "dynamic": [
+          "classifier",
+          "description",
+          "description-content-type",
+          "home-page",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "causal-learn Python Package",
+        "description": "<img width=\"1063\" height=\"313\" alt=\"causal-learn-logo\" src=\"https://github.com/user-attachments/assets/1abe5fd8-6018-467d-b7a7-f5886dc799eb\" />\n\nCausal-learn ([documentation](https://causal-learn.readthedocs.io/en/latest/), [paper](https://jmlr.org/papers/volume25/23-0970/23-0970.pdf)) is an open-source platform for causal learning with both classical and state-of-the-art causal discovery algorithms. It aims to recover causal structure from observational data, without requiring interventional experiments, while offering provable correctness guarantees.\n\nThe package is actively being developed. Feedback (issues, suggestions, etc.) would be greatly appreciated.\n\n# News\n\nCausal discovery is now available **anytime**, **anywhere**!\n\nCheck out our latest online agentic version of causal-learn: [causallearn.com](https://causallearn.com)\n\n# Package Overview\n\nOur causal-learn implements methods for causal discovery:\n\n* Constraint-based causal discovery methods.\n* Score-based causal discovery methods.\n* Causal discovery methods based on constrained functional causal models.\n* Hidden causal representation learning.\n* Permutation-based causal discovery methods.\n* Granger causality.\n* Multiple utilities for building your own method, such as independence tests, score functions, graph operations, and evaluations.\n\n# Install\n\nCausal-learn needs the following packages to be installed beforehand:\n\n* python 3 (>=3.7)\n* numpy\n* networkx\n* pandas\n* scipy\n* scikit-learn\n* statsmodels\n* pydot\n\n(For visualization)\n\n* matplotlib\n* graphviz\n\nTo use causal-learn, we could install it using [pip](https://pypi.org/project/causal-learn/):\n\n```\npip install causal-learn\n```\n\n\n# Documentation\n\nPlease kindly refer to [causal-learn Doc](https://causal-learn.readthedocs.io/en/latest/) for detailed tutorials and usages.\n\n# Running examples\n\nFor search methods in causal discovery, there are various running examples in the **‘tests’** directory, such as TestPC.py and TestGES.py.\n\nFor the implemented modules, such as (conditional) independent test methods, we provide unit tests for the convenience of developing your own methods.\n\n# Benchmarks\n\nFor the convenience of our community, [CMU-CLeaR](https://www.cmu.edu/dietrich/causality) group maintains a list of benchmark datasets including real-world scenarios and various learning tasks. Please refer to the following links:\n\n* [https://github.com/cmu-phil/example-causal-datasets](https://github.com/cmu-phil/example-causal-datasets) (maintained by Joseph Ramsey)\n* [https://www.cmu.edu/dietrich/causality/projects/causal_learn_benchmarks](https://www.cmu.edu/dietrich/causality/projects/causal_learn_benchmarks)\n\nPlease feel free to let us know if you have any recommendations regarding causal datasets with high-quality. We are grateful for any effort that benefits the development of the causality community.\n\n\n# Contribution\n\nPlease feel free to open an issue if you find anything unexpected.\nAnd please create pull requests, perhaps after passing unittests in 'tests/', if you would like to contribute to causal-learn.\nWe are always targeting to make our community better!\n\n# Running Tetrad in Python\n\nAlthough causal-learn provides Python implementations for many causal discovery algorithms, there are more in the classical Java-based [Tetrad](https://github.com/cmu-phil/tetrad) program. For users who would like to incorporate arbitrary Java code in Tetrad as part of a Python workflow, we strongly recommend considering [py-tetrad](https://github.com/cmu-phil/py-tetrad). Here is a list of [reusable examples](https://github.com/cmu-phil/py-tetrad/tree/main/pytetrad) of how to painlessly benefit from the most comprehensive Tetrad Java codebase.\n\n# Citation\n\nPlease cite as:\n\n```\n@article{zheng2024causal,\n  title={Causal-learn: Causal discovery in python},\n  author={Zheng, Yujia and Huang, Biwei and Chen, Wei and Ramsey, Joseph and Gong, Mingming and Cai, Ruichu and Shimizu, Shohei and Spirtes, Peter and Zhang, Kun},\n  journal={Journal of Machine Learning Research},\n  volume={25},\n  number={60},\n  pages={1--8},\n  year={2024}\n}\n```\n",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/py-why/causal-learn",
+        "author": "",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent"
+        ],
+        "requires_dist": [
+          "numpy",
+          "scipy",
+          "scikit-learn",
+          "graphviz",
+          "statsmodels",
+          "pandas",
+          "matplotlib",
+          "networkx",
+          "pydot",
+          "tqdm",
+          "momentchi2",
+          "joblib"
+        ],
+        "requires_python": ">=3.7"
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.11.14",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "6.18.58.1-microsoft-standard-WSL2",
+    "platform_system": "Linux",
+    "platform_version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026",
+    "python_full_version": "3.11.14",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.11",
+    "sys_platform": "linux"
+  }
+}

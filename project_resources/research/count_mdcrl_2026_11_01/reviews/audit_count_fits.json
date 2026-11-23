@@ -1,0 +1,587 @@
+{
+  "status": "passed",
+  "source_sha256": "83312863ec9933207cb6f7683f6345e594007586b7edf527cb89f044f02a5760",
+  "sealed_provenance_sha256": "0cf85208a3e08480c732ee80cd741b7425b5baafadaa7b362a84a32a7c96494a",
+  "protocol_sha256": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c",
+  "arms": 36,
+  "results": [
+    {
+      "path": "scmtr_seq_s1__unit__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        1,
+        2,
+        1
+      ],
+      "eligible_sources": [
+        1,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__unit__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        1,
+        2,
+        1
+      ],
+      "eligible_sources": [
+        1,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__unit__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        1,
+        2,
+        1
+      ],
+      "eligible_sources": [
+        1,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__unit__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        1,
+        2,
+        1
+      ],
+      "eligible_sources": [
+        1,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__unit__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__unit__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "scmtr_seq_s1__leave_panel_out__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        2,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        1,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        2,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        1,
+        2,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__unit__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "linear_chain_0__leave_panel_out__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        1,
+        2
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        1,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        1,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        2,
+        2,
+        3
+      ],
+      "eligible_sources": [
+        2,
+        1,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__unit__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__poisson_dica__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__poisson_dica__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__uncorrected_rank_matched__seed0",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__uncorrected_rank_matched__seed1",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        1
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        1
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__poisson_dica__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    },
+    {
+      "path": "constrained_collider_0__leave_panel_out__uncorrected_rank_matched__seed0__independent_columns",
+      "status": "passed",
+      "ranks": [
+        0,
+        0,
+        0
+      ],
+      "eligible_sources": [
+        0,
+        0,
+        0
+      ],
+      "pair_matches": 0,
+      "all_assay_matches": 0
+    }
+  ],
+  "method": "Independent NumPy/SciPy replay of saved arrays and declared numerical gates; no runner/estimator imports, source refits, test files or evaluator references.",
+  "limitations": "Checks execution and arithmetic only; does not establish biological assumptions, full source-law equality, or causal identifiability."
+}

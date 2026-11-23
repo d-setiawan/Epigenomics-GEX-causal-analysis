@@ -1,0 +1,44 @@
+{
+  "dataset": "scmtr_seq_s1",
+  "representation": "raw_counts",
+  "ica_seed": 1,
+  "control": "original",
+  "input_hashes": {
+    "data_pilot_v1/public/scmtr_seq_s1/train/RNA.npz": "941a595c2754e926fcf8f994e629c60e1c541f474a3b0192ca5de18ab7efe2b0",
+    "data_pilot_v1/public/scmtr_seq_s1/test/RNA.npz": "ccc5f5a3facecd9510825f8e235f18f80114461c74d1a6958683d86ba1eb52b2",
+    "data_pilot_v1/public/scmtr_seq_s1/train/H3K27ac.npz": "9bb6518786cbe8da3b3cce2e4b704580a82e3a03acc474d194b2041665f78c8e",
+    "data_pilot_v1/public/scmtr_seq_s1/test/H3K27ac.npz": "ff20657e74d3a94a6a80331d8de29cd45b543b7ae881746541ce62833ddc180e",
+    "data_pilot_v1/public/scmtr_seq_s1/train/H3K4me3.npz": "3b56df55ae1b02c532cab2df1296a62cf9f32deec2b64f363b4af8f4904a7f31",
+    "data_pilot_v1/public/scmtr_seq_s1/test/H3K4me3.npz": "fff528a99671f3cfee76c6f09c7163def0016e40e097d1e3ede66d37f86fba78"
+  },
+  "train_shapes": [
+    [
+      602,
+      30
+    ],
+    [
+      615,
+      30
+    ],
+    [
+      614,
+      30
+    ]
+  ],
+  "status": "failed",
+  "estimated_domain_ranks": [
+    30,
+    30,
+    30
+  ],
+  "shared_source_count": 0,
+  "adjusted_ks_alpha": 9.259259259259259e-06,
+  "joint_factors": [],
+  "joint_signs": [],
+  "graph_status": "no_shared_sources",
+  "failure_stage": "get_joint_graph",
+  "error": "AssertionError: ('RNA', 84.65239837235043)",
+  "warnings": [],
+  "elapsed_seconds": 13.445591504016193,
+  "arrays_sha256": "09da8473c8443299f8ab06ef37e9f7dbfbf1f7ba2f279f99d679e7513af50e20"
+}

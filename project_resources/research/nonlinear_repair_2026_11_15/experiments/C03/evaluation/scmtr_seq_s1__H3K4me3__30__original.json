@@ -1,0 +1,66 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -3.4546169128957582,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0629014323465201,
+        "standardized_offdiag_covariance_rmse": 0.051182116259329474,
+        "standardized_variance_rmse": 0.49468680153032923,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008817624961007554,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -3.710818018276516,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06290142985866981,
+        "standardized_offdiag_covariance_rmse": 0.06367651260026902,
+        "standardized_variance_rmse": 0.49087768817378635,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008860214417767751,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": null,
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -3.6626422007023676,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.06718868371119086,
+      "standardized_offdiag_covariance_rmse": 0.12389545132783895,
+      "standardized_variance_rmse": 0.6708727790550008,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.009110609190794995,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "scmtr_seq_s1__H3K4me3__30__original",
+    "best_completed_objective": -2.2753156470835956,
+    "best_completed_seed": 2,
+    "complete_application": true,
+    "elapsed_seconds": 1.5711704129935242,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

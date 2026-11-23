@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "scope": "Final model/export/source/result integrity and presence of independently reproduced readouts; not a causal-recovery certification",
+  "models": [
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed0/model_manifest.json",
+      "sha256": "6ac9ee9e3fcebb3f88e3bfb31b84dbd319dea378830321034136c128ef9ff5e6"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed1/model_manifest.json",
+      "sha256": "dbac8301810517df3e77c270eb313dc9585dbca7658a665d9c23ab8bdf0b189e"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/model_manifest.json",
+      "sha256": "7e95c3ac7492a771d85d4cf4a72116b10ba9586c8a3a48727ff03e8e55fd78e8"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed1/model_manifest.json",
+      "sha256": "55ff79d7b4f251e857c8997ad967a22c2ba5bc29fc88cbc87823b87e13f32410"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed0/model_manifest.json",
+      "sha256": "054de0afe0f07294f1cdd913d4f280310a508cf0e036cbd5fb31b4ddc0bbad5b"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/model_manifest.json",
+      "sha256": "f0c59889d64fb91444afedfbe3de96a4824061daab73e461dfa5109bcc7b0774"
+    }
+  ],
+  "n_gpu_fits": 6,
+  "n_embedding_exports": 48,
+  "n_exported_rows_across_all_cohorts": 60972,
+  "no_export_rows_dropped": true,
+  "all_export_values_finite": true,
+  "fixed_configurations_and_sources_preserved": true,
+  "gpu_execution": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/execution_results.json",
+    "sha256": "1e970be07ff4a43ad4e8aea94c8dd51786acc2717b8174a0f22d4b5ef5a92ab5"
+  },
+  "execution_plan": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/execution_plan.json",
+    "sha256": "90f890cdf03fc7b23371bf3e06a3ac37a041bfa058ff2d8bcd3bf9b66c2f78ac"
+  },
+  "causal_completion": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_causal_reliability_v1/completion.json",
+    "sha256": "1401b8e5339b349608fbb09a7bd0a80295c7b4475695df995c8db39eb7367839"
+  },
+  "state_review": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/state_review_summary.json",
+    "sha256": "56bd2bff9a2dc73143b65db74f6ef40f63fdb899ea9ea4c82db1f6423bf60f06"
+  },
+  "independent_reviews": [
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed0_state_audit.json",
+      "sha256": "a45cc03261cd1d21a6fe668405c06aebcc25df6d2f3d15b293efa062609daaac"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed0_state_transfer_audit.json",
+      "sha256": "f1ff6f7947e57cf52b094314e461e8bea5da9bb5e3f5128907d660efc3281e2c"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed1_state_audit.json",
+      "sha256": "cd3e79c3c43fbab02fa19988e61bc145cc49dc059200b2a168407ba99a689c71"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed1_state_transfer_audit.json",
+      "sha256": "39e1b520acb8ec996333c548474a7904ffc054816e6d70a37ec7b8b4ee06d0ec"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/empirical_product_null_audit.json",
+      "sha256": "1eb4bf0e3dba240a89a900abd3bb181b4b81f1658f13ccd4cdd0964b8dcc20c0"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/empirical_readout_seed0_audit.json",
+      "sha256": "7fde0916dacf8ed1e30654485ae2b8fabc8a2594eb7e6f922002549b76f77c83"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/empirical_readout_seed1_audit.json",
+      "sha256": "d96402024703deb438bba86278f36984d1d17edc4e17eaa53696a1746562f965"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/empirical_scoring_audit.json",
+      "sha256": "42c67a426399305fdfb43956ed08c5c8ca3743b341961d2dbfc05ab7ec634412"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/installed_rit_review_addendum.json",
+      "sha256": "fea774fd3f0747b9327f41337360f59df6b159a2876b84ef6001172a42008fd2"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed0_state_audit.json",
+      "sha256": "1d79f97e1ee2d33505e2fa8dad0e50be08a4594d316fcc6aca787bfa45eaf071"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed0_state_transfer_audit.json",
+      "sha256": "4c8e238f4ec318b990daa166ab2528d2f47eaaebce21c4146c027272ae9623af"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed1_state_audit.json",
+      "sha256": "a82c68c15db796590a70e1d28a799076bc09b8e744b7e1a87d93a775f83e7859"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed1_state_transfer_audit.json",
+      "sha256": "b35560fcfe6bf745de16d921586a366eae69fe0082b602c26b4d33704806e7ee"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/recurrent_edge_diagnostic_review.json",
+      "sha256": "845df3887e772debbb872b632ba8c68b10b1e902b377d595e14e2c4c2c8ec559"
+    }
+  ],
+  "primary_graphs": 86,
+  "exploratory_null_graphs": 50,
+  "fit_seconds_total": 1841.0632681846619,
+  "not_tested": [
+    "Additional empirical sublibraries or biological replication",
+    "Distal regulatory feature definitions",
+    "A replacement sparse-count conditional-independence procedure",
+    "A universal guarantee for the published integration method"
+  ]
+}

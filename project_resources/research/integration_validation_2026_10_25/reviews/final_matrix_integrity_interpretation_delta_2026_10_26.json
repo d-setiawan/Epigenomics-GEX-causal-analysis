@@ -1,0 +1,194 @@
+{
+  "base_draft": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/final_matrix_integrity_interpretation_draft_2026_10_26.json",
+    "sha256": "794d7dd21a54c264b073eec4f3fdee6e54b8026ac5a9b8cf20eb61dddfee1199"
+  },
+  "captured_at_utc": "2026-10-26T03:16:35.894867+00:00",
+  "cross_method_same_public_pool_id_hashes": true,
+  "fits": [
+    {
+      "candidate": "align_high",
+      "checkpoint_sha256": "f2a11da6ed5b4438ab986afd069fa69bb381f5fcf4521d34f05beb496cdf349b",
+      "configuration": {
+        "align_burnin": 20,
+        "data_batch_size": 128,
+        "device": "cuda",
+        "dropout": 0.2,
+        "encode_batch_size": 256,
+        "graph_batch_size": 8192,
+        "h_depth": 2,
+        "h_dim": 256,
+        "lam_align": 0.2,
+        "lam_data": 1,
+        "lam_graph": 0.02,
+        "lam_kl": 1,
+        "lam_sup": 0.02,
+        "latent_dim": 30,
+        "learning_rate": 0.002,
+        "max_epochs": 120,
+        "neg_samples": 10,
+        "patience": 8,
+        "reduce_lr_patience": 4,
+        "seed": 1,
+        "val_split": 0.1,
+        "wait_n_lrs": 1
+      },
+      "directory": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/unrestricted_chain_0/informative/scglue/align_high_seed1",
+      "method": "scglue",
+      "model_manifest_sha256": "6952cbd56e40f175adbbe522af6ae19e6bffa39643bc0c72dd9e7662aec8086c",
+      "native_and_report_public_hash_chain_verified": true,
+      "native_review": {
+        "checkpoint_and_seal_match": true,
+        "checks": 323,
+        "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/unrestricted_chain_0_informative_scglue_confirmation_seed1_independent_audit.json",
+        "sha256": "86852315b3cc0dc9976ab536c7fd0e5ef1fd7ddd01dc9b83a758abb25cc654be"
+      },
+      "pools": {
+        "discovery": {
+          "H3K27ac": {
+            "selected": 957,
+            "selected_ids_sha256": "f17803122b514a1e7837867d27254d2aaa519f4f87371c790500e7cdc24b7cab"
+          },
+          "H3K4me3": {
+            "selected": 957,
+            "selected_ids_sha256": "f406c9c44ebf7aabf9e6269e353e37fcb541589ce73c2f587564a8b4e71b0884"
+          },
+          "RNA": {
+            "selected": 957,
+            "selected_ids_sha256": "cd535601faec92196930a2cbff9089456d1209d87b3cf0054fb02f78d7151471"
+          }
+        },
+        "train": {
+          "H3K27ac": {
+            "selected": 1931,
+            "selected_ids_sha256": "c3d8b3e4257d6373c4f9526ed8561c58273afb446c6993c527af675b05fe3090"
+          },
+          "H3K4me3": {
+            "selected": 1931,
+            "selected_ids_sha256": "9d5e3aea612d75c0fe0998deb8275da77591cb916acbe577a42db3f4348cabf7"
+          },
+          "RNA": {
+            "selected": 1931,
+            "selected_ids_sha256": "8d82e838f003e26737116a91d6ecdb9ffcc999b448f53b0110ee6c3292647968"
+          }
+        }
+      },
+      "public_export_count": 9,
+      "public_export_hashes": {
+        "discovery/H3K27ac.npz": "07052eca2d3bb6e47807943af3cec54d8a80c00943de27df665fe1a19b2bd200",
+        "discovery/H3K4me3.npz": "c454656f10903dd3f9bd651594051083df3dd51b93c0235d54c67153f51365ad",
+        "discovery/RNA.npz": "cde1215a61a451707a57674e72e69d6e68ca86804624d5e8565beb11605930a7",
+        "train/H3K27ac.npz": "ca9f4079c56dbfb810ea7d5b73a40f5129ac891cc3203c077bdf430277712d8d",
+        "train/H3K4me3.npz": "08beb2b02c7b687e5bc564a2ea0ce9cf37eead4ff3bf523086b194c62a558878",
+        "train/RNA.npz": "4f110cd534290b993a1b8bae979cecfc506099ee346d7dbcc88b1ffbfc2be443",
+        "val/H3K27ac.npz": "72ab323e47c8b86ddb1c9e9f1b2e811a93da43b01f33d6896589125e5f46f524",
+        "val/H3K4me3.npz": "0fc149159d7cf696e052538f8ae48123b297ecae4c27f3d5c471f0028b38a73b",
+        "val/RNA.npz": "6c9707a78e7a8a165d96f7d939782506fe9ac45e411f10fda5ae803e59563ed7"
+      },
+      "regime": "informative",
+      "report_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/unrestricted_chain_0_informative_discovery_seed1_scglue_selected_8366327f.json",
+      "report_sha256": "74b96ff8ff6e4230bf09bd90197733331065b8c9603ba8615a05c989378ee4a6",
+      "reported_worst_pair_gap": 0.1465671154781096,
+      "seed": 1,
+      "study_sha256": "31c92c0486ef1ccea286c8fa03bd775bd66742686a23fc4fb3da12d35354838c",
+      "validation_fit_sha256": "cd76357bbd6d8df9b6c872e1a8157bd7113fd1846da474aba572e697f53b2eed",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "checkpoint_sha256": "1f18ef7b58fa47f20aa8b173c247ea2a9831a38599ce1ef7c0dd5a637e064156",
+      "configuration": {
+        "batch_size": 128,
+        "beta": 5,
+        "cosine_learning_rate": true,
+        "device": "cuda",
+        "dispersion_strategy": "gene",
+        "dropout_rate": 0.2,
+        "gamma": 10,
+        "gradient_clip_norm": 1,
+        "hidden_layers": [
+          128,
+          128
+        ],
+        "lambda_adv": 10,
+        "latent_dim_shared": 20,
+        "latent_dim_specific": 20,
+        "learning_rate": 0.001,
+        "max_epochs": 200,
+        "min_delta": 0,
+        "patience": 10,
+        "seed": 0,
+        "validation_fraction": 0.1,
+        "validation_mc_samples": 1
+      },
+      "directory": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/unrestricted_chain_0/informative/scmrdr/baseline_seed0",
+      "method": "scmrdr",
+      "model_manifest_sha256": "ccc3f91dccca30b731a2d610099348800bc60cc3df6af6a0bfa241fd017a9c14",
+      "native_and_report_public_hash_chain_verified": true,
+      "pools": {
+        "discovery": {
+          "H3K27ac": {
+            "selected": 957,
+            "selected_ids_sha256": "f17803122b514a1e7837867d27254d2aaa519f4f87371c790500e7cdc24b7cab"
+          },
+          "H3K4me3": {
+            "selected": 957,
+            "selected_ids_sha256": "f406c9c44ebf7aabf9e6269e353e37fcb541589ce73c2f587564a8b4e71b0884"
+          },
+          "RNA": {
+            "selected": 957,
+            "selected_ids_sha256": "cd535601faec92196930a2cbff9089456d1209d87b3cf0054fb02f78d7151471"
+          }
+        },
+        "train": {
+          "H3K27ac": {
+            "selected": 1931,
+            "selected_ids_sha256": "c3d8b3e4257d6373c4f9526ed8561c58273afb446c6993c527af675b05fe3090"
+          },
+          "H3K4me3": {
+            "selected": 1931,
+            "selected_ids_sha256": "9d5e3aea612d75c0fe0998deb8275da77591cb916acbe577a42db3f4348cabf7"
+          },
+          "RNA": {
+            "selected": 1931,
+            "selected_ids_sha256": "8d82e838f003e26737116a91d6ecdb9ffcc999b448f53b0110ee6c3292647968"
+          }
+        }
+      },
+      "public_export_count": 9,
+      "public_export_hashes": {
+        "discovery/H3K27ac.npz": "10bc81ba1f56a5615d1ae1f257c721a4d272eb6101cd177b5f91e96af7884628",
+        "discovery/H3K4me3.npz": "3dc97107b4e2cf8ee90546438816d72abfa0feeb688e7083113ca25f8c143770",
+        "discovery/RNA.npz": "7a672ea8d9efab00fb7e33765d179c622c0c516b15393b51d442e003b6b983a4",
+        "train/H3K27ac.npz": "a07cdb61e11e453d0fab269ed239827cb4725fd1653fb1b56bd16fefe4142497",
+        "train/H3K4me3.npz": "83d1975a935b585f9a523c627cd2e56575b70a532766e8703d882c2c0a19b535",
+        "train/RNA.npz": "7442ea62090bce009c73fc24cb7ec946c7562fff71735208d4936eebe60b3797",
+        "val/H3K27ac.npz": "f8c4aefcfcc69d440e91eda121a9976982c3487454d7d1a08a0c9f4740fae3c9",
+        "val/H3K4me3.npz": "933023a817006c6fc6983b89e6af41fdde497e32876e568d19a00e6ecfabba30",
+        "val/RNA.npz": "e876ab6c357fa3ca25d3ea8d67fe9c2fbb6d90d5e1403f831367713a2630986c"
+      },
+      "regime": "informative",
+      "report_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/unrestricted_chain_0_informative_discovery_seed0_scmrdr_selected_8366327f.json",
+      "report_sha256": "eb799ee8a88433df0ecc62941a7669eea4fbdb2e09dd14e0d7b99d3e452dd721",
+      "reported_worst_pair_gap": 0.026902562540774964,
+      "seed": 0,
+      "study_sha256": "6a52befdcb37b3131ee6113a8a2ce60130be5fa0260367d45e8f27abd730f08d",
+      "validation_fit_sha256": "33877fff9c020ae91a53f000ac5e9a416c63bfa73e246323d8800ee41838b208",
+      "world": "unrestricted_chain_0"
+    }
+  ],
+  "glue_both_seed_numeric_review": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/scglue_unrestricted_chain_0_informative_confirmation_public_state_crosscheck.json",
+    "sha256": "2d170a8c7a1199723a9db6267a7df707e881fa388dbade23e32e4774ceceae6a",
+    "status": "passed_independent_public_confirmation_state_cost_crosscheck"
+  },
+  "pending": [
+    "Final informativeMRDRseed1 terminal/completion/reviews",
+    "Completed informativeMRDRseed0 native/numerical receipt arrival",
+    "Final32scope/marker/source/plan/provenance consistency",
+    "Host-visible post-completion quiescence before baseline helper gates"
+  ],
+  "schema_version": 1,
+  "scope": "Only two newly authorized completed native fits, metadata/hashes, existing completed report and review JSON; no activeMRDR1 files, state/truth/private arrays, model/probe/metric recomputation or CUDA. Previous29fit checks not repeated.",
+  "status": "incomplete_delta_only_final_matrix_pending"
+}

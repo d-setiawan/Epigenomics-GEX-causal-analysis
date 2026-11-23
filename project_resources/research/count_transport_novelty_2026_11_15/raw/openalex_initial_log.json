@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-15T22:10:15.954630+00:00",
+  "endpoint": "https://api.openalex.org/works",
+  "query": {
+    "search": "unpaired Poisson independent component identifiability",
+    "per_page": 100,
+    "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count"
+  },
+  "sort": "default relevance",
+  "cursor": null,
+  "authenticated": false,
+  "status": "error",
+  "exception": "URLError",
+  "message": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+}

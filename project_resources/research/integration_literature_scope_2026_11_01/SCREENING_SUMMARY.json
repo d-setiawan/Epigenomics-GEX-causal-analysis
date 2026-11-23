@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-01",
+  "review_type": "bounded_scoping_review",
+  "indexed_records_retrieved": 981,
+  "openalex_retrieved": 700,
+  "europe_pmc_med_retrieved": 281,
+  "automatically_deduplicated_metadata_records": 866,
+  "selected_papers": 64,
+  "selected_categories": {
+    "unpaired_methods": 24,
+    "paired_bridge_factor_methods": 17,
+    "identification_theory": 16,
+    "benchmarks": 7
+  },
+  "selected_evidence_depth": {
+    "methods_or_theorem": 59,
+    "limited": 5
+  },
+  "selected_papers_with_exact_doi_or_title_central_match": 35,
+  "central_records_linked_to_selected_papers": 37,
+  "remaining_central_records_not_fully_assessed": 829,
+  "limits": [
+    "Capped relevance retrieval; not exhaustive or PRISMA systematic screening.",
+    "Automatic DOI/title matching is not full publication-version deduplication.",
+    "Remaining records are not classified as excluded; supplementary reference follows can add selected papers.",
+    "Methods/theorem inspection is not independent reproduction of every proof, fit, or software implementation.",
+    "Three explicit theory-screening exclusions are recorded in agents/theory_methods.json; no blanket screening claim is made."
+  ]
+}

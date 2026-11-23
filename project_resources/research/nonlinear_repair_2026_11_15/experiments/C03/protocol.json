@@ -1,0 +1,96 @@
+{
+  "environment_scope": "Base distributions recorded by version and loaded BLAS by path/version; not a byte-level full environment seal.",
+  "inputs": {
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K27ac.npz": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K4me3.npz": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/RNA.npz": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2"
+  },
+  "interpreter": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+  "manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "plan_sha256": "946bafeccb091c16b312ee2efa005e672752e67505b65230accbc68816bf7b91",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python": "3.11.14 | packaged by conda-forge | (main, Jan 26 2026, 23:48:32) [GCC 14.3.0]",
+  "settings": {
+    "AA_depth": 0,
+    "Mtol": 0.0001,
+    "active_feature_rule": "fit sample variance ddof1 exactly >0",
+    "actual_tau": "(n-k)!/(n-1)! = n*(n-k)!/n! [product reciprocal from j=1 to k-1]",
+    "application_timeout_seconds": 600,
+    "blas_threads": 1,
+    "controls": [
+      "original",
+      "column_null"
+    ],
+    "ftol": null,
+    "initializer": "KMeans log1p, n_init=1; raw cluster mean, uniform weights",
+    "lower_bound": 0.025,
+    "maxiter": 100,
+    "n_active_9": "source design unsupported",
+    "n_active_lt_9": "theorem dimension abstention",
+    "null_seed": "sha256(1000|dataset|assay), full300 separately within split",
+    "orders": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "panels": [
+      30,
+      300
+    ],
+    "processes": 2,
+    "qp_kkt_tolerance": 1e-08,
+    "r": 4,
+    "regularize_data": true,
+    "solver": "MEITD source baseline; normalized tau common n factor",
+    "source_random_seed": 12345,
+    "split": "sha256(count-dica-v1:ID), first floor(.75*n)",
+    "standardized_box_tolerance": 1e-10,
+    "starts": [
+      0,
+      1,
+      2
+    ],
+    "translate_init": "data",
+    "warmup": 0,
+    "wtol": 0.0001
+  },
+  "source_sha256": {
+    "adapter.py": "b52e2eaf9f87b85afff1060405c2ab49cb6720f954da0153f000c8cc8c3d2ca8",
+    "common.py": "2a47c3f2aa0ac0c394d5fae4f28fc4526b3af5cacb7fd70672fa1eb3dd9e7df5",
+    "evaluate.py": "63ec612c1d2b2036c7e6cc7fc9929a263af9928c2f22a3df7f1ff94324db0d32",
+    "run.py": "e524311497245430d4ddceabdc4ceaaa80bb9039d7f7aef442315c4a1fc60d89",
+    "test_adapter.py": "8a6312bb0241bba12e7834e06d9fa698a9435358ea1931c66045afb8f63367dc",
+    "worker.py": "b4e709d2bdc5cb39e03acd3efb4036e0d531bb0eb7de00b8c826c515c896a3a0"
+  },
+  "threadpools": [
+    {
+      "architecture": "Haswell",
+      "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-56d6093b.so",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "threading_layer": "pthreads",
+      "user_api": "blas",
+      "version": "0.3.29"
+    }
+  ],
+  "upstream_commit": "3cad5393b0dbbd98e53a139bd6ad046d685fac2b",
+  "upstream_source": {
+    "MEITD.py": "48f352e0ac70248a212eca6e97942ff65d4c0180cbbaf567e07ff84d1e2d29b8",
+    "_N_coefs.py": "fc3a988bab8fea0995d055c4aaacee01e4441a9020a68fc8d96ae79e4cc85189",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.14.1",
+    "threadpoolctl": "3.6.0"
+  }
+}

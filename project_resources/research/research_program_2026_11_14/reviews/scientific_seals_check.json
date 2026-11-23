@@ -1,0 +1,232 @@
+{
+  "date_utc": "2026-11-14T22:01:48.316368+00:00",
+  "status": "passed",
+  "scope": "Mechanical hash/count validation of operative scientific artifacts and independent build logs; not another scientific fit/evaluation/build",
+  "checks": [
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/protocol.json",
+      "expected": "c876efb366ba4b730d11f9bc45df7ff58450d6be1f01a9ab233ee8263f688f13",
+      "actual": "c876efb366ba4b730d11f9bc45df7ff58450d6be1f01a9ab233ee8263f688f13",
+      "reference": "prediction seal",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/plans/P01_PARTIAL_IDENTIFICATION.md",
+      "expected": "d8aa2fc1e62299bde117c7efc83d166599e8a74c3a71b6508c7dfb469c1e2ea7",
+      "actual": "d8aa2fc1e62299bde117c7efc83d166599e8a74c3a71b6508c7dfb469c1e2ea7",
+      "reference": "protocol",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/manifest.json",
+      "expected": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+      "actual": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+      "reference": "protocol",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz",
+      "expected": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+      "actual": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz",
+      "expected": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+      "actual": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz",
+      "expected": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+      "actual": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz",
+      "expected": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+      "actual": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz",
+      "expected": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+      "actual": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz",
+      "expected": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+      "actual": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K27ac.npz",
+      "expected": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+      "actual": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K4me3.npz",
+      "expected": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+      "actual": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/RNA.npz",
+      "expected": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2",
+      "actual": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/evaluate.py",
+      "expected": "f3da5d6b2012ed86d703d9574ab1a6e86b0c2899b3e16ef11eb1ed6900f91310",
+      "actual": "f3da5d6b2012ed86d703d9574ab1a6e86b0c2899b3e16ef11eb1ed6900f91310",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/fit.py",
+      "expected": "8ae32188fcf5a017f30126a6920b1b45df6b8259f7b1f7e22a0b383fa2817497",
+      "actual": "8ae32188fcf5a017f30126a6920b1b45df6b8259f7b1f7e22a0b383fa2817497",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/test_fit.py",
+      "expected": "c75a54d94d0fc8f3fbfcbb53ff7aa8cf1990ac95e7cc46f3235adc5054f429ff",
+      "actual": "c75a54d94d0fc8f3fbfcbb53ff7aa8cf1990ac95e7cc46f3235adc5054f429ff",
+      "reference": "protocol and independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/predictions.csv",
+      "expected": "c11f02a42fa8cac31d5e1e5e5e0c54e5d5e4bf325b41c4281d56f2bf7f9a5a7d",
+      "actual": "c11f02a42fa8cac31d5e1e5e5e0c54e5d5e4bf325b41c4281d56f2bf7f9a5a7d",
+      "reference": "prediction seal",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/predictions.csv",
+      "expected": "c11f02a42fa8cac31d5e1e5e5e0c54e5d5e4bf325b41c4281d56f2bf7f9a5a7d",
+      "actual": "c11f02a42fa8cac31d5e1e5e5e0c54e5d5e4bf325b41c4281d56f2bf7f9a5a7d",
+      "reference": "independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/prediction_seal.json",
+      "expected": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+      "actual": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+      "reference": "evaluation summary",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/prediction_seal.json",
+      "expected": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+      "actual": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+      "reference": "independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/evaluation.csv",
+      "expected": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+      "actual": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+      "reference": "evaluation summary",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/experiments/P01/evaluation.csv",
+      "expected": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+      "actual": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+      "reference": "independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/reviews/p01_independent_replay.py",
+      "expected": "6abc5f00d4659cecc5e76a7c86928f4a5be8a8e96d114fbef1693a557f17f1cb",
+      "actual": "6abc5f00d4659cecc5e76a7c86928f4a5be8a8e96d114fbef1693a557f17f1cb",
+      "reference": "independent review",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/evaluator/scmtr_seq_s1/paired_reference.npz",
+      "expected": "30810f85c00fa810f1252fa9a18c3ba03dd198c5edfd97ec10c371842e18bd1e",
+      "actual": "30810f85c00fa810f1252fa9a18c3ba03dd198c5edfd97ec10c371842e18bd1e",
+      "reference": "independent review; bytes only",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/lean/EpigenomicsIdentification.lean",
+      "expected": "efe4b9410b810798ffd872a0d850f9386de22b116a4a3d2b1bdb4770bc87164d",
+      "actual": "efe4b9410b810798ffd872a0d850f9386de22b116a4a3d2b1bdb4770bc87164d",
+      "reference": "latest independent Lean complement receipt",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/lean/lean-toolchain",
+      "expected": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+      "actual": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+      "reference": "initial independent Lean receipt; unchanged pins",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/lean/lakefile.toml",
+      "expected": "bdf88a4b9722bf87dd46995535deb2c0622168d49d305842db5a6b82ea7f6ee9",
+      "actual": "bdf88a4b9722bf87dd46995535deb2c0622168d49d305842db5a6b82ea7f6ee9",
+      "reference": "initial independent Lean receipt; unchanged pins",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/lean/lake-manifest.json",
+      "expected": "bad9d3afb68fa72b110dca4e40a29db96889999014877c98684050ee63d094f9",
+      "actual": "bad9d3afb68fa72b110dca4e40a29db96889999014877c98684050ee63d094f9",
+      "reference": "initial independent Lean receipt; unchanged pins",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/reviews/LEAN_INDEPENDENT_BUILD.log",
+      "expected": "b3c8cdff3456147d3b8fae6a45dd9e61b1ad82fd0d9d1dd8513eea0054d9dca3",
+      "actual": "b3c8cdff3456147d3b8fae6a45dd9e61b1ad82fd0d9d1dd8513eea0054d9dca3",
+      "reference": "initial Lean build receipt",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/reviews/LEAN_INDEPENDENT_AXIOMS.log",
+      "expected": "04f404b0fd6f24eaee72cdfa00a7468758c5cb7190454714436fc65b20e14dc5",
+      "actual": "04f404b0fd6f24eaee72cdfa00a7468758c5cb7190454714436fc65b20e14dc5",
+      "reference": "initial Lean axioms receipt",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/reviews/LEAN_COMPLEMENT_BUILD.log",
+      "expected": "87ca76694b9429a24881fcb000c09ee1495d082eab938ab1488dd500f8ad71f7",
+      "actual": "87ca76694b9429a24881fcb000c09ee1495d082eab938ab1488dd500f8ad71f7",
+      "reference": "complement Lean build receipt",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/research_program_2026_11_14/reviews/LEAN_COMPLEMENT_AXIOMS.log",
+      "expected": "9e6e77f2552378ada63fe6208ff647b2636258bf82f3e76034fc1caa8773a407",
+      "actual": "9e6e77f2552378ada63fe6208ff647b2636258bf82f3e76034fc1caa8773a407",
+      "reference": "complement Lean axioms receipt",
+      "matches": true
+    }
+  ],
+  "prediction_rows": 8100,
+  "evaluation_rows": 2700,
+  "mutable_decision_ledger_reference": {
+    "protocol_recorded_sha256": "03c0106eb74e318c5080bd69793cbae22bd2d9e7e3dabe72c1992175f598c1e6",
+    "current_sha256": "79ed83887f2029b3142167eac9428d695147db3c1ebdfe6e48ed4d2ff2573708",
+    "scope": "Mutable global decision ledger context; operative P01 plan and scientific seals checked separately. Final Astra audit owns reconciliation."
+  },
+  "scientific_reruns": 0
+}

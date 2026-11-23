@@ -1,0 +1,22 @@
+{
+  "approved": true,
+  "protocol_sha256": "42e6c2eddb27f37b2264e26da4493c702e0fc67a4439a2132ed2db2edc2bb153",
+  "reviewer": "Astra scientific coordinator; independent of implementation author",
+  "date": "2026-11-15",
+  "scope": "Source and plan review before fits/evaluator access; author deterministic test receipt inspected",
+  "checks": [
+    "Poisson and fixed-shape NB2 masses and exact constrained EM mean M-step",
+    "training-only calibration selection and bootstrap gates",
+    "near-tie ambiguity retained; unique acceptance requires separated intervals",
+    "test counts unpermuted for both control arms",
+    "K1 and zero covariance baselines explicit",
+    "compact candidate predictions and descriptive ranges",
+    "source/input/fit sealing and evaluator boundary"
+  ],
+  "limitations": [
+    "Finite local optimizer search, conditional bootstrap, heuristic compatibility intervals",
+    "Common weights and conditional independence are assumptions, not imposed-fit evidence",
+    "Optional paired bootstrap omitted",
+    "Independent postfit source and numerical replay still required"
+  ]
+}

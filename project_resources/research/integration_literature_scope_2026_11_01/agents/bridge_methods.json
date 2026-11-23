@@ -1,0 +1,483 @@
+{
+  "review_type": "bounded scoping review contribution",
+  "review_date": "2026-11-01",
+  "agent": "scmtr_data_pilot",
+  "scope": "Paired, partially paired, bridge, sample-factor and anchor boundary methods; 17 selected primary papers, not exhaustive.",
+  "openalex_discovery": "Parent-coordinated OpenAlex discovery; raw/openalex_01.json and subsequent query files. These are supplementary primary-source checks.",
+  "interpretation_note": "Theorem applicability and positive restrictions are reviewer synthesis, not attributed universal impossibility claims by the original authors.",
+  "records": [
+    {
+      "method": "Seurat v3 anchors",
+      "title": "Comprehensive Integration of Single-Cell Data",
+      "year": 2019,
+      "doi": "10.1016/j.cell.2019.05.031",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+      "family": "shared_feature_anchor",
+      "training_information": "Corresponding features, CCA/PCA and mutual-neighbor anchors. RNA/ATAC alignment uses gene-level accessibility summaries; reference-label transfer additionally uses reference labels. Protein transfer uses a CITE-seq reference with paired RNA/protein.",
+      "target": "Dataset harmonization, cell-state annotation and transfer of measured features.",
+      "theorem_applicability": "Mode-dependent: strictly disjoint anchor construction with only allowed feature mappings is covered; paired-reference feature transfer has additional joint information and is outside that contract.",
+      "positive_restrictions": "Representative shared features and transferable reference neighborhoods support alignment/prediction; they do not identify arbitrary residual copulas.",
+      "evidence_locator": "STAR Methods: dimensional reduction, anchor identification, data integration and label transfer; Results protein imputation.",
+      "evidence_level": "full_methods",
+      "caveat": "Anchor pairs are inferred correspondences, not necessarily the same cell. Treat reference-assisted modes separately.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2019",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "Seurat WNN",
+      "title": "Integrated analysis of multimodal single-cell data",
+      "year": 2021,
+      "doi": "10.1016/j.cell.2021.04.048",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238499/",
+      "family": "paired_neighborhood",
+      "training_information": "Multiple modalities measured in the same cells. Within- and cross-modality neighbor prediction learns cell-specific modality weights; no cell-type labels are needed for those weights.",
+      "target": "Joint cell representation, clustering, visualization and state definition.",
+      "theorem_applicability": "Outside strict-disjoint setting in its native form: same-cell correspondence is an input.",
+      "positive_restrictions": "Paired measurements provide joint observational evidence; downstream causal orientation still needs separate assumptions.",
+      "evidence_locator": "STAR Methods: Weighted Nearest Neighbor Analysis; within/across-modality prediction and cell-specific weights.",
+      "evidence_level": "full_methods",
+      "caveat": "A WNN cell-neighbor graph is not a regulatory graph. Unimodal query mapping uses an already constructed reference.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2021",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [
+        {
+          "openalex_id": "https://openalex.org/W3164692211",
+          "doi": "https://doi.org/10.1016/j.cell.2021.04.048",
+          "source_file": "raw/openalex_02.json"
+        }
+      ],
+      "discovery_note": "Central OpenAlex DOI match"
+    },
+    {
+      "method": "Seurat v5 dictionary/bridge",
+      "title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+      "year": 2024,
+      "online_year": 2023,
+      "doi": "10.1038/s41587-023-01767-y",
+      "url": "https://www.nature.com/articles/s41587-023-01767-y",
+      "family": "paired_bridge_dictionary",
+      "training_information": "An additional multiomic dataset measures both modalities in the same cells. Its cells become dictionary atoms; unimodal datasets are reconstructed in those shared coordinates. Annotated references support label transfer.",
+      "target": "Cross-modality reference mapping and scalable integration, including histone and methylation queries.",
+      "theorem_applicability": "Outside strict-disjoint information contract: the paired bridge supplies cross-view information.",
+      "positive_restrictions": "Coverage of relevant states and transferability between bridge/reference/query populations are needed for successful mapping.",
+      "evidence_locator": "Publisher abstract; indexed primary Results and Figure 1 workflow. Supplemental mathematical methods not inspected.",
+      "evidence_level": "abstract",
+      "caveat": "Publication online in 2023, issue year 2024. PMC author title includes 'massively'. Publisher/PMC full-text access failed; source excerpts verify bridge requirement.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2024",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [
+        {
+          "openalex_id": "https://openalex.org/W4378212544",
+          "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+          "source_file": "raw/openalex_02.json"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4378212544",
+          "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+          "source_file": "raw/openalex_03.json"
+        }
+      ],
+      "discovery_note": "Central OpenAlex DOI match"
+    },
+    {
+      "method": "LIGER",
+      "title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+      "year": 2019,
+      "doi": "10.1016/j.cell.2019.05.006",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+      "family": "shared_feature_factor",
+      "training_information": "Unpaired datasets on corresponding gene-level features. Integrative nonnegative factorization learns shared and dataset-specific metagenes; factor-neighborhood construction and normalization align cells. No true cell pairs required.",
+      "target": "Shared/dataset-specific variation and cell identity across datasets/modalities.",
+      "theorem_applicability": "Covered for independent disjoint assays with fixed allowed gene mappings and a broad causal class.",
+      "positive_restrictions": "Common metagene structure and meaningful shared features can support state alignment; NMF constraints are not general causal restrictions.",
+      "evidence_locator": "Figure 1; Methods: Performing iNMF Using Block Coordinate Descent, Equation 1.",
+      "evidence_level": "full_methods",
+      "caveat": "This record concerns original LIGER, not later unshared-feature extensions. Regulatory-element nomination is not intervention identification.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2019",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "MOFA",
+      "title": "Multi-Omics Factor Analysis—a framework for unsupervised integration of multi-omics data sets",
+      "year": 2018,
+      "doi": "10.15252/msb.20178124",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+      "family": "sample_aligned_factor",
+      "training_information": "Multiple views measured on the same or partially overlapping identified samples. A common sample-factor matrix and view-specific loadings allow missing entries/views; feature identities need not match between views.",
+      "target": "Major sources of variation, factor interpretation, clustering and missing-data imputation.",
+      "theorem_applicability": "Native overlapping-sample use is outside strict-disjoint assumptions. Completely disconnected sample/view blocks require additional constraints; permitting missing values alone does not identify their joint.",
+      "positive_restrictions": "A valid shared-factor model and enough linked observations support estimation of common factors.",
+      "evidence_locator": "Results and Figure 1; Materials and Methods: model specification and missing values.",
+      "evidence_level": "full_methods",
+      "caveat": "Shared factors and loadings describe variation, not directed causal effects. Original examples include bulk samples and paired single cells.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2018",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "MOFA+",
+      "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+      "year": 2020,
+      "doi": "10.1186/s13059-020-02015-1",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+      "family": "sample_aligned_multigroup_factor",
+      "training_information": "Sample-indexed views plus known groups such as experiments/conditions. Shared view loadings and group-specific factor activities, sparse/ARD priors and missing-data handling extend MOFA. Different cell groups may be disjoint while modalities remain linked within observed samples.",
+      "target": "Shared and group/view-specific variability, interpretable factors and scalable multimodal analysis.",
+      "theorem_applicability": "Depends on observation pattern: paired/overlapping views are outside strict-disjoint contract. Disjoint experimental groups are not synonymous with unlinked modalities.",
+      "positive_restrictions": "Connected observation patterns and correct factor/sparsity assumptions support joint estimation.",
+      "evidence_locator": "Figure 1; Methods: model regularization and guidelines for groups/views.",
+      "evidence_level": "full_methods",
+      "caveat": "Missing-view tolerance does not demonstrate identification for wholly disconnected modality blocks; no general regulatory-DAG theorem inferred.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2020",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "MultiVI",
+      "title": "MultiVI: deep generative model for the integration of multimodal data",
+      "year": 2023,
+      "doi": "10.1038/s41592-023-01909-9",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+      "family": "paired_partial_multimodal_vae",
+      "training_information": "Jointly profiled RNA/ATAC cells plus optional RNA-only/ATAC-only cells and batch covariates. Modality encoders are aligned/averaged for paired observations, with observed-modality likelihoods and adversarial alignment. Additional protein modalities are supported.",
+      "target": "Joint state representations, missing-modality imputation, uncertainty and differential analysis.",
+      "theorem_applicability": "Published paired-assisted regime is outside strict-disjoint contract. A hypothetical all-disjoint, no-paired-pretraining mode remains subject to the theorem; the paper's 1–99% artificial unpairing is not proof for that setting.",
+      "positive_restrictions": "Sufficient representative paired data and transportable decoder relationships can support prediction.",
+      "evidence_locator": "Results: model, paired/unpaired integration; Methods: inference/training; official MultiVI model documentation.",
+      "evidence_level": "full_methods",
+      "caveat": "Artificially unpaired cells appear in both assay lists; remaining cells are paired. This is not independent disjoint sampling. No all-unpaired guarantee claimed here.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2023",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "totalVI",
+      "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+      "year": 2021,
+      "doi": "10.1038/s41592-020-01050-x",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+      "family": "paired_rna_protein_vae",
+      "training_information": "Same-cell RNA/protein counts from CITE-seq, with optional batch/donor covariates. Supports differing antibody panels and RNA-only batches in addition to jointly profiled training data.",
+      "target": "Joint representation, protein-background correction, feature correlation estimation, integration and differential expression.",
+      "theorem_applicability": "Outside strict-disjoint contract for its paired training regime, including subsequent unimodal queries.",
+      "positive_restrictions": "Paired observation and appropriate count/background/batch models support estimating joint observational relationships.",
+      "evidence_locator": "Results: The totalVI model; Methods: conditional joint distribution p(x_n,y_n|s_n), integration with missing proteins.",
+      "evidence_level": "full_methods",
+      "caveat": "Useful explicit counterexample to 'integration never recovers relationships': paired-data correlation estimation is a stated task, but correlation is not causal orientation.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": null,
+        "crossref_year_match": null,
+        "fallback": "Primary PMC article header and indexed full Methods independently verify title, publication year and DOI; DOI handle valid."
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "Cobolt",
+      "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+      "year": 2021,
+      "doi": "10.1186/s13059-021-02556-z",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+      "family": "paired_bridge_multimodal_vae",
+      "training_information": "Joint-modality cells provide the linkage between distinct feature spaces; optional separate RNA-only and ATAC-only datasets are integrated through the multimodal latent model and transfer correction. No peak-to-gene matching is required.",
+      "target": "Shared cell representation, joint clustering and integration of multimodal/unimodal datasets.",
+      "theorem_applicability": "Outside strict-disjoint contract in the demonstrated integration setup: jointly sequenced bridge cells are supplied.",
+      "positive_restrictions": "Representative paired cells and transferable latent factors permit cross-view estimation.",
+      "evidence_locator": "Results: The Cobolt model; Methods: hierarchical model and correcting missing modalities.",
+      "evidence_level": "full_methods",
+      "caveat": "A missing-modality encoder is not evidence that training with no paired bridge identifies the same joint.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2021",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [
+        {
+          "openalex_id": "https://openalex.org/W4200581587",
+          "doi": "https://doi.org/10.1186/s13059-021-02556-z",
+          "source_file": "raw/openalex_02.json"
+        }
+      ],
+      "discovery_note": "Central OpenAlex DOI match"
+    },
+    {
+      "method": "scMVP",
+      "title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+      "year": 2022,
+      "doi": "10.1186/s13059-021-02595-6",
+      "url": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+      "family": "paired_attention_multiview_vae",
+      "training_information": "RNA counts and TF-IDF-transformed ATAC profiles from the same cells. Joint encoder/decoder with Gaussian-mixture latent prior, attention modules and clustering-consistency constraints. The mixture component is inferred, not automatically an observed cell-type label.",
+      "target": "Joint embedding, denoising/imputation, clustering, trajectories and cis-regulatory-element analysis.",
+      "theorem_applicability": "Outside strict-disjoint contract: the joint observations and matched rows are inputs.",
+      "positive_restrictions": "Same-cell data allow joint observational estimation subject to model/noise adequacy.",
+      "evidence_locator": "Results: The scMVP model, Figure 1 and joint ELBO; Methods: multi-view model.",
+      "evidence_level": "full_methods",
+      "caveat": "CRE identification and inferred cluster consistency do not alone establish direct causal direction. Do not describe this as an unpaired-only algorithm.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2022",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "scMM",
+      "title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+      "year": 2021,
+      "doi": "10.1016/j.crmeth.2021.100071",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+      "family": "paired_mixture_experts_vae",
+      "training_information": "Paired multimodal training observations. Each modality's encoder learns latent values that reconstruct all measured modalities through a mixture-of-experts posterior; trained encoders support unimodal cross-generation.",
+      "target": "Interpretable latent representation, clustering and bidirectional missing-modality generation.",
+      "theorem_applicability": "Outside strict-disjoint contract when trained as published on paired CITE-seq/SHARE-seq cells.",
+      "positive_restrictions": "Learnable cross-view relationships and training coverage can support prediction on related cells.",
+      "evidence_locator": "Figure 1; STAR Methods: ELBO for x_1:M and mixture-of-experts; training/test split descriptions.",
+      "evidence_level": "full_methods",
+      "caveat": "Decoder traversals called regulatory programs are model feature associations; generating an unobserved modality does not identify intervention effects.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2021",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "BABEL",
+      "title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+      "year": 2021,
+      "doi": "10.1073/pnas.2023070118",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+      "family": "paired_supervised_translation",
+      "training_information": "Jointly profiled RNA/ATAC cells train interoperable modality encoders and decoders using within- and cross-modality reconstruction. Trained networks are applied to single-modality cells; additional protein translation is demonstrated.",
+      "target": "Cross-modality prediction and hypothesis generation in related cell contexts.",
+      "theorem_applicability": "Outside strict-disjoint contract: paired training supervision contributes joint information even when deployment queries are unimodal.",
+      "positive_restrictions": "Transferability from sufficiently representative paired training examples and adequate predictive model.",
+      "evidence_locator": "Results: design/training on jointly profiled cells; Methods: model architecture and training.",
+      "evidence_level": "full_methods",
+      "caveat": "Cross-decoding predicts outcomes; it does not implement a biological intervention. Performance on new contexts does not remove distribution-shift assumptions.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2021",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "CLUE",
+      "title": "Cross-Linked Unified Embedding for cross-modality representation learning",
+      "year": 2022,
+      "doi": "10.52202/068431-1160",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/662b1774ba8845fc1fa3d1fc0177ceeb-Abstract-Conference.html",
+      "family": "paired_partial_crossencoder",
+      "training_information": "Partially paired multimodal cells supervise self/cross encoders into modality-specific subspaces. Self/cross ELBOs, same-cell representation agreement and adversarial alignment enable missing-modality embeddings.",
+      "target": "Comprehensive embeddings, cross-modality matching and prediction.",
+      "theorem_applicability": "Outside strict-disjoint contract in its published supervised regime; true paired training is explicit.",
+      "positive_restrictions": "Paired coverage and transferable cross-encoder mappings support correspondence estimation.",
+      "evidence_locator": "NeurIPS paper Sections 3, 4.3–4.5; Introduction explicitly states paired multimodal supervision.",
+      "evidence_level": "full_methods",
+      "caveat": "CLUE is distinct from unsupervised GLUE despite sharing a software package. Challenge matching accuracy is not causal-DAG identification.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2022",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "JAMIE",
+      "title": "Joint variational autoencoders for multimodal imputation and embedding",
+      "year": 2023,
+      "doi": "10.1038/s42256-023-00663-z",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+      "family": "partial_correspondence_manifold_vae",
+      "training_information": "Two modality matrices and optional user correspondence F, including known same-cell pairs. Joint VAEs aggregate corresponding latent values. Additional inferred correspondence is derived from within-assay geodesic distances; reconstruction, KL, combination and alignment losses are used.",
+      "target": "Cross-modal embedding, phenotype prediction, imputation and feature attribution.",
+      "theorem_applicability": "Known-pair F lies outside strict-disjoint contract. With only data-derived correspondence and independent disjoint cells, the theorem applies to general causal recovery.",
+      "positive_restrictions": "True correspondence or a valid restrictive manifold/coupling assumption can improve recoverability.",
+      "evidence_locator": "Methods 4.1, 4.6–4.8; Equation 8 inferred correspondence; Figure 2.",
+      "evidence_level": "full_methods",
+      "caveat": "SHAP feature importance is predictive, not an intervention effect. The paper primarily evaluates partial known correspondence; do not silently treat inferred F as observed pairs.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2023",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "Harmony",
+      "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+      "year": 2019,
+      "doi": "10.1038/s41592-019-0619-0",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6884693/",
+      "family": "horizontal_batch_embedding_comparator",
+      "training_information": "A common low-dimensional feature embedding, normally PCA of shared expression features, and known batch/covariate labels. Soft diversity-aware clustering and local linear correction; spatial-expression example uses shared genes.",
+      "target": "Batch-adjusted embedding preserving cell-state variation.",
+      "theorem_applicability": "Primarily horizontal/common-feature comparator, not an estimator of a missing cross-assay joint. If repurposed on disjoint assays, derived corrections do not escape the theorem.",
+      "positive_restrictions": "Adequate common representation and separable batch/biological effects support harmonization.",
+      "evidence_locator": "Online Methods 1.1 and 1.4; Discussion: corrected coordinates and original expression retained.",
+      "evidence_level": "full_methods",
+      "caveat": "Do not classify horizontal batch correction as failed cross-assay causal recovery. Optional labels/initial clusters must be disclosed.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2019",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    },
+    {
+      "method": "Mowgli",
+      "title": "Paired single-cell multi-omics data integration with Mowgli",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-43019-2",
+      "url": "https://www.nature.com/articles/s41467-023-43019-2",
+      "family": "paired_ot_matrix_factorization",
+      "training_information": "Every omics matrix has the same identified cell columns. Shared nonnegative cell factors and modality-specific loadings minimize entropic OT reconstruction plus entropy regularization; feature costs use within-modality cosine distances. No cell-type labels are required for the factorization.",
+      "target": "Joint cell embedding, clustering and interpretable feature programs.",
+      "theorem_applicability": "Outside the strict-disjoint contract: observed same-cell correspondence links the modalities.",
+      "positive_restrictions": "Pairing provides joint information; low-dimensional nonnegative factors impose a representation model.",
+      "evidence_locator": "Results: Mowgli a new tool, Eq. 1; Methods: Notations, Optimal transport, Mowgli; same cell columns and within-modality ground costs.",
+      "evidence_level": "full_methods",
+      "caveat": "OT is a reconstruction loss here, not evidence that OT can identify arbitrary missing cell couplings or orient causal edges.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2023",
+        "crossref_year_match": true
+      },
+      "openalex_discovery_matches": [
+        {
+          "openalex_id": "https://openalex.org/W4388969005",
+          "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+          "source_file": "raw/openalex_01.json"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4388969005",
+          "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+          "source_file": "raw/openalex_03.json"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4388969005",
+          "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+          "source_file": "raw/openalex_07.json"
+        }
+      ],
+      "discovery_note": "Central OpenAlex DOI match"
+    },
+    {
+      "method": "scMoMaT",
+      "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-36066-2",
+      "url": "https://www.nature.com/articles/s41467-023-36066-2",
+      "family": "mosaic_matrix_trifactorization",
+      "training_information": "Shared cell-batch or feature entities connect observed matrices. If disconnected, annotation-derived pseudo-modalities connect them: binarized gene-body/upstream-2kb ATAC sums become pseudo-RNA; corresponding RNA counts become pseudo-protein. Matrix tri-factorization shares cell/feature factors and association components; clusters are inferred, then used for marker retraining.",
+      "target": "Mosaic cell integration, clustering and cluster-specific multimodal biomarkers.",
+      "theorem_applicability": "Mode-dependent: observed paired bridges add joint information; pseudo-modalities computed from strict-disjoint assays plus fixed annotation remain within the theorem.",
+      "positive_restrictions": "Connected entity graph and shared low-rank factors support integration; generated feature proxies encode assumptions about modality correspondence.",
+      "evidence_locator": "Framework Eqs. 1–3 and entity connectivity; Methods: Calculating pseudo-count matrices, Retraining procedure.",
+      "evidence_level": "full_methods",
+      "caveat": "Pseudo-RNA is not a second measured assay. Marker importance and association matrices do not by themselves establish direct regulation.",
+      "bibliography_verification": {
+        "doi_handle_valid": true,
+        "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+        "primary_title_year_verified": true,
+        "crossref_title_match": true,
+        "crossref_year": "2023",
+        "crossref_year_match": true
+      },
+      "related_preprint_discovery": [
+        {
+          "openalex_id": "https://openalex.org/W4281385066",
+          "doi": "https://doi.org/10.1101/2022.05.17.492336",
+          "source_file": "raw/openalex_07.json",
+          "note": "Related preprint; extraction and citation use the final 2023 paper."
+        }
+      ],
+      "openalex_discovery_matches": [],
+      "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries."
+    }
+  ]
+}

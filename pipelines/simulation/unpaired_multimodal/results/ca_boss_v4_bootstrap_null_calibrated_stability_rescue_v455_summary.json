@@ -1,0 +1,183 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_null_calibrated_stability_rescue_v455_record.v1",
+  "algorithm": "CA-BOSS v4.55 empirical-null-calibrated bootstrap stability rescue",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_null_calibrated_stability_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "cell_level_transport_coupling_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_positive_labels_used_for_score_fit": false,
+    "other_block_null_labels_used_for_empirical_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 213,
+      "true_positive_hyperedges": 213,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 96,
+      "precision": 1.0,
+      "recall": 0.6893203883495146
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 350,
+      "correctly_recovered_assay_participations": 350,
+      "precision": 1.0,
+      "recall": 0.5663430420711975,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 213,
+      "coverage": 0.6893203883495146,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 283,
+      "average_ambiguity_set_size": 1.3286384976525822,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 175,
+      "exact_cross_assay_pair_true_positives": 175,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.5663430420711975,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v454_bootstrap_wasserstein_geometry": {
+      "true_positive_hyperedges": 209,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6763754045307443
+    },
+    "v455_empirical_null_calibrated_stability": {
+      "true_positive_hyperedges": 213,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6893203883495146,
+      "incremental_true_hyperedges": 4,
+      "incremental_false_hyperedges": 0,
+      "incremental_assay_participations": 8,
+      "interpretation": "edge-specific empirical-null stability floors recover four reproducible W2 proposals rejected by the fixed 0.80 cutoff while abstaining when a calibration null is equally stable"
+    }
+  },
+  "method_contract": {
+    "proposal_source": "nominal v4.54 sign-invariant W2 distribution-geometry proposals only",
+    "target_candidate_bootstrap": "100 whole-world resamples under the frozen v4.54 nested reciprocal rule",
+    "null_reference": "maximum selection count among every labelled null assay pair in four non-target candidate blocks",
+    "null_count_estimation": "each candidate calibration block is scored in three folds whose null labels exclude both the target and candidate blocks",
+    "target_evidence_role_in_null_fit": "unlabelled empirical-rank training data only",
+    "majority_gate": "strictly more than 50 of 100 refits",
+    "empirical_null_gate": "target selection count strictly exceeds the worst non-target null count",
+    "uncertainty_gate": "working Beta(1,1) probability that the target selection probability exceeds the worst-null probability is at least 0.975",
+    "uncertainty_caveat": "bootstrap refits are dependent and are not treated as independent Bernoulli trials; the Beta comparison is a conservative working score, not a calibrated posterior",
+    "base_union": "target-safe v4.54 hypotheses",
+    "perfect_matching_assumed": false,
+    "fixed_shared_relationship_count_assumed": false,
+    "cell_coupling_constructed": false,
+    "conflict_handling": "merge connected assay pairs into one unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never within-assay direct structure, exact cross-assay feature identity, or direction"
+  },
+  "null_calibration_audit": {
+    "worst_null_selection_frequency_by_target_block": {
+      "development_34001_34016": 0.21,
+      "development_47001_47016": 0.27,
+      "train_41001_41024": 1.0,
+      "train_46001_46024": 1.0,
+      "train_49001_49024": 0.43
+    },
+    "new_additions_by_target_block": {
+      "development_34001_34016": 1,
+      "development_47001_47016": 1,
+      "train_41001_41024": 0,
+      "train_46001_46024": 0,
+      "train_49001_49024": 2
+    },
+    "new_additions": [
+      {
+        "world_key": "development_34001_34016__world_seed34012",
+        "assay_pair": ["chrom_H3K4me2", "chrom_H3K9me3"],
+        "selection_frequency": 0.72,
+        "worst_null_frequency": 0.21
+      },
+      {
+        "world_key": "development_47001_47016__world_seed47009",
+        "assay_pair": ["chrom_H3K4me2", "chrom_H3K9me3"],
+        "selection_frequency": 0.52,
+        "worst_null_frequency": 0.27
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49008",
+        "assay_pair": ["chrom_H3K27me3", "chrom_H3K4me3"],
+        "selection_frequency": 0.78,
+        "worst_null_frequency": 0.43
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49014",
+        "assay_pair": ["chrom_H3K4me3", "chrom_H3K9me3"],
+        "selection_frequency": 0.78,
+        "worst_null_frequency": 0.43
+      }
+    ],
+    "catastrophic_null_blocks": [
+      "train_41001_41024",
+      "train_46001_46024"
+    ],
+    "catastrophic_null_interpretation": "a null reached frequency 1.0 for these targets, so the strict empirical-null rule correctly admitted no v4.55 additions"
+  },
+  "published_method_inspiration": {
+    "unpaired_multi_domain_causal_representation": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning, DOI 10.52202/075280-1496",
+    "mmd_ma": "Liu, Huang, Singh, Vert, and Noble (WABI 2019), Jointly Embedding Multiple Single-Cell Omics Measurements, DOI 10.4230/LIPIcs.WABI.2019.10",
+    "scot": "Demetci, Santorella, Sandstede, Noble, and Singh (Journal of Computational Biology 2022), SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport, DOI 10.1089/cmb.2021.0446",
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "relationship": "V4.55 combines distributional latent-component matching with target-separated empirical-null stability calibration. No publication contributes data, correspondence, modality identity, feature identity, biological priors, or an identifiability guarantee for this simulator."
+  },
+  "limitations": {
+    "remaining_shared_state_hyperedge_abstentions": 96,
+    "complete_recovery_achieved": false,
+    "fresh_locked_generalization_established": false,
+    "cross_assay_direction_identified": false,
+    "shared_component_rank_is_estimated": false,
+    "working_beta_score_is_a_calibrated_posterior": false,
+    "interpretation": "V4.55 is the strongest conservative cached-world checkpoint, but all 103 worlds informed method development. Its 1.0 retrospective precision does not establish out-of-sample completeness or identify direct cross-assay effects from disjoint cells."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_null_calibrated_stability_rescue_v455_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "349afaca40f14824fa089bf6f42abfe6ecd748d73e4b0d810226652c630e0e7a",
+    "campaign_summary_file_sha256": "01f3ff1d5a7a656dd2db846510b90918a86bf63ca94dec93922633d4b465c2c5",
+    "campaign_world_metrics_sha256": "d6b4d9a91aac6bd0a3e1b523d7660053efe54d0185a6a02eb390a9cffd49babc",
+    "campaign_panels_sha256": "6a87d114bf94055b45086532a555b678481af2584e80012a774c96023e87bc74",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "7d3a05ccfebd80693a7bf228d94aa9a9008872a91236bfd98e36b7030ea0c324",
+      "development_47001_47016": "2ead53ae2db24858ec29ccae1d21f746bdfc2ecf3aa55c68458e0a60b355d5eb",
+      "train_41001_41024": "fd922b574d7fc587f64424cadbd394abaa8398f02adfa5ff6e8338abab72fa70",
+      "train_46001_46024": "127b8db2389f5846b666d7584108fbea5def195d04fe7fc90d32ca4ee95c8fa7",
+      "train_49001_49024": "fad946286024c2d39a84f8e13ce3d6a3ae866394295201b6f97da92ee737cf64"
+    },
+    "diagnostic_source_sha256": "aeb74f6733a679f40ab8c1843a64c9e7e024e7a3cc4e22f379a645ee14aa5cca",
+    "calibrator_source_sha256": "cc103554f97b094ba13ca6e41eb8f5cd01bfbd5d9b2c94e561feb227855b2784",
+    "scorer_source_sha256": "666ea675fc43f7f5ccd1c10d0d0e19700092506d9cf17192af5c419f3a356e48"
+  }
+}

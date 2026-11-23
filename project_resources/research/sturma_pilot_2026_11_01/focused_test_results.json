@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "command": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest -q project_resources/research/sturma_pilot_2026_11_01/test_apply_native.py project_resources/research/sturma_pilot_2026_11_01/test_published_replication.py",
+  "tests_passed": 5,
+  "elapsed_seconds": 7.39,
+  "warnings": [
+    "Dependency FutureWarning: pynvml deprecated",
+    "Dependency FutureWarning: pgmpy StructureScore deprecated"
+  ],
+  "files": {
+    "test_apply_native.py": "0b0ccfbfc159f5bd9c3368bc56ae459f64929ce5687826fbba8ecf2d51ee800b",
+    "test_published_replication.py": "4a6039eb6b7a349f8c5b6d91441818d100ddd71dc8de861e329e55453cc1e29b",
+    "apply_native.py": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+    "pairwise_followup.py": "ede19a3641197414851b49e8a3ccd5ff8f3c5a9ce55ecefec9f56f37e6de3515"
+  }
+}

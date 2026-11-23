@@ -1,0 +1,2514 @@
+[
+  {
+    "method": "GLUE / scGLUE",
+    "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+    "year": 2022,
+    "doi": "10.1038/s41587-022-01284-4",
+    "url": "https://www.nature.com/articles/s41587-022-01284-4",
+    "family": "Guided variational and adversarial integration",
+    "training_information": "Unpaired assay matrices plus signed, weighted feature-guidance graph; optional additional regulatory evidence.",
+    "objective": "Modality VAEs, guidance-graph reconstruction and weighted adversarial alignment.",
+    "target": "Joint cell/feature embeddings and regulatory scores; TF networks additionally combine binding evidence and SCENIC.",
+    "training_pairing": "Unpaired in core study; extensions can use paired supervision.",
+    "validation_information": "Paired-cell alignment, paired correlations, pcHi-C/eQTL and curated TF-network evidence.",
+    "theorem_applicability": "Fixed guidance and identical full assay laws give identical objectives; no general causal-DAG identification theorem found in inspected methods.",
+    "positive_restrictions": "Shared-state generative model and informative biological feature graph can support regulatory prediction.",
+    "evidence_locator": "Original Methods: The GLUE framework; Weighted adversarial alignment; Results: Integrative regulatory inference; Discussion.",
+    "evidence_level": "full_methods",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9546775/fullTextXML",
+      "https://scglue.readthedocs.io/en/latest/reginf.html"
+    ],
+    "caveat": "Do not dismiss reported regulatory validation; symmetric feature scores alone do not determine causal direction.",
+    "status": "peer-reviewed",
+    "paper_id": "P01",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://www.nature.com/articles/s41587-022-01284-4",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41587-022-01284-4",
+        "doi": "10.1038/s41587-022-01284-4",
+        "sources": [
+          "openalex_01.json#19",
+          "openalex_03.json#95",
+          "openalex_07.json#7"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "scConfluence",
+    "title": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-51382-x",
+    "url": "https://www.nature.com/articles/s41467-024-51382-x",
+    "family": "Autoencoder and partial optimal transport",
+    "training_information": "Separate matrices and annotations converting some features to a common space; batch labels when available.",
+    "objective": "Stochastic autoencoder reconstruction, partial-cost-plan inverse OT and latent unbalanced Sinkhorn.",
+    "target": "Biological cell alignment, clustering and feature imputation.",
+    "training_pairing": "No cell pairs required.",
+    "validation_information": "Cell labels and pairing used in evaluation; original task embeds the supplied dataset.",
+    "theorem_applicability": "The rIOT lemma rewrites an optimization objective for a given plan; it does not identify a biological causal graph.",
+    "positive_restrictions": "Informative connected features and partial population overlap guide matching.",
+    "evidence_locator": "Methods: scConfluence, Eqs.7–13; Training details; Outputs.",
+    "evidence_level": "full_methods",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-51382-x"
+    ],
+    "caveat": "Paper squared IOT distance differs from pinned native Euclidean distance; local pilot also changes inputs/evaluation.",
+    "status": "peer-reviewed",
+    "paper_id": "P02",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://www.nature.com/articles/s41467-024-51382-x",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41467-024-51382-x",
+        "doi": "10.1038/s41467-024-51382-x",
+        "sources": [
+          "openalex_03.json#4",
+          "europepmc_02.json#25"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "scMRDR",
+    "title": "scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration",
+    "year": 2025,
+    "version": "NeurIPS 2025 proceedings; inspected author manuscript arXiv v2, 2026-01-17",
+    "doi": "10.52202/085713-5170",
+    "url": "https://arxiv.org/html/2510.24987v2",
+    "family": "Disentangled variational and adversarial integration",
+    "training_information": "Unpaired gene-aligned matrices, activity conversion, feature masks and optional batch covariates; no cell-type labels.",
+    "objective": "Shared/specific beta-VAE, masked ZINB reconstruction, adversarial modality loss and within-assay isometry.",
+    "target": "Cell-type conservation, modality/batch mixing, spatial imputation.",
+    "training_pairing": "No pairs required; shared feature semantics remain an input.",
+    "validation_information": "Annotated public benchmarks and scIB metrics; labels excluded from training.",
+    "theorem_applicability": "Section 2 explicitly acknowledges latent nonidentifiability; no causal-identification theorem found in inspected methods.",
+    "positive_restrictions": "Independent shared/specific latent subspaces and gene-level measurement model with geometry regularization.",
+    "evidence_locator": "§2; §3.2–3.5, Eqs.3–13; §4.1–4.2.",
+    "evidence_level": "full_methods",
+    "evidence_urls": [
+      "https://arxiv.org/html/2510.24987v2",
+      "https://doi.org/10.52202/085713-5170"
+    ],
+    "caveat": "'No prior' does not mean no gene correspondence or no modeling restrictions. The inspected v2 is later than the 2025 proceedings.",
+    "status": "peer-reviewed conference proceedings; inspected arXiv revision",
+    "paper_id": "P03",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://arxiv.org/html/2510.24987v2",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.52202/085713-5170",
+        "doi": "10.52202/085713-5170",
+        "sources": [
+          "openalex_01.json#4"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "SCOT",
+    "title": "SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport",
+    "year": 2022,
+    "doi": "10.1089/cmb.2021.0446",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8812493/",
+    "family": "Gromov–Wasserstein manifold alignment",
+    "training_information": "Separate matrices; within-assay kNN graph distances; no feature or cell correspondences required.",
+    "objective": "Entropically regularized GW coupling followed by barycentric projection.",
+    "target": "Probabilistic cell correspondence and aligned measurements.",
+    "training_pairing": "Unpaired core fit; self-tuning uses GW cost.",
+    "validation_information": "Simulation truth and coassays; paper also compares correspondence-based parameter selection.",
+    "theorem_applicability": "GW/OT optimization theory does not identify a biological residual coupling; observed-law counterexamples remain applicable.",
+    "positive_restrictions": "Assumes shared biology expressed in sufficiently comparable geometry.",
+    "evidence_locator": "§2.1–2.4; Algorithm 1; real-data evaluation.",
+    "evidence_level": "full_methods",
+    "caveat": "Unsupervised self-tuning is a heuristic, not a causal-identification theorem.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8812493/"
+    ],
+    "paper_id": "P04",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8812493/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1089/cmb.2021.0446",
+        "doi": "10.1089/cmb.2021.0446",
+        "sources": [
+          "openalex_03.json#15"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "SCOTv2",
+    "title": "SCOTv2: Single-Cell Multiomic Alignment with Disproportionate Cell-Type Representation",
+    "year": 2022,
+    "doi": "10.1089/cmb.2022.0270",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9805876/",
+    "family": "Unbalanced Gromov–Wasserstein alignment",
+    "training_information": "Separate assay geometry; anchor modality for multiple assays; no required cross-assay feature matches.",
+    "objective": "Unbalanced GW relaxes mass constraints; barycentric mapping/coembedding.",
+    "target": "Alignment with unequal cell-type proportions and multiple modalities.",
+    "training_pairing": "Unpaired fit and self-tuning variant.",
+    "validation_information": "Coassays and noncoassays with natural/simulated imbalance; cell labels assess accuracy.",
+    "theorem_applicability": "Relaxing marginal mass constraints handles imbalance but does not observe cross-assay residual dependence.",
+    "positive_restrictions": "Shared cell types/lineages and informative within-assay geometry.",
+    "evidence_locator": "Introduction; §2 Methods; self-tuning and noncoassay evaluations.",
+    "evidence_level": "full_methods",
+    "caveat": "Explicitly distinguishes noncoassay sampling from coassay benchmarks; retain that positive advance.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9805876/"
+    ],
+    "paper_id": "P05",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9805876/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1089/cmb.2022.0270",
+        "doi": "10.1089/cmb.2022.0270",
+        "sources": [
+          "openalex_03.json#92"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Pamona",
+    "title": "Manifold alignment for heterogeneous single-cell multi-omics data integration using Pamona",
+    "year": 2022,
+    "version": "Published online 2021; Bioinformatics 38 issue 2022",
+    "doi": "10.1093/bioinformatics/btab594",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696097/",
+    "family": "Partial Gromov–Wasserstein alignment",
+    "training_information": "Within-assay geodesic distances and shared mass estimate; optional cell-type or cell-pair prior.",
+    "objective": "Partial entropic GW with virtual cells, then geometry-preserving embedding.",
+    "target": "Shared and assay-specific populations and probabilistic coupling.",
+    "training_pairing": "Unpaired default; supervised extension supported.",
+    "validation_information": "Simulations/coassays; heterogeneous PBMC analysis incorporates cell-type annotations.",
+    "theorem_applicability": "Partial-transport construction is not a theorem identifying biological causal edges.",
+    "positive_restrictions": "Comparable partial manifolds; known labels/pairs reduce alignment ambiguity.",
+    "evidence_locator": "§2.1–2.2; §3.5; Discussion.",
+    "evidence_level": "full_methods",
+    "caveat": "Best label-assisted examples cannot be treated as unsupervised evidence.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696097/"
+    ],
+    "publication_dates": {
+      "online": "2021-08-16",
+      "issue": "2022-01",
+      "preferred_year_basis": "journal issue year, matching publisher citation",
+      "note": "Crossref online publication year 2021 and issue year 2022 are both correct; they identify the same article.",
+      "primary_url": "https://academic.oup.com/bioinformatics/article/38/1/211/6353029"
+    },
+    "paper_id": "P06",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696097/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/bioinformatics/btab594",
+        "doi": "10.1093/bioinformatics/btab594",
+        "sources": [
+          "openalex_03.json#30",
+          "openalex_07.json#13"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "UnionCom",
+    "title": "Unsupervised topological alignment for single-cell multi-omics integration",
+    "year": 2020,
+    "doi": "10.1093/bioinformatics/btaa443",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7355262/",
+    "family": "Geometry matching",
+    "training_information": "Separate feature matrices without cell or feature links; within-assay geodesic distances.",
+    "objective": "Soft distance-matrix matching with global scale, then coupled t-SNE-like embedding.",
+    "target": "Cell alignment and shared embedding.",
+    "training_pairing": "Unpaired core; known matches can constrain the matching matrix.",
+    "validation_information": "Simulations and coassayed sc-GEM/scNMT benchmarks.",
+    "theorem_applicability": "Optimization claims concern matching; Discussion explicitly recognizes indistinguishable symmetric structures.",
+    "positive_restrictions": "Similar intrinsic topology, sufficiently asymmetric informative geometry.",
+    "evidence_locator": "Methods A1–A3; Discussion limitations.",
+    "evidence_level": "full_methods",
+    "caveat": "Reported biological asymmetry can help alignment; it is not a general residual-copula identification condition.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7355262/"
+    ],
+    "paper_id": "P07",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7355262/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/bioinformatics/btaa443",
+        "doi": "10.1093/bioinformatics/btaa443",
+        "sources": [
+          "openalex_01.json#8",
+          "europepmc_02.json#55"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "MMD-MA (original)",
+    "title": "Jointly Embedding Multiple Single-Cell Omics Measurements",
+    "year": 2019,
+    "doi": "10.4230/LIPIcs.WABI.2019.10",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8496402/",
+    "family": "Kernel manifold alignment",
+    "training_information": "Separate within-domain kernels; no known cell/feature correspondences.",
+    "objective": "MMD between latent distributions plus distortion and projection penalties.",
+    "target": "Shared manifold embedding.",
+    "training_pairing": "Unpaired fitting.",
+    "validation_information": "Synthetic manifolds and 61 coassayed methylation/expression cells.",
+    "theorem_applicability": "Representer theorem supports kernel parameterization; no biological causal-identification theorem located in inspected methods.",
+    "positive_restrictions": "Shared manifold and similar latent point distributions with enough structure to align.",
+    "evidence_locator": "Methods: unsupervised manifold alignment, MMD-MA algorithm, optimization; Discussion.",
+    "evidence_level": "full_methods",
+    "caveat": "Nonconvex optimization and matching ambiguity are distinct limitations.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8496402/"
+    ],
+    "paper_id": "P08",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8496402/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "MMD-MA (scaling study)",
+    "title": "Unsupervised manifold alignment for single-cell multi-omics data",
+    "year": 2020,
+    "doi": "10.1145/3388440.3412410",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8095090/",
+    "family": "Kernel manifold alignment",
+    "training_information": "Separate measurements; extends MMD-MA GPU implementation and bandwidth selection.",
+    "objective": "Inherited MMD, distortion and projection objective.",
+    "target": "Practical alignment of approximately 2,000-cell coassays.",
+    "training_pairing": "Core alignment does not require correspondence.",
+    "validation_information": "Coassayed RNA/accessibility datasets and parameter comparisons.",
+    "theorem_applicability": "No causal-theorem conclusion drawn from abstract/limited indexed method excerpts.",
+    "positive_restrictions": "Inherited shared-manifold premise; demonstrated practical scaling.",
+    "evidence_locator": "Abstract and indexed §2.6–2.7 excerpts; original 2019 methods separately inspected.",
+    "evidence_level": "abstract",
+    "caveat": "Full-text browser blocked and Europe PMC XML failed; not a complete methods audit.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8095090/"
+    ],
+    "paper_id": "P09",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8095090/",
+    "evidence_depth": "limited",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "MATCHER",
+    "title": "MATCHER: manifold alignment reveals correspondence between single cell transcriptome and epigenome dynamics",
+    "year": 2017,
+    "doi": "10.1186/s13059-017-1269-0",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5525279/",
+    "family": "One-dimensional trajectory alignment",
+    "training_information": "Separate matrices, biological orientation prior, same population/process/cell type.",
+    "objective": "GPLVM pseudotime followed by monotone quantile warping to common master time.",
+    "target": "State correspondence, generated profiles and cross-modal correlations.",
+    "training_pairing": "Unpaired mode; separate paired shared-GPLVM extension.",
+    "validation_information": "scM&T-seq/sc-GEM pairs withheld for validation; independent-lab RNA comparison.",
+    "theorem_applicability": "Restricted monotone state completion can succeed; no unrestricted residual-coupling or causal-DAG identification follows.",
+    "positive_restrictions": "One-dimensional monotone process; common sampling distribution; correct orientation supplied biologically.",
+    "evidence_locator": "Overview assumptions; correlation evaluation; Methods warping; paired extension.",
+    "evidence_level": "full_methods",
+    "caveat": "Paper explicitly says correct orientation cannot be inferred from data alone.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5525279/"
+    ],
+    "paper_id": "P10",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5525279/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "bindSC",
+    "title": "Bi-order multimodal integration of single-cell data",
+    "year": 2022,
+    "doi": "10.1186/s13059-022-02679-x",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082907/",
+    "family": "Bi-order canonical correlation",
+    "training_information": "Unpaired matrices plus initial feature-conversion/fusion matrix, such as gene activity.",
+    "objective": "Iterative cell- and feature-level CCA with regularization toward initial conversion.",
+    "target": "Coembedding, fusion matrix, imputation and association networks.",
+    "training_pairing": "No cell pairs required for fitting.",
+    "validation_information": "Coassayed retina/bone marrow and predicted-profile correlations.",
+    "theorem_applicability": "Fixed-point/local-convergence claim is computational, not causal identification.",
+    "positive_restrictions": "Useful initial feature correspondence and shared correlated structure.",
+    "evidence_locator": "Methods: initializing feature matching, Bi-CCA, parameter optimization, protein–gene networks.",
+    "evidence_level": "full_methods",
+    "caveat": "Protein–gene networks use correlations in imputed profiles; no directed intervention claim established.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082907/"
+    ],
+    "paper_id": "P11",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082907/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1186/s13059-022-02679-x",
+        "doi": "10.1186/s13059-022-02679-x",
+        "sources": [
+          "openalex_02.json#10",
+          "openalex_03.json#93"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "scDART",
+    "title": "scDART: integrating unmatched scRNA-seq and scATAC-seq data and learning cross-modality relationship simultaneously",
+    "year": 2022,
+    "doi": "10.1186/s13059-022-02706-x",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238247/",
+    "family": "Prior-constrained neural trajectory mapping",
+    "training_information": "Separate RNA/ATAC matrices and genomic gene-activity prior; optional root/cell anchors.",
+    "objective": "Neural activity mapping, diffusion-distance preservation, MMD alignment and prior sparsity.",
+    "target": "Integrated trajectories and nonlinear accessibility-to-expression mapping.",
+    "training_pairing": "Unpaired core; scDART-anchor uses known correspondences.",
+    "validation_information": "Unmatched datasets, coassays and simulated activity functions.",
+    "theorem_applicability": "A learned regulatory mapping is model-dependent; no general causal-identification theorem located in inspected methods.",
+    "positive_restrictions": "Similar trajectories; prior zeros assumed correct and prior ones may be false positives.",
+    "evidence_locator": "Methods: prior GAM, trajectory preservation, MMD, anchors; Discussion.",
+    "evidence_level": "full_methods",
+    "caveat": "Paper acknowledges imperfect prediction and recommends paired data for stronger prediction when available.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238247/"
+    ],
+    "paper_id": "P12",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238247/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "scJoint",
+    "title": "scJoint integrates atlas-scale single-cell RNA-seq and ATAC-seq data with transfer learning",
+    "year": 2022,
+    "doi": "10.1038/s41587-021-01161-6",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35058621/",
+    "family": "Semisupervised transfer learning",
+    "training_information": "Annotated RNA and unlabeled ATAC collections.",
+    "objective": "Neural joint training of labeled/unlabeled observations; detailed losses not independently audited here.",
+    "target": "Cell-type label transfer and joint visualization.",
+    "training_pairing": "Cell pairs not required; RNA labels are supervision.",
+    "validation_information": "Atlases, ASAP-seq and CITE-seq label accuracy.",
+    "theorem_applicability": "No causal-identification conclusion drawn from abstract-only evidence.",
+    "positive_restrictions": "Informative annotated reference and transferable cell identities.",
+    "evidence_locator": "PubMed primary abstract and bibliographic record.",
+    "evidence_level": "abstract",
+    "caveat": "Original full-text retrieval blocked; cannot classify this as wholly unsupervised or claim a full objective audit.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/35058621/"
+    ],
+    "paper_id": "P13",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pubmed.ncbi.nlm.nih.gov/35058621/",
+    "evidence_depth": "limited",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "sciCAN",
+    "title": "sciCAN: single-cell chromatin accessibility and gene expression data integration via cycle-consistent adversarial network",
+    "year": 2022,
+    "doi": "10.1038/s41540-022-00245-6",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464763/",
+    "family": "Contrastive and cycle-consistent adversarial integration",
+    "training_information": "Gene-aligned expression/accessibility inputs; augmented within-assay cells; no cell-type labels required.",
+    "objective": "Noise-contrastive representation, modality adversary, generated-accessibility adversary and latent cycle loss.",
+    "target": "Coembedding, label transfer, trajectories and activity–expression analyses.",
+    "training_pairing": "Unpaired integration.",
+    "validation_information": "Five datasets; Multiome hematopoietic hierarchy; CRISPR examples are downstream applications.",
+    "theorem_applicability": "Cycle consistency constrains a chosen mapping; does not identify unrestricted biological residual coupling.",
+    "positive_restrictions": "Comparable shared features and coherent latent mapping.",
+    "evidence_locator": "Methods: Representation learning, Domain adaptation, Cycle-consistent network; Results.",
+    "evidence_level": "full_methods",
+    "caveat": "Perturbation applications must not be treated as information available in our baseline.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464763/"
+    ],
+    "paper_id": "P14",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464763/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "scTopoGAN",
+    "title": "scTopoGAN: unsupervised manifold alignment of single-cell data",
+    "year": 2023,
+    "doi": "10.1093/bioadv/vbad171",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10701792/",
+    "family": "Topological autoencoder and adversarial alignment",
+    "training_information": "Separate matrices, no overlapping cells/features or training labels required.",
+    "objective": "Topology-preserving autoencoders; select GAN alignments by persistent-pairing distortion.",
+    "target": "Cell-type/trajectory-aligned manifolds.",
+    "training_pairing": "Unpaired fitting; labels evaluated afterward.",
+    "validation_information": "PBMC, bone marrow, scGEM cell-type matching.",
+    "theorem_applicability": "Topology preservation selects mappings; no general causal-identification theorem located in inspected methods.",
+    "positive_restrictions": "Modalities share sufficiently similar manifold topology.",
+    "evidence_locator": "§2.1.1–2.1.2; Discussion.",
+    "evidence_level": "full_methods",
+    "caveat": "Authors explicitly acknowledge imperfect shared-manifold assumption and difficulty without linking ground truth.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10701792/"
+    ],
+    "paper_id": "P15",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10701792/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "SCIM",
+    "title": "SCIM: universal single-cell matching with unpaired feature sets",
+    "year": 2020,
+    "doi": "10.1093/bioinformatics/btaa843",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7773480/",
+    "family": "Adversarial autoencoders and bipartite matching",
+    "training_information": "Separate matrices, no feature matches; censored cell labels orient the latent space.",
+    "objective": "Reconstruction plus adversarial modality alignment; minimum-cost matching with null nodes.",
+    "target": "Sibling-cell matching across technologies.",
+    "training_pairing": "No physical cell pairs required; semisupervised label information used.",
+    "validation_information": "Simulated pseudotime and real RNA/CyTOF cell-type concordance.",
+    "theorem_applicability": "Paper explicitly gives reversed-trajectory alignment ambiguity; labels address orientation, not unrestricted residual causality.",
+    "positive_restrictions": "Common low-dimensional structure, approximately shared population distribution and orientation supervision.",
+    "evidence_locator": "§2.1 The orientation of latent space; §2.2; matching evaluation.",
+    "evidence_level": "full_methods",
+    "caveat": "Reported matching accuracy is mainly cell-type agreement, not exact same-cell causal recovery.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7773480/"
+    ],
+    "paper_id": "P16",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7773480/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/bioinformatics/btaa843",
+        "doi": "10.1093/bioinformatics/btaa843",
+        "sources": [
+          "openalex_01.json#96",
+          "europepmc_02.json#63"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "MultiMAP",
+    "title": "MultiMAP: dimensionality reduction and integration of multimodal data",
+    "year": 2021,
+    "doi": "10.1186/s13059-021-02565-y",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8686224/",
+    "family": "Shared-manifold neighborhood graph",
+    "training_information": "Full assay features plus shared-feature spaces/activity conversions; optional supplied correspondence in synthetic example.",
+    "objective": "Construct multimodal fuzzy neighborhood graph and minimize embedding cross-entropy.",
+    "target": "Integrated embedding/graph, clustering and trajectory comparisons.",
+    "training_pairing": "Unpaired biological integration; synthetic Swiss-roll example supplies 1% manifold positions.",
+    "validation_information": "Cell annotations, multiome pairing and structure metrics.",
+    "theorem_applicability": "Riemannian/topological construction does not establish unrestricted causal-DAG identification.",
+    "positive_restrictions": "Uniformity on a shared latent manifold and informative shared-feature neighborhoods.",
+    "evidence_locator": "Methods MultiMAP; framework; synthetic-data description.",
+    "evidence_level": "full_methods",
+    "caveat": "Using unshared features does not eliminate reliance on shared-feature information.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8686224/"
+    ],
+    "paper_id": "P17",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8686224/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "SCOT+",
+    "title": "SCOT+: a comprehensive software suite for single-cell alignment using optimal transport",
+    "year": 2026,
+    "doi": "10.1093/bioadv/vbaf314",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198364/",
+    "family": "Unified GW, COOT and augmented GW transport",
+    "training_information": "Separate matrices/geometry; optional known cell/feature supervision costs.",
+    "objective": "Balanced/unbalanced cell and feature couplings with entropy and marginal penalties.",
+    "target": "Cell/feature alignment and imputed coassay-like data.",
+    "training_pairing": "Unsupervised and supervised configurations explicitly available.",
+    "validation_information": "Balanced/imbalanced datasets and feature-supervised cross-species alignment.",
+    "theorem_applicability": "Optimization formulations and feature couplings are not a causal-identification guarantee; observed-law argument applies to unsupervised modes.",
+    "positive_restrictions": "Comparable geometry/features; reliable homolog or cell-label supervision improves specific matching.",
+    "evidence_locator": "§2.1–2.4; §3.5; Discussion.",
+    "evidence_level": "full_methods",
+    "caveat": "Discussion proposes future GRN applications; it does not establish that generated coassays retain causal truth.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198364/"
+    ],
+    "paper_id": "P18",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198364/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/bioadv/vbaf314",
+        "doi": "10.1093/bioadv/vbaf314",
+        "sources": [
+          "openalex_03.json#49"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "BiCLUM",
+    "title": "BiCLUM: Bilateral contrastive learning for unpaired single-cell multi-omics integration",
+    "year": 2026,
+    "doi": "10.1371/journal.pcbi.1013932",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12904586/",
+    "family": "Bilateral cell/feature contrastive learning",
+    "training_information": "Gene activity or gene–protein correspondence; MNN pseudo-cell pairs and known feature pairs.",
+    "objective": "Cell/feature autoencoder reconstruction plus bilateral InfoNCE.",
+    "target": "Coembedding, label transfer and biological feature analyses.",
+    "training_pairing": "No true cell pairs required; constructed MNN pairs train alignment.",
+    "validation_information": "Paired and unpaired benchmarks, FOSCTTM and cell-type metrics.",
+    "theorem_applicability": "Constructed positives are input-derived alignment choices, not observations of the missing residual joint.",
+    "positive_restrictions": "Reliable converted features/MNN anchors and valid gene–protein mappings.",
+    "evidence_locator": "Materials and methods, Steps 1–3; paired/unpaired benchmark sections.",
+    "evidence_level": "full_methods",
+    "caveat": "PCA feeds encoders but MNNs use shared original feature space; distinguish both from biological pairing.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12904586/"
+    ],
+    "paper_id": "P19",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12904586/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1371/journal.pcbi.1013932",
+        "doi": "10.1371/journal.pcbi.1013932",
+        "sources": [
+          "openalex_01.json#1",
+          "openalex_07.json#28",
+          "europepmc_02.json#14"
+        ]
+      },
+      {
+        "key": "doi:10.5167/uzh-290869",
+        "doi": "10.5167/uzh-290869",
+        "sources": [
+          "openalex_01.json#2",
+          "openalex_07.json#29"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "UnpairReg",
+    "title": "Integration of single-cell multi-omics data by regression analysis on unpaired observations",
+    "year": 2022,
+    "doi": "10.1186/s13059-022-02726-7",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295346/",
+    "family": "Restricted covariance regression",
+    "training_information": "Unpaired RNA/ATAC covariance, genomic distances, cis support and initialization.",
+    "objective": "Fit expression covariance with beta-transformed accessibility covariance; distance penalty and imputation refinement.",
+    "target": "Cis-regulatory coefficients and predicted expression.",
+    "training_pairing": "No paired observations required to fit.",
+    "validation_information": "Simulations, multiome prediction and coembedding; some truth uses imputed data.",
+    "theorem_applicability": "Positive restricted-model evidence; no coefficient-uniqueness/causal-identification theorem located in inspected methods.",
+    "positive_restrictions": "Linear accessibility-to-expression model; conditionally independent gene errors; hard cis zeros beyond 200 kb.",
+    "evidence_locator": "Methods UnpairReg model, Eqs.1–3; Algorithm; Discussion limitations.",
+    "evidence_level": "full_methods",
+    "caveat": "Covariance factorization can be ambiguous; assumptions may fail for TF effects independent of accessibility.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295346/"
+    ],
+    "paper_id": "P20",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295346/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1186/s13059-022-02726-7",
+        "doi": "10.1186/s13059-022-02726-7",
+        "sources": [
+          "openalex_01.json#3",
+          "openalex_07.json#46",
+          "europepmc_02.json#42"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "MinNet",
+    "title": "Single-cell multi-omics integration for unpaired data by a siamese network with graph-based contrastive loss",
+    "year": 2023,
+    "doi": "10.1186/s12859-022-05126-7",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9812356/",
+    "family": "Paired-reference supervised transfer (boundary case)",
+    "training_information": "Paired multiome/CITE-seq reference cells and cell-type labels; unpaired target inputs after training.",
+    "objective": "Siamese true-pair contrastive loss, graph-based negative margins and cell-type classification.",
+    "target": "Unpaired-target coembedding and smoothed mini-bulk regulatory associations.",
+    "training_pairing": "Paired supervised training is required by the described model.",
+    "validation_information": "Held-out datasets and pcHi-C support for inferred associations.",
+    "theorem_applicability": "Outside the strict no-paired-reference baseline; cannot apply the same observed-law theorem without including training reference information.",
+    "positive_restrictions": "Transferable paired labeled reference.",
+    "evidence_locator": "Results overview; Methods Siamese network, margin, Training process.",
+    "evidence_level": "full_methods",
+    "caveat": "Title's 'unpaired' describes target application, not the complete training information.",
+    "status": "peer-reviewed",
+    "strict_unpaired_eligibility": "excluded_from_strict_baseline_retained_as_boundary",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9812356/"
+    ],
+    "paper_id": "P21",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9812356/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1186/s12859-022-05126-7",
+        "doi": "10.1186/s12859-022-05126-7",
+        "sources": [
+          "openalex_01.json#5",
+          "openalex_07.json#23",
+          "europepmc_02.json#45"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "GROTIA",
+    "title": "An interpretable Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis",
+    "year": 2026,
+    "doi": "10.1093/gigascience/giag012",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12970605/",
+    "family": "Kernel graph-regularized optimal transport",
+    "training_information": "Within-assay kernels and kNN geometry; separate supervised/unsupervised benchmark settings.",
+    "objective": "Latent Sinkhorn alignment, graph Laplacian smoothness and RKHS projection constraints.",
+    "target": "Embedding, co-clustering and feature-importance/regulatory candidates.",
+    "training_pairing": "Unsupervised mode exists; partial-label evaluation distinguished.",
+    "validation_information": "Simulations and coassays; label transfer, FOSCTTM and biological enrichment.",
+    "theorem_applicability": "Representer theorem concerns kernel representation, not identification of the biological joint or causal graph.",
+    "positive_restrictions": "Shared manifold/lineage geometry; optional supervision; motif and proximity evidence for regulatory interpretation.",
+    "evidence_locator": "Methods Problem formulation through GROTIA algorithm; interpretability; Results semi/unsupervised settings.",
+    "evidence_level": "full_methods",
+    "caveat": "Embedding derivatives and motif/proximity-supported pairs are not intervention-effect estimates.",
+    "status": "peer-reviewed",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12970605/"
+    ],
+    "paper_id": "P22",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12970605/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/gigascience/giag012",
+        "doi": "10.1093/gigascience/giag012",
+        "sources": [
+          "openalex_01.json#44",
+          "openalex_03.json#3",
+          "europepmc_02.json#6"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "uniPort",
+    "title": "A unified computational framework for single-cell data integration with optimal transport",
+    "year": 2022,
+    "doi": "10.1038/s41467-022-35094-8",
+    "url": "https://www.nature.com/articles/s41467-022-35094-8",
+    "family": "Coupled variational autoencoding and unbalanced optimal transport",
+    "training_information": "Unpaired matrices with common and assay-specific variable genes; chromatin gene-activity conversion supplies feature correspondence.",
+    "objective": "Coupled-VAE ELBO plus minibatch unbalanced OT between Gaussian latent posteriors.",
+    "target": "Integrated cell embeddings, probabilistic transport and cross-dataset imputation.",
+    "training_pairing": "Core RNA/ATAC study hides pairs; optional annotations, known correspondence and sample weights are supported.",
+    "validation_information": "Paired PBMC pairs reserved for evaluation, unpaired RNA/ATAC benchmarks and held-out-gene spatial imputation.",
+    "theorem_applicability": "Strict convexity of the fixed-cost regularized transport subproblem selects a plan; it does not identify biological residual coupling or a causal graph.",
+    "positive_restrictions": "Informative shared genes/activity conversion and common latent measurement model; relaxed marginals accommodate unmatched populations.",
+    "evidence_locator": "Methods: uniPort framework Eqs.1–7; Data preprocessing; Results: uniPort integrates scATAC and scRNA data; Discussion.",
+    "evidence_level": "full_methods",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9715710/fullTextXML"
+    ],
+    "caveat": "Positive paired-cell and imputation results are not a general direct-edge guarantee; activity construction influences results.",
+    "status": "peer-reviewed",
+    "paper_id": "P23",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://www.nature.com/articles/s41467-022-35094-8",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41467-022-35094-8",
+        "doi": "10.1038/s41467-022-35094-8",
+        "sources": [
+          "openalex_03.json#1"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "SIMBA",
+    "title": "SIMBA: single-cell embedding along with features",
+    "year": 2024,
+    "doi": "10.1038/s41592-023-01899-8",
+    "url": "https://www.nature.com/articles/s41592-023-01899-8",
+    "family": "Heterogeneous graph embedding",
+    "training_information": "Cell–feature relations and optional sequence/motif annotations; unpaired RNA/ATAC graphs linked by gene-activity-derived mutual neighbors after SVD.",
+    "objective": "Typed negative-sampling graph-link prediction with dot-product scores, log loss and embedding regularization.",
+    "target": "Cell/feature co-embedding, markers, modality integration and candidate regulatory relationships.",
+    "training_pairing": "Supports unpaired integration and paired multimodal analysis as separate graph constructions.",
+    "validation_information": "Unpaired integration tested by masking dual-omics pairing; main regulator/target demonstration uses paired SHARE-seq and motif/proximity evidence.",
+    "theorem_applicability": "Graph-link likelihood is conditional on constructed edges; no general causal-identification theorem found in inspected methods.",
+    "positive_restrictions": "Shared activity features, motif compatibility and genomic proximity constrain predictions; paired graphs contain extra joint information.",
+    "evidence_locator": "Methods: Batch correction; Multi-omics integration; Graph embeddings with type constraints; Identification of TF target genes. Results: multimodal analysis versus multi-omics integration.",
+    "evidence_level": "full_methods",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11166568/fullTextXML"
+    ],
+    "caveat": "Do not attribute paired regulator evidence to the unpaired-only arm, or treat computational neighbor edges as observed cell pairing.",
+    "status": "peer-reviewed",
+    "publication_dates": {
+      "online": "2023-05-29",
+      "version_of_record": "2023-05-29",
+      "issue": "2024-06",
+      "preferred_year_basis": "journal issue year, matching publisher citation",
+      "note": "The original extraction used online year 2023; issue year 2024 is now the preferred bibliographic year, consistently with Pamona.",
+      "primary_url": "https://www.nature.com/articles/s41592-023-01899-8"
+    },
+    "paper_id": "P24",
+    "category": "unpaired_methods",
+    "source_extraction": "agents/unpaired_methods.json",
+    "source_extraction_sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+    "primary_url": "https://www.nature.com/articles/s41592-023-01899-8",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "Seurat v3 anchors",
+    "title": "Comprehensive Integration of Single-Cell Data",
+    "year": 2019,
+    "doi": "10.1016/j.cell.2019.05.031",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+    "family": "shared_feature_anchor",
+    "training_information": "Corresponding features, CCA/PCA and mutual-neighbor anchors. RNA/ATAC alignment uses gene-level accessibility summaries; reference-label transfer additionally uses reference labels. Protein transfer uses a CITE-seq reference with paired RNA/protein.",
+    "target": "Dataset harmonization, cell-state annotation and transfer of measured features.",
+    "theorem_applicability": "Mode-dependent: strictly disjoint anchor construction with only allowed feature mappings is covered; paired-reference feature transfer has additional joint information and is outside that contract.",
+    "positive_restrictions": "Representative shared features and transferable reference neighborhoods support alignment/prediction; they do not identify arbitrary residual copulas.",
+    "evidence_locator": "STAR Methods: dimensional reduction, anchor identification, data integration and label transfer; Results protein imputation.",
+    "evidence_level": "full_methods",
+    "caveat": "Anchor pairs are inferred correspondences, not necessarily the same cell. Treat reference-assisted modes separately.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2019",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P25",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "Seurat WNN",
+    "title": "Integrated analysis of multimodal single-cell data",
+    "year": 2021,
+    "doi": "10.1016/j.cell.2021.04.048",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238499/",
+    "family": "paired_neighborhood",
+    "training_information": "Multiple modalities measured in the same cells. Within- and cross-modality neighbor prediction learns cell-specific modality weights; no cell-type labels are needed for those weights.",
+    "target": "Joint cell representation, clustering, visualization and state definition.",
+    "theorem_applicability": "Outside strict-disjoint setting in its native form: same-cell correspondence is an input.",
+    "positive_restrictions": "Paired measurements provide joint observational evidence; downstream causal orientation still needs separate assumptions.",
+    "evidence_locator": "STAR Methods: Weighted Nearest Neighbor Analysis; within/across-modality prediction and cell-specific weights.",
+    "evidence_level": "full_methods",
+    "caveat": "A WNN cell-neighbor graph is not a regulatory graph. Unimodal query mapping uses an already constructed reference.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2021",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [
+      {
+        "openalex_id": "https://openalex.org/W3164692211",
+        "doi": "https://doi.org/10.1016/j.cell.2021.04.048",
+        "source_file": "raw/openalex_02.json"
+      }
+    ],
+    "discovery_note": "Central OpenAlex DOI match",
+    "paper_id": "P26",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238499/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1016/j.cell.2021.04.048",
+        "doi": "10.1016/j.cell.2021.04.048",
+        "sources": [
+          "openalex_02.json#84"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Seurat v5 dictionary/bridge",
+    "title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+    "year": 2024,
+    "online_year": 2023,
+    "doi": "10.1038/s41587-023-01767-y",
+    "url": "https://www.nature.com/articles/s41587-023-01767-y",
+    "family": "paired_bridge_dictionary",
+    "training_information": "An additional multiomic dataset measures both modalities in the same cells. Its cells become dictionary atoms; unimodal datasets are reconstructed in those shared coordinates. Annotated references support label transfer.",
+    "target": "Cross-modality reference mapping and scalable integration, including histone and methylation queries.",
+    "theorem_applicability": "Outside strict-disjoint information contract: the paired bridge supplies cross-view information.",
+    "positive_restrictions": "Coverage of relevant states and transferability between bridge/reference/query populations are needed for successful mapping.",
+    "evidence_locator": "Publisher abstract; indexed primary Results and Figure 1 workflow. Supplemental mathematical methods not inspected.",
+    "evidence_level": "abstract",
+    "caveat": "Publication online in 2023, issue year 2024. PMC author title includes 'massively'. Publisher/PMC full-text access failed; source excerpts verify bridge requirement.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2024",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [
+      {
+        "openalex_id": "https://openalex.org/W4378212544",
+        "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+        "source_file": "raw/openalex_02.json"
+      },
+      {
+        "openalex_id": "https://openalex.org/W4378212544",
+        "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+        "source_file": "raw/openalex_03.json"
+      }
+    ],
+    "discovery_note": "Central OpenAlex DOI match",
+    "paper_id": "P27",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://www.nature.com/articles/s41587-023-01767-y",
+    "evidence_depth": "limited",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41587-023-01767-y",
+        "doi": "10.1038/s41587-023-01767-y",
+        "sources": [
+          "openalex_02.json#8",
+          "openalex_03.json#48"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "LIGER",
+    "title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+    "year": 2019,
+    "doi": "10.1016/j.cell.2019.05.006",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+    "family": "shared_feature_factor",
+    "training_information": "Unpaired datasets on corresponding gene-level features. Integrative nonnegative factorization learns shared and dataset-specific metagenes; factor-neighborhood construction and normalization align cells. No true cell pairs required.",
+    "target": "Shared/dataset-specific variation and cell identity across datasets/modalities.",
+    "theorem_applicability": "Covered for independent disjoint assays with fixed allowed gene mappings and a broad causal class.",
+    "positive_restrictions": "Common metagene structure and meaningful shared features can support state alignment; NMF constraints are not general causal restrictions.",
+    "evidence_locator": "Figure 1; Methods: Performing iNMF Using Block Coordinate Descent, Equation 1.",
+    "evidence_level": "full_methods",
+    "caveat": "This record concerns original LIGER, not later unshared-feature extensions. Regulatory-element nomination is not intervention identification.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2019",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P28",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "MOFA",
+    "title": "Multi-Omics Factor Analysis—a framework for unsupervised integration of multi-omics data sets",
+    "year": 2018,
+    "doi": "10.15252/msb.20178124",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+    "family": "sample_aligned_factor",
+    "training_information": "Multiple views measured on the same or partially overlapping identified samples. A common sample-factor matrix and view-specific loadings allow missing entries/views; feature identities need not match between views.",
+    "target": "Major sources of variation, factor interpretation, clustering and missing-data imputation.",
+    "theorem_applicability": "Native overlapping-sample use is outside strict-disjoint assumptions. Completely disconnected sample/view blocks require additional constraints; permitting missing values alone does not identify their joint.",
+    "positive_restrictions": "A valid shared-factor model and enough linked observations support estimation of common factors.",
+    "evidence_locator": "Results and Figure 1; Materials and Methods: model specification and missing values.",
+    "evidence_level": "full_methods",
+    "caveat": "Shared factors and loadings describe variation, not directed causal effects. Original examples include bulk samples and paired single cells.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2018",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P29",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "MOFA+",
+    "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+    "year": 2020,
+    "doi": "10.1186/s13059-020-02015-1",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+    "family": "sample_aligned_multigroup_factor",
+    "training_information": "Sample-indexed views plus known groups such as experiments/conditions. Shared view loadings and group-specific factor activities, sparse/ARD priors and missing-data handling extend MOFA. Different cell groups may be disjoint while modalities remain linked within observed samples.",
+    "target": "Shared and group/view-specific variability, interpretable factors and scalable multimodal analysis.",
+    "theorem_applicability": "Depends on observation pattern: paired/overlapping views are outside strict-disjoint contract. Disjoint experimental groups are not synonymous with unlinked modalities.",
+    "positive_restrictions": "Connected observation patterns and correct factor/sparsity assumptions support joint estimation.",
+    "evidence_locator": "Figure 1; Methods: model regularization and guidelines for groups/views.",
+    "evidence_level": "full_methods",
+    "caveat": "Missing-view tolerance does not demonstrate identification for wholly disconnected modality blocks; no general regulatory-DAG theorem inferred.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2020",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P30",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "MultiVI",
+    "title": "MultiVI: deep generative model for the integration of multimodal data",
+    "year": 2023,
+    "doi": "10.1038/s41592-023-01909-9",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+    "family": "paired_partial_multimodal_vae",
+    "training_information": "Jointly profiled RNA/ATAC cells plus optional RNA-only/ATAC-only cells and batch covariates. Modality encoders are aligned/averaged for paired observations, with observed-modality likelihoods and adversarial alignment. Additional protein modalities are supported.",
+    "target": "Joint state representations, missing-modality imputation, uncertainty and differential analysis.",
+    "theorem_applicability": "Published paired-assisted regime is outside strict-disjoint contract. A hypothetical all-disjoint, no-paired-pretraining mode remains subject to the theorem; the paper's 1–99% artificial unpairing is not proof for that setting.",
+    "positive_restrictions": "Sufficient representative paired data and transportable decoder relationships can support prediction.",
+    "evidence_locator": "Results: model, paired/unpaired integration; Methods: inference/training; official MultiVI model documentation.",
+    "evidence_level": "full_methods",
+    "caveat": "Artificially unpaired cells appear in both assay lists; remaining cells are paired. This is not independent disjoint sampling. No all-unpaired guarantee claimed here.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2023",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P31",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "totalVI",
+    "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+    "year": 2021,
+    "doi": "10.1038/s41592-020-01050-x",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+    "family": "paired_rna_protein_vae",
+    "training_information": "Same-cell RNA/protein counts from CITE-seq, with optional batch/donor covariates. Supports differing antibody panels and RNA-only batches in addition to jointly profiled training data.",
+    "target": "Joint representation, protein-background correction, feature correlation estimation, integration and differential expression.",
+    "theorem_applicability": "Outside strict-disjoint contract for its paired training regime, including subsequent unimodal queries.",
+    "positive_restrictions": "Paired observation and appropriate count/background/batch models support estimating joint observational relationships.",
+    "evidence_locator": "Results: The totalVI model; Methods: conditional joint distribution p(x_n,y_n|s_n), integration with missing proteins.",
+    "evidence_level": "full_methods",
+    "caveat": "Useful explicit counterexample to 'integration never recovers relationships': paired-data correlation estimation is a stated task, but correlation is not causal orientation.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": null,
+      "crossref_year_match": null,
+      "fallback": "Primary PMC article header and indexed full Methods independently verify title, publication year and DOI; DOI handle valid."
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P32",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "Cobolt",
+    "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+    "year": 2021,
+    "doi": "10.1186/s13059-021-02556-z",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+    "family": "paired_bridge_multimodal_vae",
+    "training_information": "Joint-modality cells provide the linkage between distinct feature spaces; optional separate RNA-only and ATAC-only datasets are integrated through the multimodal latent model and transfer correction. No peak-to-gene matching is required.",
+    "target": "Shared cell representation, joint clustering and integration of multimodal/unimodal datasets.",
+    "theorem_applicability": "Outside strict-disjoint contract in the demonstrated integration setup: jointly sequenced bridge cells are supplied.",
+    "positive_restrictions": "Representative paired cells and transferable latent factors permit cross-view estimation.",
+    "evidence_locator": "Results: The Cobolt model; Methods: hierarchical model and correcting missing modalities.",
+    "evidence_level": "full_methods",
+    "caveat": "A missing-modality encoder is not evidence that training with no paired bridge identifies the same joint.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2021",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [
+      {
+        "openalex_id": "https://openalex.org/W4200581587",
+        "doi": "https://doi.org/10.1186/s13059-021-02556-z",
+        "source_file": "raw/openalex_02.json"
+      }
+    ],
+    "discovery_note": "Central OpenAlex DOI match",
+    "paper_id": "P33",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1186/s13059-021-02556-z",
+        "doi": "10.1186/s13059-021-02556-z",
+        "sources": [
+          "openalex_02.json#11"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "scMVP",
+    "title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+    "year": 2022,
+    "doi": "10.1186/s13059-021-02595-6",
+    "url": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+    "family": "paired_attention_multiview_vae",
+    "training_information": "RNA counts and TF-IDF-transformed ATAC profiles from the same cells. Joint encoder/decoder with Gaussian-mixture latent prior, attention modules and clustering-consistency constraints. The mixture component is inferred, not automatically an observed cell-type label.",
+    "target": "Joint embedding, denoising/imputation, clustering, trajectories and cis-regulatory-element analysis.",
+    "theorem_applicability": "Outside strict-disjoint contract: the joint observations and matched rows are inputs.",
+    "positive_restrictions": "Same-cell data allow joint observational estimation subject to model/noise adequacy.",
+    "evidence_locator": "Results: The scMVP model, Figure 1 and joint ELBO; Methods: multi-view model.",
+    "evidence_level": "full_methods",
+    "caveat": "CRE identification and inferred cluster consistency do not alone establish direct causal direction. Do not describe this as an unpaired-only algorithm.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2022",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P34",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "scMM",
+    "title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+    "year": 2021,
+    "doi": "10.1016/j.crmeth.2021.100071",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+    "family": "paired_mixture_experts_vae",
+    "training_information": "Paired multimodal training observations. Each modality's encoder learns latent values that reconstruct all measured modalities through a mixture-of-experts posterior; trained encoders support unimodal cross-generation.",
+    "target": "Interpretable latent representation, clustering and bidirectional missing-modality generation.",
+    "theorem_applicability": "Outside strict-disjoint contract when trained as published on paired CITE-seq/SHARE-seq cells.",
+    "positive_restrictions": "Learnable cross-view relationships and training coverage can support prediction on related cells.",
+    "evidence_locator": "Figure 1; STAR Methods: ELBO for x_1:M and mixture-of-experts; training/test split descriptions.",
+    "evidence_level": "full_methods",
+    "caveat": "Decoder traversals called regulatory programs are model feature associations; generating an unobserved modality does not identify intervention effects.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2021",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P35",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "BABEL",
+    "title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+    "year": 2021,
+    "doi": "10.1073/pnas.2023070118",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+    "family": "paired_supervised_translation",
+    "training_information": "Jointly profiled RNA/ATAC cells train interoperable modality encoders and decoders using within- and cross-modality reconstruction. Trained networks are applied to single-modality cells; additional protein translation is demonstrated.",
+    "target": "Cross-modality prediction and hypothesis generation in related cell contexts.",
+    "theorem_applicability": "Outside strict-disjoint contract: paired training supervision contributes joint information even when deployment queries are unimodal.",
+    "positive_restrictions": "Transferability from sufficiently representative paired training examples and adequate predictive model.",
+    "evidence_locator": "Results: design/training on jointly profiled cells; Methods: model architecture and training.",
+    "evidence_level": "full_methods",
+    "caveat": "Cross-decoding predicts outcomes; it does not implement a biological intervention. Performance on new contexts does not remove distribution-shift assumptions.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2021",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P36",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "CLUE",
+    "title": "Cross-Linked Unified Embedding for cross-modality representation learning",
+    "year": 2022,
+    "doi": "10.52202/068431-1160",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/662b1774ba8845fc1fa3d1fc0177ceeb-Abstract-Conference.html",
+    "family": "paired_partial_crossencoder",
+    "training_information": "Partially paired multimodal cells supervise self/cross encoders into modality-specific subspaces. Self/cross ELBOs, same-cell representation agreement and adversarial alignment enable missing-modality embeddings.",
+    "target": "Comprehensive embeddings, cross-modality matching and prediction.",
+    "theorem_applicability": "Outside strict-disjoint contract in its published supervised regime; true paired training is explicit.",
+    "positive_restrictions": "Paired coverage and transferable cross-encoder mappings support correspondence estimation.",
+    "evidence_locator": "NeurIPS paper Sections 3, 4.3–4.5; Introduction explicitly states paired multimodal supervision.",
+    "evidence_level": "full_methods",
+    "caveat": "CLUE is distinct from unsupervised GLUE despite sharing a software package. Challenge matching accuracy is not causal-DAG identification.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2022",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P37",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/662b1774ba8845fc1fa3d1fc0177ceeb-Abstract-Conference.html",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "JAMIE",
+    "title": "Joint variational autoencoders for multimodal imputation and embedding",
+    "year": 2023,
+    "doi": "10.1038/s42256-023-00663-z",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+    "family": "partial_correspondence_manifold_vae",
+    "training_information": "Two modality matrices and optional user correspondence F, including known same-cell pairs. Joint VAEs aggregate corresponding latent values. Additional inferred correspondence is derived from within-assay geodesic distances; reconstruction, KL, combination and alignment losses are used.",
+    "target": "Cross-modal embedding, phenotype prediction, imputation and feature attribution.",
+    "theorem_applicability": "Known-pair F lies outside strict-disjoint contract. With only data-derived correspondence and independent disjoint cells, the theorem applies to general causal recovery.",
+    "positive_restrictions": "True correspondence or a valid restrictive manifold/coupling assumption can improve recoverability.",
+    "evidence_locator": "Methods 4.1, 4.6–4.8; Equation 8 inferred correspondence; Figure 2.",
+    "evidence_level": "full_methods",
+    "caveat": "SHAP feature importance is predictive, not an intervention effect. The paper primarily evaluates partial known correspondence; do not silently treat inferred F as observed pairs.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2023",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P38",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "Harmony",
+    "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+    "year": 2019,
+    "doi": "10.1038/s41592-019-0619-0",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6884693/",
+    "family": "horizontal_batch_embedding_comparator",
+    "training_information": "A common low-dimensional feature embedding, normally PCA of shared expression features, and known batch/covariate labels. Soft diversity-aware clustering and local linear correction; spatial-expression example uses shared genes.",
+    "target": "Batch-adjusted embedding preserving cell-state variation.",
+    "theorem_applicability": "Primarily horizontal/common-feature comparator, not an estimator of a missing cross-assay joint. If repurposed on disjoint assays, derived corrections do not escape the theorem.",
+    "positive_restrictions": "Adequate common representation and separable batch/biological effects support harmonization.",
+    "evidence_locator": "Online Methods 1.1 and 1.4; Discussion: corrected coordinates and original expression retained.",
+    "evidence_level": "full_methods",
+    "caveat": "Do not classify horizontal batch correction as failed cross-assay causal recovery. Optional labels/initial clusters must be disclosed.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2019",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P39",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6884693/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "Mowgli",
+    "title": "Paired single-cell multi-omics data integration with Mowgli",
+    "year": 2023,
+    "doi": "10.1038/s41467-023-43019-2",
+    "url": "https://www.nature.com/articles/s41467-023-43019-2",
+    "family": "paired_ot_matrix_factorization",
+    "training_information": "Every omics matrix has the same identified cell columns. Shared nonnegative cell factors and modality-specific loadings minimize entropic OT reconstruction plus entropy regularization; feature costs use within-modality cosine distances. No cell-type labels are required for the factorization.",
+    "target": "Joint cell embedding, clustering and interpretable feature programs.",
+    "theorem_applicability": "Outside the strict-disjoint contract: observed same-cell correspondence links the modalities.",
+    "positive_restrictions": "Pairing provides joint information; low-dimensional nonnegative factors impose a representation model.",
+    "evidence_locator": "Results: Mowgli a new tool, Eq. 1; Methods: Notations, Optimal transport, Mowgli; same cell columns and within-modality ground costs.",
+    "evidence_level": "full_methods",
+    "caveat": "OT is a reconstruction loss here, not evidence that OT can identify arbitrary missing cell couplings or orient causal edges.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2023",
+      "crossref_year_match": true
+    },
+    "openalex_discovery_matches": [
+      {
+        "openalex_id": "https://openalex.org/W4388969005",
+        "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+        "source_file": "raw/openalex_01.json"
+      },
+      {
+        "openalex_id": "https://openalex.org/W4388969005",
+        "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+        "source_file": "raw/openalex_03.json"
+      },
+      {
+        "openalex_id": "https://openalex.org/W4388969005",
+        "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+        "source_file": "raw/openalex_07.json"
+      }
+    ],
+    "discovery_note": "Central OpenAlex DOI match",
+    "paper_id": "P40",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://www.nature.com/articles/s41467-023-43019-2",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41467-023-43019-2",
+        "doi": "10.1038/s41467-023-43019-2",
+        "sources": [
+          "openalex_01.json#25",
+          "openalex_03.json#24",
+          "openalex_07.json#8"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "scMoMaT",
+    "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+    "year": 2023,
+    "doi": "10.1038/s41467-023-36066-2",
+    "url": "https://www.nature.com/articles/s41467-023-36066-2",
+    "family": "mosaic_matrix_trifactorization",
+    "training_information": "Shared cell-batch or feature entities connect observed matrices. If disconnected, annotation-derived pseudo-modalities connect them: binarized gene-body/upstream-2kb ATAC sums become pseudo-RNA; corresponding RNA counts become pseudo-protein. Matrix tri-factorization shares cell/feature factors and association components; clusters are inferred, then used for marker retraining.",
+    "target": "Mosaic cell integration, clustering and cluster-specific multimodal biomarkers.",
+    "theorem_applicability": "Mode-dependent: observed paired bridges add joint information; pseudo-modalities computed from strict-disjoint assays plus fixed annotation remain within the theorem.",
+    "positive_restrictions": "Connected entity graph and shared low-rank factors support integration; generated feature proxies encode assumptions about modality correspondence.",
+    "evidence_locator": "Framework Eqs. 1–3 and entity connectivity; Methods: Calculating pseudo-count matrices, Retraining procedure.",
+    "evidence_level": "full_methods",
+    "caveat": "Pseudo-RNA is not a second measured assay. Marker importance and association matrices do not by themselves establish direct regulation.",
+    "bibliography_verification": {
+      "doi_handle_valid": true,
+      "metadata_artifact": "agents/bridge_citation_verification_addendum.json",
+      "primary_title_year_verified": true,
+      "crossref_title_match": true,
+      "crossref_year": "2023",
+      "crossref_year_match": true
+    },
+    "related_preprint_discovery": [
+      {
+        "openalex_id": "https://openalex.org/W4281385066",
+        "doi": "https://doi.org/10.1101/2022.05.17.492336",
+        "source_file": "raw/openalex_07.json",
+        "note": "Related preprint; extraction and citation use the final 2023 paper."
+      }
+    ],
+    "openalex_discovery_matches": [],
+    "discovery_note": "Nominated boundary method, verified by targeted primary-source lookup; not necessarily retrieved within the capped central OpenAlex queries.",
+    "paper_id": "P41",
+    "category": "paired_bridge_factor_methods",
+    "source_extraction": "agents/bridge_methods.json",
+    "source_extraction_sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+    "primary_url": "https://www.nature.com/articles/s41467-023-36066-2",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41467-023-36066-2",
+        "doi": "10.1038/s41467-023-36066-2",
+        "sources": [
+          "europepmc_02.json#48"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "d_orazio_statistical_matching",
+    "title": "Old and new approaches in statistical matching when samples are drawn with complex survey designs",
+    "authors": [
+      "Marcello D'Orazio",
+      "Marco Di Zio",
+      "Mauro Scanu"
+    ],
+    "year": null,
+    "publication_status": "Istat-hosted author manuscript; publication year and venue not established from inspected copy",
+    "doi": null,
+    "primary_url": "https://www.istat.it/en/files/2013/12/Old-and-new-approaches-in-statistical-matching.pdf",
+    "family": "statistical_matching_nonidentification",
+    "observation_contract": "Distinct independent samples observe (X,Y) and (X,Z) from a common population.",
+    "target": "Joint relationships among never-coobserved variables; identified sets rather than only sampling uncertainty.",
+    "assumptions": "General block marginals do not determine the joint. Conditional independence or auxiliary restrictions can select a completion; complex survey designs require separate sampling treatment.",
+    "theorem_applicability": "Direct context for the missing residual-coupling problem. Supports model-class-qualified nonidentification, not universal failure of restricted models.",
+    "evidence_locator": "Author manuscript pp.1–2; §3 equations (5)–(6) define compatible joint distributions.",
+    "evidence_level": "primary_full_text_argument_reviewed",
+    "discovery_origin": "prior focused review; direct primary retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P42",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "balabdaoui_unlinked_monotone",
+    "title": "Unlinked Monotone Regression",
+    "authors": [
+      "Fadoua Balabdaoui",
+      "Charles R. Doss",
+      "Cécile Durot"
+    ],
+    "year": 2021,
+    "publication_status": "JMLR 22(172):1–60",
+    "doi": null,
+    "primary_url": "https://www.jmlr.org/papers/v22/20-689.html",
+    "full_text_url": "https://www.jmlr.org/papers/volume22/20-689/20-689.pdf",
+    "family": "positive_unlinked_regression",
+    "observation_contract": "Separate predictor and response samples; unlike shuffled regression they need not contain the same individuals or sample sizes.",
+    "target": "A scalar monotone regression function, not an unrestricted multivariate causal DAG.",
+    "assumptions": "Independent additive structural noise with known distribution; monotonicity; stated design/deconvolution regularity. Unknown-noise extensions use additional information.",
+    "theorem_applicability": "Genuine recovery from unpaired marginals within a restricted model class. Known count-measurement noise does not automatically supply the required biological structural-noise law.",
+    "evidence_locator": "Introduction pp.3–4; Assumption A0 §2.2; Theorems 1–5; §7 unknown-noise extensions.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "prior focused review; direct primary retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P43",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "locatello_unsupervised_disentanglement",
+    "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
+    "authors": [
+      "Francesco Locatello",
+      "Stefan Bauer",
+      "Mario Lucic",
+      "Gunnar Raetsch",
+      "Sylvain Gelly",
+      "Bernhard Schölkopf",
+      "Olivier Bachem"
+    ],
+    "year": 2019,
+    "publication_status": "ICML, PMLR 97:4114–4124",
+    "doi": null,
+    "primary_url": "https://proceedings.mlr.press/v97/locatello19a.html",
+    "full_text_url": "https://proceedings.mlr.press/v97/locatello19a/locatello19a.pdf",
+    "family": "latent_disentanglement_nonidentification",
+    "observation_contract": "Unsupervised observations from an unrestricted latent generative model; no informative auxiliary supervision.",
+    "target": "Recovery of disentangled latent coordinates.",
+    "assumptions": "Dimension greater than one and a factorized latent density; the model class admits entangling bijections with identical observable distributions.",
+    "theorem_applicability": "Related information argument, but not a theorem about original measured-variable DAGs or every structured multimodal model. Correct inductive restrictions can exclude alternatives.",
+    "evidence_locator": "§3, Theorem 1 and following construction; Appendix A.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "known primary source; direct retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P44",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "hyvarinen_auxiliary_nonlinear_ica",
+    "title": "Nonlinear ICA Using Auxiliary Variables and Generalized Contrastive Learning",
+    "authors": [
+      "Aapo Hyvarinen",
+      "Hiroaki Sasaki",
+      "Richard Turner"
+    ],
+    "year": 2019,
+    "publication_status": "AISTATS, PMLR 89:859–868",
+    "doi": null,
+    "primary_url": "https://proceedings.mlr.press/v89/hyvarinen19a.html",
+    "full_text_url": "https://proceedings.mlr.press/v89/hyvarinen19a/hyvarinen19a.pdf",
+    "family": "positive_auxiliary_variable_nonlinear_ica",
+    "observation_contract": "Each observed mixture accompanies an auxiliary variable such as time, history, or treatment label.",
+    "target": "Latent components up to componentwise transformations; some exponential-family cases retain linear ambiguity.",
+    "assumptions": "Conditional source independence, invertible smooth mixing/demixing, sufficiently diverse auxiliary modulation, and specified contrastive regression class.",
+    "theorem_applicability": "Auxiliary information can identify sources under restrictions. An arbitrary integrated state or label does not automatically satisfy variability or independence, and sources are not a causal DAG.",
+    "evidence_locator": "§4 Theorems 1–3; §5 warns against arbitrary auxiliary-variable construction.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "known primary source; direct retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P45",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "khemakhem_ivae",
+    "title": "Variational Autoencoders and Nonlinear ICA: A Unifying Framework",
+    "authors": [
+      "Ilyes Khemakhem",
+      "Diederik Kingma",
+      "Ricardo Monti",
+      "Aapo Hyvarinen"
+    ],
+    "year": 2020,
+    "publication_status": "AISTATS, PMLR 108:2207–2217",
+    "doi": null,
+    "primary_url": "https://proceedings.mlr.press/v108/khemakhem20a.html",
+    "full_text_url": "https://proceedings.mlr.press/v108/khemakhem20a/khemakhem20a.pdf",
+    "family": "positive_identifiable_latent_generative_model",
+    "observation_contract": "An observed mixture and auxiliary covariate are jointly available per sample.",
+    "target": "Latent generative model/posterior equivalence class, not arbitrary original cross-assay causal edges.",
+    "assumptions": "Injective mixing; conditionally factorized exponential-family latents; fixed observation-noise model with the characteristic-function condition; full-rank auxiliary modulation. Stronger equivalence needs further conditions.",
+    "theorem_applicability": "A positive restricted identification result. Basic Theorem 1 permits linear sufficient-statistic ambiguity; ordinary multimodal VAEs do not inherit it merely by using a shared latent space.",
+    "evidence_locator": "§4 Theorems 1–4; Proposition 1 covers unresolved Gaussian location-modulation ambiguity.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "known primary source; direct retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P46",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "gresele_multiview_ica",
+    "title": "The Incomplete Rosetta Stone problem: Identifiability results for Multi-view Nonlinear ICA",
+    "authors": [
+      "Luigi Gresele",
+      "Paul K. Rubenstein",
+      "Arash Mehrjou",
+      "Francesco Locatello",
+      "Bernhard Schölkopf"
+    ],
+    "year": 2020,
+    "publication_status": "UAI 2019 proceedings published as PMLR 115:217–227 in 2020",
+    "doi": null,
+    "primary_url": "https://proceedings.mlr.press/v115/gresele20a.html",
+    "full_text_url": "https://proceedings.mlr.press/v115/gresele20a/gresele20a.pdf",
+    "family": "positive_paired_multiview_nonlinear_ica",
+    "observation_contract": "Simultaneous views of the same source realization; contrastive learning distinguishes genuine joint tuples from shuffled tuples.",
+    "target": "Shared independent sources or their corrupted versions, up to stated transformations.",
+    "assumptions": "Invertible view mixing, componentwise independent corruption and sufficiently distinct views; noiseless/noisy/many-view results differ.",
+    "theorem_applicability": "The true joint-view information differs from disjoint assay marginals. It cannot justify treating integration-generated pairs as observed positive pairs.",
+    "evidence_locator": "§3 model equations (5)–(7), Theorems 1, 4, 5 and 8; §2 contrastive sampling.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "known primary source and central OpenAlex query06",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W2946649969",
+        "title": "The Incomplete Rosetta Stone Problem: Identifiability Results for Multi-View Nonlinear ICA",
+        "year": 2019,
+        "doi": "https://doi.org/10.48550/arxiv.1905.06642",
+        "query_files": [
+          "raw/openalex_06.json"
+        ],
+        "relation": "related preprint or earlier version; canonical metadata verified separately"
+      }
+    ],
+    "paper_id": "P47",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.48550/arxiv.1905.06642",
+        "doi": "10.48550/arxiv.1905.06642",
+        "sources": [
+          "openalex_06.json#1"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "peters_restricted_anm",
+    "title": "Causal Discovery with Continuous Additive Noise Models",
+    "authors": [
+      "Jonas Peters",
+      "Joris M. Mooij",
+      "Dominik Janzing",
+      "Bernhard Schölkopf"
+    ],
+    "year": 2014,
+    "publication_status": "JMLR 15(58):2009–2053",
+    "doi": null,
+    "primary_url": "https://www.jmlr.org/papers/v15/peters14a.html",
+    "full_text_url": "https://www.jmlr.org/papers/volume15/peters14a/peters14a.pdf",
+    "family": "positive_causal_orientation_given_joint",
+    "observation_contract": "The joint distribution of all modeled observed variables is available.",
+    "target": "The causal DAG, beyond its usual Markov equivalence class.",
+    "assumptions": "Restricted additive-noise SEM, independent exogenous errors, causal minimality and the stated non-reversibility/regularity conditions.",
+    "theorem_applicability": "Supports orientation after justified joint recovery. Additive neural equations alone are insufficient; the theorem does not recover missing cross-assay couplings.",
+    "evidence_locator": "Definition 27 and Theorem 28; Condition 19; Examples 24 and 26.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "prior focused review; direct primary retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P48",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "koo_schrodinger_statistical_matching",
+    "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+    "authors": [
+      "Eunho Koo",
+      "Tongseok Lim",
+      "Jinwon Sohn"
+    ],
+    "year": 2026,
+    "publication_status": "arXiv preprint 2606.22770v1, 22 June 2026",
+    "doi": "10.48550/arXiv.2606.22770",
+    "primary_url": "https://arxiv.org/html/2606.22770v1",
+    "family": "positive_structured_transport_completion",
+    "observation_contract": "Partially overlapping (X,Y) and (X,Z) samples; reported tuning can additionally use complete auxiliary triplets.",
+    "target": "Joint-distribution recovery and predictive completion, not causal orientation.",
+    "assumptions": "Gaussian recovery theorem requires an oracle cost or residual-sign-compatible alignment cost and a suitable regularization parameter.",
+    "theorem_applicability": "Existence of a recovering parameter is not identification of it from marginals. The oracle/sign restriction and parameter selection depend on missing joint information or extra assumptions.",
+    "evidence_locator": "Theorem 3.2; §3.2 tuning discussion; Appendix A parameter formula and B.4 auxiliary-triplet validation.",
+    "evidence_level": "primary_full_text_theorem_statement_and_protocol_reviewed",
+    "discovery_origin": "prior focused review and central OpenAlex query04",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W7165641419",
+        "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2606.22770",
+        "query_files": [
+          "raw/openalex_04.json"
+        ],
+        "relation": "same publication"
+      }
+    ],
+    "paper_id": "P49",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.48550/arxiv.2606.22770",
+        "doi": "10.48550/arxiv.2606.22770",
+        "sources": [
+          "openalex_04.json#9"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "kim_fractional_imputation",
+    "title": "Statistical matching using fractional imputation",
+    "authors": [
+      "Jae Kwang Kim",
+      "Emily Berg",
+      "Taesung Park"
+    ],
+    "year": 2016,
+    "publication_status": "Survey Methodology 42(1):19–40; final publisher version",
+    "doi": null,
+    "primary_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2016001/article/14539-eng.pdf",
+    "family": "positive_identified_statistical_matching_model",
+    "observation_contract": "Independent samples measure common covariates with different outcomes.",
+    "target": "Joint-model parameters and imputed joint analyses.",
+    "assumptions": "A correctly specified identified parametric model. One sufficient construction uses instrumental-variable relevance and exclusion with a linear outcome equation.",
+    "theorem_applicability": "Recovery can use restrictions rather than new measurements. IV validity is not guaranteed by a shared state. Numerical EM convergence alone should not be treated as a general identification proof.",
+    "evidence_locator": "§2 Remark 2.1 and Example 2.1; §3 identified-model premise; §7 limitations. Final version differs from 2015 preprint wording.",
+    "evidence_level": "primary_full_text_model_and_derivation_reviewed",
+    "discovery_origin": "Koo reference snowball; central OpenAlex query04 preprint; supplementary publisher verification",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W2432928090",
+        "title": "Statistical Matching using Fractional Imputation",
+        "year": 2015,
+        "doi": "https://doi.org/10.48550/arxiv.1510.03782",
+        "query_files": [
+          "raw/openalex_04.json"
+        ],
+        "relation": "related preprint or earlier version; canonical metadata verified separately"
+      }
+    ],
+    "paper_id": "P50",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.48550/arxiv.1510.03782",
+        "doi": "10.48550/arxiv.1510.03782",
+        "sources": [
+          "openalex_04.json#12"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "sturma_unpaired_causal_representation",
+    "title": "Unpaired Multi-Domain Causal Representation Learning",
+    "authors": [
+      "Nils Sturma",
+      "Chandler Squires",
+      "Mathias Drton",
+      "Caroline Uhler"
+    ],
+    "year": 2023,
+    "publication_status": "NeurIPS 36, main conference",
+    "doi": "10.52202/075280-1496",
+    "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6c8985579293e0209bdaa4f21bb1d237-Abstract-Conference.html",
+    "full_text_url": "https://arxiv.org/html/2302.00993v2",
+    "family": "positive_unpaired_joint_and_shared_causal_graph",
+    "observation_contract": "Only separate domain marginals; no paired measurements or interventions required by the theorem.",
+    "target": "The observed joint law is identified exactly; signed-block representation ambiguities leave that law invariant. The shared latent DAG is identified up to relabeling; its coefficients can retain sign ambiguities.",
+    "assumptions": "Linear latent SEM and full-column-rank linear views, with no unspecified extra count kernel; independent distinct nonsymmetric standardized errors. Graph recovery needs separated shared/private blocks, two partial pure children per shared latent and rank faithfulness.",
+    "theorem_applicability": "A genuine counterexample to blanket impossibility from unpaired data. Its restricted model excludes the Gaussian counterfamily; it does not establish arbitrary feature-level regulation from raw counts.",
+    "evidence_locator": "Official PDF: Eq. (1)–(2) and Definition 2.1, pp4–5; C1–C2 and Theorem 3.1, p6; Definition 4.2 and C3–C4, pp7–8; Theorem 4.4, p8; Remark 3.3 and Appendix C.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "central OpenAlex query05 and supplementary primary search",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/6c8985579293e0209bdaa4f21bb1d237-Paper-Conference.pdf",
+    "measurement_scope": "Domain-private latent factors can represent noise within this model; appending Poisson/negative-binomial observations is not licensed by the theorem without another identification argument.",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W7133240739",
+        "title": "Unpaired Multi-Domain Causal Representation Learning",
+        "year": 2023,
+        "doi": "https://doi.org/10.52202/075280-1496",
+        "query_files": [
+          "raw/openalex_05.json"
+        ],
+        "relation": "same publication"
+      }
+    ],
+    "joint_graph_scope_distinction": "Remark 3.3 permits shared-to-private directed paths for joint-law identification, but no private-to-shared paths. Section 4 uses separated shared/private blocks for its shared-graph identification theorem.",
+    "paper_id": "P51",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.52202/075280-1496",
+        "doi": "10.52202/075280-1496",
+        "sources": [
+          "openalex_05.json#1"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "timilsina_unpaired_sca",
+    "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+    "authors": [
+      "Subash Timilsina",
+      "Sagar Shrestha",
+      "Xiao Fu"
+    ],
+    "year": 2024,
+    "publication_status": "NeurIPS 37, main conference",
+    "doi": "10.52202/079017-4058",
+    "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6c967a0e4168df9614a81ed4195ba78-Abstract-Conference.html",
+    "full_text_url": "https://arxiv.org/html/2409.19422v2",
+    "family": "positive_unpaired_shared_subspace",
+    "observation_contract": "Unpaired linear mixtures of common and private components; separate variants add identical mixing structure or a few paired anchors.",
+    "target": "Aligned shared components up to a common invertible linear transform; stronger ICA variants recover individual components.",
+    "assumptions": "Full-column-rank mixing, full-rank shared covariance, modality variability and restrictions removing distribution-preserving ambiguities; anchor variants have different assumptions.",
+    "theorem_applicability": "Unpaired distribution matching can be identifiable within restricted models. The shared-subspace result is not a theorem identifying arbitrary residual couplings or a causal DAG.",
+    "evidence_locator": "Official PDF: Eq. (1), §2; Assumption 1 and Theorem 1, pp4–5; Corollary 1, p5; additional same-mixing and paired-anchor variants in §4, pp6–7; Appendix H private components.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "central OpenAlex query06 and supplementary primary search",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e6c967a0e4168df9614a81ed4195ba78-Paper-Conference.pdf",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W4415795218",
+        "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+        "year": 2024,
+        "doi": "https://doi.org/10.52202/079017-4058",
+        "query_files": [
+          "raw/openalex_04.json",
+          "raw/openalex_06.json"
+        ],
+        "relation": "same publication"
+      }
+    ],
+    "paper_id": "P52",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.52202/079017-4058",
+        "doi": "10.52202/079017-4058",
+        "sources": [
+          "openalex_04.json#66",
+          "openalex_06.json#13"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "sun_biomedical_causal_representation",
+    "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+    "authors": [
+      "Yuewen Sun",
+      "Lingjing Kong",
+      "Guangyi Chen",
+      "Loka Li",
+      "Gongxu Luo",
+      "Zijian Li",
+      "Yixuan Zhang",
+      "Yujia Zheng",
+      "Mengyue Yang",
+      "Petar Stojanov",
+      "Eran Segal",
+      "Eric P. Xing",
+      "Kun Zhang"
+    ],
+    "year": 2025,
+    "publication_status": "ICLR 2025; proceedings verified despite PMC copy being labeled preprint",
+    "doi": null,
+    "primary_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/2ec91b31ac4aa578d99309d4f00c81ad-Abstract-Conference.html",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11952583/",
+    "family": "positive_joint_multimodal_causal_representation",
+    "observation_contract": "Theorems compare complete multimodal joint laws p(x), and the estimator uses jointly observed modality tuples.",
+    "target": "Latent subspaces/components connected across modalities; graph estimates evaluated empirically.",
+    "assumptions": "Smooth invertible generating maps, sufficient cross-modality influence/Jacobian rank and a structural sparsity condition excluding denser mixed representations.",
+    "theorem_applicability": "A relevant nonlinear biomedical positive result with a different observation contract. Replacing joint tuples by integration-generated pairs is not covered by its theorem.",
+    "evidence_locator": "Official PDF: Conditions 4.1/4.3 and Theorems 4.2/4.4, pp4–7; §5 joint estimation, pp8–9; proofs Appendix C. Theorem 4.4 explicitly assumes equality of full p(x).",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "central OpenAlex query05; supplementary PMC and ICLR verification",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/2ec91b31ac4aa578d99309d4f00c81ad-Paper-Conference.pdf",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W4404401814",
+        "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2411.06518",
+        "query_files": [
+          "raw/openalex_05.json"
+        ],
+        "relation": "related preprint or earlier version; canonical metadata verified separately"
+      }
+    ],
+    "paper_id": "P53",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.48550/arxiv.2411.06518",
+        "doi": "10.48550/arxiv.2411.06518",
+        "sources": [
+          "openalex_05.json#3"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "dugourd_cosmos",
+    "title": "Causal integration of multi-omics data with prior knowledge to generate mechanistic hypotheses",
+    "authors": [
+      "Aurelien Dugourd",
+      "Christoph Kuppe",
+      "Marco Sciacovelli",
+      "Enio Gjerga",
+      "Attila Gabor",
+      "Kristina B. Emdal",
+      "Vitor Vieira",
+      "Dorte B. Bekker-Jensen",
+      "Jennifer Kranz",
+      "Eric M. J. Bindels",
+      "Ana S. H. Costa",
+      "Abel Sousa",
+      "Pedro Beltrao",
+      "Miguel Rocha",
+      "Jesper V. Olsen",
+      "Christian Frezza",
+      "Rafael Kramann",
+      "Julio Saez-Rodriguez"
+    ],
+    "year": 2021,
+    "publication_status": "Molecular Systems Biology 17:e9730",
+    "doi": "10.15252/msb.20209730",
+    "primary_url": "https://link.springer.com/article/10.15252/msb.20209730",
+    "family": "causal_multiomics_prior_network_contextualization",
+    "observation_contract": "Bulk multi-omics tumor/normal contrasts with biological sample correspondence and a signed directed prior network.",
+    "target": "Coherent mechanistic hypotheses selected from prior pathways.",
+    "assumptions": "Curated regulatory signs/directions and activity footprints; optimization favors compact networks explaining measured changes.",
+    "theorem_applicability": "Additional directed biological knowledge changes the information contract. Authors frame outputs as hypotheses, not complete de novo causal identification.",
+    "evidence_locator": "Introduction; Fig.1; Discussion limitations; Methods prior-network construction and CARNIVAL optimization.",
+    "evidence_level": "primary_full_text_methods_and_limitations_reviewed",
+    "discovery_origin": "supplementary primary search",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W3124569282",
+        "title": "Causal integration of multi‐omics data with prior knowledge to generate mechanistic hypotheses",
+        "year": 2021,
+        "doi": "https://doi.org/10.15252/msb.20209730",
+        "query_files": [
+          "raw/openalex_01.json"
+        ],
+        "relation": "same publication"
+      }
+    ],
+    "paper_id": "P54",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.15252/msb.20209730",
+        "doi": "10.15252/msb.20209730",
+        "sources": [
+          "openalex_01.json#66"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "xi_propensity_alignment",
+    "title": "Propensity Score Alignment of Unpaired Multimodal Data",
+    "authors": [
+      "Johnny Xi",
+      "Jana Osea",
+      "Zuheng (David) Xu",
+      "Jason Hartford"
+    ],
+    "year": 2024,
+    "publication_status": "NeurIPS 37 (2024), main conference; official proceedings verified",
+    "doi": "10.52202/079017-4480",
+    "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ff56c8dc4c61017eab9771481b7fda0d-Abstract-Conference.html",
+    "family": "positive_unpaired_alignment_with_perturbation_labels",
+    "observation_contract": "Separate modalities with observed experimental labels perturbing a shared latent state.",
+    "target": "A common identifiable propensity representation and matching/prediction, not a causal DAG.",
+    "assumptions": "Injective modality measurement maps and treatment-independent private variation conditional on state; sufficiently informative perturbations for full state discrimination.",
+    "theorem_applicability": "A relevant biological alignment result using permitted information only if such labels and assumptions exist. Equal propensity scores need not imply equal states; residual causality is not identified by alignment alone.",
+    "evidence_locator": "§2; Propositions 3.1–3.2; Appendix A explicitly separates shuffled same-source data.",
+    "evidence_level": "primary_full_text_proposition_statement_reviewed",
+    "discovery_origin": "supplementary primary search",
+    "related_preprint_doi": "10.48550/arXiv.2404.01595",
+    "full_text_url": "https://arxiv.org/html/2404.01595v2",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ff56c8dc4c61017eab9771481b7fda0d-Paper-Conference.pdf",
+    "openalex_related_records": [],
+    "paper_id": "P55",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "id": "tong_ot_structural_grn",
+    "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-cell Data",
+    "authors": [
+      "Tsz Pan Tong",
+      "Aoran Wang",
+      "George Panagopoulos",
+      "Jun Pang"
+    ],
+    "year": 2026,
+    "publication_status": "ECML PKDD 2024 proceedings, CCIS2560, pp257–271; first online 7 May 2026",
+    "doi": "10.1007/978-3-032-25311-8_21",
+    "primary_url": "https://link.springer.com/chapter/10.1007/978-3-032-25311-8_21",
+    "family": "temporal_transport_and_empirical_grn_inference",
+    "observation_contract": "Known temporal snapshots of the same jointly measured gene panel; reported simulations shuffle existing trajectories at sampled times.",
+    "target": "A gene regulatory graph inferred from transport-reconstructed trajectories.",
+    "assumptions": "Temporal ordering, chosen transport geometry and a dynamical structural-inference model.",
+    "theorem_applicability": "A meaningful empirical challenger in a different design, not an identification theorem for disjoint modalities at one population snapshot. No general identifiability theorem was found in the inspected text.",
+    "evidence_locator": "Publisher 2026 metadata/abstract verified; full methods inspected in 2024 preprint: §3 OT trajectory construction; §4 structural inference; §5.1 shuffled temporal benchmark design. Final publisher full text is subscription gated.",
+    "evidence_level": "primary_preprint_full_text_methods_and_final_publication_metadata_reviewed",
+    "discovery_origin": "parent referral from independent integration-method reviewer",
+    "related_preprint_doi": "10.48550/arXiv.2409.15080",
+    "full_text_url": "https://arxiv.org/html/2409.15080v1",
+    "openalex_related_records": [
+      {
+        "id": "https://openalex.org/W7160425695",
+        "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-Cell Data",
+        "year": 2026,
+        "doi": "https://doi.org/10.1007/978-3-032-25311-8_21",
+        "query_files": [
+          "raw/openalex_03.json"
+        ],
+        "relation": "same publication"
+      }
+    ],
+    "paper_id": "P56",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1007/978-3-032-25311-8_21",
+        "doi": "10.1007/978-3-032-25311-8_21",
+        "sources": [
+          "openalex_03.json#5"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "id": "huang_cdnod",
+    "title": "Causal Discovery from Heterogeneous/Nonstationary Data",
+    "authors": [
+      "Biwei Huang",
+      "Kun Zhang",
+      "Jiji Zhang",
+      "Joseph Ramsey",
+      "Ruben Sanchez-Romero",
+      "Clark Glymour",
+      "Bernhard Schölkopf"
+    ],
+    "year": 2020,
+    "publication_status": "JMLR 21(89):1–53",
+    "doi": null,
+    "primary_url": "https://www.jmlr.org/papers/v21/19-232.html",
+    "full_text_url": "https://www.jmlr.org/papers/volume21/19-232/19-232.pdf",
+    "family": "positive_causal_discovery_with_heterogeneity",
+    "observation_contract": "Jointly measured variables with a domain or time index across changing distributions.",
+    "target": "Causal skeleton and directions supported by changes; otherwise an equivalence class.",
+    "assumptions": "Pseudo causal sufficiency, augmented faithfulness and independent mechanism changes/edge-specific conditions for orientation.",
+    "theorem_applicability": "Heterogeneity can add identifying information under explicit restrictions. Batch labels or independently missing cross-assay variables do not automatically supply the required joint conditional tests.",
+    "evidence_locator": "§3.1 Assumptions 1–2; Theorem 1; §4 Theorem 2 and Corollary 1.",
+    "evidence_level": "primary_full_text_theorem_statement_reviewed",
+    "discovery_origin": "known primary source; direct retrieval",
+    "openalex_related_records": [],
+    "paper_id": "P57",
+    "category": "identification_theory",
+    "source_extraction": "agents/theory_methods.json",
+    "source_extraction_sha256": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [],
+    "selection_provenance": "nominated_or_reference_followup_primary_source"
+  },
+  {
+    "method": "scIB atlas benchmark",
+    "title": "Benchmarking atlas-level data integration in single-cell genomics",
+    "year": 2022,
+    "doi": "10.1038/s41592-021-01336-8",
+    "url": "https://www.nature.com/articles/s41592-021-01336-8",
+    "family": "benchmark_horizontal_integration",
+    "training_information": "Multiple batches of common-feature RNA or ATAC data; some methods use labels; includes simulations.",
+    "target": "Batch removal, cell-identity and label-free biological conservation, usability and scalability.",
+    "theorem_applicability": "Horizontal-integration evaluation is not a test of completing a missing cross-assay joint or identifying direct cross-assay causal edges.",
+    "positive_restrictions": "Empirical evidence of useful biological conservation remains valid for the tested tasks.",
+    "evidence_locator": "Methods: Metrics; Ranking and metric aggregation; Results: scIB.",
+    "evidence_level": "full_methods",
+    "caveat": "Published online December 2021, volume 19 in 2022. No new integration runs performed in this review.",
+    "paper_id": "P58",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://www.nature.com/articles/s41592-021-01336-8",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41592-021-01336-8",
+        "doi": "10.1038/s41592-021-01336-8",
+        "sources": [
+          "openalex_07.json#49"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Xiao et al. RNA/ATAC benchmark",
+    "title": "Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data",
+    "year": 2024,
+    "doi": "10.1093/bib/bbae095",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10944570/",
+    "family": "benchmark_unpaired_paired_bridge",
+    "training_information": "Twelve integration methods across unpaired, paired and paired-guided tasks; paired datasets enable alignment evaluation.",
+    "target": "Modality mixing, cell-type conservation, single-cell alignment, trajectory conservation, runtime and usability.",
+    "theorem_applicability": "The reported metrics do not constitute a theorem or direct causal-DAG recovery benchmark.",
+    "positive_restrictions": "Useful alignment and trajectory results must be preserved rather than relabeled causal failures.",
+    "evidence_locator": "Introduction method categories; Discussion; Methods: trajectory conservation.",
+    "evidence_level": "full_methods",
+    "caveat": "Anonymized paired reference views and truly independent disjoint samples are different statistical designs.",
+    "paper_id": "P59",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10944570/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1093/bib/bbae095",
+        "doi": "10.1093/bib/bbae095",
+        "sources": [
+          "openalex_01.json#40",
+          "openalex_07.json#3"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Hu et al. prediction/integration benchmark",
+    "title": "Benchmarking algorithms for single-cell multi-omics prediction and integration",
+    "year": 2024,
+    "doi": "10.1038/s41592-024-02429-w",
+    "url": "https://www.nature.com/articles/s41592-024-02429-w",
+    "family": "benchmark_prediction_vertical_horizontal_mosaic",
+    "training_information": "Fourteen prediction algorithms and eighteen integration algorithms evaluated on 47 multimodal datasets.",
+    "target": "Protein/chromatin prediction and multimodal integration accuracy, across several observation patterns.",
+    "theorem_applicability": "Retained as evidence about declared benchmark scope only; no claim about all full-text theorem content is made.",
+    "positive_restrictions": "Prediction and integration success are legitimate endpoints distinct from direct causal recovery.",
+    "evidence_locator": "PubMed abstract PMID39322753; indexed publisher Extended Data Figs. 7–9.",
+    "evidence_level": "abstract_and_indexed_results",
+    "caveat": "Direct publisher HTML/PDF access returned an authentication redirect; PubMed page sometimes returned a browser check. Primary abstract and indexed publisher excerpts were available.",
+    "paper_id": "P60",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://www.nature.com/articles/s41592-024-02429-w",
+    "evidence_depth": "limited",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41592-024-02429-w",
+        "doi": "10.1038/s41592-024-02429-w",
+        "sources": [
+          "openalex_07.json#1"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Fu et al. multimodal benchmark",
+    "title": "Benchmarking single-cell multi-modal data integrations",
+    "year": 2025,
+    "doi": "10.1038/s41592-025-02737-9",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40640531/",
+    "family": "benchmark_paired_unpaired_mosaic",
+    "training_information": "Forty algorithms across paired, unpaired and mosaic designs involving DNA, RNA, protein and spatial omics.",
+    "target": "Usability, integration accuracy and robustness under dataset/quality variation.",
+    "theorem_applicability": "Used to map method coverage and declared endpoints; no full-text absence-of-theorem conclusion drawn.",
+    "positive_restrictions": "Different observation patterns must be compared separately.",
+    "evidence_locator": "PubMed abstract and bibliographic record PMID40640531; indexed preprint metrics passage.",
+    "evidence_level": "abstract_and_indexed_results",
+    "caveat": "Publisher direct access failed; bioRxiv full-text request returned403. The primary abstract was read successfully.",
+    "conflicts": "PubMed records authors declaring no competing interests.",
+    "funding": "PubMed lists China Postdoctoral Science Foundation and National Natural Science Foundation of China grants.",
+    "paper_id": "P61",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://pubmed.ncbi.nlm.nih.gov/40640531/",
+    "evidence_depth": "limited",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41592-025-02737-9",
+        "doi": "10.1038/s41592-025-02737-9",
+        "sources": [
+          "openalex_01.json#24",
+          "openalex_07.json#10",
+          "europepmc_02.json#17"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Liu et al. multitask Registered Report",
+    "title": "Multitask benchmarking of single-cell multimodal omics integration methods",
+    "year": 2025,
+    "doi": "10.1038/s41592-025-02856-3",
+    "url": "https://www.nature.com/articles/s41592-025-02856-3",
+    "family": "benchmark_multitask_registered_report",
+    "training_information": "Forty methods, four integration categories, real and simulated datasets; task-specific pairing/labels differ.",
+    "target": "Dimension reduction, batch correction, clustering, classification, feature selection, imputation and spatial registration.",
+    "theorem_applicability": "These seven tasks do not directly establish original-feature interventional graph identification.",
+    "positive_restrictions": "The report notes that clustering/classification performance need not preserve structure relevant to imputation.",
+    "evidence_locator": "Main: four categories/seven tasks; Discussion; Methods: evaluation pipelines; preregistered protocol link.",
+    "evidence_level": "full_methods",
+    "caveat": "The 2024 bioRxiv protocol/version and the 2025 final publication are not two independent benchmark studies.",
+    "paper_id": "P62",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://www.nature.com/articles/s41592-025-02856-3",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41592-025-02856-3",
+        "doi": "10.1038/s41592-025-02856-3",
+        "sources": [
+          "openalex_02.json#18",
+          "openalex_07.json#11"
+        ]
+      },
+      {
+        "key": "doi:10.1101/2024.09.15.613149",
+        "doi": "10.1101/2024.09.15.613149",
+        "sources": [
+          "openalex_02.json#36",
+          "openalex_07.json#2"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "SCMBench",
+    "title": "SCMBench: benchmarking domain-specific and foundation models for single-cell multi-omics data integration",
+    "year": 2026,
+    "doi": "10.1038/s41467-026-72570-x",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13342640/",
+    "family": "benchmark_foundation_and_domain_models",
+    "training_information": "Domain-specific and pretrained foundation models; paired/unpaired and batch-effect scenarios; simulations.",
+    "target": "Cell-type integration accuracy, biological conservation, batch correction and marker/DAR/motif consistency.",
+    "theorem_applicability": "Biological conservation and marker consistency do not establish original cross-assay causal edges. Pretrained references belong in the input-information contract.",
+    "positive_restrictions": "Useful marker and alignment performance is not denied by a general nonidentifiability theorem.",
+    "evidence_locator": "Methods: Evaluation metrics; Simulated data generation; Results: marker/DAR/motif evaluation.",
+    "evidence_level": "full_methods",
+    "caveat": "Simulation uses a regulatory-network-based generator, but the inspected benchmark endpoints assess clustering/batch correction rather than exact recovery of that regulatory graph.",
+    "paper_id": "P63",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13342640/",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1038/s41467-026-72570-x",
+        "doi": "10.1038/s41467-026-72570-x",
+        "sources": [
+          "openalex_07.json#4",
+          "europepmc_01.json#16"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  },
+  {
+    "method": "Naqing et al. component benchmark",
+    "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+    "year": 2026,
+    "doi": "10.1186/s13059-026-04071-5",
+    "url": "https://link.springer.com/article/10.1186/s13059-026-04071-5",
+    "family": "benchmark_RNA_ATAC_histone_pipeline_components",
+    "training_information": "Paired RNA/ATAC and RNA/histone data treated as unpaired for evaluation of feature linking, embeddings and labeling.",
+    "target": "Gene-activity agreement, neighborhoods, same-cell matching proximity, clustering and label transfer; motivating peak–gene correlation case study.",
+    "theorem_applicability": "Mislabeling can distort downstream pseudobulk correlations, but observed distortion is not a population impossibility proof or intervention ground truth.",
+    "positive_restrictions": "Good neighborhood/clustering preservation can coexist with weak per-gene expression agreement; each target should be evaluated separately.",
+    "evidence_locator": "Results: motivating example; Benchmarking GAS; dimension reduction; Methods; Figure1f–g.",
+    "evidence_level": "full_methods",
+    "caveat": "Contains RNA with H3K4me1, H3K4me3 and H3K27ac references; no matrices were downloaded. Same-cell shuffling is not strict independent-disjoint sampling.",
+    "paper_id": "P64",
+    "category": "benchmarks",
+    "source_extraction": "agents/benchmark_papers.json",
+    "source_extraction_sha256": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+    "primary_url": "https://link.springer.com/article/10.1186/s13059-026-04071-5",
+    "evidence_depth": "methods_or_theorem",
+    "funding_conflicts_review": "not_systematically_extracted",
+    "central_catalog_matches": [
+      {
+        "key": "doi:10.1186/s13059-026-04071-5",
+        "doi": "10.1186/s13059-026-04071-5",
+        "sources": [
+          "openalex_01.json#35",
+          "openalex_03.json#100",
+          "openalex_07.json#74",
+          "europepmc_02.json#5"
+        ]
+      }
+    ],
+    "selection_provenance": "central_discovery_and_primary_followup"
+  }
+]

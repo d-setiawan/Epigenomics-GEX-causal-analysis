@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "date_utc": "2026-11-01T20:39:29.707532+00:00",
+  "tests": 29,
+  "source_sha256": {
+    "protocol.json": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92",
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "scientific_fits_started": false,
+  "xml_sha256": "2b58867bca03397e34844befcb19e95ae66d63db730fb7bbc496fd6c2bc1ac11",
+  "reviews": {
+    "reviews/prefit_theory_review.json": "8d431f6a50011dde59be1716fe7e22faabf783e2a09ecce3823aef6dc37ef493",
+    "reviews/runner_preflight_review.json": "4120f35c274b528e101857ccc456b5d487adb3799d30dc8de3516f34142b2529",
+    "reviews/data_extraction_audit.json": "58dcf72b4658cf9c854b16f0e4d33d548172e21c2a80a68fb5cc27f1de26c483",
+    "reviews/extension_algebra_audit.json": "f4484068428cb487b4b7d7e65ad8eb6988588e9ab582d73b058ec65df56741aa",
+    "reviews/evaluator_validation.json": "c6773d190e7fcc03e9f1d83b6dc4893522a080ca754328b7a09ff123f02a4760"
+  }
+}

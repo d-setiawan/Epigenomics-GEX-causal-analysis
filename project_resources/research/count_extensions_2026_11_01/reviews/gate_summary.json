@@ -1,0 +1,662 @@
+{
+  "status": "descriptive_only",
+  "sealed_provenance_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+  "summary_source_sha256": "be1879443c3dc87497ebf7599f679998e67ae7feb2e9b23fbc41fa5eeb16371b",
+  "overall": {
+    "arms": 225,
+    "raw_moment_equivalent_pairs": 0,
+    "moment_unique_pairs": 0,
+    "confirmed_unique_pairs": 0,
+    "confirmed_all_assay_candidates": 0,
+    "cf_assay:not_assessed_no_moment_candidates": 675,
+    "assay_fits": 675,
+    "cap_binding_assay_fits": 108,
+    "zero_rank_fits": 329,
+    "bootstrap_estimator_failures": 0,
+    "fitted_directions": 1166,
+    "pass_all_noncap_gates": 270,
+    "cap_only_exclusions": 36,
+    "eligible_directions": 234,
+    "directions_with_another_failure": 896,
+    "nonpositive_or_nonfinite_calibration_variance": 61,
+    "fail:calibration_moments": 61,
+    "fail:bootstrap_valid_count": 148,
+    "fail:median_loading_stability": 677,
+    "fail:lower_loading_stability": 705,
+    "fail:orientation_residual": 267,
+    "fail:pgf_effective_cells": 0,
+    "eligible_signed_pair_comparisons": 344,
+    "eligible_signed_pairs_with_finite_bands": 344
+  },
+  "status_counts": {
+    "arm:completed": 225,
+    "assay:ok": 675
+  },
+  "model_abstention_reasons": {},
+  "bootstrap_estimator_failure_reasons": {},
+  "warnings": {},
+  "source_gate_failure_counts_nonexclusive": {
+    "calibration_moments": 61,
+    "bootstrap_valid_count": 148,
+    "median_loading_stability": 677,
+    "lower_loading_stability": 705,
+    "orientation_residual": 267,
+    "pgf_effective_cells": 0,
+    "rank_cap": 648
+  },
+  "by_dataset": {
+    "constrained_collider_0": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 99,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 410,
+      "pass_all_noncap_gates": 138,
+      "cap_only_exclusions": 7,
+      "eligible_directions": 131,
+      "directions_with_another_failure": 272,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 192,
+      "fail:lower_loading_stability": 195,
+      "fail:orientation_residual": 101,
+      "fail:pgf_effective_cells": 0
+    },
+    "linear_chain_0": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 107,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 410,
+      "pass_all_noncap_gates": 126,
+      "cap_only_exclusions": 29,
+      "eligible_directions": 97,
+      "directions_with_another_failure": 284,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 168,
+      "fail:lower_loading_stability": 188,
+      "fail:orientation_residual": 94,
+      "fail:pgf_effective_cells": 0
+    },
+    "scmtr_seq_s1": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 123,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 346,
+      "pass_all_noncap_gates": 6,
+      "cap_only_exclusions": 0,
+      "eligible_directions": 6,
+      "directions_with_another_failure": 340,
+      "nonpositive_or_nonfinite_calibration_variance": 61,
+      "fail:calibration_moments": 61,
+      "fail:bootstrap_valid_count": 148,
+      "fail:median_loading_stability": 317,
+      "fail:lower_loading_stability": 322,
+      "fail:orientation_residual": 72,
+      "fail:pgf_effective_cells": 0
+    }
+  },
+  "by_control": {
+    "original": {
+      "arms": 150,
+      "assay_fits": 450,
+      "cap_binding_assay_fits": 108,
+      "zero_rank_fits": 112,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 1158,
+      "pass_all_noncap_gates": 265,
+      "cap_only_exclusions": 36,
+      "eligible_directions": 229,
+      "directions_with_another_failure": 893,
+      "nonpositive_or_nonfinite_calibration_variance": 61,
+      "fail:calibration_moments": 61,
+      "fail:bootstrap_valid_count": 148,
+      "fail:median_loading_stability": 674,
+      "fail:lower_loading_stability": 702,
+      "fail:orientation_residual": 267,
+      "fail:pgf_effective_cells": 0
+    },
+    "independent_columns": {
+      "arms": 75,
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 0,
+      "zero_rank_fits": 217,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 8,
+      "pass_all_noncap_gates": 5,
+      "cap_only_exclusions": 0,
+      "eligible_directions": 5,
+      "directions_with_another_failure": 3,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 3,
+      "fail:lower_loading_stability": 3,
+      "fail:orientation_residual": 0,
+      "fail:pgf_effective_cells": 0
+    }
+  },
+  "by_assay": {
+    "RNA": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 117,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 352,
+      "pass_all_noncap_gates": 94,
+      "cap_only_exclusions": 13,
+      "eligible_directions": 81,
+      "directions_with_another_failure": 258,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 229,
+      "fail:lower_loading_stability": 235,
+      "fail:orientation_residual": 64,
+      "fail:pgf_effective_cells": 0
+    },
+    "H3K27ac": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 123,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 346,
+      "pass_all_noncap_gates": 62,
+      "cap_only_exclusions": 4,
+      "eligible_directions": 58,
+      "directions_with_another_failure": 284,
+      "nonpositive_or_nonfinite_calibration_variance": 22,
+      "fail:calibration_moments": 22,
+      "fail:bootstrap_valid_count": 69,
+      "fail:median_loading_stability": 250,
+      "fail:lower_loading_stability": 271,
+      "fail:orientation_residual": 2,
+      "fail:pgf_effective_cells": 0
+    },
+    "H3K4me3": {
+      "assay_fits": 225,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 89,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 468,
+      "pass_all_noncap_gates": 114,
+      "cap_only_exclusions": 19,
+      "eligible_directions": 95,
+      "directions_with_another_failure": 354,
+      "nonpositive_or_nonfinite_calibration_variance": 39,
+      "fail:calibration_moments": 39,
+      "fail:bootstrap_valid_count": 79,
+      "fail:median_loading_stability": 198,
+      "fail:lower_loading_stability": 199,
+      "fail:orientation_residual": 201,
+      "fail:pgf_effective_cells": 0
+    }
+  },
+  "original_unit300_by_dataset": {
+    "constrained_collider_0": {
+      "assay_fits": 36,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 0,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 216,
+      "pass_all_noncap_gates": 7,
+      "cap_only_exclusions": 7,
+      "eligible_directions": 0,
+      "directions_with_another_failure": 209,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 173,
+      "fail:lower_loading_stability": 171,
+      "fail:orientation_residual": 60,
+      "fail:pgf_effective_cells": 0
+    },
+    "linear_chain_0": {
+      "assay_fits": 36,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 0,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 216,
+      "pass_all_noncap_gates": 29,
+      "cap_only_exclusions": 29,
+      "eligible_directions": 0,
+      "directions_with_another_failure": 187,
+      "nonpositive_or_nonfinite_calibration_variance": 0,
+      "fail:calibration_moments": 0,
+      "fail:bootstrap_valid_count": 0,
+      "fail:median_loading_stability": 139,
+      "fail:lower_loading_stability": 162,
+      "fail:orientation_residual": 18,
+      "fail:pgf_effective_cells": 0
+    },
+    "scmtr_seq_s1": {
+      "assay_fits": 36,
+      "cap_binding_assay_fits": 36,
+      "zero_rank_fits": 0,
+      "bootstrap_estimator_failures": 0,
+      "fitted_directions": 216,
+      "pass_all_noncap_gates": 0,
+      "cap_only_exclusions": 0,
+      "eligible_directions": 0,
+      "directions_with_another_failure": 216,
+      "nonpositive_or_nonfinite_calibration_variance": 47,
+      "fail:calibration_moments": 47,
+      "fail:bootstrap_valid_count": 78,
+      "fail:median_loading_stability": 202,
+      "fail:lower_loading_stability": 215,
+      "fail:orientation_residual": 72,
+      "fail:pgf_effective_cells": 0
+    }
+  },
+  "cap_only_source_directions": [
+    {
+      "path": "constrained_collider_0__ordinary300_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "assay": "RNA",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__ordinary300_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "assay": "H3K27ac",
+      "source": 4,
+      "uncapped_rank": 13,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__pgf300_unit__seed0",
+      "dataset": "constrained_collider_0",
+      "assay": "RNA",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__pgf300_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "assay": "RNA",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__pgf300_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "assay": "H3K27ac",
+      "source": 2,
+      "uncapped_rank": 13,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__poisson300_unit__seed0",
+      "dataset": "constrained_collider_0",
+      "assay": "RNA",
+      "source": 1,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "constrained_collider_0__zi05_300_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "assay": "H3K27ac",
+      "source": 4,
+      "uncapped_rank": 19,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__nb2_300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 1,
+      "uncapped_rank": 8,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__nb2_300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__nb2_300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 4,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__nb2_300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 0,
+      "uncapped_rank": 8,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__nb2_300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 0,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__ordinary300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 4,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__ordinary300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 0,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__ordinary300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 4,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__ordinary300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 1,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K27ac",
+      "source": 2,
+      "uncapped_rank": 15,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 1,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 3,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 5,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 2,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 5,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__pgf300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 5,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 0,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 1,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 3,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 0,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 1,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__poisson300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 5,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__shrink300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 1,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__shrink300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 4,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__zi05_300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 2,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__zi05_300_unit__seed0",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 4,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__zi05_300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "source": 5,
+      "uncapped_rank": 9,
+      "fitted_rank": 6
+    },
+    {
+      "path": "linear_chain_0__zi05_300_unit__seed1",
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "source": 5,
+      "uncapped_rank": 7,
+      "fitted_rank": 6
+    }
+  ],
+  "positive_rank_control_assay_fits": [
+    {
+      "path": "constrained_collider_0__nb2_30_elastic__seed0__independent_columns",
+      "assay": "H3K4me3",
+      "k": 1,
+      "eligible": 0
+    },
+    {
+      "path": "constrained_collider_0__ordinary30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 0
+    },
+    {
+      "path": "constrained_collider_0__pgf30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 1
+    },
+    {
+      "path": "constrained_collider_0__poisson30_elastic__seed0__independent_columns",
+      "assay": "H3K4me3",
+      "k": 1,
+      "eligible": 0
+    },
+    {
+      "path": "constrained_collider_0__poisson30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 1
+    },
+    {
+      "path": "constrained_collider_0__shrink30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 1
+    },
+    {
+      "path": "constrained_collider_0__zi05_30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 1
+    },
+    {
+      "path": "constrained_collider_0__zi075_30_unit__seed0__independent_columns",
+      "assay": "RNA",
+      "k": 1,
+      "eligible": 1
+    }
+  ],
+  "closest_eligible_signed_pairs": {
+    "overall": {
+      "path": "constrained_collider_0__pgf30_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "variant": "pgf30_unit",
+      "control": "original",
+      "source_seed": 1,
+      "assay_a": "H3K27ac",
+      "assay_b": "H3K4me3",
+      "source_a": 1,
+      "source_b": 0,
+      "sign": 1,
+      "point_scaled_distance": 2.1437159531416086,
+      "band_radius": 9.751228802686532,
+      "distance_plus_band": 11.89494475582814,
+      "acceptance_boundary": 1.0
+    },
+    "control:original": {
+      "path": "constrained_collider_0__pgf30_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "variant": "pgf30_unit",
+      "control": "original",
+      "source_seed": 1,
+      "assay_a": "H3K27ac",
+      "assay_b": "H3K4me3",
+      "source_a": 1,
+      "source_b": 0,
+      "sign": 1,
+      "point_scaled_distance": 2.1437159531416086,
+      "band_radius": 9.751228802686532,
+      "distance_plus_band": 11.89494475582814,
+      "acceptance_boundary": 1.0
+    },
+    "dataset:constrained_collider_0": {
+      "path": "constrained_collider_0__pgf30_unit__seed1",
+      "dataset": "constrained_collider_0",
+      "variant": "pgf30_unit",
+      "control": "original",
+      "source_seed": 1,
+      "assay_a": "H3K27ac",
+      "assay_b": "H3K4me3",
+      "source_a": 1,
+      "source_b": 0,
+      "sign": 1,
+      "point_scaled_distance": 2.1437159531416086,
+      "band_radius": 9.751228802686532,
+      "distance_plus_band": 11.89494475582814,
+      "acceptance_boundary": 1.0
+    },
+    "dataset:linear_chain_0": {
+      "path": "linear_chain_0__nb2_30_unit__seed0",
+      "dataset": "linear_chain_0",
+      "variant": "nb2_30_unit",
+      "control": "original",
+      "source_seed": 0,
+      "assay_a": "RNA",
+      "assay_b": "H3K27ac",
+      "source_a": 0,
+      "source_b": 1,
+      "sign": 1,
+      "point_scaled_distance": 6.175488689568258,
+      "band_radius": 22.187947663225383,
+      "distance_plus_band": 28.36343635279364,
+      "acceptance_boundary": 1.0
+    }
+  },
+  "interpretation": "Counts are repeated fitted directions/assay fits across exploratory variants, not independent biological discoveries. Gate counts overlap. Cap-only means all other gates pass in the EXISTING truncated fit; it does not predict a higher-rank refit. Closest comparisons are descriptive and do not change thresholds. Unassessed CFs are not failures or confirmations."
+}

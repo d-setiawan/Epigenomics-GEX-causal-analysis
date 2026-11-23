@@ -1,0 +1,190 @@
+{
+  "source_n": 2444,
+  "reserved_before_QC": 600,
+  "paired_reference_n": 595,
+  "training": {
+    "RNA": {
+      "assigned_before_QC": 615,
+      "retained_after_own_QC": 602,
+      "encoder_feature_count": 23383
+    },
+    "H3K27ac": {
+      "assigned_before_QC": 615,
+      "retained_after_own_QC": 615,
+      "encoder_feature_count": 26569
+    },
+    "H3K4me3": {
+      "assigned_before_QC": 614,
+      "retained_after_own_QC": 614,
+      "encoder_feature_count": 22481
+    }
+  },
+  "selected_panel_genes": [
+    {
+      "gene_id": "ENSG00000204256",
+      "gene_name": "BRD2"
+    },
+    {
+      "gene_id": "ENSG00000178567",
+      "gene_name": "EPM2AIP1"
+    },
+    {
+      "gene_id": "ENSG00000219481",
+      "gene_name": "NBPF1"
+    }
+  ],
+  "panel_excluded_feature_count": 6,
+  "panel_eligible_gene_count": 7,
+  "files": {
+    "evaluator/H3K27ac_test_map.tsv": {
+      "bytes": 21906,
+      "sha256": "160d926320558e461b3037ca114066e765efc2f48ad76278ed28b5aeb7b149b7"
+    },
+    "evaluator/H3K27ac_test_panel_counts.npz": {
+      "bytes": 1226,
+      "sha256": "151dc73db39a21700e98d69e618497f3d6d091380cb3c318102a46e9a5e0ed21"
+    },
+    "evaluator/H3K27ac_train_map.tsv": {
+      "bytes": 23284,
+      "sha256": "dd7dfbff90a75eb17180c3550d267b57b3d0103e5157f54faa6f0fb616ce3df7"
+    },
+    "evaluator/H3K27ac_train_panel_counts.npz": {
+      "bytes": 1251,
+      "sha256": "1fe93faa70eede8624e213753d8cce79cb46b10883db154b626da660cd3b066b"
+    },
+    "evaluator/H3K4me3_test_map.tsv": {
+      "bytes": 21617,
+      "sha256": "78b0305d312b40950fabe1e7169bd7b4ed01fd2745e0c50d658c1b18aa259e02"
+    },
+    "evaluator/H3K4me3_test_panel_counts.npz": {
+      "bytes": 1215,
+      "sha256": "b8bc9d4ec45f27bb823f66580e8b99dbd1844922d7d03a57890a7007226bf4cd"
+    },
+    "evaluator/H3K4me3_train_map.tsv": {
+      "bytes": 22928,
+      "sha256": "490615dbe9dfbe886878920c8dab9a9dd3ab13f0a62aeaeada1c04579b7aa59b"
+    },
+    "evaluator/H3K4me3_train_panel_counts.npz": {
+      "bytes": 1269,
+      "sha256": "7d880b813ca28ee35245b2e8a1d35dc84fb72f92c189440376612b671d22322a"
+    },
+    "evaluator/RNA_test_map.tsv": {
+      "bytes": 19957,
+      "sha256": "450d13f036cccace2c9ddda93de9e115d2101d588dc98928a134653f862ec2f8"
+    },
+    "evaluator/RNA_test_panel_counts.npz": {
+      "bytes": 2081,
+      "sha256": "c4af09da772271318abf73b933a798114b10282fd7b29e2442fb33269157ed22"
+    },
+    "evaluator/RNA_train_map.tsv": {
+      "bytes": 20824,
+      "sha256": "01437021be0af1ea061840b57f82d07f697a4fb793264096f10c0cdaad03baf1"
+    },
+    "evaluator/RNA_train_panel_counts.npz": {
+      "bytes": 2146,
+      "sha256": "bbc041a50abf97fc5f6e4697dfdcac9b856e7168091dcfbfda13f5482997b2ce"
+    },
+    "evaluator/heldout_pairs.tsv": {
+      "bytes": 51278,
+      "sha256": "e2c6dee541d691656e516c124d40844d6fc149a654250f0ece30b0eeb67adfa2"
+    },
+    "evaluator/paired_panel_counts.npz": {
+      "bytes": 2487,
+      "sha256": "5ea34ca3fffb63da13e1d527bb819fe0fc75edca34f277d7f945bcb7d1d579a0"
+    },
+    "evaluator/paired_panel_rows.tsv": {
+      "bytes": 7153,
+      "sha256": "30950a96fb90fb57e7ca359f3fc92a1d9ddfeb727146b1c4d51320e4890a8db8"
+    },
+    "evaluator/panel_genes.tsv": {
+      "bytes": 401,
+      "sha256": "dfff83a2f368c46f6fe204443c738cfc9446140c95881e47adaeb5a1fc7baa32"
+    },
+    "evaluator/panel_nodes.tsv": {
+      "bytes": 500,
+      "sha256": "b622ca04c6ce8a5b1cbd6c5141ae3a0977fc46aa81eba07ba4441dd990b06fc4"
+    },
+    "evaluator/source_cell_manifest.tsv": {
+      "bytes": 298491,
+      "sha256": "1660bf32cf36ea80d472e1148ca025285bdc3f4ffbd297ba7fbca3339c364127"
+    },
+    "evaluator/training_feature_coverage.tsv": {
+      "bytes": 3725152,
+      "sha256": "16fea3a93531ba94c70ee2428362248a3103ed68b26b792211e0b3bed0554e06"
+    },
+    "frozen_protocol.json": {
+      "bytes": 1596,
+      "sha256": "7d84e794c6347eda2cf195b601b1792040d35dd767c85ac549108027cce3326a"
+    },
+    "learner/H3K27ac_features.tsv": {
+      "bytes": 2554004,
+      "sha256": "f66b3f530a48dae9a9ca369078db2aef6644cb2839dfef881c3f9181f247482c"
+    },
+    "learner/H3K27ac_test_cells.tsv": {
+      "bytes": 14250,
+      "sha256": "88953377509af53d5f97d1f8d879fba578910f7545acbc79a98cedf406d53c4d"
+    },
+    "learner/H3K27ac_test_counts.npz": {
+      "bytes": 326156,
+      "sha256": "0ff0f7e17a75c1fc21d6ef5ad5c8e0fae58cd6f6fb2990f507ade10bebb9d52a"
+    },
+    "learner/H3K27ac_train_cells.tsv": {
+      "bytes": 15361,
+      "sha256": "fe0fcc4fa3c754af72e46db1a4cecc03b7cd9a90c4b4ed7c60418bdbea8b89bb"
+    },
+    "learner/H3K27ac_train_counts.npz": {
+      "bytes": 392900,
+      "sha256": "2cc76a13f7cbde3b8f25b35d949bb093e94aa567dda3cf40c1d68e6038d03e6a"
+    },
+    "learner/H3K4me3_features.tsv": {
+      "bytes": 2155776,
+      "sha256": "1cddc7d620e532d5a117a300c278386cfef93141b064c6d32c39e698f716cc5e"
+    },
+    "learner/H3K4me3_test_cells.tsv": {
+      "bytes": 14302,
+      "sha256": "51af7300fb00720ae70bf4389ec544b20b4f1917f77ebaecb7d82f513573a45d"
+    },
+    "learner/H3K4me3_test_counts.npz": {
+      "bytes": 404262,
+      "sha256": "56b84a36ad9fcc816f3ee4a4b32d3c0f08abdb8a0b10e6c596d7510164ea6b35"
+    },
+    "learner/H3K4me3_train_cells.tsv": {
+      "bytes": 15379,
+      "sha256": "5516f24797d878f4a79b6f9e2a0b54ed2689e10d838eb7233289a3b9f6f202db"
+    },
+    "learner/H3K4me3_train_counts.npz": {
+      "bytes": 424724,
+      "sha256": "da12bfb3a42547093f73d651ac536acd0ae3284bdf956a31b22431c3e547eebe"
+    },
+    "learner/RNA_features.tsv": {
+      "bytes": 2243155,
+      "sha256": "d09f4cabcce4890da168643c0a723392ae79522b4bceead8d92a9d2f43b08391"
+    },
+    "learner/RNA_test_cells.tsv": {
+      "bytes": 12802,
+      "sha256": "b95b31bf88e2b1366c0daaee68e6401721f87b80effe06f0f93afafd0300e531"
+    },
+    "learner/RNA_test_counts.npz": {
+      "bytes": 3716948,
+      "sha256": "194540a0ecb551d412ade6fc48535eaaa6d699f6ddff8f8dbf61e451d666b32c"
+    },
+    "learner/RNA_train_cells.tsv": {
+      "bytes": 13587,
+      "sha256": "06427b24d9ca4a4850c979520f7e91288601ff36b4c2cfec20dc29bc214bdb1c"
+    },
+    "learner/RNA_train_counts.npz": {
+      "bytes": 3893785,
+      "sha256": "2294da8d37b0032da8b5d98be6311c9ad6428c4cd99e067adcaee1cc8ead3493"
+    }
+  },
+  "paired_reference_day_counts_evaluator_only": {
+    "D2": 177,
+    "D1": 164,
+    "D3": 131,
+    "D0": 123
+  },
+  "paired_reference_scope": "Internal cell holdout in one pooled-day S1 sublibrary; complete-case QC population, not independent biological replication or causal truth",
+  "source_provenance_sha256": "860c0cb965569ebc84814799d69216f2c1e413f55faadd23ccedf235120df40a",
+  "cohort_script_sha256": "575a864709f1e48b0d310cd77aecc2dde2673dad5e45abe1312b83cb7341b42e",
+  "protocol_sha256": "7d84e794c6347eda2cf195b601b1792040d35dd767c85ac549108027cce3326a"
+}

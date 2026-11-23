@@ -1,0 +1,80 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -11.345701829560038,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.02716968564842272,
+        "standardized_offdiag_covariance_rmse": 0.06671794428945796,
+        "standardized_variance_rmse": 0.4897023276121885,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.030752820091386013,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -10.552371109938118,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.027169685648422717,
+        "standardized_offdiag_covariance_rmse": 0.04650700474196809,
+        "standardized_variance_rmse": 0.41248948235459015,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.01893820967725202,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": {
+    "30": {
+      "features": 30,
+      "log_score": -11.121676079440585,
+      "log_score_status": "finite",
+      "rows": 2000,
+      "standardized_mean_rmse": 0.03181104617558383,
+      "standardized_offdiag_covariance_rmse": 0.06702422951593044,
+      "standardized_variance_rmse": 0.49411952910142115,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.017801483425916365,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -10.87976001971521,
+      "log_score_status": "finite",
+      "rows": 2000,
+      "standardized_mean_rmse": 0.026691917204163643,
+      "standardized_offdiag_covariance_rmse": 0.06703767629655234,
+      "standardized_variance_rmse": 0.42655876410473614,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.02536055016267701,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "linear_chain_0__H3K27ac__30__original",
+    "best_completed_objective": -0.42760279080232744,
+    "best_completed_seed": 1,
+    "complete_application": true,
+    "elapsed_seconds": 6.4928727650112705,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

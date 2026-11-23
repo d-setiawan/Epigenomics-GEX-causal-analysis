@@ -1,0 +1,422 @@
+{
+  "directions_checked": 27,
+  "inputs": {
+    "glue_compressed/train/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/train/H3K27ac.npz",
+      "sha256": "375c08211b94e863fc80e6c4cd7df13d77deefbdc8fe0eb80313021899e02260"
+    },
+    "glue_compressed/train/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/train/H3K4me3.npz",
+      "sha256": "0e98aff6fa2355d53b6f1812ac4361e129d92f0ebed2fefd1d596fbe70d5f4b8"
+    },
+    "glue_compressed/train/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/train/RNA.npz",
+      "sha256": "abc299475e35430260bc9a49a1d8bc8ca0ba7d197cf0aee27cffb704b6cb7cd2"
+    },
+    "glue_compressed/val/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/val/H3K27ac.npz",
+      "sha256": "7def6b216a4ced39be0da79159e343ed789f81c80e4036f377adb92cb343223d"
+    },
+    "glue_compressed/val/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/val/H3K4me3.npz",
+      "sha256": "1204a72c1dfb2c8bd51ba28c620d569e849db0e17d76699cf82ab6ce1ecfc745"
+    },
+    "glue_compressed/val/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/compressed/val/RNA.npz",
+      "sha256": "85c8748684ed2a21fba666680f97ca7ee0f555fd3aeefd25522b064b8f4c9254"
+    },
+    "glue_native_counts/train/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/train/H3K27ac.npz",
+      "sha256": "e0eced15a004a59abe901c4a2fc54612c966a8344bd245e977e5a5dc3be20169"
+    },
+    "glue_native_counts/train/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/train/H3K4me3.npz",
+      "sha256": "65e86176ddea40e03147525f2e3f0fffd6d8b0491003f10f2f8daf72e813fadb"
+    },
+    "glue_native_counts/train/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/train/RNA.npz",
+      "sha256": "175332ccaa57c587374ebc45ab4f360481c3a01a37f46632ae1ed7c0ede17f87"
+    },
+    "glue_native_counts/val/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/val/H3K27ac.npz",
+      "sha256": "ab4aea8235431d28e5bd762ed2b43fbe76330f7ff4f974a5b85a9043de59d1a6"
+    },
+    "glue_native_counts/val/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/val/H3K4me3.npz",
+      "sha256": "0cd78cb669b05219f86ee83e645a8fc4d7330f0cbd6fd2ed6d9903aa1a73f3fc"
+    },
+    "glue_native_counts/val/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261031_count_input_v1/fits/constrained_collider_0/native_counts/val/RNA.npz",
+      "sha256": "0d2e681cb0eebe5419d9235a7ca03c1f9f55854fba1ec35bab0ad9dd8b56562f"
+    },
+    "scconfluence_seed0/train/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/train/H3K27ac.npz",
+      "sha256": "9689e5f391f25c0073abbf51cadfc3a4e30d307c4e4c9fbb8cc2d7642d51f503"
+    },
+    "scconfluence_seed0/train/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/train/H3K4me3.npz",
+      "sha256": "0b63586eaf5e6d96f14981bbdc1ac93310816b7919d4168167b55efb5148e8f3"
+    },
+    "scconfluence_seed0/train/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/train/RNA.npz",
+      "sha256": "cf868e93231a7cfc025df4efcce7b5611879d23eaafc6b3bb4823d9d2c5244cf"
+    },
+    "scconfluence_seed0/train/encoding": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/train/encoding_manifest.json",
+      "sha256": "2247fc09c0527a8f0898160a973c731dd0d9c06c37bc31c7a708585182fcac8f"
+    },
+    "scconfluence_seed0/val/H3K27ac": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/val/H3K27ac.npz",
+      "sha256": "ddeee45d87df0308110db3f16959a461a9c7fc656b676e9257c639fc233255b2"
+    },
+    "scconfluence_seed0/val/H3K4me3": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/val/H3K4me3.npz",
+      "sha256": "6d05a996158c87c74dd587ccab76af81c91c15bb95e00a9891cfe889a916aa5e"
+    },
+    "scconfluence_seed0/val/RNA": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/val/RNA.npz",
+      "sha256": "b643f13fdf3606f9922559b5e22699c2f053579ccf786e8ea6ee48556ddf9f52"
+    },
+    "scconfluence_seed0/val/encoding": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0/val/encoding_manifest.json",
+      "sha256": "222a4fdf4a869a70f459f7130c4d36f8d3851eafe6326968142938b3dfeade6d"
+    },
+    "truth/train": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/truth/train.npz",
+      "sha256": "87658b1a6beb4a029b2648db3d56b103d888e42e48f3499e7eb7a589d10a88d2"
+    },
+    "truth/val": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/truth/val.npz",
+      "sha256": "3f531d88432c9a682d9026f26b419844567603cc456ed8b5c7a17c9fb4c4df4c"
+    }
+  },
+  "maximum_absolute_error": 3.2993025618210936e-06,
+  "numpy_version": "2.2.6",
+  "precision_note": "Existing GLUE arrays/fit are float32; sealed scConfluence loader casts to float64. Independent NumPy solve differs from sklearn's SciPy Cholesky rounding, so tolerances record each fit dtype; no saved results or evaluators changed.",
+  "procedure": "NumPy closed-form Ridge alpha=1 with fitted intercept; source training mean and population variance; target-val variance R2 denominator",
+  "protocol": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/protocol.json",
+    "sha256": "35f5c2590335eae9ad2f6b8a884d356aea1d7ee1fbf32b3c14d3713824b1754e"
+  },
+  "recomputed": {
+    "glue_compressed": {
+      "H3K27ac->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 1.746160704918509e-07,
+        "mean_r2": 0.9146524493373175,
+        "r2_by_state": [
+          0.9103850168513616,
+          0.9189198818232733
+        ]
+      },
+      "H3K27ac->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 8.266316974259169e-07,
+        "mean_r2": 0.9561986126832057,
+        "r2_by_state": [
+          0.9633414549282683,
+          0.9490557704381432
+        ]
+      },
+      "H3K27ac->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 4.885465809678635e-08,
+        "mean_r2": 0.9543343823321341,
+        "r2_by_state": [
+          0.9559267110614968,
+          0.9527420536027713
+        ]
+      },
+      "H3K4me3->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 1.5782106799200335e-07,
+        "mean_r2": 0.9123933549108687,
+        "r2_by_state": [
+          0.8980960709792947,
+          0.9266906388424428
+        ]
+      },
+      "H3K4me3->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 4.810290776813275e-08,
+        "mean_r2": 0.9736502882937574,
+        "r2_by_state": [
+          0.9716234299563916,
+          0.9756771466311234
+        ]
+      },
+      "H3K4me3->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 8.769737402936073e-08,
+        "mean_r2": 0.9459796864794925,
+        "r2_by_state": [
+          0.9440787858458783,
+          0.9478805871131066
+        ]
+      },
+      "RNA->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 9.128635092281456e-07,
+        "mean_r2": 0.8914142909523921,
+        "r2_by_state": [
+          0.8464940854136176,
+          0.9363344964911667
+        ]
+      },
+      "RNA->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 8.104601049163662e-07,
+        "mean_r2": 0.9419925270029859,
+        "r2_by_state": [
+          0.923029572504374,
+          0.9609554815015976
+        ]
+      },
+      "RNA->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 2.6514337503336094e-08,
+        "mean_r2": 0.9641077026120943,
+        "r2_by_state": [
+          0.9650480804828009,
+          0.9631673247413878
+        ]
+      }
+    },
+    "glue_native_counts": {
+      "H3K27ac->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 2.7863918838910706e-08,
+        "mean_r2": 0.9707501471882012,
+        "r2_by_state": [
+          0.9731812079452218,
+          0.9683190864311806
+        ]
+      },
+      "H3K27ac->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 4.5543182292107076e-07,
+        "mean_r2": 0.9740185098661978,
+        "r2_by_state": [
+          0.9736842785713247,
+          0.9743527411610707
+        ]
+      },
+      "H3K27ac->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 1.0066194251479033e-06,
+        "mean_r2": 0.9291887069451177,
+        "r2_by_state": [
+          0.938068112208175,
+          0.9203093016820603
+        ]
+      },
+      "H3K4me3->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 3.1753358876729365e-06,
+        "mean_r2": 0.9240145679875227,
+        "r2_by_state": [
+          0.9185644704885864,
+          0.929464665486459
+        ]
+      },
+      "H3K4me3->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 7.92472198973826e-09,
+        "mean_r2": 0.9910262927501625,
+        "r2_by_state": [
+          0.9904542514981696,
+          0.9915983340021555
+        ]
+      },
+      "H3K4me3->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 3.2993025618210936e-06,
+        "mean_r2": 0.9106373930110286,
+        "r2_by_state": [
+          0.9200308139006947,
+          0.9012439721213625
+        ]
+      },
+      "RNA->H3K27ac": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 4.422872237341835e-07,
+        "mean_r2": 0.9525153668858168,
+        "r2_by_state": [
+          0.9605489732158521,
+          0.9444817605557816
+        ]
+      },
+      "RNA->H3K4me3": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 2.1370099534401277e-07,
+        "mean_r2": 0.9535503132559442,
+        "r2_by_state": [
+          0.9500737867866754,
+          0.957026839725213
+        ]
+      },
+      "RNA->RNA": {
+        "absolute_tolerance": 0.0001,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float32",
+        "max_abs_error": 2.8474433033665036e-08,
+        "mean_r2": 0.9617014197128116,
+        "r2_by_state": [
+          0.9613445041356301,
+          0.9620583352899932
+        ]
+      }
+    },
+    "scconfluence_seed0": {
+      "H3K27ac->H3K27ac": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 8.881784197001252e-16,
+        "mean_r2": 0.8826325121143175,
+        "r2_by_state": [
+          0.913532880881575,
+          0.85173214334706
+        ]
+      },
+      "H3K27ac->H3K4me3": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 3.1519231669108194e-13,
+        "mean_r2": -0.692928808959306,
+        "r2_by_state": [
+          -1.492567595242483,
+          0.106709977323871
+        ]
+      },
+      "H3K27ac->RNA": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 6.559197629485425e-13,
+        "mean_r2": -0.4705320415753511,
+        "r2_by_state": [
+          -0.8704434384292026,
+          -0.07062064472149965
+        ]
+      },
+      "H3K4me3->H3K27ac": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 9.14823772291129e-14,
+        "mean_r2": 0.7196158908598145,
+        "r2_by_state": [
+          0.7815171678425267,
+          0.6577146138771024
+        ]
+      },
+      "H3K4me3->H3K4me3": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 4.440892098500626e-16,
+        "mean_r2": 0.9593623388774268,
+        "r2_by_state": [
+          0.9643133180813451,
+          0.9544113596735084
+        ]
+      },
+      "H3K4me3->RNA": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 1.7918999617450027e-13,
+        "mean_r2": 0.6207115246388608,
+        "r2_by_state": [
+          0.645878778967528,
+          0.5955442703101936
+        ]
+      },
+      "RNA->H3K27ac": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 7.649436639667329e-14,
+        "mean_r2": 0.6721108486802454,
+        "r2_by_state": [
+          0.8657261552837221,
+          0.4784955420767687
+        ]
+      },
+      "RNA->H3K4me3": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 2.7622348852673895e-13,
+        "mean_r2": 0.3241744499857871,
+        "r2_by_state": [
+          0.8191447971161617,
+          -0.17079589714458754
+        ]
+      },
+      "RNA->RNA": {
+        "absolute_tolerance": 1e-07,
+        "constant_training_coordinates": 0,
+        "fitting_dtype": "float64",
+        "max_abs_error": 3.3306690738754696e-16,
+        "mean_r2": 0.9364194654282997,
+        "r2_by_state": [
+          0.937414187108952,
+          0.9354247437476474
+        ]
+      }
+    }
+  },
+  "report": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/constrained_collider_0_seed0.json",
+    "sha256": "45ed97cac192288672da91f521d45d3704f92c9877160f38b24372e629227fc2"
+  },
+  "scope": "Independent arithmetic and input-identity check; no sklearn or benchmark evaluator helpers, fitting changes or causal claim",
+  "seed": 0,
+  "source": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/recompute_state_transfer.py",
+    "sha256": "c1ef764056e3e9c8a2897e9ff30b3392d09f5c1ca7ab1cf1a95620a08ed354fa"
+  },
+  "status": "passed",
+  "tolerance": {
+    "float32": 0.0001,
+    "float64": 1e-07
+  },
+  "world": "constrained_collider_0"
+}

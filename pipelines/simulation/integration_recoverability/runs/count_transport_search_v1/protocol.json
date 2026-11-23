@@ -1,0 +1,101 @@
+{
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "assessment_reuse": "The same nine worlds and paired assessments were already inspected. This is exploratory algorithm development, not fresh confirmatory evidence.",
+  "assessment_rows": 4000,
+  "calibration_rows": 2000,
+  "chunk_evaluations": 15000,
+  "chunk_iterations": 600,
+  "created_utc": "2026-11-16T00:25:43.810413+00:00",
+  "dimension": "Known true source dimension supplied as an experimental condition",
+  "em_gtol": 1e-06,
+  "environment": {
+    "numpy": "2.2.6",
+    "python": "3.11.14",
+    "scipy": "1.14.1"
+  },
+  "exploratory": true,
+  "finite_parameter_boxes": false,
+  "finite_search_inventory": "Four outer seeds per mode and world; informed mode has four marginal-mixture starts per assay, exhaustive cube orbits (1/3/840 for d=1/2/3), up to64 cross-assay combinations scored by training likelihood, and the best four candidates refined. This finite search does not guarantee a global optimum.",
+  "fit_sizes": [
+    12000
+  ],
+  "gtol": 1e-06,
+  "inner_selection": "Public training objective only; no calibration, truth, state, pairing or assessment data enter initialization or inner candidate selection",
+  "line_search_max_steps": 40,
+  "maximum_joint_refinements": 180,
+  "maximum_marginal_mixture_runs": 432,
+  "mixture_starts": 4,
+  "numerical_gates": {
+    "minimum_loading_singular_ratio": 0.001,
+    "minimum_probability_gap": 0.03,
+    "projected_gradient": 1e-06
+  },
+  "optimizer_change": "Exact log-rate reparameterization eta=(bits+h)A with source probabilities entering mixture weights only; raw-count Poisson-mixture and cube-orbit informed starts versus physical-primary-equivalent plain starts",
+  "optimizer_modes": [
+    "source_search",
+    "plain_unbounded"
+  ],
+  "primary_data_manifest_sha256": "b1e9b2881ac45b191127dda1819583e4c521b52f692e29a9d42bae983110a482",
+  "primary_evaluation_seal_sha256": "d2e9b2317152ab6d512328808939c20b0d87fa99ac5948f7c9f846563b24e4da",
+  "primary_generation_seal_sha256": "d848fdd86a652d6c48b1155470c18ca37331a3e68030fa6b0f0fcf4e4cc33bed",
+  "primary_protocol_sha256": "7b955dc5c9baa8e0514ba609e9530ef6d57924240a6377ee9f749113fbe5f23f",
+  "primary_run": "pipelines/simulation/integration_recoverability/runs/count_transport_matched_v1",
+  "recovery_thresholds": {
+    "covariance_relative_error": 0.1,
+    "oracle_conditional_gap_per_feature": 0.02,
+    "positive_nominal_gain_ci95": true,
+    "transport_relative_error": 0.1
+  },
+  "refine_candidates": 4,
+  "relative_objective_tolerance": 0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "selection": "Outer starts selected by the unchanged calibration-only rule: highest equal-assay per-feature calibration LL among gradient-converged finite starts, otherwise highest finite diagnostic; no finite start leaves explicit null selection.",
+  "sources": {
+    "pipelines/simulation/integration_recoverability/count_transport_converged.py": "82ef9c17d70fdf9f9d6e1d6bdb65332b8c9716d470f4036b0bcf56490b6edd68",
+    "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+    "pipelines/simulation/integration_recoverability/count_transport_label_optimizer.py": "58f82166e28a731da7456552a921fc52696940bf94f1b4d970336f4054ccf4b0",
+    "pipelines/simulation/integration_recoverability/count_transport_label_run.py": "a088b412128df79621450b03587772407161085b236650266d685811c0f08e84",
+    "pipelines/simulation/integration_recoverability/count_transport_matched.py": "c89c92f6d52d50caa03448af721c429dca88db9ca2af83c5890c32f7205cffca",
+    "pipelines/simulation/integration_recoverability/count_transport_matched_evaluate.py": "232a3a012945642ecdeb06bba503338c63c5e3d0c760ba6b1400ee363352c825",
+    "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+    "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+    "pipelines/simulation/integration_recoverability/count_transport_search_run.py": "e8f0c41b3acaf87ddeadadab30a00b91472d3f360b3a11b177b84cdf67315112",
+    "pipelines/simulation/integration_recoverability/count_transport_source_search.py": "fba3148a7480ff994433fc8cd94b109236efa5c740eff19df4bdd0b063c05210",
+    "pipelines/simulation/integration_recoverability/runs/count_transport_search_v1/PLAN.md": "9a0c12d8cebde41abca2c36ee6cab5b1f8763e9a1ccec3b2545d8ce73d5b6697",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched_evaluate.py": "b4b1990f2bc6670e23e9232dbf8929a738e6b2e729c074f2f4b3ba1cf1d54b33",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_search_run.py": "1cb7893eb7ce7483a369eac8025bdecb3b535dc87b5de56eb5a52a87bf79a1b5",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_source_search.py": "970675018f8bc2d96d27bd1ee038867df33eeb35a60590ea81a8c9f519b1a627",
+    "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+    "project_resources/research/sturma_pilot_2026_11_01/prepare_cached_data_pilot.py": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5"
+  },
+  "total_evaluation_limit": null,
+  "total_iteration_limit": null,
+  "uncertainty": "Descriptive fixed-fit paired-row percentile95 intervals using1000resamples; no familywise, global-optimum or fresh-assessment guarantee",
+  "version": "count_transport_search_v1",
+  "widths": {
+    "H3K27ac": 24,
+    "H3K4me3": 18,
+    "RNA": 30
+  },
+  "workers": 2,
+  "worlds": [
+    "d1_rep0",
+    "d1_rep1",
+    "d1_rep2",
+    "d2_rep0",
+    "d2_rep1",
+    "d2_rep2",
+    "d3_rep0",
+    "d3_rep1",
+    "d3_rep2"
+  ]
+}

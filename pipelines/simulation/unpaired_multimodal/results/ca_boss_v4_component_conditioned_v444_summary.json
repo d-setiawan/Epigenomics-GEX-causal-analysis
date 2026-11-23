@@ -1,0 +1,109 @@
+{
+  "schema_version": "ca_boss_v4.component_conditioned_v444_record.v1",
+  "algorithm": "CA-BOSS v4.44 global-bijection-completed component ambiguity graph equivalence",
+  "score_schema_version": "ca_boss_v4.component_conditioned_cross_assay_equivalence.scorer.v16",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 154,
+      "true_positive_hyperedges": 154,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 155,
+      "precision": 1.0,
+      "recall": 0.49838187702265374
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 234,
+      "correctly_recovered_assay_participations": 234,
+      "precision": 1.0,
+      "recall": 0.3786407766990291,
+      "ambiguous_assay_participation_hypotheses": 37,
+      "assay_participation_point_abstentions": 37,
+      "candidate_assay_pair_alternatives": 106,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 154,
+      "coverage": 0.49838187702265374,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 223,
+      "average_ambiguity_set_size": 1.448051948051948,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 117,
+      "exact_cross_assay_pair_true_positives": 117,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.3786407766990291,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v442_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 135,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.4368932038834951
+    },
+    "v443_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 141,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.4563106796116505
+    },
+    "v444_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 154,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.49838187702265374
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "contexts": "full fit plus two disjoint background-feature folds",
+    "reporter_stability": "128 within-assay cell bootstraps in every context with Bonferroni runner-up tests",
+    "exact_two_assay_pairwise_route": "requires statistical and reporter-bootstrap support in all three contexts",
+    "alternative_set_rescue": "when exactly one statistical context disagrees but all reporter bootstraps pass, retain the focal pair plus non-core directly matched partners from the disagreeing context only if at least two alternatives exist",
+    "extended_alternative_pool": "a component-identified assay with unresolved within-assay parent pairing may appear only as an all-context-bootstrap-supported ambiguity alternative, never as a primary graph node",
+    "global_bijection_completion": "only after the alternative-set route abstains, an unresolved primary two-assay strict-majority pair may complete when the minimum-total-KS component bijection maps its reporters uniquely and every assigned pair is within the Bonferroni KS bound in all contexts",
+    "alternative_set_semantics": "one set-valued shared-state hyperedge; never expand alternatives into edges, exact participation, or direction"
+  },
+  "published_method_inspiration": {
+    "primary": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "relationship": "The rank-three ICA/KS and global assignment implementation is a diagnostic adaptation, not a direct theorem application; the cached Poisson count simulation violates the paper's noiseless injective linear-ICA assumptions.",
+    "additional": [
+      "Silva et al. (JMLR 2006), Learning the Structure of Linear Latent Variable Models",
+      "Triantafillou and Tsamardinos (JMLR 2015), Constraint-based Causal Discovery from Multiple Interventions over Overlapping Variable Sets",
+      "Tillman and Spirtes (AAAI 2011), Learning Equivalence Classes of Acyclic Models with Latent and Selection Variables from Multiple Datasets with Overlapping Variables"
+    ]
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/component_conditioned_bridge_v444_source_current_v16_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "66b2e9ed56f7b43e9ebf491ee1e27d919d2ac3b925cbe9d5ca939c058121133c",
+    "campaign_summary_file_sha256": "4025d315e8875fe68482654ad19d4c4ea8d5704c04cc81494bb07910d7cf42b5",
+    "campaign_world_metrics_sha256": "21021dc1a1107fdc5b8e15d441e745ca632eb93afe31069c3bc9669abd52756c",
+    "campaign_panels_sha256": "02340b2b14a8a99148d26318122434afe6a729bce9c7a21563224be9800c1d88"
+  }
+}

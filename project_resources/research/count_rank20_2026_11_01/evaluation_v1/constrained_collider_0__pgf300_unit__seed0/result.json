@@ -1,0 +1,418 @@
+{
+  "arm": "constrained_collider_0__pgf300_unit__seed0",
+  "arrays_sha256": "2f471f712f9d3ef48b4d922f20b4181008cf5abd486257b5c0a123b3ee25464a",
+  "causal_recovery_claim": false,
+  "confirmed_all_assay_match_count": 0,
+  "confirmed_pair_match_count": 0,
+  "control": "original",
+  "cross_prediction_scope": "Pairwise moment predictions; global shared-source consistency and a PSD joint distribution are not established",
+  "dataset": "constrained_collider_0",
+  "evaluation_status": "complete",
+  "exposure_parameters": {
+    "H3K27ac": {
+      "beta": 0.0,
+      "beta_objective": null,
+      "mode": "unit",
+      "normalization": 1.0
+    },
+    "H3K4me3": {
+      "beta": 0.0,
+      "beta_objective": null,
+      "mode": "unit",
+      "normalization": 1.0
+    },
+    "RNA": {
+      "beta": 0.0,
+      "beta_objective": null,
+      "mode": "unit",
+      "normalization": 1.0
+    }
+  },
+  "fit_result_sha256": "5e6588536b47bd565c266b69fe48edd28626a7de2608be802d4627c2e884c63e",
+  "fit_status": "completed",
+  "graph_status": "fewer_than_two_confirmed_all_assay_candidates",
+  "moment_all_assay_match_count": 0,
+  "moment_pair_match_count": 0,
+  "ranks": {
+    "H3K27ac": 13,
+    "H3K4me3": 8,
+    "RNA": 7
+  },
+  "simulation_state": {
+    "H3K27ac": {
+      "all_sources": {
+        "max_absolute_correlation_per_state": [
+          0.5717139189103142,
+          0.4930214572485225
+        ],
+        "score_count": 13,
+        "state_count": 2,
+        "valid_entries": 26
+      },
+      "interpretation": "noisy frozen rate projections; not posterior biology or causal directions",
+      "levels": {
+        "confirmed": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        },
+        "moment": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        }
+      }
+    },
+    "H3K4me3": {
+      "all_sources": {
+        "max_absolute_correlation_per_state": [
+          0.491594546228524,
+          0.6300740179566181
+        ],
+        "score_count": 8,
+        "state_count": 2,
+        "valid_entries": 16
+      },
+      "interpretation": "noisy frozen rate projections; not posterior biology or causal directions",
+      "levels": {
+        "confirmed": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        },
+        "moment": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        }
+      }
+    },
+    "RNA": {
+      "all_sources": {
+        "max_absolute_correlation_per_state": [
+          0.7214929669339293,
+          0.48192678503987446
+        ],
+        "score_count": 7,
+        "state_count": 2,
+        "valid_entries": 14
+      },
+      "interpretation": "noisy frozen rate projections; not posterior biology or causal directions",
+      "levels": {
+        "confirmed": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        },
+        "moment": {
+          "all_assay_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "all_assay_matched_indices": [],
+          "pair_matched": {
+            "max_absolute_correlation_per_state": [
+              null,
+              null
+            ],
+            "score_count": 0,
+            "state_count": 2,
+            "valid_entries": 0
+          },
+          "pair_matched_indices": []
+        }
+      }
+    }
+  },
+  "source_seed": 0,
+  "variant": {
+    "correction": true,
+    "depth": "unit",
+    "name": "pgf300_unit",
+    "orientation": "pgf",
+    "retention": 1,
+    "theta": null,
+    "width": 300
+  },
+  "within_assay": {
+    "H3K27ac": {
+      "test_rows": 2000,
+      "views": {
+        "full_panel": {
+          "diagonal_training_baseline_full": {
+            "entries": 90000,
+            "mae": 0.05323872454233396,
+            "rmse": 0.06772158196382247,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.05278339273584934,
+            "rmse": 0.06512455396811172,
+            "status": "ok"
+          },
+          "features": 300,
+          "model_full": {
+            "entries": 90000,
+            "mae": 0.03333605134359076,
+            "rmse": 0.04875866956084183,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.032696726566670935,
+            "rmse": 0.0424304551164466,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.030711034872883396,
+          "status": "ok"
+        },
+        "original30_anchor": {
+          "diagonal_training_baseline_full": {
+            "entries": 900,
+            "mae": 0.053182556546793366,
+            "rmse": 0.07287949957622263,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 870,
+            "mae": 0.04907004981227097,
+            "rmse": 0.06152378214507279,
+            "status": "ok"
+          },
+          "features": 30,
+          "model_full": {
+            "entries": 900,
+            "mae": 0.03777385820574123,
+            "rmse": 0.07200266623401963,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 870,
+            "mae": 0.030873337739758776,
+            "rmse": 0.04087848276312338,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.029438141474440096,
+          "status": "ok"
+        }
+      }
+    },
+    "H3K4me3": {
+      "test_rows": 2000,
+      "views": {
+        "full_panel": {
+          "diagonal_training_baseline_full": {
+            "entries": 90000,
+            "mae": 0.11220303834261797,
+            "rmse": 0.13215394067407107,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.11209506539865463,
+            "rmse": 0.13181354032275194,
+            "status": "ok"
+          },
+          "features": 300,
+          "model_full": {
+            "entries": 90000,
+            "mae": 0.03472048522341034,
+            "rmse": 0.05059236821295584,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.03393150700481942,
+            "rmse": 0.04653189801894684,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.03497457025610745,
+          "status": "ok"
+        },
+        "original30_anchor": {
+          "diagonal_training_baseline_full": {
+            "entries": 900,
+            "mae": 0.12183100953154005,
+            "rmse": 0.14306483508635662,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 870,
+            "mae": 0.1209787665905443,
+            "rmse": 0.13794007161232408,
+            "status": "ok"
+          },
+          "features": 30,
+          "model_full": {
+            "entries": 900,
+            "mae": 0.04369324675159801,
+            "rmse": 0.08016584116177546,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 870,
+            "mae": 0.03659760301572796,
+            "rmse": 0.04766796039440156,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.031529603026869475,
+          "status": "ok"
+        }
+      }
+    },
+    "RNA": {
+      "test_rows": 2000,
+      "views": {
+        "full_panel": {
+          "diagonal_training_baseline_full": {
+            "entries": 90000,
+            "mae": 0.0801213526275063,
+            "rmse": 0.25881414983136397,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.07855330590558786,
+            "rmse": 0.1341454067358364,
+            "status": "ok"
+          },
+          "features": 300,
+          "model_full": {
+            "entries": 90000,
+            "mae": 0.03338466104765514,
+            "rmse": 0.23062582547981664,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 89700,
+            "mae": 0.03117240115162396,
+            "rmse": 0.049078808930274775,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.030482753681126202,
+          "status": "ok"
+        },
+        "original30_anchor": {
+          "diagonal_training_baseline_full": {
+            "entries": 900,
+            "mae": 0.07217302715860087,
+            "rmse": 0.1615834360292228,
+            "status": "ok"
+          },
+          "diagonal_training_baseline_offdiagonal": {
+            "entries": 870,
+            "mae": 0.0615350660481606,
+            "rmse": 0.10443699491187179,
+            "status": "ok"
+          },
+          "features": 30,
+          "model_full": {
+            "entries": 900,
+            "mae": 0.04473099795901189,
+            "rmse": 0.1637299743381936,
+            "status": "ok"
+          },
+          "model_offdiagonal": {
+            "entries": 870,
+            "mae": 0.027595997542262427,
+            "rmse": 0.03741910698129403,
+            "status": "ok"
+          },
+          "standardized_mean_rmse": 0.0313506176916738,
+          "status": "ok"
+        }
+      }
+    }
+  }
+}

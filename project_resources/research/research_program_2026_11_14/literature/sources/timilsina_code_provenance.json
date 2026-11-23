@@ -1,0 +1,761 @@
+{
+  "date_utc": "2026-11-14T21:51:24.615674+00:00",
+  "url": "https://github.com/XiaoFuLab/Shared-Component-Analysis",
+  "commit": "4c968cdfbe14c1792575f045d9092b4c50dfa730",
+  "source_checkout": "/tmp/epigenomics-shared-component-analysis-20261114",
+  "scope": "Read-only source inspection only; no upstream script, notebook, data loader or generator executed",
+  "provisioning_note": "The shallow upstream repository checkout included bundled example data and figures. These were removed before reviewer handoff, together with Git object storage. No example data were analyzed or imported into project datasets. Retained files are code, configurations, documentation and license records.",
+  "excluded_bundled_files": [
+    "Single cell sequence analysis/single_cell/old/transcription_factor/GSM3271040_RNA_sciCAR_A549_cell.txt",
+    "Single cell sequence analysis/single_cell/old/transcription_factor/diff_atac_shared_cells.npz",
+    "Single cell sequence analysis/single_cell/old/transcription_factor/diff_expr_shared_cells.npz",
+    "Single cell sequence analysis/single_cell/old/transcription_factor/shared_cells.pkl",
+    "Single cell sequence analysis/single_cell/processed_data/transcription_factor/GSM3271040_RNA_sciCAR_A549_cell.txt",
+    "Single cell sequence analysis/single_cell/processed_data/transcription_factor/diff_atac_shared_cells.npz",
+    "Single cell sequence analysis/single_cell/processed_data/transcription_factor/diff_expr_shared_cells.npz",
+    "Single cell sequence analysis/single_cell/processed_data/transcription_factor/shared_cells.pkl",
+    "pics/SCA.png",
+    "pics/domain_adaptation.png",
+    "pics/method_overview.png",
+    "pics/modality.png",
+    "pics/single_cell.png",
+    "pics/word_translation.png"
+  ],
+  "source_files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "4a0ee0a88250e7fef0d39d1f0c27f6994fe132387782a1215c9cacc39b9fd47d",
+      "bytes": 221
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1287e8ad8b333ef16ee2de61669d91f3f2c5ee9c0528e393491d3e83dba66355",
+      "bytes": 2000
+    },
+    {
+      "path": "Domain Adaptation/README.md",
+      "sha256": "33fdd990e04632e1473c285d8161332ce234b4c60236d0c327e7f24f2a092c09",
+      "bytes": 689
+    },
+    {
+      "path": "Domain Adaptation/modules/Networks.py",
+      "sha256": "d2ed353e088ed7e97701661d858125e827a0dcd460862393ba4888f162502969",
+      "bytes": 2400
+    },
+    {
+      "path": "Domain Adaptation/run_office31.sh",
+      "sha256": "71a174f6ae7a93b11284898c1070ff4a0ed58e0834055edc5c90b8564be4c6e9",
+      "bytes": 457
+    },
+    {
+      "path": "Domain Adaptation/run_officehome.sh",
+      "sha256": "39416da00fb8913745a85dd28c91fd166c62ecf9d44a960ceeb05b01c782d8dd",
+      "bytes": 480
+    },
+    {
+      "path": "Domain Adaptation/train.py",
+      "sha256": "6b3c7026d1ef7464650122d1d401dc2faceb6d203a7d3ade060d230e4d4f013c",
+      "bytes": 10683
+    },
+    {
+      "path": "Domain Adaptation/utils/load_data.py",
+      "sha256": "823c004998cc4ddf30b47b63892679bb515e73cf204c0e38cd152462785879b7",
+      "bytes": 6177
+    },
+    {
+      "path": "Domain Adaptation/utils/model_utils.py",
+      "sha256": "e4e46aa39a4ae5a4cf5e9d2f0e37ed66936f8c52d0774ebb874b7217d6af49fb",
+      "bytes": 9670
+    },
+    {
+      "path": "Domain Adaptation/utils/select_model_dataset.py",
+      "sha256": "65c6c9a83a98c11c137b34eb8117e4c06871ebc90c20ef05f1c44ddefa2b6ba4",
+      "bytes": 2562
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/mcc/entropy.py",
+      "sha256": "d91f199de014b1f3ed5795dd18d03c4657064f72a52cf34013eec573d65e56e1",
+      "bytes": 1095
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/mcc/mcc.py",
+      "sha256": "31117da6e5463c536804dab96bf49e146b8937cdbb10891ffaf07bec2552c817",
+      "bytes": 3040
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/__init__.py",
+      "sha256": "bc5cd6f3c39294d3dda3db2205f5bb578627398cc94d062378a9f6e0388af328",
+      "bytes": 154
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/analysis/__init__.py",
+      "sha256": "eee174c34496942ca62b77dc2a0ea23a5eeba2ec468fe72fe50d8031772d1c33",
+      "bytes": 2482
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/analysis/a_distance.py",
+      "sha256": "76894fce12438822cd1649e81d7fdd9a60c8a6db00361db5beb1615f62a883c2",
+      "bytes": 3054
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/analysis/tsne.py",
+      "sha256": "1c1e4200cda98dcb907d28eeeb8c248e1ef0f4700abdefa695a0cd07d7ae1257",
+      "bytes": 2936
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/data.py",
+      "sha256": "c61bef1237d4ca4f0c9315ead986c6926d2975ae2cc6af6b21b1df7ffc4d8dc4",
+      "bytes": 6709
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/logger.py",
+      "sha256": "005b3f1856c1923d7427f67f67eb013e1144bd159e305a35b51b534a2fac5bb8",
+      "bytes": 3067
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/meter.py",
+      "sha256": "318a3466c4f5f6c19ed4df36345a225c57f1f1daf4d6c2c943a610049a5ff06d",
+      "bytes": 2563
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/metric/__init__.py",
+      "sha256": "2238158d979025a5eff610a25d8480ac789df61e155e923dc5e93b99b7e1a1e6",
+      "bytes": 3831
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/metric/keypoint_detection.py",
+      "sha256": "fad8de9ef5ab03e669de2b04e29d546423797131ebc46654c8cadfb3e2f799fe",
+      "bytes": 2948
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/metric/reid.py",
+      "sha256": "aa4b0d904bfedf7ad6de47aa32c56e592cf3947ed496df46d0663c543a201d96",
+      "bytes": 14670
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/utils/scheduler.py",
+      "sha256": "c9f6a0356a045807e6f4ddee45c76871a03fbc0e0a7a02eea79baef5ce85d7fd",
+      "bytes": 2583
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/__init__.py",
+      "sha256": "be304bc0d7afe0df665344f55fbc058fa24ac6f59bae743ab7b20c98e5237a4f",
+      "bytes": 47
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/__init__.py",
+      "sha256": "039c6a9d2828421b5dafcaa791f1cfe4ae9f49af0f5f27b6ad4a0e9c65dd71b5",
+      "bytes": 1284
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/_util.py",
+      "sha256": "f780f454d8ab6239650672e83d7ed02f0774fc54cda8e6e94bd4d7d2dd4c2045",
+      "bytes": 1905
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/aircrafts.py",
+      "sha256": "a159c5c87c9ec0a14ef90defd54697f466c99b686adb2d1574c86c6fcb4e4eaf",
+      "bytes": 4336
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/caltech101.py",
+      "sha256": "8f55dc03d73709bc35c202a6726cd9d46f0dbe80abda7c98ebf7683c3a4db4f3",
+      "bytes": 3332
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/cifar.py",
+      "sha256": "c6bad6e23a6594e5c3c06e91b5bac5b20eea7c855ab6911c37ba99bfa689b26b",
+      "bytes": 837
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/coco70.py",
+      "sha256": "bef57d0a03244e40542fc60fdb3517872d1c6a4b184355656375bad4f8df1045",
+      "bytes": 3832
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/cub200.py",
+      "sha256": "54d1280728d73b319b5c1e8c81b0fd18fa68a10aaa31c16022095cb5f6457c3f",
+      "bytes": 8481
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/digits.py",
+      "sha256": "19a7fdb6bd342552a68b3908330b43c72156d51fdcb8b3ee5e8733885238a8ac",
+      "bytes": 8650
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/domainnet.py",
+      "sha256": "dc0dac401af74672bf855d425afa21e5f01b94280ad4550a54c44eb36dafcaa3",
+      "bytes": 7579
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/dtd.py",
+      "sha256": "059b31a61c01dc56d5a8dec4b381186f6290d98dbc64af23478d6cb7415217ce",
+      "bytes": 2823
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/eurosat.py",
+      "sha256": "62e4b4d48e5058d55f89d29c46bb971964817c926ed69904b92bb60092a6470f",
+      "bytes": 1853
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/food101.py",
+      "sha256": "b0ecfb1c1f9447e2b49694e8dfa74cb5d00d4a6513f648e206e4cabf24b36148",
+      "bytes": 1667
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/imagelist.py",
+      "sha256": "8037a9403ad3b782ffc5398f669858bb72393568a420f6d5d00c46faeeac4716",
+      "bytes": 5443
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/imagenet_r.py",
+      "sha256": "77cfe4e27aef0a9ddb97771c14d7ddfc2d06087530d4aa7d638fce2b160342b9",
+      "bytes": 5743
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/imagenet_sketch.py",
+      "sha256": "994af3327cdcef732b8445cc532d5ad6846790cbc9ff7f827d6e003aef1ea273",
+      "bytes": 2692
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/__init__.py",
+      "sha256": "27cc831d8618c28e2dd838a21b62e4e5215bd26500fb00cc09836f88530402e1",
+      "bytes": 221
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/freihand.py",
+      "sha256": "88097ec413e0e7c92b5f96dfcbf52d8c76a812953eecb9f7bba592e3a515887d",
+      "bytes": 8943
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/hand_3d_studio.py",
+      "sha256": "486bccd6fe92c62584985331209442df78be63aea13d1b2d03d52098d2f6dd69",
+      "bytes": 5335
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/human36m.py",
+      "sha256": "6d2aede8bd50c998ccbdc094d8da9328f794871384eb995cf8260acdaefab417",
+      "bytes": 8868
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/keypoint_dataset.py",
+      "sha256": "da75d5f52f882a1b0272889042320ffa3d9bf5989a3ecd07089801127a9496a3",
+      "bytes": 5796
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/lsp.py",
+      "sha256": "673e518f64442045999f55512d881f990e006ccdc8937526029b4389d317fb33",
+      "bytes": 3516
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/rendered_hand_pose.py",
+      "sha256": "b16b93961e62f6b569e9eeba012c5e3891d9bf492158ae5375a23c1c78c05eb7",
+      "bytes": 7456
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/surreal.py",
+      "sha256": "3d312b078838b4df970694d9d35bb7b10083a67709e6733247d40462068264ca",
+      "bytes": 5604
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/keypoint_detection/util.py",
+      "sha256": "ba082864b007a6abea0175af9bf092ba14e7636b6cd401706c16d90edffd1efd",
+      "bytes": 5134
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/object_detection/__init__.py",
+      "sha256": "7e68c9e4111365d8e6d0d00c8e10ed98578073c5b41fb9aab863d693b68f0885",
+      "bytes": 9579
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/office31.py",
+      "sha256": "4799aaf918e7581584c9733815aa3998d074a7b32f48323d421e2f174693e37c",
+      "bytes": 2903
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/officecaltech.py",
+      "sha256": "2301bc7b732298edc14c899f57b7e68a492cf76a34a0aaa0814293d37f1cf499",
+      "bytes": 3020
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/officehome.py",
+      "sha256": "ad7a6bf0b7cac311532594acac3c29362fa07b76f5dbb6ad704df26f8423fb18",
+      "bytes": 3481
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/openset/__init__.py",
+      "sha256": "976512d94f261a328b9c020ed49b60b6bba850b43393a0be1c23874d8c73e274",
+      "bytes": 4159
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/oxfordflowers.py",
+      "sha256": "b39a793a1f0e200962e176d5c1a88f089ecacb6cebff22ee92b1f15dc1241447",
+      "bytes": 4232
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/oxfordpets.py",
+      "sha256": "eba34516842bf59a28f3f6c8c8b7df7d3d353fd273fa4b59dcddb688218f3c65",
+      "bytes": 3556
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/pacs.py",
+      "sha256": "ae1d684525aca077e78ec7f38996696822468d094510b06b7845f392357d22a7",
+      "bytes": 2901
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/partial/__init__.py",
+      "sha256": "cf5d245f542ddf50354d3ff2f81078c04ada3eb19c4fcf27214c56ee0246da13",
+      "bytes": 3349
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/partial/caltech_imagenet.py",
+      "sha256": "e79936390d99a378a621d274b4a0a9b1f8503bd99d97c06f4f2d3e90e3c85662",
+      "bytes": 9693
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/partial/imagenet_caltech.py",
+      "sha256": "8ffc671bd4f0a9f91a4a2202eb00c3b6e1cd887862415197d78da8597225ce18",
+      "bytes": 44586
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/patchcamelyon.py",
+      "sha256": "5523c6395654e852d779dd6884e0bc11d7f2aab09c590e88974d18b36b4363bb",
+      "bytes": 1668
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/regression/__init__.py",
+      "sha256": "7a3a8d6af875bb9ea1ca38b15b8c976f31dd56271c958f2e50fe34fe34705a2b",
+      "bytes": 101
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/regression/dsprites.py",
+      "sha256": "9d8a97e76d082a8f118d969a079bb0c34de968cbe8c21d60f2f9edb36c67e36b",
+      "bytes": 3331
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/regression/image_regression.py",
+      "sha256": "588589ad661cc631a563eb2a3ac02f41a3fe3ed6c05cae8c98641b2f061f6e77",
+      "bytes": 3249
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/regression/mpi3d.py",
+      "sha256": "fae899480d2bd9886afa5994440a3c8262f9d15c1a2689f48dbc718e3df3eddd",
+      "bytes": 3255
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/__init__.py",
+      "sha256": "e929c2c9e0cf74bf15d3f32032f4aeac11f86c33dbdcadec6f983559c95297b5",
+      "bytes": 230
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/basedataset.py",
+      "sha256": "4858f797d6c079b35f5890f0a7a326f47675a8e807493ffe52891403a85ea86b",
+      "bytes": 4362
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/convert.py",
+      "sha256": "e69ab94ec551cdeeda6b0581a6bebf8fb246d5ff9f06cb60f0b1fdbbc40e6747",
+      "bytes": 1122
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/dukemtmc.py",
+      "sha256": "89b82148e72fb814253d195583fac51d46c040cfff5e064b2e9476f883b9c85f",
+      "bytes": 4876
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/market1501.py",
+      "sha256": "fa5c2cf338f5c93784a3fdcfc0cb79133796d24dbae81e291e60e5eb6f55e3a3",
+      "bytes": 5047
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/msmt17.py",
+      "sha256": "3374adb237923ad6d48cea5382f57d130da2f22309c9897fa9e95fbeab9a82e0",
+      "bytes": 4543
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/personx.py",
+      "sha256": "9f86bc12a899a53deca34059d84793109d70943ba9b185bb8072b826c47bd969",
+      "bytes": 4855
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/reid/unreal.py",
+      "sha256": "78c9efc832226f60ce6baca64b542e13b6d34d80354e60a7e52013fc5ffc2454",
+      "bytes": 4005
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/resisc45.py",
+      "sha256": "0336fa8e5f38603eba3fa1488d2363cf5ff2cdcdbc9f55864f97671dd72d2a08",
+      "bytes": 1493
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/retinopathy.py",
+      "sha256": "8123bbf0f067bfb432631c43aad70ffdae8bc49389c0904038dc972008d0f4d2",
+      "bytes": 1288
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/segmentation/__init__.py",
+      "sha256": "63846ee4ec2e2204eb8b936475589636157fde5be6d8376daa3658ca291c9195",
+      "bytes": 236
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/segmentation/cityscapes.py",
+      "sha256": "750decdc2468633b8d335cf2849ac1f2d9d6bb3acd8213fe0e147d39b47bed49",
+      "bytes": 5342
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/segmentation/gta5.py",
+      "sha256": "54578564bbd9c6c842c3999b828c6e9bb1f28f762537cdf941b173cdb7dd3d5d",
+      "bytes": 1915
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/segmentation/segmentation_list.py",
+      "sha256": "01e48ccfb6cf60f90341b36a8156ade89926a19227979d0b89867a77fbe8616a",
+      "bytes": 6884
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/segmentation/synthia.py",
+      "sha256": "9451c19d5941d86ee026817d8f841dd8985f716ebc36650405f70a022f1d4594",
+      "bytes": 2355
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/stanford_cars.py",
+      "sha256": "90f20aaa44dc9720af434f4448ef1643ff0dc4198c56fa0136ac9215e30d7f20",
+      "bytes": 4458
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/stanford_dogs.py",
+      "sha256": "ebea0b46c4f1f69f1ae3418c8fc2d7886222c473630682b43e1c318dbad34a69",
+      "bytes": 6880
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/sun397.py",
+      "sha256": "6973c1288e219a74766b259c8e2f9b3c8ae873de18637c432694592e5785725a",
+      "bytes": 2020
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/datasets/visda2017.py",
+      "sha256": "81db95e3a6bcfb3e825bbf8aa4a548c9f313222f56f5c104ca8dbe7fb337b06d",
+      "bytes": 2489
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/__init__.py",
+      "sha256": "dfa2057332b8f74c66d1066edd82c35535fead26963885749b62f0557a55f4ce",
+      "bytes": 76
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/digits.py",
+      "sha256": "e90373e26fc648c5aaf54c91a6f5f47701c2268908ab3fb3f184f6faeacf10bf",
+      "bytes": 2166
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/keypoint_detection/__init__.py",
+      "sha256": "64c687cfb92a7fc1a59d32af047ea84a3f451284478e208a4522ca58924f39b5",
+      "bytes": 72
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/keypoint_detection/loss.py",
+      "sha256": "ff4400ba3b7726cff13e61b7f3021b1be1bdf928ffff5c62648d9857a60f85fe",
+      "bytes": 3773
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/keypoint_detection/pose_resnet.py",
+      "sha256": "a46de12ae48d14ec4423f22f9b9a29d660db2ab7aa665511a72f9aa9a3719128",
+      "bytes": 4581
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/__init__.py",
+      "sha256": "3898a10545292fd7ba34ae9ecc3c89e3d1a6dd7bd213d740408c59f45f0c5ff2",
+      "bytes": 104
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/backbone/__init__.py",
+      "sha256": "a924040bf2f934078a27f94eda325339680850ce3a2d6b116a3c788db420c92b",
+      "bytes": 46
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/backbone/mmdetection/vgg.py",
+      "sha256": "36e9aafbc8343c41c011e918a08f45e1d0ef5c68fa00c4056f4689b33b6925dd",
+      "bytes": 5906
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/backbone/mmdetection/weight_init.py",
+      "sha256": "4183df3946117dde4bdb273a8fa36bd2d9b447d860dea56bc86f8de29619639e",
+      "bytes": 2028
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/backbone/vgg.py",
+      "sha256": "2a747eba06ec0c767eeee0e800079a835ed8f4786c6029f4a7d8a6f7864bb57e",
+      "bytes": 7261
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/meta_arch/__init__.py",
+      "sha256": "e093fc6c7cffb972b84b7706d6d36bb74e3ac2cbf0d12857c84668889c816ab6",
+      "bytes": 70
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/meta_arch/rcnn.py",
+      "sha256": "dd02144f617a832118020db93d2cbbb48040892d9c3cb90c13cc9f39822fa43e",
+      "bytes": 4378
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/meta_arch/retinanet.py",
+      "sha256": "4684d5a4d05829a5372bcee028ca6518897854cbfb5fcbca5c6bd4af409b6d40",
+      "bytes": 6223
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/proposal_generator/__init__.py",
+      "sha256": "e57da74c65b79fdf4b830c04fd0938693a5aa4bdc5a8843cffe88cc1f5143653",
+      "bytes": 22
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/proposal_generator/rpn.py",
+      "sha256": "6673129b22801b0df8fe1bad3054379d67b974e4ed9d7597ff28bcabe7c56280",
+      "bytes": 4712
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/roi_heads/__init__.py",
+      "sha256": "d414356a044cd404483c1b1bb6e3bc02afefc0cee4d7bc36d46ebb2c3a97e741",
+      "bytes": 57
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/object_detection/roi_heads/roi_heads.py",
+      "sha256": "7b3482931bea2bae522aa48ed17c8cd7426324c2cde87fdeb229e48b01143bd5",
+      "bytes": 12481
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/reid/__init__.py",
+      "sha256": "d90ae660efbea7dd83176942cba6f559b187509da7e652b10dd9411ef52a2cd5",
+      "bytes": 44
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/reid/identifier.py",
+      "sha256": "81efcb6e0a1434d50bf25cfd6e753012b0d3ac9f6d32d56227e37d751ee3e09e",
+      "bytes": 3025
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/reid/loss.py",
+      "sha256": "53ec4380b7d47398c2c185ce0413261c58c1707a9ca968f24078a915582fcf2d",
+      "bytes": 11079
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/reid/resnet.py",
+      "sha256": "1cab1620fc3e1c7a4647abe36aa96d94e47fcab12153e374558d80a92282683b",
+      "bytes": 3332
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/resnet.py",
+      "sha256": "22efa1497e8f1172448cb74ad57d8ec05c89e5b38b784c0f58d67d432781f026",
+      "bytes": 7177
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/segmentation/__init__.py",
+      "sha256": "e9d0b8b18d15a3db124687e677f98ac3216e7d45d27a9c24951d153ddfbb0f60",
+      "bytes": 49
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/models/segmentation/deeplabv2.py",
+      "sha256": "89a1d6651c8594da4374fbd571ebc260076808717395986f4b5a09ea5d84a592",
+      "bytes": 7215
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/transforms/__init__.py",
+      "sha256": "3e461887dfe845cd192e4271339f6a87b539ebcc165c82057dbff056f053a6df",
+      "bytes": 5907
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/transforms/keypoint_detection.py",
+      "sha256": "63b66804bebc8c2cbdda0f8f9522986bd015aaa5f54834201c643ecc78ef5100",
+      "bytes": 13067
+    },
+    {
+      "path": "Domain Adaptation/utils/tllib/vision/transforms/segmentation.py",
+      "sha256": "e5f91d14004e482ed07557e0ba006b886c1149d726176e5ea6a31e24a3e80756",
+      "bytes": 8645
+    },
+    {
+      "path": "Domain Adaptation/utils/tsne.py",
+      "sha256": "d2d7d1c8c3361867b531f3743ba622b79297a3d2dba1805158a538645a4d21ae",
+      "bytes": 3367
+    },
+    {
+      "path": "README.md",
+      "sha256": "800407f8de0b8e8b73ce00a2ba2349775131f729ce23e7fc8349e1522f06488e",
+      "bytes": 5093
+    },
+    {
+      "path": "Single cell sequence analysis/linear/Discriminator.py",
+      "sha256": "79d3b50d2fb769de8bfa3f2d5defd9af8169c0d57f4f502b1c03b04432226581",
+      "bytes": 1578
+    },
+    {
+      "path": "Single cell sequence analysis/linear/tsne.py",
+      "sha256": "8366b020553fb6a65644918a41dd626124b6b964054ea609271d098cf7d59bed",
+      "bytes": 4366
+    },
+    {
+      "path": "Single cell sequence analysis/run.sh",
+      "sha256": "aa34f4e8a9f1d2eff7146ecf676ce5145c4a388c58f7fff90fbab9daa947bbff",
+      "bytes": 304
+    },
+    {
+      "path": "Single cell sequence analysis/single_cell/configs/cross_modal_supervision_0.yaml",
+      "sha256": "55c3c5c9187ff88ae201696cca5b14f52261e84b343de7ba957fe83fb434c590",
+      "bytes": 2156
+    },
+    {
+      "path": "Single cell sequence analysis/single_cell/configs/cross_modal_supervision_100.yaml",
+      "sha256": "f2d307210d9b141722d9a15c13970e6a989e174b937b3b2373cc4e41162e74c9",
+      "bytes": 2035
+    },
+    {
+      "path": "Single cell sequence analysis/single_cell/configs/cross_modal_supervision_50.yaml",
+      "sha256": "471007e4df4151875b421151a883f9018a8fb0f7f086e55a8c11c40f8ea80b44",
+      "bytes": 2036
+    },
+    {
+      "path": "Single cell sequence analysis/single_cell/load_data.py",
+      "sha256": "aa3a0906041a741c6e0712f0b37152654b0c2800e6d1c3aad10e13942444898d",
+      "bytes": 4006
+    },
+    {
+      "path": "Single cell sequence analysis/single_cell/utils.py",
+      "sha256": "de4950d6c4d2304ca08daaefa98dc00f5ca71f60c5d9c20f04fff652542482c3",
+      "bytes": 15484
+    },
+    {
+      "path": "Single cell sequence analysis/train.py",
+      "sha256": "136c374b4a26425e5b85e4c8f0d622daeb4d2744f11fdfba3d00658de007c39b",
+      "bytes": 9776
+    },
+    {
+      "path": "Synthetic/CanonicalComponentCCA.py",
+      "sha256": "8ed05187f0de9c173d54f140c52b4c35ffc972aab5efc62b4f54f8c1ec8d772b",
+      "bytes": 803
+    },
+    {
+      "path": "Synthetic/Generate_synthetic.py",
+      "sha256": "e7a9515d1d00feb6cde04a3a5c89cbc34ea5c68dc0b38134b841667a43661ccb",
+      "bytes": 8280
+    },
+    {
+      "path": "Synthetic/WitnessFunction.py",
+      "sha256": "9305b5139971a6449fc8037d32022ba48364e31205403ef404ed86fdec9c54a3",
+      "bytes": 1540
+    },
+    {
+      "path": "Synthetic/hsicv2.py",
+      "sha256": "6db113066de71e0f5b6dfedc8f935fda459ba84df21b8b40eb1f2b84eb05905a",
+      "bytes": 2228
+    },
+    {
+      "path": "Synthetic/private_extraction.ipynb",
+      "sha256": "9e37bcb5f9746d15ce145378db637e17ce4bc709c5c227b9b592f1fbee45a59b",
+      "bytes": 1422431
+    },
+    {
+      "path": "Synthetic/synthetic_train.ipynb",
+      "sha256": "b694944814705be002bd538dc3756f1db2e9b55914533b10f0588f84ce6e8c80",
+      "bytes": 5788545
+    },
+    {
+      "path": "Word Alignment/LICENSE",
+      "sha256": "c1ff5b40378d5dc3126d708bc9291a4c0c4101002f7bab9e344ec01e18b6e957",
+      "bytes": 19336
+    },
+    {
+      "path": "Word Alignment/ours.py",
+      "sha256": "f3f59704ae2803bace3339874a31e92ca38baa7337845233ff2abb3c55bcc176",
+      "bytes": 11055
+    },
+    {
+      "path": "Word Alignment/run.sh",
+      "sha256": "7323e43559f87897645db53ce668ce7edeedbd30dc11787d50ea4147bde606b0",
+      "bytes": 2170
+    },
+    {
+      "path": "Word Alignment/src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "Word Alignment/src/dico_builder.py",
+      "sha256": "beff1c4ed46f2481a8379064e5e5fb94abf752ca55139f1bf2a014daba5d34e3",
+      "bytes": 6231
+    },
+    {
+      "path": "Word Alignment/src/dictionary.py",
+      "sha256": "d4a10b1760e61d51826891f1f688a5faebc6bc7c595b880393a1820f7e355868",
+      "bytes": 1874
+    },
+    {
+      "path": "Word Alignment/src/evaluation/__init__.py",
+      "sha256": "4e3b6bb6d152c6c895378b13cea882ae10b0a68651f3f285ed957bca7c31b453",
+      "bytes": 311
+    },
+    {
+      "path": "Word Alignment/src/evaluation/evaluator.py",
+      "sha256": "b88b3585dca7e1ef8ae191c94809212a02def7db5d2d899831a6b6b812de259c",
+      "bytes": 10873
+    },
+    {
+      "path": "Word Alignment/src/evaluation/evaluator_ours.py",
+      "sha256": "c1a8282345ad70652f8d3b9ef313442e2b0ecec7b00f9c25013dbf4ff837b532",
+      "bytes": 10993
+    },
+    {
+      "path": "Word Alignment/src/evaluation/sent_translation.py",
+      "sha256": "0b9900f62e06da65c8e17011cabbb3b497313c4c79618d8b412280df7f1e9895",
+      "bytes": 4853
+    },
+    {
+      "path": "Word Alignment/src/evaluation/word_translation.py",
+      "sha256": "168efe7c07e2ea38ad029d04298306833c2433a14b6a1dd58873b158125f869d",
+      "bytes": 5570
+    },
+    {
+      "path": "Word Alignment/src/evaluation/wordsim.py",
+      "sha256": "36b075b81f46a213bd74babf48027f08b875a4f1c9b94b78bd75de7b508933b4",
+      "bytes": 7968
+    },
+    {
+      "path": "Word Alignment/src/find_cca.py",
+      "sha256": "e5864d8ea8caed7930237b78300f2edda798549146d1ca1233b7f0f186809f14",
+      "bytes": 1692
+    },
+    {
+      "path": "Word Alignment/src/logger.py",
+      "sha256": "7ad1cbd922e3404e4ac5e44ea51fe7dbc083d97223181a6e71f831ea110bcb15",
+      "bytes": 1750
+    },
+    {
+      "path": "Word Alignment/src/models_ours.py",
+      "sha256": "ddbd54d86590e081526db2d710bb8c5826d474c743134e2016fcbe30fef1ce45",
+      "bytes": 2996
+    },
+    {
+      "path": "Word Alignment/src/trainer_ours.py",
+      "sha256": "53172340187fcf7cd6635cc5c2628ab31825c429fe8536b6f5b154ef87183afd",
+      "bytes": 14559
+    },
+    {
+      "path": "Word Alignment/src/tsne.py",
+      "sha256": "00dd2f23f68ff652bdf34d8ad7e07a4b7f00b84a0b466a547bbcc68e8e8fc197",
+      "bytes": 3056
+    },
+    {
+      "path": "Word Alignment/src/utils.py",
+      "sha256": "6aa9df05121ecb87647af5b247e835e93b41e316afca890fd188bd4dbfbbca96",
+      "bytes": 16763
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "dad9461990b24a6a38cc71ddf52971c477de64ab1dd63f9bcdf90ff2fcda759a",
+      "bytes": 2036
+    }
+  ]
+}

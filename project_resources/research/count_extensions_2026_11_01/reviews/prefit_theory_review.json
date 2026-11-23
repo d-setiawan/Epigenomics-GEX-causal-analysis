@@ -1,0 +1,66 @@
+{
+  "status": "approved_for_frozen_exploratory_sweep",
+  "date_utc": "2026-11-01T20:38:46.799206+00:00",
+  "scientific_data_fits_by_reviewer": 0,
+  "heldout_performance_read_by_reviewer": false,
+  "new_datasets_by_reviewer": 0,
+  "variants": 25,
+  "expected_arms": 225,
+  "files_sha256": {
+    "protocol.json": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "independent_checks": [
+    "conditional NB/ZI factorial identities including repeated indices",
+    "higher moments against independent multi-index factorial expansions",
+    "PGF Hessians against direct derivatives",
+    "unequal-group shrinkage and raw-C3 eligibility gate",
+    "generalized CF polynomial identities, numerical guard and exact-zero products",
+    "known-kernel CF conditional first/second moments",
+    "fixed source-fit depth profile and conditional nuisance uncertainty",
+    "common 300-feature denominator and immutable30-feature anchor",
+    "common rank for ordinary/Poisson comparisons; noise-specific ranks otherwise explicit",
+    "signed bootstrap alignment and source/calibration row replay",
+    "all raw moment candidates receive staged CF assessment before separate uniqueness",
+    "all fit arms seal before heldout evaluation",
+    "independent row-Gram bootstrap versus literal row resampling",
+    "13 kernel/ordinary constant-coordinate positive-subspace, zero-loading, unit-demixing checks"
+  ],
+  "requested_prefit_clarifications_resolved": [
+    "exact CF cancellation heuristic and1e-8 tolerance declared",
+    "minimum PGF effective-cell gate declared for point and bootstrap",
+    "previous imported protocol added to supporting hashes",
+    "failed arms preserve partial arrays",
+    "two-moment, moment-unique and CF-unique results kept distinct",
+    "pairwise predictions do not claim coherent PSD joint law",
+    "constant-rate completion correction applied to point rank, all methods and bootstrap refits before scientific outcomes",
+    "exact constant rates retain observed SD zero; working SD one is internal only, with masks/counts exported",
+    "bootstrap alignment uses the point working scale, preserving all observed columns",
+    "rejected CF bootstrap values and numerical diagnostics are retained without changing eligibility decisions"
+  ],
+  "limits": [
+    "not exhaustive over all algorithms",
+    "fixed noise parameters are sensitivities, not estimated technical noise",
+    "two moments and finite CF grid do not identify full source laws",
+    "fixed beta/rank/kernel makes bootstrap uncertainty conditional",
+    "reused panels and225 arms do not provide new confirmatory validation",
+    "column shuffles do not calibrate biological false-sharing FDR",
+    "row-Gram cancellation can leave~1e-7 RMSE for deliberately degenerate all-one-cell resamples; nondegenerate fixture difference<2e-15"
+  ],
+  "audit_receipts": [
+    "extension_algebra_audit.json",
+    "gram_algebra_audit.json",
+    "primary_references_citation_report.json"
+  ],
+  "previous_prefit_receipt": "prefit_theory_review_before_constant_completion.json",
+  "constant_coordinate_review": {
+    "exact_detection": "ptp(rate)==0; centering set exactly zero",
+    "mathematical_reason": "Independent constant coordinate block has zero off-diagonals and nonpositive corrected diagonal; positive covariance modes on other coordinates are retained. Working SD one only defines the numerical congruence and alignment.",
+    "scope": "No column removed, ridge added, requested rank reduced, or uncertainty threshold relaxed. This completion-rule change can increase completed bootstraps relative to the preceding pilot and is explicitly declared before outcomes.",
+    "limits": "No assertion that all finite-sample PGF processing points/orientations equal a deleted-column calculation; processing scales can depend on the full mean."
+  },
+  "final_test_receipt": "../preflight_final_tests.xml",
+  "primary_performance_pending": true
+}

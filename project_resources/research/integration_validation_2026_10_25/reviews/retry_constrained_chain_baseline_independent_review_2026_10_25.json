@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "finding": "Context binds the preparation, original frozen schedule/argv/configuration/fit inputs, world/lock/source/package identities and original failed receipts/logs.",
+      "lines": "86-160"
+    },
+    {
+      "finding": "Execution requires matrix completion plus no live controller or validate_integration.py child, including cwd-relative .py.txt/.py paths; existing frozen native job guards remain active.",
+      "lines": "59-84,146-159"
+    },
+    {
+      "finding": "Global executor lock and under-lock original-state/attempt recheck precede the atomic one-use ledger claim; no outer GPU lock can deadlock nested native fitting.",
+      "lines": "297-318"
+    },
+    {
+      "finding": "Exact reviewed inventories reject unknown files, empty directories and symlinks; archive paths cannot overwrite existing evidence; mapping and verified same-filesystem renames preserve original bytes.",
+      "lines": "43-56,162-205"
+    },
+    {
+      "finding": "Only each named failed stage with its sole retained original failure and missing outputs can use the existing retry-failed command emitter. Exact frozen argv is required.",
+      "lines": "167-176,285-294"
+    },
+    {
+      "finding": "StopRequest and process-group termination, durable logs, native checkpoint/public-export byte rechecks with seal preexistence, exact fit-input binding and new attempt receipts are present. Completion status is refreshed only after the new receipt.",
+      "lines": "207-281"
+    },
+    {
+      "finding": "The group stops at the first new failure or interruption. A consumed ledger blocks automatic restart; partial archive/journal states require manual review.",
+      "lines": "324-339"
+    }
+  ],
+  "execution_decision": "Deferred to the parent after matrix controller and all children are terminal and final integrity checks pass.",
+  "files": {
+    "pipelines/simulation/integration_recoverability/scripts/retry_constrained_chain_baseline.py": "38dfdb5e2e1c853375354085ec7f984607d791099a9cc752f1b697c444c494b2",
+    "pipelines/simulation/integration_recoverability/tests/test_retry_constrained_chain_baseline.py": "e04eba4c19a8255cbf6fe8060e9258432ae016fb7bc46c540c67ced7caa6dcf3"
+  },
+  "limits": [
+    "No --execute, archive, move, fitting, CUDA operation, protected-array read or production-source edit was performed by this reviewer.",
+    "The matrix completion gate uses the sealed driver completion record and report hashes. It is not an independent scientific audit of all32 fits; the planned end-of-matrix artifact audit remains required.",
+    "Matrix process termination and runtime state were not independently measured during this review.",
+    "Live interruption was not exercised; interruption handling was traced through the unchanged pinned StopRequest/stop_group primitives.",
+    "A stopped or failed archive consumes the one-use ledger and needs manual review; no automatic rollback or retry is promised.",
+    "Old baseline commands/settings remain separate from matrix-selected settings. This review does not authorize causal discovery on new settings."
+  ],
+  "matrix_driver_plan_protocol_and_three_validation_sources_match_observed_receipt": true,
+  "observed_matrix_launch_receipt_sha256": "136d6076a733b5d1874d9f5c897c9769f6e42ab14122ddeb77f99d588de5c861",
+  "original_operator_sha256": "6bde64d8d361eea62fe9f51fa5a8197a1c87661dca61f8981d24b116c4f7ce9f",
+  "preparation_sha256": "7f96b310d6303a1629805006eebac589ec69c0c3f15a3233e0586b888f9bb7c9",
+  "reviewed_at_utc": "2026-10-26T00:18:23.041750+00:00",
+  "scope": "Only the two original constrained_chain_1 baseline stage IDs, realistic/informative seed0. Static source/test review and small metadata/source hash comparison only.",
+  "status": "passed_read_only_review_no_blockers_found",
+  "test_evidence": {
+    "author_confirmed_real_preview": {
+      "executed_commands": 0,
+      "matrix_completion_present": false,
+      "production_retry_journal_absent": true,
+      "status": "preview",
+      "two_original_argv_unchanged": true
+    },
+    "author_confirmed_tests_passed": 22,
+    "author_reported_seconds": 1.5,
+    "reason": "Tests include temporary archive/execute paths; this independent review was explicitly read-only. Final delta and test cases were inspected, and file hashes independently confirmed.",
+    "reviewer_reran_tests_or_preview": false
+  },
+  "unchanged_frozen_source_count": 17
+}

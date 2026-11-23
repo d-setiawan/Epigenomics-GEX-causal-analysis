@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-01T05:52:36.835368+00:00",
+  "execution": "host-read-only-network-retry",
+  "endpoint": "https://api.openalex.org/works",
+  "params": {
+    "search": "statistical matching identification conditional independence",
+    "per_page": 100,
+    "select": "id,doi,title,publication_year,primary_location",
+    "sort": "relevance_score:desc"
+  },
+  "page": 1,
+  "cursor": null,
+  "authentication": "unauthenticated",
+  "http_status": 200,
+  "content_type": "application/json",
+  "returned": 100,
+  "matched_total": 30644
+}

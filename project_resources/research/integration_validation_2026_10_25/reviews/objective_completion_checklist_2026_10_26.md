@@ -1,0 +1,26 @@
+# Current-objective completion checklist — baseline pending
+
+**Not final completion.** The research, conditional theoretical result and 32-fit integration-validation work are complete. The two committed baseline stages and their post-execution reviews remain pending. This audit reads current documents and existing receipts; it does not repeat the matrix audit or inspect the active baseline fits. [JSON evidence and source snapshots](objective_completion_checklist_2026_10_26.json).
+
+The audited objective is to validate additional scGLUE/scMRDR settings, assess integration before new-setting causal tests, find research-backed checks and a theoretically valid guarantee, and continue existing simulations. It requires a scientific answer about validity, not just finished training. An assessment can find failures; it must not be presented as positive integration certification.
+
+| Requirement | Present evidence and status |
+| --- | --- |
+| R1 — Both-method hyperparameter validation | **Complete for the declared small screen.** Four configurations per method, sixteen selection fits and sixteen frozen selected-setting confirmation fits. The final audit covers all 32 native chains and 288 public exports. This does not establish exhaustive or globally optimal tuning. |
+| R2 — Integration assessment before new causal tests | **Evidence complete; final answer must preserve the decision.** State transport, fixed decoder transfer, geometry and native hubness are interpreted separately. scMRDR's G=1.4446 state-matching failure and low-G/negative-decoder cases remain. No new-setting causal discovery was run. Do not change this to an unqualified “integration passed” or causal-ready claim. |
+| R3 — Primary research | **Complete focused narrative review.** Primary method/benchmark evidence and released configurations are documented. All six DOI records in the evidence memo are verified, with retrieval provenance. This is not a systematic review, and that record does not claim to verify every citation elsewhere. |
+| R4 — Another theoretically valid check/guarantee | **Complete conditionally.** Absolute state transport bounds an L-Lipschitz state function's transport error by L²Cθ and the specified finite-pool covariance distortion by σ(f)L√Cθ. The assumptions, no-reuse oracle constraints and counterexamples are explicit. This is not a bound on arbitrary learned decoders, residual coupling, conditional independence or causal graphs. |
+| R5 — Existing-simulation continuation | **Pending.** The unchanged frozen schedule commits two `constrained_chain_1` stages, realistic and informative, seed 0, both methods: four native fits and two original evaluation reports. Parent reports helper session 4274 running its realistic stage. No active contents were read here. |
+| R6 — Final reconciliation and user answer | **Pending R5.** Update actual baseline outcomes/counts and close each requirement against evidence, retaining limits and failures. |
+
+Before marking the current objective complete, obtain:
+
+1. A terminal observation for the executing helper and source-bound outcomes for **both** prescribed stages. Normal completion requires two successful stage/attempt receipts and the helper's completed-two-retries result; a launch, active fit or early stop before the second stage does not discharge this commitment.
+2. The schedule-required complete native/model/public-export artifacts for all four fits, original command/configuration/source/runtime/assessment-lock bindings, closed log hashes and retained failed-attempt/archive evidence. Both evaluation reports must have an allowed frozen status: `completed` or `completed_with_failures`. Positive causal recovery is not required; reported scientific and numerical failures must remain.
+3. Scoped independent post-execution native/artifact and outcome reviews, followed by an accurate four-document status update. If execution fails operationally and leaves work unlaunched or incomplete, retain that as unfinished/blocking work rather than checking the objective off.
+4. A final requirement-by-requirement account explaining the tested settings, selected settings, measured validity findings, conditional guarantee, verified sources and actual simulation continuation. Preserve the matrix's unknown exit-143 cause, archive/process-visibility limitation and scoped host guards when summarizing provenance.
+
+The original benchmark remains separate: current documents report 114/178 model fits complete before this continuation. The new 32-fit supplement is outside that denominator. Finishing these two committed stages advances that benchmark; it does not finish its remaining assessment/synthesis queue. Refresh its count from sealed outcomes and disclose remaining work.
+
+No new data, worlds, broad parameter grid, new-setting causal experiment, universal integration theorem, generic causal-identification solution or expansion of independent secondary checks to all sixteen reports is a new completion requirement. Keep the frozen plan and its negative findings. The current scientific deliverable can finish with a qualified negative validity conclusion; the broader 178-fit benchmark must remain explicitly unfinished.
+

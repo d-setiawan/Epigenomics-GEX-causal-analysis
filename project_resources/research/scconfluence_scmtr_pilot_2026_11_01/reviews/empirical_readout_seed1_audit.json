@@ -1,0 +1,471 @@
+{
+  "seed": 1,
+  "status": "pass",
+  "integration_fits_performed": 0,
+  "fixed_evaluator_decoder_replays": 3,
+  "decoder_coordinate_dtype": "float64, matching the frozen evaluator's explicit loader conversion",
+  "reviewer_precision_check": "An initial float32-only reviewer attempt disagreed on confusion matrices and wrote no audit; this replay uses the documented float64 evaluator inputs without changing scientific settings",
+  "assignment": {
+    "RNA--H3K27ac": {
+      "correct": 2,
+      "n": 595,
+      "exact_pair_fraction": 0.0033613445378151263
+    },
+    "RNA--H3K4me3": {
+      "correct": 1,
+      "n": 595,
+      "exact_pair_fraction": 0.0016806722689075631
+    },
+    "H3K27ac--H3K4me3": {
+      "correct": 1,
+      "n": 595,
+      "exact_pair_fraction": 0.0016806722689075631
+    }
+  },
+  "nearest_neighbor": {
+    "RNA-->H3K27ac": {
+      "mean_true_pair_rank": 297.4436974789916,
+      "recall_at_1": 0.0,
+      "recall_at_5": 0.010084033613445379
+    },
+    "RNA-->H3K4me3": {
+      "mean_true_pair_rank": 306.3126050420168,
+      "recall_at_1": 0.0,
+      "recall_at_5": 0.010084033613445379
+    },
+    "H3K27ac-->RNA": {
+      "mean_true_pair_rank": 299.67899159663864,
+      "recall_at_1": 0.0016806722689075631,
+      "recall_at_5": 0.008403361344537815
+    },
+    "H3K27ac-->H3K4me3": {
+      "mean_true_pair_rank": 183.70084033613446,
+      "recall_at_1": 0.005042016806722689,
+      "recall_at_5": 0.01680672268907563
+    },
+    "H3K4me3-->RNA": {
+      "mean_true_pair_rank": 312.3058823529412,
+      "recall_at_1": 0.0016806722689075631,
+      "recall_at_5": 0.0067226890756302525
+    },
+    "H3K4me3-->H3K27ac": {
+      "mean_true_pair_rank": 186.70252100840335,
+      "recall_at_1": 0.0067226890756302525,
+      "recall_at_5": 0.023529411764705882
+    }
+  },
+  "day_transfer_replay": {
+    "RNA-->RNA": {
+      "accuracy": 0.519327731092437,
+      "balanced_accuracy": 0.5188380894677106,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          86,
+          11,
+          3,
+          23
+        ],
+        [
+          122,
+          16,
+          11,
+          15
+        ],
+        [
+          10,
+          3,
+          152,
+          12
+        ],
+        [
+          12,
+          8,
+          56,
+          55
+        ]
+      ],
+      "n_train_labeled": 602,
+      "n_train_invalid_label": 0,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "bc8429a68c3ef54546dac654486a94c5a472303511183b585de7a3ba22ca6ed9"
+    },
+    "RNA-->H3K27ac": {
+      "accuracy": 0.3025210084033613,
+      "balanced_accuracy": 0.2609549400578751,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          0,
+          32,
+          91,
+          0
+        ],
+        [
+          0,
+          60,
+          104,
+          0
+        ],
+        [
+          0,
+          56,
+          120,
+          1
+        ],
+        [
+          0,
+          26,
+          105,
+          0
+        ]
+      ],
+      "n_train_labeled": 602,
+      "n_train_invalid_label": 0,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "edd5ef2e657ba8b1532b40009420c7d3be1b806b3a9501c9a959b40e09a18528"
+    },
+    "RNA-->H3K4me3": {
+      "accuracy": 0.2571428571428571,
+      "balanced_accuracy": 0.2769308943089431,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          86,
+          37,
+          0,
+          0
+        ],
+        [
+          97,
+          67,
+          0,
+          0
+        ],
+        [
+          118,
+          59,
+          0,
+          0
+        ],
+        [
+          102,
+          29,
+          0,
+          0
+        ]
+      ],
+      "n_train_labeled": 602,
+      "n_train_invalid_label": 0,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "c9eb05b5c3ef310c84cd4d08520f72a639eac63f91dd577bab3233baddb6df74"
+    },
+    "H3K27ac-->RNA": {
+      "accuracy": 0.3815126050420168,
+      "balanced_accuracy": 0.40494594847617515,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          76,
+          0,
+          41,
+          6
+        ],
+        [
+          119,
+          0,
+          39,
+          6
+        ],
+        [
+          31,
+          0,
+          76,
+          70
+        ],
+        [
+          11,
+          0,
+          45,
+          75
+        ]
+      ],
+      "n_train_labeled": 614,
+      "n_train_invalid_label": 1,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "f29faa6c24373ceb90f7038d506207cbeea896105ddd35c0f5f2ca1232380363"
+    },
+    "H3K27ac-->H3K27ac": {
+      "accuracy": 0.26554621848739496,
+      "balanced_accuracy": 0.2886970411300697,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          20,
+          17,
+          3,
+          83
+        ],
+        [
+          39,
+          36,
+          2,
+          87
+        ],
+        [
+          36,
+          32,
+          3,
+          106
+        ],
+        [
+          18,
+          13,
+          1,
+          99
+        ]
+      ],
+      "n_train_labeled": 614,
+      "n_train_invalid_label": 1,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "6a06a0d38971140b014f7de246ce99bda9b1575f02ffe2d9174bdb272979e8c6"
+    },
+    "H3K27ac-->H3K4me3": {
+      "accuracy": 0.19327731092436976,
+      "balanced_accuracy": 0.2306367529324148,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          90,
+          0,
+          0,
+          33
+        ],
+        [
+          100,
+          0,
+          0,
+          64
+        ],
+        [
+          128,
+          0,
+          0,
+          49
+        ],
+        [
+          106,
+          0,
+          0,
+          25
+        ]
+      ],
+      "n_train_labeled": 614,
+      "n_train_invalid_label": 1,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "cac649c316c5decd4b11cd870ea8335b8c7dc6083bcb2d6464b254f51a100890"
+    },
+    "H3K4me3-->RNA": {
+      "accuracy": 0.2184873949579832,
+      "balanced_accuracy": 0.24578756283746045,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          0,
+          2,
+          0,
+          121
+        ],
+        [
+          0,
+          6,
+          0,
+          158
+        ],
+        [
+          0,
+          1,
+          0,
+          176
+        ],
+        [
+          0,
+          5,
+          2,
+          124
+        ]
+      ],
+      "n_train_labeled": 612,
+      "n_train_invalid_label": 2,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "1a0fa824eb46d14bb02b46e280e329052b6a26680f155509fded4834756b553d"
+    },
+    "H3K4me3-->H3K27ac": {
+      "accuracy": 0.24705882352941178,
+      "balanced_accuracy": 0.2758281816871733,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          42,
+          0,
+          11,
+          70
+        ],
+        [
+          68,
+          0,
+          16,
+          80
+        ],
+        [
+          63,
+          0,
+          20,
+          94
+        ],
+        [
+          35,
+          0,
+          11,
+          85
+        ]
+      ],
+      "n_train_labeled": 612,
+      "n_train_invalid_label": 2,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "341dd038a4140d70403198c39c6466e40e7e1fae1440a1f1465af83515377f52"
+    },
+    "H3K4me3-->H3K4me3": {
+      "accuracy": 0.25210084033613445,
+      "balanced_accuracy": 0.22863315966579256,
+      "support": [
+        123,
+        164,
+        177,
+        131
+      ],
+      "confusion": [
+        [
+          3,
+          75,
+          37,
+          8
+        ],
+        [
+          10,
+          80,
+          62,
+          12
+        ],
+        [
+          9,
+          107,
+          55,
+          6
+        ],
+        [
+          3,
+          91,
+          25,
+          12
+        ]
+      ],
+      "n_train_labeled": 612,
+      "n_train_invalid_label": 2,
+      "per_cell_predictions_independently_recomputed": true,
+      "exact_confusion_replay_match": true,
+      "ordered_prediction_labels_sha256": "973d3980968e7b121883356628b5536f37b80baac59d809f5fb74c751508b2ae"
+    }
+  },
+  "limits": [
+    "Retrieval is independently reconstructed from sealed embeddings and canonical evaluator maps",
+    "The three frozen source-only day decoders are replayed solely to verify all nine confusion matrices; this does not supply independent biological replication, causal truth or test-set model selection"
+  ],
+  "source_files": {
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K27ac_test_map.tsv": "160d926320558e461b3037ca114066e765efc2f48ad76278ed28b5aeb7b149b7",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K27ac_train_map.tsv": "dd7dfbff90a75eb17180c3550d267b57b3d0103e5157f54faa6f0fb616ce3df7",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K4me3_test_map.tsv": "78b0305d312b40950fabe1e7169bd7b4ed01fd2745e0c50d658c1b18aa259e02",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K4me3_train_map.tsv": "490615dbe9dfbe886878920c8dab9a9dd3ab13f0a62aeaeada1c04579b7aa59b",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/RNA_test_map.tsv": "450d13f036cccace2c9ddda93de9e115d2101d588dc98928a134653f862ec2f8",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/RNA_train_map.tsv": "01437021be0af1ea061840b57f82d07f697a4fb793264096f10c0cdaad03baf1",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/source_cell_manifest.tsv": "1660bf32cf36ea80d472e1148ca025285bdc3f4ffbd297ba7fbca3339c364127",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/H3K27ac_test_cells.tsv": "88953377509af53d5f97d1f8d879fba578910f7545acbc79a98cedf406d53c4d",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/H3K27ac_train_cells.tsv": "fe0fcc4fa3c754af72e46db1a4cecc03b7cd9a90c4b4ed7c60418bdbea8b89bb",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/H3K4me3_test_cells.tsv": "51af7300fb00720ae70bf4389ec544b20b4f1917f77ebaecb7d82f513573a45d",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/H3K4me3_train_cells.tsv": "5516f24797d878f4a79b6f9e2a0b54ed2689e10d838eb7233289a3b9f6f202db",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/RNA_test_cells.tsv": "b95b31bf88e2b1366c0daaee68e6401721f87b80effe06f0f93afafd0300e531",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/learner/RNA_train_cells.tsv": "06427b24d9ca4a4850c979520f7e91288601ff36b4c2cfec20dc29bc214bdb1c",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/H3K27ac.h5ad": "a9e5c3e6b35a27e110c3c8c6ec5fe3154d5b6368329ad78f68ada4101c1a70ca",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/H3K4me3.h5ad": "89e2f0e478c2fd09f825589fdc50a1d6dcdfde3ecaaa5f2e0849df885d41626c",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/RNA.h5ad": "f1c8b648822132a999b3ef876d3ff85b3418f8598d587d5b3349a93dc7c1eff5",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/H3K27ac.h5ad": "06334190910dd7c08f0ed37259609d79dd129c3e50d092a7dec9f30f7d4ded6a",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/H3K4me3.h5ad": "398f843dc9ebc26407c0bd84b6913403b44cae27475056de4f41028a5c63333a",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/RNA.h5ad": "9c0609fc44274aee794b41b9aba7fb7064d3951ccdb1b1f8dc6d19b2c3762fa1",
+    "pipelines/empirical/integration/methods/scconfluence/loss_patch.py": "309fb31d6424affc1dc2f16fc531f558572546a7b87e3bf1423762e4a16b095e",
+    "pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py": "ef68a3eaff16dab2681a62675f5965ab19c8515d7c3d98c802f9c96a0ddf9733",
+    "pipelines/empirical/integration/methods/scconfluence/upstream/UPSTREAM.json": "7f93822b48f33585a3406ca05fc325136ec3725d73aa555c9194f21bce9535db",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/checkpoint.pt": "aca14e8bbd264f41eaad9de010e1e42344ec9bafde30381fe03f7b5ffc9bf31f",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/model_manifest.json": "f0c59889d64fb91444afedfbe3de96a4824061daab73e461dfa5109bcc7b0774",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/preprocessing.json": "86adefddf5f95a9a3257e822258f45389b2ac25f9e215f82b404f6de28ed5c1c",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/test/H3K27ac.npz": "9b18d336c723695a7fcad3bfde78666edab04c6d24b3e8cc683fd1aa37748d9f",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/test/H3K4me3.npz": "9856306470217add4ebe65c5ea5c51ea36deb4160b70b05ab761ed654daf7aa6",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/test/RNA.npz": "258c68f1862222049740d45aedf78ac95cbfcfa933a131782afb25a3821e17eb",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/test/encoding_manifest.json": "e2b75e1ece25e0d88847ce18b3b02df908ef80e3b861156fe9597243d6ddfd0d",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/train/H3K27ac.npz": "2ae4d1e7334b05989cceb3ee16c05a82527b18564cef185cbdd1fde7afb22fab",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/train/H3K4me3.npz": "cdc3715d0646bd538659cc73749e5768523a043d30bd74982cd0fbbe57760ae3",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/train/RNA.npz": "b81c34343faab4c1843624b3389fa3cc2772b7fc7ff263203996874c8e77c203",
+    "pipelines/empirical/integration/runs/20261101_scmtr_scconfluence_v1/seed1/train/encoding_manifest.json": "845bd4c7f103cf1bb302c77f56b80a9e51d6a459362702d45696c7544fa7ec8c",
+    "pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/arms/scconfluence_seed1.json": "ebbd4b829ded5271460deca0a7556445cc38fe4d56107f61ee07f938ae66117e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/protocol.json": "eebab6c627f50a89b784a676c2387c6e1e5bd5f603e3fbc18017597d0880cc5d",
+    "project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/review_empirical_readouts.py": "54abd64663390aafff58dbe8d8a0eded5179722b7c5c3a3df03bce47b77314ba"
+  }
+}

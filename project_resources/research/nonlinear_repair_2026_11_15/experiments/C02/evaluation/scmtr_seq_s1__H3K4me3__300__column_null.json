@@ -1,0 +1,78 @@
+{
+  "C01_comparison": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -3.4546169128957582,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0629014323465201,
+        "standardized_offdiag_covariance_rmse": 0.05118211625932949,
+        "standardized_variance_rmse": 0.4946868015303291,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008817624961007554,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      },
+      "300": {
+        "features": 300,
+        "log_score": -34.430538259448845,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.062424596427717395,
+        "standardized_offdiag_covariance_rmse": 0.06343489227222844,
+        "standardized_variance_rmse": 0.4854889912221253,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.009686665361995557,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -3.460241491188654,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06290143182956318,
+        "standardized_offdiag_covariance_rmse": 0.05126457154747943,
+        "standardized_variance_rmse": 0.49530075697454823,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008777716396656133,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      },
+      "300": {
+        "features": 300,
+        "log_score": -36.60790087044027,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06242459716091705,
+        "standardized_offdiag_covariance_rmse": 0.06414215748726451,
+        "standardized_variance_rmse": 0.4904795623028123,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.009491993607549161,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": null,
+  "application": "scmtr_seq_s1__H3K4me3__300__column_null",
+  "execution": {
+    "application": "scmtr_seq_s1__H3K4me3__300__column_null",
+    "best_completed_penalized_objective": null,
+    "best_completed_start": null,
+    "complete_three_start_application": true,
+    "elapsed_seconds": 3.9369277369987685,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory test comparison; no state or causal target"
+}

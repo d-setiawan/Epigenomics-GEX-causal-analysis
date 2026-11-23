@@ -1,0 +1,1790 @@
+{
+  "assessment_lock_sha256": "2f69a3f1f2c4ab0da9d116a3901120f0cfa32e8a7133fcec452690049358d0cf",
+  "assignment_checks": {
+    "random_reference": {
+      "IDs_are_common_pool_permutations": true,
+      "cost_sum_mean_accounting_verified": true,
+      "embedding_costs_as_saved": {
+        "H3K27ac": null,
+        "H3K4me3": null
+      },
+      "n_tuples": 792,
+      "state_matching_as_saved": {
+        "H3K27ac--H3K4me3": {
+          "mae_by_dimension": [
+            1.2056260219735446,
+            1.1956999044314947
+          ],
+          "mean_absolute_difference": 1.2006629632025199,
+          "mean_euclidean_distance": 1.8854311544723628
+        },
+        "RNA--H3K27ac": {
+          "mae_by_dimension": [
+            1.1331508311353713,
+            1.103552886867097
+          ],
+          "mean_absolute_difference": 1.1183518590012338,
+          "mean_euclidean_distance": 1.7593887164274262
+        },
+        "RNA--H3K4me3": {
+          "mae_by_dimension": [
+            1.1510367311315128,
+            1.0914819599749799
+          ],
+          "mean_absolute_difference": 1.1212593455532467,
+          "mean_euclidean_distance": 1.7624627199419067
+        }
+      }
+    },
+    "scglue_seed0": {
+      "IDs_are_common_pool_permutations": true,
+      "cost_sum_mean_accounting_verified": true,
+      "embedding_costs_as_saved": {
+        "H3K27ac": {
+          "mean_euclidean": 1.6335868536347946,
+          "sum_euclidean": 1293.8007880787573
+        },
+        "H3K4me3": {
+          "mean_euclidean": 2.1579420988800466,
+          "sum_euclidean": 1709.090142312997
+        }
+      },
+      "n_tuples": 792,
+      "state_matching_as_saved": {
+        "H3K27ac--H3K4me3": {
+          "mae_by_dimension": [
+            0.6178190442076774,
+            0.6182365143772718
+          ],
+          "mean_absolute_difference": 0.6180277792924749,
+          "mean_euclidean_distance": 0.971156162404405
+        },
+        "RNA--H3K27ac": {
+          "mae_by_dimension": [
+            0.5649789019278634,
+            0.5425603233175479
+          ],
+          "mean_absolute_difference": 0.553769612622706,
+          "mean_euclidean_distance": 0.8712585032144975
+        },
+        "RNA--H3K4me3": {
+          "mae_by_dimension": [
+            0.4424089395765222,
+            0.4559180293802204
+          ],
+          "mean_absolute_difference": 0.4491634844783709,
+          "mean_euclidean_distance": 0.7047867677534811
+        }
+      }
+    },
+    "scmrdr_paper_seed0": {
+      "IDs_are_common_pool_permutations": true,
+      "cost_sum_mean_accounting_verified": true,
+      "embedding_costs_as_saved": {
+        "H3K27ac": {
+          "mean_euclidean": 0.30975977624147244,
+          "sum_euclidean": 245.32974278324616
+        },
+        "H3K4me3": {
+          "mean_euclidean": 0.22099215156762764,
+          "sum_euclidean": 175.02578404156108
+        }
+      },
+      "n_tuples": 792,
+      "state_matching_as_saved": {
+        "H3K27ac--H3K4me3": {
+          "mae_by_dimension": [
+            0.4297504953419272,
+            0.4188969306576784
+          ],
+          "mean_absolute_difference": 0.4243237129998028,
+          "mean_euclidean_distance": 0.6662035066623674
+        },
+        "RNA--H3K27ac": {
+          "mae_by_dimension": [
+            0.42614859779200787,
+            0.4208629331643519
+          ],
+          "mean_absolute_difference": 0.4235057654781799,
+          "mean_euclidean_distance": 0.6576266320312191
+        },
+        "RNA--H3K4me3": {
+          "mae_by_dimension": [
+            0.297944474378977,
+            0.32570348683305594
+          ],
+          "mean_absolute_difference": 0.311823980606016,
+          "mean_euclidean_distance": 0.4883360533845007
+        }
+      }
+    },
+    "true_state_reference": {
+      "IDs_are_common_pool_permutations": true,
+      "cost_sum_mean_accounting_verified": true,
+      "embedding_costs_as_saved": {
+        "H3K27ac": {
+          "mean_euclidean": 0.16398427296562754,
+          "sum_euclidean": 129.875544188777
+        },
+        "H3K4me3": {
+          "mean_euclidean": 0.1875575610680041,
+          "sum_euclidean": 148.54558836585926
+        }
+      },
+      "n_tuples": 792,
+      "state_matching_as_saved": {
+        "H3K27ac--H3K4me3": {
+          "mae_by_dimension": [
+            0.12561640156516152,
+            0.1377593934803906
+          ],
+          "mean_absolute_difference": 0.13168789752277607,
+          "mean_euclidean_distance": 0.20540627977738452
+        },
+        "RNA--H3K27ac": {
+          "mae_by_dimension": [
+            0.08477596834052906,
+            0.12485556169497777
+          ],
+          "mean_absolute_difference": 0.10481576501775348,
+          "mean_euclidean_distance": 0.16398427296562754
+        },
+        "RNA--H3K4me3": {
+          "mae_by_dimension": [
+            0.12153366302608161,
+            0.12369011363705841
+          ],
+          "mean_absolute_difference": 0.12261188833157008,
+          "mean_euclidean_distance": 0.1875575610680041
+        }
+      }
+    }
+  },
+  "attempts": [],
+  "calibration_saved_check_arithmetic_count": 36,
+  "checked_metadata_hashes": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/__init__.py": "67cec6321ffe39c2c0e588381c49f86510091adda41a33dd3e783245df441b29",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/adapter.py": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/__init__.py": "8e61c5e8b7b000d2a3a51557fbddea81c0f409e14a9899f5e53c4901f5a2a684",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/calibration.py": "a3f997167b43530dcffa75dbf6caa0c08a432f8b4705780f01ae4bd5ad35a6dd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/guidance_baseline.py": "fb8152119b3632077b3fcfe006b34702706fcb235564df9d7e6f499442affec1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/preprocessing.py": "8f430c656e885b02fbb9fa00fc605092cf12745b141f44a17dfacbaf931b6acb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/recover_scglue_export.py": "38b89d1a43d366e30801fd1486fbfc2ef460fc6f5162c66e66aa923e288b8ac8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/run_benchmark.py": "f8b1713328c95659885d1cf92f194972df986574c0927df5230e7cc3a0003673",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/calibration/empirical_count_profiles.json": "a22ac6c8653d160cc4f8f49738655be36d3d191ef6a959ee9442607a0698a222",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/input_manifest.json": "bce397785fea4985b285a4c30adcd9d42dfb245bd6893e3aeefd1144c79657b4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json": "5a01502fbd83520cb2e0c496caec655b1d808c271072d79e47e4192fb8ed5d8b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/assignment_method_scglue_seed0_747fee04.json": "bb5d2ce778a8bf11d11e3a3a08f41892f8369a0b68c615f7667ab88d7d02d491",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/assignment_method_scmrdr_paper_seed0_3a6525b3.json": "bbd1cb4637111f64391a88eae6c9905eeb4876945a3c58e53cb08f4ae8eb7af9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/assignment_random_0f6f9ca3.json": "1fc5727459dbaf74d503f55258d8f90e0d2293cb93fba59ab66e58cd58e27093",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/assignment_true_state_ddd7360a.json": "28997fa923bdebe69f81397d40655ae56582e7f652b90a87c07123492d376ddc",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_independent_paired_assessment_35703fd2.json": "35d2e682c31764084c55f77137226d2fdf2ee67fcf865d38dbdce4fdf49ce44c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_paired_anchor_reference_359e2a14.json": "a0e1966a5d1642bd1f7b815aef9e573ed7922ea79c527ebe30c7e71b307a1557",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_random_reference_8bce138f.json": "ccffcadc0ee578ed59c34dc2931359a9a4f861fb777912a2f6791953e82a506d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_scglue_seed0_141735f1.json": "a87e9686e8c3961e71281c8b82dc51a821b2f11b1b300d7a3f3b8f86d00e61f0",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_scmrdr_paper_seed0_19c4100c.json": "4ca5953044b1b56b8c0602f65c5668df83490e147acd2c7d70d091c40d43a9d9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/discovery_true_state_reference_f1effc42.json": "ecd96a0d809a3bc15837a2139803db9ef913b93de0a90c0f89330fe6f67d8314",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/independent_activities_with_state_f3201ccb.json": "604f8f136cc1d6fb8a868169785de241e6a8248a2ddd2491b349bb7b82acb21c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/oracle_activity_3a380c00.json": "530ac8af6e8283517692646c9c6718fa3a7dd963626debb1b70a7de40819fc60",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/oracle_counts_07fe3b8a.json": "1184201cc973a5aecb35afb86a12b945e9292c60c4d72480ea9fd1fbca1dfa11",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/preprocessing_probes_representations_c07b490f.json": "a70d5dbc8d6f19b30df262db2b5487e23de5de58bdccec2d113b28dd21409f19",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/probes_scglue_seed0_c90a0217.json": "3b119fa0ec1cac8479a151c22a8293a34c4397820a48369bc06851410517cd74",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/stages/probes_scmrdr_paper_seed0_44812006.json": "f6e52c117acb9a36ea93322c75b55aa37f6ed3a1d5ab23648ef5b56c48616b61",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/gene_transform/manifest.json": "7cea5243d171f07caa6a3fd755c20b7d353657f019c4b07eadc58d2a40f759ac",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_preprocessing/cohorts/discovery/manifest.json": "5c74b411b07699cad7d3674cd734826bc3d28ec8a5a0e5b5455e597221d2053f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_preprocessing/manifest.json": "8ebb5e4ec9ebaa4a8fd9945e352981bbe533e74379855a2c3a0fcad78248023a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_preprocessing/transforms/H3K27ac.json": "28f961a6cc907add3c3f1a67b75145f990688d978cd3e9b9852ecd407446782e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_preprocessing/transforms/H3K4me3.json": "c973238c80cf76e3f2988f64ca15fedb4ddde791e061c2cc84b4d0b8742848cb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_preprocessing/transforms/RNA.json": "82f6ca5b740c3cc2b7ec4f895642e89c213d92d133dfba430cc7c9f66f0a276e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_seed0/embedding_manifest.json": "ba96263e999466bb7c95619ec0da40ac8562b6bac1d1f017d176415d95c44ddc",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_seed0/model_manifest.json": "f5ab2dc91fc2751660659b2b0dd0d21d57c090ad1543ec51d2e4bf1c2a5c4050",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scglue_seed0/public_embedding_manifest.json": "045f0c6434c0582663582951f5723f48b4a4f212e192400e4e5ecaec5dc3ddee",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scmrdr_seed0/manifest.json": "05eb9978546a0d5ad78d36c610d10d48df05466ce9e9c7c30cddac914cf77ec6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/scmrdr_seed0/public_embedding_manifest.json": "453864f7b9de68a51dcbcba0a2cdbd86354b076ecd2028b7016ef0c8e6fef14a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/assessment_lock.json": "2f69a3f1f2c4ab0da9d116a3901120f0cfa32e8a7133fcec452690049358d0cf",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1.json": "2cb56e1d77dc3557332c9200f5b92457b8483531b61be5c596300826467423d5",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_chain_1/manifest.json": "9a0d3c2040a959189c30b745c56d0179aa82b5136bae675c0a732fd58c110b3b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_chain_1/truth/manifest.json": "851115b490445ef170e1498887da9daf0e0f3494794a4ac71c8495df9110ec18",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/extended_bank_manifest.json": "6432cbc30adc40a9422066f4a84e3bd3f5e369d37926767cd793efa5bda742fa",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scglue_adapter.py": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scmrdr_adapter.py": "4ebfbb7fe86f264698af0cb53ad9a229e7587bfbbd7c1e4075ba340566828d23",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/simulator.py": "754520b9802ac2548c07fc61aa1842d3350c9397a825fcab5b32d060b557ef0d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/suite_plan.py": "a3619b06e9e7c6c0d8fe89d7d0f13fe96a1643b51e563065be091b40a09b3a1a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/twin_controls.py": "5023ec1a3d93efaacfef6ad8d513f34c0845e3115a0024f5d3bb76de3988fa27",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/RCIT/RCIT.py": "6dd2e8f0275efbc2fa5f6253a9ca71c7329d84788d68eeae7b4607ffc5b75e06",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/cit.py": "0d3db11083985b7cb0edbaa44662307c28f27bc135053a65751cd52f451ddc8f"
+  },
+  "controls": [
+    {
+      "all_exact_endpoints": {
+        "n_correct": 12,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 16,
+        "precision": 1.0,
+        "recall": 0.75
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.9230769230769231,
+        "false_negative": 1,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 6,
+        "n_true": 7,
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "true_positive": 6
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 12,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 14,
+        "precision": 1.0,
+        "recall": 0.8571428571428571
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 13,
+        "n_predicted_endpoints": 32,
+        "n_true_endpoints": 42,
+        "precision": 0.40625,
+        "recall": 0.30952380952380953
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.4444444444444444,
+        "false_negative": 6,
+        "false_positive": 9,
+        "false_positive_rate": 0.6,
+        "n_predicted": 15,
+        "n_true": 12,
+        "precision": 0.4,
+        "recall": 0.5,
+        "true_positive": 6
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 11,
+        "n_predicted_endpoints": 30,
+        "n_true_endpoints": 24,
+        "precision": 0.36666666666666664,
+        "recall": 0.4583333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.6,
+        "incident_adjacency_rate": 0.47619047619047616,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 10
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 10,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 16,
+        "precision": 1.0,
+        "recall": 0.625
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.8333333333333334,
+        "false_negative": 2,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 5,
+        "n_true": 7,
+        "precision": 1.0,
+        "recall": 0.7142857142857143,
+        "true_positive": 5
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 10,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 14,
+        "precision": 1.0,
+        "recall": 0.7142857142857143
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 3,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 42,
+        "precision": 0.21428571428571427,
+        "recall": 0.07142857142857142
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.1111111111111111,
+        "false_negative": 11,
+        "false_positive": 5,
+        "false_positive_rate": 0.3333333333333333,
+        "n_predicted": 6,
+        "n_true": 12,
+        "precision": 0.16666666666666666,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 24,
+        "precision": 0.16666666666666666,
+        "recall": 0.08333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.3333333333333333,
+        "incident_adjacency_rate": 0.23809523809523808,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 5
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 16,
+        "precision": 0.3333333333333333,
+        "recall": 0.125
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.0,
+        "false_negative": 7,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 0,
+        "n_true": 7,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 0,
+        "n_true_endpoints": 14,
+        "precision": null,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 8,
+        "n_true_endpoints": 42,
+        "precision": 0.25,
+        "recall": 0.047619047619047616
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.25,
+        "false_negative": 10,
+        "false_positive": 2,
+        "false_positive_rate": 0.13333333333333333,
+        "n_predicted": 4,
+        "n_true": 12,
+        "precision": 0.5,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 8,
+        "n_true_endpoints": 24,
+        "precision": 0.25,
+        "recall": 0.08333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.13333333333333333,
+        "incident_adjacency_rate": 0.09523809523809523,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 2
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 16,
+        "precision": 0.5,
+        "recall": 0.5
+      },
+      "biological_directed_stress": {
+        "f1": 0.6666666666666666,
+        "false_negative": 1,
+        "false_positive": 0,
+        "n_predicted": 1,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "true_positive": 1
+      },
+      "cross_adjacency": {
+        "f1": 0.9333333333333333,
+        "false_negative": 0,
+        "false_positive": 1,
+        "false_positive_rate": 0.05,
+        "n_predicted": 8,
+        "n_true": 7,
+        "precision": 0.875,
+        "recall": 1.0,
+        "true_positive": 7
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 14,
+        "precision": 0.5,
+        "recall": 0.5714285714285714
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K4me3_core",
+          "H3K27ac_core"
+        ]
+      ],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 42,
+        "precision": 0.3333333333333333,
+        "recall": 0.047619047619047616
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.26666666666666666,
+        "false_negative": 10,
+        "false_positive": 1,
+        "false_positive_rate": 0.06666666666666667,
+        "n_predicted": 3,
+        "n_true": 12,
+        "precision": 0.6666666666666666,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 24,
+        "precision": 0.3333333333333333,
+        "recall": 0.08333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.06666666666666667,
+        "incident_adjacency_rate": 0.047619047619047616,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 1
+      },
+      "status": "ok"
+    }
+  ],
+  "frozen_stage": {
+    "argv": [
+      "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+      "-u",
+      "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/run_benchmark.py",
+      "run-world",
+      "--world-id",
+      "constrained_chain_1",
+      "--regime",
+      "realistic",
+      "--seeds",
+      "0",
+      "--methods",
+      "scglue",
+      "scmrdr",
+      "--device",
+      "cuda",
+      "--arm",
+      "primary",
+      "--assessment-lock",
+      "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/assessment_lock.json"
+    ],
+    "argv_sha256": "4d85fe00b7e2c24a488e1aeb3fedccd534a89d3e5b5ee50543ddb1736cf441ef",
+    "stage_id": "pipeline:constrained_chain_1:realistic:primary:seeds0"
+  },
+  "graph_only_CI_target_checks": [
+    {
+      "CI_backend_rerun": false,
+      "graph_only_target_labels_consistent": true,
+      "saved_oracle_queries_checked": 115,
+      "target": "activity_projection"
+    },
+    {
+      "CI_backend_rerun": false,
+      "graph_only_target_labels_consistent": true,
+      "saved_oracle_queries_checked": 879,
+      "target": "count_measurement_pag"
+    },
+    {
+      "CI_backend_rerun": false,
+      "graph_only_target_labels_consistent": true,
+      "saved_oracle_queries_checked": 339,
+      "target": "source_activity_PC_with_state"
+    }
+  ],
+  "integrity_limit": "Metadata hash-chain consistency only; binary file contents and oracle generation were not reverified.",
+  "original_default_configurations": {
+    "scglue": {
+      "align_burnin": 20,
+      "data_batch_size": 128,
+      "device": "cuda",
+      "dropout": 0.2,
+      "encode_batch_size": 256,
+      "graph_batch_size": 8192,
+      "h_depth": 2,
+      "h_dim": 256,
+      "lam_align": 0.05,
+      "lam_data": 1.0,
+      "lam_graph": 0.02,
+      "lam_kl": 1.0,
+      "lam_sup": 0.02,
+      "latent_dim": 30,
+      "learning_rate": 0.002,
+      "max_epochs": 120,
+      "neg_samples": 10,
+      "patience": 8,
+      "reduce_lr_patience": 4,
+      "seed": 0,
+      "val_split": 0.1,
+      "wait_n_lrs": 1
+    },
+    "scmrdr": {
+      "batch_size": 128,
+      "beta": 5.0,
+      "cosine_learning_rate": true,
+      "device": "cuda",
+      "dispersion_strategy": "gene",
+      "dropout_rate": 0.2,
+      "gamma": 10.0,
+      "gradient_clip_norm": 1.0,
+      "hidden_layers": [
+        128,
+        128
+      ],
+      "lambda_adv": 10.0,
+      "latent_dim_shared": 20,
+      "latent_dim_specific": 20,
+      "learning_rate": 0.001,
+      "max_epochs": 200,
+      "min_delta": 0.0,
+      "patience": 10,
+      "seed": 0,
+      "validation_fraction": 0.1,
+      "validation_mc_samples": 1
+    }
+  },
+  "paired_source_with_observed_state_PC_control": {
+    "adjacency": {
+      "f1": 0.8888888888888888,
+      "false_negative": 2,
+      "false_positive": 0,
+      "n_predicted": 8,
+      "n_true": 10,
+      "precision": 1.0,
+      "recall": 0.8,
+      "true_positive": 8
+    },
+    "biological_core_direction_stress": {
+      "f1": 0.0,
+      "false_negative": 2,
+      "false_positive": 0,
+      "n_predicted": 0,
+      "n_true": 2,
+      "precision": null,
+      "recall": 0.0,
+      "true_positive": 0
+    },
+    "directed_edges": {
+      "f1": 0.5714285714285714,
+      "false_negative": 6,
+      "false_positive": 0,
+      "n_predicted": 4,
+      "n_true": 10,
+      "precision": 1.0,
+      "recall": 0.4,
+      "true_positive": 4
+    },
+    "endpoints": {
+      "n_correct": 12,
+      "n_predicted_endpoints": 16,
+      "n_true_endpoints": 20,
+      "precision": 0.75,
+      "recall": 0.6
+    },
+    "n_rows": 2000
+  },
+  "readout_inventory_unopened": [
+    {
+      "array_opened": false,
+      "binary_hash_recomputed": false,
+      "bytes": 68900,
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/readouts/paired_anchor_reference.npz"
+    },
+    {
+      "array_opened": false,
+      "binary_hash_recomputed": false,
+      "bytes": 95500,
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/readouts/random_reference_5c5f1d77.npz"
+    },
+    {
+      "array_opened": false,
+      "binary_hash_recomputed": false,
+      "bytes": 95558,
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/readouts/scglue_seed0_950bf91c.npz"
+    },
+    {
+      "array_opened": false,
+      "binary_hash_recomputed": false,
+      "bytes": 95590,
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/readouts/scmrdr_paper_seed0_0fd8c67a.npz"
+    },
+    {
+      "array_opened": false,
+      "binary_hash_recomputed": false,
+      "bytes": 95539,
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/readouts/true_state_reference_68ac5652.npz"
+    }
+  ],
+  "reports": {
+    "realistic": {
+      "bindings": {
+        "scglue_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "f5ab2dc91fc2751660659b2b0dd0d21d57c090ad1543ec51d2e4bf1c2a5c4050",
+          "public_export_receipt_sha256": "045f0c6434c0582663582951f5723f48b4a4f212e192400e4e5ecaec5dc3ddee",
+          "reported_manifest_sha256": "ba96263e999466bb7c95619ec0da40ac8562b6bac1d1f017d176415d95c44ddc"
+        },
+        "scmrdr_paper_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "05eb9978546a0d5ad78d36c610d10d48df05466ce9e9c7c30cddac914cf77ec6",
+          "public_export_receipt_sha256": "453864f7b9de68a51dcbcba0a2cdbd86354b076ecd2028b7016ef0c8e6fef14a",
+          "reported_manifest_sha256": "05eb9978546a0d5ad78d36c610d10d48df05466ce9e9c7c30cddac914cf77ec6"
+        }
+      },
+      "common_pool_counts": {
+        "H3K27ac": 792,
+        "H3K4me3": 792,
+        "RNA": 792
+      },
+      "empty_graphs": [],
+      "failures": [],
+      "input_fingerprint": "5ec327bbab4507f0c045b2da9eeafc9aedba1a60394f3f7d7aa3b02434ea3c7b",
+      "report_sha256": "5a01502fbd83520cb2e0c496caec655b1d808c271072d79e47e4192fb8ed5d8b",
+      "report_status": "completed"
+    }
+  },
+  "reviewer_script_sha256": "50e0809e7a66b0d2b99b144681b89c6c1ed4c60812db070765080199d7667b9f",
+  "rows": [
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 16,
+        "precision": 0.5714285714285714,
+        "recall": 0.5
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 1,
+        "n_predicted": 1,
+        "n_true": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.6666666666666666,
+        "false_negative": 3,
+        "false_positive": 1,
+        "false_positive_rate": 0.05,
+        "n_predicted": 5,
+        "n_true": 7,
+        "precision": 0.8,
+        "recall": 0.5714285714285714,
+        "true_positive": 4
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 14,
+        "precision": 0.8,
+        "recall": 0.5714285714285714
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 42,
+        "precision": 0.3333333333333333,
+        "recall": 0.047619047619047616
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.26666666666666666,
+        "false_negative": 10,
+        "false_positive": 1,
+        "false_positive_rate": 0.06666666666666667,
+        "n_predicted": 3,
+        "n_true": 12,
+        "precision": 0.6666666666666666,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 24,
+        "precision": 0.3333333333333333,
+        "recall": 0.08333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.06666666666666667,
+        "incident_adjacency_rate": 0.047619047619047616,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 1
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 16,
+        "precision": 0.3333333333333333,
+        "recall": 0.25
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 2,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.7692307692307693,
+        "false_negative": 2,
+        "false_positive": 1,
+        "false_positive_rate": 0.05,
+        "n_predicted": 6,
+        "n_true": 7,
+        "precision": 0.8333333333333334,
+        "recall": 0.7142857142857143,
+        "true_positive": 5
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 14,
+        "precision": 0.3333333333333333,
+        "recall": 0.2857142857142857
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_decoy",
+          "H3K4me3_decoy"
+        ],
+        [
+          "RNA_decoy",
+          "H3K4me3_decoy"
+        ]
+      ],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.0,
+        "incident_adjacency_rate": 0.0,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 0
+      },
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 42,
+        "precision": 0.6666666666666666,
+        "recall": 0.19047619047619047
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.4444444444444444,
+        "false_negative": 8,
+        "false_positive": 2,
+        "false_positive_rate": 0.13333333333333333,
+        "n_predicted": 6,
+        "n_true": 12,
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333,
+        "true_positive": 4
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 24,
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "sentinel": {
+        "false_positive_rate_against_current_graph_target": 0.13333333333333333,
+        "incident_adjacency_rate": 0.09523809523809523,
+        "n_possible_incident_pairs": 21,
+        "n_returned_incident_adjacencies": 2
+      },
+      "status": "ok"
+    }
+  ],
+  "saved_CI_log_checks": [
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "independent_paired_assessment",
+      "layer": "activities",
+      "saved_statistical_tests": 114,
+      "source_graph_is_reference_not_literal_matched_joint_truth": false,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "independent_paired_assessment",
+      "layer": "counts",
+      "saved_statistical_tests": 423,
+      "source_graph_is_reference_not_literal_matched_joint_truth": false,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "paired_anchor_reference",
+      "layer": "activities",
+      "saved_statistical_tests": 96,
+      "source_graph_is_reference_not_literal_matched_joint_truth": false,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "paired_anchor_reference",
+      "layer": "counts",
+      "saved_statistical_tests": 85,
+      "source_graph_is_reference_not_literal_matched_joint_truth": false,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "random_reference",
+      "layer": "activities",
+      "saved_statistical_tests": 36,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "random_reference",
+      "layer": "counts",
+      "saved_statistical_tests": 51,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "scglue_seed0",
+      "layer": "activities",
+      "saved_statistical_tests": 114,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "scglue_seed0",
+      "layer": "counts",
+      "saved_statistical_tests": 45,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "scmrdr_paper_seed0",
+      "layer": "activities",
+      "saved_statistical_tests": 135,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "scmrdr_paper_seed0",
+      "layer": "counts",
+      "saved_statistical_tests": 64,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "true_state_reference",
+      "layer": "activities",
+      "saved_statistical_tests": 136,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "true_state_reference",
+      "layer": "counts",
+      "saved_statistical_tests": 45,
+      "source_graph_is_reference_not_literal_matched_joint_truth": true,
+      "warning_records": 0
+    },
+    {
+      "deterministic_seed_fields_verified": true,
+      "failed_tests": 0,
+      "label": "independent_activities_with_state",
+      "layer": "discovery",
+      "saved_statistical_tests": 218,
+      "source_graph_is_reference_not_literal_matched_joint_truth": false,
+      "warning_records": 0
+    }
+  ],
+  "saved_probe_summaries": {
+    "preprocessing_representations": {
+      "conditional_mean_uncertainty": {
+        "assessment": {
+          "max_standard_error_by_target": [
+            0.050248642380476466,
+            0.0541369407410783,
+            0.05450419699727143,
+            0.06913535205517882,
+            0.05315968112667138,
+            0.05322511052946073,
+            0.10880503205072294,
+            0.05378452037190482,
+            0.05279217547260726
+          ],
+          "median_standard_error_by_target": [
+            0.04054950194252038,
+            0.04404411121589591,
+            0.04402994620126753,
+            0.055569931114004614,
+            0.04392912743654868,
+            0.044053763722785785,
+            0.08851212714148084,
+            0.04394139238521095,
+            0.04414159419254356
+          ],
+          "monte_carlo_repetitions": 128
+        },
+        "calibration": {
+          "max_standard_error_by_target": [
+            0.04844437591053448,
+            0.05265091938946885,
+            0.05668655416681233,
+            0.06720496598034649,
+            0.05238533304965264,
+            0.05318553893483343,
+            0.10654238793684456,
+            0.05312795686600148,
+            0.054073459738535314
+          ],
+          "median_standard_error_by_target": [
+            0.040399233365113627,
+            0.04395657613460467,
+            0.04418134635419885,
+            0.05539049240620848,
+            0.04409214718978087,
+            0.04394800007347448,
+            0.08855550753717839,
+            0.044190972167208686,
+            0.04409135123962294
+          ],
+          "monte_carlo_repetitions": 128
+        }
+      },
+      "configuration": {
+        "ridge_alpha": 1.0,
+        "tree_depth": 2,
+        "tree_estimators": 100,
+        "tree_learning_rate": 0.05,
+        "tree_min_samples_leaf": 10
+      },
+      "fit_access": "private calibration only; no model/integration selection from probe scores",
+      "groups": {
+        "shared/ridge/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.0079894235005111,
+          "MSE_gain_over_true_state_min": -0.05367814561477868,
+          "embedding_only_R2_max": 0.7912133355739523,
+          "embedding_only_R2_min": -0.0797970452011243,
+          "n": 18
+        },
+        "shared/ridge/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.008124223558644339,
+          "MSE_gain_over_true_state_min": -0.06453136794852199,
+          "embedding_only_R2_max": 0.7710211704415204,
+          "embedding_only_R2_min": -0.05802785588850656,
+          "n": 9
+        },
+        "shared/ridge/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.008867680440996173,
+          "MSE_gain_over_true_state_min": -0.05650617613760378,
+          "embedding_only_R2_max": -0.03996805825884886,
+          "embedding_only_R2_min": -0.09370012466234501,
+          "n": 18
+        },
+        "shared/ridge/residual/same_assay": {
+          "MSE_gain_over_true_state_max": -0.008135454120815011,
+          "MSE_gain_over_true_state_min": -0.06209187433826491,
+          "embedding_only_R2_max": -0.03494903720927356,
+          "embedding_only_R2_min": -0.06238703607045859,
+          "n": 9
+        },
+        "shared/ridge/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9243216817914188,
+          "embedding_only_R2_min": 0.7189415207834513,
+          "n": 6
+        },
+        "shared/shallow_boosted_tree/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": -1.8519112369164148e-06,
+          "MSE_gain_over_true_state_min": -0.021076810136409163,
+          "embedding_only_R2_max": 0.7810943924074809,
+          "embedding_only_R2_min": -0.040287943460236786,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/activity/same_assay": {
+          "MSE_gain_over_true_state_max": 6.314282657482462e-05,
+          "MSE_gain_over_true_state_min": -0.015162285791465946,
+          "embedding_only_R2_max": 0.7727515371831232,
+          "embedding_only_R2_min": -0.0275131106795381,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.002650686080694964,
+          "MSE_gain_over_true_state_min": -0.006162305333636209,
+          "embedding_only_R2_max": -0.011985017296666012,
+          "embedding_only_R2_min": -0.043557535728260266,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/residual/same_assay": {
+          "MSE_gain_over_true_state_max": 0.0002142565110172523,
+          "MSE_gain_over_true_state_min": -0.01162947803581571,
+          "embedding_only_R2_max": -0.01629592525423673,
+          "embedding_only_R2_min": -0.03618615449883067,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9187102244183589,
+          "embedding_only_R2_min": 0.7222218474333212,
+          "n": 6
+        }
+      },
+      "n_rows": 120,
+      "private_probe_values_refitted_or_arrays_opened": false,
+      "residual_targets": "simulation Monte Carlo conditional means",
+      "sample_counts": [
+        [
+          "H3K27ac",
+          1000,
+          2000
+        ],
+        [
+          "H3K4me3",
+          1000,
+          2000
+        ],
+        [
+          "RNA",
+          816,
+          1623
+        ]
+      ],
+      "saved_MSE_gain_algebra_verified": true,
+      "status": "ok"
+    },
+    "scglue_seed0": {
+      "conditional_mean_uncertainty": {
+        "assessment": {
+          "max_standard_error_by_target": [
+            0.050248642380476466,
+            0.0541369407410783,
+            0.05450419699727143,
+            0.06913535205517882,
+            0.05315968112667138,
+            0.05322511052946073,
+            0.10880503205072294,
+            0.05378452037190482,
+            0.05279217547260726
+          ],
+          "median_standard_error_by_target": [
+            0.04054950194252038,
+            0.04404411121589591,
+            0.04402994620126753,
+            0.055569931114004614,
+            0.04392912743654868,
+            0.044053763722785785,
+            0.08851212714148084,
+            0.04394139238521095,
+            0.04414159419254356
+          ],
+          "monte_carlo_repetitions": 128
+        },
+        "calibration": {
+          "max_standard_error_by_target": [
+            0.04844437591053448,
+            0.05265091938946885,
+            0.05668655416681233,
+            0.06720496598034649,
+            0.05238533304965264,
+            0.05318553893483343,
+            0.10654238793684456,
+            0.05312795686600148,
+            0.054073459738535314
+          ],
+          "median_standard_error_by_target": [
+            0.040399233365113627,
+            0.04395657613460467,
+            0.04418134635419885,
+            0.05539049240620848,
+            0.04409214718978087,
+            0.04394800007347448,
+            0.08855550753717839,
+            0.044190972167208686,
+            0.04409135123962294
+          ],
+          "monte_carlo_repetitions": 128
+        }
+      },
+      "configuration": {
+        "ridge_alpha": 1.0,
+        "tree_depth": 2,
+        "tree_estimators": 100,
+        "tree_learning_rate": 0.05,
+        "tree_min_samples_leaf": 10
+      },
+      "fit_access": "private calibration only; no model/integration selection from probe scores",
+      "groups": {
+        "shared/ridge/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.0033349119646290393,
+          "MSE_gain_over_true_state_min": -0.03639786431547787,
+          "embedding_only_R2_max": 0.7988500374904914,
+          "embedding_only_R2_min": -0.050627239633767473,
+          "n": 18
+        },
+        "shared/ridge/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.004896849585656726,
+          "MSE_gain_over_true_state_min": -0.043881782166594885,
+          "embedding_only_R2_max": 0.7954636329153766,
+          "embedding_only_R2_min": -0.04362472662015149,
+          "n": 9
+        },
+        "shared/ridge/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.0034099410431257526,
+          "MSE_gain_over_true_state_min": -0.03920516149168396,
+          "embedding_only_R2_max": -0.01450456581569548,
+          "embedding_only_R2_min": -0.05287003004023316,
+          "n": 18
+        },
+        "shared/ridge/residual/same_assay": {
+          "MSE_gain_over_true_state_max": -0.004895800397552663,
+          "MSE_gain_over_true_state_min": -0.040845871822600244,
+          "embedding_only_R2_max": -0.022482703945037708,
+          "embedding_only_R2_min": -0.041649423941009234,
+          "n": 9
+        },
+        "shared/ridge/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9329854738534894,
+          "embedding_only_R2_min": 0.7225232189826557,
+          "n": 6
+        },
+        "shared/shallow_boosted_tree/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.0007170941666068964,
+          "MSE_gain_over_true_state_min": -0.02577761307333304,
+          "embedding_only_R2_max": 0.7732658060640263,
+          "embedding_only_R2_min": -0.04832199795247938,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/activity/same_assay": {
+          "MSE_gain_over_true_state_max": 0.0008121000389836042,
+          "MSE_gain_over_true_state_min": -0.028968453507736136,
+          "embedding_only_R2_max": 0.7668206128850039,
+          "embedding_only_R2_min": -0.03690909706811385,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.0028985638445620243,
+          "MSE_gain_over_true_state_min": -0.020489098802998318,
+          "embedding_only_R2_max": -0.014103476124325498,
+          "embedding_only_R2_min": -0.04747737878637981,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/residual/same_assay": {
+          "MSE_gain_over_true_state_max": 0.0003301758124006904,
+          "MSE_gain_over_true_state_min": -0.015372505946136594,
+          "embedding_only_R2_max": -0.014861258973199565,
+          "embedding_only_R2_min": -0.04297968306571498,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9082875392988312,
+          "embedding_only_R2_min": 0.7008610444133041,
+          "n": 6
+        }
+      },
+      "n_rows": 120,
+      "private_probe_values_refitted_or_arrays_opened": false,
+      "residual_targets": "simulation Monte Carlo conditional means",
+      "sample_counts": [
+        [
+          "H3K27ac",
+          1000,
+          2000
+        ],
+        [
+          "H3K4me3",
+          1000,
+          2000
+        ],
+        [
+          "RNA",
+          816,
+          1623
+        ]
+      ],
+      "saved_MSE_gain_algebra_verified": true,
+      "status": "ok"
+    },
+    "scmrdr_paper_seed0": {
+      "conditional_mean_uncertainty": {
+        "assessment": {
+          "max_standard_error_by_target": [
+            0.050248642380476466,
+            0.0541369407410783,
+            0.05450419699727143,
+            0.06913535205517882,
+            0.05315968112667138,
+            0.05322511052946073,
+            0.10880503205072294,
+            0.05378452037190482,
+            0.05279217547260726
+          ],
+          "median_standard_error_by_target": [
+            0.04054950194252038,
+            0.04404411121589591,
+            0.04402994620126753,
+            0.055569931114004614,
+            0.04392912743654868,
+            0.044053763722785785,
+            0.08851212714148084,
+            0.04394139238521095,
+            0.04414159419254356
+          ],
+          "monte_carlo_repetitions": 128
+        },
+        "calibration": {
+          "max_standard_error_by_target": [
+            0.04844437591053448,
+            0.05265091938946885,
+            0.05668655416681233,
+            0.06720496598034649,
+            0.05238533304965264,
+            0.05318553893483343,
+            0.10654238793684456,
+            0.05312795686600148,
+            0.054073459738535314
+          ],
+          "median_standard_error_by_target": [
+            0.040399233365113627,
+            0.04395657613460467,
+            0.04418134635419885,
+            0.05539049240620848,
+            0.04409214718978087,
+            0.04394800007347448,
+            0.08855550753717839,
+            0.044190972167208686,
+            0.04409135123962294
+          ],
+          "monte_carlo_repetitions": 128
+        }
+      },
+      "configuration": {
+        "ridge_alpha": 1.0,
+        "tree_depth": 2,
+        "tree_estimators": 100,
+        "tree_learning_rate": 0.05,
+        "tree_min_samples_leaf": 10
+      },
+      "fit_access": "private calibration only; no model/integration selection from probe scores",
+      "groups": {
+        "shared/ridge/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": 7.449140749737904e-06,
+          "MSE_gain_over_true_state_min": -0.022798508856530786,
+          "embedding_only_R2_max": 0.7575473987863376,
+          "embedding_only_R2_min": -0.04442440237201151,
+          "n": 18
+        },
+        "shared/ridge/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.0012705737828256902,
+          "MSE_gain_over_true_state_min": -0.022544014103617283,
+          "embedding_only_R2_max": 0.8097344809612422,
+          "embedding_only_R2_min": -0.02201126141413634,
+          "n": 9
+        },
+        "shared/ridge/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": 7.739817807767002e-05,
+          "MSE_gain_over_true_state_min": -0.024858043077503944,
+          "embedding_only_R2_max": -0.0009605256093427883,
+          "embedding_only_R2_min": -0.04436792543984702,
+          "n": 18
+        },
+        "shared/ridge/residual/same_assay": {
+          "MSE_gain_over_true_state_max": -0.001715986398119762,
+          "MSE_gain_over_true_state_min": -0.022148295210792646,
+          "embedding_only_R2_max": -0.0074409559133294945,
+          "embedding_only_R2_min": -0.021700830131970328,
+          "n": 9
+        },
+        "shared/ridge/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9434394216033789,
+          "embedding_only_R2_min": 0.8075627298111284,
+          "n": 6
+        },
+        "shared/shallow_boosted_tree/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.0001591922919357558,
+          "MSE_gain_over_true_state_min": -0.020829058463196715,
+          "embedding_only_R2_max": 0.746604131930733,
+          "embedding_only_R2_min": -0.03170348949053059,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.0001958988476485346,
+          "MSE_gain_over_true_state_min": -0.019450284192085943,
+          "embedding_only_R2_max": 0.7998629520628716,
+          "embedding_only_R2_min": -0.02473397695037116,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.0018361391269463567,
+          "MSE_gain_over_true_state_min": -0.013931938031321756,
+          "embedding_only_R2_max": -0.008899752681670314,
+          "embedding_only_R2_min": -0.03591667057572612,
+          "n": 18
+        },
+        "shared/shallow_boosted_tree/residual/same_assay": {
+          "MSE_gain_over_true_state_max": 0.0020950071008356552,
+          "MSE_gain_over_true_state_min": -0.01932978498808069,
+          "embedding_only_R2_max": -0.014704122125654306,
+          "embedding_only_R2_min": -0.03642366873885128,
+          "n": 9
+        },
+        "shared/shallow_boosted_tree/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9350710464171335,
+          "embedding_only_R2_min": 0.8123311573877037,
+          "n": 6
+        },
+        "shared_plus_private/ridge/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.0004016824416899767,
+          "MSE_gain_over_true_state_min": -0.025044049603366703,
+          "embedding_only_R2_max": 0.7563304663509055,
+          "embedding_only_R2_min": -0.042747749337659346,
+          "n": 18
+        },
+        "shared_plus_private/ridge/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.0016071563110054976,
+          "MSE_gain_over_true_state_min": -0.025346255571622067,
+          "embedding_only_R2_max": 0.8068098916981619,
+          "embedding_only_R2_min": -0.02244165305430612,
+          "n": 9
+        },
+        "shared_plus_private/ridge/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": -0.0003378097503894395,
+          "MSE_gain_over_true_state_min": -0.028380176258447132,
+          "embedding_only_R2_max": -0.0023873278718264945,
+          "embedding_only_R2_min": -0.04319361189890958,
+          "n": 18
+        },
+        "shared_plus_private/ridge/residual/same_assay": {
+          "MSE_gain_over_true_state_max": -0.0016030023519363334,
+          "MSE_gain_over_true_state_min": -0.02476014441248109,
+          "embedding_only_R2_max": -0.0073851561547850775,
+          "embedding_only_R2_min": -0.023554848397845385,
+          "n": 9
+        },
+        "shared_plus_private/ridge/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9434541101905524,
+          "embedding_only_R2_min": 0.8091456209127554,
+          "n": 6
+        },
+        "shared_plus_private/shallow_boosted_tree/activity/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.0005348821716350816,
+          "MSE_gain_over_true_state_min": -0.020587582543335037,
+          "embedding_only_R2_max": 0.746604131930733,
+          "embedding_only_R2_min": -0.02932567502977279,
+          "n": 18
+        },
+        "shared_plus_private/shallow_boosted_tree/activity/same_assay": {
+          "MSE_gain_over_true_state_max": -0.00025098602878131926,
+          "MSE_gain_over_true_state_min": -0.019387565419278385,
+          "embedding_only_R2_max": 0.7998694870626244,
+          "embedding_only_R2_min": -0.021963842620218,
+          "n": 9
+        },
+        "shared_plus_private/shallow_boosted_tree/residual/cross_assay": {
+          "MSE_gain_over_true_state_max": 0.002326363351613736,
+          "MSE_gain_over_true_state_min": -0.012468214737869965,
+          "embedding_only_R2_max": -0.008618733725800576,
+          "embedding_only_R2_min": -0.03281238229896832,
+          "n": 18
+        },
+        "shared_plus_private/shallow_boosted_tree/residual/same_assay": {
+          "MSE_gain_over_true_state_max": 0.001802575043544724,
+          "MSE_gain_over_true_state_min": -0.01808550399180775,
+          "embedding_only_R2_max": -0.01767009510913775,
+          "embedding_only_R2_min": -0.03892517647934568,
+          "n": 9
+        },
+        "shared_plus_private/shallow_boosted_tree/state/state": {
+          "MSE_gain_over_true_state_max": null,
+          "MSE_gain_over_true_state_min": null,
+          "embedding_only_R2_max": 0.9350096944959729,
+          "embedding_only_R2_min": 0.8123311573877037,
+          "n": 6
+        }
+      },
+      "n_rows": 240,
+      "private_probe_values_refitted_or_arrays_opened": false,
+      "residual_targets": "simulation Monte Carlo conditional means",
+      "sample_counts": [
+        [
+          "H3K27ac",
+          1000,
+          2000
+        ],
+        [
+          "H3K4me3",
+          1000,
+          2000
+        ],
+        [
+          "RNA",
+          1000,
+          2000
+        ]
+      ],
+      "saved_MSE_gain_algebra_verified": true,
+      "status": "ok"
+    }
+  },
+  "schedule_hash": "3aca771d50f2ea1ac0e57b5540ef1837b26578d0882d7a778823e21ab750adfe",
+  "scope": "Only completed constrained_chain_1 realistic primary seed0 old frozen baseline: JSON graphs, metrics, stages and provenance; no informative-stage access, arrays, CI execution, fitting or new-study selection.",
+  "scope_limits": [
+    "No arrays or checkpoints opened or rehashed; readout inventory is file metadata only.",
+    "No fitting, model loading, statistical CI reruns or causal discovery reruns. Saved exact oracle labels checked by graph traversal only.",
+    "Matching costs and private probe numerical values are saved summaries; only their accounting and algebra were independently checked.",
+    "Graph scores use saved activity-projection/count-PAG targets; oracle PC/FCI generation and orientations were not rerun.",
+    "Matched panels impose a different-cell coupling; source target agreement is not recovery of the original paired joint.",
+    "Active informative baseline stage and new integration-validation selection/output files were not read or changed."
+  ],
+  "stages": [
+    {
+      "report_object_equal": true,
+      "sha256": "bb5d2ce778a8bf11d11e3a3a08f41892f8369a0b68c615f7667ab88d7d02d491",
+      "stage": "assignment_method_scglue_seed0"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "bbd1cb4637111f64391a88eae6c9905eeb4876945a3c58e53cb08f4ae8eb7af9",
+      "stage": "assignment_method_scmrdr_paper_seed0"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "1fc5727459dbaf74d503f55258d8f90e0d2293cb93fba59ab66e58cd58e27093",
+      "stage": "assignment_random"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "28997fa923bdebe69f81397d40655ae56582e7f652b90a87c07123492d376ddc",
+      "stage": "assignment_true_state"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "35d2e682c31764084c55f77137226d2fdf2ee67fcf865d38dbdce4fdf49ce44c",
+      "stage": "discovery_independent_paired_assessment"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "a0e1966a5d1642bd1f7b815aef9e573ed7922ea79c527ebe30c7e71b307a1557",
+      "stage": "discovery_paired_anchor_reference"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "ccffcadc0ee578ed59c34dc2931359a9a4f861fb777912a2f6791953e82a506d",
+      "stage": "discovery_random_reference"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "a87e9686e8c3961e71281c8b82dc51a821b2f11b1b300d7a3f3b8f86d00e61f0",
+      "stage": "discovery_scglue_seed0"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "4ca5953044b1b56b8c0602f65c5668df83490e147acd2c7d70d091c40d43a9d9",
+      "stage": "discovery_scmrdr_paper_seed0"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "ecd96a0d809a3bc15837a2139803db9ef913b93de0a90c0f89330fe6f67d8314",
+      "stage": "discovery_true_state_reference"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "604f8f136cc1d6fb8a868169785de241e6a8248a2ddd2491b349bb7b82acb21c",
+      "stage": "independent_activities_with_state"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "530ac8af6e8283517692646c9c6718fa3a7dd963626debb1b70a7de40819fc60",
+      "stage": "oracle_activity"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "1184201cc973a5aecb35afb86a12b945e9292c60c4d72480ea9fd1fbca1dfa11",
+      "stage": "oracle_counts"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "a70d5dbc8d6f19b30df262db2b5487e23de5de58bdccec2d113b28dd21409f19",
+      "stage": "preprocessing_probes_representations"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "3b119fa0ec1cac8479a151c22a8293a34c4397820a48369bc06851410517cd74",
+      "stage": "probes_scglue_seed0"
+    },
+    {
+      "report_object_equal": true,
+      "sha256": "f6e52c117acb9a36ea93322c75b55aa37f6ed3a1d5ab23648ef5b56c48616b61",
+      "stage": "probes_scmrdr_paper_seed0"
+    }
+  ],
+  "status": "passed_scoped_metadata_and_score_audit",
+  "unopened": [
+    "all NPZ/H5AD arrays",
+    "all model checkpoints",
+    "native discovery/test execution",
+    "other assessment scientific results"
+  ],
+  "world_id": "constrained_chain_1"
+}

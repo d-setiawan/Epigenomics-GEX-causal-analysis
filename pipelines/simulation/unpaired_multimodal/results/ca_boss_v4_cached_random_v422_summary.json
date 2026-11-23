@@ -1,0 +1,243 @@
+{
+  "schema_version": "ca_boss_v4.cached_random_v422_summary.v1",
+  "algorithm_schema_version": "crossfit_hierarchical_collider.v4.22",
+  "date": "2026-09-01",
+  "retrospective_development_only": true,
+  "fresh_locked_claim": false,
+  "new_worlds_or_datasets_created": false,
+  "eligible_cached_world_pool_size": 152,
+  "random_sampling_method": "block_balanced_without_replacement_within_panel; final six seeds chosen from random draws using identifiers and block only to maximize previously unseen coverage",
+  "panel_world_evaluations": 228,
+  "unique_existing_worlds": 142,
+  "cached_pool_coverage_fraction": 0.9342105263157895,
+  "exact_panel_world_evaluations": 228,
+  "exact_unique_worlds": 142,
+  "combined_layered_exact_unique_worlds": 142,
+  "direct_layer": {
+    "panel_true_positive_directed_arms": 2736,
+    "panel_false_positive_directed_arms": 0,
+    "panel_false_negative_directed_arms": 0,
+    "panel_strict_reversals": 0,
+    "unique_world_true_positive_directed_arms": 1704,
+    "unique_world_false_positive_directed_arms": 0,
+    "unique_world_false_negative_directed_arms": 0,
+    "unique_world_strict_reversals": 0,
+    "micro_direct_precision": 1.0,
+    "micro_direct_recall": 1.0,
+    "mean_direct_adjacencies_per_world": 12.0
+  },
+  "shared_state_assay_layer": {
+    "estimand": "multi_assay_state_responsive_set represented by one hypothesis-only cross_assay_shared_state_subspace hyperedge",
+    "selection_only_replay_from_hash_bound_membership_tables": true,
+    "cached_hyperedge_files_rewritten": false,
+    "worlds": 142,
+    "assay_tests": 994,
+    "selected_assays": 994,
+    "worlds_with_all_seven_modalities": 142,
+    "assay_participation_recall": 1.0,
+    "participation_decision_frame_sha256": "c01d1ad8bb070926b93f7e5c52afeb12a8be33e10723c151b9e8270b5c1cce46",
+    "membership_input_hash_list_sha256": "a208bd57382245b89cc53f1919ec6cd61fa991ab1b8575009335b8da3db4f1d4",
+    "assay_precision_identifiable_from_current_worlds": false,
+    "sentinel_pseudo_assay_null_audit": {
+      "opened_worlds": 120,
+      "false_assay_calls": 6,
+      "assay_tests": 720,
+      "assay_false_call_rate": 0.008333333333333333,
+      "worlds_with_at_least_one_false_call": 5,
+      "world_familywise_rate": 0.041666666666666664,
+      "nominal_world_familywise_target": 0.1,
+      "summary_sha256": "b5406394c9e53423300124653d740b5b09af8f4a704324d6a50d6a1bfc2fe034"
+    }
+  },
+  "strict_state_feature_layer": {
+    "strong_core_guard_replayed": true,
+    "true_positive_members": 2793,
+    "false_positive_members": 0,
+    "false_negative_members": 757,
+    "precision": 1.0,
+    "recall": 0.7867605633802817,
+    "role_recall": {
+      "P": 0.6678403755868545,
+      "Q": 0.8169014084507042,
+      "C": 0.7617370892018779,
+      "S": 0.8650234741784038,
+      "RNA": 1.0
+    },
+    "interpretation": "conservative member annotation only; assay participation does not promote reporters into feature membership"
+  },
+  "tests": {
+    "collider_tests_passed": 105,
+    "full_evaluation_tests_passed": 444,
+    "full_evaluation_warnings": 62,
+    "warnings": "scikit-learn deprecations from the unchanged frozen rank-fusion derivation audit"
+  },
+  "source_sha256": {
+    "crossfit_hierarchical_collider_v4.py": "218dd3ec857473be35a61466397fcafd6952a62e38e8ce0678687ee74b377975",
+    "shared_state_subspace_v4.py": "1c879a109cfc60a5db3b2c75f46a9bcb7baa6714d18507a405b5a68c601f0ba7"
+  },
+  "unique_worlds_by_block": {
+    "development_34001_34016": 16,
+    "development_47001_47016": 16,
+    "train_39001_39024": 22,
+    "train_40001_40024": 24,
+    "train_41001_41024": 20,
+    "train_46001_46024": 23,
+    "train_49001_49024": 21
+  },
+  "unique_nonretention_actions": {
+    "tier1_nonexact_production_completion": 5,
+    "collapse_multi_component_production_to_unique_crossfit_star": 5,
+    "zero_edge_state_gated_rank_fusion_completion": 3,
+    "replace_residually_inconsistent_dual_anchor_completion": 3,
+    "rotate_state_loaded_production_parent_to_residual_center_star": 2,
+    "replace_state_inconsistent_production_with_unique_supported_neighbor_star": 2,
+    "replace_zero_edge_overcomplete_spokes_with_beta_consensus_star": 1,
+    "replace_state_loaded_center_with_loading_equivalent_sibling_rotation": 1,
+    "zero_edge_unanimous_rescue_orientation_sparse_completion": 1,
+    "replace_state_inconsistent_parent_with_stable_same_center_candidate": 1,
+    "zero_edge_unique_all_state_topology_completion": 1,
+    "tier1u_fold_stable_exact_production_disagreement": 1,
+    "reorient_ambiguous_production_on_residually_supported_skeleton": 1,
+    "zero_edge_unique_rescue_anchored_state_consistent_completion": 1,
+    "constrain_weak_centrality_reorientation_to_state_consistent_skeleton": 1,
+    "tier1_exact_production_disagreement": 1,
+    "tier1r_residual_first_exact_production_disagreement": 1,
+    "revert_weak_centrality_reorientation_to_stable_precompletion": 1,
+    "replace_weak_observed_multicenter_with_unique_state_consistent_star": 1,
+    "zero_edge_dominant_competing_rescue_sparse_completion": 1
+  },
+  "untested_cached_worlds": [
+    {"block": "train_39001_39024", "seed": 39002},
+    {"block": "train_39001_39024", "seed": 39005},
+    {"block": "train_41001_41024", "seed": 41008},
+    {"block": "train_41001_41024", "seed": 41011},
+    {"block": "train_41001_41024", "seed": 41022},
+    {"block": "train_41001_41024", "seed": 41024},
+    {"block": "train_46001_46024", "seed": 46019},
+    {"block": "train_49001_49024", "seed": 49004},
+    {"block": "train_49001_49024", "seed": 49007},
+    {"block": "train_49001_49024", "seed": 49016}
+  ],
+  "panels": [
+    {
+      "selection_seed": 20260918,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_ab_seed20260918",
+      "phase_a_manifest_sha256": "15de2f1fe4c0ba4fabd3c192e641a602535b524e96b8421ee861f637ea7ef1c4",
+      "phase_b_summary_sha256": "56e369072e2a441fa01fd74cb707a963d89b233ead311669497b1b9f3c5554a9"
+    },
+    {
+      "selection_seed": 20260927,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_ab_seed20260927",
+      "phase_a_manifest_sha256": "7f2e1bc1d5a08154043fb14b219ff9affc2692ce8412520672b2529062a28ebf",
+      "phase_b_summary_sha256": "c1b1546c9d3210d97197ec45e462e241ee0ac60b24fde33831313663c6ef8421"
+    },
+    {
+      "selection_seed": 20260930,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_ab_seed20260930",
+      "phase_a_manifest_sha256": "812984b2da17379d4248d4cc126101dc3507d16fa609cd2e2a925f49c085b0df",
+      "phase_b_summary_sha256": "955ae38d808e1e03007c2446091b4949b9f9aa10029a0bbf7ad051973986fcd8"
+    },
+    {
+      "selection_seed": 20260931,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_ab_seed20260931",
+      "phase_a_manifest_sha256": "d9b7c255c6155aeca0d8c21ba35d6cfc133697d73d258fdcada542967d9e62a0",
+      "phase_b_summary_sha256": "5cd42bd343e2aef0905c7723f356aecd97dd68b74d835916abb165233ae0ca7c"
+    },
+    {
+      "selection_seed": 20260934,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260934",
+      "phase_a_manifest_sha256": "610c14d255b8bf99db8c828bc5e71e38be040d2383bbceced8b0f3358dd8991d",
+      "phase_b_summary_sha256": "b27f7db83c307c9e9c1e91d6a346154a8526527eb149e18c34a7c706e87ffd45"
+    },
+    {
+      "selection_seed": 20260935,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260935",
+      "phase_a_manifest_sha256": "b83d1ec09402854c3741bf5325f315785191f9ee67e68ac7d0f36910b1b5f1d6",
+      "phase_b_summary_sha256": "afc985a29159a7fc86f37f0a8e24f9e1233d6e713e2ca095e9bf4f4e0d8ffcf2"
+    },
+    {
+      "selection_seed": 20260936,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260936",
+      "phase_a_manifest_sha256": "82e6527c286627e35158b4a113589c99bc43371d28400f7fd9c05dda8c4f1ef7",
+      "phase_b_summary_sha256": "19963d63bca0dc6576b59b7e252fd0dd5d9a776d8815804be4be5f0281c6c355"
+    },
+    {
+      "selection_seed": 20260937,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260937",
+      "phase_a_manifest_sha256": "9fe1cba21e4ade3e9caabdd08ec3e05a6111cab2a579d3d0431d44e742010a77",
+      "phase_b_summary_sha256": "60980ef7710742f2f0ca3dbfb9da7df6e4e0459a1f5f6f48f06a14b3a1dad6e4"
+    },
+    {
+      "selection_seed": 20260938,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260938",
+      "phase_a_manifest_sha256": "d18385b2b63a3f56cb4a0fa874d9eea8106c09c84ba79ea4c1e10aeffa3ff8f0",
+      "phase_b_summary_sha256": "ee35e38ebdca0d2c1c1a46056f58a636a6b769e2b20ce7f7a42db4b85901a892"
+    },
+    {
+      "selection_seed": 20260939,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260939",
+      "phase_a_manifest_sha256": "c34a31719a8d5b8ba05b7c9786a0ef1df58e510432d16e7a902f5c3952b3a38f",
+      "phase_b_summary_sha256": "a3f94bd9f3b56896b05f81d781740d2d29d46c85c92ddc2d1162e76afaca216a"
+    },
+    {
+      "selection_seed": 20260940,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260940",
+      "phase_a_manifest_sha256": "4059c67c0c481fb4d8145d9bd02c6ad1aa1b785087650cffd4800680f5efd31e",
+      "phase_b_summary_sha256": "eeb3ce929a34a2f18a492c72069c523a151ba3ac9405412fc5c8277e6bc81a16"
+    },
+    {
+      "selection_seed": 20260941,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260941",
+      "phase_a_manifest_sha256": "c1bdad017da17b8d16826573750e9fba4b5c8e2fef41c47866d0db87ec20f973",
+      "phase_b_summary_sha256": "2ab7c4329ebce7b306c17910375d076e88d5544d2757ff68489ff741326206aa"
+    },
+    {
+      "selection_seed": 20260942,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260942",
+      "phase_a_manifest_sha256": "b5f445118789d4e19336ce5aaf9eefd9c66b84970e0168fa30195470069bb3a4",
+      "phase_b_summary_sha256": "896913d22bec74cb009bb719eede008975159879e80d27b1e90ad22cdad87231"
+    },
+    {
+      "selection_seed": 20261050,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20261050",
+      "phase_a_manifest_sha256": "64d3aefb6db7a5b7a1b6c281e17b4770ed2c878755963698db4aa70bc17b2d60",
+      "phase_b_summary_sha256": "2bcb32a21a02eca92b583c549c93d73ae28a4ce1c0dd907334b19a39d9885a2b"
+    },
+    {
+      "selection_seed": 20261633,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20261633",
+      "phase_a_manifest_sha256": "b9f5ead87b757d7bea1c88cc43472d0eee7c52f783434202c8190f448d6d5e95",
+      "phase_b_summary_sha256": "deb80f497db70edd4517ce4de3fe26d77abc0e2e58706418bb4f2c42593620a6"
+    },
+    {
+      "selection_seed": 20261822,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20261822",
+      "phase_a_manifest_sha256": "b3a8dd270239158e6e50e06895ae40c41b28af096bcf1a1c9c6b763fda659697",
+      "phase_b_summary_sha256": "6ba3919f9b7dd1034dbebcfe29dbdc8b528487bc146f6a6439af301b2d4a5b84"
+    },
+    {
+      "selection_seed": 20262026,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20262026",
+      "phase_a_manifest_sha256": "c08d380aa4827a0bb3417a2e76e0126efbba1fda230485d68db4192fc931c79d",
+      "phase_b_summary_sha256": "5805438394a77f940399f09b101f9867b4ef9b34092b7b05951d20b83d3ca579"
+    },
+    {
+      "selection_seed": 20263281,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20263281",
+      "phase_a_manifest_sha256": "ff890d6dc60b68e5cec4973fcb35217f5f4ea026ca69801070038ebf9fca7883",
+      "phase_b_summary_sha256": "3570fa2cb09a82de5c8000ac501ba12b839ecdb49d01a21f665e0210222a393e"
+    },
+    {
+      "selection_seed": 20263515,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20263515",
+      "phase_a_manifest_sha256": "7eb08f3b20743ed6a35c72f71863d0c6ab5a9385f96382ceb504ace86f897b24",
+      "phase_b_summary_sha256": "c1de627629fd9ea926b4660117d629907e2a8249250f834661906857a3a11857"
+    }
+  ],
+  "interpretation": {
+    "within_assay_direct_structure": "retrospectively exact on 142 distinct sampled cached worlds",
+    "cross_assay_structure": "complete assay-level shared latent-state participation represented as one n-ary hypothesis-only subspace hyperedge",
+    "exact_cross_assay_feature_pairing": "not claimed",
+    "cell_specific_cross_assay_direct_effects": "not identifiable from disjoint cells under the agreed data contract"
+  }
+}

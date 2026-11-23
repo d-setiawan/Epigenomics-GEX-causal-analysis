@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-15T18:19:23.729890",
+  "os": {
+    "system": "Linux",
+    "release": "6.18.58.1-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026",
+    "machine": "x86_64",
+    "python_version": "3.11.14"
+  },
+  "cpu": {
+    "physical_cores": 10,
+    "logical_cores": 20,
+    "max_frequency_mhz": 0.0,
+    "architecture": "x86_64",
+    "processor": "x86_64",
+    "current_frequency_mhz": 2687.9989999999984
+  },
+  "memory": {
+    "total_gb": 11.68,
+    "available_gb": 8.55,
+    "used_gb": 3.13,
+    "percent_used": 26.8,
+    "swap_total_gb": 4.0,
+    "swap_available_gb": 3.88
+  },
+  "disk": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis",
+    "total_gb": 1006.85,
+    "available_gb": 565.36,
+    "used_gb": 390.28,
+    "percent_used": 40.8
+  },
+  "gpu": {
+    "nvidia_gpus": [],
+    "amd_gpus": [],
+    "apple_silicon": null,
+    "total_gpus": 0,
+    "available_backends": []
+  },
+  "recommendations": {
+    "parallel_processing": {
+      "strategy": "high_parallelism",
+      "suggested_workers": 18,
+      "libraries": [
+        "joblib",
+        "multiprocessing",
+        "dask"
+      ]
+    },
+    "memory_strategy": {
+      "strategy": "moderate_memory",
+      "libraries": [
+        "dask",
+        "zarr"
+      ],
+      "note": "Consider chunking for datasets > 2GB"
+    },
+    "gpu_acceleration": {
+      "available": false,
+      "note": "No GPU detected, use CPU-based libraries"
+    },
+    "large_data_handling": {
+      "strategy": "disk_abundant",
+      "note": "Sufficient space for large intermediate files"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-14",
+  "type": "bounded targeted citation-chain and primary-paper recheck; no claim of exhaustive coverage",
+  "backward_paths": [
+    "Shrestha–Fu 2025 reference list identifies Kong 2022 and Xie 2023; Appendix B.3 compares their conditions",
+    "Timilsina et al. 2026 reference list and introduction identify Yan 2023 and Nguyen–Fu 2025",
+    "Nguyen–Fu 2025 references Hyvarinen–Pajunen 1999, Hyvarinen et al. 2019 and Gresele 2020",
+    "Yao et al. 2024 cites earlier partial-identifiability/multiview and contrasts paired-view objectives"
+  ],
+  "forward_paths": [
+    "Shrestha–Fu 2025 to Timilsina et al. 2026, verified by primary reference list and theorem statements",
+    "Nguyen–Fu 2025 to Timilsina et al. 2026, verified by primary reference list"
+  ],
+  "web_queries": [
+    "content style identifiability Xie Kong 2022 2023 multi domain",
+    "Yan content style identifiability nonlinear mixture 2023 domain",
+    "partially observable multi view causal representation learning theorem ICLR 2024",
+    "Shrestha Fu content style 2025 Xie Kong 2023 identifiability",
+    "Multi-domain image generation and translation with identifiability guarantees theorem Xie",
+    "Partial Disentanglement for Domain Adaptation theorem Kong 2022",
+    "A Sparsity Principle for Partially Observable theorem piecewise linear Gaussian 2024",
+    "Yan Counterfactual Generation with Identifiability Guarantees theorem 1 2023",
+    "Nguyen Fu 2025 identifiability single cell causal representation",
+    "Nguyen Fu single-cell identifiability multi-view 2025 latent"
+  ],
+  "primary_inspection": [
+    {
+      "url": "https://proceedings.mlr.press/v162/kong22a/kong22a.pdf",
+      "locators": "Theorems 4.1–4.2 and A4, PDF pp. 4–5"
+    },
+    {
+      "url": "https://openreview.net/pdf?id=U2g8OGONA_V",
+      "locators": "Lemma 3.1, A4, Theorem 3.2 and Appendix F"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/afda6bf3fb086eabbaf161ba1cec5a9a-Paper-Conference.pdf",
+      "locators": "Theorems 1–2, assumptions 1–2, Appendices A.5–A.6"
+    },
+    {
+      "url": "https://openreview.net/pdf/a66a6b861f8b2b91dd14ebb34d881a0b0b7ff063.pdf",
+      "locators": "Theorems 3.2–3.3, Assumption 3.1 and synthetic single-cell evaluation"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/xu24ac/xu24ac.pdf",
+      "locators": "Theorem 3.4, Example 3.1, training group requirements"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/956e5427549a82a7472e02adc88360e9-Paper-Conference.pdf",
+      "locators": "Theorems 3.2 and 3.8, joint-view objectives"
+    },
+    {
+      "url": "https://arxiv.org/html/2411.03755",
+      "locators": "Assumption 3.2 and Theorems 3.3–3.4"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.17827",
+      "locators": "Assumption 3.3 and Theorems 3.4 and 3.6"
+    }
+  ],
+  "limits": "Selected primary theorem statements, assumptions and quoted proofs were inspected; no complete formal verification or reproduction, software audit, comprehensive forward-citation traversal or quantitative screen. No private credentials or API keys, fits or datasets used.",
+  "adjacent_metadata_followup": {
+    "date": "2026-11-14",
+    "source": "NeurIPS 2023 proceedings / related CMUCLeaR and CSDI references",
+    "title": "Generalizing Nonlinear ICA Beyond Structural Sparsity",
+    "authors": "Zheng and Zhang",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/2aebc17b683792a17dd4a24fcb038ba6-Paper-Conference.pdf",
+    "screen": "Adjacent single-view nonlinear ICA; theorem not audited, no inferred unpaired alignment claim."
+  }
+}

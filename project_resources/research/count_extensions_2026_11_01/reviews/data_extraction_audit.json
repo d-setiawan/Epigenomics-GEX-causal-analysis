@@ -1,0 +1,235 @@
+{
+  "audit_script_sha256": "4c9d886f9f53028539994430905b89ad6f95f05e90084169ccb34c48fd3af029",
+  "canonical_training_pair_maps_read": false,
+  "manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "new_worlds_or_measurements": false,
+  "old_30_prefix_byte_checks": 90,
+  "original90_paired_columns_exact": true,
+  "protocol_sha256": "8bed467b52175781c96cdae9318fc6e535ab4d62ee4ee3d5ec3f74914ce1cdf0",
+  "public_arrays_checked": 18,
+  "real_paired_cells": 595,
+  "real_paired_features": 900,
+  "records": [
+    {
+      "assay": "RNA",
+      "dataset": "constrained_collider_0",
+      "partition": "train",
+      "public_sha256": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "97930aaf19d23322cb0a74606a178e327a39ba2731a245373b41a4b543711032"
+    },
+    {
+      "assay": "RNA",
+      "dataset": "constrained_collider_0",
+      "partition": "test",
+      "public_sha256": "960a07bec2ac4e39b44fde5e836625c8e21ee747d110b28c94874ce6c15a558a",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "66f8b1e2b5fe5ad2527c17bf5da36a7c35be3c8bb1feb4697b63ef2f126f7d17"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "constrained_collider_0",
+      "partition": "train",
+      "public_sha256": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "571ead1a2d95308413aa3f80de7eded43dacb31a6450a6e62d3a48b47f7d7c1d"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "constrained_collider_0",
+      "partition": "test",
+      "public_sha256": "35eb8a0eaf41a0045d180f7087cccb015925b309a6237b32cf6d3632da9e0e5c",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "7eca5dc4661ea933212b85e1acaa8c24f5994941c370efc9cd9648ae8ae95f0f"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "constrained_collider_0",
+      "partition": "train",
+      "public_sha256": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "c138cafa1888aaacd367ca94b766d6963c7919ef1df721839356bceef57a90b1"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "constrained_collider_0",
+      "partition": "test",
+      "public_sha256": "7759aa28100fc96b9e490dee99a907f2d51626934edeb9ee404338eb21b349e8",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "6c97f587e8365b2a7e68708c91548cc16e8a604f9a1984a2daa2ad2061f3a002"
+    },
+    {
+      "assay": "RNA",
+      "dataset": "linear_chain_0",
+      "partition": "train",
+      "public_sha256": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "4defd86c8b8503491ea45e089d9c935e7679c1f856c39b7cec8264285d862e59"
+    },
+    {
+      "assay": "RNA",
+      "dataset": "linear_chain_0",
+      "partition": "test",
+      "public_sha256": "5ac8502cb32afbdc5c165d1deb41b11a7a5978c403aa8d13a9acb36a8ebb12e9",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "68a811dde223b992070f817a73e05e8e36796804fd79bfb097fbaa0f00a87c74"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "linear_chain_0",
+      "partition": "train",
+      "public_sha256": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "7be2ad515658662d639a91d693ff6ef976216c725ad417f3e14153b22bb6ba51"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "linear_chain_0",
+      "partition": "test",
+      "public_sha256": "e501d2f7ba81dae99f1227c1e1cebcff2b6db1fcf383ba7ec837d27662abc6be",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "936a444eb47a2641aeb37e9dd328aa4c647b1c62856bcee6271d8e95c6633b60"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "linear_chain_0",
+      "partition": "train",
+      "public_sha256": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+      "shape": [
+        4000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "0d29da40c222bfb39fd11b6f4e9fc68f5c2d32ff0f31b7de93fb216af40a9b80"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "linear_chain_0",
+      "partition": "test",
+      "public_sha256": "cae6b20af9419221af7a6749bc157d4d2eb48c12ddadec7b9e52ed6ba2f9edc7",
+      "shape": [
+        2000,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "66787bdb7d623127fffd6b64b94dac604dc8dba2463641c9f3642d3aeb10b1af"
+    },
+    {
+      "assay": "RNA",
+      "dataset": "scmtr_seq_s1",
+      "partition": "train",
+      "public_sha256": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2",
+      "shape": [
+        602,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "9c0609fc44274aee794b41b9aba7fb7064d3951ccdb1b1f8dc6d19b2c3762fa1"
+    },
+    {
+      "assay": "RNA",
+      "dataset": "scmtr_seq_s1",
+      "partition": "test",
+      "public_sha256": "b9facaeb8a19c5ff671718e2bb5c2eb1f699f21dee5bbcea41a1346bc33b3f26",
+      "shape": [
+        595,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "f1c8b648822132a999b3ef876d3ff85b3418f8598d587d5b3349a93dc7c1eff5"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "scmtr_seq_s1",
+      "partition": "train",
+      "public_sha256": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+      "shape": [
+        615,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "06334190910dd7c08f0ed37259609d79dd129c3e50d092a7dec9f30f7d4ded6a"
+    },
+    {
+      "assay": "H3K27ac",
+      "dataset": "scmtr_seq_s1",
+      "partition": "test",
+      "public_sha256": "16580adef8455cc195878c51b4a48fe7f60031ed3a29e4682741d3b7d6a682dd",
+      "shape": [
+        595,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "a9e5c3e6b35a27e110c3c8c6ec5fe3154d5b6368329ad78f68ada4101c1a70ca"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "scmtr_seq_s1",
+      "partition": "train",
+      "public_sha256": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+      "shape": [
+        614,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "398f843dc9ebc26407c0bd84b6913403b44cae27475056de4f41028a5c63333a"
+    },
+    {
+      "assay": "H3K4me3",
+      "dataset": "scmtr_seq_s1",
+      "partition": "test",
+      "public_sha256": "07cf00bc601cc98ff612bc093807663a3359f523164ffe1c88ce337a743f318e",
+      "shape": [
+        595,
+        300
+      ],
+      "source_and_30_prefix_replayed": true,
+      "source_sha256": "89e2f0e478c2fd09f825589fdc50a1d6dcdfde3ecaaa5f2e0849df885d41626c"
+    }
+  ],
+  "scope": "Full original public H5 replay and count/ID joins only; no model fitting or covariance/state performance metrics",
+  "simulation_state_files_byte_identical": true,
+  "state_values_loaded": false,
+  "status": "pass",
+  "training_selections_independently_replayed": 9
+}

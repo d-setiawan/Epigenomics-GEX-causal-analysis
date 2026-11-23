@@ -1,0 +1,54 @@
+{
+  "date_utc": "2026-11-15T21:36:42.790487+00:00",
+  "exit_code": 1,
+  "error": "ValueError: C03 seal, source or approval mismatch",
+  "failure_stage": "Initial main guard before public test reads and before evaluation directory creation",
+  "fit_seal_sha256": "16b043cc977279f2dda3b000d4da523f568497d44e0f9b1c4d6b0899e4d7c5f9",
+  "evaluation_directory_exists": false,
+  "protocol_differences_after_evaluator_import": {
+    "threadpools": {
+      "expected": [
+        {
+          "architecture": "Haswell",
+          "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-56d6093b.so",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "threading_layer": "pthreads",
+          "user_api": "blas",
+          "version": "0.3.29"
+        }
+      ],
+      "actual": [
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-56d6093b.so",
+          "version": "0.3.29",
+          "threading_layer": "pthreads",
+          "architecture": "Haswell"
+        },
+        {
+          "user_api": "blas",
+          "internal_api": "mkl",
+          "num_threads": 1,
+          "prefix": "libmkl_rt",
+          "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libmkl_rt.so.2",
+          "version": "2025.3-Product",
+          "threading_layer": "intel"
+        },
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libomp",
+          "filepath": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/libomp.so",
+          "version": null
+        }
+      ]
+    }
+  },
+  "frozen_source_edited": false
+}

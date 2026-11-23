@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_core.py"
+  ],
+  "exit_code": 0,
+  "label": "deterministic algebra, count likelihood and certificate fixtures; no scientific fitting",
+  "sources": {
+    "core.py": "2b86f8632e48609fb40d9e1f463bd0d2eadc3a0e566c8dd363de204b62a2c8ec",
+    "evaluate.py": "51c2cbd46296ed3e1b2b4d9b092336144644e3aa43ada9bcf911eb8a976c235f",
+    "run.py": "afcaaf950f248feebc906a8aac98b648ce9e65b493820e68d1163d6270cf024b",
+    "test_core.py": "32e4e2a60fc6860813a355a7c18a4e5d8a37315aa484765900375a492c120e4a",
+    "worker.py": "38f511d67f89a74b90a3b4a27c8a9f5f2150aaa5b1a6ae7ab383bb8d4249f96e"
+  },
+  "stderr": "test_certificate_exhaustive (test_core.Checks.test_certificate_exhaustive) ... ok\ntest_likelihood_zero_and_moments (test_core.Checks.test_likelihood_zero_and_moments) ... ok\ntest_official_state_order_and_zero_rates (test_core.Checks.test_official_state_order_and_zero_rates) ... ok\ntest_split_null (test_core.Checks.test_split_null) ... ok\ntest_upstream_selection_semantics (test_core.Checks.test_upstream_selection_semantics) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.487s\n\nOK\n",
+  "stdout": ""
+}

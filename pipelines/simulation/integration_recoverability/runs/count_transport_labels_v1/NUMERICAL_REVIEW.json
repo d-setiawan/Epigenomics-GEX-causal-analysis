@@ -1,0 +1,607 @@
+{
+  "audit_math_helpers_sha256": "6f4a6bd436617babf03aa16c2912f75db3dea78a815ab3af088be403317059c1",
+  "audit_revision_note": "An initial draft audit decoded parameter loading blocks in JSON dictionary order; corrected to the model explicit assay_order. No frozen experiment file changed.",
+  "audit_script_sha256": "42574b2bca0d7601061bebef9e545963f3ced919bbe1b864c4c86bf5347aa223",
+  "calibration_selections_verified": 9,
+  "canonical_outside_old_domain_counts": {
+    "False": 29,
+    "True": 7
+  },
+  "canonicalization_counts": {
+    "with_flips": 22,
+    "without_flips": 14
+  },
+  "convergence_outcomes": {
+    "projected_gradient_convergence": 36
+  },
+  "counts": {
+    "boolean_checks": 4112,
+    "calibration_assays_recomputed": 108,
+    "full_joint_law_canonicalizations_verified": 36,
+    "hash_comparisons": 128,
+    "legacy_initializations_reconstructed": 36,
+    "numeric_comparisons": 3060,
+    "per_cell_predictions_recomputed": 216000,
+    "selected_directions_recomputed": 54
+  },
+  "created_utc": "2026-11-16T00:03:17.581665+00:00",
+  "exploratory": true,
+  "feasible_truth_witness_outcomes": {
+    "d1/truth_better=False": 12,
+    "d2/truth_better=True": 12,
+    "d3/truth_better=True": 12
+  },
+  "independent_selected_autodiff": {
+    "d1_rep0__n12000__two_sided_labels": {
+      "objective": 1.3357304333594764,
+      "projected_gradient_inf_norm": 8.906191362179072e-07,
+      "raw_gradient_inf_norm": 8.906191363186208e-07
+    },
+    "d1_rep1__n12000__two_sided_labels": {
+      "objective": 1.2928022059888133,
+      "projected_gradient_inf_norm": 5.768598708016937e-07,
+      "raw_gradient_inf_norm": 5.768598708074244e-07
+    },
+    "d1_rep2__n12000__two_sided_labels": {
+      "objective": 1.3215782433609833,
+      "projected_gradient_inf_norm": 9.58060318689835e-07,
+      "raw_gradient_inf_norm": 9.580603187096669e-07
+    },
+    "d2_rep0__n12000__two_sided_labels": {
+      "objective": 1.36457014875279,
+      "projected_gradient_inf_norm": 8.318398152518114e-07,
+      "raw_gradient_inf_norm": 8.318398152014807e-07
+    },
+    "d2_rep1__n12000__two_sided_labels": {
+      "objective": 1.4028753579813265,
+      "projected_gradient_inf_norm": 8.685417162146436e-07,
+      "raw_gradient_inf_norm": 8.685417162665295e-07
+    },
+    "d2_rep2__n12000__two_sided_labels": {
+      "objective": 1.4573698322171016,
+      "projected_gradient_inf_norm": 7.043281212704144e-07,
+      "raw_gradient_inf_norm": 7.043281212755644e-07
+    },
+    "d3_rep0__n12000__two_sided_labels": {
+      "objective": 1.3916089097986515,
+      "projected_gradient_inf_norm": 9.629947073652723e-07,
+      "raw_gradient_inf_norm": 9.62994707356165e-07
+    },
+    "d3_rep1__n12000__two_sided_labels": {
+      "objective": 1.408339199569093,
+      "projected_gradient_inf_norm": 6.31109130344587e-07,
+      "raw_gradient_inf_norm": 6.311091303647532e-07
+    },
+    "d3_rep2__n12000__two_sided_labels": {
+      "objective": 1.3917970141656755,
+      "projected_gradient_inf_norm": 5.474619242384904e-07,
+      "raw_gradient_inf_norm": 5.474619241104723e-07
+    }
+  },
+  "issues": [],
+  "limitations": [
+    "Already assessed worlds: exploratory evidence only.",
+    "The probability domain broadens below and above the primary canonical range, so this is not a pure relabeling-only optimization comparison.",
+    "Stationarity is not global optimality; negative feasible-truth objective gaps do not certify optimality."
+  ],
+  "maximum_absolute_errors": {
+    "autodiff_objective": 2.220446049250313e-16,
+    "autodiff_projected_gradient": 1.7763568394002505e-15,
+    "autodiff_raw_gradient": 1.4546681255931705e-15,
+    "calibration_aggregate": 4.440892098500626e-16,
+    "calibration_assay": 6.661338147750939e-16,
+    "canonical_joint_atom_weights": 1.1102230246251565e-16,
+    "canonical_joint_lograte_atoms": 2.1316282072803006e-14,
+    "canonical_parameter_vector": 0.0,
+    "canonical_prior": 1.1102230246251565e-16,
+    "exact_count_covariance": 2.2737367544323206e-13,
+    "feasible_objective_gap": 4.440892098500626e-16,
+    "fit_scale": 0.0,
+    "fitted_training_nll": 4.440892098500626e-16,
+    "initial_probabilities": 5.551115123125783e-17,
+    "mean_lograte_transport": 1.0658141036401503e-14,
+    "per_cell_gain_over_same_model_target_marginal": 1.7053025658242404e-13,
+    "per_cell_gain_over_true_independent_target": 5.186961971048731e-13,
+    "per_cell_model_conditional_loglik": 2.4868995751603507e-13,
+    "per_cell_model_target_marginal_loglik": 2.4868995751603507e-13,
+    "per_cell_oracle_conditional_loglik": 3.055333763768431e-13,
+    "per_cell_oracle_conditional_logscore_gap": 5.258016244624741e-13,
+    "per_cell_oracle_gain_over_true_independent_target": 6.394884621840902e-14,
+    "per_cell_target_marginal_logscore_gap": 4.760636329592671e-13,
+    "per_cell_true_independent_target_loglik": 3.019806626980426e-13,
+    "physical_initialization_parameters": 0.0,
+    "predictive_mean": 2.1316282072803006e-14,
+    "predictive_per_feature_mean": 1.3322676295501878e-15,
+    "raw_canonical_objective_record": 0.0,
+    "raw_prior_decoding": 0.0,
+    "restricted_transport": 2.3092638912203256e-14,
+    "source_covariance": 4.440892098500626e-16,
+    "source_means": 1.3877787807814457e-16,
+    "source_normalization": 2.220446049250313e-16,
+    "state_probabilities": 1.1102230246251565e-16,
+    "strict_model_identity": 1.1102230246251565e-16,
+    "support_lograte_transport": 4.440892098500626e-15,
+    "true_training_witness": 4.440892098500626e-16
+  },
+  "methods": "Independent NumPy/SciPy likelihood and exact moment calculations; direct reconstruction of legacy seeded initial states; global shared bit-permutation verification of every fitted raw/canonical joint law; PyTorch float64 raw-parameter gradients for every selected fit. No estimator objective or evaluator aggregate helper called.",
+  "not_repeated": [
+    "No bootstrap quantile replay; recovery flags reuse stored CI lower bounds.",
+    "No optimization replay or new counts.",
+    "No per-direction replay of unselected starts."
+  ],
+  "reviewer": "Label optimizer author; independent evaluator, initialization, and autodifferentiation replay",
+  "sealed_hashes": {
+    "evaluation.json": "305d876c258e8a3d4ae9840ce4de55a773b8dcf41a31debb6df1a195fa6f7075",
+    "evaluation_seal.json": "c7f0c99edd4e86fe859ad7e0d539718e0c5ce768f7e4f9af64221e4f60635472",
+    "fit_seal.json": "c5161b47a4f9a34b88e8eaf6afe23b46b4f1c0fae674e8f9b529a6994031c270",
+    "protocol.json": "a13c052ca248f28fca485d9fce41c2de76811583c8469c13dca9571eb98a0410"
+  },
+  "selected_results": {
+    "d1_rep0__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.010670832561461818,
+          "gain_per_feature": 0.019381236234461974,
+          "oracle_gap_per_feature": 6.777471973634549e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019533953871035594
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.02001642080650004,
+          "gain_per_feature": 0.011628742169259522,
+          "oracle_gap_per_feature": 2.59907582175229e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014695979206765908
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.010670832561461816,
+          "gain_per_feature": 0.01453592717584648,
+          "oracle_gap_per_feature": 1.3410790253265638e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.016604967234674035
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.014016586474261229,
+          "gain_per_feature": 0.011628741740677129,
+          "oracle_gap_per_feature": 2.5990676405225816e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014700841284045254
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.020016420806500044,
+          "gain_per_feature": 0.014535927711574402,
+          "oracle_gap_per_feature": 1.341089251890474e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01685491687617613
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.01401658647426123,
+          "gain_per_feature": 0.019381236234461877,
+          "oracle_gap_per_feature": 6.777471973671526e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019750428286133753
+        }
+      },
+      "fitted_minus_true_training_objective": -3.997771609842715e-05,
+      "raw_flips": [],
+      "selected": "fits/d1_rep0__n12000__two_sided_labels__seed2.json"
+    },
+    "d1_rep1__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.044549184968595744,
+          "gain_per_feature": 0.016171864824418843,
+          "oracle_gap_per_feature": 2.798765116204185e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04169495326016774
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.026405850474187288,
+          "gain_per_feature": 0.011546023215693103,
+          "oracle_gap_per_feature": 3.612961780702587e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.013348129134618976
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.04454918496859573,
+          "gain_per_feature": 0.012128898618314135,
+          "oracle_gap_per_feature": 1.3757198710941165e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.029001527846474473
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.041867917507199724,
+          "gain_per_feature": 0.009710617288459624,
+          "oracle_gap_per_feature": 1.9399059816056854e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.021999565519138675
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.02640585047418728,
+          "gain_per_feature": 0.014432529019616383,
+          "oracle_gap_per_feature": 3.5731153193065154e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023959792232930682
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.04186791750719974,
+          "gain_per_feature": 0.016184362147432706,
+          "oracle_gap_per_feature": 2.940199381992039e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04217981241709093
+        }
+      },
+      "fitted_minus_true_training_objective": -3.0897532153906226e-05,
+      "raw_flips": [
+        0
+      ],
+      "selected": "fits/d1_rep1__n12000__two_sided_labels__seed1.json"
+    },
+    "d1_rep2__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.013271601746678942,
+          "gain_per_feature": 0.020065986973716133,
+          "oracle_gap_per_feature": 5.3946606289668814e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.048601979845160695
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.011559574587675423,
+          "gain_per_feature": 0.0121975960883282,
+          "oracle_gap_per_feature": 0.00012852237112706858,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02691984207543778
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.013271601746678942,
+          "gain_per_feature": 0.015049490230287102,
+          "oracle_gap_per_feature": 2.6413437865260884e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0270524196247577
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.018030929109150454,
+          "gain_per_feature": 0.012039592184163022,
+          "oracle_gap_per_feature": 0.00013014331440827385,
+          "recovery_pass": true,
+          "transport_relative_error": 0.032995311177290945
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.011559574587675423,
+          "gain_per_feature": 0.01524699511041025,
+          "oracle_gap_per_feature": 2.4387258764880165e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023349041405101932
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.018030929109150447,
+          "gain_per_feature": 0.020065986973605034,
+          "oracle_gap_per_feature": 5.3946606291164465e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.050305602182076935
+        }
+      },
+      "fitted_minus_true_training_objective": -4.758534253634927e-05,
+      "raw_flips": [
+        0
+      ],
+      "selected": "fits/d1_rep2__n12000__two_sided_labels__seed3.json"
+    },
+    "d2_rep0__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.604498540887312,
+          "gain_per_feature": -0.3604849040224117,
+          "oracle_gap_per_feature": 0.4137933140774767,
+          "recovery_pass": false,
+          "transport_relative_error": 1.410019130626892
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.7430128799658093,
+          "gain_per_feature": -0.34470360964204044,
+          "oracle_gap_per_feature": 0.37848768262316906,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4384877490769423
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.604498540887312,
+          "gain_per_feature": -0.2703636780168088,
+          "oracle_gap_per_feature": 0.31833085232475705,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4154174559124395
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.16285170824035175,
+          "gain_per_feature": 0.03156598220016606,
+          "oracle_gap_per_feature": 0.0011020821124134487,
+          "recovery_pass": false,
+          "transport_relative_error": 0.061274843943656766
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.7430128799658096,
+          "gain_per_feature": -0.43087951205255054,
+          "oracle_gap_per_feature": 0.4802359042503146,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3899881858256962
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.16285170824035175,
+          "gain_per_feature": 0.05260997033361009,
+          "oracle_gap_per_feature": 0.0006907157936273587,
+          "recovery_pass": false,
+          "transport_relative_error": 0.05556292345944546
+        }
+      },
+      "fitted_minus_true_training_objective": 0.004866503663864208,
+      "raw_flips": [
+        0,
+        1
+      ],
+      "selected": "fits/d2_rep0__n12000__two_sided_labels__seed2.json"
+    },
+    "d2_rep1__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 4.594564015212542,
+          "gain_per_feature": -3.337111092477091,
+          "oracle_gap_per_feature": 3.500550838498989,
+          "recovery_pass": false,
+          "transport_relative_error": 3.036745714969642
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2115959105080862,
+          "gain_per_feature": 0.040058865036127975,
+          "oracle_gap_per_feature": 0.00020423957660935555,
+          "recovery_pass": false,
+          "transport_relative_error": 0.026523066855244585
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 4.594564015212541,
+          "gain_per_feature": -2.5028333193578183,
+          "oracle_gap_per_feature": 2.5518743592785396,
+          "recovery_pass": false,
+          "transport_relative_error": 4.49725508999949
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 5.557669610296731,
+          "gain_per_feature": -1.3051373957593202,
+          "oracle_gap_per_feature": 1.3448251753560923,
+          "recovery_pass": false,
+          "transport_relative_error": 4.478785283666823
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.2115959105080862,
+          "gain_per_feature": 0.050073581295159965,
+          "oracle_gap_per_feature": 0.0001847139504162498,
+          "recovery_pass": false,
+          "transport_relative_error": 0.021579314923028822
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 5.557669610296729,
+          "gain_per_feature": -2.1752289929322006,
+          "oracle_gap_per_feature": 2.339332871027296,
+          "recovery_pass": false,
+          "transport_relative_error": 3.034200453755584
+        }
+      },
+      "fitted_minus_true_training_objective": 0.04676038351229206,
+      "raw_flips": [],
+      "selected": "fits/d2_rep1__n12000__two_sided_labels__seed3.json"
+    },
+    "d2_rep2__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.918933614556588,
+          "gain_per_feature": -0.010598720404993274,
+          "oracle_gap_per_feature": 0.11081665244321118,
+          "recovery_pass": false,
+          "transport_relative_error": 0.4720136287914228
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 4.429965837188936,
+          "gain_per_feature": -1.0588310832537788,
+          "oracle_gap_per_feature": 1.2449627385417812,
+          "recovery_pass": false,
+          "transport_relative_error": 3.988765722332895
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.918933614556588,
+          "gain_per_feature": -0.007949040303744956,
+          "oracle_gap_per_feature": 0.1895722236254014,
+          "recovery_pass": false,
+          "transport_relative_error": 0.7178091884081069
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 2.7124747577081507,
+          "gain_per_feature": -0.3902116452876784,
+          "oracle_gap_per_feature": 0.5744807825713405,
+          "recovery_pass": false,
+          "transport_relative_error": 4.4948045403746635
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 4.429965837188937,
+          "gain_per_feature": -1.3235388540672235,
+          "oracle_gap_per_feature": 1.5076547678303578,
+          "recovery_pass": false,
+          "transport_relative_error": 4.52159995136576
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 2.7124747577081507,
+          "gain_per_feature": -0.6503527421461306,
+          "oracle_gap_per_feature": 0.7507901180990852,
+          "recovery_pass": false,
+          "transport_relative_error": 3.6220506586875594
+        }
+      },
+      "fitted_minus_true_training_objective": 0.11525384055321952,
+      "raw_flips": [],
+      "selected": "fits/d2_rep2__n12000__two_sided_labels__seed3.json"
+    },
+    "d3_rep0__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.4153935225162492,
+          "gain_per_feature": -0.3992415022468559,
+          "oracle_gap_per_feature": 0.5886978586049788,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3076813086449572
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.852950832525788,
+          "gain_per_feature": -0.3234754888291961,
+          "oracle_gap_per_feature": 0.3907273008738922,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1023035780825956
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.4153935225162492,
+          "gain_per_feature": -0.2994311266851419,
+          "oracle_gap_per_feature": 0.3734158271487908,
+          "recovery_pass": false,
+          "transport_relative_error": 0.9947902816026585
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.7373572768233381,
+          "gain_per_feature": -0.24817870908440148,
+          "oracle_gap_per_feature": 0.31317727541668916,
+          "recovery_pass": false,
+          "transport_relative_error": 0.8792716331087849
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.8529508325257878,
+          "gain_per_feature": -0.4043443610364951,
+          "oracle_gap_per_feature": 0.48108647071588306,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2662660350953092
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.7373572768233382,
+          "gain_per_feature": -0.41363118180733577,
+          "oracle_gap_per_feature": 0.6030086742657637,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2936988436139953
+        }
+      },
+      "fitted_minus_true_training_objective": 0.04595234625196243,
+      "raw_flips": [],
+      "selected": "fits/d3_rep0__n12000__two_sided_labels__seed0.json"
+    },
+    "d3_rep1__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": false,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.030381080194836,
+          "gain_per_feature": -0.3850010928998927,
+          "oracle_gap_per_feature": 0.4702831573400088,
+          "recovery_pass": false,
+          "transport_relative_error": 1.9866991431792143
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 2.040522347846122,
+          "gain_per_feature": -0.40468294254298953,
+          "oracle_gap_per_feature": 0.4578534652769093,
+          "recovery_pass": false,
+          "transport_relative_error": 2.0104204704351
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.0303810801948354,
+          "gain_per_feature": -0.2887508196749195,
+          "oracle_gap_per_feature": 0.45809418012338937,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4270118272910164
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.05576982066236843,
+          "gain_per_feature": 0.051810991792907296,
+          "oracle_gap_per_feature": 0.0002378485328649506,
+          "recovery_pass": true,
+          "transport_relative_error": 0.03593805879686073
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 2.0405223478461214,
+          "gain_per_feature": -0.5058536781787369,
+          "oracle_gap_per_feature": 0.6776139456041567,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4277148924978649
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.05576982066236845,
+          "gain_per_feature": 0.08635165298817883,
+          "oracle_gap_per_feature": 0.0002834834076246455,
+          "recovery_pass": true,
+          "transport_relative_error": 0.03392069870320424
+        }
+      },
+      "fitted_minus_true_training_objective": 0.0361615175402199,
+      "raw_flips": [
+        0
+      ],
+      "selected": "fits/d3_rep1__n12000__two_sided_labels__seed0.json"
+    },
+    "d3_rep2__n12000__two_sided_labels": {
+      "canonical_outside_legacy_domain": true,
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.745100624081224,
+          "gain_per_feature": -0.47296306478184597,
+          "oracle_gap_per_feature": 0.5755299324553764,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1564974804593462
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.17492072249012683,
+          "gain_per_feature": 0.05401858977054696,
+          "oracle_gap_per_feature": 0.0037398929099188424,
+          "recovery_pass": false,
+          "transport_relative_error": 0.09779961365225089
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.7451006240812241,
+          "gain_per_feature": -0.3547222985863845,
+          "oracle_gap_per_feature": 0.42338390145306287,
+          "recovery_pass": false,
+          "transport_relative_error": 1.145397840784298
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.6649570235298015,
+          "gain_per_feature": -0.2926610354670071,
+          "oracle_gap_per_feature": 0.3485985050044949,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1748367854799318
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.17492072249012686,
+          "gain_per_feature": 0.06752323721318369,
+          "oracle_gap_per_feature": 0.00356664649997224,
+          "recovery_pass": false,
+          "transport_relative_error": 0.07743365134529107
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.6649570235298012,
+          "gain_per_feature": -0.48776839244501186,
+          "oracle_gap_per_feature": 0.5905379460088824,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1394746117075563
+        }
+      },
+      "fitted_minus_true_training_objective": 0.008236246330465935,
+      "raw_flips": [
+        0
+      ],
+      "selected": "fits/d3_rep2__n12000__two_sided_labels__seed3.json"
+    }
+  },
+  "status": "pass",
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  }
+}

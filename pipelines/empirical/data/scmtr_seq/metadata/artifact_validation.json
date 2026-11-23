@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "checks": [
+    "source-to-learner exact sparse counts",
+    "strictly disjoint canonical training pools",
+    "no training/evaluation canonical overlap",
+    "opaque globally unique learner IDs",
+    "independent assay test ordering with evaluator-only pairing",
+    "retained-feature-only learner library size",
+    "frozen training-only panel reproducibility",
+    "all panel-overlap aliases absent from learner columns",
+    "paired evaluator matrix exact count/order agreement"
+  ],
+  "cells": 2444,
+  "paired_reference": 595,
+  "learner_shapes": {
+    "RNA": {
+      "train": [
+        602,
+        23383
+      ],
+      "test": [
+        595,
+        23383
+      ]
+    },
+    "H3K27ac": {
+      "train": [
+        615,
+        26569
+      ],
+      "test": [
+        595,
+        26569
+      ]
+    },
+    "H3K4me3": {
+      "train": [
+        614,
+        22481
+      ],
+      "test": [
+        595,
+        22481
+      ]
+    }
+  }
+}

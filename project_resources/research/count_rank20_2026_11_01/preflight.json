@@ -1,0 +1,24 @@
+{
+  "status": "passed_before_followup_fits",
+  "created_utc": "2026-11-01T20:54:29.243166+00:00",
+  "source_study": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/count_extensions_2026_11_01",
+  "source_code_exact_copies": {
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "initial_preflight_sha256": "231dcbb35931d6b3e3402e29ee8e63c7f630574ec5561b2c1df1313bb1ba199a",
+  "initial_tests_passed": 29,
+  "selected_original_arms": 36,
+  "followup_arms": 54,
+  "training_rank_range": [
+    7,
+    19
+  ],
+  "protocol_sha256": "e7c9373a1684d6667e213f247f0f7cee8fa1ce361ebf0394da5801859e5774fc",
+  "reviews": {
+    "reviews/prefit_theory_review.json": "53814dc36e2c46f465bde5207b03ef99402a7006412dd4e1fa0017424c1bb0e2",
+    "reviews/high_rank_preflight.json": "f9443d48e6a3e84b478ca85fb1f8c3f5c59f3e24b1cbca2272c478fe116609d3",
+    "reviews/metric_replay_plan.json": "9dfcbce7da946ae981b124dfc0d7f09abe6df6b520d4e0f38d0de722f6bf7ead"
+  }
+}

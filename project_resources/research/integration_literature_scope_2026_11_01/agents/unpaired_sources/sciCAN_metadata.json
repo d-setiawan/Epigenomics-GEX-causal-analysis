@@ -1,0 +1,290 @@
+{
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "params": {
+    "query": "DOI:10.1038/s41540-022-00245-6",
+    "format": "json",
+    "pageSize": 10,
+    "resultType": "core"
+  },
+  "status_code": 200,
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "DOI:10.1038/s41540-022-00245-6",
+      "resultType": "core",
+      "cursorMark": "*",
+      "pageSize": 10,
+      "sort": "",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "36089620",
+          "source": "MED",
+          "pmid": "36089620",
+          "pmcid": "PMC9464763",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9464763"
+            ]
+          },
+          "doi": "10.1038/s41540-022-00245-6",
+          "title": "sciCAN: single-cell chromatin accessibility and gene expression data integration via cycle-consistent adversarial network.",
+          "authorString": "Xu Y, Begoli E, McCord RP.",
+          "authorList": {
+            "author": [
+              {
+                "fullName": "Xu Y",
+                "lastName": "Xu",
+                "firstName": "Yang",
+                "initials": "Y",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0003-4173-4337"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "UT-ORNL Graduate School of Genome Science and Technology, University of Tennessee, Knoxville, TN, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Begoli E",
+                "lastName": "Begoli",
+                "firstName": "Edmon",
+                "initials": "E",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Oak Ridge National Laboratory, Oak Ridge, TN, USA."
+                    },
+                    {
+                      "affiliation": "Electrical Engineering and Computer Science, University of Tennessee, Knoxville, TN, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "McCord RP",
+                "lastName": "McCord",
+                "firstName": "Rachel Patton",
+                "initials": "RP",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0003-0010-5323"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Biochemistry & Cellular and Molecular Biology Department, University of Tennessee, Knoxville, TN, USA. rmccord@utk.edu."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "authorIdList": {
+            "authorId": [
+              {
+                "type": "ORCID",
+                "value": "0000-0003-0010-5323"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0003-4173-4337"
+              }
+            ]
+          },
+          "dataLinksTagsList": {
+            "dataLinkstag": [
+              "altmetrics",
+              "supporting_data"
+            ]
+          },
+          "journalInfo": {
+            "issue": "1",
+            "volume": "8",
+            "journalIssueId": 3419605,
+            "dateOfPublication": "2022 Sep",
+            "monthOfPublication": 9,
+            "yearOfPublication": 2022,
+            "journal": {
+              "medlineAbbreviation": "NPJ Syst Biol Appl",
+              "title": "NPJ systems biology and applications",
+              "essn": "2056-7189",
+              "issn": "2056-7189",
+              "nlmid": "101677786",
+              "isoabbreviation": "NPJ Syst Biol Appl"
+            },
+            "printPublicationDate": "2022-09-01"
+          },
+          "pubYear": "2022",
+          "pageInfo": "33",
+          "abstractText": "The boom in single-cell technologies has brought a surge of high dimensional data that come from different sources and represent cellular systems from different views. With advances in these single-cell technologies, integrating single-cell data across modalities arises as a new computational challenge. Here, we present an adversarial approach, sciCAN, to integrate single-cell chromatin accessibility and gene expression data in an unsupervised manner. We benchmarked sciCAN with 5 existing methods in 5 scATAC-seq/scRNA-seq datasets, and we demonstrated that our method dealt with data integration with consistent performance across datasets and better balance of mutual transferring between modalities than the other 5 existing methods. We further applied sciCAN to 10X Multiome data and confirmed that the integrated representation preserves biological relationships within the hematopoietic hierarchy. Finally, we investigated CRISPR-perturbed single-cell K562 ATAC-seq and RNA-seq data to identify cells with related responses to different perturbations in these different modalities.",
+          "affiliation": "UT-ORNL Graduate School of Genome Science and Technology, University of Tennessee, Knoxville, TN, USA.",
+          "publicationStatus": "epublish",
+          "language": "eng",
+          "pubModel": "Electronic",
+          "pubTypeList": {
+            "pubType": [
+              "research-article",
+              "Research Support, U.S. Gov't, Non-P.H.S.",
+              "Journal Article",
+              "Research Support, N.I.H., Extramural"
+            ]
+          },
+          "grantsList": {
+            "grant": [
+              {
+                "agency": "NIGMS NIH HHS",
+                "acronym": "GM",
+                "grantId": "R35 GM133557",
+                "orderIn": 0
+              },
+              {
+                "agency": "U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences",
+                "orderIn": 0
+              },
+              {
+                "agency": "U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences",
+                "grantId": "R35GM133557",
+                "orderIn": 0
+              }
+            ]
+          },
+          "meshHeadingList": {
+            "meshHeading": [
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Chromatin",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "GE",
+                      "qualifierName": "genetics"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Gene Expression"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Single-Cell Analysis",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Exome Sequencing"
+              }
+            ]
+          },
+          "chemicalList": {
+            "chemical": [
+              {
+                "name": "Chromatin",
+                "registryNumber": "0"
+              }
+            ]
+          },
+          "subsetList": {
+            "subset": [
+              {
+                "code": "IM",
+                "name": "Index Medicus"
+              }
+            ]
+          },
+          "fullTextUrlList": {
+            "fullTextUrl": [
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Unpaywall",
+                "url": "https://www.nature.com/articles/s41540-022-00245-6.pdf"
+              },
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1038/s41540-022-00245-6"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9464763"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9464763?pdf=render"
+              }
+            ]
+          },
+          "commentCorrectionList": {
+            "commentCorrection": [
+              {
+                "source": "PPR",
+                "id": "PPR426976",
+                "type": "Preprint in",
+                "note": "CrossRef Pre-print loader",
+                "orderIn": 10002
+              }
+            ]
+          },
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 26,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasData": "Y",
+          "license": "cc by",
+          "authMan": "N",
+          "epmcAuthMan": "N",
+          "nihAuthMan": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "doi"
+            ]
+          },
+          "dateOfCompletion": "2022-09-13",
+          "dateOfCreation": "2022-09-11",
+          "dateOfRevision": "2025-07-28",
+          "electronicPublicationDate": "2022-09-12",
+          "firstPublicationDate": "2022-09-12",
+          "firstIndexDate": "2022-09-13",
+          "fullTextReceivedDate": "2026-10-12",
+          "hasEvaluations": "N"
+        }
+      ]
+    }
+  }
+}

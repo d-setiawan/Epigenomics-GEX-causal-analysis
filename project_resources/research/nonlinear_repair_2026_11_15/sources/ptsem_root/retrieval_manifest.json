@@ -1,0 +1,48 @@
+{
+  "commit": "d70467c4a17756d76ce3b9299c4beebc8086d73a",
+  "tool": "GitHub connector fetch_file",
+  "scope": "README and Python src definitions only; no datasets, experiment directory, or execution; simulation_core source not invoked",
+  "requirements_file": "not present in upstream tree",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KOUHOUKOU/PT-SEM/blob/d70467c4a17756d76ce3b9299c4beebc8086d73a/README.md",
+      "git_blob_sha": "1eb65d658e837a3b1f8e453540917e11db65a735",
+      "sha256": "a0b64fea520e7479d77ad14c6adf832130921e74bcf24094c83bec3ebbecb5a2",
+      "bytes": 2208,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "src/all_poisson_framework.py",
+      "url": "https://github.com/KOUHOUKOU/PT-SEM/blob/d70467c4a17756d76ce3b9299c4beebc8086d73a/src/all_poisson_framework.py",
+      "git_blob_sha": "5606780f9f7a444a1414e746e88818f8925d9d82",
+      "sha256": "f51d65576e6e26816b31e8507d583e767af1a9003b2c97757bacc72fc21e1bc5",
+      "bytes": 4924,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "src/mixed_family_framework.py",
+      "url": "https://github.com/KOUHOUKOU/PT-SEM/blob/d70467c4a17756d76ce3b9299c4beebc8086d73a/src/mixed_family_framework.py",
+      "git_blob_sha": "3eb4c5fcd824934f204c7989818db8812b1ccf65",
+      "sha256": "5ad700163129306310120c76c28ef94413e0288633549a0e9b6f2346856b0462",
+      "bytes": 2499,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "src/nba_core.py",
+      "url": "https://github.com/KOUHOUKOU/PT-SEM/blob/d70467c4a17756d76ce3b9299c4beebc8086d73a/src/nba_core.py",
+      "git_blob_sha": "bfebc083fc01f10d1af4987f29a0e81524093bf3",
+      "sha256": "d65ee02ecdf78fbc634353f88b42aab71290d1ff3fdedfb2ad9119db450cfa3f",
+      "bytes": 122603,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "src/simulation_core.py",
+      "url": "https://github.com/KOUHOUKOU/PT-SEM/blob/d70467c4a17756d76ce3b9299c4beebc8086d73a/src/simulation_core.py",
+      "git_blob_sha": "ff896361d3461bd9e587981aa14131a1ad8a69ec",
+      "sha256": "e61e9c58477f9ffc50552d1f538f4507756a464edcf7f5cfd16e79fe6d78df12",
+      "bytes": 121694,
+      "upstream_blob_verified": true
+    }
+  ]
+}

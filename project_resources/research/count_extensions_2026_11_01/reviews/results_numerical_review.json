@@ -1,0 +1,25 @@
+{
+  "checked": [
+    "Every displayed realunit30 covariance table row against both frozen source seeds",
+    "Nine-unit full/offdiagonal NBshape0.5 andNBshape2 contrast counts",
+    "Original30-anchor Poisson panel-expansion8/9 improvement count",
+    "Named source-to-state maximum values, variants,seeds,assays and zero ranks in otherassays",
+    "Baseline zero-cross errors and count of scored views",
+    "Cap-limited abstention and CF-not-assessed interpretation"
+  ],
+  "contrast_summary_sha256": "5fc1037154679bc590cac0bef9531f1d8673bbe28f5b51559c97db16d07678df",
+  "evaluation_summary_sha256": "fa63d54a3e2ab8b57392912f9770b6e8dd34b0d785bd8b18f4e5bec4ff3b9eac",
+  "frozen_artifacts_changed": false,
+  "minor_correction": {
+    "assay": "H3K4me3",
+    "correct_five_decimal_value": "0.10831",
+    "document_value": 0.10832,
+    "exact_value_both_seeds": 0.10831462217994935,
+    "table_row": "Excess-zero retention0.75"
+  },
+  "model_selection_performed": false,
+  "reviewed_document": "RESULTS.md",
+  "reviewed_document_sha256": "cf47d1579f51ace5ebb4041eb9f3a5276584b76914b3ab4134e9867849ea549a",
+  "status": "numerically_supported_with_one_minor_rounding_correction_requested",
+  "wording_clarification": "RMSE is computed after per-entry covariance normalization by the corresponding source-fit SD product, rather than normalizing an already aggregated RMSE."
+}

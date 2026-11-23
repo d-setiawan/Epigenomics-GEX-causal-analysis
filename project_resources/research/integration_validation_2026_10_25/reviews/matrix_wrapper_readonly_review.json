@@ -1,0 +1,42 @@
+{
+  "checks": [
+    "Complete cached fits verified through native public export checks",
+    "Partial existing outputs stop rather than retry",
+    "Native fit child holds global and GPU locks",
+    "Selection uses all declared candidates and immutable selected_settings",
+    "Confirmation state access requires selected mode after settings freeze"
+  ],
+  "confirmation_selected_only_condition_count": 16,
+  "current_analysis_sources_match_observed_receipt": true,
+  "current_driver_plan_protocol_hashes_match_observed_receipt": true,
+  "handling": "Running driver preserved unchanged; external observed-launch receipt binds reviewed bytes/environment. Independent end-of-matrix comparison is required before accepting completion.",
+  "launch_receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/matrix_execution_observed_start.json",
+  "launch_receipt_sha256": "136d6076a733b5d1874d9f5c897c9769f6e42ab14122ddeb77f99d588de5c861",
+  "modifications": "No driver, plan, core-source, fit, or process changes by this reviewer",
+  "not_checked": [
+    "Current process liveness",
+    "CUDA/runtime loading",
+    "Scientific fit/report outcome completeness",
+    "Protected cohort arrays or model checkpoints"
+  ],
+  "observed_at_utc": "2026-10-25 23:02:51 UTC",
+  "observed_file_hashes": {
+    "pipelines/simulation/integration_recoverability/configs/integration_validation_v1.json": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/execution_plan.json": "d70d1c34c672305bda2ad69854685a1606a8855990512f3ff573cc98c03a1375",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/matrix_orchestration.py.txt": "ef0ec55384b25b607f814ac51f4893b3bdefd4ad24333d1afc80ee3da0087128"
+  },
+  "recorded_launch_command": "env LD_PRELOAD=/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96 CUDA_LAUNCH_BLOCKING=1 NUMBA_CACHE_DIR=/tmp/ir_numba_cache MPLCONFIGDIR=/tmp/ir_mpl_cache OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /usr/bin/prlimit --core=0 -- /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -u -X faulthandler '/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/matrix_orchestration.py.txt'",
+  "reviewed_analysis_sources": {
+    "integration_validation_fit.py": "7734c84b4ce692cac18831a98eea7d1ea5db610e8e94cd278a7c362ac02604e5",
+    "integration_validation_metrics.py": "6fd960ef76757b68db4977a1a3a563eed56fe062a2b85e7f2b25dc195217fcb8",
+    "validate_integration.py": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4"
+  },
+  "selection_exact_cartesian_count": 16,
+  "status": "read_only_review_complete_with_documented_wrapper_limits",
+  "wrapper_limits": [
+    "The driver checks source/runtime/protocol before fits, not every analysis boundary",
+    "The driver hashes selection-plan bytes at completion rather than checking an initial bound hash",
+    "The driver does not record its own hash internally",
+    "Runtime file hashing is not verification of loaded CUDA state"
+  ]
+}

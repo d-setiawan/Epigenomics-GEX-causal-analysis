@@ -1,0 +1,509 @@
+{
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "params": {
+    "query": "DOI:10.1186/s13059-021-02565-y",
+    "format": "json",
+    "pageSize": 10,
+    "resultType": "core"
+  },
+  "status_code": 200,
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "DOI:10.1186/s13059-021-02565-y",
+      "resultType": "core",
+      "cursorMark": "*",
+      "pageSize": 10,
+      "sort": "",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "34930412",
+          "source": "MED",
+          "pmid": "34930412",
+          "pmcid": "PMC8686224",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8686224"
+            ]
+          },
+          "doi": "10.1186/s13059-021-02565-y",
+          "title": "MultiMAP: dimensionality reduction and integration of multimodal data.",
+          "authorString": "Jain MS, Polanski K, Conde CD, Chen X, Park J, Mamanova L, Knights A, Botting RA, Stephenson E, Haniffa M, Lamacraft A, Efremova M, Teichmann SA.",
+          "authorList": {
+            "author": [
+              {
+                "fullName": "Jain MS",
+                "lastName": "Jain",
+                "firstName": "Mika Sarkin",
+                "initials": "MS",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Theory of Condensed Matter, Dept Physics, Cavendish Laboratory, University of Cambridge, JJ Thomson Ave, Cambridge, CB3 0HE, UK. mikasarkinjain@gmail.com."
+                    },
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK. mikasarkinjain@gmail.com."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Polanski K",
+                "lastName": "Polanski",
+                "firstName": "Krzysztof",
+                "initials": "K",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Conde CD",
+                "lastName": "Conde",
+                "firstName": "Cecilia Dominguez",
+                "initials": "CD",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Chen X",
+                "lastName": "Chen",
+                "firstName": "Xi",
+                "initials": "X",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    },
+                    {
+                      "affiliation": "Southern University of Science and Technology, 1088 Xueyuan Ave, Nanshan, Shenzhen, 518055, Guangdong Province, China."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Park J",
+                "lastName": "Park",
+                "firstName": "Jongeun",
+                "initials": "J",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    },
+                    {
+                      "affiliation": "KAIST, 291 Daehak-ro, Eoeun-dong, Yuseong-gu, Daejeon, South Korea."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Mamanova L",
+                "lastName": "Mamanova",
+                "firstName": "Lira",
+                "initials": "L",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Knights A",
+                "lastName": "Knights",
+                "firstName": "Andrew",
+                "initials": "A",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Botting RA",
+                "lastName": "Botting",
+                "firstName": "Rachel A",
+                "initials": "RA",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Biosciences Institute, Newcastle University, Newcastle upon Tyne, NE2 4HH, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Stephenson E",
+                "lastName": "Stephenson",
+                "firstName": "Emily",
+                "initials": "E",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Biosciences Institute, Newcastle University, Newcastle upon Tyne, NE2 4HH, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Haniffa M",
+                "lastName": "Haniffa",
+                "firstName": "Muzlifah",
+                "initials": "M",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK."
+                    },
+                    {
+                      "affiliation": "Biosciences Institute, Newcastle University, Newcastle upon Tyne, NE2 4HH, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Lamacraft A",
+                "lastName": "Lamacraft",
+                "firstName": "Austen",
+                "initials": "A",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Theory of Condensed Matter, Dept Physics, Cavendish Laboratory, University of Cambridge, JJ Thomson Ave, Cambridge, CB3 0HE, UK."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Efremova M",
+                "lastName": "Efremova",
+                "firstName": "Mirjana",
+                "initials": "M",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-8107-9974"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK. m.efremova@qmul.ac.uk."
+                    },
+                    {
+                      "affiliation": "Barts Cancer Institute, Queen Mary University of London, London, UK. m.efremova@qmul.ac.uk."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Teichmann SA",
+                "lastName": "Teichmann",
+                "firstName": "Sarah A",
+                "initials": "SA",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-6294-6366"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Theory of Condensed Matter, Dept Physics, Cavendish Laboratory, University of Cambridge, JJ Thomson Ave, Cambridge, CB3 0HE, UK. st9@sanger.ac.uk."
+                    },
+                    {
+                      "affiliation": "Wellcome Sanger Institute, Wellcome Genome Campus, Hinxton, Cambridge, CB10 1SA, UK. st9@sanger.ac.uk."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "authorIdList": {
+            "authorId": [
+              {
+                "type": "ORCID",
+                "value": "0000-0002-6294-6366"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0002-8107-9974"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0002-8684-4655"
+              }
+            ]
+          },
+          "dataLinksTagsList": {
+            "dataLinkstag": [
+              "altmetrics",
+              "supporting_data"
+            ]
+          },
+          "journalInfo": {
+            "issue": "1",
+            "volume": "22",
+            "journalIssueId": 3272869,
+            "dateOfPublication": "2021 Dec",
+            "monthOfPublication": 12,
+            "yearOfPublication": 2021,
+            "journal": {
+              "medlineAbbreviation": "Genome Biol",
+              "title": "Genome biology",
+              "essn": "1474-760X",
+              "issn": "1474-7596",
+              "nlmid": "100960660",
+              "isoabbreviation": "Genome Biol"
+            },
+            "printPublicationDate": "2021-12-01"
+          },
+          "pubYear": "2021",
+          "pageInfo": "346",
+          "abstractText": "Multimodal data is rapidly growing in many fields of science and engineering, including single-cell biology. We introduce MultiMAP, a novel algorithm for dimensionality reduction and integration. MultiMAP can integrate any number of datasets, leverages features not present in all datasets, is not restricted to a linear mapping, allows the user to specify the influence of each dataset, and is extremely scalable to large datasets. We apply MultiMAP to single-cell transcriptomics, chromatin accessibility, methylation, and spatial data and show that it outperforms current approaches. On a new thymus dataset, we use MultiMAP to integrate cells along a temporal trajectory. This enables quantitative comparison of transcription factor expression and binding site accessibility over the course of T cell differentiation, revealing patterns of expression versus binding site opening kinetics.",
+          "affiliation": "Theory of Condensed Matter, Dept Physics, Cavendish Laboratory, University of Cambridge, JJ Thomson Ave, Cambridge, CB3 0HE, UK. mikasarkinjain@gmail.com.",
+          "publicationStatus": "epublish",
+          "language": "eng",
+          "pubModel": "Electronic",
+          "pubTypeList": {
+            "pubType": [
+              "Research Support, Non-U.S. Gov't",
+              "research-article",
+              "Journal Article"
+            ]
+          },
+          "grantsList": {
+            "grant": [
+              {
+                "agency": "Gates Cambridge Scholarship",
+                "orderIn": 0
+              },
+              {
+                "agency": "Barts Charity",
+                "acronym": "G-",
+                "grantId": "MGU045",
+                "orderIn": 0
+              },
+              {
+                "agency": "Barts Charity",
+                "acronym": "G-",
+                "grantId": "MGU0460",
+                "orderIn": 0
+              },
+              {
+                "agency": "Wellcome Trust",
+                "acronym": "WT",
+                "grantId": "WT206194",
+                "orderIn": 0
+              },
+              {
+                "agency": "Wellcome Trust",
+                "acronym": "WT_",
+                "grantId": "G-MGU0460",
+                "orderIn": 0
+              },
+              {
+                "agency": "Wellcome Trust",
+                "acronym": "WT_",
+                "grantId": "WT211276/Z/18/Z",
+                "orderIn": 0
+              },
+              {
+                "agency": "Chan Zuckerberg Initiative",
+                "grantId": "CZF2019-002445",
+                "orderIn": 0
+              },
+              {
+                "agency": "Wellcome Trust",
+                "acronym": "WT_",
+                "grantId": "G-MGU0459",
+                "orderIn": 0
+              },
+              {
+                "agency": "Barts Charity",
+                "acronym": "G-",
+                "grantId": "MGU0459",
+                "orderIn": 0
+              }
+            ]
+          },
+          "meshHeadingList": {
+            "meshHeading": [
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Chromosomes, Human"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Chromatin"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Humans"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Transcription Factors"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Genetic Markers"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Chromosome Mapping",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "Y",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Genomics"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Gene Expression Regulation"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Algorithms"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Software"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Single-Cell Analysis",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "Y",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Transcriptome"
+              }
+            ]
+          },
+          "chemicalList": {
+            "chemical": [
+              {
+                "name": "Chromatin",
+                "registryNumber": "0"
+              },
+              {
+                "name": "Genetic Markers",
+                "registryNumber": "0"
+              },
+              {
+                "name": "Transcription Factors",
+                "registryNumber": "0"
+              }
+            ]
+          },
+          "subsetList": {
+            "subset": [
+              {
+                "code": "IM",
+                "name": "Index Medicus"
+              }
+            ]
+          },
+          "fullTextUrlList": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1186/s13059-021-02565-y"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC8686224"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC8686224?pdf=render"
+              }
+            ]
+          },
+          "commentCorrectionList": {
+            "commentCorrection": [
+              {
+                "source": "PPR",
+                "id": "PPR284261",
+                "type": "Preprint in",
+                "note": "CrossRef Pre-print loader",
+                "orderIn": 10002
+              }
+            ]
+          },
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 65,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasData": "Y",
+          "license": "cc by",
+          "authMan": "N",
+          "epmcAuthMan": "N",
+          "nihAuthMan": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "arrayexpress",
+              "doi"
+            ]
+          },
+          "dateOfCompletion": "2022-03-14",
+          "dateOfCreation": "2021-12-21",
+          "dateOfRevision": "2026-10-31",
+          "electronicPublicationDate": "2021-12-20",
+          "firstPublicationDate": "2021-12-20",
+          "firstIndexDate": "2021-12-23",
+          "fullTextReceivedDate": "2025-02-05",
+          "hasEvaluations": "N"
+        }
+      ]
+    }
+  }
+}

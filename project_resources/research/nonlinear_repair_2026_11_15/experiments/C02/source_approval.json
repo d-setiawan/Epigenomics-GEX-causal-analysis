@@ -1,0 +1,15 @@
+{
+  "approved": true,
+  "protocol_sha256": "6f39a86e041c00cc3272ae2958a38a8b0a7b13b981ce7d8d27a423bc1dd4c7a5",
+  "reviewer": "Astra scientific coordinator",
+  "date": "2026-11-15",
+  "independent_prefit_review": "reviews/c02_independent_prefit/REVIEW_V2.md",
+  "basis": "Astra source/design review plus independent official-scorer parity, exhaustive Q checks, v1 preservation and full zero-support calibration/evaluator path tests; no prefit blocker remains.",
+  "scope": "Run unchanged36application grid, fixeddefaultcode and resource caps; no test values until all fit outputs sealed.",
+  "limitations": [
+    "Exploratory sequential existing-input application, not a confirmation of generic identifiability",
+    "Base conda byte-level runtime seal partial; package and BLAS inventory recorded",
+    "Official finite optimizer defaults and parameter bounds may yield failed or nonconverged applications",
+    "No shared-state alignment, paired references or DAG truth used"
+  ]
+}

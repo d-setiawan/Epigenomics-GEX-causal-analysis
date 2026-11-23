@@ -1,0 +1,266 @@
+{
+  "sha": "0da27c1795fefa6208ce2107f23fa534efdab833",
+  "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/0da27c1795fefa6208ce2107f23fa534efdab833",
+  "tree": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5c775200ce9046a4cb6f233e196fadc64866f26",
+      "size": 1069,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e5c775200ce9046a4cb6f233e196fadc64866f26"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a72289750ad5c010f46bdf7a9b3982f1f9ed1096",
+      "size": 6598,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/a72289750ad5c010f46bdf7a9b3982f1f9ed1096"
+    },
+    {
+      "path": "comp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4afb3e64abd3cdbffc079134aa0f77edc8071e72",
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/4afb3e64abd3cdbffc079134aa0f77edc8071e72"
+    },
+    {
+      "path": "comp/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "comp/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5ef4cf56b199a342f78e353d6c485d0e4c3ff663",
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/5ef4cf56b199a342f78e353d6c485d0e4c3ff663"
+    },
+    {
+      "path": "comp/data/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "comp/data/loaders.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a754d553af75b9e52e1d0cf8f2aa3e9b7ed419c",
+      "size": 2356,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/3a754d553af75b9e52e1d0cf8f2aa3e9b7ed419c"
+    },
+    {
+      "path": "comp/metric_handlers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a763ff50013e23915b0b6ec960cd1df6ca932135",
+      "size": 4105,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/a763ff50013e23915b0b6ec960cd1df6ca932135"
+    },
+    {
+      "path": "comp/metrics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e07363a890f7ae2e219e8a23204f8d0277330e55",
+      "size": 7309,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e07363a890f7ae2e219e8a23204f8d0277330e55"
+    },
+    {
+      "path": "comp/nn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac5ab3b6a2f1a42f85f7472c8289722cb19f15ec",
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/ac5ab3b6a2f1a42f85f7472c8289722cb19f15ec"
+    },
+    {
+      "path": "comp/nn/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "comp/nn/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fed8292556cf8187e8ea53beef22dd574eab3e1f",
+      "size": 441,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/fed8292556cf8187e8ea53beef22dd574eab3e1f"
+    },
+    {
+      "path": "comp/nn/loss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48433cea8cf5069e5a031b27d13b0fb0ccde7bc5",
+      "size": 2522,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/48433cea8cf5069e5a031b27d13b0fb0ccde7bc5"
+    },
+    {
+      "path": "comp/nn/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60dc1bc1a73400708d323f9496c446fdfedf166b",
+      "size": 4143,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/60dc1bc1a73400708d323f9496c446fdfedf166b"
+    },
+    {
+      "path": "comp/pl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "22833d42043b7ee3bdaca16cf1a193b97c4fddb9",
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/22833d42043b7ee3bdaca16cf1a193b97c4fddb9"
+    },
+    {
+      "path": "comp/pl/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "comp/pl/comp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71625c8165aea76507c6a03c2b9cb3e15c27103c",
+      "size": 5207,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/71625c8165aea76507c6a03c2b9cb3e15c27103c"
+    },
+    {
+      "path": "comp/pl/cvae.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7aa92710fc861725c27f9c29a0c5758e502587f",
+      "size": 3219,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e7aa92710fc861725c27f9c29a0c5758e502587f"
+    },
+    {
+      "path": "comp/pl/trainer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "846da2a77a315ccece65a8da40042af67eafb80d",
+      "size": 1797,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/846da2a77a315ccece65a8da40042af67eafb80d"
+    },
+    {
+      "path": "comp/pl/trvae.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a823f52da866f68376d9e4c8072c5192df51062c",
+      "size": 3747,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/a823f52da866f68376d9e4c8072c5192df51062c"
+    },
+    {
+      "path": "comp/pl/vae.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e71149fef0dead94b4a94cce1bb56b3155713ed",
+      "size": 2608,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/7e71149fef0dead94b4a94cce1bb56b3155713ed"
+    },
+    {
+      "path": "comp_illustration.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07b3b0fcb3b1f9b7fc389143ea7f79a1111a2d68",
+      "size": 164494,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/07b3b0fcb3b1f9b7fc389143ea7f79a1111a2d68"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "12122d12f6fd5086d837726eb375df46ec076fa0",
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/trees/12122d12f6fd5086d837726eb375df46ec076fa0"
+    },
+    {
+      "path": "data/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "data/process_celligner_data.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dced4a547a00a4479b1842cef30afb54a4e014e",
+      "size": 3713,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/9dced4a547a00a4479b1842cef30afb54a4e014e"
+    },
+    {
+      "path": "data/process_kang.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db722ce873d5b4c4c3dc03cd1831c79f1482bcf7",
+      "size": 2512,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/db722ce873d5b4c4c3dc03cd1831c79f1482bcf7"
+    },
+    {
+      "path": "data/process_pbmc_tech_batch.R",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2cca73f7fe36f534a2a1c3030aab5e7e7194e34",
+      "size": 5800,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/f2cca73f7fe36f534a2a1c3030aab5e7e7194e34"
+    },
+    {
+      "path": "data/process_uci_income.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5293dac2b8692f6d398cd2d4f43382b0ed62e124",
+      "size": 4378,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/5293dac2b8692f6d398cd2d4f43382b0ed62e124"
+    },
+    {
+      "path": "data/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64ced14c0819d13b1d52604edd6febd652b1f12a",
+      "size": 1028,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/64ced14c0819d13b1d52604edd6febd652b1f12a"
+    },
+    {
+      "path": "evaluation.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "980dc55cadbbc5731f67c9c18da802b95ee5b9ea",
+      "size": 12911,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/980dc55cadbbc5731f67c9c18da802b95ee5b9ea"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75ba210c988eeb81a711101c738096e11389f9b7",
+      "size": 291,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/75ba210c988eeb81a711101c738096e11389f9b7"
+    },
+    {
+      "path": "run.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6a0cb96f4c8b23d94c48a3760d42dfed0b8cf05",
+      "size": 9960,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/a6a0cb96f4c8b23d94c48a3760d42dfed0b8cf05"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62c4067af3248863e97b7fbb44f0ef1958d37a07",
+      "size": 413,
+      "url": "https://api.github.com/repos/BenevolentAI/CoMP/git/blobs/62c4067af3248863e97b7fbb44f0ef1958d37a07"
+    }
+  ],
+  "truncated": false
+}

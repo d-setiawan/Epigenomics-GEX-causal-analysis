@@ -1,0 +1,28 @@
+[
+  {
+    "time_utc": "2026-11-01T20:12:48.174745+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "normalization single cell negative binomial regularized regression",
+      "per-page": 100,
+      "select": "id,doi,title,publication_year,primary_location,open_access"
+    },
+    "sort": "default relevance",
+    "page": 1,
+    "status": 200,
+    "returned": 100
+  },
+  {
+    "time_utc": "2026-11-01T20:12:49.023586+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "discrete independent component analysis generalized covariance cumulants",
+      "per-page": 100,
+      "select": "id,doi,title,publication_year,primary_location,open_access"
+    },
+    "sort": "default relevance",
+    "page": 1,
+    "status": 200,
+    "returned": 100
+  }
+]

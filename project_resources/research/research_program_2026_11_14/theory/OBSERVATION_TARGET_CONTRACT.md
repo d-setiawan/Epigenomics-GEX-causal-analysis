@@ -1,0 +1,54 @@
+# Observation and target contract
+
+Status: research draft for Astra and independent review, 2026-11-14. This describes separate experiments; it does not assert that every repository dataset has one sampling law. No evaluation truth was used for fitting or method selection.
+
+## Permitted observations
+
+The existing historical monocyte track and the separate S1 track must not be
+collapsed into one experiment. The historical inputs include RNA from 10x
+PBMC and six scCUT&Tag-pro mark matrices: H3K27ac, H3K27me3, H3K4me1,
+H3K4me2, H3K4me3 and H3K9me3. They come from separate datasets, with no
+verified donor matching. Existing ADTs are reserved for biological evaluation;
+HTO tags are not verified donor variables. Fragment/peak and retained fixed-bin
+count products have different feature selection and depth semantics. Gene
+coordinates and proximity guidance are permitted annotations; rE2G, eQTL,
+PCHi-C and other external support resources belong to evaluation and are not
+automatically authorized discovery covariates. These facts are owned by
+[`pipelines/empirical/data/README.md`](../../../../pipelines/empirical/data/README.md)
+and its linked provenance records. No new fit on these historical inputs is
+approved by the narrower P01 S1/cached-world protocol. Their cross-dataset
+population differences remain part of the broader research question.
+
+The common scientific inputs are assay-specific nonnegative integer count matrices and their within-assay feature identifiers and fixed genomic annotations. The actual observations and preprocessing must be pinned per study. Fixed guidance may encode candidate links, feature identity or genomic proximity; it is neither a measured cell pairing nor an assertion that a candidate edge exists. Allowed technical metadata must be enumerated per artifact, not inferred from the word depth. A retained-count row sum is computable from a learner matrix and is not necessarily true exposure or genomic fragment depth. A data-dependent guidance graph or feature selection is part of the learner's observation procedure. An externally supplied quantitative causal restriction changes the model class and must be stated.
+
+The scMTR S1 training split contains RNA, H3K27ac and H3K4me3 from mutually disjoint assigned cells: 602, 615 and 614 retained, respectively, with 23,383, 26,569 and 22,481 encoder features. Opaque assay-specific IDs prevent direct joining. Learner count/cell files provide encoder-derived `library_depth`; the H5AD bridge deliberately omits observation columns including that explicit field, although row sums remain computable. Feature annotations include gene IDs and coordinates. Counts for the original nine-node focal outcome panel (BRD2, EPM2AIP1 and NBPF1 across three assays), original barcode links, original depths and day labels are evaluator-only. The independently reordered 595-cell three-view reference consists of the *same* cells: a transductive method receiving all three unlinked test arrays has a different observation law from one restricted to disjoint training arrays. None of those reference outcomes, pairings, day labels or truth may influence fit, tuning, matching or stopping.
+
+The later Sturma and count-source studies use public 30- and 300-feature background panels selected from those permitted encoder counts. These background counts are learner inputs and are distinct from the nine-node focal outcome panel. P01 uses only the first 30 features of each frozen public training array. The [schema audit](../reviews/p01_schema_population_audit.json) verifies exact agreement with the earlier 30-feature inputs and records the 595-by-900 evaluator reference layout without loading its outcome values.
+
+The original exported DNA cells already passed a six-target joint filter of at least 2,500 observations. The split then applies assay-local RNA/histone QC; the paired holdout applies all three QC rules. Thus the selected training distributions need not be identical even when assay assignment is randomized: they are conditional on different selection events within an inherited jointly selected population. A known local selection rule maps an identical local law to the same selected local law (when retention is positive); it does not reconstruct the unselected law. A joint filter can depend on missing cross-assay variables, alter when the coupling changes, and invalidate a preselection counterexample. One may instead define a post-inherited-selection source population with two models that agree on every retained local law; this does not establish that every preselection mechanism or the actual S1 distribution admits those two models. Adjustment or transport from local-QC pools to a common population requires explicit selection and positivity assumptions.
+
+The `integration_recoverability/simulator.py` public training cohorts are generated as disjoint assigned assays, with observed counts, assay, total counts, number of detected features and synthetic annotations; latent state, true exposure, mechanisms and pair identifiers are hidden. Its probe and assessment cohorts are complete cells and private/evaluator-only. Ambiguity twins explicitly reuse public files; this exact construction is a controlled simulation property, not proof of a universal biological equivalence. Check each cached world's manifest and protocol before use; other pipelines can have different contracts.
+
+## Targets and claims
+
+1. **Cross-assay joint law:** distribution of a hypothetical same-cell vector in a specified population, including its residual coupling and measurement layer. It is not directly supplied by disjoint marginal laws.
+2. **Shared-state association:** association of assay conditional means across a *specified, aligned, observed* state in a common population. A fitted state embedding has no automatic biological identity or alignment guarantee; true state is unavailable to the learner here.
+3. **Sources:** latent factors and loading maps, only modulo explicitly specified permutations, scaling, signs or other admissible symmetries. Distributional matching does not by itself establish common source identity.
+4. **Latent biological causal graph:** edges or equivalence classes over defined latent variables, requiring an identifiable representation and appropriate structural assumptions.
+5. **Original genomic graph:** directed relations among specified regions/marks and RNA variables, with a defined observation-to-biology map. An embedding-coordinate graph, promoter-level association, or symmetric guidance score is not this target.
+6. **Interventional effects and direction:** defined interventions, population and scale; even a known observational joint can have multiple causal explanations.
+
+Identification is constancy of a target (up to its declared equivalence) on the fiber of the full population observation map. It differs from uniqueness of one optimization objective, estimator consistency, finite-sample recovery and biological plausibility. A valid evaluation reference is not causal truth. See `THEORY_CORE.md` for finite explicit models and bounds.
+
+## Candidate directions requiring Astra's applicability plan and approval
+
+- **Partial identification:** report sharp Fréchet bounds for prespecified binary count/detection events or a finite contingency table using only local marginals; extend to linear functionals via transportation constraints. Target is a set, not a selected coupling. Verify how assay-specific selection affects the population before applying.
+- **Unlinked monotone regression:** evaluate a prespecified scalar count-derived variable only if a fixed direction, monotonic mechanism and known independent *structural* noise/deconvolution assumptions are defensible. Counts and an estimated measurement noise distribution do not supply these assumptions. It may identify a restricted mechanism, not an arbitrary graph. Consult the earlier reviewed result and primary theorem before planning; do not fit yet.
+- **Exclusion/invariance conditional-mean model:** potentially identify a coefficient when a truly shared observed stratum, common selected population, explicit causal exclusion and rank condition are supplied. This is currently incompatible with the permitted pilot inputs because its common state/day is not observed by the learner. A learned proxy needs its own identification proof.
+- **Within-assay observational equivalence classes:** use each actual joint count block to assess its own qualified CI/equivalence-class target, with measurement, selection, hidden confounding, calibration and faithfulness assumptions stated; this is distinct from cross-assay reconstruction. A valid count-level graph is not automatically a genomic causal graph.
+
+These are research proposals, not claims that assumptions hold or that they are novel. Prior count-source studies have already examined Poisson/factorial moments, negative-binomial/zero inflation, exposure, PGF, shrinkage and 300-feature rank extensions. No accepted cross-assay moment pair in those reviewed studies does not prove nonidentification.
+
+## Reviewed paths and gaps
+
+Relative to `Epigenomics-GEX-causal-analysis/`: `project_resources/research/theory/07_unpaired_integration_nonidentifiability.md`, `theory/08_modern_integration_objectives.md`, `project_resources/research/integration_identifiability_2026_11_01/reviews/math_review.md`, `reviews/scope_review.md`, `pipelines/empirical/data/scmtr_seq/README.md`, `pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/manifest.json`, `pipelines/empirical/integration/manifests/scglue_input_manifest.tsv`, `pipelines/simulation/integration_recoverability/simulator.py`, `pipelines/simulation/integration_recoverability/README.md`, `pipelines/simulation/unpaired_multimodal/README.md`, and `project_resources/research/count_{mdcrl,extensions,rank20}_2026_11_01/README.md`. Paths abbreviated after a named directory above remain relative to that directory. The [study-level inventory](../reviews/OBSERVATION_INVENTORY.md) covers the current monocyte, S1, count-source, integration-recoverability, CA-BOSS v4 and aggregation generator families, including their distinct permitted and evaluator inputs. Historical archives and individual run variants outside that scope require separate audit before reuse. The S1 cross-assay selection model, exact finite-population assignment law, selection rates available to each learner, and actual transductive access for each intended experiment remain model-specific questions. A binary rational core has passed Lean checks and independent review; general local kernels, conditional shared-stratum completion, and finite-sample dataset laws remain outside that formalization. See [Lean scope](../lean/README.md) and the [independent review](../reviews/LEAN_INDEPENDENT_REVIEW.md).

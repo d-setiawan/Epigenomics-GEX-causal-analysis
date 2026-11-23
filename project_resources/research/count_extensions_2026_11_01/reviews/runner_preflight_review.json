@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-01",
+  "reviewer": "scconfluence_adapter",
+  "status": "approved_for_frozen_bounded_sweep",
+  "must_fix": [],
+  "source_sha256": {
+    "protocol.json": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92",
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17"
+  },
+  "scope": "Independent audit of root training runner. Reviewer implemented estimator; separate agent independently audited its algebra and code.",
+  "verification": {
+    "independently_replayed_tests": "Final estimator + runner suite passed (16 tests). Earlier completed run had15 before the added raw-CF diagnostic test.",
+    "additional_fixed_fixtures": [
+      "Complete zero-source arm and not-assessed CF paths",
+      "NPZ allow_pickle=False with no object arrays",
+      "Strict JSON serialization",
+      "Mid-arm failure records exception and hashes partial arrays"
+    ],
+    "root_reported_full_suite": "29 tests passed in preflight_final_tests.xml; not relabeled as independently rerun by this reviewer."
+  },
+  "findings": [
+    "Input reads restricted to public training NPZ and their manifest; source/test/evaluator references are not read by fitting.",
+    "75% fitting/rank and25% calibration partitions remain disjoint; nuisance exposure parameters use source-fit original300-feature counts only and remain frozen across controls/widths/bootstraps.",
+    "Column permutation controls preserve integer counts and are generated for all300 columns before prefix selection.",
+    "NB/ZI sensitivities use declared observed-mean rate units; ordinary arms retain Poisson rank calibration but use ordinary moments and empirical CF.",
+    "Constant-rate columns use working_scale1 internally while observed scale0 remains exported; rank and alignment use working scale consistently.",
+    "Bootstrap model and calibration draws are independent within assay and deterministically replayed in the same fit-then-cal order. Secondary CF uses saved bootstrap directions/means without source refits.",
+    "Secondary CF covers endpoints of all signed moment-equivalent pairs including ambiguous pairs, preserving not-assessed status elsewhere. Raw rejected CF values and numeric diagnostics are now retained for independent replay.",
+    "PGF eligibility uses the worst processing-point effective cell count; numeric bootstrap minima are saved.",
+    "All RNG draws are local seeded generators; forked workers share prepared arrays without modifying them.",
+    "Memory is bounded by feature covariance matrices, projected cubic tensors and compact bootstrap direction arrays; no p-cubic tensors or duplicated per-arm count caches.",
+    "Failures/abstentions remain explicit; no output directory overwrite, source hashes checked before final seal."
+  ],
+  "limits": [
+    "Finite fingerprints and this development sweep do not establish causal identifiability or confirmatory selection guarantees.",
+    "Fixed kernel and depth sensitivities remain modeling assumptions; common300-feature proxy differs from the earlier30-feature study.",
+    "Replay validates arithmetic and provenance, not the biological truth of accepted sources."
+  ],
+  "next": "reviews/audit_extension_fits.py will run only after final summary/provenance seal; no heldout reads or refits."
+}

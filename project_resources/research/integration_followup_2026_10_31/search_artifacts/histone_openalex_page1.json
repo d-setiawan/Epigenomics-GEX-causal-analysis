@@ -1,0 +1,5294 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 11616,
+    "db_response_time_ms": 135,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (RNA histone modification unpaired single cell integration) in the full text",
+      "x_new_oql": "get works with (RNA histone modification unpaired single cell integration) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "RNA histone modification unpaired single cell integration",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:RNA histone modification unpaired single cell integration&per_page=100&page=1",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W7154508970",
+      "doi": "https://doi.org/10.1186/s13059-026-04071-5",
+      "display_name": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1186/s13059-026-04071-5",
+        "doi": "https://doi.org/10.1186/s13059-026-04071-5",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13059-026-04071-5",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S81160022",
+          "display_name": "Genome biology",
+          "issn_l": "1465-6906",
+          "issn": [
+            "1465-6906",
+            "1465-6914",
+            "1474-7596",
+            "1474-760X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4378212544",
+      "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+      "display_name": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-023-01767-y",
+        "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-023-01767-y",
+        "pdf_url": "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2047039439",
+      "doi": "https://doi.org/10.1210/me.2014-1117",
+      "display_name": "Genome-Wide Analysis of Histone Modifications in Human Endometrial Stromal Cells",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1210/me.2014-1117",
+        "doi": "https://doi.org/10.1210/me.2014-1117",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1210/me.2014-1117",
+        "pdf_url": "https://academic.oup.com/mend/article-pdf/28/10/1656/8903185/mend1656.pdf",
+        "source": {
+          "id": "https://openalex.org/S57449756",
+          "display_name": "Molecular Endocrinology",
+          "issn_l": "0888-8809",
+          "issn": [
+            "0888-8809",
+            "1944-9917"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "poland-100"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Endocrinology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416136028",
+      "doi": "https://doi.org/10.1002/qub2.70023",
+      "display_name": "Correction to \u201cA comparison of integration methods for single\u2010cell RNA sequencing data and ATAC sequencing data\u201d",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1002/qub2.70023",
+        "doi": "https://doi.org/10.1002/qub2.70023",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/qub2.70023",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/qub2.70023",
+        "source": {
+          "id": "https://openalex.org/S4210172333",
+          "display_name": "Quantitative Biology",
+          "issn_l": "2095-4689",
+          "issn": [
+            "2095-4689",
+            "2095-4697"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "poland-70",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Quantitative Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4285798273",
+      "doi": "https://doi.org/10.1186/s13059-022-02726-7",
+      "display_name": "Integration of single-cell multi-omics data by regression analysis on unpaired observations",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1186/s13059-022-02726-7",
+        "doi": "https://doi.org/10.1186/s13059-022-02726-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13059-022-02726-7",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1186/s13059-022-02726-7.pdf",
+        "source": {
+          "id": "https://openalex.org/S81160022",
+          "display_name": "Genome biology",
+          "issn_l": "1465-6906",
+          "issn": [
+            "1465-6906",
+            "1465-6914",
+            "1474-7596",
+            "1474-760X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417272536",
+      "doi": "https://doi.org/10.1038/s41467-025-66031-0",
+      "display_name": "Mass spectrometry-based profiling of single-cell histone post-translational modifications to dissect chromatin heterogeneity",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-025-66031-0",
+        "doi": "https://doi.org/10.1038/s41467-025-66031-0",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-025-66031-0",
+        "pdf_url": "https://www.nature.com/articles/s41467-025-66031-0.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4413329588",
+      "doi": "https://doi.org/10.1101/2025.08.18.670808",
+      "display_name": "Cell cycle dynamics regulate H3K27 and H3K9 histone modifications",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.08.18.670808",
+        "doi": "https://doi.org/10.1101/2025.08.18.670808",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.08.18.670808",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/08/19/2025.08.18.670808.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2031351800",
+      "doi": "https://doi.org/10.1074/jbc.m113.473181",
+      "display_name": "Single Cell Analysis of RNA-mediated Histone H3.3 Recruitment to a Cytomegalovirus Promoter-regulated Transcription Site",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.1074/jbc.m113.473181",
+        "doi": "https://doi.org/10.1074/jbc.m113.473181",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1074/jbc.m113.473181",
+        "pdf_url": "http://www.jbc.org/article/S0021925820457011/pdf",
+        "source": {
+          "id": "https://openalex.org/S140251998",
+          "display_name": "Journal of Biological Chemistry",
+          "issn_l": "0021-9258",
+          "issn": [
+            "0021-9258",
+            "1067-8816",
+            "1083-351X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-100",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Biological Chemistry",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4406440188",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1012625",
+      "display_name": "Integration of unpaired single cell omics data by deep transfer graph convolutional network",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pcbi.1012625",
+        "doi": "https://doi.org/10.1371/journal.pcbi.1012625",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pcbi.1012625",
+        "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1012625&type=printable",
+        "source": {
+          "id": "https://openalex.org/S86033158",
+          "display_name": "PLoS Computational Biology",
+          "issn_l": "1553-734X",
+          "issn": [
+            "1553-734X",
+            "1553-7358"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Computational Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2726090421",
+      "doi": "https://doi.org/10.1371/journal.pgen.1006890",
+      "display_name": "Xist RNA repeat E is essential for ASH2L recruitment to the inactive X and regulates histone modifications and escape gene expression",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pgen.1006890",
+        "doi": "https://doi.org/10.1371/journal.pgen.1006890",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pgen.1006890",
+        "pdf_url": "https://journals.plos.org/plosgenetics/article/file?id=10.1371/journal.pgen.1006890&type=printable",
+        "source": {
+          "id": "https://openalex.org/S103870658",
+          "display_name": "PLoS Genetics",
+          "issn_l": "1553-7390",
+          "issn": [
+            "1553-7390",
+            "1553-7404"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4391747813",
+      "doi": "https://doi.org/10.1002/ctm2.1564",
+      "display_name": "The involvement of RNA N6\u2010methyladenosine and histone methylation modification in decidualization and endometriosis\u2010associated infertility",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1002/ctm2.1564",
+        "doi": "https://doi.org/10.1002/ctm2.1564",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/ctm2.1564",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ctm2.1564",
+        "source": {
+          "id": "https://openalex.org/S2765071679",
+          "display_name": "Clinical and Translational Medicine",
+          "issn_l": "2001-1326",
+          "issn": [
+            "2001-1326"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "oarl",
+            "poland-20",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Clinical and Translational Medicine",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7140886640",
+      "doi": "https://doi.org/10.1371/journal.pbio.3003371",
+      "display_name": "Cell cycle dynamics regulate H3K27 and H3K9 histone modifications in Drosophila",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pbio.3003371",
+        "doi": "https://doi.org/10.1371/journal.pbio.3003371",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pbio.3003371",
+        "pdf_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3003371&type=printable",
+        "source": {
+          "id": "https://openalex.org/S154343897",
+          "display_name": "PLoS Biology",
+          "issn_l": "1544-9173",
+          "issn": [
+            "1544-9173",
+            "1545-7885"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3110998212",
+      "doi": "https://doi.org/10.1038/s41467-020-20059-6",
+      "display_name": "Single-cell RNA landscape of intratumoral heterogeneity and immunosuppressive microenvironment in advanced osteosarcoma",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-020-20059-6",
+        "doi": "https://doi.org/10.1038/s41467-020-20059-6",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-020-20059-6",
+        "pdf_url": "https://www.nature.com/articles/s41467-020-20059-6.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4307638069",
+      "doi": "https://doi.org/10.26508/lsa.202201598",
+      "display_name": "Palmitate impairs circadian transcriptomics in muscle cells through histone modification of enhancers",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.26508/lsa.202201598",
+        "doi": "https://doi.org/10.26508/lsa.202201598",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.26508/lsa.202201598",
+        "pdf_url": "https://www.life-science-alliance.org/content/lsa/6/1/e202201598.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210202458",
+          "display_name": "Life Science Alliance",
+          "issn_l": "2575-1077",
+          "issn": [
+            "2575-1077"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-40",
+            "russia-white-list-1"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Life Science Alliance",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3201022833",
+      "doi": "https://doi.org/10.1093/nar/gkab813",
+      "display_name": "FACT-seq: profiling histone modifications in formalin-fixed paraffin-embedded samples with low cell numbers",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1093/nar/gkab813",
+        "doi": "https://doi.org/10.1093/nar/gkab813",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nar/gkab813",
+        "pdf_url": "https://academic.oup.com/nar/article-pdf/49/21/e125/41503932/gkab813.pdf",
+        "source": {
+          "id": "https://openalex.org/S134668137",
+          "display_name": "Nucleic Acids Research",
+          "issn_l": "0305-1048",
+          "issn": [
+            "0305-1048",
+            "1362-4954",
+            "1362-4962"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nucleic Acids Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1663137816",
+      "doi": "https://doi.org/10.5282/edoc.10876",
+      "display_name": "Dynamics of histone modifications",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "pmh:oai:edoc.ub.uni-muenchen.de:10876",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://nbn-resolving.de/urn:nbn:de:bvb:19-108761",
+        "pdf_url": "https://edoc.ub.uni-muenchen.de/10876/1/Scharf_Annette_ND.pdf",
+        "source": {
+          "id": "https://openalex.org/S4377196618",
+          "display_name": "Electronic Theses of LMU Munich (Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I8204097",
+          "host_organization_name": "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen",
+          "host_organization_lineage": [
+            "https://openalex.org/I8204097"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Dissertationen"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2277039327",
+      "doi": "https://doi.org/10.1038/srep19943",
+      "display_name": "GRHL2-miR-200-ZEB1 maintains the epithelial status of ovarian cancer through transcriptional regulation and histone modification",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1038/srep19943",
+        "doi": "https://doi.org/10.1038/srep19943",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/srep19943",
+        "pdf_url": "https://www.nature.com/articles/srep19943.pdf",
+        "source": {
+          "id": "https://openalex.org/S196734849",
+          "display_name": "Scientific Reports",
+          "issn_l": "2045-2322",
+          "issn": [
+            "2045-2322"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Scientific Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1483132716",
+      "doi": null,
+      "display_name": "Characterisation of histone modifications at insulator elements",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:theses.gla.ac.uk:2682",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://theses.gla.ac.uk/2682/1/2011MaPhD.pdf",
+        "pdf_url": "https://theses.gla.ac.uk/2682/1/2011MaPhD.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401724",
+          "display_name": "Enlighten: Theses (The University of Glasgow)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I7882870",
+          "host_organization_name": "University of Glasgow",
+          "host_organization_lineage": [
+            "https://openalex.org/I7882870"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Thesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2536907548",
+      "doi": "https://doi.org/10.1016/j.celrep.2016.09.073",
+      "display_name": "Elucidation of the Fanconi Anemia Protein Network in Meiosis and Its Function in the Regulation of Histone Modifications",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1016/j.celrep.2016.09.073",
+        "doi": "https://doi.org/10.1016/j.celrep.2016.09.073",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.celrep.2016.09.073",
+        "pdf_url": "http://www.cell.com/article/S2211124716313298/pdf",
+        "source": {
+          "id": "https://openalex.org/S169236886",
+          "display_name": "Cell Reports",
+          "issn_l": "2211-1247",
+          "issn": [
+            "2211-1247",
+            "2639-1856"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315673",
+          "host_organization_name": "Cell Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315673",
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Cell Press",
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cell Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4223448710",
+      "doi": "https://doi.org/10.1158/1541-7786.mcr-21-1039",
+      "display_name": "Loss of PBRM1 Alters Promoter Histone Modifications and Activates ALDH1A1 to Drive Renal Cell Carcinoma",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1158/1541-7786.mcr-21-1039",
+        "doi": "https://doi.org/10.1158/1541-7786.mcr-21-1039",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1158/1541-7786.mcr-21-1039",
+        "pdf_url": "https://aacrjournals.org/mcr/article-pdf/20/8/1193/3182835/1193.pdf",
+        "source": {
+          "id": "https://openalex.org/S192067876",
+          "display_name": "Molecular Cancer Research",
+          "issn_l": "1541-7786",
+          "issn": [
+            "1541-7786",
+            "1557-3125"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320273",
+          "host_organization_name": "American Association for Cancer Research",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320273"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for Cancer Research"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Cancer Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2533189192",
+      "doi": "https://doi.org/10.1093/nar/gkw979",
+      "display_name": "KDM2A integrates DNA and histone modification signals through a CXXC/PHD module and direct interaction with HP1",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1093/nar/gkw979",
+        "doi": "https://doi.org/10.1093/nar/gkw979",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nar/gkw979",
+        "pdf_url": "https://academic.oup.com/nar/article-pdf/45/3/1114/16666364/gkw979.pdf",
+        "source": {
+          "id": "https://openalex.org/S134668137",
+          "display_name": "Nucleic Acids Research",
+          "issn_l": "0305-1048",
+          "issn": [
+            "0305-1048",
+            "1362-4954",
+            "1362-4962"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nucleic Acids Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2886279431",
+      "doi": "https://doi.org/10.1038/s41467-018-05567-w",
+      "display_name": "Lysine benzoylation is a histone mark regulated by SIRT2",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-018-05567-w",
+        "doi": "https://doi.org/10.1038/s41467-018-05567-w",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-018-05567-w",
+        "pdf_url": "https://www.nature.com/articles/s41467-018-05567-w.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4225278475",
+      "doi": "https://doi.org/10.1038/s41587-022-01284-4",
+      "display_name": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-022-01284-4",
+        "doi": "https://doi.org/10.1038/s41587-022-01284-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-022-01284-4",
+        "pdf_url": "https://www.nature.com/articles/s41587-022-01284-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2925631060",
+      "doi": "https://doi.org/10.3389/fonc.2019.00198",
+      "display_name": "Histone Modifications Drive Aberrant Notch3 Expression/Activity and Growth in T-ALL",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.3389/fonc.2019.00198",
+        "doi": "https://doi.org/10.3389/fonc.2019.00198",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fonc.2019.00198",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fonc.2019.00198/pdf",
+        "source": {
+          "id": "https://openalex.org/S2596394214",
+          "display_name": "Frontiers in Oncology",
+          "issn_l": "2234-943X",
+          "issn": [
+            "2234-943X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Oncology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1997431917",
+      "doi": "https://doi.org/10.1038/labinvest.2012.61",
+      "display_name": "Gene silencing of EREG mediated by DNA methylation and histone modification in human gastric cancers",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1038/labinvest.2012.61",
+        "doi": "https://doi.org/10.1038/labinvest.2012.61",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/labinvest.2012.61",
+        "pdf_url": "http://www.laboratoryinvestigation.org/article/S0023683722013228/pdf",
+        "source": {
+          "id": "https://openalex.org/S137146891",
+          "display_name": "Laboratory Investigation",
+          "issn_l": "0023-6837",
+          "issn": [
+            "0023-6837",
+            "1530-0307"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Laboratory Investigation",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4312019409",
+      "doi": "https://doi.org/10.1093/nar/gkac1134",
+      "display_name": "CHD8 suppression impacts on histone H3 lysine 36 trimethylation and alters RNA alternative splicing",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1093/nar/gkac1134",
+        "doi": "https://doi.org/10.1093/nar/gkac1134",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nar/gkac1134",
+        "pdf_url": "https://academic.oup.com/nar/article-pdf/50/22/12809/48489246/gkac1134.pdf",
+        "source": {
+          "id": "https://openalex.org/S134668137",
+          "display_name": "Nucleic Acids Research",
+          "issn_l": "0305-1048",
+          "issn": [
+            "0305-1048",
+            "1362-4954",
+            "1362-4962"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nucleic Acids Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387953548",
+      "doi": "https://doi.org/10.1371/journal.pbio.3002354",
+      "display_name": "Histone methyltransferase activity affects metabolism in human cells independently of transcriptional regulation",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pbio.3002354",
+        "doi": "https://doi.org/10.1371/journal.pbio.3002354",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pbio.3002354",
+        "pdf_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002354&type=printable",
+        "source": {
+          "id": "https://openalex.org/S154343897",
+          "display_name": "PLoS Biology",
+          "issn_l": "1544-9173",
+          "issn": [
+            "1544-9173",
+            "1545-7885"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4220974069",
+      "doi": "https://doi.org/10.1038/s41467-022-28469-4",
+      "display_name": "Histone H3K4me3 modification is a transgenerational epigenetic signal for lipid metabolism in Caenorhabditis elegans",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-022-28469-4",
+        "doi": "https://doi.org/10.1038/s41467-022-28469-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-022-28469-4",
+        "pdf_url": "https://www.nature.com/articles/s41467-022-28469-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2017297735",
+      "doi": "https://doi.org/10.1038/nature09542",
+      "display_name": "TRIM24 links a non-canonical histone signature to breast cancer",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1038/nature09542",
+        "doi": "https://doi.org/10.1038/nature09542",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/nature09542",
+        "pdf_url": "https://www.nature.com/articles/nature09542.pdf",
+        "source": {
+          "id": "https://openalex.org/S137773608",
+          "display_name": "Nature",
+          "issn_l": "0028-0836",
+          "issn": [
+            "0028-0836",
+            "1476-4687"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "erih-plus",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2950603267",
+      "doi": "https://doi.org/10.1186/s12864-019-5893-9",
+      "display_name": "Isolated C. elegans germ nuclei exhibit distinct genomic profiles of histone modification and gene expression",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1186/s12864-019-5893-9",
+        "doi": "https://doi.org/10.1186/s12864-019-5893-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s12864-019-5893-9",
+        "pdf_url": "https://bmcgenomics.biomedcentral.com/counter/pdf/10.1186/s12864-019-5893-9",
+        "source": {
+          "id": "https://openalex.org/S28614077",
+          "display_name": "BMC Genomics",
+          "issn_l": "1471-2164",
+          "issn": [
+            "1471-2164"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Genomics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387077104",
+      "doi": "https://doi.org/10.1002/advs.202301300",
+      "display_name": "Endothelial Cell\u2010Derived Lactate Triggers Bone Mesenchymal Stem Cell Histone Lactylation to Attenuate Osteoporosis",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1002/advs.202301300",
+        "doi": "https://doi.org/10.1002/advs.202301300",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/advs.202301300",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/advs.202301300",
+        "source": {
+          "id": "https://openalex.org/S2737737698",
+          "display_name": "Advanced Science",
+          "issn_l": "2198-3844",
+          "issn": [
+            "2198-3844"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "jufo-1",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Advanced Science",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3030695012",
+      "doi": "https://doi.org/10.1093/nar/gkaa441",
+      "display_name": "HRP2\u2013DPF3a\u2013BAF complex coordinates histone modification and chromatin remodeling to regulate myogenic gene transcription",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1093/nar/gkaa441",
+        "doi": "https://doi.org/10.1093/nar/gkaa441",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nar/gkaa441",
+        "pdf_url": "https://academic.oup.com/nar/article-pdf/48/12/6563/33468626/gkaa441.pdf",
+        "source": {
+          "id": "https://openalex.org/S134668137",
+          "display_name": "Nucleic Acids Research",
+          "issn_l": "0305-1048",
+          "issn": [
+            "0305-1048",
+            "1362-4954",
+            "1362-4962"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nucleic Acids Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4366997524",
+      "doi": "https://doi.org/10.1101/2023.04.22.537846",
+      "display_name": "Histone methylation has a direct metabolic role in human cells",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.04.22.537846",
+        "doi": "https://doi.org/10.1101/2023.04.22.537846",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.1101/2023.04.22.537846",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/04/25/2023.04.22.537846.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389038961",
+      "doi": "https://doi.org/10.17762/jaz.v44i4.2193",
+      "display_name": "Histone modifications and FMR role in Fragile X syndrome: A review",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.17762/jaz.v44i4.2193",
+        "doi": "https://doi.org/10.17762/jaz.v44i4.2193",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.17762/jaz.v44i4.2193",
+        "pdf_url": "http://jazindia.com/index.php/jaz/article/download/2193/1721",
+        "source": {
+          "id": "https://openalex.org/S39943216",
+          "display_name": "Journal Of Advanced Zoology",
+          "issn_l": "0253-7214",
+          "issn": [
+            "0253-7214"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "norway-1",
+            "poland-20",
+            "russia-white-list-4"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Advanced Zoology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4309648210",
+      "doi": "https://doi.org/10.1007/s00281-022-00972-2",
+      "display_name": "Single-cell RNA-seq methods to interrogate virus-host interactions",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1007/s00281-022-00972-2",
+        "doi": "https://doi.org/10.1007/s00281-022-00972-2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s00281-022-00972-2",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00281-022-00972-2.pdf",
+        "source": {
+          "id": "https://openalex.org/S54848071",
+          "display_name": "Seminars in Immunopathology",
+          "issn_l": "1863-2297",
+          "issn": [
+            "1863-2297",
+            "1863-2300"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Seminars in Immunopathology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7160554352",
+      "doi": "https://doi.org/10.3389/fcell.2026.1824619",
+      "display_name": "Adam13 interacts with large protein complexes to regulate histone modification and gene expression",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3389/fcell.2026.1824619",
+        "doi": "https://doi.org/10.3389/fcell.2026.1824619",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fcell.2026.1824619",
+        "pdf_url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1824619/pdf",
+        "source": {
+          "id": "https://openalex.org/S2596924766",
+          "display_name": "Frontiers in Cell and Developmental Biology",
+          "issn_l": "2296-634X",
+          "issn": [
+            "2296-634X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Cell and Developmental Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4375947188",
+      "doi": "https://doi.org/10.1146/annurev-biodatasci-020422-050645",
+      "display_name": "Single-Cell Multiomics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1146/annurev-biodatasci-020422-050645",
+        "doi": "https://doi.org/10.1146/annurev-biodatasci-020422-050645",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1146/annurev-biodatasci-020422-050645",
+        "pdf_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-biodatasci-020422-050645",
+        "source": {
+          "id": "https://openalex.org/S4210232080",
+          "display_name": "Annual Review of Biomedical Data Science",
+          "issn_l": "2574-3414",
+          "issn": [
+            "2574-3414"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doyens",
+            "medline",
+            "norway-1",
+            "poland-20",
+            "russia-white-list-4"
+          ],
+          "host_organization": "https://openalex.org/P4310320373",
+          "host_organization_name": "Annual Reviews",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320373"
+          ],
+          "host_organization_lineage_names": [
+            "Annual Reviews"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Annual Review of Biomedical Data Science",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4293355122",
+      "doi": "https://doi.org/10.1038/s42003-022-03846-3",
+      "display_name": "Cancer cell histone density links global histone acetylation, mitochondrial proteome and histone acetylase inhibitor sensitivity",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s42003-022-03846-3",
+        "doi": "https://doi.org/10.1038/s42003-022-03846-3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s42003-022-03846-3",
+        "pdf_url": "https://www.nature.com/articles/s42003-022-03846-3.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210225776",
+          "display_name": "Communications Biology",
+          "issn_l": "2399-3642",
+          "issn": [
+            "2399-3642"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "doyens",
+            "jufo-1",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-20",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Communications Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385232704",
+      "doi": "https://doi.org/10.1101/gad.350594.123",
+      "display_name": "Histone bivalency regulates the timing of cerebellar granule cell development",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/gad.350594.123",
+        "doi": "https://doi.org/10.1101/gad.350594.123",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/gad.350594.123",
+        "pdf_url": "http://genesdev.cshlp.org/content/early/2023/07/25/gad.350594.123.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S168778273",
+          "display_name": "Genes & Development",
+          "issn_l": "0890-9369",
+          "issn": [
+            "0890-9369",
+            "1549-5477"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310315909",
+          "host_organization_name": "Cold Spring Harbor Laboratory Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315909"
+          ],
+          "host_organization_lineage_names": [
+            "Cold Spring Harbor Laboratory Press"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genes &amp; Development",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3154637679",
+      "doi": "https://doi.org/10.1016/j.molcel.2021.03.041",
+      "display_name": "DNAJC9 integrates heat shock molecular chaperones into the histone chaperone network",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1016/j.molcel.2021.03.041",
+        "doi": "https://doi.org/10.1016/j.molcel.2021.03.041",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.molcel.2021.03.041",
+        "pdf_url": "http://www.cell.com/article/S1097276521002628/pdf",
+        "source": {
+          "id": "https://openalex.org/S156208185",
+          "display_name": "Molecular Cell",
+          "issn_l": "1097-2765",
+          "issn": [
+            "1097-2765",
+            "1097-4164"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4386316597",
+      "doi": "https://doi.org/10.1093/bib/bbad313",
+      "display_name": "Multimodal deep learning approaches for single-cell multi-omics data integration",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbad313",
+        "doi": "https://doi.org/10.1093/bib/bbad313",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbad313",
+        "pdf_url": "https://academic.oup.com/bib/advance-article-pdf/doi/10.1093/bib/bbad313/51315210/bbad313.pdf",
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4391168615",
+      "doi": "https://doi.org/10.1038/s41587-023-02040-y",
+      "display_name": "Mosaic integration and knowledge transfer of single-cell multimodal data with MIDAS",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-023-02040-y",
+        "doi": "https://doi.org/10.1038/s41587-023-02040-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-023-02040-y",
+        "pdf_url": "https://www.nature.com/articles/s41587-023-02040-y.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4225358255",
+      "doi": "https://doi.org/10.1371/journal.ppat.1010173",
+      "display_name": "Histone H3 deacetylation promotes host cell viability for efficient infection by Listeria monocytogenes",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1371/journal.ppat.1010173",
+        "doi": "https://doi.org/10.1371/journal.ppat.1010173",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.ppat.1010173",
+        "pdf_url": "https://journals.plos.org/plospathogens/article/file?id=10.1371/journal.ppat.1010173&type=printable",
+        "source": {
+          "id": "https://openalex.org/S2004986",
+          "display_name": "PLoS Pathogens",
+          "issn_l": "1553-7366",
+          "issn": [
+            "1553-7366",
+            "1553-7374"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Pathogens",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7216757775",
+      "doi": null,
+      "display_name": "The histone perspective: chromatin regulation of cell identity through manipulation of histone content and specific variants",
+      "publication_year": null,
+      "primary_location": {
+        "id": "pmh:oai:iris.unisr.it:20.500.11768/133078",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/20.500.11768/133078",
+        "pdf_url": "https://iris.unisr.it/bitstream/20.500.11768/133078/2/completa_FINALE_2nd%20sub.pdf",
+        "source": {
+          "id": "https://openalex.org/S7407055348",
+          "display_name": "Archivio Istituzionale della Ricerca - Universit\u00e0 Vita-Salute San Raffaele",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2068194528",
+      "doi": "https://doi.org/10.1523/jneurosci.3732-09.2010",
+      "display_name": "Histone Methylation Regulates Memory Formation",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1523/jneurosci.3732-09.2010",
+        "doi": "https://doi.org/10.1523/jneurosci.3732-09.2010",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1523/jneurosci.3732-09.2010",
+        "pdf_url": "https://www.jneurosci.org/content/jneuro/30/10/3589.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S5555990",
+          "display_name": "Journal of Neuroscience",
+          "issn_l": "0270-6474",
+          "issn": [
+            "0270-6474",
+            "1529-2401"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319739",
+          "host_organization_name": "Society for Neuroscience",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319739"
+          ],
+          "host_organization_lineage_names": [
+            "Society for Neuroscience"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Journal of Neuroscience",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4384405873",
+      "doi": "https://doi.org/10.1007/s12551-023-01092-3",
+      "display_name": "Progress in single-cell multimodal sequencing and multi-omics data integration",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1007/s12551-023-01092-3",
+        "doi": "https://doi.org/10.1007/s12551-023-01092-3",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s12551-023-01092-3",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S18736814",
+          "display_name": "Biophysical Reviews",
+          "issn_l": "1867-2450",
+          "issn": [
+            "1867-2450",
+            "1867-2469"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319972",
+          "host_organization_name": "Springer International Publishing",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319972",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer International Publishing",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Biophysical Reviews",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7024401492",
+      "doi": "https://doi.org/10.70675/40e530e9z2e50z46e1zac0aze57debc0a189",
+      "display_name": "The role of histone modifications in the regulation of alternative splicing during epithelial-to-mesenchymal transition",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "pmh:oai:HAL:tel-03137009v1",
+        "doi": "https://doi.org/10.70675/40e530e9z2e50z46e1zac0aze57debc0a189",
+        "is_oa": true,
+        "landing_page_url": "https://theses.hal.science/tel-03137009",
+        "pdf_url": "https://theses.hal.science/tel-03137009v1/file/2020_SEGELLE_archivage.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402512",
+          "display_name": "HAL",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4405252976",
+          "host_organization_name": "Centre pour la Communication Scientifique Directe",
+          "host_organization_lineage": [
+            "https://openalex.org/I4405252976"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Agricultural sciences. Universit\u00e9 Montpellier, 2020. English. &#x27E8;NNT : 2020MONTT017&#x27E9;",
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417423460",
+      "doi": "https://doi.org/10.1038/s41467-025-67016-9",
+      "display_name": "Reconstructing epigenomic dynamics through a single-cell multi-epigenome data integration framework",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-025-67016-9",
+        "doi": "https://doi.org/10.1038/s41467-025-67016-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-025-67016-9",
+        "pdf_url": "https://www.nature.com/articles/s41467-025-67016-9.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3167406339",
+      "doi": "https://doi.org/10.1038/s41467-021-24035-6",
+      "display_name": "Arginine methylation of METTL14 promotes RNA N6-methyladenosine modification and endoderm differentiation of mouse embryonic stem cells",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-021-24035-6",
+        "doi": "https://doi.org/10.1038/s41467-021-24035-6",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-021-24035-6",
+        "pdf_url": "https://www.nature.com/articles/s41467-021-24035-6.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3157035597",
+      "doi": null,
+      "display_name": "MFGM-VAE for unpaired multi-view data integration",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "pmh:oai:upcommons.upc.edu:2117/345043",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/2117/345043",
+        "pdf_url": "http://hdl.handle.net/2117/345043",
+        "source": {
+          "id": "https://openalex.org/S4377196262",
+          "display_name": "UPCommons institutional repository (Universitat Polit\u00e8cnica de Catalunya)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I9617848",
+          "host_organization_name": "Universitat Polit\u00e8cnica de Catalunya",
+          "host_organization_lineage": [
+            "https://openalex.org/I9617848"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "public-domain",
+        "license_id": "https://openalex.org/licenses/public-domain",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "info:eu-repo/semantics/masterThesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3134503778",
+      "doi": "https://doi.org/10.1038/s41467-021-21904-y",
+      "display_name": "N6-methyladenosine RNA modification suppresses antiviral innate sensing pathways via reshaping double-stranded RNA",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-021-21904-y",
+        "doi": "https://doi.org/10.1038/s41467-021-21904-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-021-21904-y",
+        "pdf_url": "https://www.nature.com/articles/s41467-021-21904-y.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7117986147",
+      "doi": "https://doi.org/10.1126/sciadv.adx8352",
+      "display_name": "AI-assisted protein design to rapidly convert antibody sequences to intrabodies targeting diverse peptides and histone modifications",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1126/sciadv.adx8352",
+        "doi": "https://doi.org/10.1126/sciadv.adx8352",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1126/sciadv.adx8352",
+        "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adx8352?download=true",
+        "source": {
+          "id": "https://openalex.org/S2737427234",
+          "display_name": "Science Advances",
+          "issn_l": "2375-2548",
+          "issn": [
+            "2375-2548"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315823",
+          "host_organization_name": "American Association for the Advancement of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315823"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for the Advancement of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Science Advances",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4379521442",
+      "doi": "https://doi.org/10.1038/s41580-023-00615-w",
+      "display_name": "The technological landscape and applications of single-cell multi-omics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41580-023-00615-w",
+        "doi": "https://doi.org/10.1038/s41580-023-00615-w",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41580-023-00615-w",
+        "pdf_url": "https://www.nature.com/articles/s41580-023-00615-w.pdf",
+        "source": {
+          "id": "https://openalex.org/S196724125",
+          "display_name": "Nature Reviews Molecular Cell Biology",
+          "issn_l": "1471-0072",
+          "issn": [
+            "1471-0072",
+            "1471-0080"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Reviews Molecular Cell Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4384664328",
+      "doi": "https://doi.org/10.1002/cac2.12471",
+      "display_name": "Targeting histone deacetylase suppresses tumor growth through eliciting METTL14\u2010modified m 6 A RNA methylation in ocular melanoma",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1002/cac2.12471",
+        "doi": "https://doi.org/10.1002/cac2.12471",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/cac2.12471",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cac2.12471",
+        "source": {
+          "id": "https://openalex.org/S4306555428",
+          "display_name": "\u764c\u75c7\uff1a\u82f1\u6587\u7248",
+          "issn_l": "1000-467X",
+          "issn": [
+            "1000-467X",
+            "1944-446X",
+            "2523-3548"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": false,
+          "listed_in": [
+            "doaj",
+            "dongbi-b",
+            "ki-jl-1",
+            "medline",
+            "norway-2",
+            "poland-20",
+            "russia-white-list-1"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cancer Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2254951225",
+      "doi": "https://doi.org/10.1038/ncomms9152",
+      "display_name": "Histone H3 Lysine 27 demethylases Jmjd3 and Utx are required for T-cell differentiation",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1038/ncomms9152",
+        "doi": "https://doi.org/10.1038/ncomms9152",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/ncomms9152",
+        "pdf_url": "https://www.nature.com/articles/ncomms9152.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2967018201",
+      "doi": "https://doi.org/10.1167/iovs.19-27656",
+      "display_name": "Single-Cell RNA Transcriptome Helps Define the Limbal/Corneal Epithelial Stem/Early Transit Amplifying Cells and How Autophagy Affects This Population",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1167/iovs.19-27656",
+        "doi": "https://doi.org/10.1167/iovs.19-27656",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1167/iovs.19-27656",
+        "pdf_url": "https://iovs.arvojournals.org/arvo/content_public/journal/iovs/938145/i1552-5783-60-10-3570.pdf",
+        "source": {
+          "id": "https://openalex.org/S76304953",
+          "display_name": "Investigative Ophthalmology & Visual Science",
+          "issn_l": "0146-0404",
+          "issn": [
+            "0146-0404",
+            "1552-5783"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310321950",
+          "host_organization_name": "Cadmus Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310321950"
+          ],
+          "host_organization_lineage_names": [
+            "Cadmus Press"
+          ],
+          "type": "journal"
+        },
+        "license": "public-domain",
+        "license_id": "https://openalex.org/licenses/public-domain",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Investigative Opthalmology &amp; Visual Science",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2128980492",
+      "doi": "https://doi.org/10.1101/gr.168781.113",
+      "display_name": "Vascular histone deacetylation by pharmacological HDAC inhibition",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1101/gr.168781.113",
+        "doi": "https://doi.org/10.1101/gr.168781.113",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/gr.168781.113",
+        "pdf_url": "http://genome.cshlp.org/content/24/8/1271.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S43092948",
+          "display_name": "Genome Research",
+          "issn_l": "1088-9051",
+          "issn": [
+            "1088-9051",
+            "1549-5469"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310315909",
+          "host_organization_name": "Cold Spring Harbor Laboratory Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315909"
+          ],
+          "host_organization_lineage_names": [
+            "Cold Spring Harbor Laboratory Press"
+          ],
+          "type": "journal"
+        },
+        "license": "public-domain",
+        "license_id": "https://openalex.org/licenses/public-domain",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399883808",
+      "doi": "https://doi.org/10.26508/lsa.202402835",
+      "display_name": "p53 ensures the normal behavior and modification of G1/S-specific histone H3.1 in the nucleus",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.26508/lsa.202402835",
+        "doi": "https://doi.org/10.26508/lsa.202402835",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.26508/lsa.202402835",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210202458",
+          "display_name": "Life Science Alliance",
+          "issn_l": "2575-1077",
+          "issn": [
+            "2575-1077"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-40",
+            "russia-white-list-1"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Life Science Alliance",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385351665",
+      "doi": "https://doi.org/10.1016/j.immuni.2023.07.002",
+      "display_name": "Ketolysis drives CD8+ T cell effector function through effects on histone acetylation",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1016/j.immuni.2023.07.002",
+        "doi": "https://doi.org/10.1016/j.immuni.2023.07.002",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.immuni.2023.07.002",
+        "pdf_url": "http://www.cell.com/article/S107476132300314X/pdf",
+        "source": {
+          "id": "https://openalex.org/S199671312",
+          "display_name": "Immunity",
+          "issn_l": "1074-7613",
+          "issn": [
+            "1074-7613",
+            "1097-4180"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315673",
+          "host_organization_name": "Cell Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315673",
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Cell Press",
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Immunity",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4322768301",
+      "doi": "https://doi.org/10.1038/s41576-023-00580-2",
+      "display_name": "Methods and applications for single-cell and spatial multi-omics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41576-023-00580-2",
+        "doi": "https://doi.org/10.1038/s41576-023-00580-2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41576-023-00580-2",
+        "pdf_url": "https://www.nature.com/articles/s41576-023-00580-2.pdf",
+        "source": {
+          "id": "https://openalex.org/S8553189",
+          "display_name": "Nature Reviews Genetics",
+          "issn_l": "1471-0056",
+          "issn": [
+            "1471-0056",
+            "1471-0064"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Reviews Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4294225696",
+      "doi": "https://doi.org/10.1242/jcs.259856",
+      "display_name": "The histone methyltransferase SETD2 negatively regulates cell size",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1242/jcs.259856",
+        "doi": "https://doi.org/10.1242/jcs.259856",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1242/jcs.259856",
+        "pdf_url": "https://journals.biologists.com/jcs/article-pdf/doi/10.1242/jcs.259856/2160084/jcs259856.pdf",
+        "source": {
+          "id": "https://openalex.org/S5677253",
+          "display_name": "Journal of Cell Science",
+          "issn_l": "0021-9533",
+          "issn": [
+            "0021-9533",
+            "1477-9137"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311847",
+          "host_organization_name": "The Company of Biologists",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311847"
+          ],
+          "host_organization_lineage_names": [
+            "The Company of Biologists"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Cell Science",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4411328687",
+      "doi": "https://doi.org/10.1038/s41467-025-60246-x",
+      "display_name": "Coordinated action of multiple active histone modifications shapes the zygotic genome activation in teleost embryos",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-025-60246-x",
+        "doi": "https://doi.org/10.1038/s41467-025-60246-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-025-60246-x",
+        "pdf_url": "https://www.nature.com/articles/s41467-025-60246-x.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2991049747",
+      "doi": "https://doi.org/10.1038/s41598-019-53681-6",
+      "display_name": "Untargeted histone profiling during naive conversion uncovers conserved modification markers between mouse and human",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1038/s41598-019-53681-6",
+        "doi": "https://doi.org/10.1038/s41598-019-53681-6",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41598-019-53681-6",
+        "pdf_url": "https://www.nature.com/articles/s41598-019-53681-6.pdf",
+        "source": {
+          "id": "https://openalex.org/S196734849",
+          "display_name": "Scientific Reports",
+          "issn_l": "2045-2322",
+          "issn": [
+            "2045-2322"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Scientific Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4224929202",
+      "doi": "https://doi.org/10.1016/j.jprot.2022.104596",
+      "display_name": "High-throughput profiling of histone post-translational modifications and chromatin modifying proteins by reverse phase protein array",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1016/j.jprot.2022.104596",
+        "doi": "https://doi.org/10.1016/j.jprot.2022.104596",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.jprot.2022.104596",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S100014387",
+          "display_name": "Journal of Proteomics",
+          "issn_l": "1874-3919",
+          "issn": [
+            "1874-3919",
+            "1876-7737"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Proteomics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2094070569",
+      "doi": "https://doi.org/10.1016/j.molcel.2014.12.008",
+      "display_name": "Global and Specific Responses of the Histone Acetylome to Systematic Perturbation",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1016/j.molcel.2014.12.008",
+        "doi": "https://doi.org/10.1016/j.molcel.2014.12.008",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.molcel.2014.12.008",
+        "pdf_url": "http://www.cell.com/article/S1097276514009575/pdf",
+        "source": {
+          "id": "https://openalex.org/S156208185",
+          "display_name": "Molecular Cell",
+          "issn_l": "1097-2765",
+          "issn": [
+            "1097-2765",
+            "1097-4164"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2792021804",
+      "doi": null,
+      "display_name": "The Role of the Set1 RNA Polymerase II Interacting Motif (SRIM) in Set1 Recruitment and Histone H3K4 Methylation",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:docs.lib.purdue.edu:open_access_dissertations-2452",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://docs.lib.purdue.edu/open_access_dissertations/1236",
+        "pdf_url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=2452&context=open_access_dissertations",
+        "source": {
+          "id": "https://openalex.org/S4377196310",
+          "display_name": "Purdue e-Pubs (Purdue University System)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801333002",
+          "host_organization_name": "Purdue University System",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801333002"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Open Access Dissertations",
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4283067429",
+      "doi": "https://doi.org/10.1038/s41467-022-31104-x",
+      "display_name": "Diagonal integration of multimodal single-cell data: potential pitfalls and paths forward",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-022-31104-x",
+        "doi": "https://doi.org/10.1038/s41467-022-31104-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-022-31104-x",
+        "pdf_url": "https://www.nature.com/articles/s41467-022-31104-x.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3162117965",
+      "doi": "https://doi.org/10.1038/s41568-021-00357-x",
+      "display_name": "The language of chromatin modification in human cancers",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1038/s41568-021-00357-x",
+        "doi": "https://doi.org/10.1038/s41568-021-00357-x",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1038/s41568-021-00357-x",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S160464432",
+          "display_name": "Nature reviews. Cancer",
+          "issn_l": "1474-175X",
+          "issn": [
+            "1474-175X",
+            "1474-1768"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Reviews Cancer",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4388757454",
+      "doi": "https://doi.org/10.1126/sciadv.adf3980",
+      "display_name": "DOT1L is a barrier to histone acetylation during reprogramming to pluripotency",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1126/sciadv.adf3980",
+        "doi": "https://doi.org/10.1126/sciadv.adf3980",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1126/sciadv.adf3980",
+        "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adf3980?download=true",
+        "source": {
+          "id": "https://openalex.org/S2737427234",
+          "display_name": "Science Advances",
+          "issn_l": "2375-2548",
+          "issn": [
+            "2375-2548"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315823",
+          "host_organization_name": "American Association for the Advancement of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315823"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for the Advancement of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Science Advances",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1755602580",
+      "doi": "https://doi.org/10.1038/emboj.2011.144",
+      "display_name": "Histone variant macroH2A confers resistance to nuclear reprogramming",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.1038/emboj.2011.144",
+        "doi": "https://doi.org/10.1038/emboj.2011.144",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/emboj.2011.144",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1038/emboj.2011.144",
+        "source": {
+          "id": "https://openalex.org/S127916151",
+          "display_name": "The EMBO Journal",
+          "issn_l": "0261-4189",
+          "issn": [
+            "0261-4189",
+            "1460-2075"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The EMBO Journal",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4379468081",
+      "doi": "https://doi.org/10.1038/s41467-023-39101-4",
+      "display_name": "ACL and HAT1 form a nuclear module to acetylate histone H4K5 and promote cell proliferation",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-023-39101-4",
+        "doi": "https://doi.org/10.1038/s41467-023-39101-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-023-39101-4",
+        "pdf_url": "https://www.nature.com/articles/s41467-023-39101-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1992722664",
+      "doi": "https://doi.org/10.3892/ijo.2014.2279",
+      "display_name": "Stimulation of \u03b2-catenin and colon cancer cell growth by the KDM4B histone demethylase",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.3892/ijo.2014.2279",
+        "doi": "https://doi.org/10.3892/ijo.2014.2279",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3892/ijo.2014.2279",
+        "pdf_url": "http://www.spandidos-publications.com/ijo/44/4/1341/download",
+        "source": {
+          "id": "https://openalex.org/S4210208883",
+          "display_name": "International Journal of Oncology",
+          "issn_l": "1019-6439",
+          "issn": [
+            "1019-6439",
+            "1791-2423"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "dongbi-d",
+            "jufo-1",
+            "medline",
+            "poland-100",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320412",
+          "host_organization_name": "Spandidos Publishing",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320412"
+          ],
+          "host_organization_lineage_names": [
+            "Spandidos Publishing"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Oncology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2067533446",
+      "doi": "https://doi.org/10.1073/pnas.1119095109",
+      "display_name": "Two surfaces on the histone chaperone Rtt106 mediate histone binding, replication, and silencing",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.1073/pnas.1119095109",
+        "doi": "https://doi.org/10.1073/pnas.1119095109",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1073/pnas.1119095109",
+        "pdf_url": "https://www.pnas.org/content/pnas/109/3/E144.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S125754415",
+          "display_name": "Proceedings of the National Academy of Sciences",
+          "issn_l": "0027-8424",
+          "issn": [
+            "0027-8424",
+            "1091-6490"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "erih-plus",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320052",
+          "host_organization_name": "National Academy of Sciences",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320052"
+          ],
+          "host_organization_lineage_names": [
+            "National Academy of Sciences"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the National Academy of Sciences",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2766975063",
+      "doi": "https://doi.org/10.1038/s41467-017-01196-x",
+      "display_name": "Coding and noncoding landscape of extracellular RNA released by human glioma stem cells",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-017-01196-x",
+        "doi": "https://doi.org/10.1038/s41467-017-01196-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-017-01196-x",
+        "pdf_url": "https://www.nature.com/articles/s41467-017-01196-x.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4378781292",
+      "doi": "https://doi.org/10.15252/embr.202256404",
+      "display_name": "Old and newly synthesized histones are asymmetrically distributed in Drosophila intestinal stem cell divisions",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.15252/embr.202256404",
+        "doi": "https://doi.org/10.15252/embr.202256404",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.15252/embr.202256404",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.15252/embr.202256404",
+        "source": {
+          "id": "https://openalex.org/S57252141",
+          "display_name": "EMBO Reports",
+          "issn_l": "1469-221X",
+          "issn": [
+            "1469-221X",
+            "1469-3178"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "EMBO Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4407392032",
+      "doi": "https://doi.org/10.1038/s44320-025-00088-3",
+      "display_name": "Leveraging prior knowledge to infer gene regulatory networks from single-cell RNA-sequencing data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s44320-025-00088-3",
+        "doi": "https://doi.org/10.1038/s44320-025-00088-3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s44320-025-00088-3",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1038/s44320-025-00088-3.pdf",
+        "source": {
+          "id": "https://openalex.org/S200893805",
+          "display_name": "Molecular Systems Biology",
+          "issn_l": "1744-4292",
+          "issn": [
+            "1744-4292"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Systems Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4401171808",
+      "doi": "https://doi.org/10.1038/s41586-024-07751-z",
+      "display_name": "Histone serotonylation regulates ependymoma tumorigenesis",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41586-024-07751-z",
+        "doi": "https://doi.org/10.1038/s41586-024-07751-z",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1038/s41586-024-07751-z",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S137773608",
+          "display_name": "Nature",
+          "issn_l": "0028-0836",
+          "issn": [
+            "0028-0836",
+            "1476-4687"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "erih-plus",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4311847921",
+      "doi": "https://doi.org/10.1101/2022.12.06.519310",
+      "display_name": "Histone monoaminylation dynamics are regulated by a single enzyme and promote neural rhythmicity",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1101/2022.12.06.519310",
+        "doi": "https://doi.org/10.1101/2022.12.06.519310",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2022.12.06.519310",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2022/12/06/2022.12.06.519310.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4309077888",
+      "doi": "https://doi.org/10.1038/s41588-022-01212-x",
+      "display_name": "Histone H3 proline 16 hydroxylation regulates mammalian gene expression",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41588-022-01212-x",
+        "doi": "https://doi.org/10.1038/s41588-022-01212-x",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1038/s41588-022-01212-x",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S137905309",
+          "display_name": "Nature Genetics",
+          "issn_l": "1061-4036",
+          "issn": [
+            "1061-4036",
+            "1546-1718"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2138296380",
+      "doi": "https://doi.org/10.1105/tpc.112.104232",
+      "display_name": "Regulatory Impact of RNA Secondary Structure across the Arabidopsis Transcriptome",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1105/tpc.112.104232",
+        "doi": "https://doi.org/10.1105/tpc.112.104232",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1105/tpc.112.104232",
+        "pdf_url": "https://academic.oup.com/plcell/article-pdf/24/11/4346/35797652/plcell_v24_11_4346.pdf",
+        "source": {
+          "id": "https://openalex.org/S48849333",
+          "display_name": "The Plant Cell",
+          "issn_l": "1040-4651",
+          "issn": [
+            "1040-4651",
+            "1532-298X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Plant Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417304843",
+      "doi": "https://doi.org/10.1038/s41467-025-66405-4",
+      "display_name": "Histone acetylation homeodynamics navigates cell survival and apoptosis",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-025-66405-4",
+        "doi": "https://doi.org/10.1038/s41467-025-66405-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-025-66405-4",
+        "pdf_url": "https://www.nature.com/articles/s41467-025-66405-4_reference.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4413621365",
+      "doi": "https://doi.org/10.1038/s41467-025-63155-1",
+      "display_name": "scIVNL-seq resolves in vivo single-cell RNA dynamics of immune cells during Salmonella infection",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-025-63155-1",
+        "doi": "https://doi.org/10.1038/s41467-025-63155-1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-025-63155-1",
+        "pdf_url": "https://www.nature.com/articles/s41467-025-63155-1.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3081219157",
+      "doi": "https://doi.org/10.1038/s41467-020-18075-7",
+      "display_name": "Single cell transcriptomics of human epidermis identifies basal stem cell transition states",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-020-18075-7",
+        "doi": "https://doi.org/10.1038/s41467-020-18075-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-020-18075-7",
+        "pdf_url": "https://www.nature.com/articles/s41467-020-18075-7.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4396615271",
+      "doi": "https://doi.org/10.1186/s12967-024-05169-9",
+      "display_name": "Targeting histone deacetylases in head and neck squamous cell carcinoma: molecular mechanisms and therapeutic targets",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1186/s12967-024-05169-9",
+        "doi": "https://doi.org/10.1186/s12967-024-05169-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s12967-024-05169-9",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S142026636",
+          "display_name": "Journal of Translational Medicine",
+          "issn_l": "1479-5876",
+          "issn": [
+            "1479-5876"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Translational Medicine",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7118171371",
+      "doi": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+      "display_name": "Accurate, scalable, and unified single-cell atlas integration with scBIOT",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.21203/rs.3.rs-8310482/v1",
+        "doi": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+        "pdf_url": "https://www.researchsquare.com/article/rs-8310482/latest.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306525896",
+          "display_name": "Research Square",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Research Square",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3133207763",
+      "doi": "https://doi.org/10.1101/2021.02.23.432336",
+      "display_name": "Saturated Fat Impairs Circadian Transcriptomics through Histone Modification of Enhancers",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1101/2021.02.23.432336",
+        "doi": "https://doi.org/10.1101/2021.02.23.432336",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2021.02.23.432336",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2021/02/23/2021.02.23.432336.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404092297",
+      "doi": "https://doi.org/10.1093/bfgp/elae044",
+      "display_name": "Application of computational algorithms for single-cell RNA-seq and ATAC-seq in neurodegenerative diseases",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/bfgp/elae044",
+        "doi": "https://doi.org/10.1093/bfgp/elae044",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bfgp/elae044",
+        "pdf_url": "https://academic.oup.com/bfg/advance-article-pdf/doi/10.1093/bfgp/elae044/60431048/elae044.pdf",
+        "source": {
+          "id": "https://openalex.org/S159707322",
+          "display_name": "Briefings in Functional Genomics",
+          "issn_l": "2041-2647",
+          "issn": [
+            "2041-2647",
+            "2041-2649",
+            "2041-2657"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Functional Genomics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7113734004",
+      "doi": null,
+      "display_name": "Toward drug repurposing in epigenetics: Targeting histone modifications as a novel approach for a selective treatment for DMG",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "pmh:oai:eprints.ucl.ac.uk.OAI2:10211120",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://discovery.ucl.ac.uk/id/eprint/10211120/",
+        "pdf_url": "https://discovery.ucl.ac.uk/id/eprint/10211120/7/Gulacti_10211120_thesis_id_removed.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400024",
+          "display_name": "UCL Discovery (University College London)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I45129253",
+          "host_organization_name": "University College London",
+          "host_organization_lineage": [
+            "https://openalex.org/I45129253"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Doctoral thesis, UCL (University College London).",
+        "raw_type": "Thesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2787242824",
+      "doi": "https://doi.org/10.1101/gad.303784.117",
+      "display_name": "Recognition of histone acetylation by the GAS41 YEATS domain promotes H2A.Z deposition in non-small cell lung cancer",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1101/gad.303784.117",
+        "doi": "https://doi.org/10.1101/gad.303784.117",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/gad.303784.117",
+        "pdf_url": "http://genesdev.cshlp.org/content/32/1/58.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S168778273",
+          "display_name": "Genes & Development",
+          "issn_l": "0890-9369",
+          "issn": [
+            "0890-9369",
+            "1549-5477"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310315909",
+          "host_organization_name": "Cold Spring Harbor Laboratory Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315909"
+          ],
+          "host_organization_lineage_names": [
+            "Cold Spring Harbor Laboratory Press"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genes &amp; Development",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2010076338",
+      "doi": "https://doi.org/10.1371/journal.pone.0004563",
+      "display_name": "Integrative Analysis of Epigenetic Modulation in Melanoma Cell Response to Decitabine: Clinical Implications",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pone.0004563",
+        "doi": "https://doi.org/10.1371/journal.pone.0004563",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pone.0004563",
+        "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0004563&type=printable",
+        "source": {
+          "id": "https://openalex.org/S202381698",
+          "display_name": "PLoS ONE",
+          "issn_l": "1932-6203",
+          "issn": [
+            "1932-6203"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "erih-plus",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLoS ONE",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3118782610",
+      "doi": "https://doi.org/10.15252/embr.202051184",
+      "display_name": "Histone methyltransferase DOT1L controls state-specific identity during B cell differentiation",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.15252/embr.202051184",
+        "doi": "https://doi.org/10.15252/embr.202051184",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.15252/embr.202051184",
+        "pdf_url": "https://link.springer.com/content/pdf/10.15252/embr.202051184.pdf",
+        "source": {
+          "id": "https://openalex.org/S57252141",
+          "display_name": "EMBO Reports",
+          "issn_l": "1469-221X",
+          "issn": [
+            "1469-221X",
+            "1469-3178"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The EMBO Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7220780073",
+      "doi": null,
+      "display_name": "Single cell RNA-seq analysis uncovers transcription regulation mechanisms in mouse germline cells",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "pmh:oai:www.ideals.illinois.edu:2142/121365",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://hdl.handle.net/2142/121365",
+        "pdf_url": "https://www.ideals.illinois.edu/items/128562/bitstreams/429602/data.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401358",
+          "display_name": "Illinois Digital Environment for Access to Learning and Scholarship (University of Illinois at Urbana-Champaign)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801919071",
+          "host_organization_name": "University of Illinois System",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801919071"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2010560455",
+      "doi": "https://doi.org/10.1016/j.devcel.2013.02.014",
+      "display_name": "A Sequence in the Drosophila H3-H4 Promoter Triggers Histone Locus Body Assembly and Biosynthesis of Replication-Coupled Histone mRNAs",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.1016/j.devcel.2013.02.014",
+        "doi": "https://doi.org/10.1016/j.devcel.2013.02.014",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.devcel.2013.02.014",
+        "pdf_url": "http://www.cell.com/article/S1534580713001263/pdf",
+        "source": {
+          "id": "https://openalex.org/S83804233",
+          "display_name": "Developmental Cell",
+          "issn_l": "1534-5807",
+          "issn": [
+            "1534-5807",
+            "1878-1551"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Developmental Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3199177950",
+      "doi": "https://doi.org/10.1093/g3journal/jkab329",
+      "display_name": "The zinc-finger protein OEF-1 stabilizes histone modification patterns and promotes efficient splicing in the Caenorhabditis elegans germline",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1093/g3journal/jkab329",
+        "doi": "https://doi.org/10.1093/g3journal/jkab329",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/g3journal/jkab329",
+        "pdf_url": "https://academic.oup.com/g3journal/article-pdf/11/12/jkab329/41715270/jkab329.pdf",
+        "source": {
+          "id": "https://openalex.org/S109822313",
+          "display_name": "G3 Genes Genomes Genetics",
+          "issn_l": "2160-1836",
+          "issn": [
+            "2160-1836"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319844",
+          "host_organization_name": "Genetics Society of America",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319844"
+          ],
+          "host_organization_lineage_names": [
+            "Genetics Society of America"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "G3 Genes|Genomes|Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399861389",
+      "doi": "https://doi.org/10.1038/s41467-024-49375-x",
+      "display_name": "Plasma cell differentiation is regulated by the expression of histone variant H3.3",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-024-49375-x",
+        "doi": "https://doi.org/10.1038/s41467-024-49375-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-024-49375-x",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4396572195",
+      "doi": "https://doi.org/10.1093/bioinformatics/btae300",
+      "display_name": "Scalable integration of multiomic single-cell data using generative adversarial networks",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btae300",
+        "doi": "https://doi.org/10.1093/bioinformatics/btae300",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btae300",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4390501506",
+      "doi": "https://doi.org/10.1186/s40478-023-01696-6",
+      "display_name": "Histone acetylation in an Alzheimer\u2019s disease cell model promotes homeostatic amyloid-reducing pathways",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1186/s40478-023-01696-6",
+        "doi": "https://doi.org/10.1186/s40478-023-01696-6",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s40478-023-01696-6",
+        "pdf_url": "https://actaneurocomms.biomedcentral.com/counter/pdf/10.1186/s40478-023-01696-6",
+        "source": {
+          "id": "https://openalex.org/S2764650462",
+          "display_name": "Acta Neuropathologica Communications",
+          "issn_l": "2051-5960",
+          "issn": [
+            "2051-5960"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Acta Neuropathologica Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389312602",
+      "doi": "https://doi.org/10.1038/s41592-023-02090-9",
+      "display_name": "Combinatorial single-cell profiling of major chromatin types with MAbID",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41592-023-02090-9",
+        "doi": "https://doi.org/10.1038/s41592-023-02090-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41592-023-02090-9",
+        "pdf_url": "https://www.nature.com/articles/s41592-023-02090-9.pdf",
+        "source": {
+          "id": "https://openalex.org/S127827428",
+          "display_name": "Nature Methods",
+          "issn_l": "1548-7091",
+          "issn": [
+            "1548-7091",
+            "1548-7105"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Methods",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2900347078",
+      "doi": "https://doi.org/10.1038/s41467-018-06898-4",
+      "display_name": "Mettl3-mediated m6A RNA methylation regulates the fate of bone marrow mesenchymal stem cells and osteoporosis",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-018-06898-4",
+        "doi": "https://doi.org/10.1038/s41467-018-06898-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-018-06898-4",
+        "pdf_url": "https://www.nature.com/articles/s41467-018-06898-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4388946046",
+      "doi": "https://doi.org/10.3389/freae.2023.1245879",
+      "display_name": "Enhancing sensitivity and versatility of Tn5-based single cell omics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.3389/freae.2023.1245879",
+        "doi": "https://doi.org/10.3389/freae.2023.1245879",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/freae.2023.1245879",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/freae.2023.1245879/pdf?isPublishedV2=False",
+        "source": {
+          "id": "https://openalex.org/S4387289099",
+          "display_name": "Frontiers in Epigenetics and Epigenomics",
+          "issn_l": "2813-706X",
+          "issn": [
+            "2813-706X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Epigenetics and Epigenomics",
+        "raw_type": "journal-article"
+      }
+    }
+  ],
+  "group_by": []
+}

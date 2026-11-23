@@ -1,0 +1,152 @@
+{
+  "schema_version": "ca_boss_v4.sparse_reporter_completion_v449_record.v1",
+  "algorithm": "CA-BOSS v4.49 nested cross-fit sparse reporter completion",
+  "score_schema_version": "ca_boss_v4.crossfit_sparse_reporter_completion.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_simulation_roles_used_for_supervised_training": true,
+    "other_block_sentinel_null_roles_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 193,
+      "true_positive_hyperedges": 193,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 116,
+      "precision": 1.0,
+      "recall": 0.6245954692556634
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 310,
+      "correctly_recovered_assay_participations": 310,
+      "precision": 1.0,
+      "recall": 0.5016181229773463,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 193,
+      "coverage": 0.6245954692556634,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 263,
+      "average_ambiguity_set_size": 1.3626943005181347,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 155,
+      "exact_cross_assay_pair_true_positives": 155,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.5016181229773463,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v444": {"true_positive_hyperedges": 154, "false_positive_hyperedges": 0, "recall": 0.49838187702265374},
+    "v445": {"true_positive_hyperedges": 156, "false_positive_hyperedges": 0, "recall": 0.5048543689320388},
+    "v446": {"true_positive_hyperedges": 167, "false_positive_hyperedges": 0, "recall": 0.540453074433657},
+    "v447": {"true_positive_hyperedges": 185, "false_positive_hyperedges": 0, "recall": 0.598705501618123},
+    "v448": {"true_positive_hyperedges": 190, "false_positive_hyperedges": 0, "recall": 0.6148867313915858},
+    "v449": {"true_positive_hyperedges": 193, "false_positive_hyperedges": 0, "recall": 0.6245954692556634}
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "reporter_candidates": "the three focal variables outside each assay's observed two-parent/one-child collider",
+    "model_features": [
+      "detected_fraction",
+      "full_strength",
+      "full_margin",
+      "fold_min_strength",
+      "fold_min_margin",
+      "component_stable",
+      "parent_component_match_count"
+    ],
+    "model": "standardize the seven fixed features, expand to degree-two interactions, then fit balanced logistic regression at C=0.1 and C=0.3",
+    "nested_crossfit": "for each target block and regularization, train four models, each excluding the target and one out-of-fold calibration block",
+    "empirical_null": "for each regularization, use the maximum probability assigned to an N1/N2 candidate in its corresponding out-of-fold calibration block",
+    "reporter_selection": "both regularizations must strictly exceed their null envelopes and exactly one candidate may pass within an unresolved assay",
+    "partner_selection": "exactly one already-supported assay reporter must be coassigned in all three synchronization contexts, have positive exclusion margins in every context, and have scaled KS ratio at most one in every context",
+    "base_union": "the target-safe v4.48 shared-state hypotheses",
+    "conflict_handling": "merge connected assay pairs into an unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never direct structure or cross-assay direction"
+  },
+  "calibration_audit": {
+    "external_candidate_count": 1854,
+    "retrospective_true_reporter_count": 618,
+    "retrospective_sentinel_null_candidate_count": 1236,
+    "upstream_unresolved_assay_count": 14,
+    "nested_model_count_per_target_block": 8,
+    "all_forty_models_converged": true,
+    "uniquely_completed_reporters": 3,
+    "ambiguous_multi_reporter_assay_abstentions": 1,
+    "new_true_hyperedges": 3,
+    "new_false_hyperedges": 0,
+    "new_pairs_by_target_block": {
+      "development_34001_34016": 0,
+      "development_47001_47016": 2,
+      "train_41001_41024": 0,
+      "train_46001_46024": 1,
+      "train_49001_49024": 0
+    },
+    "null_probability_upper_envelope_by_target_block_and_c": {
+      "development_34001_34016": {"0.1": 0.9071955627389441, "0.3": 0.9595119763371582},
+      "development_47001_47016": {"0.1": 0.6259096791894075, "0.3": 0.6983551270025322},
+      "train_41001_41024": {"0.1": 0.8983772707630471, "0.3": 0.9511008368856343},
+      "train_46001_46024": {"0.1": 0.9127615432172045, "0.3": 0.9611283056624008},
+      "train_49001_49024": {"0.1": 0.9039288192235908, "0.3": 0.9524080011836152}
+    }
+  },
+  "ambiguity_guard_example": {
+    "world": "development_47001_47016__world_seed47003",
+    "assay": "chrom_H3K27ac",
+    "passing_candidate_count": 2,
+    "outcome": "abstained",
+    "reason": "one true reporter and one sentinel-null candidate both cleared the empirical-null envelopes"
+  },
+  "published_method_inspiration": {
+    "primary": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "multiway_matching": "Tang and Jebara (AISTATS 2017), Initialization and Coordinate Optimization for Multi-way Matching",
+    "relationship": "CA-BOSS uses held-out multi-domain components and exact permutation synchronization, then learns a conservative reporter discriminator. No publication contributes data, pairings, or biological priors."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/crossfit_sparse_reporter_completion_v449_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "617638d607e0d5166cd22796d8f19554bfb6016eed302d10a4da8dcd0418bfcb",
+    "campaign_summary_file_sha256": "8c13449758b0dc25db6de738c0cf0d8f2b19fa3d22397d3e88c880fba42b4014",
+    "campaign_world_metrics_sha256": "e4eca3c38f9b8a8ed504e1ebb8e5520775c654b72d133074a8e3bfe0ad78501d",
+    "campaign_panels_sha256": "efd1fa94709e374b5d873df110ac26dcca2a020992776bcb803ba5a803bb63c9",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "4f28acac7feb69e6d3a9690cb738de8487f08366098e0e8643b71d5b94135844",
+      "development_47001_47016": "e4e214240828b21e36d7f1576e673c080608bbf59a157bdec56a96d689bdbba4",
+      "train_41001_41024": "387f54b68adb271d6c9b31e9a9e5e757b49ba40895ff884d4ebf06d5f29e7c1e",
+      "train_46001_46024": "f9cb55ed632b062db4a5cc044d386c8cbafefedc83a33027ed34e6d5d07246bd",
+      "train_49001_49024": "f84ac762c43987739614b39439afe44bcd88fe1852b64d75ed44d8d50fdaef4c"
+    },
+    "evidence_source_sha256": "256a830b14e0b98bc52ae63dd0039288bff97d0b7038cb20150b113e968202de",
+    "calibrator_source_sha256": "5a3f5e3dc2cdde3dcaf9b6cf223d0bc88a1d35b9bdf6c8fc1baef5d6a59bc58a",
+    "scorer_source_sha256": "54679924bde571f6ac1e16a05c75e4199e964ad075c2a7a2f24c810a36730704"
+  }
+}

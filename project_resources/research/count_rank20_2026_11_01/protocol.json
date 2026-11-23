@@ -1,0 +1,178 @@
+{
+  "status": "frozen_before_dimension_followup_fits",
+  "date": "2026-11-01",
+  "question": "Does fitting the complete training-selected dimension resolve the unit-exposure300-panel cap limitation?",
+  "scope": "One exploratory training-motivated dimension-ceiling follow-up to the frozen225-arm extension comparison; no new data, worlds or model selection by heldout metrics. Existing null draws, kernels, orientation, bootstrap and acceptance gates unchanged.",
+  "data": "../count_extensions_2026_11_01/data_v1",
+  "data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "datasets": [
+    "scmtr_seq_s1",
+    "linear_chain_0",
+    "constrained_collider_0"
+  ],
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "families": [
+    "negative_binomial_measurement",
+    "excess_zero_measurement",
+    "depth_elasticity",
+    "uncertainty_weighted_third_moments",
+    "bounded_pgf_orientation",
+    "existing_feature_panel_expansion"
+  ],
+  "variants": [
+    {
+      "name": "poisson300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": null,
+      "retention": 1,
+      "orientation": "c3",
+      "correction": true
+    },
+    {
+      "name": "ordinary300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": null,
+      "retention": 1,
+      "orientation": "c3",
+      "correction": false
+    },
+    {
+      "name": "nb2_300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": 2,
+      "retention": 1,
+      "orientation": "c3",
+      "correction": true
+    },
+    {
+      "name": "zi05_300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": null,
+      "retention": 0.5,
+      "orientation": "c3",
+      "correction": true
+    },
+    {
+      "name": "pgf300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": null,
+      "retention": 1,
+      "orientation": "pgf",
+      "correction": true
+    },
+    {
+      "name": "shrink300_unit",
+      "width": 300,
+      "depth": "unit",
+      "theta": null,
+      "retention": 1,
+      "orientation": "c3_shrink",
+      "correction": true
+    }
+  ],
+  "source_seeds": [
+    0,
+    1
+  ],
+  "controls": {
+    "original": [
+      0,
+      1
+    ],
+    "independent_columns": [
+      0
+    ]
+  },
+  "expected_arm_records": 54,
+  "training_split": "Use the prior SHA256('count-dica-v1:'+opaqueID) sorted 75% source-fit/25% calibration partition. Expanded300 features are training-detection-filtered and SHA-sorted; first30 exactly preserve the prior panel. No test/pair/state reference enters fitting or decisions.",
+  "exposure": {
+    "common_proxy": "original library_depth minus sum of all300 selected counts, with a source-fit median normalizer, for BOTH panel widths; it is an observed proxy, not known technical exposure.",
+    "unit": "t=1",
+    "offset": "t=proxy/fit_median",
+    "elastic": "t=(proxy/fit_median)^beta. Fit one assay-level beta in [0,2] by Poisson quasi-likelihood of original300-feature cell total against log(proxy/fit_median), profiling intercept on source-fit rows. Fit once from original training counts; freeze beta/normalizer across methods, widths, controls and source bootstraps. No claim that fitted beta is purely technical.",
+    "comparability": "This common outside300 proxy differs from the preceding outside30 pilot. Fair comparisons use the new baseline and the same exposure treatment."
+  },
+  "noise_model": "E(Y/t|Lambda)=Lambda for every kernel. Active NB(mean=t*Lambda/q, shape=theta) masked independently per feature by Bernoulli(q); theta=null denotes Poisson. Known-shape/retention sensitivities only, not estimated biological-versus-technical decomposition. Correct order-r falling factorials by q^(r-1)/prod_{l=0}^{r-1}(1+l/theta).",
+  "constant_feature_rule": "Prefit numerical completion correction, applied to every method: exact constant rates (ptp==0) keep all columns with observed SD0 and exact zero centered residual. Use internal working SD1 only to define covariance whitening and alignment. Their corrected covariance block is zero or nonpositive, so positive modes on remaining coordinates are preserved. No ridge, dropped feature, reduced k, or relaxed source gate. Fewer than k positive modes still abstains; observed SD0 remains explicit and unscorable for fixed-scale evaluation. This can complete bootstrap fits that the preceding pilot aborted, so compare extensions within this new block.",
+  "control_seed": 1000,
+  "permutation": "Permute ALL300 original count columns within each fixed own-assay exposure stratum separately in fit/calibration rows, then take prefix30/300. Unit has one stratum, others8 rank strata. Exposure is frozen from original counts; raw integer counts and common30 control rows are preserved across widths. Diagnostic null, not biological FDR.",
+  "rank": {
+    "null_replicates": 49,
+    "alpha": 0.05,
+    "cap": 20,
+    "rule": "Use each specified corrected-noise covariance standardized by source-fit observed-rate SDs. Retain positive eigenvalues with (1+#null maximum eigenvalue>=observed)/50<=.05. Ordinary ablations use the Poisson-corrected rank for their identical data/exposure. Rank may be zero; report cap binding and disallow matching when bound. It detects coherent cross-feature variation, not every latent/private factor.",
+    "condition_limit": 100000000
+  },
+  "orientation": {
+    "c3": "Eight seeded contractions of the low-dimensional corrected third tensor; no feature-cubic allocation.",
+    "c3_shrink": "Five fixed row groups, shared fitted mean/whitening, entrywise variance proxy sum(n_g*(T_g-T)^2)/((G-1)*n); shrink T to T^3/(T^2+variance). Recompute in every bootstrap. Gate on residual of UNSHRUNK tensor; separate shrink-fit residual.",
+    "pgf": "Poisson, q=1, unit exposure only. Eight seeded nonpositive processing vectors; cap observed bases at least0.5 and expected mean attenuation near1. Diagonalize whitened log-PGF Hessians; centered generalized-matrix offdiagonal residual. Source fingerprints remain untilted original-rate moments, never compare assay-specific tilted variances.",
+    "max_residual": 0.35,
+    "pgf_min_effective_fraction": 0.2,
+    "pgf_min_effective_cells": 50,
+    "pgf_effective_gate": "Minimum effective cell count over all eight processing points must be >=max(50,0.2*n_fit) for point eligibility and each valid PGF bootstrap fingerprint."
+  },
+  "bootstrap": {
+    "replicates": 32,
+    "min_valid": 26,
+    "seed": 2000,
+    "operation": "Independent within-assay fit/calibration cell resamples, fixed rank/kernel/exposure nuisance parameters, complete source refit and Hungarian signed loading alignment in fixed observed-rate feature units. Conditional uncertainty only.",
+    "median_cosine": 0.9,
+    "lower_cosine_quantile": 0.1,
+    "lower_cosine": 0.7,
+    "stream": "base_seed=SHA-based seed_for(2000,dataset,control,assay,source_seed); replicate RNG seed_for(base_seed,b) draws fit rows then calibration rows. Same draws across variants, widths and depth treatments; different assay streams."
+  },
+  "matching": {
+    "primary_moment_candidates": "Calibration skewness and excess kurtosis; margins[.25,.5]. Source gates include positive finite projected variance, >=26 finite bootstrap moment vectors, loading stability, orientation residual, no cap. For each sign accept equivalence if max absolute normalized point difference + 90% higher-quantile of bootstrap max centered discrepancy<=1; >=26 common valid replicas. Mutual unique index/sign required for moment-unique matches. Preserve all equivalent signed pairs and ambiguity sets.",
+    "moment_margins": [
+      0.25,
+      0.5
+    ],
+    "band_quantile": 0.9,
+    "secondary_cf_confirmation": "Evaluate ONLY endpoints of any equivalent signed moment pair, including ambiguous pairs, on the same calibration data. Use generalized known-kernel deconvolution CF and saved refitted directions/replayed calibration bootstrap indices; no extra source fits. For ordinary ablation use empirical projected-count CF. Apply numerical/variance gates and the original combined 8-coordinate [2moment+3realCF+3imagCF] equivalence rule, then mutual uniqueness. Not assessed means no moment candidate, not CF agreement. This selected secondary analysis has no new nominal coverage/FDR guarantee.",
+    "cf_grid": [
+      0.125,
+      0.25,
+      0.5
+    ],
+    "cf_margin": 0.1,
+    "cf_max_se": 0.1,
+    "cf_max_abs": 1.1,
+    "cf_max_logweight": 300,
+    "cf_kernel": "Finite theta: each feature factor g=1+[1F1(-Y;theta;-i*u*w*theta*q/t)-1]/q. Poisson: g=1+[(1+i*u*w*q/t)^Y-1]/q. Product features and exp(-i*u*w*fit_mean). Finite-polynomial cancellation, nonfinite weights or unstable empirical variance cause abstention; no clipping. Population integrability remains an assumption.",
+    "interpretation": "Both labels are finite-fingerprint consistency, not full source-law equality or proof that two biological mechanisms are identical. Reused data and many variants preclude confirmatory selection claims. Pairwise-unique matches may be inconsistent across all three assays; their covariance blocks need not assemble into a PSD joint intensity covariance. They are pairwise candidate moment predictions, not a recovered joint law.",
+    "cf_cancellation": "For finite theta let z=-i*u*w*theta*q/t and A=1F1(-Y;theta;-abs(z)). Per-feature delta=64*machine_epsilon*max(1,Y)*(A+1-q)/q. Require calibration mean of [product(abs(g)+delta)-product(abs(g))] <=1e-8, evaluated in log space. It is a conservative conditioning heuristic, not a certified SciPy forward-error bound. Exact zero cell products are permitted; nonfinite diagnostics abstain. Poisson uses stable log1p/expm1 closed forms without the polynomial diagnostic.",
+    "counts": "Retain raw equivalent signed moment-pair count, mutually unique moment-pair count and CF-confirmed unique pair count separately. CF can disambiguate nonunique moment candidates, so confirmed-unique count need not be <=moment-unique count."
+  },
+  "graph": "Only >=2 sign-consistent all-assay CF-confirmed candidates enter unchanged native Sturma extraction, gamma.2 on raw rate units. Anonymous exploratory coefficients only; no original-feature causal truth score.",
+  "evaluation": {
+    "when": "Separate evaluator verifies all54 follow-up fit records and seal before reading heldout outcomes for this block. These are previously inspected development cohorts.",
+    "primary_real": "Both moment-only and CF-confirmed candidate cross-covariance versus actual595-cell paired test rate covariance and zero. Divide both prediction and reference by fixed fit observed-rate SDs. Report full panel and common30-feature anchor blocks separately; same-depth comparisons only.",
+    "paired_bootstrap": {
+      "replicates": 200,
+      "seed": 3000,
+      "rule": "Jointly resample complete real test triplets, fixed fitted model and scale. Exact Gram-matrix formulas may replace materialized covariance cubes; validate algebra. Descriptive conditional intervals only."
+    },
+    "within": "Full and offdiagonal heldout covariance errors, with correct kernel-noise diagonal restored only in corrected methods, versus diagonal observed-training baseline. Full panel and common30 anchors. Conditional kernels and endogeneity may be wrong.",
+    "simulation": "Noisy original-rate source projections versus existing public-discovery state coordinates; every source, moment-matched subset and CF-confirmed subset reported. Maxima descriptive, not causal directions; do not use separate focal graph as background latent truth.",
+    "secondary": "Report source dimensions, stability, ambiguity, warnings/failures, kernel/exposure sensitivity, both source seeds and permutation controls. Never select a model/seed or widen thresholds using heldout scores."
+  },
+  "failure_policy": "Preserve every failed/abstaining fit and invalid bootstrap. Refuse output overwrite; pin protocol/source/data hashes before scientific fits. Unsupported kernel/orientation combinations are excluded explicitly, not silently substituted.",
+  "runtime": "Two CPU preparation threads on disjoint datasets, then two fitting worker processes using fork after preparation threads join; one BLAS/OpenMP thread each. Rank<=20 projected moments avoid feature-cubic arrays. No package/environment changes or GPU requirement.",
+  "followup_rationale": {
+    "date_utc": "2026-11-01T20:54:29.240750+00:00",
+    "training_selection": "All six unit-exposure300-feature variants reached cap6 in every original assay fit; uncapped training ranks7\u201319. Set cap20 for this complete affected family and retain both source seeds and each column control.",
+    "prior_fit_provenance_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+    "adaptation": "Designed after initial225 fits and their evaluation seal; only saved training ranks motivate this follow-up. Not independent validation.",
+    "expected_preserved": "Null draws and uncapped ranks must reproduce the prior block exactly; actual fitted rank becomes uncapped rank. All other acceptance gates stay fixed."
+  }
+}

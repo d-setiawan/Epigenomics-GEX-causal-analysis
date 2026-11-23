@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_model.py"
+  ],
+  "exit_code": 0,
+  "label": "deterministic algebra fixtures; no scientific fits or evaluator inputs",
+  "source_sha256": {
+    "evaluate.py": "e8cac103567cafe5ba9fe1a04633be731d9edc55e79fedc8c403fadd712dcf25",
+    "model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+    "test_model.py": "b6be10577b2c8b656e2d7b3ee0c9c46606ecf17585ba88cbac256ea0b9de06e8",
+    "train.py": "abefc305d8a8a02874e40aaf801fbe0894f63e2ece8f540450e6d3dbd981fc38"
+  },
+  "stderr": "test_bootstrap_near_ties_and_restart_repeatability (test_model.ModelChecks.test_bootstrap_near_ties_and_restart_repeatability) ... ok\ntest_completion_fixture (test_model.ModelChecks.test_completion_fixture) ... ok\ntest_em_baseline_and_responsibilities (test_model.ModelChecks.test_em_baseline_and_responsibilities) ... ok\ntest_likelihood (test_model.ModelChecks.test_likelihood) ... ok\ntest_schema (test_model.ModelChecks.test_schema) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.044s\n\nOK\n",
+  "stdout": ""
+}

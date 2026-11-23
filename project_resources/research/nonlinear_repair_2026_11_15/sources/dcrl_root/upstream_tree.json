@@ -1,0 +1,752 @@
+{
+  "sha": "2f768e048cb49b2af674fe31f76e55374362c00e",
+  "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/2f768e048cb49b2af674fe31f76e55374362c00e",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1b2791e948bc4afde53ebe1985d076d1fd6dfc96",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/1b2791e948bc4afde53ebe1985d076d1fd6dfc96"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "90f076c41767a52d4dad156141710a053cf174e3",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/90f076c41767a52d4dad156141710a053cf174e3"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f08a4f39a2a6648fab37558fa83435eec8d4fb1",
+      "size": 571,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/2f08a4f39a2a6648fab37558fa83435eec8d4fb1"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c451ab6b66e2185d91b8e5a7390bed72accabb7c",
+      "size": 79,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c451ab6b66e2185d91b8e5a7390bed72accabb7c"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14fac913ccf80234b1848540089a3bbcb6e5283d",
+      "size": 1056,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/14fac913ccf80234b1848540089a3bbcb6e5283d"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d430ce8d43a1eb4673ab372ba27d132a87253de2",
+      "size": 17616,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/d430ce8d43a1eb4673ab372ba27d132a87253de2"
+    },
+    {
+      "path": "configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bec0af57fe0e37603ec19f16a692864c97e0ed42",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/bec0af57fe0e37603ec19f16a692864c97e0ed42"
+    },
+    {
+      "path": "configs/reviewer2_diagnostics.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac730d3273dcbf11f3f8b2c998ef19501ba58fa1",
+      "size": 729,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/ac730d3273dcbf11f3f8b2c998ef19501ba58fa1"
+    },
+    {
+      "path": "configs/reviewer2_smoke.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60c60094f274afebfdb14947fe70d3beceb84f18",
+      "size": 552,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/60c60094f274afebfdb14947fe70d3beceb84f18"
+    },
+    {
+      "path": "configs/revision_model13_bernoulli.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c9a2fda03536ab0b0f9b10b9553b734f342b1eb",
+      "size": 567,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/4c9a2fda03536ab0b0f9b10b9553b734f342b1eb"
+    },
+    {
+      "path": "configs/section5.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31c63bdc5c5fc1d4a44d8e312192d5661663fba1",
+      "size": 2267,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/31c63bdc5c5fc1d4a44d8e312192d5661663fba1"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa9884b09c571a065aa11d985a5d479415fafa82",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/fa9884b09c571a065aa11d985a5d479415fafa82"
+    },
+    {
+      "path": "data/TIMSS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6379c743f8ebf173c8857bfea947f9062d0f1243",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/6379c743f8ebf173c8857bfea947f9062d0f1243"
+    },
+    {
+      "path": "data/TIMSS/Q.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9258c41ad80710899cbbd819576a74cd259b2cd",
+      "size": 516,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/f9258c41ad80710899cbbd819576a74cd259b2cd"
+    },
+    {
+      "path": "data/TIMSS/TIMSS_estimate_p.npz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ab68941dc982c0281d79470fcc675304e89a476",
+      "size": 1288,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/0ab68941dc982c0281d79470fcc675304e89a476"
+    },
+    {
+      "path": "data/TIMSS/data.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86974c79ead5815e5e341b2dd2cd1f83c551afa9",
+      "size": 20699,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/86974c79ead5815e5e341b2dd2cd1f83c551afa9"
+    },
+    {
+      "path": "data/TIMSS/latent_law_comparison.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62415539244306bc111bcbdd050308ff8eed944c",
+      "size": 183286,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/62415539244306bc111bcbdd050308ff8eed944c"
+    },
+    {
+      "path": "data/TIMSS/time.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e013c0513276bc9d60d89ab5c788cb966de726a",
+      "size": 121186,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/2e013c0513276bc9d60d89ab5c788cb966de726a"
+    },
+    {
+      "path": "data/TIMSS/timss_refit.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c68bcf30a10ab3e2b0a9fdb66276f1d4f54f5c67",
+      "size": 9572,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c68bcf30a10ab3e2b0a9fdb66276f1d4f54f5c67"
+    },
+    {
+      "path": "data/seesaw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea10964e5425824b07884b7ad11eacfd2b797af2",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/ea10964e5425824b07884b7ad11eacfd2b797af2"
+    },
+    {
+      "path": "data/seesaw/seesaw_dataset.npz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "915f3ccc887a03944f557473021c51981ea1bf9c",
+      "size": 8800195,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/915f3ccc887a03944f557473021c51981ea1bf9c"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "689fbbb63db30413e3c5f4dfcbd649560258fb5a",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/689fbbb63db30413e3c5f4dfcbd649560258fb5a"
+    },
+    {
+      "path": "docs/resampling-consistency.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a15db15315b37d39acbd72e9bb1bb2014ad0d3e",
+      "size": 3907,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/6a15db15315b37d39acbd72e9bb1bb2014ad0d3e"
+    },
+    {
+      "path": "docs/revision-code.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ddad036be42804c61095a065bed10c6788ca06b",
+      "size": 11806,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/2ddad036be42804c61095a065bed10c6788ca06b"
+    },
+    {
+      "path": "docs/section5-reproduction.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3eb9dd1a2531934ad69d40c42ff251d38769175",
+      "size": 5885,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c3eb9dd1a2531934ad69d40c42ff251d38769175"
+    },
+    {
+      "path": "docs/timss-comparison.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13a7e8ada0c742ce38266edb39bb865ac6378b83",
+      "size": 4995,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/13a7e8ada0c742ce38266edb39bb865ac6378b83"
+    },
+    {
+      "path": "docs/validation-2026-10-08.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32f61e0376960ab8edd723cf36370485704e2bf2",
+      "size": 4155,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/32f61e0376960ab8edd723cf36370485704e2bf2"
+    },
+    {
+      "path": "environment.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83bbd863fb6bf15b528b09d3ad838ad943faec6c",
+      "size": 305,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/83bbd863fb6bf15b528b09d3ad838ad943faec6c"
+    },
+    {
+      "path": "experiments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "19504a63a9186291d67fe8481d173fff898af70f",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/19504a63a9186291d67fe8481d173fff898af70f"
+    },
+    {
+      "path": "experiments/learn_graph.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34f373612ff3cc16ff52cedef35d54f9911ea23f",
+      "size": 2286,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/34f373612ff3cc16ff52cedef35d54f9911ea23f"
+    },
+    {
+      "path": "experiments/run_parallel.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a00005798ffd114386b3a3ea2a36f16652b11e26",
+      "size": 6205,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a00005798ffd114386b3a3ea2a36f16652b11e26"
+    },
+    {
+      "path": "experiments/run_section5.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ebc0e9cf5306e68e6c0282ee458a75e606233a2",
+      "size": 2507,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/1ebc0e9cf5306e68e6c0282ee458a75e606233a2"
+    },
+    {
+      "path": "experiments/run_seesaw.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "453c15552936346502b467efd0e21266a5546967",
+      "size": 5450,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/453c15552936346502b467efd0e21266a5546967"
+    },
+    {
+      "path": "experiments/run_seesaw_from_dataset.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ded1420354ac41241d90d25a8503a0c454045285",
+      "size": 4580,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/ded1420354ac41241d90d25a8503a0c454045285"
+    },
+    {
+      "path": "experiments/run_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "921581f6b958b1cf355ec1ff67edc1df56572ebf",
+      "size": 1124,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/921581f6b958b1cf355ec1ff67edc1df56572ebf"
+    },
+    {
+      "path": "experiments/run_timss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b6245bcb17774d41a8dea5add20fcb5de1de00a",
+      "size": 2840,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/2b6245bcb17774d41a8dea5add20fcb5de1de00a"
+    },
+    {
+      "path": "experiments/run_timss_from_saved_p.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "689c4c7db184677bf6627154547f8f3a8834a362",
+      "size": 1802,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/689c4c7db184677bf6627154547f8f3a8834a362"
+    },
+    {
+      "path": "experiments/summarize_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd2d0c05dffbc3188d4b3d1e49ea2cac602dfc5d",
+      "size": 452,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/fd2d0c05dffbc3188d4b3d1e49ea2cac602dfc5d"
+    },
+    {
+      "path": "experiments/truth_graph.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b4b6bd364d1472f9385e43f0f6dcc235b2ddb88",
+      "size": 1784,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/7b4b6bd364d1472f9385e43f0f6dcc235b2ddb88"
+    },
+    {
+      "path": "experiments/verify_timss_comparison.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c575a7894b6d7a76fbe097e6d2655073ded0e040",
+      "size": 3626,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c575a7894b6d7a76fbe097e6d2655073ded0e040"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aecc60bf1c92e3c8c5df78b11c6c96ebfa1bb4bd",
+      "size": 440,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/aecc60bf1c92e3c8c5df78b11c6c96ebfa1bb4bd"
+    },
+    {
+      "path": "requirements-reproducible.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4eb0ab3c750c7dc54c16909bdd2afe44680b8336",
+      "size": 338,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/4eb0ab3c750c7dc54c16909bdd2afe44680b8336"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f45a82bace17668d19f334018aa81b7824bb4c2e",
+      "size": 147,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/f45a82bace17668d19f334018aa81b7824bb4c2e"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e939c689e8feca4460da947c2e417a3f05aaae4a",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/e939c689e8feca4460da947c2e417a3f05aaae4a"
+    },
+    {
+      "path": "src/dcrl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cc472ee8f4ca76e780eb69228638da5e28f6cbe3",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/cc472ee8f4ca76e780eb69228638da5e28f6cbe3"
+    },
+    {
+      "path": "src/dcrl/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43a99d80f7897ab90e2d1fa47146aff719ef0299",
+      "size": 431,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/43a99d80f7897ab90e2d1fa47146aff719ef0299"
+    },
+    {
+      "path": "src/dcrl/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2f63163fa02b3a915906aa45522d63872de54da",
+      "size": 3741,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a2f63163fa02b3a915906aa45522d63872de54da"
+    },
+    {
+      "path": "src/dcrl/data_generator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "420e2fbb7721c9c855c76696e173749bcf308eab",
+      "size": 4269,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/420e2fbb7721c9c855c76696e173749bcf308eab"
+    },
+    {
+      "path": "src/dcrl/estimator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "961f7a6187ac18fdb0b8c016839169a2ea329e27",
+      "size": 30469,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/961f7a6187ac18fdb0b8c016839169a2ea329e27"
+    },
+    {
+      "path": "src/dcrl/evaluation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51e4e5a4082363ce755abfe494706954777cb1a8",
+      "size": 4004,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/51e4e5a4082363ce755abfe494706954777cb1a8"
+    },
+    {
+      "path": "src/dcrl/fitting.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f4d9a036b8d9c6218b24875f6505735a7063c63",
+      "size": 16067,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/3f4d9a036b8d9c6218b24875f6505735a7063c63"
+    },
+    {
+      "path": "src/dcrl/graph_scoring.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d598fc3c1e7e20e8b1ac8962898350d4519741f",
+      "size": 13670,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/7d598fc3c1e7e20e8b1ac8962898350d4519741f"
+    },
+    {
+      "path": "src/dcrl/initialization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae0850099e4fb89473506942d4ca8ce8c45ab06d",
+      "size": 3840,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/ae0850099e4fb89473506942d4ca8ce8c45ab06d"
+    },
+    {
+      "path": "src/dcrl/latent_law.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a1bae0a4c91399ca7fc4b75fb6e486aae04684a",
+      "size": 5819,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/6a1bae0a4c91399ca7fc4b75fb6e486aae04684a"
+    },
+    {
+      "path": "src/dcrl/latent_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b157d569dcd73f7084c1283188021c65a97dc4d8",
+      "size": 14702,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/b157d569dcd73f7084c1283188021c65a97dc4d8"
+    },
+    {
+      "path": "src/dcrl/metrics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2749903f239dd60248985ccdd1716fa34873aa28",
+      "size": 18971,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/2749903f239dd60248985ccdd1716fa34873aa28"
+    },
+    {
+      "path": "src/dcrl/oracle.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20c8211e5741bf6040e5d8066383821d486ed664",
+      "size": 8331,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/20c8211e5741bf6040e5d8066383821d486ed664"
+    },
+    {
+      "path": "src/dcrl/orientation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab2c7330bd957b9f41c85934c29fc6bf307c99cb",
+      "size": 2311,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/ab2c7330bd957b9f41c85934c29fc6bf307c99cb"
+    },
+    {
+      "path": "src/dcrl/runner.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7df8dba777fb12ab105dec1ada07aca52cc2eeca",
+      "size": 1433,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/7df8dba777fb12ab105dec1ada07aca52cc2eeca"
+    },
+    {
+      "path": "src/dcrl/section5.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17a2b439e4f64a809a8f51204fec3921f365dc76",
+      "size": 9522,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/17a2b439e4f64a809a8f51204fec3921f365dc76"
+    },
+    {
+      "path": "src/dcrl/section5_backend",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "691e0ebce6530fc2d616f62b299af2e3c2d9fc49",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/691e0ebce6530fc2d616f62b299af2e3c2d9fc49"
+    },
+    {
+      "path": "src/dcrl/section5_backend/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a95884b7229ff6cf0df7b57bc93155402325dd95",
+      "size": 464,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a95884b7229ff6cf0df7b57bc93155402325dd95"
+    },
+    {
+      "path": "src/dcrl/section5_backend/local90_analytic_objective.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5610873a56ff87a016a8aeba89c7df860511721",
+      "size": 10001,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c5610873a56ff87a016a8aeba89c7df860511721"
+    },
+    {
+      "path": "src/dcrl/section5_backend/local90_convergence_probe.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e720523b66a93ac8824f336ebec2184f7d64601",
+      "size": 12074,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/9e720523b66a93ac8824f336ebec2184f7d64601"
+    },
+    {
+      "path": "src/dcrl/section5_backend/local90_fast_gibbs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ed1b31973e071a56440a96d8a59108ec3dc4ad6",
+      "size": 9331,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/9ed1b31973e071a56440a96d8a59108ec3dc4ad6"
+    },
+    {
+      "path": "src/dcrl/section5_backend/local90_fast_objective.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2d3fd079d7aabfec2e2ce403715c842d2536bed",
+      "size": 7017,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a2d3fd079d7aabfec2e2ce403715c842d2536bed"
+    },
+    {
+      "path": "src/dcrl/seesaw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0a8a7430b7a8e9429f792e19e77856b4380e31f9",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/0a8a7430b7a8e9429f792e19e77856b4380e31f9"
+    },
+    {
+      "path": "src/dcrl/seesaw/dataset.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23bd1644382462352497e1297f541d5e6b9dec11",
+      "size": 10818,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/23bd1644382462352497e1297f541d5e6b9dec11"
+    },
+    {
+      "path": "src/dcrl/seesaw/init.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "213b79634348cbe153cf2a99e5ef923bbaedb775",
+      "size": 2543,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/213b79634348cbe153cf2a99e5ef923bbaedb775"
+    },
+    {
+      "path": "src/dcrl/seesaw/plotting.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c1bef9ba2936e8ffbd1d8cfdc127e25935756b3",
+      "size": 1297,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/1c1bef9ba2936e8ffbd1d8cfdc127e25935756b3"
+    },
+    {
+      "path": "src/dcrl/seesaw/psaem.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78d3afb6bdd35d471f4745b0688134dd2f54af40",
+      "size": 6943,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/78d3afb6bdd35d471f4745b0688134dd2f54af40"
+    },
+    {
+      "path": "src/dcrl/study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38c2dbd5b641a2475e0b027bc97ebf4f9eab53c1",
+      "size": 23582,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/38c2dbd5b641a2475e0b027bc97ebf4f9eab53c1"
+    },
+    {
+      "path": "src/dcrl/study_summary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e91fd6e6ca042224f9bac9b7ee48c6cc0c97ecca",
+      "size": 15114,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/e91fd6e6ca042224f9bac9b7ee48c6cc0c97ecca"
+    },
+    {
+      "path": "src/dcrl/timss",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "75d5b18152a5649208b27f133f3a2e5318a5eab1",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/75d5b18152a5649208b27f133f3a2e5318a5eab1"
+    },
+    {
+      "path": "src/dcrl/timss/em.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9819479e1b37bfe081b04564df8ad3d2e86c1bd8",
+      "size": 5055,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/9819479e1b37bfe081b04564df8ad3d2e86c1bd8"
+    },
+    {
+      "path": "src/dcrl/timss/graph.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "923e67fc84e7b3b39b734854e73a17537389c402",
+      "size": 1741,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/923e67fc84e7b3b39b734854e73a17537389c402"
+    },
+    {
+      "path": "src/dcrl/timss/output.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0689025779f86fbbba483eef331ab721f65a90f",
+      "size": 2980,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/f0689025779f86fbbba483eef331ab721f65a90f"
+    },
+    {
+      "path": "src/dcrl/timss/refit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd7f32ad2db1655807df1c09bc1ba4fe732c90e9",
+      "size": 4182,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/bd7f32ad2db1655807df1c09bc1ba4fe732c90e9"
+    },
+    {
+      "path": "src/dcrl/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "722a67e562e7e767f29067e65944d080a1af38e1",
+      "size": 1011,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/722a67e562e7e767f29067e65944d080a1af38e1"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2c4488eaa93cafc9d5cb1bbbf194cf6fc99df96c",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/2c4488eaa93cafc9d5cb1bbbf194cf6fc99df96c"
+    },
+    {
+      "path": "tests/conftest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07ba31e2be47aa5fb2805df22e15b825cb248a4c",
+      "size": 179,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/07ba31e2be47aa5fb2805df22e15b825cb248a4c"
+    },
+    {
+      "path": "tests/fixtures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3005b76f636b012a689a99e319bbdbeef7915b7",
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/trees/d3005b76f636b012a689a99e319bbdbeef7915b7"
+    },
+    {
+      "path": "tests/fixtures/section5_original_plan_hashes.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c11aaf300c5b28447786fb209acd1f38348952c2",
+      "size": 6833,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/c11aaf300c5b28447786fb209acd1f38348952c2"
+    },
+    {
+      "path": "tests/test_custom_q.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01250533fa543bc9d9492c02a6c95a16c4b00429",
+      "size": 2049,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/01250533fa543bc9d9492c02a6c95a16c4b00429"
+    },
+    {
+      "path": "tests/test_fitting.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "308dc814de12df4faed49771093e371905bcefaa",
+      "size": 10390,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/308dc814de12df4faed49771093e371905bcefaa"
+    },
+    {
+      "path": "tests/test_graph_scoring.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0192d117bfd4285f2b64ac8319b0286bc05efae2",
+      "size": 8749,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/0192d117bfd4285f2b64ac8319b0286bc05efae2"
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50e4921129009af07cda2a8a8b1521934d522cb9",
+      "size": 9267,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/50e4921129009af07cda2a8a8b1521934d522cb9"
+    },
+    {
+      "path": "tests/test_oracle.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ba7ba2af2b1e682df5b766b65b07fd879316207",
+      "size": 4371,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/4ba7ba2af2b1e682df5b766b65b07fd879316207"
+    },
+    {
+      "path": "tests/test_section5.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fbc006b1353160065f07de982f0faf4e2fac090",
+      "size": 8560,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/0fbc006b1353160065f07de982f0faf4e2fac090"
+    },
+    {
+      "path": "tests/test_sparse_initialization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8ec7262c3e36ee1d72e61db9580cf9543d9006b",
+      "size": 4491,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a8ec7262c3e36ee1d72e61db9580cf9543d9006b"
+    },
+    {
+      "path": "tests/test_sparse_latent_law.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a30e388abad88c314421c22003cdcb90f73f84dd",
+      "size": 3585,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/a30e388abad88c314421c22003cdcb90f73f84dd"
+    },
+    {
+      "path": "tests/test_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "512f8f9079f402fa1b3f6f97a954ad4ab021d117",
+      "size": 5350,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/512f8f9079f402fa1b3f6f97a954ad4ab021d117"
+    },
+    {
+      "path": "tests/test_study_summary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fb7106079895e62d2a3447d06c7dea33ee560e0",
+      "size": 5917,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/8fb7106079895e62d2a3447d06c7dea33ee560e0"
+    },
+    {
+      "path": "tests/test_timss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92e1f27b1ca3b621667f516e0153bf966cb51e89",
+      "size": 4789,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/92e1f27b1ca3b621667f516e0153bf966cb51e89"
+    },
+    {
+      "path": "tests/test_truth_cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb17e44a6031b1423f8c4f360921937e96b23608",
+      "size": 649,
+      "url": "https://api.github.com/repos/WenjinZhang0621/Discrete-Causal-Representation-Learning/git/blobs/eb17e44a6031b1423f8c4f360921937e96b23608"
+    }
+  ],
+  "truncated": false
+}

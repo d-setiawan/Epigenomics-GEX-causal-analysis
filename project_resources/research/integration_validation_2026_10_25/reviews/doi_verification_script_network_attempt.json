@@ -1,0 +1,108 @@
+{
+  "review_type": "focused narrative evidence review; not systematic or comprehensive",
+  "memo": "Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/primary_evidence_and_endpoints.md",
+  "memo_sha256": "c341fac82aae6ddbdcb01ce60067ec8877c4f6dad47c44e196826af3f7811e06",
+  "verification_script": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "verification_script_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "extraction_normalization": "deduplicated DOI candidates; stripped markdown backticks/trailing punctuation and publisher PDF .pdf suffix; asserted exact six unique DOI values",
+  "checked_at_utc": "2026-10-25T22:04:19.697967+00:00",
+  "network_scope": "public scholarly metadata only, network-enabled retry",
+  "records": [
+    {
+      "doi": "10.1038/s41587-022-01284-4",
+      "checked_at_utc": "2026-10-25T22:04:19.375015+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1038/s41587-022-01284-4",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1038/s41587-022-01284-4",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+        "authors": "Cao, Z., Gao, G.",
+        "year": "2022",
+        "journal": "Nature Biotechnology",
+        "volume": "40",
+        "pages": "1458-1466",
+        "doi": "10.1038/s41587-022-01284-4"
+      }
+    },
+    {
+      "doi": "10.1038/s41592-021-01336-8",
+      "checked_at_utc": "2026-10-25T22:04:19.382743+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1038/s41592-021-01336-8",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1038/s41592-021-01336-8",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "Benchmarking atlas-level data integration in single-cell genomics",
+        "authors": "Luecken, M., B\u00fcttner, M., Chaichoompu, K., et al.",
+        "year": "2022",
+        "journal": "Nature Methods",
+        "volume": "19",
+        "pages": "41-50",
+        "doi": "10.1038/s41592-021-01336-8"
+      }
+    },
+    {
+      "doi": "10.1186/s13059-025-03869-z",
+      "checked_at_utc": "2026-10-25T22:04:19.379437+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1186/s13059-025-03869-z",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1186/s13059-025-03869-z",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "Benchmarking deep learning methods for biologically conserved single-cell integration",
+        "authors": "Yi, C., Cheng, J., Chen, J., et al.",
+        "year": "2025",
+        "journal": "Genome Biology",
+        "volume": "26",
+        "pages": "",
+        "doi": "10.1186/s13059-025-03869-z"
+      }
+    },
+    {
+      "doi": "10.1186/s13059-026-04071-5",
+      "checked_at_utc": "2026-10-25T22:04:19.656691+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1186/s13059-026-04071-5",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1186/s13059-026-04071-5",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+        "authors": "Naqing, F., Yuan, Q., Duren, Z.",
+        "year": "2026",
+        "journal": "Genome Biology",
+        "volume": "27",
+        "pages": "",
+        "doi": "10.1186/s13059-026-04071-5"
+      }
+    },
+    {
+      "doi": "10.52202/075280-1496",
+      "checked_at_utc": "2026-10-25T22:04:19.696680+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.52202/075280-1496",
+      "crossref_endpoint": "https://api.crossref.org/works/10.52202/075280-1496",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "Unpaired Multi-Domain Causal Representation Learning",
+        "authors": "Sturma, N., Squires, C., Drton, M., et al.",
+        "year": "2023",
+        "journal": "Advances in Neural Information Processing Systems 36",
+        "volume": "",
+        "pages": "34465-34492",
+        "doi": "10.52202/075280-1496"
+      }
+    },
+    {
+      "doi": "10.52202/085713-5170",
+      "checked_at_utc": "2026-10-25T22:04:19.645698+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.52202/085713-5170",
+      "crossref_endpoint": "https://api.crossref.org/works/10.52202/085713-5170",
+      "script_valid": true,
+      "script_metadata": {
+        "title": "scMRDR: A scalable and flexible framework for unpaired single-cell multi-omics data integration",
+        "authors": "Sun, J., Liang, C., Wei, R., et al.",
+        "year": "2025",
+        "journal": "Advances in Neural Information Processing Systems 38",
+        "volume": "",
+        "pages": "171573-171600",
+        "doi": "10.52202/085713-5170"
+      }
+    }
+  ]
+}

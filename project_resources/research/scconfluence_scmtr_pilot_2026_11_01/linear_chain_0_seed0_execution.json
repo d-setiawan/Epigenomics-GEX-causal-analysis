@@ -1,0 +1,70 @@
+{
+  "complete": true,
+  "name": "linear_chain_0",
+  "output": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed0",
+  "seed": 0,
+  "steps": [
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "fit",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/train",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed0",
+        "--seed",
+        "0",
+        "--device",
+        "cuda",
+        "--selection-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_preprocessing/train"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/linear_chain_0_seed0_fit.log",
+      "seconds": 532.8138575553894,
+      "stage": "fit",
+      "started_unix": 1793509345.2972848
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "encode",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/val",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed0",
+        "--cohort",
+        "val",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/linear_chain_0_seed0_val.log",
+      "seconds": 9.5917067527771,
+      "stage": "val",
+      "started_unix": 1793509878.1251993
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "encode",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/discovery",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/linear_chain_0/seed0",
+        "--cohort",
+        "discovery",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/linear_chain_0_seed0_discovery.log",
+      "seconds": 6.510254859924316,
+      "stage": "discovery",
+      "started_unix": 1793509887.7175386
+    }
+  ]
+}

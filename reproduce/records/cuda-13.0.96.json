@@ -1,0 +1,18 @@
+{
+  "purpose": "Preserve the exact process-local runtime used by the completed integration study; not a complete CUDA environment.",
+  "original_runtime_path": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96",
+  "recorded_plan": "pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/execution_plan.json",
+  "recorded_plan_sha256": "d70d1c34c672305bda2ad69854685a1606a8855990512f3ff573cc98c03a1375",
+  "files": [
+    {
+      "path": "libcudart.so.13.0.96",
+      "size_bytes": 704288,
+      "sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 67875,
+      "sha256": "f176e5fd245a4ff1d7aee743e345e14b29c4b724f150e4858c4c6a313966d1fb"
+    }
+  ]
+}

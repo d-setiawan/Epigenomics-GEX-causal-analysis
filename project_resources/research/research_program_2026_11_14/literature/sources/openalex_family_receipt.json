@@ -1,0 +1,112 @@
+[
+  {
+    "name": "integration",
+    "url": "https://api.openalex.org/works?search=unpaired+multimodal+integration+causal+representation+identifiability&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 228,
+    "returned": 10,
+    "sha256": "b84216aebbc658749f703aa20470497f92fea0013451b1c5e1e83b7193c6d9a2",
+    "path": "literature/sources/openalex_integration.json",
+    "date_utc": "2026-11-14T21:56:00.367944+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "ica",
+    "url": "https://api.openalex.org/works?search=linear+nonlinear+independent+component+analysis+identifiability+auxiliary+variables&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 7775,
+    "returned": 10,
+    "sha256": "064ec38ff1150ceea35205f72b3f99057ec83c1b14ba1a8f208323b9352e57e6",
+    "path": "literature/sources/openalex_ica.json",
+    "date_utc": "2026-11-14T21:56:00.877381+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "multiview",
+    "url": "https://api.openalex.org/works?search=multi-view+latent+variable+model+identifiability+three+views&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 44611,
+    "returned": 10,
+    "sha256": "29206f2b4b0e5a7ac9190807d19f5a5fb64e3135e4aca45a0811fb982b4b0faf",
+    "path": "literature/sources/openalex_multiview.json",
+    "date_utc": "2026-11-14T21:56:01.406185+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "matching",
+    "url": "https://api.openalex.org/works?search=statistical+matching+data+fusion+unlinked+regression+identifiability&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 48,
+    "returned": 10,
+    "sha256": "3206ae3f7554f442fb73e3ed8fb6e24b39adefa03c5d16af14090ae9e8172ea9",
+    "path": "literature/sources/openalex_matching.json",
+    "date_utc": "2026-11-14T21:56:01.735510+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "transport",
+    "url": "https://api.openalex.org/works?search=optimal+transport+coupling+identification+marginals&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 26594,
+    "returned": 10,
+    "sha256": "404f5b02962ca99a6800743378f232c5934725065e5723fe45cb20de1b2d9658",
+    "path": "literature/sources/openalex_transport.json",
+    "date_utc": "2026-11-14T21:56:02.319785+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "counts",
+    "url": "https://api.openalex.org/works?search=Poisson+mixture+latent+intensity+identifiability+count+models&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 1237,
+    "returned": 10,
+    "sha256": "f971aaf093c309d38cfc08b684696f11864160619a7a1c6943b48b6c0b15cd4c",
+    "path": "literature/sources/openalex_counts.json",
+    "date_utc": "2026-11-14T21:56:02.625766+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "anchors",
+    "url": "https://api.openalex.org/works?search=shared+features+anchors+auxiliary+variables+identifiability+unpaired+multimodal&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 42,
+    "returned": 10,
+    "sha256": "09208b609754f08343e7a1aeec3ebc4649974ab671043333aa0b282cfda62097",
+    "path": "literature/sources/openalex_anchors.json",
+    "date_utc": "2026-11-14T21:56:03.075120+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "impossibility",
+    "url": "https://api.openalex.org/works?search=nonidentifiability+observational+equivalence+partial+identification+causal+inference&per-page=10&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 142,
+    "returned": 10,
+    "sha256": "ef696d84df2edb203ed8cfc7dc391463a4a65b9306ff508d716a83dd38879576",
+    "path": "literature/sources/openalex_impossibility.json",
+    "date_utc": "2026-11-14T21:56:03.493826+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "timilsina_cited_by",
+    "url": "https://api.openalex.org/works?filter=cites%3AW4415795218&per-page=100&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 3,
+    "returned": 3,
+    "sha256": "cdbb4e9e4a6e087993b9f07f4216d5caaa96feeee976f2c564eb4e0009a9dfe5",
+    "path": "literature/sources/openalex_timilsina_cited_by.json",
+    "date_utc": "2026-11-14T21:56:03.872449+00:00",
+    "authentication": "none"
+  },
+  {
+    "name": "sturma_references",
+    "url": "https://api.openalex.org/works?filter=cited_by%3AW7133240739&per-page=100&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Creferenced_works%2Ccited_by_count%2Cabstract_inverted_index%2Copen_access",
+    "status": 200,
+    "count": 2,
+    "returned": 2,
+    "sha256": "ad191e440d3e639f6246439b8ea188f13e4f4afcbd7e8b793e99885198bbca66",
+    "path": "literature/sources/openalex_sturma_references.json",
+    "date_utc": "2026-11-14T21:56:04.232743+00:00",
+    "authentication": "none"
+  }
+]

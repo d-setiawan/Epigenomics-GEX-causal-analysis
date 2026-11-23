@@ -1,0 +1,385 @@
+{
+  "status": "pass",
+  "protocol_sha256": "eebab6c627f50a89b784a676c2387c6e1e5bd5f603e3fbc18017597d0880cc5d",
+  "reviewer": "scmtr_data_pilot",
+  "review_scope": "Independent source-count reconstruction and fixed-backend replay, plus static data-join/leakage/normalization review; not independent CI software or biological validity proof",
+  "arms": {
+    "paired_reference": {
+      "full": {
+        "n": 595,
+        "total_edges": 1,
+        "cross_edges": 0,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ],
+        "node_order": [
+          "RNA|ENSG00000204256",
+          "RNA|ENSG00000178567",
+          "RNA|ENSG00000219481",
+          "H3K27ac|ENSG00000204256",
+          "H3K27ac|ENSG00000178567",
+          "H3K27ac|ENSG00000219481",
+          "H3K4me3|ENSG00000204256",
+          "H3K4me3|ENSG00000178567",
+          "H3K4me3|ENSG00000219481"
+        ],
+        "detected_per_node": [
+          203,
+          110,
+          98,
+          30,
+          23,
+          35,
+          28,
+          33,
+          25
+        ],
+        "nonzero_range_per_node": [
+          [
+            1,
+            31
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "subsample_7000": {
+        "n": 476,
+        "total_edges": 1,
+        "cross_edges": 0,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ]
+      },
+      "subsample_7001": {
+        "n": 476,
+        "total_edges": 3,
+        "cross_edges": 2,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "H3K27ac|ENSG00000204256",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ]
+      },
+      "subsample_7002": {
+        "n": 476,
+        "total_edges": 0,
+        "cross_edges": 0,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": []
+      }
+    },
+    "random_reference": {
+      "full": {
+        "n": 595,
+        "total_edges": 2,
+        "cross_edges": 1,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "H3K27ac|ENSG00000178567",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          },
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ],
+        "node_order": [
+          "RNA|ENSG00000204256",
+          "RNA|ENSG00000178567",
+          "RNA|ENSG00000219481",
+          "H3K27ac|ENSG00000204256",
+          "H3K27ac|ENSG00000178567",
+          "H3K27ac|ENSG00000219481",
+          "H3K4me3|ENSG00000204256",
+          "H3K4me3|ENSG00000178567",
+          "H3K4me3|ENSG00000219481"
+        ],
+        "detected_per_node": [
+          203,
+          110,
+          98,
+          30,
+          23,
+          35,
+          28,
+          33,
+          25
+        ],
+        "nonzero_range_per_node": [
+          [
+            1,
+            31
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "subsample_7000": {
+        "n": 476,
+        "total_edges": 6,
+        "cross_edges": 5,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "H3K27ac|ENSG00000178567",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000204256",
+            "node2": "H3K4me3|ENSG00000204256",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "ARROW",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000204256",
+            "endpoint1": "ARROW",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000219481",
+            "endpoint1": "ARROW",
+            "endpoint2": "CIRCLE"
+          },
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ]
+      },
+      "subsample_7001": {
+        "n": 476,
+        "total_edges": 3,
+        "cross_edges": 2,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000204256",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          },
+          {
+            "node1": "H3K4me3|ENSG00000219481",
+            "node2": "RNA|ENSG00000178567",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          },
+          {
+            "node1": "RNA|ENSG00000204256",
+            "node2": "RNA|ENSG00000219481",
+            "endpoint1": "CIRCLE",
+            "endpoint2": "CIRCLE"
+          }
+        ]
+      },
+      "subsample_7002": {
+        "n": 476,
+        "total_edges": 5,
+        "cross_edges": 5,
+        "exact_source_count_match": true,
+        "exact_replayed_edges_and_endpoints_match": true,
+        "edges": [
+          {
+            "node1": "H3K27ac|ENSG00000178567",
+            "node2": "H3K4me3|ENSG00000178567",
+            "endpoint1": "ARROW",
+            "endpoint2": "CIRCLE"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000178567",
+            "node2": "H3K4me3|ENSG00000219481",
+            "endpoint1": "ARROW",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000204256",
+            "endpoint1": "ARROW",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K27ac|ENSG00000219481",
+            "node2": "H3K4me3|ENSG00000219481",
+            "endpoint1": "ARROW",
+            "endpoint2": "ARROW"
+          },
+          {
+            "node1": "H3K4me3|ENSG00000204256",
+            "node2": "RNA|ENSG00000178567",
+            "endpoint1": "ARROW",
+            "endpoint2": "CIRCLE"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "level": "checked",
+      "finding": "No blocking data-join, count-order, leakage or empty-reference denominator bug found",
+      "source": "scripts/causal_reliability_pilot_empirical.py:88,140,205,255"
+    },
+    {
+      "level": "material_limit",
+      "finding": "FCI uses log1p raw counts without library-depth adjustment; observed count dependence includes depth and measurement effects",
+      "source": "evaluate.py:417"
+    },
+    {
+      "level": "material_limit",
+      "finding": "Zero full paired cross-assay reference edges leaves cross-reference coverage undefined; an empty predicted graph cannot establish recovery",
+      "source": "scripts/causal_reliability_pilot_empirical.py:154"
+    },
+    {
+      "level": "material_limit",
+      "finding": "Sparse histone counts and cross edges in the random-coupling controls make biological interpretation and nominal CI calibration uncertain; three subsamples do not estimate FDR"
+    },
+    {
+      "level": "checked",
+      "finding": "Learned/random assignments precede paired mappings and panel reads; day labels are used only by a posthoc decoder fitted on disjoint training embeddings",
+      "source": "scripts/causal_reliability_pilot_empirical.py:205,255"
+    }
+  ],
+  "frozen_sources": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/causal_reliability_pilot.py": "c76cbda821003016c93537e068e26b88b338622a1b5c520336085319e0385079",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/causal_reliability_pilot_empirical.py": "44b0e7e1d9fce418e3a8aa64709676d14a83fde32c9ef4c52826d3089d8703a0"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/replay_empirical_baselines.py --output <new-audit.json>",
+  "source_files": {
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K27ac_test_map.tsv": "160d926320558e461b3037ca114066e765efc2f48ad76278ed28b5aeb7b149b7",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K4me3_test_map.tsv": "78b0305d312b40950fabe1e7169bd7b4ed01fd2745e0c50d658c1b18aa259e02",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/RNA_test_map.tsv": "450d13f036cccace2c9ddda93de9e115d2101d588dc98928a134653f862ec2f8",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/panel_genes.tsv": "dfff83a2f368c46f6fe204443c738cfc9446140c95881e47adaeb5a1fc7baa32",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/panel_nodes.tsv": "b622ca04c6ce8a5b1cbd6c5141ae3a0977fc46aa81eba07ba4441dd990b06fc4",
+    "pipelines/empirical/data/scmtr_seq/full_s1/H3K27ac.npz": "57c8aa7c0dfdc5f2765df8354c2cb80e0fb7e02f94d4827953eb76225238fa0c",
+    "pipelines/empirical/data/scmtr_seq/full_s1/H3K4me3.npz": "6c8010b7736a9a7bf4ba000818c3979d9da028532c6a269f1f06d61c94c1cbcc",
+    "pipelines/empirical/data/scmtr_seq/full_s1/RNA.npz": "dd8e8e58a35011eeea7434f26017c11cff3426ed8eb3f0cbac99c7b42f26a532",
+    "pipelines/empirical/data/scmtr_seq/full_s1/cells.tsv": "5c3d3b6c18dc184b7f048814091d84fb24640ab66fd32bf0114ea755ce91db99",
+    "pipelines/empirical/data/scmtr_seq/full_s1/features.tsv": "ed77095b8b70de7d673c81f32569ebd094ceea086b9b5690c4b20448fcf0ce3d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/arms/paired_reference.json": "31f467faefb999c1de7d28e2262df31d4cad105f20e034c47a7a5bb2dea0a308",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/arms/random_reference.json": "2e0ebe98ddfad8180f5ff588ad3255bfc4b50987778a5c987415ae4725c9e432",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/protocol.json": "eebab6c627f50a89b784a676c2387c6e1e5bd5f603e3fbc18017597d0880cc5d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/paired_reference_full.npz": "a54db0109a9a78fbeeb19486a235217b59fd9689477e8d8d37c7bd2852e046e5",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/paired_reference_subsample_7000.npz": "541477684e1f84f7d981e37217ff7ef0b7fcd2ec539afa17c23d9152d4bcccf8",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/paired_reference_subsample_7001.npz": "5c0a0f5ff3cd01dc9cd8891ea9798134a8f82a7616105b9348cd5d51d5b9477e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/paired_reference_subsample_7002.npz": "ab99d8fca1a0728215ec3a0b9b5e85298bd04bf85cf696a6f53ab67fb54c018e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/random_reference_full.npz": "2fccd7a5942211149ef78022c058dfcb5ebee9e14c82454df62fbeae6547ae41",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/random_reference_subsample_7000.npz": "29cf5bb118f41ae670ec91a0f525428b45dc54bef0f04122744d3bcaaa7a0b32",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/random_reference_subsample_7001.npz": "7397b4f78232167102deecfe89e80d0f3be9ce387c07a4109aaceff75b5977d3",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_reliability_v1/readouts/random_reference_subsample_7002.npz": "7e3878938f4fbcb1ad9661819267df8c7c8ce8f2b0c6574cc6561970c734de97",
+    "project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/replay_empirical_baselines.py": "5c44bb42b35b08defee0833d17707333241e3a952455ecdb4be0b72055a90e86"
+  }
+}

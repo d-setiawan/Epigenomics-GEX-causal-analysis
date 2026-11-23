@@ -1,0 +1,174 @@
+{
+  "data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "datasets": {
+    "constrained_collider_0": {
+      "H3K27ac": {
+        "common_leave300out_fit_median": 1342.5,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.019801980198019802,
+          0.028190284513852155,
+          0.05322128851540616
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.0017074836731973877,
+          0.004758601068641246,
+          0.014705882352941176
+        ],
+        "source_sha256": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+        "training_rows": 4000
+      },
+      "H3K4me3": {
+        "common_leave300out_fit_median": 4865.5,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.012067156348373556,
+          0.019622843978815876,
+          0.023753268378316695,
+          0.031189083820662766
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.001962021122351423,
+          0.0034002506239604754,
+          0.006792452830188679
+        ],
+        "source_sha256": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+        "training_rows": 4000
+      },
+      "RNA": {
+        "common_leave300out_fit_median": 3467.0,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.022028985507246378,
+          0.14395313366102624,
+          0.17696974788216066,
+          0.8439061412940358
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.005437246245417636,
+          0.00973387584635382,
+          0.08227848101265822
+        ],
+        "source_sha256": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+        "training_rows": 4000
+      }
+    },
+    "linear_chain_0": {
+      "H3K27ac": {
+        "common_leave300out_fit_median": 1269.0,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.019463193070941257,
+          0.02764095179214982,
+          0.04491017964071856
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.001675509764839093,
+          0.0045045045045045045,
+          0.011990407673860911
+        ],
+        "source_sha256": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+        "training_rows": 4000
+      },
+      "H3K4me3": {
+        "common_leave300out_fit_median": 4975.5,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.010262989095574085,
+          0.019087344399064322,
+          0.023173745675754597,
+          0.03018223234624146
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.001895255551186627,
+          0.0033039453928012017,
+          0.00578368999421631
+        ],
+        "source_sha256": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+        "training_rows": 4000
+      },
+      "RNA": {
+        "common_leave300out_fit_median": 3819.5,
+        "fit_rows": 3000,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.012575021434695627,
+          0.104961366980168,
+          0.1293974265772834,
+          0.20376230661040787
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.007491390050728703,
+          0.01202038277217989,
+          0.02666666666666667
+        ],
+        "source_sha256": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+        "training_rows": 4000
+      }
+    },
+    "scmtr_seq_s1": {
+      "H3K27ac": {
+        "common_leave300out_fit_median": 207.0,
+        "fit_rows": 461,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.023391812865497075,
+          0.04240259740259737,
+          0.08450704225352113
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.0,
+          0.009960996099609952,
+          0.023622047244094488
+        ],
+        "source_sha256": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+        "training_rows": 615
+      },
+      "H3K4me3": {
+        "common_leave300out_fit_median": 244.0,
+        "fit_rows": 460,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.0229741660588845,
+          0.041367276152956794,
+          0.06666666666666667
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.0,
+          0.008310857538035963,
+          0.02097902097902098
+        ],
+        "source_sha256": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+        "training_rows": 614
+      },
+      "RNA": {
+        "common_leave300out_fit_median": 10731.0,
+        "fit_rows": 451,
+        "selected300_fraction_quantiles_0_50_95_100": [
+          0.010365521003818877,
+          0.023730582460551368,
+          0.02965801664748374,
+          0.036452461480646375
+        ],
+        "selected30_fraction_quantiles_0_50_95_100": [
+          0.0,
+          0.0018775770553684068,
+          0.0035834563287481715,
+          0.013569937369519834
+        ],
+        "source_sha256": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2",
+        "training_rows": 602
+      }
+    }
+  },
+  "scope": "Training-only observed depth proxy diagnostics, no outcome fitting"
+}

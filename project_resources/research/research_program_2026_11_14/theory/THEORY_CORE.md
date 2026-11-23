@@ -1,0 +1,43 @@
+# Finite identification core
+
+Status: mathematical proposal, not kernel checked or independently reviewed. These are small deterministic mathematical models, not benchmark worlds. Scope is an explicitly defined population class; no claim is made that these laws fit S1.
+
+## Observation map and targets
+
+For finite sets, let a model contain a finite probability mass function on complete variables, structural equations and independent exogenous variables where causal effects are claimed, fixed guidance `g`, and specified local observation kernels. Let `O(m) = (g, P(A), P(B))`, where A and B are the **entire** disclosed assay blocks including allowed annotations and depth summaries, after any local filtering. For independent draws from the two selected laws, the finite dataset law is `P(A)^n ⊗ P(B)^k` and includes fixed sample sizes. Identifiability of target `T` modulo relation `~` means `O(m)=O(m')` implies `T(m) ~ T(m')` for every admissible pair. An equality or exact-graph target uses equality as `~`. An estimator objective, guessed coupling, or learned coordinate map does not alter this definition.
+
+## Explicit finite countermodels
+
+Let independent fair bits U,V have probability 1/4 at each of four outcomes; put X=U. Model 0 sets Y=V; model 1 sets Y=X. Both are acyclic structural models; the functional graph contains X→Y precisely in model 1, and `P(Y=1 | do(X=1))-P(Y=1 | do(X=0))` equals 0 versus 1. Their X and Y marginals both are Bernoulli(1/2), while their same-cell joint probabilities `P(X=1,Y=1)` are 1/4 versus 1/2. Thus equality of disjoint observations does not identify the joint, the direct functional edge, or this intervention effect in a class containing both models. Deterministic Y in model 1 is intentional; no strict positivity, measurement fidelity, or faithfulness guarantee is asserted for an enlarged model class.
+
+A strictly positive alternative uses independent fair U, V and W with `P(W=1)=1/4`, sets X=U and Y=V in model 0, and Y=X XOR W in model 1. All four joint cells have positive mass: model 1 has 3/8 on each diagonal and 1/8 off diagonal. Both margins remain fair; `P(1,1)` is 1/4 versus 3/8 and the interventional risk difference is 0 versus 1/2. The same fair stratum S may be independently appended and disclosed in both assays; this oracle strengthening still leaves the difference. It is not a real learner-observed state.
+
+Let `K_A(a | x,s)` and `K_B(b | y,s)` be the same arbitrary finite local stochastic kernels in both models. A and B may include count vectors, depth, other local metadata and local selection indicators; use the same fixed guidance g. Because the complete input marginal `(S,X)` or `(S,Y)` is equal, integrating the same local kernel yields identical augmented block laws. Condition on any local retained event of positive probability and disclose any corresponding retention rate, which is also equal. If only selected records are observed, do not include unobserved rejected-row measurements. This augmentation does not automatically preserve a *measured-count* graph or causal edge. For a count-joint counterexample choose identity channels `C_X=X`, `C_Y=Y`, depths fixed to one, so the binary counts themselves exhibit the differing joint. In general, changing a coupling before a joint selection event can change the selected marginals and retention rate; this result assumes the selected source law or independently verified equality after selection, not arbitrary inherited joint selection.
+
+For any randomized algorithm K on independent assay datasets and independent algorithmic randomness, equal input laws imply equal output laws. If forced to report 0 or 1 for the direct edge, write q for the common chance of reporting 1. Its two error probabilities are q and 1−q, so their maximum is at least 1/2 for every sample size. A set-valued answer containing both possibilities may be correct in both worlds; the bound concerns forced decisions. For a common shuffled cohort, this product argument is invalid: for n iid complete pairs the two unordered sample means have covariance `Cov(X,Y)/n`, equal to 0 versus `1/(8n)` in the positive example. This demonstrates different dataset distributions over repeated cohorts, not consistent pairing recovery from one shuffled dataset.
+
+## Sharp partial identification
+
+For binary events X,Y with known margins `p=P(X=1)` and `q=P(Y=1)`, the sharp set for `r=P(X=1,Y=1)` is
+
+`max(0,p+q−1) ≤ r ≤ min(p,q)`.
+
+Necessity follows from nonnegativity of the four cells `r, p−r, q−r, 1−p−q+r`. Conversely every r in the interval makes those four cells a valid joint and attains it. Thus the identified set for covariance is this interval shifted by `−pq`, and every endpoint is achievable. These are bounds on the statistical joint in a common population, not automatically on intervention effects. Disparate selection events do not provide the required common-population margins without further assumptions.
+
+## Positive finite completion theorem
+
+Let S, X and Y have finite supports. Assume the two independent samples identify `a(s,x)=P(S=s,X=x)` and `b(s,y)=P(S=s,Y=y)` from the **same selected population**, and that their S margins agree, `w(s)=Σx a(s,x)=Σy b(s,y)`. Assume `X ⟂ Y | S` in that population. Then the complete joint is uniquely identified by
+
+`p(s,x,y) = a(s,x)b(s,y)/w(s)` when `w(s)>0`, and `p(s,x,y)=0` when `w(s)=0`.
+
+Proof: positivity of a probability mass function makes all cells at a zero-mass s zero. At positive s, conditional independence factors `p(s,x,y)/w(s)` into `(a(s,x)/w(s))(b(s,y)/w(s))`, proving the formula and uniqueness. Conversely this formula defines a nonnegative normalized mass function with the given margins and conditional independence. Hence any two admissible models with equal `(a,b)` have equal statistical joint. For more assays, replace the two conditional factors by their product and assume **mutual** conditional independence, not merely pairwise independence.
+
+S must be the same measured, aligned stratum in both samples; it must not be inferred merely by labeling two latent embeddings alike. S is not available as a true state or day label under the present pilot fitting contract. CI is an extra untestable cross-assay restriction from the separate marginals; selection may break it. The theorem identifies neither a causal direction nor a causal effect. Structural causal models may share an identical observational joint and disagree about interventions. Common support and normalization, equality of the S marginals, and any transport from assay-specific selected pools must be established independently.
+
+## Lean formulation and open obligations
+
+Represent finite distributions by nonnegative rational masses summing to one, and observations by finite marginal sums. Rational probabilities suffice for both countermodels and all algebra above. A first development can use finite types `S X Y`, explicit `Finset` sums and `ℚ`, nonnegativity assumptions, and a conditional-independence polynomial equation `p(s,x,y)*w(s)=a(s,x)*b(s,y)`; the zero case follows from nonnegative finite sums. Formalize exact output equality first, then randomized algorithms as finite stochastic kernels and establish the binary 1/2 error bound. Formalize the Fréchet interval with the explicit four masses. The CI theorem must prove normalization and marginals, including zero strata, rather than assume uniqueness or divide by zero. The theorem defines identification of the **joint**, not a graph or effect.
+
+The [Lean project](../lean/README.md) now checks the finite binary countermodels, intervention and functional-parent calculations, sharp rational Fréchet interval, unconditional binary independence completion, and population-observation deterministic and randomized decision bounds. It has a successful pinned build, axiom inventory, and independent review. General local stochastic kernels, finite-sample dataset laws, and shared-stratum conditional-independence completion are not formalized. The relationship between finite post-selection models and real count vectors, same-cohort shuffling, and selection rates remains a separate modeling review.
+
+Sources inspected: `project_resources/research/theory/07_unpaired_integration_nonidentifiability.md`, `08_modern_integration_objectives.md`, `project_resources/research/integration_identifiability_2026_11_01/reviews/math_review.md`, `reviews/scope_review.md` and the empirical/simulation paths listed in `OBSERVATION_TARGET_CONTRACT.md`. The earlier Gaussian argument has an independently recorded scoped review; these new finite constructions and proposed Lean statement require independent review.

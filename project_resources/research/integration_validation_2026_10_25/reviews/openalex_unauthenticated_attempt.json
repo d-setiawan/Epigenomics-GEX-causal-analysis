@@ -1,0 +1,24 @@
+{
+  "review_type": "focused narrative evidence review; supplementary discovery attempt",
+  "checked_at_utc": "2026-10-25T22:03:43.579996+00:00",
+  "method": "GET",
+  "endpoint": "https://api.openalex.org/works",
+  "params": {
+    "search": "single-cell multi-omics integration",
+    "sort": "relevance_score:desc",
+    "per_page": 100,
+    "select": "id,doi,display_name,publication_year,primary_location",
+    "page": 1
+  },
+  "exact_url": "https://api.openalex.org/works?search=single-cell+multi-omics+integration&sort=relevance_score%3Adesc&per_page=100&select=id%2Cdoi%2Cdisplay_name%2Cpublication_year%2Cprimary_location&page=1",
+  "authentication": "none; no keys requested or sent",
+  "pagination": {
+    "page": 1,
+    "cursor": null,
+    "additional_pages_requested": false
+  },
+  "status": "request_failure",
+  "returned": 0,
+  "error_type": "ConnectionError",
+  "error": "HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works?search=single-cell+multi-omics+integration&sort=relevance_score%3Adesc&per_page=100&select=id%2Cdoi%2Cdisplay_name%2Cpublication_year%2Cprimary_location&page=1 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ee5850>: Failed to resolve 'api.openalex.org' ([Errno -2] Name or service not known)\"))"
+}

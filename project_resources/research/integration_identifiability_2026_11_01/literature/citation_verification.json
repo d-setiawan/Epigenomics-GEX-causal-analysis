@@ -1,0 +1,65 @@
+{
+  "utc": "2026-11-01T05:54:29.248933+00:00",
+  "verification_script": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "records": [
+    {
+      "doi": "10.1038/s41587-022-01284-4",
+      "handle_http_success": true,
+      "metadata": {
+        "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+        "authors": "Cao, Z., Gao, G.",
+        "year": "2022",
+        "journal": "Nature Biotechnology",
+        "volume": "40",
+        "pages": "1458-1466",
+        "doi": "10.1038/s41587-022-01284-4"
+      }
+    },
+    {
+      "doi": "10.1038/s41467-024-51382-x",
+      "handle_http_success": true,
+      "metadata": {
+        "title": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+        "authors": "Samaran, J., Peyr\u00e9, G., Cantini, L.",
+        "year": "2024",
+        "journal": "Nature Communications",
+        "volume": "15",
+        "pages": "",
+        "doi": "10.1038/s41467-024-51382-x"
+      }
+    },
+    {
+      "doi": "10.1002/0470023554",
+      "handle_http_success": true,
+      "metadata": {
+        "error": "list index out of range"
+      }
+    },
+    {
+      "doi": "10.17713/ajs.v33i1&2.436",
+      "handle_http_success": false,
+      "metadata": {}
+    },
+    {
+      "doi": "10.48550/arXiv.2606.22770",
+      "handle_http_success": true,
+      "metadata": {}
+    },
+    {
+      "url": "https://www.jmlr.org/papers/v22/20-689.html",
+      "head_accessible": true,
+      "http_status": 200
+    },
+    {
+      "url": "https://www.jmlr.org/papers/v15/peters14a.html",
+      "head_accessible": true,
+      "http_status": 200
+    },
+    {
+      "url": "https://www.jmlr.org/papers/v7/shimizu06a.html",
+      "head_accessible": true,
+      "http_status": 200
+    }
+  ],
+  "note": "DOI handle availability is checked by the supplied skill script; bibliographic details are cross-checked against primary full texts. Missing Crossref metadata does not invalidate an arXiv DataCite DOI."
+}

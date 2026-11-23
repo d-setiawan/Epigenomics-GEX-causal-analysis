@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "reviewer": "causal_reliability_pilot",
+  "parent": "application_v1/scmtr_seq_s1__raw_counts__seed1/result.json",
+  "protocol_sha256": "95138c0b3a00bf60f6ceeba3fbba6b21705c355d04e802e0094bb7687bcc1c7b",
+  "helper_sha256": "4234f17ba72475be05adb36da8885ef7408d6834d8a9cfbefc69c234a70bd3fc",
+  "rows": [
+    {
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.223995393239615e-21,
+      "correlation_rmse": 0.06514883613479983,
+      "zero_correlation_rmse": 0.06514883613479983
+    },
+    {
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.9381550985465872e-18,
+      "correlation_rmse": 0.06472494669685584,
+      "zero_correlation_rmse": 0.06472494669685584
+    },
+    {
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 4.3494009897299963e-26,
+      "correlation_rmse": 0.05296422854509914,
+      "zero_correlation_rmse": 0.05296422854509914
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "ca_boss_v4.cached_random_v424_summary.v1",
+  "algorithm_schema_version": "ca_boss_v4.layered_contract.v4.24",
+  "date": "2026-09-01",
+  "evidence_class": "retrospective_cached_world_random_panel_development",
+  "constraints": {
+    "cached_inputs_only": true,
+    "new_worlds_or_datasets_created": false,
+    "new_modalities_created": false,
+    "paired_cells_used": false,
+    "external_data_used": false,
+    "fresh_locked_certification_claimed": false
+  },
+  "production_integration": {
+    "state_equivalence_is_emitted_by_layered_state_evidence_v4": true,
+    "formal_runner_schema_version": "shared_state_subspace_v4.block_runner.v7",
+    "layered_candidate_schema_version": "layered_state_evidence_v4.frozen_candidate.v4",
+    "layered_provenance_schema_version": "layered_state_evidence_v4.v4",
+    "state_equivalence_schema_version": "state_equivalence_membership.v4.24",
+    "scorer_schema_version": "layered_state_evidence_v4.scorer.v8",
+    "direct_selector_schema_version": "crossfit_hierarchical_collider.v4.22",
+    "strict_membership_changed": false,
+    "direct_candidates_changed_by_layering": false,
+    "state_equivalence_pairwise_expansion_permitted": false,
+    "exact_cross_assay_pair_claimed": false,
+    "direct_cross_assay_effect_claimed": false
+  },
+  "cached_pool": {
+    "production_layer_replay_eligible_worlds": 103,
+    "eligible_source_blocks": 5,
+    "eligibility_note": "Worlds require the current observable membership fields and the frozen local loading-group projection. The broader v4.23 state/direct audit remains 152 worlds.",
+    "sampling_method": "random_block_balanced_without_replacement",
+    "panel_size": 12
+  },
+  "authoritative_random_panels": {
+    "selection_seeds": [
+      20260909,
+      20260910,
+      20260911,
+      20260912,
+      20260913
+    ],
+    "panel_count": 5,
+    "panel_world_instances": 60,
+    "unique_worlds": 52,
+    "successful_phase_a_instances": 60,
+    "successful_phase_b_instances": 60,
+    "world_reliability_successes": 60,
+    "mean_state_supported_precision": 1.0,
+    "mean_state_supported_recall": 0.8660000000000001,
+    "minimum_world_state_supported_recall": 0.6,
+    "maximum_world_state_supported_recall": 0.96,
+    "total_state_supported_sentinels": 0,
+    "mean_direct_precision": 1.0,
+    "mean_direct_recall": 1.0,
+    "total_strict_reverse_edges": 0,
+    "total_state_equivalence_pairwise_relations": 0,
+    "direct_candidates_per_world": 12
+  },
+  "per_panel": [
+    {
+      "selection_seed": 20260909,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_state_supported_precision": 1.0,
+      "mean_state_supported_recall": 0.8233333333333336,
+      "mean_direct_precision": 1.0,
+      "mean_direct_recall": 1.0,
+      "phase_b_summary_sha256": "1df71aec2244f7bfcecc96829036c86c21d675e825855345766ee3aa17891a17",
+      "summary_payload_sha256": "95bf852f32bc70523e5051035861afe89772ba09347a6c766a67b7eab7d0c46f"
+    },
+    {
+      "selection_seed": 20260910,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_state_supported_precision": 1.0,
+      "mean_state_supported_recall": 0.8900000000000001,
+      "mean_direct_precision": 1.0,
+      "mean_direct_recall": 1.0,
+      "phase_b_summary_sha256": "ca8b2523b71f03dcebe90747339961d4b290fad0821e218a96788ce322253c78",
+      "summary_payload_sha256": "8aff5902e4f76680f9a53bd1e291a0494c7170e9b1f0c41cb45b3646ec7626b3"
+    },
+    {
+      "selection_seed": 20260911,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_state_supported_precision": 1.0,
+      "mean_state_supported_recall": 0.8766666666666668,
+      "mean_direct_precision": 1.0,
+      "mean_direct_recall": 1.0,
+      "phase_b_summary_sha256": "e810952d7d973a262a2c83a80113ae4df6442f0ace601c1298c1d512ee917838",
+      "summary_payload_sha256": "e1e3ad3fa4b6a4069090f1fa56b5b0af44b7cf285f5db94f1d4a4545f1a103a3"
+    },
+    {
+      "selection_seed": 20260912,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_state_supported_precision": 1.0,
+      "mean_state_supported_recall": 0.8633333333333333,
+      "mean_direct_precision": 1.0,
+      "mean_direct_recall": 1.0,
+      "phase_b_summary_sha256": "682d7cafbe2659942b0bff7ab9c0de7bfd578337819d4c8cc4fae85dc33ca8ba",
+      "summary_payload_sha256": "cf7c6323a6c820325a4690f95caefeb93ac94d1c928fbbc34cae6502eddc121d"
+    },
+    {
+      "selection_seed": 20260913,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_state_supported_precision": 1.0,
+      "mean_state_supported_recall": 0.8766666666666668,
+      "mean_direct_precision": 1.0,
+      "mean_direct_recall": 1.0,
+      "phase_b_summary_sha256": "eab1c399f2d349c2fa47a83588fe32fb744b6bf219a39598cc4953b178227433",
+      "summary_payload_sha256": "690492fd8fefce9aa4c4fc94a2165c713e94beef4671f671926cc38cf5944409"
+    }
+  ],
+  "source_sha256": {
+    "replay_cached_layered_state_v4.py": "84bf20048fc1f4caef424018c8c4abfa4212b9bc536fe4fbbc6c0a641b8ee1fe",
+    "layered_state_evidence_v4.py": "c30d6a62655f6e49537fb4acebebf8cc1cf8397c6c6ec264a1cfb1703631a687",
+    "state_equivalence_membership_v4.py": "6ed0cf35d4dfdc479b4c67b11829195fb18b0e494cc352110a9e0c1b200351a9",
+    "score_layered_state_evidence_v4.py": "782af8d0ef5dfcdbb2ab24d8d3faa5146eb6d33ba45b4be1f55514c6f5ff36cc"
+  },
+  "superseded_debug_replays": {
+    "selection_seed_20260902": "Phase-B block/world path assembly bug; no algorithm score produced.",
+    "selection_seed_20260903": "Cached membership column-order adapter was not yet active; no algorithm score produced.",
+    "selection_seeds_20260904_through_20260908": "Scientifically successful but superseded because the Phase-A source closure did not yet include both scorer files."
+  },
+  "verification": {
+    "evaluation_tests_passed": 454,
+    "evaluation_tests_failed": 0,
+    "warnings": 62,
+    "warning_note": "Unchanged scikit-learn deprecations from the frozen rank-fusion derivation audit."
+  },
+  "remaining_limit": "The supported state set is precision-first and incomplete. Exact feature pairing and cell-specific residual causal directions across disjoint assays remain unidentified from the agreed variables."
+}

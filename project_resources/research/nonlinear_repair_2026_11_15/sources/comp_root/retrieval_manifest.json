@@ -1,0 +1,119 @@
+{
+  "commit": "0da27c1795fefa6208ce2107f23fa534efdab833",
+  "tool": "GitHub connector fetch_file",
+  "scope": "Selected decoder/model/train/config sources and README/requirements only. No data loaders, datasets or notebooks; no execution.",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/README.md",
+      "git_blob_sha": "a72289750ad5c010f46bdf7a9b3982f1f9ed1096",
+      "sha256": "f96c8d3a620535f6f20db24ecdd56219fde65b60d2c6cbceb84603ffd9932dc7",
+      "bytes": 6598,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/nn/__init__.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/nn/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/nn/config.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/nn/config.py",
+      "git_blob_sha": "fed8292556cf8187e8ea53beef22dd574eab3e1f",
+      "sha256": "db80f0ef2981f834e825feef4aa9312a2dbf40a67db7abd97ad1296e2890beab",
+      "bytes": 441,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/nn/loss.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/nn/loss.py",
+      "git_blob_sha": "48433cea8cf5069e5a031b27d13b0fb0ccde7bc5",
+      "sha256": "60a91b0087587e3b04fabb6049465859c936a659de8b97c198f533f393582132",
+      "bytes": 2522,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/nn/utils.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/nn/utils.py",
+      "git_blob_sha": "60dc1bc1a73400708d323f9496c446fdfedf166b",
+      "sha256": "cef8a5027cc2aedd2e03afeacc91b71bc31a5cf005f37f18db0d0e8e24502a4e",
+      "bytes": 4143,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/__init__.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/comp.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/comp.py",
+      "git_blob_sha": "71625c8165aea76507c6a03c2b9cb3e15c27103c",
+      "sha256": "60807655b344c77810bf87c0c2a357a5e2ddd984687760ecaf165650230f2fbc",
+      "bytes": 5207,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/cvae.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/cvae.py",
+      "git_blob_sha": "e7aa92710fc861725c27f9c29a0c5758e502587f",
+      "sha256": "bce21afa6439ae152effd7ffb7526279cf7538b7ccec5d81b18ed2fdd0519bdf",
+      "bytes": 3219,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/trainer.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/trainer.py",
+      "git_blob_sha": "846da2a77a315ccece65a8da40042af67eafb80d",
+      "sha256": "fddcb700bc205bbc31654e9a7c1b869370c9da34c666388807fac18405f8ca52",
+      "bytes": 1797,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/trvae.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/trvae.py",
+      "git_blob_sha": "a823f52da866f68376d9e4c8072c5192df51062c",
+      "sha256": "eb56dd7c0ffd87cec2ed9abc8b033d22f539b41fc2636afe8aff312d05e36b83",
+      "bytes": 3747,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "comp/pl/vae.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/comp/pl/vae.py",
+      "git_blob_sha": "7e71149fef0dead94b4a94cce1bb56b3155713ed",
+      "sha256": "c876aedfc335588decc1954f7b57c9d5d821d3cbb936f93349c9a3145729f2dc",
+      "bytes": 2608,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "requirements.txt",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/requirements.txt",
+      "git_blob_sha": "75ba210c988eeb81a711101c738096e11389f9b7",
+      "sha256": "0c502f9bcf6957a6902e1ed7903b2f61f421c8334f8bc27233681800cec6a19c",
+      "bytes": 291,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "run.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/run.py",
+      "git_blob_sha": "a6a0cb96f4c8b23d94c48a3760d42dfed0b8cf05",
+      "sha256": "360ff102fc453c421b2bd7ea2611c7fb83738dcb9a6578673423d60601a85c59",
+      "bytes": 9960,
+      "upstream_blob_verified": true
+    },
+    {
+      "path": "setup.py",
+      "url": "https://github.com/BenevolentAI/CoMP/blob/0da27c1795fefa6208ce2107f23fa534efdab833/setup.py",
+      "git_blob_sha": "62c4067af3248863e97b7fbb44f0ef1958d37a07",
+      "sha256": "97e510ecc43d9aff329ea2d51836067010880d573de9ce09aa0f7ab93cd810e0",
+      "bytes": 413,
+      "upstream_blob_verified": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Resumed GLUE unrestricted-chain realistic confirmation: completed seed 1
+
+Bounded independent review after the resume observed on 2026-10-26 UTC. The completed selected `scglue/align_high` discovery report reproduces for all three squared-state transport rows and its maximum. The [numerical receipt](scglue_unrestricted_chain_0_realistic_seed1_public_state_crosscheck.json) records public-ID pool hashes, state scaling, provenance bindings, and the metadata-only comparison to the previously audited seed 0.
+
+| Assay pair | Matched squared cost | Squared-state oracle | Random expected squared cost | Normalized gap |
+|---|---:|---:|---:|---:|
+| RNA--H3K27ac | 1.116254624997010 | 0.038197658559855 | 4.003147287673899 | 0.271896762198728 |
+| RNA--H3K4me3 | 0.711457994613865 | 0.035534760737365 | 4.148637543770377 | 0.164334146149898 |
+| H3K27ac--H3K4me3 | 1.389607546970385 | 0.040841262974941 | 4.158295496193707 | **0.327572866047636** |
+
+The independently recomputed maximum is `0.32757286604763625`, versus saved `0.3275728660476362`. All transport values agree within `1.7763568394002505e-15`. The one-Lipschitz squared-error bounds equal the absolute matched squared costs. Oracle assignments optimize direct squared-state distances; random expectations computed from state moments also agree with the full squared-cost matrix mean.
+
+Outcome-free reconstruction reproduces 1,567 training and 756 discovery cells per assay, using selected-fit IDs, both cached baseline-reference ID sets, public assay membership, and the declared pool seed 2718. Training/discovery IDs are disjoint. The common training center is `[-0.013880246927312139, 0.0003396350377540681]`, scale `[0.9913896719160854, 0.9969791425859608]`. The saved assignment is a valid permutation of these discovery pools with the declared RNA anchor order. All six selected-ID hashes, pool counts, state center and scale exactly match the [previously audited seed-0 report](scglue_unrestricted_chain_0_realistic_seed0_public_state_crosscheck.md) and its independent receipt. Seed-0 costs were not recomputed; its earlier maximum remains `0.3478702597477667`.
+
+The current report has `role=confirmation`, `cohort=discovery`, `mode=selected`, `reference_only=false`, and only `scglue/align_high`. Its exact configuration, completed-fit/export metadata, public file hashes, source/protocol pins and frozen-plan membership pass. Report SHA256 is `e8ee4a12eecb95e674836a8bd5b67f22c8141b79fd47b2a3af84017efc7cf0cc`.
+
+The external resume receipt SHA256 is exactly `ec361d64cbe64ee79338ac32e1e5eb49a4d2ece6a20b7d8b5afd9f068145f3fe`. Its protocol, unchanged driver, original execution-plan and three analysis-source hashes match current bytes. Its first remaining job is this exact world/regime/method/candidate/seed. Its frozen selection hash is `9c8bf9ccfc9d7e1d7d7cfa15953ef5359bc5aa3c394d5c7af7c606b00593b09b`; confirmation-plan hash is `6de5226a2ee40bcf09098ac5a1720717243ef325543d1247520f2bfbb39d04ee`. Both match current files. The original observed-launch receipt hash also matches the resume reference.
+
+The completed fit's new `study.json` SHA256 is `896cb64dcaa9839345d3ae6c41cfa4ac6986b1ccbe69d9d9b8582b9925c25f95`. Its protocol, runner/source pins, export-seal binding and recorded runtime overrides pass. Current `fit_inputs.json` hashes to the resume receipt's `552c88139332241e8e1c8073951188d471775d1df959936e350f0ada05aeb8d0`. The model input fingerprint is independently recomputed from canonical input metadata and equals the resume receipt's archived fingerprint record, `58b61e780cc5c0d8a11700ddb1536535e7e6621da3d9832be7a8df217c99d614`. This checks the metadata linkage without reopening preserved archive contents.
+
+Only public train/discovery `cell_ids`, `assigned_assay`, and `state` were decompressed from truth archives; only `cell_ids` from the permitted public embedding archives. Numeric embeddings, hidden biology, private/probe/assessment cohorts, checkpoints, archived partial-fit contents, other confirmation conditions and the active scMRDR fit were not accessed. There was no fitting, CUDA use, tuning, causal scoring, production edit, archive/move, or operational recovery action. Native checkpoint verification and the independent archive/process-scan audit remain separate. Embedding-space assignment optimality and secondary diagnostics were not repeated.
+
+This verifies a completed report's arithmetic and bounded links to the frozen protocol and observed resume. The resume receipt describes an observation at launch; it does not prove subsequent liveness or whole-matrix completion. These state scores also do not identify residual coupling, establish population or empirical biological validity, or certify causal structure.

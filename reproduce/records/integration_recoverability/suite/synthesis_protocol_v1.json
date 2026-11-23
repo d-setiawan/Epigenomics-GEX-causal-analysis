@@ -1,0 +1,461 @@
+{
+  "assessment_artifacts_present_at_freeze": false,
+  "attempts_directory": "pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts",
+  "created_utc": "2026-10-04T08:58:09.402915+00:00",
+  "executions_directory": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/executions",
+  "helper_sha256": "e9aee4ee11c62f5c9dab76f1e4ebd9e236e421d981767f61fa6611d43db77dc9",
+  "input_pins": {
+    "bank_hash": "af00101d23fbf627bf304cd0dda31bd205f8e50b9dc1a6954beb4d8dd5ed5da1",
+    "bank_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/extended_bank_manifest.json",
+    "bank_sha256": "6432cbc30adc40a9422066f4a84e3bd3f5e369d37926767cd793efa5bda742fa",
+    "calibration_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/calibration/empirical_count_profiles.json",
+    "calibration_sha256": "a22ac6c8653d160cc4f8f49738655be36d3d191ef6a959ee9442607a0698a222",
+    "source_pins": {
+      "pipelines/empirical/integration/methods/scmrdr/paper_faithful/__init__.py": "67cec6321ffe39c2c0e588381c49f86510091adda41a33dd3e783245df441b29",
+      "pipelines/empirical/integration/methods/scmrdr/paper_faithful/adapter.py": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+      "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/__init__.py": "8e61c5e8b7b000d2a3a51557fbddea81c0f409e14a9899f5e53c4901f5a2a684",
+      "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+      "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b",
+      "pipelines/simulation/integration_recoverability/calibration.py": "a3f997167b43530dcffa75dbf6caa0c08a432f8b4705780f01ae4bd5ad35a6dd",
+      "pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+      "pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+      "pipelines/simulation/integration_recoverability/guidance_baseline.py": "fb8152119b3632077b3fcfe006b34702706fcb235564df9d7e6f499442affec1",
+      "pipelines/simulation/integration_recoverability/preprocessing.py": "8f430c656e885b02fbb9fa00fc605092cf12745b141f44a17dfacbaf931b6acb",
+      "pipelines/simulation/integration_recoverability/recover_scglue_export.py": "38b89d1a43d366e30801fd1486fbfc2ef460fc6f5162c66e66aa923e288b8ac8",
+      "pipelines/simulation/integration_recoverability/run_benchmark.py": "f8b1713328c95659885d1cf92f194972df986574c0927df5230e7cc3a0003673",
+      "pipelines/simulation/integration_recoverability/scglue_adapter.py": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f",
+      "pipelines/simulation/integration_recoverability/scmrdr_adapter.py": "4ebfbb7fe86f264698af0cb53ad9a229e7587bfbbd7c1e4075ba340566828d23",
+      "pipelines/simulation/integration_recoverability/simulator.py": "754520b9802ac2548c07fc61aa1842d3350c9397a825fcab5b32d060b557ef0d",
+      "pipelines/simulation/integration_recoverability/suite_plan.py": "a3619b06e9e7c6c0d8fe89d7d0f13fe96a1643b51e563065be091b40a09b3a1a",
+      "pipelines/simulation/integration_recoverability/twin_controls.py": "5023ec1a3d93efaacfef6ad8d513f34c0845e3115a0024f5d3bb76de3988fa27"
+    }
+  },
+  "metric_schema": {
+    "alpha": 0.01,
+    "bootstrap": {
+      "quantile_method": "linear",
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "replicates": 10000,
+      "rng": "numpy.PCG64",
+      "seed": 61709,
+      "unit": "paired world, stratified 3 draws within each of 6 strata"
+    },
+    "ci_configuration": {
+      "alpha": 0.01,
+      "approximation": "hbe",
+      "min_cells": 20,
+      "num_f": 100,
+      "num_f2": 5,
+      "rcit": true,
+      "seed": 0
+    },
+    "endpoints": [
+      "precision",
+      "recall",
+      "n_correct"
+    ],
+    "graph_metrics": [
+      "precision",
+      "recall",
+      "f1",
+      "false_positive_rate",
+      "true_positive",
+      "false_positive",
+      "false_negative",
+      "n_predicted",
+      "n_true"
+    ],
+    "paired_summary_stages": [
+      "graph",
+      "endpoints",
+      "sentinel",
+      "direct_stress",
+      "state_matching"
+    ],
+    "primary_arm": "primary",
+    "primary_seed": 0,
+    "primary_test": "rcit",
+    "probe_metrics": [
+      "embedding_only.r2",
+      "embedding_only.mse",
+      "state_only.r2",
+      "state_only.mse",
+      "state_plus_embedding.r2",
+      "state_plus_embedding.mse",
+      "mse_gain_over_true_state"
+    ],
+    "regimes": [
+      "realistic",
+      "informative"
+    ],
+    "scopes": [
+      "all",
+      "cross_assay",
+      "within_assay",
+      "H3K27ac--RNA",
+      "H3K4me3--RNA",
+      "H3K27ac--H3K4me3",
+      "RNA--RNA",
+      "H3K27ac--H3K27ac",
+      "H3K4me3--H3K4me3"
+    ],
+    "sentinel": [
+      "false_positive_rate_against_current_graph_target",
+      "incident_adjacency_rate",
+      "n_possible_incident_pairs",
+      "n_returned_incident_adjacencies"
+    ],
+    "state_metrics": [
+      "mean_absolute_difference",
+      "mean_euclidean_distance"
+    ],
+    "state_pairs": [
+      "RNA--H3K27ac",
+      "RNA--H3K4me3",
+      "H3K27ac--H3K4me3"
+    ],
+    "statuses": [
+      "ok",
+      "undefined",
+      "failed",
+      "pending",
+      "blocked_assessment_lock",
+      "not_applicable",
+      "planned_skip",
+      "missing",
+      "invalid",
+      "blocked_operational_failure"
+    ],
+    "strata": [
+      [
+        "linear",
+        "chain"
+      ],
+      [
+        "linear",
+        "collider"
+      ],
+      [
+        "constrained",
+        "chain"
+      ],
+      [
+        "constrained",
+        "collider"
+      ],
+      [
+        "unrestricted",
+        "chain"
+      ],
+      [
+        "unrestricted",
+        "collider"
+      ]
+    ],
+    "targets": {
+      "activities": "activity_projection",
+      "counts": "count_measurement_pag"
+    },
+    "version": 1
+  },
+  "numpy_version": "2.2.6",
+  "pin_hash": "c0f09e20436ebed54b53b61cc034a26e2536c8094f8e640d4acd8b0dabba7927",
+  "primary_paths": {
+    "constrained_chain_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_chain_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "constrained_collider_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_chain_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "linear_collider_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "shared_state_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/shared_state_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_chain_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_0/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_0/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_0/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_0/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_1/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_1/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_1/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_1/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_2/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_2/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_3/informative": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_3/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json",
+    "unrestricted_collider_3/realistic": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_collider_3/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json"
+  },
+  "protocol_sha256": "780b5edd62bbcf19d6c28182a32a4da461859912050e5cb4f921d15d9f8decb4",
+  "schedule_hash": "3aca771d50f2ea1ac0e57b5540ef1837b26578d0882d7a778823e21ab750adfe",
+  "schedule_sha256": "2cb56e1d77dc3557332c9200f5b92457b8483531b61be5c596300826467423d5",
+  "schema_version": 1,
+  "status": "frozen_before_assessment",
+  "supplemental_evidence": [
+    {
+      "analysis_role": "supplemental_anchor_readout",
+      "artifact_manifest_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/linear_chain_0/informative/anchor_readout_v1/secondary_artifact_manifest.json",
+      "freeze_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/linear_chain_0/informative/anchor_readout_v1/freeze.json",
+      "freeze_sha256": "eea38d04952dc17c24f67fe237315de62e0e5f0c2f7ff053928751913f6812b3",
+      "regime": "informative",
+      "report_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/linear_chain_0/informative/anchor_readout_v1/secondary_report.json",
+      "world_id": "linear_chain_0"
+    },
+    {
+      "analysis_role": "supplemental_anchor_readout",
+      "artifact_manifest_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/constrained_chain_0/informative/anchor_readout_v1/secondary_artifact_manifest.json",
+      "freeze_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/constrained_chain_0/informative/anchor_readout_v1/freeze.json",
+      "freeze_sha256": "c61f5014de094628e08d169a3ce1b800b1a19eb376bccc5952a733b13e53eba2",
+      "regime": "informative",
+      "report_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/secondary/constrained_chain_0/informative/anchor_readout_v1/secondary_report.json",
+      "world_id": "constrained_chain_0"
+    }
+  ],
+  "worlds": [
+    {
+      "draw": 0,
+      "family": "linear",
+      "motif": "ambiguity",
+      "split": "development",
+      "world_id": "ambiguity_rho_0.0"
+    },
+    {
+      "draw": 0,
+      "family": "linear",
+      "motif": "ambiguity",
+      "split": "development",
+      "world_id": "ambiguity_rho_0.7"
+    },
+    {
+      "draw": 0,
+      "family": "constrained",
+      "motif": "chain",
+      "split": "development",
+      "world_id": "constrained_chain_0"
+    },
+    {
+      "draw": 1,
+      "family": "constrained",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "constrained_chain_1"
+    },
+    {
+      "draw": 2,
+      "family": "constrained",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "constrained_chain_2"
+    },
+    {
+      "draw": 3,
+      "family": "constrained",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "constrained_chain_3"
+    },
+    {
+      "draw": 0,
+      "family": "constrained",
+      "motif": "collider",
+      "split": "development",
+      "world_id": "constrained_collider_0"
+    },
+    {
+      "draw": 1,
+      "family": "constrained",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "constrained_collider_1"
+    },
+    {
+      "draw": 2,
+      "family": "constrained",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "constrained_collider_2"
+    },
+    {
+      "draw": 3,
+      "family": "constrained",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "constrained_collider_3"
+    },
+    {
+      "draw": 0,
+      "family": "linear",
+      "motif": "chain",
+      "split": "development",
+      "world_id": "linear_chain_0"
+    },
+    {
+      "draw": 1,
+      "family": "linear",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "linear_chain_1"
+    },
+    {
+      "draw": 2,
+      "family": "linear",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "linear_chain_2"
+    },
+    {
+      "draw": 3,
+      "family": "linear",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "linear_chain_3"
+    },
+    {
+      "draw": 0,
+      "family": "linear",
+      "motif": "collider",
+      "split": "development",
+      "world_id": "linear_collider_0"
+    },
+    {
+      "draw": 1,
+      "family": "linear",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "linear_collider_1"
+    },
+    {
+      "draw": 2,
+      "family": "linear",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "linear_collider_2"
+    },
+    {
+      "draw": 3,
+      "family": "linear",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "linear_collider_3"
+    },
+    {
+      "draw": 0,
+      "family": "linear",
+      "motif": "shared_state",
+      "split": "development",
+      "world_id": "shared_state_0"
+    },
+    {
+      "draw": 1,
+      "family": "linear",
+      "motif": "shared_state",
+      "split": "assessment",
+      "world_id": "shared_state_1"
+    },
+    {
+      "draw": 2,
+      "family": "linear",
+      "motif": "shared_state",
+      "split": "assessment",
+      "world_id": "shared_state_2"
+    },
+    {
+      "draw": 3,
+      "family": "linear",
+      "motif": "shared_state",
+      "split": "assessment",
+      "world_id": "shared_state_3"
+    },
+    {
+      "draw": 0,
+      "family": "unrestricted",
+      "motif": "chain",
+      "split": "development",
+      "world_id": "unrestricted_chain_0"
+    },
+    {
+      "draw": 1,
+      "family": "unrestricted",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "unrestricted_chain_1"
+    },
+    {
+      "draw": 2,
+      "family": "unrestricted",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "unrestricted_chain_2"
+    },
+    {
+      "draw": 3,
+      "family": "unrestricted",
+      "motif": "chain",
+      "split": "assessment",
+      "world_id": "unrestricted_chain_3"
+    },
+    {
+      "draw": 0,
+      "family": "unrestricted",
+      "motif": "collider",
+      "split": "development",
+      "world_id": "unrestricted_collider_0"
+    },
+    {
+      "draw": 1,
+      "family": "unrestricted",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "unrestricted_collider_1"
+    },
+    {
+      "draw": 2,
+      "family": "unrestricted",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "unrestricted_collider_2"
+    },
+    {
+      "draw": 3,
+      "family": "unrestricted",
+      "motif": "collider",
+      "split": "assessment",
+      "world_id": "unrestricted_collider_3"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "review_type": "focused narrative evidence review; not systematic or comprehensive",
+  "checked_at_utc": "2026-10-25T22:03:43.579450+00:00",
+  "memo": "Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/primary_evidence_and_endpoints.md",
+  "memo_sha256": "c341fac82aae6ddbdcb01ce60067ec8877c4f6dad47c44e196826af3f7811e06",
+  "verification_script": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "verification_script_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "extraction_normalization": "deduplicated DOI candidates; stripped markdown backticks/trailing punctuation and publisher PDF .pdf suffix; asserted exact six unique DOI values",
+  "records": [
+    {
+      "doi": "10.1038/s41587-022-01284-4",
+      "checked_at_utc": "2026-10-25T22:03:43.578034+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1038/s41587-022-01284-4",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1038/s41587-022-01284-4",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.1038/s41587-022-01284-4 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d09837610>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    },
+    {
+      "doi": "10.1038/s41592-021-01336-8",
+      "checked_at_utc": "2026-10-25T22:03:43.575334+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1038/s41592-021-01336-8",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1038/s41592-021-01336-8",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.1038/s41592-021-01336-8 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ee5310>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    },
+    {
+      "doi": "10.1186/s13059-025-03869-z",
+      "checked_at_utc": "2026-10-25T22:03:43.575854+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1186/s13059-025-03869-z",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1186/s13059-025-03869-z",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.1186/s13059-025-03869-z (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ee6210>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    },
+    {
+      "doi": "10.1186/s13059-026-04071-5",
+      "checked_at_utc": "2026-10-25T22:03:43.578886+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.1186/s13059-026-04071-5",
+      "crossref_endpoint": "https://api.crossref.org/works/10.1186/s13059-026-04071-5",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.1186/s13059-026-04071-5 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ef6bd0>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    },
+    {
+      "doi": "10.52202/075280-1496",
+      "checked_at_utc": "2026-10-25T22:03:43.577591+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.52202/075280-1496",
+      "crossref_endpoint": "https://api.crossref.org/works/10.52202/075280-1496",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.52202/075280-1496 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ef5c90>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    },
+    {
+      "doi": "10.52202/085713-5170",
+      "checked_at_utc": "2026-10-25T22:03:43.579039+00:00",
+      "handle_api_endpoint": "https://doi.org/api/handles/10.52202/085713-5170",
+      "crossref_endpoint": "https://api.crossref.org/works/10.52202/085713-5170",
+      "script_valid": false,
+      "script_metadata": {
+        "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /api/handles/10.52202/085713-5170 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x710d08ed2590>: Failed to resolve 'doi.org' ([Errno -2] Name or service not known)\"))"
+      }
+    }
+  ]
+}

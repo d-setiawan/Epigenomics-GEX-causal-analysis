@@ -1,0 +1,20 @@
+{
+  "observed_at_utc": "2026-11-15T20:30:26.016697+00:00",
+  "command": [
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "-u",
+    "train.py",
+    "--run"
+  ],
+  "cwd": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/nonlinear_repair_2026_11_15/experiments/C01",
+  "environment_overrides": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "tool_session": 9859,
+  "protocol_sha256": "42e6c2eddb27f37b2264e26da4493c702e0fc67a4439a2132ed2db2edc2bb153",
+  "processes": [],
+  "available_ram_bytes": 7199322112,
+  "evaluator_launched": false
+}

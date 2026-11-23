@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "imports_fitter_or_evaluator": false,
+  "new_fits": 0,
+  "new_datasets": 0,
+  "counts": {
+    "arms": 36,
+    "within_assay_metrics": 108,
+    "real_pair_metrics": 36,
+    "state_correlation_matrices": 72,
+    "real_bootstrap_replicates_checked": 7200
+  },
+  "maximum_absolute_numeric_difference": 1.4210854715202004e-14,
+  "checks": [
+    "all sealed artifact hashes",
+    "within-assay same-scale full/offdiagonal moment errors and diagonal baseline",
+    "all real primary and secondary covariance/correlation metrics",
+    "all real paired-bootstrap errors and percentiles",
+    "all simulated frozen-score state correlations",
+    "zero matches and no causal-recovery claim"
+  ],
+  "hashes": {
+    "replay_count_metrics.py": "ab0956775f5c1c58ff9db509775fdfafad35f72cea6a5852891464fb0346b8eb",
+    "protocol.json": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c"
+  },
+  "fit_provenance_sha256": "0cf85208a3e08480c732ee80cd741b7425b5baafadaa7b362a84a32a7c96494a",
+  "evaluation_provenance_sha256": "8d563cf6dc0c26978aef92582c7cd1a77ff29f591d81c7e03ba2404517d962b4"
+}

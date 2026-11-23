@@ -1,0 +1,62 @@
+{
+  "review_type": "focused narrative, not systematic",
+  "queries": [
+    {
+      "label": "unpaired_counts",
+      "date_utc": "2026-11-01T01:13:53.717407+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "unpaired single cell multiomics integration count optimal transport",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "status_code": 200,
+      "returned": 100,
+      "total_matches": 288,
+      "artifact": "project_resources/research/integration_followup_2026_10_31/search_artifacts/unpaired_counts_openalex_page1.json",
+      "sha256": "37352de18f7b79379b3a39e33e418e6aecf304857c7a95834dca1211a8d059ca"
+    },
+    {
+      "label": "histone",
+      "date_utc": "2026-11-01T01:13:54.401982+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "RNA histone modification unpaired single cell integration",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "status_code": 200,
+      "returned": 100,
+      "total_matches": 11616,
+      "artifact": "project_resources/research/integration_followup_2026_10_31/search_artifacts/histone_openalex_page1.json",
+      "sha256": "c72a415c7f91cd52c4712bac69af76449451fa41f789edaada0f93bda73ca3f9"
+    },
+    {
+      "label": "shared_factors",
+      "date_utc": "2026-11-01T01:13:54.951972+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "single cell integration unshared features integrative nonnegative matrix factorization",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "status_code": 200,
+      "returned": 44,
+      "total_matches": 44,
+      "artifact": "project_resources/research/integration_followup_2026_10_31/search_artifacts/shared_factors_openalex_page1.json",
+      "sha256": "bd57bc804b8421741cb2640b6715b64f284723597bf91d4173c1eb83e1d7f333"
+    }
+  ]
+}

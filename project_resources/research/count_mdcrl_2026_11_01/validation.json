@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-01T19:28:55.832638+00:00",
+  "focused_tests": {
+    "passed": 18,
+    "junit_sha256": "7680d0f3789515c46ddf335f7fd3314433437cec2c4e8656d4b6f5160fe52732",
+    "command": "python -m pytest -q test_count_sources.py test_apply_counts.py test_evaluate_count_sources.py",
+    "receipt_sha256": "cd27d7788848038452ef5d19e6fd7a480afd15a5ab6c90dde3d94e50818ebac7"
+  },
+  "preflight_and_frozen_sources_unchanged": true,
+  "sealed_artifacts": {
+    "runs_v1": {
+      "sha256": "0cf85208a3e08480c732ee80cd741b7425b5baafadaa7b362a84a32a7c96494a",
+      "verified_artifacts": 73
+    },
+    "evaluation_v1": {
+      "sha256": "8d563cf6dc0c26978aef92582c7cd1a77ff29f591d81c7e03ba2404517d962b4",
+      "verified_artifacts": 73
+    }
+  },
+  "independent_review_receipts": {
+    "reviews/count_algebra_audit.json": "c3bf7a7595b99b3814f3095da6a2e0b90f22cca26ac9d0f273f93a8e8dc8d3c5",
+    "reviews/runner_review.json": "a96d03729d1b4a080d7c12184f6d1e4dca7f256b0d2aa600ec91aa092a32a453",
+    "reviews/audit_count_fits.json": "0f9f5e0078967e615b4cc027f49bfe04f50b3227f6a33cd45960c7b604d6473f",
+    "reviews/evaluator_validation.json": "2e0a3d2077efa65aa7193b8888185f86ff7da4cbda5a9c8f83abfea24bbab1e3",
+    "reviews/evaluator_code_review.json": "9180d659cbfdee09723d8a4aa2ec6759ca4ed4b3ccf79334214744d159938878",
+    "reviews/data_and_evaluation_audit.json": "abe7d06a919855369e01a364b4e2460217ffaade8fdf6d76e437dd74f60c8b86",
+    "reviews/count_metric_audit.json": "d508634d138b7ea13e07836e79f93d6d5755022b5c64068ae083210b389df515",
+    "reviews/final_document_review.json": "46e7ca801e9ec04b2118c842b34aa771ac79bfc4d8afb5f7c3d407f7a7fe19a3"
+  },
+  "local_document_links": {
+    "documents": 15,
+    "links": 269,
+    "problems": []
+  },
+  "scope": "New count-source pilot, its frozen inputs/artifacts and five updated navigation documents; unrelated repository migration not tested.",
+  "graphify_update": {
+    "status": "completed",
+    "mode": "AST-only, no LLM",
+    "files_extracted": 1224,
+    "nodes": 9535,
+    "edges": 19556,
+    "communities": 658,
+    "html": "Skipped by graphify at its 5000-node visualization limit; graph.json and report updated."
+  },
+  "study_documents_sha256": {
+    "README.md": "97543de3f671d824fd91548fe0ddba4108f93ff17a5b596e884a46e17114cc4f",
+    "METHOD.md": "a8c89d688536c1b646ba4d88dc58ea3d1032a8d136b56f94b9c15817a63482a0",
+    "RESULTS.md": "4e7a3b6bebd0d09470301a0502dceac6a90ebd6cfa44e00d4154af87a25cb301"
+  }
+}

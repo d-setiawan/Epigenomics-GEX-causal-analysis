@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "all_input_hashes_current": true,
+    "all_source_hashes_current": true,
+    "cohorts_as_declared": true,
+    "config_varies_only_by_seed": true,
+    "declared_world_seed_grid": true,
+    "public_input_paths_only": true,
+    "simulation_only_selection_references": true,
+    "six_unique_jobs": true
+  },
+  "created_unix": 1793509550.9208136,
+  "execution_plan": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/execution_plan.json",
+    "sha256": "90f890cdf03fc7b23371bf3e06a3ac37a041bfa058ff2d8bcd3bf9b66c2f78ac"
+  },
+  "limits": [
+    "Review of orchestration and current provenance; completed scientific outcomes reviewed separately",
+    "Final artifact/log hashes will be captured by scoring and completion receipts"
+  ],
+  "manual_checks": [
+    "Serial subprocesses under nonblocking GPU lock",
+    "Before-job source/input rechecks",
+    "Exclusive per-step logs, execution receipts and failure preservation",
+    "Adapter creates train exports automatically; explicit val/discovery or test exports follow",
+    "Root plan and source pins remain unchanged"
+  ],
+  "reviewer": "scconfluence_adapter child agent; reviewed root runner independently",
+  "runner": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/run_fixed_pilot.py",
+    "sha256": "bdcbb1cb41d058c138411320a02d379277f067ec6e3405dbc5d21874fd19ddc3"
+  },
+  "status": "passed"
+}

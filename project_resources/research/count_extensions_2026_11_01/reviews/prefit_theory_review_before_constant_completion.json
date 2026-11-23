@@ -1,0 +1,52 @@
+{
+  "status": "approved_for_frozen_exploratory_sweep",
+  "date_utc": "2026-11-01T20:29:33.668187+00:00",
+  "scientific_data_fits_by_reviewer": 0,
+  "heldout_performance_read_by_reviewer": false,
+  "new_datasets_by_reviewer": 0,
+  "variants": 25,
+  "expected_arms": 225,
+  "files_sha256": {
+    "protocol.json": "d6b638b94a34654be510c84e5390b9c2c8c08a60c56b62d0f970ecb2abb0aee4",
+    "extension_estimators.py": "edad8f230b320a8e21590e961a1f38543f93b151ab767fe7146e4ca267764d62",
+    "apply_extensions.py": "042ccac19a6cc8ee99629d054e1b7376601c9443cc14c086e38e8f5e54836199",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "independent_checks": [
+    "conditional NB/ZI factorial identities including repeated indices",
+    "higher moments against independent multi-index factorial expansions",
+    "PGF Hessians against direct derivatives",
+    "unequal-group shrinkage and raw-C3 eligibility gate",
+    "generalized CF polynomial identities, numerical guard and exact-zero products",
+    "known-kernel CF conditional first/second moments",
+    "fixed source-fit depth profile and conditional nuisance uncertainty",
+    "common 300-feature denominator and immutable30-feature anchor",
+    "common rank for ordinary/Poisson comparisons; noise-specific ranks otherwise explicit",
+    "signed bootstrap alignment and source/calibration row replay",
+    "all raw moment candidates receive staged CF assessment before separate uniqueness",
+    "all fit arms seal before heldout evaluation",
+    "independent row-Gram bootstrap versus literal row resampling"
+  ],
+  "requested_prefit_clarifications_resolved": [
+    "exact CF cancellation heuristic and1e-8 tolerance declared",
+    "minimum PGF effective-cell gate declared for point and bootstrap",
+    "previous imported protocol added to supporting hashes",
+    "failed arms preserve partial arrays",
+    "two-moment, moment-unique and CF-unique results kept distinct",
+    "pairwise predictions do not claim coherent PSD joint law"
+  ],
+  "limits": [
+    "not exhaustive over all algorithms",
+    "fixed noise parameters are sensitivities, not estimated technical noise",
+    "two moments and finite CF grid do not identify full source laws",
+    "fixed beta/rank/kernel makes bootstrap uncertainty conditional",
+    "reused panels and225 arms do not provide new confirmatory validation",
+    "column shuffles do not calibrate biological false-sharing FDR",
+    "row-Gram cancellation can leave~1e-7 RMSE for deliberately degenerate all-one-cell resamples; nondegenerate fixture difference<2e-15"
+  ],
+  "audit_receipts": [
+    "extension_algebra_audit.json",
+    "gram_algebra_audit.json",
+    "primary_references_citation_report.json"
+  ]
+}

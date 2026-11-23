@@ -1,0 +1,62 @@
+[
+  {
+    "database": "PubMed",
+    "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(single-cell[Title/Abstract] OR single cell[Title/Abstract]) AND (multi-omics[Title/Abstract] OR multimodal[Title/Abstract]) AND integration[Title/Abstract]",
+      "retmode": "json",
+      "retmax": 100,
+      "sort": "relevance",
+      "datetype": "pdat",
+      "mindate": "1900/01/01",
+      "maxdate": "2026/11/01"
+    },
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28single-cell%5BTitle%2FAbstract%5D+OR+single+cell%5BTitle%2FAbstract%5D%29+AND+%28multi-omics%5BTitle%2FAbstract%5D+OR+multimodal%5BTitle%2FAbstract%5D%29+AND+integration%5BTitle%2FAbstract%5D&retmode=json&retmax=100&sort=relevance&datetype=pdat&mindate=1900%2F01%2F01&maxdate=2026%2F11%2F01",
+    "queried_utc": "2026-11-01T06:53:28.270224+00:00",
+    "raw_file": "pubmed_01.json",
+    "status": "failed",
+    "error": "HTTP Error 500: Internal Server Error",
+    "returned": 0
+  },
+  {
+    "database": "PubMed",
+    "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(unpaired[Title/Abstract] OR diagonal[Title/Abstract]) AND integration[Title/Abstract] AND (cell[Title/Abstract] OR omics[Title/Abstract])",
+      "retmode": "json",
+      "retmax": 100,
+      "sort": "relevance",
+      "datetype": "pdat",
+      "mindate": "1900/01/01",
+      "maxdate": "2026/11/01"
+    },
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28unpaired%5BTitle%2FAbstract%5D+OR+diagonal%5BTitle%2FAbstract%5D%29+AND+integration%5BTitle%2FAbstract%5D+AND+%28cell%5BTitle%2FAbstract%5D+OR+omics%5BTitle%2FAbstract%5D%29&retmode=json&retmax=100&sort=relevance&datetype=pdat&mindate=1900%2F01%2F01&maxdate=2026%2F11%2F01",
+    "queried_utc": "2026-11-01T06:53:28.825420+00:00",
+    "raw_file": "pubmed_02.json",
+    "status": "failed",
+    "error": "HTTP Error 500: Internal Server Error",
+    "returned": 0
+  },
+  {
+    "database": "PubMed",
+    "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+    "params": {
+      "db": "pubmed",
+      "term": "(causal[Title/Abstract] OR identifiability[Title/Abstract]) AND (data fusion[Title/Abstract] OR multimodal[Title/Abstract] OR multi-omics[Title/Abstract])",
+      "retmode": "json",
+      "retmax": 100,
+      "sort": "relevance",
+      "datetype": "pdat",
+      "mindate": "1900/01/01",
+      "maxdate": "2026/11/01"
+    },
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28causal%5BTitle%2FAbstract%5D+OR+identifiability%5BTitle%2FAbstract%5D%29+AND+%28data+fusion%5BTitle%2FAbstract%5D+OR+multimodal%5BTitle%2FAbstract%5D+OR+multi-omics%5BTitle%2FAbstract%5D%29&retmode=json&retmax=100&sort=relevance&datetype=pdat&mindate=1900%2F01%2F01&maxdate=2026%2F11%2F01",
+    "queried_utc": "2026-11-01T06:53:29.381924+00:00",
+    "raw_file": "pubmed_03.json",
+    "status": "failed",
+    "error": "HTTP Error 500: Internal Server Error",
+    "returned": 0
+  }
+]

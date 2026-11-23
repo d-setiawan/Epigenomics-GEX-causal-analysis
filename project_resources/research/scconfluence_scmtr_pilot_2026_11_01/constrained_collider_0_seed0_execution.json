@@ -1,0 +1,70 @@
+{
+  "complete": true,
+  "name": "constrained_collider_0",
+  "output": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0",
+  "seed": 0,
+  "steps": [
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "fit",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/train",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0",
+        "--seed",
+        "0",
+        "--device",
+        "cuda",
+        "--selection-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_collider_0/informative/primary/scglue_preprocessing/train"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/constrained_collider_0_seed0_fit.log",
+      "seconds": 526.190437078476,
+      "stage": "fit",
+      "started_unix": 1793510103.9977276
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "encode",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/val",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0",
+        "--cohort",
+        "val",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/constrained_collider_0_seed0_val.log",
+      "seconds": 6.1168389320373535,
+      "stage": "val",
+      "started_unix": 1793510630.189419
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/envs/runtime/scconfluence_pilot_20261101/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+        "encode",
+        "--input-dir",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/discovery",
+        "--output",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_v1/constrained_collider_0/seed0",
+        "--cohort",
+        "discovery",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/constrained_collider_0_seed0_discovery.log",
+      "seconds": 6.096145391464233,
+      "stage": "discovery",
+      "started_unix": 1793510636.3067605
+    }
+  ]
+}

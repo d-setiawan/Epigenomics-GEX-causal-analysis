@@ -1,0 +1,53 @@
+{
+  "status": "frozen_before_count_source_fits",
+  "date": "2026-11-01",
+  "hypothesis": "Explicit Poisson measurement-noise correction improves biological source estimation and unpaired source matching relative to a dimension-matched uncorrected estimator on the existing panels.",
+  "data": "../sturma_pilot_2026_11_01/data_pilot_v1",
+  "data_manifest_sha256": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+  "datasets": ["scmtr_seq_s1", "linear_chain_0", "constrained_collider_0"],
+  "assays": ["RNA", "H3K27ac", "H3K4me3"],
+  "features_per_assay": 30,
+  "input": "Frozen raw_counts, library_depth and opaque cell/feature IDs only; no feature reselection, extra modalities, new worlds or locked cohorts.",
+  "training_split": "Sort training cell IDs by SHA256 of 'count-dica-v1:' + ID. First floor(0.75*n) rows fit sources/rank; remaining rows calibrate fingerprints. No public test rows or reference data used in fitting or decisions.",
+  "exposures": ["unit", "leave_panel_out"],
+  "exposure_definition": "unit=1; leave_panel_out=(original library_depth-original selected30 count sum)/median of that quantity on the source-fitting split. Compute before permutations and keep fixed. The second is a proxy sensitivity, not known technical exposure.",
+  "methods": ["poisson_dica", "uncorrected_rank_matched"],
+  "source_seeds": [0, 1],
+  "controls": {"original": [0, 1], "independent_columns": [0]},
+  "permutation": "Independently shuffle integer feature columns within each own-assay exposure stratum, separately in fit/calibration splits. Unit exposure uses one stratum; leave_panel_out uses up to 8 rank-based strata. Diagnostic exchangeability approximation, not biological false-discovery control.",
+  "control_seed": 1000,
+  "rank": {
+    "null_replicates": 49,
+    "alpha": 0.05,
+    "rule": "Standardize corrected covariance by fixed observed-rate SDs from source-fit rows. For each eigenvalue compute p=(1+number of null maximum eigenvalues >= observed)/50 using49 permutations; retain positive eigenvalues with p<=0.05. Zero rank is permitted. This selects coherent cross-feature signal above marginally preserved noise, not the total latent/private dimension. Both estimators use this same selected rank.",
+    "cap": 6,
+    "cap_policy": "Report the uncapped selection; cap binds => source matching ineligible, no silent claim that dimension is six.",
+    "positive_eigenvalue_condition_limit": 100000000
+  },
+  "source_estimator": "Poisson-corrected covariance and third factorial cumulants; whiten all observed features, spectral diagonalization with eight seeded contractions, select smallest third-tensor offdiagonal residual. Ablation uses ordinary moments, same rank and seeds. Plug-in moment estimators, not unbiased finite-sample cumulant claims.",
+  "bootstrap": {"replicates": 32, "seed": 2000, "operation": "Independently resample fit and calibration cells within each assay; hold selected dimension/exposure normalization fixed; refit sources, align columns by Hungarian absolute cosine in fixed standardized feature units, carry signs into fingerprints."},
+  "fingerprint": {
+    "moments": ["skewness", "excess_kurtosis"],
+    "moment_margins": [0.25, 0.5],
+    "characteristic_function_grid": [0.125, 0.25, 0.5],
+    "cf_coordinate_margin": 0.1,
+    "corrected_cf": "exp(-i*t*w*fit_mean) times calibration-cell mean of product_j(1+i*t*w_j/exposure)^count_j. Uncorrected arm uses empirical CF of projected observed rates. Finite grid is only a consistency screen; no full-law identification claim.",
+    "cf_gate": "Finite estimates and max log-weight <=300; estimated complex second-moment standard error <=0.1 at every frequency; point |phi|<=1.1. Empirical variance may miss rare tails; this gate is not an integrability proof.",
+    "centering_scaling": "Demixing is fixed from source-fit covariance with unit modeled variance. CF uses source-fit mean and that fixed scale; skewness/kurtosis subsequently centralize and standardize using calibration projected moments. Bootstrap repeats this estimation. Neither finite-sample fingerprint nor estimated directions have an exact unbiasedness guarantee.",
+    "source_gate": "No rank-cap binding; finite positive calibration projected variance; third-tensor relative offdiagonal residual <=0.35; at least26/32 successful aligned bootstrap fingerprints; median aligned loading cosine >=0.9 and 10th percentile >=0.7.",
+    "pair_rule": "For each sign, concatenate normalized moment and real/imag CF differences. Accept practical equivalence only when max absolute point difference plus the 90th percentile of bootstrap maximum centered discrepancy <=1. At least26 valid paired bootstrap replicates; unique sign and mutual one-to-one candidate required. Report all ambiguity sets. No p-value/FDR/full-law interpretation.",
+    "all_assay_rule": "Only sign-consistent cliques of unique accepted pair matches count as all-assay candidates. Pair candidates and all-assay candidates are separate readouts."
+  },
+  "graph": "Reuse pinned native Sturma pure-child/order extraction with gamma0.2 on raw rate mixing units only for >=2 all-assay candidate sources; report anonymous exploratory coefficients and numerical failures. The heuristic threshold is scale dependent. Finite-grid source equivalence and model fit do not establish the causal assumptions; do not label the output an identified graph.",
+  "evaluation": {
+    "when": "After all fit artifacts and their hashes are sealed; separate evaluator reads heldout references.",
+    "primary_real": "Heldout paired cross-covariance of counts/exposure, divided by fixed source-fit observed-rate SDs, compared with model candidate-shared mixing crosscovariance on the identical scale and with zero. Pair-bootstrap200 replicates and seed3000 describe uncertainty only.",
+    "secondary_real": "Model-implied correlation including Poisson noise in marginal variances; compare with heldout Pearson on valid feature pairs. No causal truth exists for this real panel.",
+    "within_assay": "Heldout observed-rate covariance versus fitted low-rank signal covariance plus model noise diagonal (zero for the uncorrected ablation), and versus diagonal source-fit observed covariance. Moment prediction, not heldout likelihood.",
+    "simulation": "All-source and matched-source noisy projected-score correlations with existing public-discovery state coordinates. Descriptive state recovery; no scoring anonymous latent graphs against the separate focal graph.",
+    "native_reference": "Frozen prior native result: numerical ranks30 and zero shared sources in all18 original/control arms. Different internal sample use makes it a contextual reference; the matched-rank ablation is the controlled comparison."
+  },
+  "expected_arm_records": 36,
+  "failure_policy": "Record every abstention, numerical failure, warning and bootstrap failure; retain complete artifacts. Never replace an output directory or choose a seed using test performance.",
+  "scope": "This bounded model is conditional Poisson with an affine independent-source rate model. NB feature noise, nonlinear rates, source-law population shifts and endogenous depth can violate it. It tests whether Poisson correction suffices; it cannot isolate all count noise or certify direct peak-gene causal recovery."
+}

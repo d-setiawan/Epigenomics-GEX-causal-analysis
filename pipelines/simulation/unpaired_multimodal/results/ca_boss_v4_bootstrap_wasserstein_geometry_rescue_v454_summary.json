@@ -1,0 +1,192 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_wasserstein_geometry_rescue_v454_record.v1",
+  "algorithm": "CA-BOSS v4.54 bootstrap-stable W2 distribution-geometry rescue",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_wasserstein_geometry_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "cell_level_transport_coupling_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_positive_labels_used_for_score_fit": false,
+    "other_block_null_labels_used_for_empirical_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 209,
+      "true_positive_hyperedges": 209,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 100,
+      "precision": 1.0,
+      "recall": 0.6763754045307443
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 342,
+      "correctly_recovered_assay_participations": 342,
+      "precision": 1.0,
+      "recall": 0.5533980582524272,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 209,
+      "coverage": 0.6763754045307443,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 279,
+      "average_ambiguity_set_size": 1.3349282296650717,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 171,
+      "exact_cross_assay_pair_true_positives": 171,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.5533980582524272,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v453_bootstrap_mutual_nearest_margin": {
+      "true_positive_hyperedges": 196,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6343042071197411
+    },
+    "v454_bootstrap_wasserstein_geometry": {
+      "true_positive_hyperedges": 209,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6763754045307443,
+      "incremental_stable_true_hyperedges": 13,
+      "incremental_stable_false_hyperedges": 0,
+      "incremental_assay_participations": 26,
+      "interpretation": "W2 quantile geometry adds distribution-shape information absent from the KS-only v4.53 score while retaining the same cross-fit null and whole-world stability guards"
+    }
+  },
+  "method_contract": {
+    "state_source": "rank-three assay-local ICA fit only to held-out background features",
+    "contexts": "full fit plus two disjoint background-feature folds",
+    "distribution_cost": "sign-invariant empirical two-Wasserstein quantile distance over 99 quantiles from 0.01 through 0.99",
+    "pair_normalization": "divide each rank-three assay-pair cost matrix by its median positive cost",
+    "global_registration": "exact multi-assay rank-three permutation synchronization independently in every context",
+    "reporter_pair_features": [
+      "statistical_context_support_count",
+      "wasserstein2_global_coassignment_context_count",
+      "wasserstein2_maximum_reporter_cost_ratio",
+      "wasserstein2_mean_coassigned_exclusion_margin"
+    ],
+    "feature_directions": [
+      "increasing",
+      "increasing",
+      "decreasing",
+      "increasing"
+    ],
+    "feature_quantization_decimals": 12,
+    "score": "product of four directional training-fold empirical-CDF percentiles",
+    "reciprocity_rule": "strict unique mutual nearest assay pair in every nested fold",
+    "nested_score": "minimum endpoint-competition margin over four leave-one-source-block calibration folds",
+    "null_threshold": "maximum corresponding margin among other-block mutual-neighbour null pairs",
+    "positive_labels_used_for_score_fit": false,
+    "other_block_truth_role": "identify empirical-null pairs only",
+    "base_union": "target-safe v4.53 hypotheses",
+    "bootstrap_unit": "whole training world sampled with replacement within source block",
+    "bootstrap_replicates": 100,
+    "bootstrap_frequency_threshold": 0.8,
+    "perfect_matching_assumed": false,
+    "fixed_shared_relationship_count_assumed": false,
+    "shared_component_rank_three_assumed": true,
+    "cell_coupling_constructed": false,
+    "conflict_handling": "merge connected assay pairs into one unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never within-assay direct structure, exact cross-assay feature identity, or direction"
+  },
+  "stability_audit": {
+    "nominal_new_proposals": 20,
+    "posttruth_nominal_true_pairs": 20,
+    "posttruth_nominal_false_pairs": 0,
+    "stable_new_proposals": 13,
+    "posttruth_stable_true_pairs": 13,
+    "posttruth_stable_false_pairs": 0,
+    "stable_additions_by_target_block": {
+      "development_34001_34016": 0,
+      "development_47001_47016": 1,
+      "train_41001_41024": 6,
+      "train_46001_46024": 2,
+      "train_49001_49024": 4
+    },
+    "two_random_panel_union_world_count": 80,
+    "worlds_unseen_by_either_random_panel": 23,
+    "stable_additions_on_unseen_23_worlds": 3,
+    "posttruth_true_additions_on_unseen_23_worlds": 3,
+    "posttruth_false_additions_on_unseen_23_worlds": 0
+  },
+  "numerical_reproducibility_audit": {
+    "independently_frozen_evidence_rows": 1194,
+    "maximum_absolute_difference_from_retrospective_feature_cache": 4.440892098500626e-16,
+    "unquantized_all103_diagnostic": "17 true and 0 false stable additions",
+    "problem": "machine-precision ordering of theoretically tied empirical-rank features changed four borderline bootstrap frequencies after a TSV round trip",
+    "resolution": "quantize the four model features to 12 decimal places before empirical ranking",
+    "production_result_after_resolution": "13 true and 0 false stable additions",
+    "conservative_choice": "the seven nominal proposals below 0.80 after deterministic quantization remain abstentions"
+  },
+  "random_panel_diagnostics": {
+    "random40_seed454000": "unquantized W2 global mirror selected 7 true and 0 false additions",
+    "disjoint_random40_seed454001": "unquantized W2 global mirror selected 4 true and 1 false addition; the small-panel null envelope was insufficient",
+    "all103_role": "the five leave-one-block-out calibrations use the complete existing cache to stabilize the empirical null; this is retrospective development, not fresh validation"
+  },
+  "published_method_inspiration": {
+    "unpaired_multi_domain_causal_representation": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning, DOI 10.52202/075280-1496",
+    "mmd_ma": "Liu, Huang, Singh, Vert, and Noble (WABI 2019), Jointly Embedding Multiple Single-Cell Omics Measurements, DOI 10.4230/LIPIcs.WABI.2019.10",
+    "scot": "Demetci, Santorella, Sandstede, Noble, and Singh (Journal of Computational Biology 2022), SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport, DOI 10.1089/cmb.2021.0446",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "relationship": "V4.54 borrows distribution matching and global registration ideas but deliberately does not construct cross-assay cell couplings. No publication contributes data, correspondence, modality identity, feature identity, or biological priors."
+  },
+  "limitations": {
+    "remaining_shared_state_hyperedge_abstentions": 100,
+    "complete_recovery_achieved": false,
+    "fresh_locked_generalization_established": false,
+    "cross_assay_direction_identified": false,
+    "shared_component_rank_is_estimated": false,
+    "interpretation": "V4.54 is the strongest conservative cached-world checkpoint, but all 103 worlds informed method development. Its 1.0 retrospective precision does not establish out-of-sample completeness or identify direct cross-assay effects from disjoint cells."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_wasserstein_geometry_rescue_v454_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "2206bea56204df06cd67f2148533334a8dbda6003bca86a0cf17c10236fc2562",
+    "campaign_summary_file_sha256": "d01c3fae960e7555838583417a67608e2e974c570469a4945f6ea03d34f0afba",
+    "campaign_world_metrics_sha256": "f5c67bbe5294f7272bbd05b8a633618fe82eab052cf0aa636f47533f445df9e2",
+    "campaign_panels_sha256": "5432e057f3774428b566e4ea7b5595edfc5335c6f67c81524d30984eb36deca4",
+    "evidence_manifest_payload_sha256": "f60cfc4d54b97b9aa9811bfc9d254f0d25bcbfa6322f877f3284b777746023ea",
+    "evidence_manifest_file_sha256": "6a7404d1150a79cf9cb4fa333cfbc344cf6dafface6d2e2d5217ddc341fa095a",
+    "evidence_table_sha256": "fad6c527b8734fe8724cb265b55a99855c92a81f5d7a318e13140732ddbc0a5e",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "7865a251a7ad9c55463ec157c765e1e89e8a02be5ef31540bffbfdad4db7d1d2",
+      "development_47001_47016": "5d854f8aa1c1727f4e81b21b4723605152c4a6ed5da3e6bad54a5905258ca7f5",
+      "train_41001_41024": "824d4972dcf579d2773236831db9017c77a8fe77a41a5c2cb33483f97d70c220",
+      "train_46001_46024": "bf00fec231d5d28c539b47f5f10ec96dd60e86bed9bf0a5157ecd2c29a2fc69e",
+      "train_49001_49024": "bc64d795b688aaa5a60975f816adb97b6d3efd9cc3b24a339aef8835f9ea49f6"
+    },
+    "evidence_source_sha256": "95176291d90281530c717ac1cc3006fe2ffec060380affc664c6e2218a9424e9",
+    "calibrator_source_sha256": "ea6370e61244a6b076f643765c5b9eaedd5e3aaa1f2b9a91099ceecf53c9ab94",
+    "scorer_source_sha256": "8553ccbe3ff7addd7bc1fa3f60d1eec5b51b72ae15b8e45348cccd6ba81ab46d"
+  }
+}

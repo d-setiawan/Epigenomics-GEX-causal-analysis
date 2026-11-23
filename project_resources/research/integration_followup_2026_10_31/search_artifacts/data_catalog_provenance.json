@@ -1,0 +1,1888 @@
+{
+  "schema": "integration_followup_data_catalog.v1",
+  "task_date": "2026-10-31",
+  "created_utc": "2026-11-01T01:19:07.114571+00:00",
+  "retrieval_contract": {
+    "target": "Up to three public single-cell RNA/H3K27ac/H3K4me3 datasets with explicit cohort, pairing, replicate and file metadata",
+    "scope": "targeted shortlist, not exhaustive census",
+    "organisms": [
+      "Homo sapiens",
+      "Mus musculus"
+    ],
+    "genomes": [
+      "GRCh38",
+      "mm10"
+    ],
+    "filters": "All three modalities available within study; tissue/species changes and partial pairing explicitly flagged; no large file download",
+    "count_reconciliation": "Complete sample ID sets checked for the four candidate constituent series; local filters retained specified samples only"
+  },
+  "local_evidence": [
+    {
+      "path": "pipelines/empirical/data/results/data_sources.md",
+      "bytes": 10581,
+      "sha256": "32526ee26eacbc97ef7fda4be764e1f5784f1ad8931c072a77267462a81dac83"
+    },
+    {
+      "path": "pipelines/empirical/data/results/biological_foundation_review_2026-09-10.md",
+      "bytes": 15348,
+      "sha256": "1430cd1bd1a073f01b3ea9cd8a5146b2dd52034d3ffe2b12e0d5596bc38c2010"
+    },
+    {
+      "path": "pipelines/empirical/data/results/biological_investigation_2026-09-11.md",
+      "bytes": 12484,
+      "sha256": "98288d9394a32f8804e4acba60f9c437f8245d90c08cc461230cd5423ac3c8e1"
+    },
+    {
+      "path": "pipelines/empirical/integration/results/biological_alignment_2026-09-16.md",
+      "bytes": 13118,
+      "sha256": "783d4068fb820b0f5cb7034552f9812c14a102fe922cee513ca37c2c857c547b"
+    },
+    {
+      "path": "pipelines/empirical/integration/manifests/scglue_input_manifest.tsv",
+      "bytes": 2778,
+      "sha256": "4b12447ff97f70f3c58ed48884ff00f36c8153c510548957e09caaf81c35f5b7"
+    },
+    {
+      "path": "pipelines/empirical/data/outputs/biology_review_2026-09-10/input_audit.json",
+      "bytes": 19566,
+      "sha256": "832d44120557e3ed3c9e7312ae56484ba562a121dc7b0b027ab0ccf74157cf46"
+    },
+    {
+      "path": "pipelines/empirical/data/outputs/biology_investigation_2026-09-11/adt_lineage.json",
+      "bytes": 504601,
+      "sha256": "deb769d4469fd1388a6d21e51c7a9b984010862390b944fcab437ce2e9c120a2"
+    },
+    {
+      "path": "pipelines/empirical/data/outputs/biology_investigation_2026-09-11/label_transfer_replay.json",
+      "bytes": 118316,
+      "sha256": "1cbd49e64944c7aa1c04e4134982acc8f05455a1662833bbe1a6c44652c12cd1"
+    },
+    {
+      "path": "pipelines/empirical/data/outputs/biology_investigation_2026-09-11/chromatin_retention.json",
+      "bytes": 225321,
+      "sha256": "c7617a22e124e06ae98fca471b3cda4eff1ffab7f390d34220e90157fa7c2be5"
+    },
+    {
+      "path": "pipelines/empirical/data/outputs/biology_investigation_2026-09-11/rna_annotations.json",
+      "bytes": 132740,
+      "sha256": "ff215ea50b77a52cb09539a4d86af815c0acaf7ef1bc9d44dad0d1e924071616"
+    },
+    {
+      "path": "pipelines/empirical/integration/comparisons/biology_alignment_2026-09-16/glue_full_development_v1/metrics.json",
+      "bytes": 663872,
+      "sha256": "849fac621e4b772496b54b87572d0c934b62da85d99d86fc9fd463b1db4a3a12"
+    },
+    {
+      "path": "pipelines/empirical/integration/comparisons/biology_alignment_2026-09-16/jianle_development_v1/metrics.json",
+      "bytes": 667054,
+      "sha256": "13dc6b343634b14e0c660570a183dab78074c9afe488e041d164aa821a26912a"
+    }
+  ],
+  "preferred_mark_saved_diagnostics": [
+    {
+      "run": "glue_full_development_v1",
+      "source": "H3K27ac",
+      "target": "H3K4me3",
+      "n_source": 5324,
+      "n_query": 1000,
+      "k": 25,
+      "raw_spearman": {
+        "T_minus_myeloid": 0.6448749002188036,
+        "B_minus_T": 0.5240190650038342,
+        "T_panel": 0.5628362820879005,
+        "myeloid_panel": 0.6248923739525936,
+        "B_panel": -0.0019800859748550855,
+        "isotype_mean": -0.06594059114129654,
+        "log_adt_total": 0.3214529262081702,
+        "log_fragment_depth": 0.015616854531085397
+      },
+      "adjusted_spearman": {
+        "T_minus_myeloid": 0.5514827274827275,
+        "B_minus_T": 0.4072319032319032,
+        "T_panel": 0.48474074874074874,
+        "myeloid_panel": 0.5001931761931762,
+        "B_panel": 0.10377723177723178,
+        "isotype_mean": -0.040436440436440436
+      },
+      "adjusted_T_minus_myeloid_null_quantiles": {
+        "0": -0.07659130059130059,
+        "0.1": -0.0041642705642705585,
+        "0.5": 0.06968045768045769,
+        "0.9": 0.13062989502989503,
+        "1": 0.22856372456372456
+      }
+    },
+    {
+      "run": "glue_full_development_v1",
+      "source": "H3K4me3",
+      "target": "H3K27ac",
+      "n_source": 6640,
+      "n_query": 1000,
+      "k": 25,
+      "raw_spearman": {
+        "T_minus_myeloid": 0.6443996001162959,
+        "B_minus_T": 0.5089070120923909,
+        "T_panel": 0.5658382361001205,
+        "myeloid_panel": 0.5666289312749945,
+        "B_panel": 0.041615120113222444,
+        "isotype_mean": 0.00970603174174418,
+        "log_adt_total": 0.2115728254344456,
+        "log_fragment_depth": 0.09006500105406982
+      },
+      "adjusted_spearman": {
+        "T_minus_myeloid": 0.5545004665004665,
+        "B_minus_T": 0.44956865356865355,
+        "T_panel": 0.5184562584562584,
+        "myeloid_panel": 0.44361887961887964,
+        "B_panel": 0.07264084864084865,
+        "isotype_mean": 0.025214473214473215
+      },
+      "adjusted_T_minus_myeloid_null_quantiles": {
+        "0": -0.08072386472386472,
+        "0.1": 0.031230738030738038,
+        "0.5": 0.10549472749472749,
+        "0.9": 0.16143482703482706,
+        "1": 0.20116137316137317
+      }
+    },
+    {
+      "run": "jianle_development_v1",
+      "source": "H3K27ac",
+      "target": "H3K4me3",
+      "n_source": 5324,
+      "n_query": 1000,
+      "k": 25,
+      "raw_spearman": {
+        "T_minus_myeloid": -0.11652311950293888,
+        "B_minus_T": -0.1191445225156277,
+        "T_panel": -0.13790160741667226,
+        "myeloid_panel": 0.06914233767083632,
+        "B_panel": 0.013798711342688544,
+        "isotype_mean": 0.021765795074105487,
+        "log_adt_total": 0.2185941523353387,
+        "log_fragment_depth": 0.7130261874210123
+      },
+      "adjusted_spearman": {
+        "T_minus_myeloid": -0.09345652545652545,
+        "B_minus_T": -0.03466107466107466,
+        "T_panel": -0.06409122409122409,
+        "myeloid_panel": -0.09248168048168048,
+        "B_panel": 0.04238077838077838,
+        "isotype_mean": -0.05212802812802813
+      },
+      "adjusted_T_minus_myeloid_null_quantiles": {
+        "0": -0.13414343014343014,
+        "0.1": -0.07055723255723256,
+        "0.5": 0.00657911457911458,
+        "0.9": 0.06982126716821761,
+        "1": 0.10168198168198168
+      }
+    },
+    {
+      "run": "jianle_development_v1",
+      "source": "H3K4me3",
+      "target": "H3K27ac",
+      "n_source": 6640,
+      "n_query": 1000,
+      "k": 25,
+      "raw_spearman": {
+        "T_minus_myeloid": -0.09525670426374486,
+        "B_minus_T": -0.07119854044320757,
+        "T_panel": -0.07953536438019854,
+        "myeloid_panel": 0.012955864751155483,
+        "B_panel": -0.012316187081785003,
+        "isotype_mean": 0.03721168290585739,
+        "log_adt_total": 0.13960513531252325,
+        "log_fragment_depth": 0.5967486274320282
+      },
+      "adjusted_spearman": {
+        "T_minus_myeloid": -0.013102981260217035,
+        "B_minus_T": -0.012971749010664257,
+        "T_panel": -0.011726339867055945,
+        "myeloid_panel": -0.013139707179126301,
+        "B_panel": -0.026880734961377165,
+        "isotype_mean": -0.03798858855841739
+      },
+      "adjusted_T_minus_myeloid_null_quantiles": {
+        "0": -0.06968009809817868,
+        "0.1": -0.046060320720668534,
+        "0.5": 0.001032403036224296,
+        "0.9": 0.04068359949160062,
+        "1": 0.06266626485426365
+      }
+    }
+  ],
+  "geo_series": [
+    {
+      "accession": "GSE152020",
+      "title": "Joint profiling of histone modifications and transcriptome in single cells from mouse brain",
+      "status": "Public on Dec 15 2020",
+      "last_update": "Feb 17 2021",
+      "sample_ids": [
+        "GSM4598799",
+        "GSM4598800",
+        "GSM4598801",
+        "GSM4598802",
+        "GSM4598803",
+        "GSM4598804",
+        "GSM4598805",
+        "GSM4598806",
+        "GSM4598807",
+        "GSM4598808",
+        "GSM4598809",
+        "GSM4598810",
+        "GSM4598811",
+        "GSM4598812",
+        "GSM4598813",
+        "GSM4598814",
+        "GSM4598815",
+        "GSM4598816",
+        "GSM4598817",
+        "GSM4598818",
+        "GSM4598819",
+        "GSM4598820",
+        "GSM4598821",
+        "GSM4598822",
+        "GSM4598823",
+        "GSM4598824",
+        "GSM4598825",
+        "GSM4598826",
+        "GSM4598827",
+        "GSM4598828",
+        "GSM4598829",
+        "GSM4598830",
+        "GSM4598831",
+        "GSM4598832",
+        "GSM4598833",
+        "GSM4598834",
+        "GSM4598835",
+        "GSM4598836",
+        "GSM4598837",
+        "GSM4598838",
+        "GSM4598839",
+        "GSM4598840",
+        "GSM4598841",
+        "GSM4598842",
+        "GSM4598843",
+        "GSM4598844",
+        "GSM4598845",
+        "GSM4598846",
+        "GSM4598847",
+        "GSM4598848",
+        "GSM4598849",
+        "GSM4598850",
+        "GSM4598851",
+        "GSM4598852",
+        "GSM4598853",
+        "GSM4598854",
+        "GSM4598855",
+        "GSM4598856",
+        "GSM4598857",
+        "GSM4598858",
+        "GSM4598859",
+        "GSM4598860",
+        "GSM4598861",
+        "GSM4598862",
+        "GSM4598863",
+        "GSM4598864",
+        "GSM4598865",
+        "GSM4598866",
+        "GSM4598867",
+        "GSM4598868",
+        "GSM4598869",
+        "GSM4598870",
+        "GSM4874890",
+        "GSM4874891",
+        "GSM4874892",
+        "GSM4874893",
+        "GSM4874894",
+        "GSM4874895",
+        "GSM4874896",
+        "GSM4874897",
+        "GSM4874898",
+        "GSM4874899",
+        "GSM4874900",
+        "GSM4874901",
+        "GSM4874902",
+        "GSM4874903",
+        "GSM4874904",
+        "GSM4874905",
+        "GSM4874906",
+        "GSM4874907",
+        "GSM4874908",
+        "GSM4874909",
+        "GSM4874910",
+        "GSM4874911",
+        "GSM4874912",
+        "GSM4874913",
+        "GSM4874914",
+        "GSM4874915",
+        "GSM4874916",
+        "GSM4874917",
+        "GSM4874918",
+        "GSM4874919"
+      ],
+      "processed_file_links": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_ChromHMM_output.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_H3K27ac_DNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_H3K27me3_DNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_H3K4me1_DNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_H3K4me3_DNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_H3K9me3_DNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_RNA_filtered_matrix.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-Tag_bigwigs.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE152nnn/GSE152020/suppl/GSE152020_Paired-seq_DNA_filtered_matrix.tar.gz"
+      ],
+      "relations": [
+        "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA638110",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP266461"
+      ],
+      "pubmed_ids": [
+        "33589836"
+      ],
+      "family_count_reconciliation": {
+        "expected": 102,
+        "retrieved": 102,
+        "unique": 102,
+        "exact_id_set_match": true
+      }
+    },
+    {
+      "accession": "GSE157637",
+      "title": "Single cell Cut&Tag in the mouse brain",
+      "status": "Public on Feb 10 2021",
+      "last_update": "May 13 2021",
+      "sample_ids": [
+        "GSM4771908",
+        "GSM4771909",
+        "GSM4771910",
+        "GSM4771911",
+        "GSM4771912",
+        "GSM4771913",
+        "GSM4771914",
+        "GSM4771915",
+        "GSM4771916",
+        "GSM4771917",
+        "GSM4771918",
+        "GSM4771919",
+        "GSM4771920",
+        "GSM4771921",
+        "GSM4771922",
+        "GSM4979958",
+        "GSM4979959"
+      ],
+      "processed_file_links": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_ABC_model_predictions.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K27ac_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K27me3_cell_lines_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K27me3_cell_lines_seurat_object.Rds.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K27me3_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K36me3_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_H3K4me3_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_Olig2_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_Rad21_matrix.h5",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_Seurat_v3_object.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_bigwig.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cicero_predictions.tar.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cluster_3T3.bw",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cluster_Oli-neu_1.bw",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cluster_Oli-neu_2.bw",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cluster_mESC_1.bw",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_cluster_mESC_2.bw",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_fragments.tsv.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157637/suppl/GSE157637_modified_fragments_file_cellranger.tar.gz"
+      ],
+      "relations": [
+        "SubSeries of: GSE163532",
+        "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA662308",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP281199"
+      ],
+      "pubmed_ids": [
+        "33846645"
+      ],
+      "family_count_reconciliation": {
+        "expected": 17,
+        "retrieved": 17,
+        "unique": 17,
+        "exact_id_set_match": true
+      }
+    },
+    {
+      "accession": "GSE163484",
+      "title": "Single cell RNA-seq of Sox10-Cre::GFP+ population",
+      "status": "Public on Feb 10 2021",
+      "last_update": "May 13 2021",
+      "sample_ids": [
+        "GSM4979874",
+        "GSM4979875"
+      ],
+      "processed_file_links": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE163nnn/GSE163484/suppl/GSE163484_RAW.tar",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE163nnn/GSE163484/suppl/GSE163484_scRNA_Sox10_GFP_metadata.csv.gz"
+      ],
+      "relations": [
+        "SubSeries of: GSE163532",
+        "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA686369",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP298453"
+      ],
+      "pubmed_ids": [
+        "33846645"
+      ],
+      "family_count_reconciliation": {
+        "expected": 2,
+        "retrieved": 2,
+        "unique": 2,
+        "exact_id_set_match": true
+      }
+    },
+    {
+      "accession": "GSE277778",
+      "title": "Combinatorial profiling of multiple histone modifications and transcriptome in single cells using scMTR-seq [single_cell]",
+      "status": "Public on Aug 07 2025",
+      "last_update": "Aug 13 2025",
+      "sample_ids": [
+        "GSM8529544",
+        "GSM8529545",
+        "GSM8529546",
+        "GSM8529547",
+        "GSM8529548",
+        "GSM8529549",
+        "GSM8529550",
+        "GSM8529551",
+        "GSM8529552",
+        "GSM8529553",
+        "GSM8529554",
+        "GSM8529555",
+        "GSM8529556",
+        "GSM8529557",
+        "GSM8529558",
+        "GSM8529559",
+        "GSM8529560",
+        "GSM8529561",
+        "GSM8529562",
+        "GSM8529563",
+        "GSM8529564",
+        "GSM8529565",
+        "GSM8529566",
+        "GSM8529567"
+      ],
+      "processed_file_links": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277778/suppl/GSE277778_RAW.tar",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277778/suppl/GSE277778_feature_reference.DNA.csv.gz",
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277778/suppl/GSE277778_feature_reference.RNA.csv.gz"
+      ],
+      "relations": [
+        "SubSeries of: GSE277856",
+        "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1164168"
+      ],
+      "pubmed_ids": [
+        "40768587"
+      ],
+      "family_count_reconciliation": {
+        "expected": 24,
+        "retrieved": 24,
+        "unique": 24,
+        "exact_id_set_match": true
+      }
+    },
+    {
+      "accession": "GSE195725",
+      "title": "Characterizing cellular heterogeneity in chromatin state with scCUT&Tag-pro",
+      "status": "Public on Feb 24 2022",
+      "last_update": "Feb 28 2022",
+      "sample_ids": [
+        "GSM5849206",
+        "GSM5849207",
+        "GSM5849208",
+        "GSM5849209",
+        "GSM5849210",
+        "GSM5849211",
+        "GSM5849212",
+        "GSM5849213",
+        "GSM5849214",
+        "GSM5849215",
+        "GSM5849216",
+        "GSM5849217",
+        "GSM5849218",
+        "GSM5849219",
+        "GSM5849220",
+        "GSM5849221",
+        "GSM5849222",
+        "GSM5849223",
+        "GSM5849224",
+        "GSM5849225",
+        "GSM5849226",
+        "GSM5849227",
+        "GSM5849228",
+        "GSM5849229"
+      ],
+      "processed_file_links": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE195nnn/GSE195725/suppl/GSE195725_RAW.tar"
+      ],
+      "relations": [
+        "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA802019"
+      ],
+      "pubmed_ids": []
+    }
+  ],
+  "selected_geo_sample_metadata": {
+    "GSE152020": [
+      {
+        "accession": "GSM4598815",
+        "title": "sc_Paired_tag_Brain_H3K4me1_H3K27ac_sub_library_DNA#01",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse frontal cortex and hippocampus"
+        ],
+        "characteristics": [
+          "chip antibody: H3K4me1 (ab8895) and H3K27ac (ab4729)"
+        ],
+        "description": [
+          "Paired-tag_H3K4me1_matrix.tar.gz"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN15168024",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX8497572"
+        ]
+      },
+      {
+        "accession": "GSM4598816",
+        "title": "sc_Paired_tag_Brain_H3K4me1_H3K27ac_sub_library_RNA#01",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse frontal cortex and hippocampus"
+        ],
+        "characteristics": [
+          "chip antibody: H3K4me1 (ab8895) and H3K27ac (ab4729)"
+        ],
+        "description": [
+          "Paired-tag_RNA_matrix.tar.gz"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN15168023",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX8497573"
+        ]
+      },
+      {
+        "accession": "GSM4874890",
+        "title": "sc_Paired_tag_Brain_H3K4me3_sub_library_DNA#01",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse frontal cortex and hippocampus"
+        ],
+        "characteristics": [
+          "tissue: Mouse frontal cortex and hippocampus",
+          "chip antibody: H3K4me3 (ab8580)"
+        ],
+        "description": [
+          "CZ581",
+          "processed data file: Paired-Tag_H3K4me3_DNA_filtered_matrix.tar.gz"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16611886",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9408830"
+        ]
+      },
+      {
+        "accession": "GSM4874891",
+        "title": "sc_Paired_tag_Brain_H3K4me3_sub_library_RNA#01",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse frontal cortex and hippocampus"
+        ],
+        "characteristics": [
+          "tissue: Mouse frontal cortex and hippocampus",
+          "chip antibody: H3K4me3 (ab8580)"
+        ],
+        "description": [
+          "CZ589",
+          "processed data file: Paired-Tag_RNA_filtered_matrix.tar.gz"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16611885",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9408831"
+        ]
+      }
+    ],
+    "GSE157637": [
+      {
+        "accession": "GSM4771908",
+        "title": "scC&T H3K4me3 brain P25 GFP pos rep1",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse brain"
+        ],
+        "characteristics": [
+          "strain: C57BL/6j",
+          "genotype: Sox10-Cre/RCE",
+          "tissue: brain",
+          "age: P25",
+          "c&t antibody: Diagenode C15410030",
+          "2nd antibody: Novus Biologicals NBP1-72763",
+          "tn5: In House pA-Tn5; 1:100"
+        ],
+        "description": [
+          "H3K4me3_fragments.tsv.gz",
+          "H3K4me3_Astrocytes.bw",
+          "H3K4me3_Microglia.bw",
+          "H3K4me3_mOL.bw",
+          "H3K4me3_Neurons_1.bw",
+          "H3K4me3_Neurons_2.bw",
+          "H3K4me3_Neurons_3.bw",
+          "H3K4me3_OEC.bw",
+          "H3K4me3_OPC.bw",
+          "H3K4me3_VLMC.bw",
+          "H3K4me3_seurat_object.Rds",
+          "H3K4me3_matrix.h5"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16079015",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9090623"
+        ]
+      },
+      {
+        "accession": "GSM4771909",
+        "title": "scC&T H3K4me3 brain P25 GFP pos rep2",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse brain"
+        ],
+        "characteristics": [
+          "strain: C57BL/6j",
+          "genotype: Sox10-Cre/RCE",
+          "tissue: brain",
+          "age: P25",
+          "c&t antibody: Diagenode C15410030",
+          "2nd antibody: Novus Biologicals NBP1-72763",
+          "tn5: In House pA-Tn5; 1:100"
+        ],
+        "description": [
+          "H3K4me3_fragments.tsv.gz",
+          "H3K4me3_Astrocytes.bw",
+          "H3K4me3_Microglia.bw",
+          "H3K4me3_mOL.bw",
+          "H3K4me3_Neurons_1.bw",
+          "H3K4me3_Neurons_2.bw",
+          "H3K4me3_Neurons_3.bw",
+          "H3K4me3_OEC.bw",
+          "H3K4me3_OPC.bw",
+          "H3K4me3_VLMC.bw",
+          "H3K4me3_seurat_object.Rds",
+          "H3K4me3_matrix.h5"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16079030",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9090624"
+        ]
+      },
+      {
+        "accession": "GSM4771916",
+        "title": "scC&T H3K27ac brain P25 GFP pos rep1",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse brain"
+        ],
+        "characteristics": [
+          "strain: C57BL/6j",
+          "genotype: Sox10-Cre/RCE",
+          "tissue: brain",
+          "age: P25",
+          "c&t antibody: Abcam Ab177178",
+          "2nd antibody: Novus Biologicals NBP1-72763",
+          "tn5: In House pA-Tn5; 1:100"
+        ],
+        "description": [
+          "H3K27ac_fragments.tsv.gz",
+          "OLIGO_ABC_EP_predictions_H3K4me3_filter.bedpe",
+          "OLIGO_ABC_EP_predictions_H3K4me3_Rad21_doublefilter.bedpe",
+          "OLIGO_ABC_EP_predictions_unfiltered.bedpe",
+          "H3K27ac_Astrocytes.bw",
+          "H3K27ac_mOL.bw",
+          "H3K27ac_OEC.bw",
+          "H3K27ac_OPC.bw",
+          "H3K27ac_VLMC.bw",
+          "cluster_Astrocytes.bedpe",
+          "cluster_mOL.bedpe",
+          "cluster_OEC.bedpe",
+          "cluster_OPC.bedpe",
+          "cluster_VLMC.bedpe",
+          "H3K27ac_seurat_object.Rds",
+          "H3K27ac_matrix.h5"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16079021",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9090631"
+        ]
+      },
+      {
+        "accession": "GSM4771917",
+        "title": "scC&T H3K27ac brain P25 GFP pos rep2",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Mouse brain"
+        ],
+        "characteristics": [
+          "strain: C57BL/6j",
+          "genotype: Sox10-Cre/RCE",
+          "tissue: brain",
+          "age: P25",
+          "c&t antibody: Abcam Ab177178",
+          "2nd antibody: Novus Biologicals NBP1-72763",
+          "tn5: In House pA-Tn5; 1:100"
+        ],
+        "description": [
+          "H3K27ac_fragments.tsv.gz",
+          "OLIGO_ABC_EP_predictions_H3K4me3_filter.bedpe",
+          "OLIGO_ABC_EP_predictions_H3K4me3_Rad21_doublefilter.bedpe",
+          "OLIGO_ABC_EP_predictions_unfiltered.bedpe",
+          "H3K27ac_Astrocytes.bw",
+          "H3K27ac_mOL.bw",
+          "H3K27ac_OEC.bw",
+          "H3K27ac_OPC.bw",
+          "H3K27ac_VLMC.bw",
+          "cluster_Astrocytes.bedpe",
+          "cluster_mOL.bedpe",
+          "cluster_OEC.bedpe",
+          "cluster_OPC.bedpe",
+          "cluster_VLMC.bedpe",
+          "H3K27ac_seurat_object.Rds",
+          "H3K27ac_matrix.h5"
+        ],
+        "processed_files": [
+          "NONE"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16079020",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9090632"
+        ]
+      }
+    ],
+    "GSE163484": [
+      {
+        "accession": "GSM4979874",
+        "title": "scRNA_seq 1",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "P21 Brain"
+        ],
+        "characteristics": [
+          "strain: C56BL/6j",
+          "genotype: Sox10:Cre RCE+"
+        ],
+        "description": [],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4979nnn/GSM4979874/suppl/GSM4979874_filtered_feature_bc_matrix_rep1.h5"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17112672",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9702231"
+        ]
+      },
+      {
+        "accession": "GSM4979875",
+        "title": "scRNA_seq 2",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "P21 Brain"
+        ],
+        "characteristics": [
+          "strain: C56BL/6j",
+          "genotype: Sox10:Cre RCE+"
+        ],
+        "description": [],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4979nnn/GSM4979875/suppl/GSM4979875_filtered_feature_bc_matrix_rep2.h5"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17112671",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9702232"
+        ]
+      }
+    ],
+    "GSE277778": [
+      {
+        "accession": "GSM8529544",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary1, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary1 and RNA sublibrary 1 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895589",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174532"
+        ]
+      },
+      {
+        "accession": "GSM8529545",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary2, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary2 and RNA sublibrary 2 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529545/suppl/GSM8529545_HIST_S2_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895588",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174533"
+        ]
+      },
+      {
+        "accession": "GSM8529546",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary3, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary3 and RNA sublibrary3 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529546/suppl/GSM8529546_HIST_S3_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895587",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174534"
+        ]
+      },
+      {
+        "accession": "GSM8529547",
+        "title": "Endoderm differentiation,  5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary4, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary4 and RNA sublibrary4 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529547/suppl/GSM8529547_HIST_S4_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895586",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174535"
+        ]
+      },
+      {
+        "accession": "GSM8529548",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary5, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary5 and RNA sublibrary5 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529548/suppl/GSM8529548_HIST_S5_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895585",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174536"
+        ]
+      },
+      {
+        "accession": "GSM8529549",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary6, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary6 and RNA sublibrary6 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529549/suppl/GSM8529549_HIST_S6_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895584",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174537"
+        ]
+      },
+      {
+        "accession": "GSM8529550",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary7, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary7 and RNA sublibrary7 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529550/suppl/GSM8529550_HIST_S7_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895583",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174538"
+        ]
+      },
+      {
+        "accession": "GSM8529551",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary8, DNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); Normal rabbit IgG (R&D, #AB-105-C)",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary8 and RNA sublibrary8 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529551/suppl/GSM8529551_HIST_S8_rbIgG.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895582",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174539"
+        ]
+      },
+      {
+        "accession": "GSM8529552",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round,scMTR-seq, sublibrary1, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary1 and RNA sublibrary 1 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895581",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174540"
+        ]
+      },
+      {
+        "accession": "GSM8529553",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary2, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary2 and RNA sublibrary 2 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529553/suppl/GSM8529553_Endo.S2.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529553/suppl/GSM8529553_Endo.S2.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529553/suppl/GSM8529553_Endo.S2.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895580",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174541"
+        ]
+      },
+      {
+        "accession": "GSM8529554",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary3, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary3 and RNA sublibrary3 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529554/suppl/GSM8529554_Endo.S3.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529554/suppl/GSM8529554_Endo.S3.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529554/suppl/GSM8529554_Endo.S3.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895579",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174542"
+        ]
+      },
+      {
+        "accession": "GSM8529555",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary4, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary4 and RNA sublibrary4 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529555/suppl/GSM8529555_Endo.S4.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529555/suppl/GSM8529555_Endo.S4.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529555/suppl/GSM8529555_Endo.S4.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895578",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174543"
+        ]
+      },
+      {
+        "accession": "GSM8529556",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary5, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary5 and RNA sublibrary5 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529556/suppl/GSM8529556_Endo.S5.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529556/suppl/GSM8529556_Endo.S5.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529556/suppl/GSM8529556_Endo.S5.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895577",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174544"
+        ]
+      },
+      {
+        "accession": "GSM8529557",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary6, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary6 and RNA sublibrary6 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529557/suppl/GSM8529557_Endo.S6.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529557/suppl/GSM8529557_Endo.S6.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529557/suppl/GSM8529557_Endo.S6.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895576",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174545"
+        ]
+      },
+      {
+        "accession": "GSM8529558",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary7, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary7 and RNA sublibrary7 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529558/suppl/GSM8529558_Endo.S7.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529558/suppl/GSM8529558_Endo.S7.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529558/suppl/GSM8529558_Endo.S7.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895575",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174546"
+        ]
+      },
+      {
+        "accession": "GSM8529559",
+        "title": "Endoderm differentiation, 5 histone marks and IgG control, 1 round, scMTR-seq, sublibrary8, RNA",
+        "organism": [
+          "Homo sapiens"
+        ],
+        "source": [
+          "H9"
+        ],
+        "characteristics": [
+          "cell line: H9",
+          "cell type: Human primed stem cells",
+          "antibody: none",
+          "treatment: Human definitive endoderm differentiation",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary8 and RNA sublibrary8 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529559/suppl/GSM8529559_Endo.S8.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529559/suppl/GSM8529559_Endo.S8.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529559/suppl/GSM8529559_Endo.S8.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895574",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174547"
+        ]
+      },
+      {
+        "accession": "GSM8529560",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary1, DNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); H3K9me3 (Abcam, #ab8898); Normal rabbit IgG (R&D, #AB-105-C)",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary1 and RNA sublibrary 1 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_H3K9me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_IgG1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529560/suppl/GSM8529560_E45_S1_IgG2.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895573",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174548"
+        ]
+      },
+      {
+        "accession": "GSM8529561",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary2, DNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); H3K9me3 (Abcam, #ab8898); Normal rabbit IgG (R&D, #AB-105-C)",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary2 and RNA sublibrary 2 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_H3K9me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_IgG1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529561/suppl/GSM8529561_E45_S2_IgG2.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895572",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174549"
+        ]
+      },
+      {
+        "accession": "GSM8529562",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary3, DNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); H3K9me3 (Abcam, #ab8898); Normal rabbit IgG (R&D, #AB-105-C)",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary3 and RNA sublibrary3 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_H3K9me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_IgG1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529562/suppl/GSM8529562_E45_S3_IgG2.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895571",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174550"
+        ]
+      },
+      {
+        "accession": "GSM8529563",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary4, DNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: H3K27me3 (CST, #9733S); H3K27ac (Abcam, #ab4729); H3K36me3 (Abcam, #ab9050); H3K4me1 (Abcam, #ab8895); H3K4me3 (Abcam, #ab8580); H3K9me3 (Abcam, #ab8898); Normal rabbit IgG (R&D, #AB-105-C)",
+          "library type: gDNA"
+        ],
+        "description": [
+          "Tn5 taggmented DNA",
+          "read1 file contains genomic fragment; read2 files contains cell barcodes, Ab id, UMI and genomic fragments",
+          "DNA sublibrary4 and RNA sublibrary4 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K27ac.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K27me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K36me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K4me1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K4me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_H3K9me3.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_IgG1.fragments.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529563/suppl/GSM8529563_E45_S4_IgG2.fragments.tsv.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895570",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174551"
+        ]
+      },
+      {
+        "accession": "GSM8529564",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary1, RNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: none",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary1 and RNA sublibrary 1 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529564/suppl/GSM8529564_E45.S1.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529564/suppl/GSM8529564_E45.S1.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529564/suppl/GSM8529564_E45.S1.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895569",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174552"
+        ]
+      },
+      {
+        "accession": "GSM8529565",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary2, RNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: none",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary2 and RNA sublibrary 2 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529565/suppl/GSM8529565_E45.S2.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529565/suppl/GSM8529565_E45.S2.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529565/suppl/GSM8529565_E45.S2.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895568",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174553"
+        ]
+      },
+      {
+        "accession": "GSM8529566",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary3, RNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: none",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary3 and RNA sublibrary3 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529566/suppl/GSM8529566_E45.S3.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529566/suppl/GSM8529566_E45.S3.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529566/suppl/GSM8529566_E45.S3.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895567",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174554"
+        ]
+      },
+      {
+        "accession": "GSM8529567",
+        "title": "E4.5, 6 histone marks and IgG control, 3 rounds, scMTR-seq, sublibrary4, RNA",
+        "organism": [
+          "Mus musculus"
+        ],
+        "source": [
+          "Whole embryo"
+        ],
+        "characteristics": [
+          "developmental stage: E4.5 blastocysts",
+          "strain: B6CBAF1",
+          "cell type: Whole embryo",
+          "antibody: none",
+          "library type: mRNA"
+        ],
+        "description": [
+          "polyA RNA",
+          "read1 file contains transcript; read2 files contains cell barcodes, Ab id, UMI and transcript",
+          "DNA sublibrary4 and RNA sublibrary4 are from same sample"
+        ],
+        "processed_files": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529567/suppl/GSM8529567_E45.S4.barcodes.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529567/suppl/GSM8529567_E45.S4.features.tsv.gz",
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529567/suppl/GSM8529567_E45.S4.matrix.mtx.gz"
+        ],
+        "relations": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43895566",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26174555"
+        ]
+      }
+    ]
+  },
+  "primary_articles": [
+    {
+      "pmcid": "PMC7954905",
+      "title": "Joint profiling of histone modifications and transcriptome in single cells from mouse brain",
+      "identifiers": {
+        "pmcid": "PMC7954905",
+        "pmcid-ver": "PMC7954905.1",
+        "pmid": "33589836",
+        "doi": "10.1038/s41592-021-01060-3"
+      }
+    },
+    {
+      "pmcid": "PMC7611252",
+      "title": "Single-cell CUT&Tag profiles histone modifications and transcription factors in complex tissues",
+      "identifiers": {
+        "pmcid": "PMC7611252",
+        "pmcid-ver": "PMC7611252.1",
+        "pmid": "33846645",
+        "doi": "10.1038/s41587-021-00869-9"
+      }
+    },
+    {
+      "pmcid": "PMC12327464",
+      "title": "Combinatorial profiling of multiple histone modifications and transcriptome in single cells using scMTR-seq",
+      "identifiers": {
+        "pmcid": "PMC12327464",
+        "pmcid-ver": "PMC12327464.1",
+        "pmid": "40768587",
+        "doi": "10.1126/sciadv.adu3308"
+      }
+    }
+  ],
+  "remote_retrievals": [
+    {
+      "id": "GSE152020",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152020&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152020&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:15.005596+00:00",
+      "bytes": 7088,
+      "sha256": "07a8e9d7f324440f4fe17bf655314b75960965a814f9402218194aefc808bab1"
+    },
+    {
+      "id": "GSE157637",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157637&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157637&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:15.578431+00:00",
+      "bytes": 4948,
+      "sha256": "680bbed709c103249854fba090c6a7c43fc45f8378a1df4d8a2874386252004f"
+    },
+    {
+      "id": "GSE163484",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163484&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163484&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:16.192444+00:00",
+      "bytes": 1971,
+      "sha256": "9dd26de18ae0355375d0b00f1f7add3c17d967b3b4fb211d4a9bc6333761db25"
+    },
+    {
+      "id": "GSE277778",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277778&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277778&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:16.805769+00:00",
+      "bytes": 4019,
+      "sha256": "505e74e84744c94a8f8528eb74c29aef825a47499f163d7a8fef6f100ed5c63f"
+    },
+    {
+      "id": "GSE195725",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE195725&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE195725&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:17.413025+00:00",
+      "bytes": 3405,
+      "sha256": "927ccacba2a28e93e2e6fdc6cf3cfe6bb4b9a530996dae52bd3daddfd1345682"
+    },
+    {
+      "id": "PMC7954905",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7954905&retmode=xml&tool=codex_dataset_catalog",
+      "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7954905&retmode=xml&tool=codex_dataset_catalog",
+      "retrieved_utc": "2026-11-01T01:16:18.036556+00:00",
+      "bytes": 151921,
+      "sha256": "def90fab0b03348f43caa2ebd9fa119297250bd6cf59fc99af6d2810e1a31662"
+    },
+    {
+      "id": "PMC7611252",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7611252&retmode=xml&tool=codex_dataset_catalog",
+      "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=7611252&retmode=xml&tool=codex_dataset_catalog",
+      "retrieved_utc": "2026-11-01T01:16:18.812353+00:00",
+      "bytes": 132920,
+      "sha256": "f7d899c2ef33a22c0dff60bcccbdbb879acc7b677ef03a68a2fbb075d9bcbbad"
+    },
+    {
+      "id": "PMC12327464",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12327464&retmode=xml&tool=codex_dataset_catalog",
+      "resolved_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12327464&retmode=xml&tool=codex_dataset_catalog",
+      "retrieved_utc": "2026-11-01T01:16:19.585404+00:00",
+      "bytes": 193412,
+      "sha256": "79c567d4e5d5a338580b44dc4a3145eb4d8fcae8a46aea93e1e250740d8dfe2e"
+    },
+    {
+      "id": "GSE152020_samples",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152020&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE152020&targ=gsm&form=text&view=brief",
+      "retrieved_utc": "2026-11-01T01:16:54.341322+00:00",
+      "bytes": 505070,
+      "sha256": "f0e68540f9547dfb3c10d55843239f2fd1f13d32b24fa482518c6e939f544cdf"
+    },
+    {
+      "id": "GSM8529544",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529544&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529544&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:58.268740+00:00",
+      "bytes": 8338,
+      "sha256": "bf22eb4c0e08da8df7389bba98db65de467741908a9dae937eea79b12308bb85"
+    },
+    {
+      "id": "GSM8529552",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529552&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529552&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:58.872868+00:00",
+      "bytes": 7703,
+      "sha256": "274b957cfbcae5b6d51c2c301343db1fc945c09b5af9b2b93f75d9ecfcf74213"
+    },
+    {
+      "id": "GSM8529560",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529560&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529560&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:16:59.475711+00:00",
+      "bytes": 8598,
+      "sha256": "8f88f4b3fd69237de03e33499881e60b84be429dd08ba9e1fe4a44657101fb3f"
+    },
+    {
+      "id": "GSM8529564",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529564&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8529564&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:17:00.099281+00:00",
+      "bytes": 7661,
+      "sha256": "05439a2c6883b6e7e7a96caece919a6118318d604e587a819dfb2b7f32885c4d"
+    },
+    {
+      "id": "GSM4771908",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4771908&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4771908&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:17:00.707904+00:00",
+      "bytes": 3685,
+      "sha256": "391a9f4b78a642ac90e7b12bc8aff4322225fb590e536ebadd64138724bdf4c1"
+    },
+    {
+      "id": "GSM4771916",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4771916&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4771916&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:17:01.305717+00:00",
+      "bytes": 3932,
+      "sha256": "6c1bd5114311e8145dfaa689a3b739ba43d9155e8c90fb314ffd104347f77904"
+    },
+    {
+      "id": "GSM4979874",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4979874&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4979874&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:17:01.914631+00:00",
+      "bytes": 2200,
+      "sha256": "050f7ff104aed36d6ac222127fc5d7b2e55b5e2d33f9f5af3f2c76f900d83286"
+    },
+    {
+      "id": "GSM4979875",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4979875&targ=self&form=text&view=full",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4979875&targ=self&form=text&view=full",
+      "retrieved_utc": "2026-11-01T01:17:02.548852+00:00",
+      "bytes": 2200,
+      "sha256": "e509bfca9d6607d9046b39746816a762730bc34e8e1bbb1cc35ba287b710bc84"
+    },
+    {
+      "id": "GSE157637_samples",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157637&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157637&targ=gsm&form=text&view=brief",
+      "retrieved_utc": "2026-11-01T01:18:07.888796+00:00",
+      "bytes": 61075,
+      "sha256": "4b32246ad4171ceb6215f7ae10f7b8b75e8eb999634afca7193e467741af4bb1"
+    },
+    {
+      "id": "GSE163484_samples",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163484&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163484&targ=gsm&form=text&view=brief",
+      "retrieved_utc": "2026-11-01T01:18:09.049474+00:00",
+      "bytes": 4400,
+      "sha256": "29bda836c3c5acbadb1f6425b938b4f99e7fcf14a83eb265d86fec9019049cb2"
+    },
+    {
+      "id": "GSE277778_samples",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277778&targ=gsm&form=text&view=brief",
+      "resolved_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277778&targ=gsm&form=text&view=brief",
+      "retrieved_utc": "2026-11-01T01:18:09.692752+00:00",
+      "bytes": 193356,
+      "sha256": "365731e86cc318df9245105ed80271f8e81d1c5903dc536eb8247461a580b428"
+    }
+  ],
+  "search_provenance": {
+    "databases": [
+      "NCBI GEO",
+      "PubMed Central",
+      "10x Genomics official dataset portal"
+    ],
+    "discovery_queries": [
+      "Paired-Tag H3K27ac H3K4me3 RNA GEO mouse brain GSE",
+      "CoTECH H3K27ac H3K4me3 RNA GEO joint single-cell",
+      "uCoTargetX histone RNA GEO",
+      "Combinatorial profiling of multiple histone modifications and transcriptome in single cells using scMTR-seq GEO data availability",
+      "GSE163484 replicates",
+      "GSE152020 filtered_matrix"
+    ],
+    "mode": "Web discovery followed by exact GEO SOFT metadata and PMC JATS XML; full text inspected only for primary papers"
+  },
+  "limits": [
+    "No biological count matrices, sequencing reads, private arrays or model checkpoints downloaded or opened in this task.",
+    "Saved local development diagnostic JSON was read; no private assessment outcomes released.",
+    "No fitting, re-labeling, QC filtering, causal scoring, or experiment/selection changes.",
+    "Processed data availability was verified by repository metadata links; matrix content, QC, barcode pairing and checksums were not independently checked.",
+    "Sublibraries are not assumed to be independent biological replicates; individual/donor matching is not inferred from common study membership.",
+    "Paired external datasets are optional expanded evidence requiring a separate approved intake/benchmark protocol.",
+    "Unauthenticated direct browser NCBI access often returned CAPTCHA and sandbox networking had no DNS; bounded read-only network retrieval then succeeded."
+  ],
+  "web_primary_source_verifications": [
+    {
+      "url": "https://www.10xgenomics.com/datasets/10k_Human_PBMC_5p_v3_Ultima",
+      "title": "10k Human PBMCs, Ultima Sequencing",
+      "observed_fields": {
+        "donor_count": 1,
+        "sample": "healthy-donor PBMC",
+        "software": "Cell Ranger 9.0.1",
+        "sequencer": "Ultima UG100",
+        "date_published": "2025-05-28"
+      },
+      "route": "web search result from official vendor portal; local library identity independently documented in existing data_sources.md",
+      "access_date_utc": "2026-11-01",
+      "response_byte_hash_available": false
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10796078/",
+      "title": "Single-cell joint profiling of multiple epigenetic proteins and gene transcription",
+      "doi": "10.1126/sciadv.adi3664",
+      "pmid": "38170774",
+      "route": "web search result full-text passages from PMC and PubMed; used only to exclude an incorrectly combined modality claim",
+      "verified_scope": "uCoTargetX RNA examples are H3K27ac+H3K27me3 or RUNX1+H3K27ac; H3K4me3+H3K27ac example is uCoTarget without RNA",
+      "access_date_utc": "2026-11-01",
+      "response_byte_hash_available": false
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9378363/",
+      "title": "Characterizing cellular heterogeneity in chromatin state with scCUT&Tag-pro",
+      "doi": "10.1038/s41587-022-01250-0",
+      "route": "web search result full-text passages from PMC, checked against existing local source audit",
+      "verified_scope": "six histone targets; 173 surface antibodies; five hashtagged tubes; cross-experiment reference mapping uses surface proteins",
+      "access_date_utc": "2026-11-01",
+      "response_byte_hash_available": false
+    }
+  ]
+}

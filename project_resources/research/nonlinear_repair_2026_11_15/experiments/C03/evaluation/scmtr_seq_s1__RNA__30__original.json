@@ -1,0 +1,80 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -43.667193930209606,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0580372451166126,
+        "standardized_offdiag_covariance_rmse": 0.13240279373806824,
+        "standardized_variance_rmse": 0.7398247823591267,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.2743040513845777,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -35.44998650932478,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.058037245740446025,
+        "standardized_offdiag_covariance_rmse": 0.0805508418920112,
+        "standardized_variance_rmse": 0.6293168288969698,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.19535375935278523,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": {
+    "30": {
+      "features": 30,
+      "log_score": -37.325803910427695,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.08046261350345821,
+      "standardized_offdiag_covariance_rmse": 0.10843294456792675,
+      "standardized_variance_rmse": 0.7489123472233049,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.18705356258920194,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -39.880362238758686,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.05976527928198291,
+      "standardized_offdiag_covariance_rmse": 0.13848725724990726,
+      "standardized_variance_rmse": 0.5722703121604715,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.2245920679027578,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "scmtr_seq_s1__RNA__30__original",
+    "best_completed_objective": -5.38976558158243,
+    "best_completed_seed": 0,
+    "complete_application": true,
+    "elapsed_seconds": 2.274158628002624,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

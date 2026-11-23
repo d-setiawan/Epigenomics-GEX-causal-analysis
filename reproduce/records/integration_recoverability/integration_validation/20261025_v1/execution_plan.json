@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "study_id": "integration_validation_20261025_v1",
+  "purpose": "Seeded within-world execution order; does not change candidate selection, data, parameters, or inference.",
+  "order_seed": 20261025,
+  "order_generator": "numpy.default_rng PCG64; shuffle world blocks, then method/candidate jobs within each block",
+  "runtime_library": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96",
+  "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+  "runtime_provenance": "project_resources/research/integration_validation_2026_10_25/reviews/cuda_runtime_isolation_2026_10_25.json",
+  "selection_fit_jobs": [
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "adversarial_low",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "align_high",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "gamma_low",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "baseline",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "baseline",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "align_low",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "beta_low",
+      "seed": 0
+    },
+    {
+      "world": "linear_chain_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "latent_small",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "align_low",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "beta_low",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "align_high",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "adversarial_low",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "baseline",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "gamma_low",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scmrdr",
+      "candidate": "baseline",
+      "seed": 0
+    },
+    {
+      "world": "constrained_collider_0",
+      "regime": "informative",
+      "method": "scglue",
+      "candidate": "latent_small",
+      "seed": 0
+    }
+  ]
+}

@@ -1,0 +1,797 @@
+{
+  "audit_script_sha256": "0eda5d6b303709bead53d1964884dd21b2c17e77a93180ac00cb5afb27050e36",
+  "convergence_outcomes": {
+    "plain_unbounded/gradient_convergence": 36,
+    "source_search/gradient_convergence": 36
+  },
+  "counts": {
+    "boolean_checks": 6822,
+    "hash_comparisons": 144,
+    "main_bootstrap_intervals_recomputed": 216,
+    "numeric_comparisons": 5220,
+    "outer_objectives_recomputed": 72,
+    "selected_directions_recomputed": 108
+  },
+  "created_utc": "2026-11-16T01:18:43.871476+00:00",
+  "exploratory": true,
+  "independent_selected_autodiff": {
+    "d1_rep0__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.706720106442742e-07,
+      "objective": 1.3357304335100142
+    },
+    "d1_rep0__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 8.286846152567268e-07,
+      "objective": 1.335730433582928
+    },
+    "d1_rep1__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.391778514454831e-07,
+      "objective": 1.2928022075071433
+    },
+    "d1_rep1__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 4.712829452279878e-07,
+      "objective": 1.29280220701547
+    },
+    "d1_rep2__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 7.51587288257168e-07,
+      "objective": 1.3215782434033088
+    },
+    "d1_rep2__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 6.382495668048068e-07,
+      "objective": 1.3215782444472823
+    },
+    "d2_rep0__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.69728526289392e-07,
+      "objective": 1.3596036732271375
+    },
+    "d2_rep0__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 7.460617647941079e-07,
+      "objective": 1.3596036730363683
+    },
+    "d2_rep1__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 8.163206176269982e-07,
+      "objective": 1.3875308069448322
+    },
+    "d2_rep1__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 5.344251183092401e-07,
+      "objective": 1.3560309065815632
+    },
+    "d2_rep2__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.320369719700112e-07,
+      "objective": 1.3420320804498647
+    },
+    "d2_rep2__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.914302302794939e-07,
+      "objective": 1.3420320806692276
+    },
+    "d3_rep0__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.40999391784228e-07,
+      "objective": 1.3809029750324915
+    },
+    "d3_rep0__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.768935067582587e-07,
+      "objective": 1.3455613436071983
+    },
+    "d3_rep1__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 7.23678812444839e-07,
+      "objective": 1.405992397701557
+    },
+    "d3_rep1__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 3.701055780347332e-07,
+      "objective": 1.3720636844645189
+    },
+    "d3_rep2__n12000__plain_unbounded": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 8.928146776610024e-07,
+      "objective": 1.3950186595424166
+    },
+    "d3_rep2__n12000__source_search": {
+      "gradient_converged": true,
+      "gradient_inf_norm": 9.393444126623766e-07,
+      "objective": 1.3834269964841464
+    }
+  },
+  "inner_inventory": {
+    "mixture_records": 432,
+    "refinement_missing_models": 0,
+    "refinement_records": 180
+  },
+  "issues": [],
+  "limitations": [
+    "Already assessed worlds remain exploratory; numerical correctness does not supply fresh validation.",
+    "Stationarity does not certify a global optimum; a negative generating-point objective gap is not an optimality certificate."
+  ],
+  "maximum_absolute_errors": {
+    "bootstrap_ci95": 1.5099900496640117e-14,
+    "bootstrap_feature_ci95": 6.287085110336099e-16,
+    "calibration_assay": 1.1102230246251565e-15,
+    "calibration_total": 4.440892098500626e-16,
+    "canonical_vertex_prior": 0.0,
+    "canonical_vertex_rates": 1.1102230246251565e-16,
+    "count_covariance": 2.2737367544323206e-13,
+    "feasible_point_gap": 6.661338147750939e-16,
+    "global_canonical_rates": 1.7763568394002505e-15,
+    "global_canonical_weights": 1.1102230246251565e-16,
+    "independent_source_weights": 1.1102230246251565e-16,
+    "mean_transport": 2.6645352591003757e-15,
+    "predictive_feature_mean": 6.661338147750939e-16,
+    "predictive_mean": 1.5368348954547528e-14,
+    "raw_training_objective": 4.440892098500626e-16,
+    "restricted_transport": 2.6645352591003757e-15,
+    "strict_model_identity": 1.7763568394002505e-15,
+    "support_transport": 6.661338147750939e-16,
+    "torch_full_gradient": 2.8835440979424476e-15,
+    "torch_gradient_norm": 2.682749855598132e-15,
+    "torch_objective": 4.440892098500626e-16,
+    "torch_projected_gradient_norm": 2.682749855598132e-15,
+    "training_objective": 4.440892098500626e-16,
+    "training_scales": 0.0,
+    "true_feasible_objective": 4.440892098500626e-16
+  },
+  "methods": "Independent SciPy Poisson probabilities, NumPy moment/lstsq transport, Torch float64 gradients in raw unbounded vertex coordinates, calibration and inner-selection replay, and bootstrap quantile replay for selected predictive gains and oracle gaps.",
+  "not_repeated": [
+    "No fitting, count generation, EM optimization replay, or exhaustive initializer reconstruction.",
+    "Inner candidate selection replays stored training objectives; independent full-data objectives are recomputed for every returned outer model.",
+    "Exact recovery metrics and gradients are replayed for selected outer fits; unselected outer training/calibration objectives are also checked.",
+    "Bootstrap quantiles for other descriptive metrics are not replayed."
+  ],
+  "reviewer": "Runner/evaluator implementer; not the source-search optimizer author. Independent numerical replay without importing fitting or evaluation code.",
+  "sealed_hashes": {
+    "evaluation.json": "0d8cc7c9fc2e5ee4723c3b77c67201f40752e20adbe103fdd4faf1341c180f39",
+    "evaluation_seal.json": "a015532c4767700e62d6810ea14badf91e6d25d5e9eb1db6442f249ebb830754",
+    "fit_seal.json": "67b7ee1e928ce93d6b430be63c880559c4027b625edcb3ad85bced0627eaa45a",
+    "protocol.json": "e491cc87f52f696f48791edf834e3f91ea45562da1d70254aae0034122a1bbe3"
+  },
+  "selected_results": {
+    "d1_rep0__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.010570271596899833,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01960005516395169
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.019900874685054817,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014680090058351166
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.010570271596899791,
+          "recovery_pass": true,
+          "transport_relative_error": 0.016608653634484036
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.01394406181606845,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014678273392344999
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.019900874685054682,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01684867198338713
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.013944061816068502,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019802494562404255
+        }
+      },
+      "selected": "fits/d1_rep0__n12000__plain_unbounded__seed2.json"
+    },
+    "d1_rep0__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.010582403833139499,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019551750875967
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.019907545875260144,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014654436627453391
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.010582403833139496,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01655812316612176
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.013940033249228418,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014654759248272952
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.019907545875260044,
+          "recovery_pass": true,
+          "transport_relative_error": 0.016797928058213216
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.013940033249228411,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019755465464890723
+        }
+      },
+      "selected": "fits/d1_rep0__n12000__source_search__seed3.json"
+    },
+    "d1_rep1__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.04466774568984993,
+          "recovery_pass": true,
+          "transport_relative_error": 0.042161274795194575
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.02657422191895882,
+          "recovery_pass": true,
+          "transport_relative_error": 0.013381226733657206
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.044667745689849686,
+          "recovery_pass": true,
+          "transport_relative_error": 0.029214982398944496
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.04200084000307814,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022636799593011205
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.0265742219189587,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02393784484505298
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.042000840003078146,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04281517287461533
+        }
+      },
+      "selected": "fits/d1_rep1__n12000__plain_unbounded__seed0.json"
+    },
+    "d1_rep1__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.04463905139468174,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04186974756707458
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.026525367912886406,
+          "recovery_pass": true,
+          "transport_relative_error": 0.013383178417224337
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.04463905139468157,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02899567765676427
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.041963551842014946,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02190160097502795
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.02652536791288616,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023885815965413514
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.04196355184201484,
+          "recovery_pass": true,
+          "transport_relative_error": 0.042247715074944354
+        }
+      },
+      "selected": "fits/d1_rep1__n12000__source_search__seed0.json"
+    },
+    "d1_rep2__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.013310729757538461,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0484771695235418
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.011549751954186465,
+          "recovery_pass": true,
+          "transport_relative_error": 0.026772695792003243
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.013310729757538482,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027060136904940114
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.0180529267028962,
+          "recovery_pass": true,
+          "transport_relative_error": 0.032850793921489964
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.01154975195418644,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02333003508258211
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.01805292670289625,
+          "recovery_pass": true,
+          "transport_relative_error": 0.050157436696226854
+        }
+      },
+      "selected": "fits/d1_rep2__n12000__plain_unbounded__seed3.json"
+    },
+    "d1_rep2__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.013300528009122809,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04844058934886172
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.01155759753152938,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027099226324411457
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.013300528009122665,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027130628821550155
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.018046552176801945,
+          "recovery_pass": true,
+          "transport_relative_error": 0.033252296386818245
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.011557597531529412,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023367590585873777
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.018046552176802035,
+          "recovery_pass": true,
+          "transport_relative_error": 0.05018645972866235
+        }
+      },
+      "selected": "fits/d1_rep2__n12000__source_search__seed1.json"
+    },
+    "d2_rep0__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.018112701300051624,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02109750021970495
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.0250376593677904,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02512373077645831
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.018112701300051624,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023843652877761752
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.03137429027370589,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02442857887734577
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.02503765936779039,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022841681553925727
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.03137429027370591,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019050659384058567
+        }
+      },
+      "selected": "fits/d2_rep0__n12000__plain_unbounded__seed0.json"
+    },
+    "d2_rep0__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.01810668865998298,
+          "recovery_pass": true,
+          "transport_relative_error": 0.021201443746163826
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.02503600493051898,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0250329209950384
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.018106688659983012,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02392355013120947
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.031368587125562654,
+          "recovery_pass": true,
+          "transport_relative_error": 0.024353587510531485
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.025036004930518992,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022869238894233344
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.03136858712556262,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019121703360499318
+        }
+      },
+      "selected": "fits/d2_rep0__n12000__source_search__seed1.json"
+    },
+    "d2_rep1__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.5934828888625723,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0821983350381782
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.5293690555614445,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4070393914171064
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.5934828888625718,
+          "recovery_pass": false,
+          "transport_relative_error": 0.08459481768620356
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.9524946562810672,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4066350731461028
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.529369055561445,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4571596990867535
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.952494656281067,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4623347620585803
+        }
+      },
+      "selected": "fits/d2_rep1__n12000__plain_unbounded__seed2.json"
+    },
+    "d2_rep1__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.014497298445486168,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02235319698407374
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.017138796428998408,
+          "recovery_pass": true,
+          "transport_relative_error": 0.026057557559347435
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.014497298445486188,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02216618222938635
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.01837115093814511,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02511162913550211
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.017138796428998467,
+          "recovery_pass": true,
+          "transport_relative_error": 0.021388618397720265
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.018371150938145155,
+          "recovery_pass": true,
+          "transport_relative_error": 0.020427256540440003
+        }
+      },
+      "selected": "fits/d2_rep1__n12000__source_search__seed1.json"
+    },
+    "d2_rep2__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.024789891171864937,
+          "recovery_pass": true,
+          "transport_relative_error": 0.025581372927669772
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.0137347325060901,
+          "recovery_pass": true,
+          "transport_relative_error": 0.024445953572205015
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.024789891171864958,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02758616585357291
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.01552188697267541,
+          "recovery_pass": true,
+          "transport_relative_error": 0.024313222603116174
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.013734732506090076,
+          "recovery_pass": true,
+          "transport_relative_error": 0.028201522970699743
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.015521886972675446,
+          "recovery_pass": true,
+          "transport_relative_error": 0.026087809948210996
+        }
+      },
+      "selected": "fits/d2_rep2__n12000__plain_unbounded__seed3.json"
+    },
+    "d2_rep2__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.02479303757970852,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02566028170504177
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.013730623909175909,
+          "recovery_pass": true,
+          "transport_relative_error": 0.024453089538032307
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.02479303757970861,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027554026058142538
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.01552879551879795,
+          "recovery_pass": true,
+          "transport_relative_error": 0.024320889308324708
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.013730623909175933,
+          "recovery_pass": true,
+          "transport_relative_error": 0.028164718100976906
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.015528795518797985,
+          "recovery_pass": true,
+          "transport_relative_error": 0.026159621521972064
+        }
+      },
+      "selected": "fits/d2_rep2__n12000__source_search__seed3.json"
+    },
+    "d3_rep0__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.03233283921744,
+          "recovery_pass": false,
+          "transport_relative_error": 1.64557864465698
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.0450857333075025,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2061162017840619
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.0323328392174393,
+          "recovery_pass": false,
+          "transport_relative_error": 1.9035191390959856
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 8.063150663918952,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7730166106798562
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.0450857333075025,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1155572867573484
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 8.06315066391895,
+          "recovery_pass": false,
+          "transport_relative_error": 1.5292196161973841
+        }
+      },
+      "selected": "fits/d3_rep0__n12000__plain_unbounded__seed1.json"
+    },
+    "d3_rep0__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.009204392952851024,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019569406503518794
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.018258008264787177,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019597807896383674
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.009204392952851092,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019258844154109556
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.011195446968110074,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01830759317401081
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.01825800826478719,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01972077880741235
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.011195446968110078,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01878550487541233
+        }
+      },
+      "selected": "fits/d3_rep0__n12000__source_search__seed1.json"
+    },
+    "d3_rep1__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.117872015631764,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1507488785549447
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.4941430895498828,
+          "recovery_pass": false,
+          "transport_relative_error": 0.8279143125403352
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.117872015631764,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1479293633982937
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 4.1212079868467955,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3279337966566327
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.4941430895498828,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2264058363029704
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 4.121207986846795,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7853635073853724
+        }
+      },
+      "selected": "fits/d3_rep1__n12000__plain_unbounded__seed3.json"
+    },
+    "d3_rep1__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.017300113467797543,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023910396258762814
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.01158518867913895,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02166097043260598
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.017300113467797522,
+          "recovery_pass": true,
+          "transport_relative_error": 0.028061073755930133
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.015469181744243575,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022127685219762827
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.01158518867913894,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027191423223228015
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.015469181744243617,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02333019240281658
+        }
+      },
+      "selected": "fits/d3_rep1__n12000__source_search__seed3.json"
+    },
+    "d3_rep2__n12000__plain_unbounded": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.919412490682833,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1524690519103729
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.9230859123287111,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1053967018401563
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.9194124906828333,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1648318069396886
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.4904347321045676,
+          "recovery_pass": false,
+          "transport_relative_error": 1.109162824337238
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.9230859123287112,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1825132985668394
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.4904347321045677,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2615111752936585
+        }
+      },
+      "selected": "fits/d3_rep2__n12000__plain_unbounded__seed2.json"
+    },
+    "d3_rep2__n12000__source_search": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.008121878772999606,
+          "recovery_pass": true,
+          "transport_relative_error": 0.030393379093777942
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.02636415535087521,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022802324204491468
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.008121878772999669,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022521165598464576
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.017672959827158625,
+          "recovery_pass": true,
+          "transport_relative_error": 0.025093701915129205
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.026364155350875343,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0202993997735651
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.01767295982715862,
+          "recovery_pass": true,
+          "transport_relative_error": 0.030586155209574004
+        }
+      },
+      "selected": "fits/d3_rep2__n12000__source_search__seed3.json"
+    }
+  },
+  "status": "pass",
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "findings": [
+    "scGLUE 0.2.3 unpaired loss has reconstruction/KL, guidance reconstruction/KL and adversarial assay loss; local adapter supplies neither cell types nor paired UIDs.",
+    "scConfluence AutoEncoder uses stochastic Gaussian encoding but no prior-KL term.",
+    "scConfluence paper uses squared latent Euclidean IOT distance; pinned source uses unsquared Euclidean and local patch retains it.",
+    "The local patch sums all eligible assay-pair terms once and skips empty-assay terms; it does not restore missing biological pair information.",
+    "Complete objective functionals and finite-data output laws coincide across the two full-block countermodels, independently of empirical performance."
+  ],
+  "primary_urls": [
+    {
+      "role": "GLUE paper identity; prior literature review verifies DOI; objective details verified in official and installed source",
+      "url": "https://doi.org/10.1038/s41587-022-01284-4"
+    },
+    {
+      "claims": "SCGLUETrainer compute_losses; generator/discriminator steps; separate paired trainer",
+      "status": "read successfully 2026-11-01",
+      "url": "https://scglue.readthedocs.io/en/latest/_modules/scglue/models/scglue.html"
+    },
+    {
+      "status": "browser verification page; not relied upon for objective detail",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9546775/"
+    },
+    {
+      "claims": "Methods: stochastic autoencoder without prior KL, Eq.7 squared IOT distance, Eq.8 pairwise losses, partial OT solver, training/evaluation and three-modality coefficient",
+      "status": "read successfully 2026-11-01 despite cookie redirect",
+      "url": "https://www.nature.com/articles/s41467-024-51382-x"
+    },
+    {
+      "role": "pinned upstream identity; local preserved source and manifest checked",
+      "url": "https://github.com/cantinilab/scconfluence/tree/14d81e2ca679e161ec5c6806103a66c14fcdcd9a"
+    }
+  ],
+  "review_date": "2026-11-01",
+  "review_type": "bounded primary-source and local-code objective audit; no fits or source edits",
+  "reviewed_draft": {
+    "decision": "approved for scGLUE/scConfluence attribution and information-limit scope",
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/theory/08_modern_integration_objectives.md",
+    "sha256": "5cd4091f949886ac32d15e13d09c1d2e52929fbaa6e5abdb080a0e88e9ef793d"
+  },
+  "scconfluence_upstream_commit": "14d81e2ca679e161ec5c6806103a66c14fcdcd9a",
+  "scglue_installed_version": "0.2.3",
+  "scglue_official_documentation_version": "0.4.1",
+  "scope": "Unpaired independent disjoint assay samples, same full observed input laws, same guidance and algorithm rules; restricted models or informative extra inputs may escape the counterexample.",
+  "sources": {
+    "base_proof": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/theory/07_unpaired_integration_nonidentifiability.md",
+      "sha256": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b"
+    },
+    "draft_review": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_identifiability_2026_11_01/reviews/modern_scglue_scconfluence_draft_review.md",
+      "sha256": "bc395b2c3c26a9e833a9534aa3abaa1ac68a3d8bd0f1e87bee0b7a43f96db203"
+    },
+    "objective_audit": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_identifiability_2026_11_01/reviews/modern_scglue_scconfluence.md",
+      "sha256": "a35fd385c87fdb5fd040ef1306354892921fb3d22c537df4e55f88f8af8a3fd3"
+    },
+    "scconfluence_local_adapter": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py",
+      "sha256": "ef68a3eaff16dab2681a62675f5965ab19c8515d7c3d98c802f9c96a0ddf9733"
+    },
+    "scconfluence_local_patch": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/loss_patch.py",
+      "sha256": "309fb31d6424affc1dc2f16fc531f558572546a7b87e3bf1423762e4a16b095e"
+    },
+    "scconfluence_native_autoencoder": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/upstream/scconfluence/unimodal.py",
+      "sha256": "e2909a1454320703a8fe175e03ec0bcd36be1165af7ae3019b365d60120673d9"
+    },
+    "scconfluence_native_model": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/upstream/scconfluence/model.py",
+      "sha256": "78cca16d1c9941d693642bd3c1d0144664d746e1cd5d10d884dae74c6e8cf2ac"
+    },
+    "scconfluence_upstream_manifest": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/upstream/UPSTREAM.json",
+      "sha256": "7f93822b48f33585a3406ca05fc325136ec3725d73aa555c9194f21bce9535db"
+    },
+    "scglue_installed_0.2.3": {
+      "path": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/scglue/models/scglue.py",
+      "sha256": "10e1a2e155d06635de5fb262755b45d91ebe402dc153e0888bd7b84e9d7a4897"
+    },
+    "scglue_local_adapter": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scglue_adapter.py",
+      "sha256": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f"
+    }
+  }
+}

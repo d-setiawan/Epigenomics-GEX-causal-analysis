@@ -1,0 +1,636 @@
+{
+  "date": "2026-11-01",
+  "review_type": "bounded scoping contribution",
+  "central_discovery": "../raw/openalex_search_log.json",
+  "scope": "Targeted supplementary verification of fifteen nominated paired/bridge/anchor/factor methods; no exhaustive screening claim.",
+  "searches": [
+    {
+      "id": "supplementary_web_01",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"Comprehensive Integration of Single-Cell Data\" Seurat 2019",
+          "domains": [
+            "pmc.ncbi.nlm.nih.gov",
+            "cell.com",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Integrated analysis of multimodal single-cell data\" WNN 2021",
+          "domains": [
+            "pmc.ncbi.nlm.nih.gov",
+            "cell.com",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Dictionary learning for integrative, multimodal and scalable single-cell analysis\"",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity\"",
+          "domains": [
+            "pmc.ncbi.nlm.nih.gov",
+            "cell.com",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/31178122/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+        "https://pubmed.ncbi.nlm.nih.gov/34062119/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238499/",
+        "https://pubmed.ncbi.nlm.nih.gov/?term=10.1038%2Fs41587-023-01767-y",
+        "https://pmc.ncbi.nlm.nih.gov/articles/8238499/",
+        "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/6687398/",
+        "https://www.nature.com/articles/s43588-026-01030-9",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12806117/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10944570/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525515/"
+      ],
+      "returned_url_count": 13,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_02",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"MOFA+\" \"statistical framework\" 2020",
+          "domains": [
+            "genomebiology.biomedcentral.com",
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Multi-Omics Factor Analysis\" \"8124\"",
+          "domains": [
+            "embopress.org",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"MultiVI\" \"deep generative\" paired",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Joint probabilistic modeling\" \"totalVI\"",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/7212577/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/10406609/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+        "https://pubmed.ncbi.nlm.nih.gov/37386189/",
+        "https://www.nature.com/articles/s41592-023-01909-9.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+        "https://www.nature.com/articles/s41592-020-01050-x",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315550/",
+        "https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-020-02015-1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11579284/",
+        "https://www.nature.com/articles/s41467-024-53340-z.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13539111/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12848861/",
+        "https://pubmed.ncbi.nlm.nih.gov/42779556/"
+      ],
+      "returned_url_count": 15,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_03",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"Cobolt\" \"integrative analysis\" single cell",
+          "domains": [
+            "nature.com",
+            "genomebiology.biomedcentral.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"scMVP\" \"deep generative model\" multimodal",
+          "domains": [
+            "nature.com",
+            "genomebiology.biomedcentral.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"scMM\" \"mixture-of-experts\" single cell",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"BABEL\" \"translating\" single cell",
+          "domains": [
+            "pnas.org",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+        "https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-021-02556-z",
+        "https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-021-02595-6",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10928517/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12632474/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13507694/",
+        "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/9757079/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10937857/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10869270/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972291/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12342157/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13505623/"
+      ],
+      "returned_url_count": 15,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_04",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"CLUE\" \"single-cell\" integration paired variational",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"JAMIE\" \"multimodal\" single cell",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Fast, sensitive and accurate integration of single-cell data with Harmony\"",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"Multi-Omics Factor Analysis—a framework for unsupervised integration of multi-omics data sets\"",
+          "domains": [
+            "embopress.org",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6884693/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+        "https://pubmed.ncbi.nlm.nih.gov/39175596/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13015565",
+        "https://pubmed.ncbi.nlm.nih.gov/37601969/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13141754/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12007700",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8981526/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7701361/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10766395/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12372284/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12513639/",
+        "https://www.nature.com/articles/s41467-024-48188-2.pdf",
+        "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "https://www.nature.com/articles/s41467-024-53355-6.pdf",
+        "https://www.nature.com/articles/s41467-025-61580-w.pdf",
+        "https://www.nature.com/articles/s41540-026-00759-3_reference.pdf",
+        "https://www.nature.com/articles/s41467-025-64774-4.pdf"
+      ],
+      "returned_url_count": 18,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_05",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "CLUE single cell multiomics \"integration\" \"contrastive\"",
+          "domains": [
+            "nature.com",
+            "academic.oup.com",
+            "pubmed.ncbi.nlm.nih.gov",
+            "pmc.ncbi.nlm.nih.gov",
+            "arxiv.org"
+          ]
+        },
+        {
+          "q": "\"Joint variational autoencoders for multimodal imputation and embedding\" JAMIE",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "\"A deep generative model for multi-view profiling\" scMVP",
+          "domains": [
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+        "https://pubmed.ncbi.nlm.nih.gov/39175596/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/pdf/nihms-2014593.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/40856525/",
+        "https://pubmed.ncbi.nlm.nih.gov/40551235/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12183872/",
+        "https://academic.oup.com/bib/article-pdf/26/4/bbaf411/64137607/bbaf411.pdf",
+        "https://academic.oup.com/bioinformatics/article/41/8/btaf443/8224605",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12694596/",
+        "https://academic.oup.com/bib/article/24/3/bbad130/7147026",
+        "https://pubmed.ncbi.nlm.nih.gov/42585574/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13053676/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10317120/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13158126/",
+        "https://arxiv.org/abs/2112.03266",
+        "https://arxiv.org/abs/2506.20697",
+        "https://arxiv.org/abs/2304.05542",
+        "https://arxiv.org/abs/2504.11321"
+      ],
+      "returned_url_count": 18,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_06",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"CLUE\" \"auxiliary\" \"multi\" integration single-cell"
+        },
+        {
+          "q": "\"CLUE\" \"heterogeneous feature spaces\" single cell"
+        },
+        {
+          "q": "\"scMVP\" \"PMCID\""
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/35022082/",
+        "https://donahowe.github.io/images/publications/Files/AAAI2024_ArXiv.pdf",
+        "https://www.nature.com/articles/s41467-024-53355-6.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489673/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11817349/",
+        "https://file.ewadirect.com/press/media/0bee5523e124462bb611937641badc21.marked_HlnBOxI.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12543095/",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1014231",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12806117/",
+        "https://aclanthology.org/2025.acl-long.1148.pdf",
+        "https://skillmd.ai/how-to-build/scglue-complete/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9643784/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/10516349/",
+        "https://www.researchgate.net/publication/393155408_Benchmarking_Multimodal_Biological_Data_Integration_and_Imputation",
+        "https://pubmed.ncbi.nlm.nih.gov/38887194/",
+        "https://www.researchgate.net/publication/382621134_Single-cell_omics_experimental_workflow_data_analyses_and_applications?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJzY2llbnRpZmljQ29udHJpYnV0aW9ucyIsInByZXZpb3VzUGFnZSI6bnVsbCwic3ViUGFnZSI6bnVsbH19",
+        "https://aclanthology.org/2025.acl-short.2.pdf",
+        "https://aclanthology.org/anthology-files/pdf/mrl/2022.mrl-1.pdf"
+      ],
+      "returned_url_count": 18,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_07",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"CLUE\" \"Tu\" \"2022\" single-cell embedding"
+        },
+        {
+          "q": "\"cross-linked\" \"embedding\" \"CLUE\" Tu"
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://openreview.net/pdf?id=Tfb73TeKnJ-",
+        "https://proceedings.neurips.cc/paper_files/paper/2022/hash/662b1774ba8845fc1fa3d1fc0177ceeb-Abstract-Conference.html",
+        "https://xinmingtu.cn/assets/pdf/clue_paper.pdf",
+        "https://repository.kaust.edu.sa/bitstreams/a39a4829-3280-4f57-becb-37662ee070b8/download",
+        "https://papers.nips.cc/paper_files/paper/2022/file/662b1774ba8845fc1fa3d1fc0177ceeb-Paper-Conference.pdf",
+        "https://www.researchgate.net/publication/359912869_Multimodal_single_cell_data_integration_challenge_results_and_lessons_learned",
+        "https://openproblems.bio/events/2021-09_neurips/",
+        "https://www.researchgate.net/publication/367480117_Cross-Linked_Unified_Embedding_for_cross-modality_representation_learning",
+        "https://scglue.readthedocs.io/en/v0.2.3/api/scglue.models.html",
+        "https://repository.tudelft.nl/record/uuid%3Adc685e47-faf7-4650-b701-a220b79a4fbe",
+        "https://research.tudelft.nl/en/datasets/data-underlying-the-paper-reconstructing-intimate-contexts-throug/",
+        "https://biopic.pku.edu.cn/xwzx/kyjz/107bdswyxqycxzxgb527512.htm",
+        "https://aclanthology.org/volumes/2022.acl-long/",
+        "https://www.researchgate.net/publication/370427070_Matching_single_cells_across_modalities_with_contrastive_learning_and_optimal_transport?_tp=eyJjb250ZXh0Ijp7InBhZ2UiOiJzY2llbnRpZmljQ29udHJpYnV0aW9ucyIsInByZXZpb3VzUGFnZSI6bnVsbCwic3ViUGFnZSI6bnVsbH19",
+        "https://pmc.ncbi.nlm.nih.gov/articles/11446004/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489673/"
+      ],
+      "returned_url_count": 16,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_08",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "\"10.1186/s13059-021-02595-6\" \"PMC\""
+        },
+        {
+          "q": "site:pmc.ncbi.nlm.nih.gov/articles/PMC10928517 \"Methods\" \"dictionary\" \"paired\""
+        },
+        {
+          "q": "site:pmc.ncbi.nlm.nih.gov/articles/PMC10406609 \"Methods\" \"paired\" \"distribution\""
+        },
+        {
+          "q": "site:pmc.ncbi.nlm.nih.gov/articles/PMC7954949 \"Integrating\" \"missing\""
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/10406609/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12092331/pdf/10278_2024_Article_1247.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6211281/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8759260/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5698693/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615108/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9005055/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10881176/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC153434/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8483143/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11299713/pdf/nihms-1980360.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9042157/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4560542/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10281706/pdf/nihms-1760190.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2996580/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3110307/pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485981/pdf/noae144.191.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12259539/pdf/mcae183.pdf"
+      ],
+      "returned_url_count": 18,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    },
+    {
+      "id": "supplementary_web_09",
+      "date": "2026-11-01",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "scMVP Li 2022 Genome Biology multi-view profiling PMC"
+        },
+        {
+          "q": "Hao Stuart dictionary bridge integration 2023 2024 Methods paired multiomic"
+        },
+        {
+          "q": "MultiVI 100% unpaired no paired cells limitations model training"
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://www.nature.com/articles/s41587-023-01767-y",
+        "https://docs.scvi-tools.org/en/latest/user_guide/models/multivi.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/10406609/",
+        "https://saketlab.in/assets/pdf/2024_Hao_scRNA_Dict_Learning.pdf",
+        "https://www.nature.com/articles/s41592-023-01909-9.pdf",
+        "https://github.com/scverse/scvi-tools/issues/3834",
+        "https://doi.org/10.1038/s41592-023-01909-9",
+        "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10928517/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13042286/",
+        "https://journal.hep.com.cn/qb/EN/PDF/10.1002/qub2.91",
+        "https://docs.scvi-tools.org/en/latest/tutorials/notebooks/multimodal/MultiVI_tutorial.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12664900/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13629687/",
+        "https://academic.oup.com/nar/article/52/12/e52/7688993",
+        "https://arxiv.org/abs/2307.03476",
+        "https://arxiv.org/abs/2303.15594",
+        "https://en.wikipedia.org/wiki/Single-cell_multi-omics_integration"
+      ],
+      "returned_url_count": 19,
+      "screening": "Only named primary method papers retained; unrelated hits and secondary reviews excluded as extraction evidence."
+    }
+  ],
+  "primary_read_requests": [
+    {
+      "id": "targeted_primary_read_1",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+          "pattern": "Identifying anchors"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+          "pattern": "integrative nonnegative matrix factorization"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+          "pattern": "unpaired"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+          "pattern": "partially overlapping"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10928517/",
+          "pattern": "bridge dataset"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_2",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://www.nature.com/articles/s41587-023-01767-y",
+          "pattern": "bridge"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/7212577/",
+          "pattern": "groups"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/10406609/",
+          "pattern": "paired data"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+          "pattern": "subset can be"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+          "pattern": "doi:"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_3",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/10928517/",
+          "pattern": "dictionary"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+          "pattern": "unpaired"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+          "pattern": "Training"
+        },
+        {
+          "ref_id": "https://pubmed.ncbi.nlm.nih.gov/35022082/",
+          "pattern": "PMCID"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+          "pattern": "correspondence"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_4",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://doi.org/10.1186/s13059-021-02595-6"
+        },
+        {
+          "ref_id": "https://doi.org/10.1038/s41587-023-01767-y"
+        },
+        {
+          "ref_id": "https://doi.org/10.1038/s41592-023-01909-9"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_5",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://saketlab.in/assets/pdf/2024_Hao_scRNA_Dict_Learning.pdf"
+        },
+        {
+          "ref_id": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02595-6"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_6",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+          "pattern": "Model specification"
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+          "pattern": "Model Training"
+        },
+        {
+          "ref_id": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+          "pattern": "Methods"
+        },
+        {
+          "ref_id": "https://papers.nips.cc/paper_files/paper/2022/file/662b1774ba8845fc1fa3d1fc0177ceeb-Paper-Conference.pdf",
+          "pattern": "4.3"
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_read_7",
+      "date": "2026-11-01",
+      "tool": "web.run",
+      "commands": [
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+          "lineno": 330
+        },
+        {
+          "ref_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+          "lineno": 300
+        },
+        {
+          "ref_id": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+          "lineno": 224
+        }
+      ]
+    },
+    {
+      "id": "targeted_primary_pdf_attempts",
+      "date": "2026-11-01",
+      "commands": [
+        {
+          "ref_id": "https://www.nature.com/articles/s41587-023-01767-y.pdf"
+        },
+        {
+          "ref_id": "https://www.nature.com/articles/s41592-023-01909-9.pdf"
+        },
+        {
+          "ref_id": "https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-021-02595-6"
+        },
+        {
+          "ref_id": "https://papers.nips.cc/paper_files/paper/2022/file/662b1774ba8845fc1fa3d1fc0177ceeb-Paper-Conference.pdf"
+        }
+      ],
+      "outcome": "First three direct opens failed; NeurIPS CLUE PDF succeeded. Later Springer scMVP HTML succeeded."
+    }
+  ],
+  "access_limitations": [
+    "Several PMC URLs returned browser challenges; alternate official/author/indexed primary sources used where possible.",
+    "Seurat v5 bridge: publisher abstract and indexed primary Results/Figure1 verified, full supplemental methods not inspected; evidence_level conservatively abstract.",
+    "No numeric performance ranking, source-code audit, or data/model rerun performed."
+  ]
+}

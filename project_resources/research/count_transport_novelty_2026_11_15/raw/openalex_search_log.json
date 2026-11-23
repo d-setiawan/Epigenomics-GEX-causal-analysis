@@ -1,0 +1,722 @@
+[
+  {
+    "date": "2026-11-15T22:11:27.695586+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "Poisson independent component analysis identifiability",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_01.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 20977,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W7126211037",
+        "title": "Independent Component Discovery in Temporal Count Data",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2601.21696"
+      },
+      {
+        "id": "https://openalex.org/W7203465268",
+        "title": "Foundations of Independent Component Analysis",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2608.13229"
+      },
+      {
+        "id": "https://openalex.org/W3012350136",
+        "title": "Poisson Kernel-Based Clustering on the Sphere: Convergence Properties, Identifiability, and a Method of Sampling",
+        "year": 2020,
+        "doi": "https://doi.org/10.1080/10618600.2020.1740713"
+      },
+      {
+        "id": "https://openalex.org/W1889660637",
+        "title": "Discrete Component Analysis",
+        "year": 2006,
+        "doi": "https://doi.org/10.1007/11752790_1"
+      },
+      {
+        "id": "https://openalex.org/W2185720888",
+        "title": "ADVANCES IN INDEPENDENT COMPONENT ANALYSIS WITH APPLICATIONS TO DATA MINING",
+        "year": 2003,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W2552582735",
+        "title": "Rate-adaptive Bayesian independent component analysis",
+        "year": 2016,
+        "doi": "https://doi.org/10.1214/16-ejs1183"
+      },
+      {
+        "id": "https://openalex.org/W3205960700",
+        "title": "Learning Topic Models: Identifiability and Finite-Sample Analysis",
+        "year": 2022,
+        "doi": "https://doi.org/10.1080/01621459.2022.2089574"
+      },
+      {
+        "id": "https://openalex.org/W4417434608",
+        "title": "Identifiability in Unlinked Linear Regression: Some Results and Open Problems",
+        "year": 2025,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W3112752205",
+        "title": "Identifiability analysis for stochastic differential equation models in systems biology",
+        "year": 2020,
+        "doi": "https://doi.org/10.1098/rsif.2020.0652"
+      },
+      {
+        "id": "https://openalex.org/W4400190452",
+        "title": "Goodness-of-fit, identifiability and extrapolation: Can the Two-Component Extreme Value distribution be used in at-site flood frequency analysis?",
+        "year": 2024,
+        "doi": "https://doi.org/10.1016/j.jhydrol.2024.131590"
+      },
+      {
+        "id": "https://openalex.org/W2528969023",
+        "title": "(Batch) Markovian arrival processes: the identifiability issue and other applied aspects",
+        "year": 2015,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W2053818722",
+        "title": "Network Tomography: Identifiability and Fourier Domain Estimation",
+        "year": 2007,
+        "doi": "https://doi.org/10.1109/infcom.2007.218"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:27.696365+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "unpaired count data identifiability transport",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_02.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 2975,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W7225721175",
+        "title": "Identifiable alignment of unpaired representations",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2611.11460"
+      },
+      {
+        "id": "https://openalex.org/W4415800486",
+        "title": "Propensity Score Alignment of Unpaired Multimodal Data",
+        "year": 2024,
+        "doi": "https://doi.org/10.52202/079017-4480"
+      },
+      {
+        "id": "https://openalex.org/W4391376589",
+        "title": "Toward the Identifiability of Comparative Deep Generative Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2401.15903"
+      },
+      {
+        "id": "https://openalex.org/W7220997266",
+        "title": "Unpaired Canonical Correlation Analysis",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.09530"
+      },
+      {
+        "id": "https://openalex.org/W7161693529",
+        "title": "Domain Transfer Becomes Identifiable via a Single Alignment",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2605.17918"
+      },
+      {
+        "id": "https://openalex.org/W7214786394",
+        "title": "Beyond Gradient Flow: Identifiability and Recovery from Distribution Snapshots",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2609.35060"
+      },
+      {
+        "id": "https://openalex.org/W2059699784",
+        "title": "Unpaired Electrons as Probes of Catalytic Systems",
+        "year": 2014,
+        "doi": "https://doi.org/10.3184/003685014x14151169734173"
+      },
+      {
+        "id": "https://openalex.org/W7154508970",
+        "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+        "year": 2026,
+        "doi": "https://doi.org/10.1186/s13059-026-04071-5"
+      },
+      {
+        "id": "https://openalex.org/W2770018529",
+        "title": "Reaction Rates and Transport in Neutron Stars",
+        "year": 2018,
+        "doi": "https://doi.org/10.1007/978-3-319-97616-7_9"
+      },
+      {
+        "id": "https://openalex.org/W7214700442",
+        "title": "DisKO: Deep Koopman Learning in Distribution Space from Unpaired Snapshots",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2609.34629"
+      },
+      {
+        "id": "https://openalex.org/W7215133720",
+        "title": "Why Cross-Skeleton Retargeting Is Non-Identifiable: Structural Limits of Generative Motion Models",
+        "year": 2026,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W7223057959",
+        "title": "DISCERN: Identifiable Disease Evidence for Generalizable Medical Multimodal Learning",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.23952"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:27.696675+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "log linear Poisson identifiability",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_03.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 17000,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W1604079432",
+        "title": "Estimation and testing linearity for non-linear mixed poisson autoregressions",
+        "year": 2015,
+        "doi": "https://doi.org/10.1214/15-ejs1044"
+      },
+      {
+        "id": "https://openalex.org/W2057372159",
+        "title": "Identifiability in linear processes",
+        "year": 1970,
+        "doi": "https://doi.org/10.1007/bf00538766"
+      },
+      {
+        "id": "https://openalex.org/W3012350136",
+        "title": "Poisson Kernel-Based Clustering on the Sphere: Convergence Properties, Identifiability, and a Method of Sampling",
+        "year": 2020,
+        "doi": "https://doi.org/10.1080/10618600.2020.1740713"
+      },
+      {
+        "id": "https://openalex.org/W2006303240",
+        "title": "Analysis of rates in incomplete Poisson data",
+        "year": 2003,
+        "doi": "https://doi.org/10.1111/1467-9884.00344"
+      },
+      {
+        "id": "https://openalex.org/W4411529547",
+        "title": "Tree-based variational inference for Poisson log-normal models",
+        "year": 2025,
+        "doi": "https://doi.org/10.1007/s11222-025-10668-w"
+      },
+      {
+        "id": "https://openalex.org/W2095183921",
+        "title": "Maximum likelihood estimation in log-linear models",
+        "year": 2012,
+        "doi": "https://doi.org/10.1214/12-aos986"
+      },
+      {
+        "id": "https://openalex.org/W2825034149",
+        "title": "Log-Normal or Over-Dispersed Poisson?",
+        "year": 2018,
+        "doi": "https://doi.org/10.3390/risks6030070"
+      },
+      {
+        "id": "https://openalex.org/W4205102134",
+        "title": "Improved log-Gaussian approximation for over-dispersed Poisson regression: Application to spatial analysis of COVID-19",
+        "year": 2022,
+        "doi": "https://doi.org/10.1371/journal.pone.0260836"
+      },
+      {
+        "id": "https://openalex.org/W4376278140",
+        "title": "A linearization for stable and fast geographically weighted Poisson regression",
+        "year": 2023,
+        "doi": "https://doi.org/10.1080/13658816.2023.2209811"
+      },
+      {
+        "id": "https://openalex.org/W7198099101",
+        "title": "DOUBLY STOCHASTIC MODEL WITH COVARIATES FOR REPLICATED POISSON POINT PROCESSES",
+        "year": 2025,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W4411136368",
+        "title": "Modeling Inertia in Intensive Longitudinal Count Data: A Multilevel Log-Linear Poisson Autoregressive Approach for Behavioral Processes",
+        "year": 2025,
+        "doi": "https://doi.org/10.31234/osf.io/qhbx8_v1"
+      },
+      {
+        "id": "https://openalex.org/W3014850938",
+        "title": "Identifiability of parameters in longitudinal correlated Poisson and inflated beta regression model with non-ignorable missing mechanism",
+        "year": 2020,
+        "doi": "https://doi.org/10.1080/02331888.2020.1748883"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:28.495915+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "unpaired multi domain causal representation learning",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_04.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 3063,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W7133240739",
+        "title": "Unpaired Multi-Domain Causal Representation Learning",
+        "year": 2023,
+        "doi": "https://doi.org/10.52202/075280-1496"
+      },
+      {
+        "id": "https://openalex.org/W4388514808",
+        "title": "Multi-View Causal Representation Learning with Partial Observability",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2311.04056"
+      },
+      {
+        "id": "https://openalex.org/W4415795604",
+        "title": "Linear Causal Representation Learning from Unknown Multi-node Interventions",
+        "year": 2024,
+        "doi": "https://doi.org/10.52202/079017-3545"
+      },
+      {
+        "id": "https://openalex.org/W4409086193",
+        "title": "Causal Representation Learning from Multi-modal Biomedical Observations.",
+        "year": 2025,
+        "doi": null
+      },
+      {
+        "id": "https://openalex.org/W4410427536",
+        "title": "Cross-Modal Causal Representation Learning for Radiology Report Generation",
+        "year": 2025,
+        "doi": "https://doi.org/10.1109/tip.2025.3568746"
+      },
+      {
+        "id": "https://openalex.org/W4392822490",
+        "title": "A Sparsity Principle for Partially Observable Causal Representation Learning",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2403.08335"
+      },
+      {
+        "id": "https://openalex.org/W4400197295",
+        "title": "Diffusion-Based Causal Representation Learning",
+        "year": 2024,
+        "doi": "https://doi.org/10.3390/e26070556"
+      },
+      {
+        "id": "https://openalex.org/W7223149214",
+        "title": "Causal Discovery for Linear Models with Latent Confounding via Multi-domain Identifiable Representation Learning",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.28134"
+      },
+      {
+        "id": "https://openalex.org/W4289528791",
+        "title": "Causal machine learning for healthcare and precision medicine",
+        "year": 2022,
+        "doi": "https://doi.org/10.1098/rsos.220638"
+      },
+      {
+        "id": "https://openalex.org/W4404401814",
+        "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2411.06518"
+      },
+      {
+        "id": "https://openalex.org/W4415797090",
+        "title": "Marrying Causal Representation Learning with Dynamical Systems for Science",
+        "year": 2024,
+        "doi": "https://doi.org/10.52202/079017-2290"
+      },
+      {
+        "id": "https://openalex.org/W4387947426",
+        "title": "Causal Representation Learning Made Identifiable by Grouping of Observational Variables",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2310.15709"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:28.496859+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "unpaired observations Poisson",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_05.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 5658,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W2344280684",
+        "title": "Inference about parameters in Binomial-Poisson distribution with additional incomplete data",
+        "year": 2016,
+        "doi": "https://doi.org/10.1080/03610926.2014.901367"
+      },
+      {
+        "id": "https://openalex.org/W4393937957",
+        "title": "Matching a discrete distribution by Poisson matching quantiles estimation",
+        "year": 2024,
+        "doi": "https://doi.org/10.1080/02664763.2024.2337082"
+      },
+      {
+        "id": "https://openalex.org/W7206149948",
+        "title": "Diffusion Based Unpaired Data Learning for Inverse Problems",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2609.01370"
+      },
+      {
+        "id": "https://openalex.org/W7161955439",
+        "title": "UOTIP: Unbalanced Optimal Transport Map for Unpaired Inverse Problems",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2605.21094"
+      },
+      {
+        "id": "https://openalex.org/W2139112184",
+        "title": "BINOMIAL AND POISSON CONFIDENCE INTERVALS AND ITS VARIANTS: A BIBLIOGRAPHY",
+        "year": 2010,
+        "doi": "https://doi.org/10.18187/pjsor.v6i1.139"
+      },
+      {
+        "id": "https://openalex.org/W4409356427",
+        "title": "PFCM: Poisson Flow Consistency Models for Low-Dose CT Image Denoising",
+        "year": 2025,
+        "doi": "https://doi.org/10.1109/tmi.2025.3558019"
+      },
+      {
+        "id": "https://openalex.org/W4306659854",
+        "title": "Sparsier2Sparse: weakly supervised learning for streak artifact reduction with unpaired sparse-view CT data",
+        "year": 2022,
+        "doi": "https://doi.org/10.1117/12.2646428"
+      },
+      {
+        "id": "https://openalex.org/W2755512028",
+        "title": "Identification Of Novel Nuclear Proteins Required For Meiotic Silencing By Unpaired Dna In Neurospora Crassa",
+        "year": 2017,
+        "doi": "https://doi.org/10.30707/etd2017.ralalage.d"
+      },
+      {
+        "id": "https://openalex.org/W3045111856",
+        "title": "Analysis of Ion-Irradiation Induced Lattice Expansion and Ferromagnetic State in CeO2 by Using Poisson Distribution Function",
+        "year": 2020,
+        "doi": "https://doi.org/10.3390/qubs4030026"
+      },
+      {
+        "id": "https://openalex.org/W4386556860",
+        "title": "Noise suppression in photon-counting CT using unsupervised Poisson flow generative models",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2309.01553"
+      },
+      {
+        "id": "https://openalex.org/W4402754926",
+        "title": "Noise suppression in photon-counting computed tomography using unsupervised Poisson flow generative models",
+        "year": 2024,
+        "doi": "https://doi.org/10.1186/s42492-024-00175-6"
+      },
+      {
+        "id": "https://openalex.org/W2944903697",
+        "title": "Conductance channels of a platform molecule on Au(111) probed with shot noise",
+        "year": 2019,
+        "doi": "https://doi.org/10.1103/physrevb.99.245417"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:28.604674+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "Contrastive Mixture Posteriors counterfactual",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_06.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 3490,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W3171136632",
+        "title": "Contrastive Mixture of Posteriors for Counterfactual Inference, Data Integration and Fairness",
+        "year": 2021,
+        "doi": "https://doi.org/10.48550/arxiv.2106.08161"
+      },
+      {
+        "id": "https://openalex.org/W3125997628",
+        "title": "A Survey of Contrastive and Counterfactual Explanation Generation Methods for Explainable Artificial Intelligence",
+        "year": 2021,
+        "doi": "https://doi.org/10.1109/access.2021.3051315"
+      },
+      {
+        "id": "https://openalex.org/W7171558036",
+        "title": "Inference on counterfactual distributions using martingale posteriors",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2607.24143"
+      },
+      {
+        "id": "https://openalex.org/W7214707687",
+        "title": "CAFE: Counterfactual Prediction via Fast Posterior Estimation",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2609.32167"
+      },
+      {
+        "id": "https://openalex.org/W3194610749",
+        "title": "Mixture-Based Correction for Position and Trust Bias in Counterfactual Learning to Rank",
+        "year": 2021,
+        "doi": "https://doi.org/10.1145/3459637.3482275"
+      },
+      {
+        "id": "https://openalex.org/W4385292493",
+        "title": "Counterfactual Explanation via Search in Gaussian Mixture Distributed Latent Space",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2307.13390"
+      },
+      {
+        "id": "https://openalex.org/W4414972582",
+        "title": "Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2510.04855"
+      },
+      {
+        "id": "https://openalex.org/W2900677074",
+        "title": "Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search",
+        "year": 2018,
+        "doi": "https://doi.org/10.48550/arxiv.1811.06272"
+      },
+      {
+        "id": "https://openalex.org/W4403581949",
+        "title": "Counterfactual Analysis in Empirical Games",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2410.12731"
+      },
+      {
+        "id": "https://openalex.org/W7161182025",
+        "title": "Measurement Error and Counterfactuals in Quantitative Trade and Spatial Models",
+        "year": 2026,
+        "doi": "https://doi.org/10.1162/rest.a.1785"
+      },
+      {
+        "id": "https://openalex.org/W2567931609",
+        "title": "Counterfactual Prediction with Deep Instrumental Variables Networks",
+        "year": 2016,
+        "doi": "https://doi.org/10.48550/arxiv.1612.09596"
+      },
+      {
+        "id": "https://openalex.org/W2968375496",
+        "title": "Counterfactual Analysis of Runaway Volcanic Explosions",
+        "year": 2019,
+        "doi": "https://doi.org/10.3389/feart.2019.00222"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:29.071618+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "nonlinear independent component analysis Poisson",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_07.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 139581,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W2146760691",
+        "title": "LINEAR-NONLINEAR-POISSON MODELS OF PRIMATE CHOICE DYNAMICS",
+        "year": 2005,
+        "doi": "https://doi.org/10.1901/jeab.2005.23-05"
+      },
+      {
+        "id": "https://openalex.org/W2100671021",
+        "title": "An alternative approach to infomax and independent component analysis",
+        "year": 2002,
+        "doi": "https://doi.org/10.1016/s0925-2312(02)00424-1"
+      },
+      {
+        "id": "https://openalex.org/W2789692228",
+        "title": "Nonlinear electrostatics: the Poisson\u2013Boltzmann equation",
+        "year": 2018,
+        "doi": "https://doi.org/10.1088/1361-6404/aaca5a"
+      },
+      {
+        "id": "https://openalex.org/W2048931055",
+        "title": "The Finite Element Approximation of the Nonlinear Poisson\u2013Boltzmann Equation",
+        "year": 2007,
+        "doi": "https://doi.org/10.1137/060675514"
+      },
+      {
+        "id": "https://openalex.org/W2971645112",
+        "title": "Mixtures of Nonlinear Poisson Autoregressions",
+        "year": 2020,
+        "doi": "https://doi.org/10.1111/jtsa.12558"
+      },
+      {
+        "id": "https://openalex.org/W2017744936",
+        "title": "ANALOGUES OF THE OBJECTS OF LIE GROUP THEORY FOR NONLINEAR POISSON BRACKETS",
+        "year": 1987,
+        "doi": "https://doi.org/10.1070/im1987v028n03abeh000895"
+      },
+      {
+        "id": "https://openalex.org/W1659926941",
+        "title": "Symplectic and Poisson geometry on loop spaces of manifolds and nonlinear equations",
+        "year": 1995,
+        "doi": "https://doi.org/10.1090/trans2/170/06"
+      },
+      {
+        "id": "https://openalex.org/W1664706422",
+        "title": "The method of Poisson pairs in the theory of nonlinear PDEs",
+        "year": 2003,
+        "doi": "https://doi.org/10.1007/978-3-540-39808-0_2"
+      },
+      {
+        "id": "https://openalex.org/W4241983685",
+        "title": "Poisson Autoregression",
+        "year": 2009,
+        "doi": "https://doi.org/10.1198/jasa.2009.tm08270"
+      },
+      {
+        "id": "https://openalex.org/W1985735234",
+        "title": "Independent Component Analysis in Spiking Neurons",
+        "year": 2010,
+        "doi": "https://doi.org/10.1371/journal.pcbi.1000757"
+      },
+      {
+        "id": "https://openalex.org/W1979955675",
+        "title": "Non-canonical Poisson bracket for nonlinear elasticity with extensions to viscoelasticity",
+        "year": 1991,
+        "doi": "https://doi.org/10.1088/0305-4470/24/11/014"
+      },
+      {
+        "id": "https://openalex.org/W2028229970",
+        "title": "A Wavelet\u2010Based Algorithm for the Spatial Analysis of Poisson Data",
+        "year": 2002,
+        "doi": "https://doi.org/10.1086/324017"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-15T22:11:29.106895+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "query": {
+      "search": "unpaired distribution alignment identifiability symmetry",
+      "per_page": 100,
+      "select": "id,doi,title,publication_year,publication_date,primary_location,referenced_works,cited_by_count,abstract_inverted_index"
+    },
+    "sort": "default relevance",
+    "cursor": null,
+    "authenticated": false,
+    "file": "oa_08.json",
+    "status": "ok",
+    "returned": 100,
+    "total": 493,
+    "top_titles": [
+      {
+        "id": "https://openalex.org/W7225721175",
+        "title": "Identifiable alignment of unpaired representations",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2611.11460"
+      },
+      {
+        "id": "https://openalex.org/W7133240739",
+        "title": "Unpaired Multi-Domain Causal Representation Learning",
+        "year": 2023,
+        "doi": "https://doi.org/10.52202/075280-1496"
+      },
+      {
+        "id": "https://openalex.org/W2120634911",
+        "title": "Beyond bilateral symmetry: geometric morphometric methods for any type of symmetry",
+        "year": 2011,
+        "doi": "https://doi.org/10.1186/1471-2148-11-280"
+      },
+      {
+        "id": "https://openalex.org/W4391045971",
+        "title": "Towards Identifiable Unsupervised Domain Translation: A Diversified Distribution Matching Approach",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2401.09671"
+      },
+      {
+        "id": "https://openalex.org/W4391376589",
+        "title": "Toward the Identifiability of Comparative Deep Generative Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2401.15903"
+      },
+      {
+        "id": "https://openalex.org/W7165205879",
+        "title": "Concept Modulation Models: A Unified Framework for Identifiability and Extrapolation",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2606.18509"
+      },
+      {
+        "id": "https://openalex.org/W4405715408",
+        "title": "On Robust Cross Domain Alignment",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2412.15861"
+      },
+      {
+        "id": "https://openalex.org/W4411855356",
+        "title": "Identifying Common Semantics Across Modalities via Contrastive Latent Alignment",
+        "year": 2025,
+        "doi": "https://doi.org/10.20944/preprints202507.0008.v1"
+      },
+      {
+        "id": "https://openalex.org/W4416045985",
+        "title": "Learning Shared Representations from Unpaired Data",
+        "year": 2025,
+        "doi": "https://doi.org/10.52202/085713-1552"
+      },
+      {
+        "id": "https://openalex.org/W4320854414",
+        "title": "Understanding Multimodal Contrastive Learning and Incorporating Unpaired Data",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2302.06232"
+      },
+      {
+        "id": "https://openalex.org/W7162010956",
+        "title": "A cemetery of symmetry : chiastic structure in Wandering Rocks and Ulysses",
+        "year": 2006,
+        "doi": "https://doi.org/10.82308/26936"
+      },
+      {
+        "id": "https://openalex.org/W7220771315",
+        "title": "Multimodal spoken unit discovery with paired and unpaired modalities",
+        "year": 2023,
+        "doi": null
+      }
+    ]
+  }
+]

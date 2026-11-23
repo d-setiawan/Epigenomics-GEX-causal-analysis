@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-14",
+  "scope": "independent review, no paper or toolchain changes",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "runs": {
+    "build": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "reviews/LEAN_INDEPENDENT_BUILD.log",
+      "sha256": "b3c8cdff3456147d3b8fae6a45dd9e61b1ad82fd0d9d1dd8513eea0054d9dca3"
+    },
+    "axioms": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "EpigenomicsIdentification.lean"
+      ],
+      "exit_code": 0,
+      "log": "reviews/LEAN_INDEPENDENT_AXIOMS.log",
+      "sha256": "04f404b0fd6f24eaee72cdfa00a7468758c5cb7190454714436fc65b20e14dc5"
+    }
+  },
+  "sha256": {
+    "lean/EpigenomicsIdentification.lean": "a22eb534d3c4a6ca65f3c74beef1df61e0be30288c4ab2c64c174a89d916ed30",
+    "lean/README.md": "5699aae5ae16407e944b802ef6772cd1848ed6fc1eaf6bac20fbfcaec8fc326d",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lean/lakefile.toml": "bdf88a4b9722bf87dd46995535deb2c0622168d49d305842db5a6b82ea7f6ee9",
+    "lean/lake-manifest.json": "bad9d3afb68fa72b110dca4e40a29db96889999014877c98684050ee63d094f9",
+    "theory/THEORY_CORE.md": "b8f4c4e1b2c1035d91aaf98ce0b9a4740e7816bcc8538e72bd8901bd93e6e5d4",
+    "theory/MIXTURE_ALIGNMENT_BOUNDARY.md": "a93766414547171f547760e075fdc3c6249cad7295434a2c062aa81dab15c5c6",
+    "plans/P01_PARTIAL_IDENTIFICATION.md": "d8aa2fc1e62299bde117c7efc83d166599e8a74c3a71b6508c7dfb469c1e2ea7"
+  },
+  "axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_token_check": "no sorry, admit, or axiom declarations found by rg"
+}

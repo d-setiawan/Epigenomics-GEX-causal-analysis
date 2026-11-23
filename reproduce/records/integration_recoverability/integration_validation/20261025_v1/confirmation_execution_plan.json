@@ -1,0 +1,119 @@
+{
+  "jobs": [
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "realistic",
+      "seed": 0,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "realistic",
+      "seed": 1,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "realistic",
+      "seed": 0,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "realistic",
+      "seed": 1,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "informative",
+      "seed": 0,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "informative",
+      "seed": 1,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "informative",
+      "seed": 0,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "informative",
+      "seed": 1,
+      "world": "constrained_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "realistic",
+      "seed": 0,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "realistic",
+      "seed": 1,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "realistic",
+      "seed": 0,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "realistic",
+      "seed": 1,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "informative",
+      "seed": 0,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "align_high",
+      "method": "scglue",
+      "regime": "informative",
+      "seed": 1,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "informative",
+      "seed": 0,
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "candidate": "baseline",
+      "method": "scmrdr",
+      "regime": "informative",
+      "seed": 1,
+      "world": "unrestricted_chain_0"
+    }
+  ],
+  "order": "Declared world, regime, method and seed order; selected setting only",
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "selected_settings_sha256": "9c8bf9ccfc9d7e1d7d7cfa15953ef5359bc5aa3c394d5c7af7c606b00593b09b"
+}

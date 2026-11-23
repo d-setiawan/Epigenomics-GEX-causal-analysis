@@ -1,0 +1,14 @@
+{
+  "approved": true,
+  "scientific_reviewer": "Astra",
+  "date": "2026-11-15",
+  "protocol_sha256": "49c0f068cb213fefc555824bbbfeee36b55c12ef9fef6b8c1e0ee733b6ef8f68",
+  "fit_seal_sha256": "16b043cc977279f2dda3b000d4da523f568497d44e0f9b1c4d6b0899e4d7c5f9",
+  "source_sha256": {
+    "runtime_amendment.py": "ffae5f75b8b181e7c9d20b26107d8f3a94aa40f82f6fcb601e5751ae4280d053",
+    "runtime_admission.json": "5ca48fcbe594a179ce9644505454dfb1af0b5bbe78e1954f11b6306cdd3a68b8",
+    "test_runtime_amendment.py": "c97bb1b71ca2a769e32b71745923c3651d7d5d6c8ca03d9aacdd24a80d123382"
+  },
+  "independent_review_sha256": "21f0e456b155e589f21a49d07ca9f83a13a081060dc9e1216a04cb3c42cb6a86",
+  "scope": "One evaluator execution through exact independently reviewed runtime admission. Original fits, protocol and numerical scoring remain unchanged; no broader runtime exception or retry authorization."
+}

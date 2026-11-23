@@ -1,0 +1,257 @@
+{
+  "source_population": "Published S1 DNA-filtered canonical cells; inherited total-six-target DNA QC >=2500 cannot be undone",
+  "n_source_cells": 2444,
+  "n_RNA_features": 30234,
+  "n_promoters": 29338,
+  "gtf": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/workspace/data/gene_annotation/gencode.v49.primary_assembly.annotation.gtf.gz",
+    "sha256": "5cabe88e93064851dc6cb826efe0e8b7babf7985e73df280cfb05910d05cd023",
+    "headers": [
+      "##description: evidence-based annotation of the human genome (GRCh38), version 49 (Ensembl 115)",
+      "##provider: GENCODE",
+      "##contact: gencode-help@ebi.ac.uk",
+      "##format: gtf",
+      "##date: 2025-07-08"
+    ]
+  },
+  "window_definition": "zero-based half-open [gene_TSS-2000, gene_TSS+2000), clipped at zero; canonical chromosomes only",
+  "fragment_rule": "Each fragment multiplicity contributes once to every overlapping promoter; overlapping windows can share fragments",
+  "sources": {
+    "H3K27ac.fragments.tsv.gz": {
+      "bytes": 54136502,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "54136502",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:35:09 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:35:09 GMT",
+        "Last-Modified": "Wed, 18 Sep 2024 21:29:08 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/H3K27ac.fragments.tsv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:35:12.325705+00:00",
+      "sha256": "f01c7daac39fea725dcbb8d6dfb9597b5978fb07e7bd63de8da43b91d8ddde03",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K27ac.fragments.tsv.gz"
+    },
+    "H3K4me3.fragments.tsv.gz": {
+      "bytes": 24116580,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "24116580",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:35:12 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:35:12 GMT",
+        "Last-Modified": "Wed, 18 Sep 2024 21:29:06 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/H3K4me3.fragments.tsv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:35:13.517779+00:00",
+      "sha256": "f01e1dcc2051dd539bd30a16323e49f33e2bb3c9196f7e4045ae92a960dbcd43",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529544/suppl/GSM8529544_HIST_S1_H3K4me3.fragments.tsv.gz"
+    },
+    "RNA.barcodes.tsv.gz": {
+      "bytes": 996656,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "996656",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:35:17 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:35:17 GMT",
+        "Last-Modified": "Wed, 18 Sep 2024 21:28:54 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/RNA.barcodes.tsv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:35:18.077432+00:00",
+      "sha256": "843e38c13c9513beb89bd2591da1fa090d14d42d6ecd0da3845c39624b386744",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.barcodes.tsv.gz"
+    },
+    "RNA.features.tsv.gz": {
+      "bytes": 205530,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "205530",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:35:18 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:35:18 GMT",
+        "Last-Modified": "Wed, 18 Sep 2024 21:28:54 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/RNA.features.tsv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:35:18.324352+00:00",
+      "sha256": "fc1e5c9695ddb94320557dea4fe8b10a47371178cae39890064c7ec6f20af240",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.features.tsv.gz"
+    },
+    "RNA.matrix.mtx.gz": {
+      "bytes": 80973053,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "80973053",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:35:13 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:35:13 GMT",
+        "Last-Modified": "Wed, 18 Sep 2024 21:28:54 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/RNA.matrix.mtx.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:35:17.656021+00:00",
+      "sha256": "4a3567b920afe79bb8cb830510386b11391db4ab4ec9c53e34e9dcc7f81fb275",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8529nnn/GSM8529552/suppl/GSM8529552_Endo.S1.matrix.mtx.gz"
+    },
+    "feature_reference.DNA.csv.gz": {
+      "bytes": 8731,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "8731",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:38:16 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:38:16 GMT",
+        "Last-Modified": "Mon, 23 Sep 2024 13:34:01 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/feature_reference.DNA.csv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:38:16.960345+00:00",
+      "sha256": "ef2f51c155009cccee2bf2d9601df09ac9ee5968f90031e51546bd2bc3b8b7c4",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277778/suppl/GSE277778_feature_reference.DNA.csv.gz"
+    },
+    "feature_reference.RNA.csv.gz": {
+      "bytes": 7248,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Cache-Control": "public, max-age=86400",
+        "Connection": "close",
+        "Content-Length": "7248",
+        "Content-Type": "application/x-gzip",
+        "Date": "Sun, 01 Nov 2026 04:38:17 GMT",
+        "Expires": "Sun, 08 Nov 2026 04:38:17 GMT",
+        "Last-Modified": "Mon, 23 Sep 2024 13:34:01 GMT",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/raw_s1/feature_reference.RNA.csv.gz",
+      "publisher_checksum_available": false,
+      "retrieved_utc": "2026-11-01T04:38:17.240682+00:00",
+      "sha256": "1fe07ffdf8cb5701a722ae8493d2dd1797cc2b240d008379cf3d0052a4f53f4d",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277778/suppl/GSE277778_feature_reference.RNA.csv.gz"
+    }
+  },
+  "assays": {
+    "H3K27ac": {
+      "fragment_rows": 5321952,
+      "multiplicity_sum": 5321952,
+      "overlapping_fragment_rows": 532618,
+      "multiple_promoter_overlap_rows": 135895,
+      "matrix_shape": [
+        2444,
+        29338
+      ],
+      "matrix_nnz": 659515,
+      "total_genomic_fragment_quantiles": [
+        497.0,
+        1055.0,
+        1568.0,
+        2520.75,
+        29693.0
+      ],
+      "promoter_count_quantiles": [
+        42.0,
+        133.0,
+        197.0,
+        316.0,
+        4077.0
+      ],
+      "detected_promoter_quantiles": [
+        42.0,
+        131.0,
+        195.0,
+        311.0,
+        3635.0
+      ]
+    },
+    "H3K4me3": {
+      "fragment_rows": 2359015,
+      "multiplicity_sum": 2359015,
+      "overlapping_fragment_rows": 638301,
+      "multiple_promoter_overlap_rows": 204512,
+      "matrix_shape": [
+        2444,
+        29338
+      ],
+      "matrix_nnz": 827839,
+      "total_genomic_fragment_quantiles": [
+        193.0,
+        488.0,
+        714.0,
+        1114.5,
+        12235.0
+      ],
+      "promoter_count_quantiles": [
+        30.0,
+        171.0,
+        253.0,
+        402.0,
+        4852.0
+      ],
+      "detected_promoter_quantiles": [
+        30.0,
+        169.0,
+        249.0,
+        393.0,
+        4077.0
+      ]
+    }
+  },
+  "preparation_script_sha256": "23b1bdc102db9fcba1b4bd209ed853bf78d12e2f33036bafda0c2252a299a553",
+  "reused_preexisting_RNA_audit": true
+}

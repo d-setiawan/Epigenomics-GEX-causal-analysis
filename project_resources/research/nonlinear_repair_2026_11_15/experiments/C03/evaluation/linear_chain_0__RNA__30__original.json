@@ -1,0 +1,80 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -42.12017741245119,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.0262152140218573,
+        "standardized_offdiag_covariance_rmse": 0.12354077313725029,
+        "standardized_variance_rmse": 0.8952141079454661,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.160138410159484,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -32.78413033909678,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.02621521471433088,
+        "standardized_offdiag_covariance_rmse": 0.04648435695973901,
+        "standardized_variance_rmse": 0.797086265407705,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.08957454075998252,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": {
+    "30": {
+      "features": 30,
+      "log_score": -39.35904739783454,
+      "log_score_status": "finite",
+      "rows": 2000,
+      "standardized_mean_rmse": 0.17474109905130245,
+      "standardized_offdiag_covariance_rmse": 0.09355542386739471,
+      "standardized_variance_rmse": 0.9526970220005001,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.05563987327197474,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -34.347749624366784,
+      "log_score_status": "finite",
+      "rows": 2000,
+      "standardized_mean_rmse": 0.027385678978635357,
+      "standardized_offdiag_covariance_rmse": 0.041667578181243635,
+      "standardized_variance_rmse": 0.7933574248622661,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.10327773931670968,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "linear_chain_0__RNA__30__original",
+    "best_completed_objective": -0.8964421693374416,
+    "best_completed_seed": 2,
+    "complete_application": true,
+    "elapsed_seconds": 8.096739401997183,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

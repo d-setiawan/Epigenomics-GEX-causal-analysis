@@ -1,0 +1,698 @@
+{
+  "baseline_separation": {
+    "assessment": 24,
+    "current_goal_continuation": "Only the two prescribed unchanged-setting frozen stages; both completed and reviewed.",
+    "extended": 112,
+    "original_benchmark_complete": false,
+    "original_completed_native_manifests": 118,
+    "original_planned_fits": 178,
+    "remaining_old_assessment_and_synthesis_work_disclosed": true,
+    "separate_validation_fits": 32,
+    "simple": 6,
+    "simple_and_development": 94
+  },
+  "captured_at_utc": "2026-10-26T04:46:36.386697+00:00",
+  "component_bindings": [
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/objective_completion_checklist_2026_10_26.md",
+      "sha256": "831250efcf9caba4428d56be3d735f583ad308ac4737b6d6830433c51ef13902"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/objective_completion_checklist_2026_10_26.json",
+      "sha256": "9d17a9007c45a1c8d61f9d010e49c2d2dc54cb9a58358406f5b3de2636848d72"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/primary_evidence_and_endpoints.md",
+      "sha256": "d575c725644cae7700d9baa4a96c4481a49f42128cae44cabe13bb3a40462426"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/citation_verification.json",
+      "sha256": "499b0900ff723ac1eb570d0efce79f8ebeb7b3dacc593e2cc6fc9897cb03f544"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/theoretical_validity_review.md",
+      "sha256": "6d0b1fb5e271e758eb827e2de413721936fd600921f899d3e7ae1aeda51ae313"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/final_matrix_integrity_interpretation_2026_10_26.json",
+      "sha256": "b31ad40e4c7e3a72665881a1e5274af984c80a2c5298e254c91e0215e68e461a"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/confirmation16_scientific_interpretation_2026_10_26.json",
+      "sha256": "919229f55b1549f3f59684f8a027cea03ffcb583403e4f20d869eb97eb00732e"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_baseline_retry_final_ledger_and_informative_stage_binding_audit_2026_10_26.json",
+      "sha256": "8049a8f7e2ca3ebfa9b4a4d1e5511fd3681748e561b86f25be465ff746ecaca7"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_realistic_frozen_baseline_json_audit.json",
+      "sha256": "42bd5bae8c0ecc131828b058c053579689a5271380d5a6647cd341f8f3728e41"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_informative_frozen_baseline_json_audit.json",
+      "sha256": "870534ac954e0e1fe65fef3ca0548dcccd8e68f9416a95bba5acf67c5a137b01"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/constrained_chain_1_retry_20261025_v1/result.json",
+      "sha256": "e37a08bb789436f33806105a0ca2f66411ee876dd1dfa8f8471faafd0d80bf54"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/constrained_chain_1_retry_20261025_v1/attempt_realistic/result.json",
+      "sha256": "56f276a998e2515a4dcdb32c99bca92c1d0e1fa114976ec6a06002305d295bcd"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/constrained_chain_1_retry_20261025_v1/attempt_informative/result.json",
+      "sha256": "334e74c1442e3ea7633b62ff689675bd181da892fc6b7a6d144811c90f487e63"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/matrix_execution_complete.json",
+      "sha256": "b251161f4873180004cb23557a883e59b76f0b307cf01cf0ec05d01f8aa99e9c"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/baseline_retry_terminal_host_observation_20261026.json",
+      "sha256": "2818518705c63709096f6f88a80a10b766d3a99ea28f51bfcfcfae29b215b9b9"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/focused_tests_20261026_final_sources.json",
+      "sha256": "6771a90188ac09c14afae167352fe9910c2aed33748b7f835f5099dbffbfdd7a"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/configs/integration_validation_v1.json",
+      "sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/selected_settings.json",
+      "sha256": "9c8bf9ccfc9d7e1d7d7cfa15953ef5359bc5aa3c394d5c7af7c606b00593b09b"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/confirmation_execution_plan.json",
+      "sha256": "6de5226a2ee40bcf09098ac5a1720717243ef325543d1247520f2bfbb39d04ee"
+    }
+  ],
+  "current_objective_evidence_complete": true,
+  "final_markdown_sha256": "cd229f1d34a4b2f8837c17aba8b253d70413ca0d82830e145246b02d25cf23c0",
+  "historical_pending_checklist_preserved": true,
+  "not_added_as_requirements": [
+    "New experimental data or replacement/new worlds",
+    "Broader/exhaustive hyperparameter optimization",
+    "New-setting causal experiments",
+    "Universal integration/causal-identification theorem",
+    "Positive causal recovery or exclusion of failed scientific results",
+    "Independent secondary public-array reproduction for all16confirmationreports",
+    "Completion of the entire earlier178fit benchmark as a prerequisite for this changed bounded objective"
+  ],
+  "objective": "Validate other hyperparameters for scGLUE and scMRDR; assess integration before new-setting causal tests; research primary sources and another theoretically valid test/guarantee; continue existing simulations.",
+  "operational_limits": [
+    "Unknown cause of original matrix exit143 retained.",
+    "Matrix archive-time pre-action sandbox process visibility did not establish host absence; later checks do not retroactively close that gap.",
+    "Terminal host receipt records relevant study-process/lock clearance at observation and unrelated173526T untouched; no global emptyGPU/future-exclusivity claim.",
+    "Successful original-setting retries do not establish the cause of earlier CUDA failures."
+  ],
+  "ready_for_root_final_reporting_and_goal_completion": true,
+  "remaining_substantive_current_objective_requirements": [],
+  "requirements": [
+    {
+      "evidence": [
+        "Protocol: four configurations per method; sixteen selection refits.",
+        "Immutable selected settings and sixteen selected-only confirmation fits.",
+        "Final32-fit integrity review; all32native chains/288exports; primary confirmation48cost rows reproduced."
+      ],
+      "id": "R1",
+      "limits": [
+        "Local one-parameter sensitivity screen, not exhaustive/global hyperparameter optimality.",
+        "Two reused confirmation worlds; native early stopping asymmetry and validation reuse remain explicit."
+      ],
+      "requirement": "Validate additional hyperparameters for both methods under the declared local screen.",
+      "status": "complete_declared_both_method_screen"
+    },
+    {
+      "evidence": [
+        "State transport against the same-pool squared-state oracle/random expectation; fixed source decoder, geometry and preassignment hubness interpreted separately.",
+        "Retained scMRDR unrestricted realisticseed1 G1.4446291191821 and negative decoder diagnostics including low-G informativeseed1.",
+        "Protocol/RESULTS state that no new setting was tested with causal discovery."
+      ],
+      "id": "R2",
+      "limits": [
+        "No preregistered universal acceptance threshold; no unqualified integration-passed or causal-ready claim.",
+        "A negative validity result is a scientific answer; completion must not be misreported as positive certification.",
+        "The already-frozen baseline commands use their original settings and remain a separate authorized study."
+      ],
+      "requirement": "Deliver a claim-specific integration-validity assessment before any new-setting causal tests.",
+      "status": "complete_qualified_precausal_assessment"
+    },
+    {
+      "evidence": [
+        "primary_evidence_and_endpoints.md and pinned official method configurations/repositories.",
+        "citation_verification.json: six unique memo DOIs verified, zero unresolved; exact discovery/retrieval provenance."
+      ],
+      "id": "R3",
+      "limits": [
+        "Focused narrative review, not systematic/comprehensive.",
+        "The six-DOI verification claim applies to that memo; do not claim every reference elsewhere was covered by that record."
+      ],
+      "requirement": "Ground the checks and parameter choices in primary research/official method evidence.",
+      "status": "complete_focused_primary_evidence_review"
+    },
+    {
+      "evidence": [
+        "L-Lipschitz state-function transport error bounded by L\u00b2 times absolute state transport energy under nonnegative normalized weights and row-stochastic matching.",
+        "Finite-pool covariance distortion bounded by sigma(f)*L_g*sqrt(transport energy).",
+        "Theory review and analytic scale-distortion example explain why alignment, decoder transfer and hubness can disagree."
+      ],
+      "id": "R4",
+      "limits": [
+        "Requires the same state metric and justified function/Lipschitz assumptions; oracle comparisons also need matching no-reuse constraints.",
+        "Does not certify latent-coordinate calibration, paired/residual joint law, conditional independence or causal graphs.",
+        "Conditional-mean activities were not all directly validated; no new private biology analysis is required by this objective."
+      ],
+      "requirement": "Provide another theoretically valid test/guarantee with precise assumptions and target.",
+      "status": "complete_conditional_finite_pool_guarantee"
+    },
+    {
+      "evidence": {
+        "blockers": [],
+        "failed_diagnostics": 0,
+        "failed_integrations": 0,
+        "final_artifact_checks": 330,
+        "helper_exit_code": 0,
+        "helper_session": 4274,
+        "helper_status": "completed_two_retries",
+        "native_audit_bindings": {
+          "informative/scglue": {
+            "checkpoint_sha256": "bb9c7dd9db2c806d1a6eb228004b988b3f4deee49c4eb70a49802d682a53a349",
+            "configuration": {
+              "align_burnin": 20,
+              "data_batch_size": 128,
+              "device": "cuda",
+              "dropout": 0.2,
+              "encode_batch_size": 256,
+              "graph_batch_size": 8192,
+              "h_depth": 2,
+              "h_dim": 256,
+              "lam_align": 0.05,
+              "lam_data": 1.0,
+              "lam_graph": 0.02,
+              "lam_kl": 1.0,
+              "lam_sup": 0.02,
+              "latent_dim": 30,
+              "learning_rate": 0.002,
+              "max_epochs": 120,
+              "neg_samples": 10,
+              "patience": 8,
+              "reduce_lr_patience": 4,
+              "seed": 0,
+              "val_split": 0.1,
+              "wait_n_lrs": 1
+            },
+            "metadata_sha256": {
+              "embedding_manifest.json": "5069bd53e32b08bb75d7dcac875a80e4f958574fa508cbfb93cdb1e7db4aa65a",
+              "fit_inputs.json": "eda3d5889d81c354c6f39be7ff05a845bc40cc470c60a336d34ca77fe5de168b",
+              "model_manifest.json": "61e777fb14ae12e00cc39cf70d595729119679bdb2cfd4ebe733786feb58be2b",
+              "public_embedding_manifest.json": "466e5c3f3b7efca727a60d5c99bfd5f127658a13c3f45a084b46a75498397edb"
+            },
+            "native_summary": {
+              "fine-tune": {
+                "last_recorded_epoch": 42,
+                "most_recent_retained_checkpoint": 35,
+                "recorded_final_scalars_finite": true,
+                "retained_checkpoints": [
+                  "checkpoint_29.pt",
+                  "checkpoint_34.pt",
+                  "checkpoint_35.pt"
+                ]
+              },
+              "pretrain": {
+                "last_recorded_epoch": 42,
+                "most_recent_retained_checkpoint": 35,
+                "recorded_final_scalars_finite": true,
+                "retained_checkpoints": [
+                  "checkpoint_29.pt",
+                  "checkpoint_34.pt",
+                  "checkpoint_35.pt"
+                ]
+              }
+            },
+            "private_exports_hashed_only": 6,
+            "public_export_count": 9,
+            "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_informative_scglue_original_baseline_completed_fit_audit_2026_10_26.json",
+            "receipt_sha256": "59aadcb57b9d7b758f3b1c740d76dcec5d4c7d13b7dca4672e2f3c52375d8f09",
+            "runtime_evidence": {
+              "launch_overrides": {
+                "CUDA_LAUNCH_BLOCKING": "1",
+                "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+              },
+              "native_runtime": {
+                "device_requested": "cuda",
+                "networkx_api_shim": false,
+                "objective_changes": [],
+                "scglue_runtime": {
+                  "ARRAY_SHUFFLE_NUM_WORKERS": 0,
+                  "CUDNN_MODE": "repeatability",
+                  "DATALOADER_NUM_WORKERS": 0,
+                  "GRAPH_SHUFFLE_NUM_WORKERS": 1
+                },
+                "scheduler_verbose_api_shim": true
+              },
+              "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+              "source": "Informative start journal records exact overrides; the separate host audit verified this same helper/runtime during the earlier realistic stage. No direct process-map capture of the completed informative child and no new process scan."
+            }
+          },
+          "informative/scmrdr": {
+            "checkpoint_sha256": "59c613244cec792e8b586a679885d744ed021fa99ac1f205d6d2ee46cc3974c4",
+            "configuration": {
+              "batch_size": 128,
+              "beta": 5.0,
+              "cosine_learning_rate": true,
+              "device": "cuda",
+              "dispersion_strategy": "gene",
+              "dropout_rate": 0.2,
+              "gamma": 10.0,
+              "gradient_clip_norm": 1.0,
+              "hidden_layers": [
+                128,
+                128
+              ],
+              "lambda_adv": 10.0,
+              "latent_dim_shared": 20,
+              "latent_dim_specific": 20,
+              "learning_rate": 0.001,
+              "max_epochs": 200,
+              "min_delta": 0.0,
+              "patience": 10,
+              "seed": 0,
+              "validation_fraction": 0.1,
+              "validation_mc_samples": 1
+            },
+            "metadata_sha256": {
+              "input_manifest.json": "5e9f11977f882cf6756ddb267640c04605986d700188f78b9fcdd483870167d2",
+              "manifest.json": "5f49d59128e09cd00a1e361175c4323622e95790d7f62271e69335a45dbf0b5f",
+              "public_embedding_manifest.json": "2ecd61a7548e8234d8ec343a8b14f938859c4db65f803ab59af1c76c9c214acf"
+            },
+            "native_summary": {
+              "best_epoch": 192,
+              "best_validation_loss": 2563.4936796875,
+              "config": {
+                "batch_size": 128,
+                "beta": 5.0,
+                "cosine_learning_rate": true,
+                "device": "cuda",
+                "dispersion_strategy": "gene",
+                "dropout_rate": 0.2,
+                "gamma": 10.0,
+                "gradient_clip_norm": 1.0,
+                "hidden_layers": [
+                  128,
+                  128
+                ],
+                "lambda_adv": 10.0,
+                "latent_dim_shared": 20,
+                "latent_dim_specific": 20,
+                "learning_rate": 0.001,
+                "max_epochs": 200,
+                "min_delta": 0.0,
+                "patience": 10,
+                "seed": 0,
+                "validation_fraction": 0.1,
+                "validation_mc_samples": 1
+              },
+              "early_stopped": false,
+              "epochs_completed": 200,
+              "format_version": 1,
+              "method": "scmrdr_paper_faithful",
+              "modalities": [
+                "H3K27ac",
+                "H3K4me3",
+                "RNA"
+              ],
+              "n_features": 2009,
+              "numpy_version": "2.2.6",
+              "readout": "deterministic shared and specific posterior means",
+              "rows_per_epoch": 5888,
+              "runtime_seconds": 496.65648849500576,
+              "source": {
+                "adapter_sha256": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+                "commit": "7280e64ae19f7391c6f5adf00d9d353f79e96603",
+                "license": "GPL-3.0",
+                "local_core_change": "Removed unused NumPy/matplotlib/SciPy/POT imports from model.py only",
+                "repository": "https://github.com/sjl-sjtu/scMRDR",
+                "vendored_sha256": {
+                  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+                  "loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+                  "model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b"
+                }
+              },
+              "torch_version": "2.10.0",
+              "training_digests": {
+                "H3K27ac": "90b2992f90afade68543a2aef68aacf8b2f4b87d5796853fa8af206269d0a299",
+                "H3K4me3": "9aff397e9fe05e7a63abafab195bea73e1aca10ad8788a717f765f9e6ae7c208",
+                "RNA": "485940b5abe7ea9722611efacf869a9196f2335ec47c7897f9b251b661b4e5da"
+              },
+              "training_drop_last": true,
+              "training_rows": {
+                "H3K27ac": 2000,
+                "H3K4me3": 2000,
+                "RNA": 2000
+              },
+              "validation_digests": {
+                "H3K27ac": "cbb4c27c7b255c06fe7b118de2a146618d208d518b65be17d402b306989d3558",
+                "H3K4me3": "90d33a1f32f2e72371cd7f4e3a7c766d41a79be1fd6b3df1753da4b3a5e71d01",
+                "RNA": "2b79a9ee11e51207cfe930572cbc83a58d48c3314cbac0dd0cd9cb52eb549415"
+              },
+              "validation_order_seed": 100003,
+              "validation_rows": {
+                "H3K27ac": 500,
+                "H3K4me3": 500,
+                "RNA": 500
+              },
+              "zero_library_training_rows": {
+                "H3K27ac": 0,
+                "H3K4me3": 0,
+                "RNA": 0
+              }
+            },
+            "private_exports_hashed_only": 6,
+            "public_export_count": 9,
+            "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_informative_scmrdr_original_baseline_completed_fit_audit_2026_10_26.json",
+            "receipt_sha256": "42f3b0ce93e3c360ae5d7cfc218feb0bef9e943dcb8bb941bcc238b2449c04ba",
+            "runtime_evidence": {
+              "parent_start_runtime_overrides": {
+                "CUDA_LAUNCH_BLOCKING": "1",
+                "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+              },
+              "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+              "scope": "Declared/immutable parent launch and pinned inherited-environment code, plus separately bound earlier host runtime observation. No completed-process environment or CUDA context was queried."
+            }
+          },
+          "realistic/scglue": {
+            "checkpoint_sha256": "89ccc0bd4026aacb6a8038e86fd10e5f95e2dd173169f5a8691f5aaabf0bb565",
+            "configuration": {
+              "align_burnin": 20,
+              "data_batch_size": 128,
+              "device": "cuda",
+              "dropout": 0.2,
+              "encode_batch_size": 256,
+              "graph_batch_size": 8192,
+              "h_depth": 2,
+              "h_dim": 256,
+              "lam_align": 0.05,
+              "lam_data": 1.0,
+              "lam_graph": 0.02,
+              "lam_kl": 1.0,
+              "lam_sup": 0.02,
+              "latent_dim": 30,
+              "learning_rate": 0.002,
+              "max_epochs": 120,
+              "neg_samples": 10,
+              "patience": 8,
+              "reduce_lr_patience": 4,
+              "seed": 0,
+              "val_split": 0.1,
+              "wait_n_lrs": 1
+            },
+            "metadata_sha256": {
+              "embedding_manifest.json": "ba96263e999466bb7c95619ec0da40ac8562b6bac1d1f017d176415d95c44ddc",
+              "fit_inputs.json": "631e132a68bd7bba4d677ac1505748edba8b015f0e48366b9f1545c8169a0f0a",
+              "model_manifest.json": "f5ab2dc91fc2751660659b2b0dd0d21d57c090ad1543ec51d2e4bf1c2a5c4050",
+              "public_embedding_manifest.json": "045f0c6434c0582663582951f5723f48b4a4f212e192400e4e5ecaec5dc3ddee"
+            },
+            "native_summary": {
+              "fine-tune": {
+                "last_recorded_epoch": 42,
+                "most_recent_retained_checkpoint": 42,
+                "recorded_final_scalars_finite": true,
+                "retained_checkpoints": [
+                  "checkpoint_34.pt",
+                  "checkpoint_40.pt",
+                  "checkpoint_42.pt"
+                ]
+              },
+              "pretrain": {
+                "last_recorded_epoch": 42,
+                "most_recent_retained_checkpoint": 42,
+                "recorded_final_scalars_finite": true,
+                "retained_checkpoints": [
+                  "checkpoint_34.pt",
+                  "checkpoint_40.pt",
+                  "checkpoint_42.pt"
+                ]
+              }
+            },
+            "private_exports_hashed_only": 6,
+            "public_export_count": 9,
+            "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_realistic_scglue_original_baseline_completed_fit_audit_2026_10_26.json",
+            "receipt_sha256": "ad20241ee9a526d8afa9d99a0373e1b4a4128ff348644dc1470d7b1f7f9949f6",
+            "runtime_evidence": {
+              "launch_overrides": {
+                "CUDA_LAUNCH_BLOCKING": "1",
+                "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+              },
+              "native_runtime": {
+                "device_requested": "cuda",
+                "networkx_api_shim": false,
+                "objective_changes": [],
+                "scglue_runtime": {
+                  "ARRAY_SHUFFLE_NUM_WORKERS": 0,
+                  "CUDNN_MODE": "repeatability",
+                  "DATALOADER_NUM_WORKERS": 0,
+                  "GRAPH_SHUFFLE_NUM_WORKERS": 1
+                },
+                "scheduler_verbose_api_shim": true
+              },
+              "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+              "source": "Immutable start journal plus separately bound prior host runtime/map observation; no new process scan."
+            }
+          },
+          "realistic/scmrdr": {
+            "checkpoint_sha256": "15ebc72bcd56fd211e1f5bbd93dcbfd123f3d2dbac1e2f8b849b2bb98ddc1954",
+            "configuration": {
+              "batch_size": 128,
+              "beta": 5.0,
+              "cosine_learning_rate": true,
+              "device": "cuda",
+              "dispersion_strategy": "gene",
+              "dropout_rate": 0.2,
+              "gamma": 10.0,
+              "gradient_clip_norm": 1.0,
+              "hidden_layers": [
+                128,
+                128
+              ],
+              "lambda_adv": 10.0,
+              "latent_dim_shared": 20,
+              "latent_dim_specific": 20,
+              "learning_rate": 0.001,
+              "max_epochs": 200,
+              "min_delta": 0.0,
+              "patience": 10,
+              "seed": 0,
+              "validation_fraction": 0.1,
+              "validation_mc_samples": 1
+            },
+            "metadata_sha256": {
+              "input_manifest.json": "bda13631d88ba111f88e4735f253c9e1b7b17f476bc8c236cdb5ac0b2cfa93ff",
+              "manifest.json": "05eb9978546a0d5ad78d36c610d10d48df05466ce9e9c7c30cddac914cf77ec6",
+              "public_embedding_manifest.json": "453864f7b9de68a51dcbcba0a2cdbd86354b076ecd2028b7016ef0c8e6fef14a"
+            },
+            "native_summary": {
+              "best_epoch": 194,
+              "best_validation_loss": 666.7672540690104,
+              "config": {
+                "batch_size": 128,
+                "beta": 5.0,
+                "cosine_learning_rate": true,
+                "device": "cuda",
+                "dispersion_strategy": "gene",
+                "dropout_rate": 0.2,
+                "gamma": 10.0,
+                "gradient_clip_norm": 1.0,
+                "hidden_layers": [
+                  128,
+                  128
+                ],
+                "lambda_adv": 10.0,
+                "latent_dim_shared": 20,
+                "latent_dim_specific": 20,
+                "learning_rate": 0.001,
+                "max_epochs": 200,
+                "min_delta": 0.0,
+                "patience": 10,
+                "seed": 0,
+                "validation_fraction": 0.1,
+                "validation_mc_samples": 1
+              },
+              "early_stopped": false,
+              "epochs_completed": 200,
+              "format_version": 1,
+              "method": "scmrdr_paper_faithful",
+              "modalities": [
+                "H3K27ac",
+                "H3K4me3",
+                "RNA"
+              ],
+              "n_features": 2009,
+              "numpy_version": "2.2.6",
+              "readout": "deterministic shared and specific posterior means",
+              "rows_per_epoch": 5888,
+              "runtime_seconds": 507.1863518960017,
+              "source": {
+                "adapter_sha256": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+                "commit": "7280e64ae19f7391c6f5adf00d9d353f79e96603",
+                "license": "GPL-3.0",
+                "local_core_change": "Removed unused NumPy/matplotlib/SciPy/POT imports from model.py only",
+                "repository": "https://github.com/sjl-sjtu/scMRDR",
+                "vendored_sha256": {
+                  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+                  "loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+                  "model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b"
+                }
+              },
+              "torch_version": "2.10.0",
+              "training_digests": {
+                "H3K27ac": "74fe61637ced447abe16c66b25fdf7ba9921bda5cf70415edccd8ea965a1d36a",
+                "H3K4me3": "967893b2cf42ccd60185a3c4882a52a44b7292bc1eeaaa9471614b895d8b77c8",
+                "RNA": "7d356c17d1139057f9dc7fe4135be9b041371b4058d11ea2342186172354e351"
+              },
+              "training_drop_last": true,
+              "training_rows": {
+                "H3K27ac": 2000,
+                "H3K4me3": 2000,
+                "RNA": 2000
+              },
+              "validation_digests": {
+                "H3K27ac": "a3964fbf96915e5c51450ecdb5ab81abef321c6e116c344acd92ef197d0a2daa",
+                "H3K4me3": "83f1b3f2695a72b32fc89a46bede4bf293c44ea8e444d48117d24ed1e479730f",
+                "RNA": "8d995f6bce99c8390f615f6453e2c2dc5d1fa7e19020517f74425562725e1608"
+              },
+              "validation_order_seed": 100003,
+              "validation_rows": {
+                "H3K27ac": 500,
+                "H3K4me3": 500,
+                "RNA": 500
+              },
+              "zero_library_training_rows": {
+                "H3K27ac": 0,
+                "H3K4me3": 0,
+                "RNA": 0
+              }
+            },
+            "private_exports_hashed_only": 6,
+            "public_export_count": 9,
+            "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_realistic_scmrdr_original_baseline_completed_fit_audit_2026_10_26.json",
+            "receipt_sha256": "9b54dbdd400858442621315287bf936ca8d696242a1479db3c8340b8c1dfa414",
+            "runtime_evidence": {
+              "parent_start_runtime_overrides": {
+                "CUDA_LAUNCH_BLOCKING": "1",
+                "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+              },
+              "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+              "scope": "Declared/immutable parent launch and pinned inherited-environment code, plus separately bound earlier host runtime observation. No completed-process environment or CUDA context was queried."
+            }
+          }
+        },
+        "native_models": 4,
+        "outcomes": [
+          {
+            "child_exit_code": 0,
+            "effective_exit_code": 0,
+            "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/constrained_chain_1_retry_20261025_v1/attempt_realistic/output.log",
+            "log_sha256": "c42a93935c3112cf9dff01c5c3d54d5c54d6df54735c5e217bb37d52ee1594a5",
+            "stage_id": "pipeline:constrained_chain_1:realistic:primary:seeds0",
+            "status": "complete",
+            "successful": true,
+            "suite_receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1792987458071344039_081a5e67d4e44550b7eafa7036b88fec.json"
+          },
+          {
+            "child_exit_code": 0,
+            "effective_exit_code": 0,
+            "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/constrained_chain_1_retry_20261025_v1/attempt_informative/output.log",
+            "log_sha256": "86479e78e2de67034665868a234aa9e05421ff67eaa6a058e92de69e3da8e2f2",
+            "stage_id": "pipeline:constrained_chain_1:informative:primary:seeds0",
+            "status": "complete",
+            "successful": true,
+            "suite_receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1792988762616638347_5c5c3bf01ae640b5b2936530b3a517fa.json"
+          }
+        ],
+        "report_statuses": [
+          "completed",
+          "completed"
+        ],
+        "scientific_reviews": [
+          "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_realistic_frozen_baseline_json_audit.json",
+          "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/integration_validation_2026_10_25/reviews/constrained_chain_1_informative_frozen_baseline_json_audit.json"
+        ]
+      },
+      "id": "R5",
+      "requirement": "Continue the existing simulations through the two currently committed frozen baseline stages and review their outcomes.",
+      "status": "complete_two_frozen_baseline_stages_and_reviews"
+    },
+    {
+      "evidence": {
+        "old_pending_checklist_preserved": true,
+        "root_reports_postwrite_main_document_numeric_source_and_local_link_checks_passed": true,
+        "stable_documents": [
+          {
+            "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/README.md",
+            "sha256": "aae5bfb72c5068b8999c8a1cbcc6728eaca97e5b6f5f5168d4499ddbe44f4208"
+          },
+          {
+            "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/RESULTS.md",
+            "sha256": "bbc436ab4d26231c98fab6af9aee7b732f20935c584f0af4f1de883d1155e0d7"
+          },
+          {
+            "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md",
+            "sha256": "dce7d976d10abb12cb8e009949d5985730fd44ceab8e2bac14387677e5e56c5f"
+          },
+          {
+            "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md",
+            "sha256": "e0cf7103e4a8eb91adba86b182d9f77c8c2a5b32a352397c14ade09cf9c19a0e"
+          }
+        ]
+      },
+      "id": "R6",
+      "requirement": "Close the current objective with an evidence-linked requirement-by-requirement account and accurate current documentation.",
+      "status": "complete_stable_document_requirement_reconciliation"
+    }
+  ],
+  "schema_version": 1,
+  "scientific_conclusion": {
+    "independent_confirmation_primary_reports": 16,
+    "independent_confirmation_state_costs": 48,
+    "independent_secondary_public_array_reports": 8,
+    "new_setting_causal_tests_run": false,
+    "old_baseline_completed_readouts_are_not_a_causal_success_claim": true,
+    "reliable_cross_assay_causal_recovery_established": false,
+    "retained_failures": [
+      "scMRDR unrestricted realisticseed1 G1.4446291191821",
+      "Four of eight scMRDR confirmations with negative minimum cross-assay decoder R2",
+      "Low-G informative cases with poor/negative native decoder transfer"
+    ],
+    "secondary_report_denominator": 16,
+    "selected": {
+      "scglue": "align_high",
+      "scmrdr": "baseline"
+    },
+    "theory": "Conditional finite-pool bounds on stated smooth state functions and shared-state covariance using absolute transport energy; not residual coupling, observed pairing, CI or causal graphs.",
+    "unqualified_integration_truth_certificate": false
+  },
+  "scope": "Requirement-to-existing-evidence audit only. No32matrix/native/scientific audit reruns, new fits/tests/research, metrics/probes/CI recomputation, arrays/model decoding, CUDA or production edits. Final document bytes captured after stable-docs signal.",
+  "stable_document_snapshots": [
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/README.md",
+      "sha256": "aae5bfb72c5068b8999c8a1cbcc6728eaca97e5b6f5f5168d4499ddbe44f4208"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/RESULTS.md",
+      "sha256": "bbc436ab4d26231c98fab6af9aee7b732f20935c584f0af4f1de883d1155e0d7"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md",
+      "sha256": "dce7d976d10abb12cb8e009949d5985730fd44ceab8e2bac14387677e5e56c5f"
+    },
+    {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md",
+      "sha256": "e0cf7103e4a8eb91adba86b182d9f77c8c2a5b32a352397c14ade09cf9c19a0e"
+    }
+  ],
+  "status": "passed_final_requirement_by_requirement_current_objective_reconciliation"
+}

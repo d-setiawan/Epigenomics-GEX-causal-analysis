@@ -1,0 +1,18 @@
+{
+  "reviewer": "causal_reliability_pilot",
+  "status": "pass",
+  "scope": "Independent consumer-contract audit, not full original-H5 source replay. No fitting or causal outcome evaluation.",
+  "manifest_sha256": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+  "public_npz_files_checked": 18,
+  "evaluator_files_checked": 3,
+  "checks": [
+    "Every public/evaluator file hash matches frozen data manifest",
+    "Exactly permitted public NPZ fields,30 selected features and matching feature IDs",
+    "Counts nonnegative integral; normalized counts independently reproduce from permitted depth",
+    "Within-assay train/test IDs disjoint",
+    "Every real paired index bounded and unique; concatenated heldout public arrays exactly equal saved595x90 reference for both transforms",
+    "Real reference column order exactly matches assay feature order",
+    "Simulated evaluator IDs and2D state array dimensions match heldout public rows"
+  ],
+  "limitation": "Opaque-ID disjointness is a consumer check; the data-preparation audit owns canonical cross-assay/source disjointness."
+}

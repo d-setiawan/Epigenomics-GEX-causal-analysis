@@ -1,0 +1,22 @@
+{
+  "anchor_columns_per_assay": 30,
+  "evaluation_sha256": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+  "inside": 2675,
+  "interpretation": "Empirical training-marginal coupling intervals; biological assay-specific QC pools differ from the paired all-QC population. Not confidence intervals or causal claims.",
+  "outside": 25,
+  "outside_max_distance": 0.009183477951441161,
+  "paired_rows": 595,
+  "pairs": 2700,
+  "prediction_seal_sha256": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+  "reference_sha256": "30810f85c00fa810f1252fa9a18c3ba03dd198c5edfd97ec10c371842e18bd1e",
+  "reference_shape": [
+    595,
+    900
+  ],
+  "same_holdout_marginal_bounds_check": "all pass; tautological, evaluator-only",
+  "width_min_median_max": [
+    0.016260162601626018,
+    0.01951219512195122,
+    0.04723127035830619
+  ]
+}

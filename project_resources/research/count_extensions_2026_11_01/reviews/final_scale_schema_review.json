@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "scale remains the actual observed-rate standard deviation, including exact zero",
+    "working_scale is a separate internal denominator with1 only for zero-scale coordinates",
+    "constant feature centering is exact; offdiagonal covariance contributions vanish and no positive ridge is added",
+    "rank selection, whitening and bootstrap alignment use working_scale internally",
+    "runner exports both scale and working_scale without substituting their names",
+    "frozen evaluator validates scale against raw source-fit rates and uses scale only for primary heldout standardization",
+    "zero actual scales make the relevant full/anchor score unscorable without feature deletion",
+    "predicted_observed_covariance keeps original rate units and the declared noise diagonal",
+    "METHOD.md states that this preflight completion change applies to allnewarms and differs from the earlierpilot",
+    "METHOD.md distinguishes anonymous source directions, pairwise moment predictions, finite-fingerprint matching and exploratory latent graphs from identified causal structure"
+  ],
+  "evaluator_modified": false,
+  "heldout_performance_read": false,
+  "method_note_sha256": "5761a9cb784a747623e300cc977fac65e7efabdfaf28bc2207678f210b59644b",
+  "notes": [
+    "Floating-point differences between ordinary mean/std and exact-constant centering are below the existing numerical replay tolerance; the evaluator uses exported true scale for scoring",
+    "The Bernoulli-mask derivation assumes mask and active count are independent conditional on the rate/exposure, as stated in the estimator module; the METHOD wording uses the conventional zero-inflated kernel interpretation",
+    "Final graphify update remains owned by root"
+  ],
+  "preflight_sha256": "231dcbb35931d6b3e3402e29ee8e63c7f630574ec5561b2c1df1313bb1ba199a",
+  "reviewed_at_utc": "2026-11-01T20:41:27.360082+00:00",
+  "scope": "Read-only final source/schema and interpretation review while scientific fitting runs; no fit artifacts or heldout/reference outcomes opened",
+  "source_sha256": {
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "protocol.json": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92"
+  },
+  "status": "compatible_no_evaluator_change"
+}

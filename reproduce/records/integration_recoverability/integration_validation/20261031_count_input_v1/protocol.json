@@ -1,0 +1,86 @@
+{
+  "analysis_sources": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/count_input_experiment.py": "c053f76034939ef5a9aa681c31e8ae74a20002695b7d5164c49ee6fb14c841b3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/integration_validation_fit.py": "7734c84b4ce692cac18831a98eea7d1ea5db610e8e94cd278a7c362ac02604e5",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/integration_validation_metrics.py": "6fd960ef76757b68db4977a1a3a563eed56fe062a2b85e7f2b25dc195217fcb8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/validate_integration.py": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4"
+  },
+  "configuration": {
+    "align_burnin": 20,
+    "data_batch_size": 128,
+    "device": "cuda",
+    "dropout": 0.2,
+    "encode_batch_size": 256,
+    "graph_batch_size": 8192,
+    "h_depth": 2,
+    "h_dim": 256,
+    "lam_align": 0.2,
+    "lam_data": 1.0,
+    "lam_graph": 0.02,
+    "lam_kl": 1.0,
+    "lam_sup": 0.02,
+    "latent_dim": 30,
+    "learning_rate": 0.002,
+    "max_epochs": 120,
+    "neg_samples": 10,
+    "patience": 8,
+    "reduce_lr_patience": 4,
+    "seed": 0,
+    "val_split": 0.1,
+    "wait_n_lrs": 1
+  },
+  "inherited_loader_environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "LD_LIBRARY_PATH": null
+  },
+  "knn": 15,
+  "limits": [
+    "Exploratory two-world comparison; regimes/seeds are not independent biological replicates",
+    "Native-count mode also changes normalization; this is not a pure PCA-rank ablation",
+    "Input normalization, filtering and shared latent bottleneck still impose assumptions",
+    "PCA/LSI neighborhood retention is reference fidelity, not neutral biological validity"
+  ],
+  "modes": [
+    "compressed",
+    "native_counts"
+  ],
+  "pool_seed": 2718,
+  "primary": "Worst of the three normalized squared-state transport gaps on each world",
+  "regime": "informative",
+  "runtime_flags": {
+    "CUDA_LAUNCH_BLOCKING": "1",
+    "LD_PRELOAD": "/tmp/integration_followup_runtime_20261031/libcudart.so.13.0.96",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "runtime_library": "/tmp/integration_followup_runtime_20261031/libcudart.so.13.0.96",
+  "runtime_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+  "scoring": "Public val cohort; common cells across both arms and old method references; no causal discovery",
+  "seed": 0,
+  "source_pins": {
+    "pipelines/empirical/integration/methods/scmrdr/paper_faithful/__init__.py": "67cec6321ffe39c2c0e588381c49f86510091adda41a33dd3e783245df441b29",
+    "pipelines/empirical/integration/methods/scmrdr/paper_faithful/adapter.py": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+    "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/__init__.py": "8e61c5e8b7b000d2a3a51557fbddea81c0f409e14a9899f5e53c4901f5a2a684",
+    "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+    "pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b",
+    "pipelines/simulation/integration_recoverability/calibration.py": "a3f997167b43530dcffa75dbf6caa0c08a432f8b4705780f01ae4bd5ad35a6dd",
+    "pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+    "pipelines/simulation/integration_recoverability/guidance_baseline.py": "fb8152119b3632077b3fcfe006b34702706fcb235564df9d7e6f499442affec1",
+    "pipelines/simulation/integration_recoverability/preprocessing.py": "8f430c656e885b02fbb9fa00fc605092cf12745b141f44a17dfacbaf931b6acb",
+    "pipelines/simulation/integration_recoverability/recover_scglue_export.py": "38b89d1a43d366e30801fd1486fbfc2ef460fc6f5162c66e66aa923e288b8ac8",
+    "pipelines/simulation/integration_recoverability/run_benchmark.py": "f8b1713328c95659885d1cf92f194972df986574c0927df5230e7cc3a0003673",
+    "pipelines/simulation/integration_recoverability/scglue_adapter.py": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f",
+    "pipelines/simulation/integration_recoverability/scmrdr_adapter.py": "4ebfbb7fe86f264698af0cb53ad9a229e7587bfbbd7c1e4075ba340566828d23",
+    "pipelines/simulation/integration_recoverability/simulator.py": "754520b9802ac2548c07fc61aa1842d3350c9397a825fcab5b32d060b557ef0d",
+    "pipelines/simulation/integration_recoverability/suite_plan.py": "a3619b06e9e7c6c0d8fe89d7d0f13fe96a1643b51e563065be091b40a09b3a1a",
+    "pipelines/simulation/integration_recoverability/twin_controls.py": "5023ec1a3d93efaacfef6ad8d513f34c0845e3115a0024f5d3bb76de3988fa27"
+  },
+  "study_id": "20261031_count_input_v1",
+  "training": "Four fresh native fits; identical selected cells/features/guidance/settings; no checkpoint reuse",
+  "worlds": [
+    "linear_chain_0",
+    "constrained_collider_0"
+  ]
+}

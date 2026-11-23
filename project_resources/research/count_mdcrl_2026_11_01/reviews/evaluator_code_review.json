@@ -1,0 +1,23 @@
+{
+  "status": "approved_read_only_code_review",
+  "reviewer": "independent_theory_and_causal_reliability_agent",
+  "scientific_outcomes_read": false,
+  "model_fits": 0,
+  "files_sha256": {
+    "protocol.json": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c",
+    "evaluate_count_sources.py": "b50731038d185398c15fe97d88768ebed45b9dfec62c6882d7317c5af67da890"
+  },
+  "checked": [
+    "all fitting artifacts sealed before opening heldout arrays",
+    "same fixed source-fit scale for predicted and observed cross covariance",
+    "complete triplet bootstrap with fixed model and scale",
+    "Poisson diagonal included only in corrected observed variance",
+    "zero rank and unavailable state scores remain explicit",
+    "all 900 real feature pairs retained in primary metric",
+    "secondary Pearson variance mask cannot change primary metric",
+    "pair covariance exactly reconstructed from accepted signed source products",
+    "endpoint abstention reasons and empty-candidate zero predictor interpretation",
+    "no paired/state fitting or threshold feedback"
+  ],
+  "requested_change": "Expose endpoint source fit status and explicitly label no-match zero covariance as empty-candidate default, not independence. Implemented by evaluator owner without score changes."
+}

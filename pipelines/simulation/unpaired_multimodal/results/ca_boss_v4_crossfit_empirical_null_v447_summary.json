@@ -1,0 +1,141 @@
+{
+  "schema_version": "ca_boss_v4.crossfit_empirical_null_v447_record.v1",
+  "algorithm": "CA-BOSS v4.47 cross-block empirical-null reporter synchronization",
+  "score_schema_version": "ca_boss_v4.crossfit_empirical_null_reporter_synchronization.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_simulation_truth_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 185,
+      "true_positive_hyperedges": 185,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 124,
+      "precision": 1.0,
+      "recall": 0.598705501618123
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 294,
+      "correctly_recovered_assay_participations": 294,
+      "precision": 1.0,
+      "recall": 0.47572815533980584,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 185,
+      "coverage": 0.598705501618123,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 255,
+      "average_ambiguity_set_size": 1.3783783783783783,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 147,
+      "exact_cross_assay_pair_true_positives": 147,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.47572815533980584,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v444_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 154,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.49838187702265374
+    },
+    "v445_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 156,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.5048543689320388
+    },
+    "v446_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 167,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.540453074433657
+    },
+    "v447_all_103_cached_worlds_crossfit_retrospective": {
+      "shared_state_hyperedge_true_positives": 185,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.598705501618123
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "contexts": "full fit plus two disjoint background-feature folds",
+    "reporter_stability": "within-assay cell bootstraps evaluated separately in each context",
+    "multi_assay_registration": "exact minimum-total pairwise-KS permutation synchronization over the eligible rank-three assay components",
+    "ordinary_support_gate": "a candidate assay pair requires ordinary statistical support in at least two of three contexts",
+    "edge_specific_score": "minimum held-out coassigned global-assignment pair-exclusion relative margin",
+    "crossfit_calibration": "for each target seed block, set the threshold to the maximum eligible null score in all other cached seed blocks and select target pairs strictly above it",
+    "guarded_union": "union calibrated pairs with v4.46 truth-blind guarded pairs, then deduplicate",
+    "conflict_handling": "merge selected assay pairs sharing an assay into one connected, unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never claim within-assay direct structure, exact cross-assay causal direction, or expansion of candidate alternatives"
+  },
+  "calibration_audit": {
+    "relaxed_eligible_pair_count": 79,
+    "retrospective_eligible_true_pair_count": 62,
+    "retrospective_eligible_null_pair_count": 17,
+    "crossfit_point_selected_assay_pairs": 26,
+    "crossfit_point_true_pairs": 25,
+    "crossfit_point_null_pairs": 1,
+    "guarded_union_assay_pair_alternatives": 32,
+    "guarded_union_hyperedges": 31,
+    "guarded_union_truth_covered": 31,
+    "guarded_union_false_hyperedges": 0,
+    "singleton_hyperedges": 30,
+    "two_pair_ambiguity_hyperedges": 1,
+    "note": "The one point-selected null pair shares an assay with a selected true pair and is retained only as an alternative inside one two-pair ambiguity hyperedge; it is not emitted as a standalone edge. Hyperedge precision therefore does not assert that every candidate alternative is true."
+  },
+  "published_method_inspiration": {
+    "primary": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "multiway_matching": "Tang and Jebara (AISTATS 2017), Initialization and Coordinate Optimization for Multi-way Matching",
+    "relationship": "CA-BOSS adapts multi-domain component matching and permutation-consistency ideas to sparse count assays with held-out background-state proxies. The implementation is not a theorem application, and no publication contributes data or a biological pairing prior."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/crossfit_empirical_null_reporter_synchronization_v447_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "5c6b142c248f13a10424930a276dadae564cf2ba3d08bd0852a15f1c6cdba926",
+    "campaign_summary_file_sha256": "2bb6af58ea82828cabf58ef602c3198437a89264277cb75bf028cf75d9dc8b85",
+    "campaign_world_metrics_sha256": "afbdd0d3eb11e58dbf92160c9a01bc5c3c795919e5168145bcd7cfd0180fa7bc",
+    "campaign_panels_sha256": "bbfdfb05f87925ad1e3cc22758053c394d35507e98e6d39220c089ad02789d21",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "0d07b7544a081dd37b53c6b3b168a721e4adf2814b83c800476bbe33e6b24303",
+      "development_47001_47016": "491b6fd9aa46ce38bd0e06704ae431aca3b6de6fea6858af3764fe61630d5f1a",
+      "train_41001_41024": "795e3b34f9993284fdb648f806ae34226fe337fcb8b16338ac631526e0b043f4",
+      "train_46001_46024": "586db35a9145c44eaaef72de00557af819beb8a60c7276e12cc295c396714c9c",
+      "train_49001_49024": "cdb0bb3f96837871acc08b300f4c69b1808eca410bb203ae401a15e77746f921"
+    },
+    "calibrator_source_sha256": "b4040c071f9a5ea4b1e7fa3abb85bebd305419714f10dc248709a236ca58249a",
+    "scorer_source_sha256": "b8ff6052f3ac518c4c1a6b06324109f5c712b97dce03be2b17f9b0089e619651"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/sjl-sjtu/scMRDR",
+  "commit": "7280e64ae19f7391c6f5adf00d9d353f79e96603",
+  "retrieved_utc_date": "2026-10-03",
+  "license": "GPL-3.0",
+  "original_sha256": {
+    "src/scMRDR/model.py": "221ff4fbddb63cc08613f9086ce52e230d5175f5c473c92be8f73df210aab078",
+    "src/scMRDR/loss.py": "6da9df9e2602aabf38d8e43c23583ce3b42f850b1389fd51be1d71cb11b93600",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "local_changes": {
+    "upstream/model.py": "Attribution header, normalized end-of-file whitespace, and removed unused imports: numpy, matplotlib.pyplot, scipy, ot",
+    "upstream/loss.py": "Normalized end-of-file blank lines only",
+    "upstream/LICENSE": "None"
+  },
+  "paper": "https://arxiv.org/abs/2510.24987v2"
+}

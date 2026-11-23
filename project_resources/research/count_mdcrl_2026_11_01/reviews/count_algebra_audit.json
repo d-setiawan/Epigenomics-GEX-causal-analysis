@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "check_groups": [
+    "all_nine_conditional_second_factorial_moments",
+    "all_27_conditional_third_factorial_moments",
+    "four_signed_centered_projected_factorial_moment_identities",
+    "conditional_deconvolved_cf_mean_and_absolute_second_moment",
+    "implemented_exposure_aware_cumulants_equal_independent_central_formula",
+    "implemented_scalar_contributions_equal_symbolically_verified_polynomials",
+    "implemented_cf_and_complex_mean_standard_error_equal_direct_product",
+    "exact_bounded_source_tensor_recovers_units_up_to_signed_permutation",
+    "49_permutation_plus_one_boundary_and_conservative_ties"
+  ],
+  "project_data_read": false,
+  "model_data_fits": 0,
+  "new_benchmark_worlds": 0,
+  "source_sha256": {
+    "protocol.json": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c",
+    "count_sources.py": "43d341a81b4160edf95af33124c51c71afb6b0f800f14086dba0c2d88d8d3fff",
+    "apply_counts.py": "bc6a411efb67c3e3667a6be257e9d116c164c7695eac010a20722edf11f37504",
+    "verify_count_algebra.py": "709f55c1098f516dc3e605750d1bfff55992459a84d67841e803e979e3f62bf0"
+  }
+}

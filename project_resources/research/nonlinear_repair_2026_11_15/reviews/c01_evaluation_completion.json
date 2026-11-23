@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-11-15T20:39:19.288160+00:00",
+  "command": "env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -u evaluate.py",
+  "evaluation_exit_code": 0,
+  "outputs": 24,
+  "input_hashes_verified": 12,
+  "evaluation_seal_sha256": "ed6fcb6c3a1002e851e374a20f90dc08b99a809d952f1dd6b81bee32ce45d91b",
+  "evaluator_approval_sha256": "10b7b447c641ac5598c302381a7c72085c3120f0839d26f444405c6cc11ae020",
+  "fit_seal_sha256": "dd42e7daefa51695a4e94fdb365a51057e828087a0cb490462e20797be326586",
+  "sources_inputs_environment_match": true,
+  "scope": "Mechanical completion/integrity; independent result replay pending"
+}

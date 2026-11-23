@@ -1,0 +1,150 @@
+{
+  "schema_version": "ca_boss_v4.dual_null_disagreement_checkpoint_record.v1",
+  "algorithm": "CA-BOSS v4.59 dual-null disagreement stability rescue",
+  "status": "retrospective_cached_world_checkpoint_goal_incomplete",
+  "evaluation_scope": {
+    "cached_worlds": 103,
+    "target_blocks": 5,
+    "chromatin_modalities_per_world": 6,
+    "rna_also_present_in_worlds": true,
+    "new_worlds_or_datasets_created": false,
+    "fresh_locked_certification": false,
+    "all_predictions_frozen_before_target_truth": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "other_block_simulation_truth_used_for_null_calibration": true,
+    "other_block_simulation_truth_used_for_supervised_training": false
+  },
+  "selection_contract": {
+    "baseline": "verified target-safe CA-BOSS v4.58",
+    "candidate_source": "v4.57 nominal joint-geometry proposals new relative to target-safe v4.55",
+    "required_new_pair_local_context_count": 2,
+    "available_local_context_count": 3,
+    "local_contexts": "full fit plus two disjoint held-out background-feature folds",
+    "bootstrap_replicates": 100,
+    "minimum_selection_count_exclusive": 50,
+    "candidate_count_must_strictly_exceed_same_stratum_worst_null": true,
+    "candidate_count_must_strictly_exceed_unstratified_global_worst_null": true,
+    "working_beta_1_1_dominance_threshold_against_same_stratum_null": 0.975,
+    "bootstrap_replicates_treated_as_independent_trials": false,
+    "connected_conflicts_returned_as_single_unexpanded_ambiguity_hypotheses": true,
+    "incremental_overlap_with_retained_core_assay_alternatives_rejected": true,
+    "perfect_matching_assumed": false,
+    "fixed_shared_relationship_count_assumed": false,
+    "exact_cross_assay_pair_claimed": false,
+    "cross_assay_direction_claimed": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 239,
+      "true_positive_hyperedges": 239,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 70,
+      "shared_state_hyperedge_precision": 1.0,
+      "shared_state_hyperedge_recall": 0.7734627831715211
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 402,
+      "correctly_recovered_assay_participations": 402,
+      "assay_participation_false_positives": 0,
+      "assay_participation_false_negatives": 216,
+      "assay_participation_precision": 1.0,
+      "assay_participation_recall": 0.6504854368932039,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "assay_participation_point_abstentions": 38,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_features": 0,
+      "sentinel_false_positive_hypotheses": 0,
+      "sentinel_false_positive_rate": 0.0,
+      "sentinel_false_discovery_proportion": 0.0
+    },
+    "equivalence_class": {
+      "equivalence_class_coverage": 0.7734627831715211,
+      "equivalence_class_coverage_precision": 1.0,
+      "average_ambiguity_set_size": 1.292887029288703,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_pair_alternatives": 309,
+      "candidate_pair_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "metric_schema_version": "ca_boss_v4.cross_assay_benchmark_metrics.v1",
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 201,
+      "exact_cross_assay_pair_true_positives": 201,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.6504854368932039,
+      "exact_cross_assay_pair_abstention_rate": 0.3495145631067961,
+      "exact_cross_assay_pair_abstention_definition": "one_minus_capped_prediction_count_over_truth_pair_count",
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_true_positives": 0,
+      "cross_assay_direction_false_positives": 0,
+      "cross_assay_direction_precision": 0.0,
+      "cross_assay_direction_recovery": null,
+      "direction_is_not_defined_for_shared_state_truth": true,
+      "interpretation": "panel_micro_average_identifiability_stress_test; exact pair and direction recovery are diagnostic and not reliability gates"
+    }
+  },
+  "delta_from_v458": {
+    "true_positive_hyperedges_added": 1,
+    "false_positive_hyperedges_added": 0,
+    "newly_recovered_assay_participations": 2,
+    "new_exact_pair_stress_true_positives": 1,
+    "changed_world": "train_49001_49024__world_seed49011",
+    "new_assay_pair": ["chrom_H3K4me1", "chrom_H3K4me3"],
+    "world_shared_state_true_positives_before": 1,
+    "world_shared_state_true_positives_after": 2
+  },
+  "target_calibration_results": {
+    "dev340": {"new_pairs": 0, "same_stratum_null_ceiling": 86, "global_null_ceiling": 99, "manifest_payload_sha256": "676af8644d88fb2f3605e5e2bb5e60c4740cd89cb872b81e9a56be17f23c748e"},
+    "dev470": {"new_pairs": 0, "same_stratum_null_ceiling": 82, "global_null_ceiling": 96, "manifest_payload_sha256": "f6d885d996bcb736eaa38ff0bbdffc8d02691176b43c372ae1de5a34c317d6c0"},
+    "train410": {"new_pairs": 0, "same_stratum_null_ceiling": 100, "global_null_ceiling": 100, "manifest_payload_sha256": "45977902f6235e87cc4702774a7a4286c1e72b63fbec947a8e65d20c10d66e90"},
+    "train460": {"new_pairs": 0, "same_stratum_null_ceiling": 0, "global_null_ceiling": 97, "manifest_payload_sha256": "682e7d0bee1a26c08983763902a2b4db605ce54baf43053fad17109ecf24ae9e"},
+    "train490": {"new_pairs": 1, "same_stratum_null_ceiling": 88, "global_null_ceiling": 96, "manifest_payload_sha256": "50fe8d575ebf54967bee5b9f3f83ead73433cd722df217f490b0bea2fe68490d"}
+  },
+  "artifacts": {
+    "calibration_root": "Evaluation/outputs/ca_boss_v4/bootstrap_dual_null_disagreement_rescue_v459_source_current_calibrations",
+    "pretruth_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_dual_null_disagreement_rescue_v459_source_current_all103_pretruth",
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_dual_null_disagreement_rescue_v459_source_current_all103_retrospective_scores",
+    "replay_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_dual_null_disagreement_rescue_v459_source_current_all103_retrospective_replay"
+  },
+  "artifact_sha256": {
+    "pretruth_manifest_payload": "04e6b30395afe033729ba6498135b11d46315f2fb45da1f500dbbf271c5700a9",
+    "pretruth_manifest_file": "76406ca112c9c78accd3deb5ac2aed40a87880fd02b84671818cbb3b48127781",
+    "campaign_summary_payload": "d6255ab037e1fae5e228784082742d8959d56ba3f494d2062cb8a10e0c42897e",
+    "campaign_summary_file": "2b0dd4935faf6e4c533c37550fd16eb58c5f4155ee1b048cdbcd455a1f71066f",
+    "campaign_world_metrics": "ed9a9ebe13076b4191fd684fe7ed1005eb6f2556c518331abf80602088c45ef5"
+  },
+  "source_sha256": {
+    "bootstrap_dual_null_disagreement_rescue_v4.py": "00505a57b3ed9a4a23236132a4c2fdc10c08460c230028dcaaafdb294bf244dc",
+    "score_bootstrap_dual_null_disagreement_rescue_v4.py": "9c36f466d0136b41ffe50365950bd7de436cedc9bd2a7728a04da78d16fd5e00",
+    "cross_assay_benchmark_metrics_v4.py": "69281265757c64cf8aca045c97d9a8e907dcde375154360e9df0f7e63d5bc318",
+    "score_component_conditioned_cross_assay_equivalence_v4.py": "b2a30d1440379abee8fc9d408e7939b6c99ba6cf94bad00a0c11e4f163517a58",
+    "score_multi_assay_permutation_synchronization_v4.py": "d3bfc02bdc08048e7adfb6d08b439dd515613cad5592b288b80838191688fd2b",
+    "summarize_cross_assay_benchmark_panel_v4.py": "c240538b9fc00637fb9b38e6a3259e3eb2941b92bf310e98239c8775a3ff87f0"
+  },
+  "verification": {
+    "targeted_test_count": 13,
+    "targeted_tests_passed": 13,
+    "test_command": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest -q Evaluation/tests/test_bootstrap_dual_null_disagreement_rescue_v4.py Evaluation/tests/test_diagnose_dual_null_disagreement_stability_v4.py",
+    "all_cached_worlds_passed_unscored_candidate_core_schema_and_nonoverlap_checks": 103,
+    "separate_scoring_process_reproduced_bound_outputs": 207,
+    "separate_scoring_process_reproduced_campaign_summary_exactly": true,
+    "independent_reviewer": "/root/ecf_audit",
+    "independent_code_review_completed_before_source_freeze": true,
+    "independent_code_review_result": "No remaining blocker for retrospective freeze after selection-status schema, core-overlap rejection, and inherited-table verification fixes; reviewer independently ran 10 new tests successfully."
+  },
+  "limitations": [
+    "Seventy of 309 attainable shared-state truth hyperedges remain unrecovered; the overall goal is incomplete.",
+    "The rule was developed on reused cached worlds; target-block exclusion and frozen predictions do not provide fresh locked-world certification.",
+    "The Beta dominance calculation is a working uncertainty comparison; the bootstrap replicates are not independent trials and no calibrated causal posterior is claimed.",
+    "Exact feature pairs and directions are identifiability stress metrics; outputs assert shared-state equivalence hypotheses and preserve ambiguity alternatives.",
+    "The new stage reuses frozen bootstrap evidence and does not add new cells, modalities, external biological information, or cell correspondence."
+  ],
+  "goal_completion_claimed": false
+}

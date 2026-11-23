@@ -1,0 +1,288 @@
+{
+  "source_summary_path": "../summary.json",
+  "source_summary_sha256": "ef637c4a94b87af1753f2594dd9c04a8e9fd8a153fb55327119e2199003ff029",
+  "source_protocol_sha256": "7d84e794c6347eda2cf195b601b1792040d35dd767c85ac549108027cce3326a",
+  "helper_path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/data/scmtr_seq/build_model_inputs_s1.py",
+  "helper_sha256": "0f9d8cb406d775bd73172e4377480912f3b531c3301e2b74983fe12f4fcd97cd",
+  "python": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+  "versions": {
+    "anndata": "0.9.2",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.14.1",
+    "h5py": "3.15.1"
+  },
+  "policy": "Only learner count/cell/feature files and the checksum summary are read; no evaluator files are read. Raw integer CSR counts in X, opaque obs index only, fixed gene annotation in var; no obs columns, uns, obsm, varm, pairwise slots, layers or raw. Source library_depth and source feature_type are deliberately omitted.",
+  "artifacts": {
+    "train/RNA": {
+      "path": "train/RNA.h5ad",
+      "sha256": "9c0609fc44274aee794b41b9aba7fb7064d3951ccdb1b1f8dc6d19b2c3762fa1",
+      "bytes": 7543033,
+      "shape": [
+        602,
+        23383
+      ],
+      "nnz": 1603717,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "f2d04923f547b5eaf34af5b4aa17924d5626aa7b05b8c4ea31182ce359c30aae",
+      "ordered_feature_ids_sha256": "55538b64b8865e0ec41fe051db5b263cdab0c5b86bcb0792437ca8f7a273e7b8",
+      "ordered_gene_ids_sha256": "35b87a293229c8a1028b395a1ea4092df81d5f5ec971cad8584430545672878d",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/RNA_train_counts.npz",
+          "sha256": "2294da8d37b0032da8b5d98be6311c9ad6428c4cd99e067adcaee1cc8ead3493",
+          "bytes": 3893785
+        },
+        "cells": {
+          "path": "learner/RNA_train_cells.tsv",
+          "sha256": "06427b24d9ca4a4850c979520f7e91288601ff36b4c2cfec20dc29bc214bdb1c",
+          "bytes": 13587
+        },
+        "features": {
+          "path": "learner/RNA_features.tsv",
+          "sha256": "d09f4cabcce4890da168643c0a723392ae79522b4bceead8d92a9d2f43b08391",
+          "bytes": 2243155
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    },
+    "train/H3K27ac": {
+      "path": "train/H3K27ac.h5ad",
+      "sha256": "06334190910dd7c08f0ed37259609d79dd129c3e50d092a7dec9f30f7d4ded6a",
+      "bytes": 4451194,
+      "shape": [
+        615,
+        26569
+      ],
+      "nnz": 182000,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "fa52033e768a44a6cb17f3327f4bf139943f58a2ba0e90e11f825cea2075ee5a",
+      "ordered_feature_ids_sha256": "7c0ba5a545bddea98401d423fc45221724bbc0fc62f61517a867fddc01b85eb9",
+      "ordered_gene_ids_sha256": "b62e5100f356bbfbf2cd03aa1bc2aedc4f5052dffd8e10b3b21282d8f40f6952",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/H3K27ac_train_counts.npz",
+          "sha256": "2cc76a13f7cbde3b8f25b35d949bb093e94aa567dda3cf40c1d68e6038d03e6a",
+          "bytes": 392900
+        },
+        "cells": {
+          "path": "learner/H3K27ac_train_cells.tsv",
+          "sha256": "fe0fcc4fa3c754af72e46db1a4cecc03b7cd9a90c4b4ed7c60418bdbea8b89bb",
+          "bytes": 15361
+        },
+        "features": {
+          "path": "learner/H3K27ac_features.tsv",
+          "sha256": "f66b3f530a48dae9a9ca369078db2aef6644cb2839dfef881c3f9181f247482c",
+          "bytes": 2554004
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    },
+    "train/H3K4me3": {
+      "path": "train/H3K4me3.h5ad",
+      "sha256": "398f843dc9ebc26407c0bd84b6913403b44cae27475056de4f41028a5c63333a",
+      "bytes": 3856909,
+      "shape": [
+        614,
+        22481
+      ],
+      "nnz": 200327,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "9c0855ad9bcee43c5a6d786f1d41698e8e7e3f8fa74f221f49076e953202d721",
+      "ordered_feature_ids_sha256": "52147efb1e4843dc281a1d7bd3fe84caf05eeda16c477bd298f4a61873544e57",
+      "ordered_gene_ids_sha256": "c641c58e1fb38f0223086a655622c62a61a06cb7a97699c0ea54e83404461ac2",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/H3K4me3_train_counts.npz",
+          "sha256": "da12bfb3a42547093f73d651ac536acd0ae3284bdf956a31b22431c3e547eebe",
+          "bytes": 424724
+        },
+        "cells": {
+          "path": "learner/H3K4me3_train_cells.tsv",
+          "sha256": "5516f24797d878f4a79b6f9e2a0b54ed2689e10d838eb7233289a3b9f6f202db",
+          "bytes": 15379
+        },
+        "features": {
+          "path": "learner/H3K4me3_features.tsv",
+          "sha256": "1cddc7d620e532d5a117a300c278386cfef93141b064c6d32c39e698f716cc5e",
+          "bytes": 2155776
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    },
+    "test/RNA": {
+      "path": "test/RNA.h5ad",
+      "sha256": "f1c8b648822132a999b3ef876d3ff85b3418f8598d587d5b3349a93dc7c1eff5",
+      "bytes": 7355078,
+      "shape": [
+        595,
+        23383
+      ],
+      "nnz": 1527472,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "f0b179ccb3472714bab44a466ef4a7ecdd01f7dd5b8e54145baec6c38ab84ef6",
+      "ordered_feature_ids_sha256": "55538b64b8865e0ec41fe051db5b263cdab0c5b86bcb0792437ca8f7a273e7b8",
+      "ordered_gene_ids_sha256": "35b87a293229c8a1028b395a1ea4092df81d5f5ec971cad8584430545672878d",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/RNA_test_counts.npz",
+          "sha256": "194540a0ecb551d412ade6fc48535eaaa6d699f6ddff8f8dbf61e451d666b32c",
+          "bytes": 3716948
+        },
+        "cells": {
+          "path": "learner/RNA_test_cells.tsv",
+          "sha256": "b95b31bf88e2b1366c0daaee68e6401721f87b80effe06f0f93afafd0300e531",
+          "bytes": 12802
+        },
+        "features": {
+          "path": "learner/RNA_features.tsv",
+          "sha256": "d09f4cabcce4890da168643c0a723392ae79522b4bceead8d92a9d2f43b08391",
+          "bytes": 2243155
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    },
+    "test/H3K27ac": {
+      "path": "test/H3K27ac.h5ad",
+      "sha256": "a9e5c3e6b35a27e110c3c8c6ec5fe3154d5b6368329ad78f68ada4101c1a70ca",
+      "bytes": 4399222,
+      "shape": [
+        595,
+        26569
+      ],
+      "nnz": 149378,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "fd92f02e5b4e54f20131c594e882bb5057f66dff19d22b3406c2e03276622b1c",
+      "ordered_feature_ids_sha256": "7c0ba5a545bddea98401d423fc45221724bbc0fc62f61517a867fddc01b85eb9",
+      "ordered_gene_ids_sha256": "b62e5100f356bbfbf2cd03aa1bc2aedc4f5052dffd8e10b3b21282d8f40f6952",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/H3K27ac_test_counts.npz",
+          "sha256": "0ff0f7e17a75c1fc21d6ef5ad5c8e0fae58cd6f6fb2990f507ade10bebb9d52a",
+          "bytes": 326156
+        },
+        "cells": {
+          "path": "learner/H3K27ac_test_cells.tsv",
+          "sha256": "88953377509af53d5f97d1f8d879fba578910f7545acbc79a98cedf406d53c4d",
+          "bytes": 14250
+        },
+        "features": {
+          "path": "learner/H3K27ac_features.tsv",
+          "sha256": "f66b3f530a48dae9a9ca369078db2aef6644cb2839dfef881c3f9181f247482c",
+          "bytes": 2554004
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    },
+    "test/H3K4me3": {
+      "path": "test/H3K4me3.h5ad",
+      "sha256": "89e2f0e478c2fd09f825589fdc50a1d6dcdfde3ecaaa5f2e0849df885d41626c",
+      "bytes": 3838183,
+      "shape": [
+        595,
+        22481
+      ],
+      "nnz": 190140,
+      "X_dtype": "int32",
+      "ordered_cell_ids_sha256": "db8acdeb2f4210eb6dcccc773d432202839ef81c2ee370cb4b5a71c1a0c40c70",
+      "ordered_feature_ids_sha256": "52147efb1e4843dc281a1d7bd3fe84caf05eeda16c477bd298f4a61873544e57",
+      "ordered_gene_ids_sha256": "c641c58e1fb38f0223086a655622c62a61a06cb7a97699c0ea54e83404461ac2",
+      "var_columns": [
+        "gene_id",
+        "gene_name",
+        "annotation_gene_name",
+        "chrom",
+        "tss",
+        "strand",
+        "start",
+        "end",
+        "gene_type"
+      ],
+      "obs_columns": [],
+      "uns_keys": [],
+      "source_files": {
+        "counts": {
+          "path": "learner/H3K4me3_test_counts.npz",
+          "sha256": "56b84a36ad9fcc816f3ee4a4b32d3c0f08abdb8a0b10e6c596d7510164ea6b35",
+          "bytes": 404262
+        },
+        "cells": {
+          "path": "learner/H3K4me3_test_cells.tsv",
+          "sha256": "51af7300fb00720ae70bf4389ec544b20b4f1917f77ebaecb7d82f513573a45d",
+          "bytes": 14302
+        },
+        "features": {
+          "path": "learner/H3K4me3_features.tsv",
+          "sha256": "1cddc7d620e532d5a117a300c278386cfef93141b064c6d32c39e698f716cc5e",
+          "bytes": 2155776
+        }
+      },
+      "roundtrip_exact_counts_ids_gene_annotations": true
+    }
+  }
+}

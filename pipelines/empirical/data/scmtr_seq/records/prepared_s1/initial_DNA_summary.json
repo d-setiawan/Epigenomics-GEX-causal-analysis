@@ -1,0 +1,52 @@
+{
+  "H3K27ac": {
+    "fragment_rows": 5321952,
+    "count_sum": 5321952,
+    "n_barcodes": 2444,
+    "fragment_multiplicities": {
+      "1": 5321952
+    },
+    "counts_quantiles": [
+      497.0,
+      1055.0,
+      1568.0,
+      2520.75,
+      29693.0
+    ],
+    "detected_bin_quantiles": [
+      495.0,
+      1044.75,
+      1550.0,
+      2492.25,
+      27663.0
+    ]
+  },
+  "H3K4me3": {
+    "fragment_rows": 2359015,
+    "count_sum": 2359015,
+    "n_barcodes": 2444,
+    "fragment_multiplicities": {
+      "1": 2359015
+    },
+    "counts_quantiles": [
+      193.0,
+      488.0,
+      714.0,
+      1114.5,
+      12235.0
+    ],
+    "detected_bin_quantiles": [
+      193.0,
+      484.0,
+      706.0,
+      1096.75,
+      11442.0
+    ]
+  },
+  "DNA_barcode_union": 2444,
+  "both_marks": 2444,
+  "RNA_QC_and_both_marks": 2410,
+  "RNA_QC_and_both_marks_at_least_100": 2410,
+  "RNA_QC_and_both_marks_at_least_250": 2408,
+  "RNA_QC_and_both_marks_at_least_500": 1779
+}

@@ -1,0 +1,2823 @@
+Supplementary Information
+
+Scaling deep identifiable models enables zero-shot
+characterization of single-cell biological states
+
+Contents
+1
+
+Supplementary Note
+1.1 Problem setting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Assumptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Main theoretical results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.4 Implications of the theoretical results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+2
+3
+3
+8
+
+2
+
+Supplementary Methods
+
+9
+
+3
+
+Supplementary figures and tables
+Supplementary Figure 1
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 2
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 3
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 4
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 5
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 6
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 7
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 8
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 9
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 10
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 11
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 12
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Figure 13
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Table 1
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Table 2
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Table 3
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Supplementary Table 4
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+13
+13
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+
+1
+
+Supplementary Note
+
+In this part, we show the theoretical identifiability of disentangling batch-dependent and independent variations
+from observational distribution of single-cell gene expression under suitable assumptions. Our theoretical
+identifiability result serves as a foundation of the scShift model in disentangling variations and enabling
+comparisons across datasets.
+
+1
+
+1.1
+
+Problem setting
+
+We consider the following simplified generative process of gene expression distributions in single cells. We
+define x ∈ Rp as the observed random vector (gene expression) for each cell. Each cell belongs to a dataset
+(batch) that we denote as b ∈ {1, 2, ..., B}, which we assume to be known for each cell. x is generated with
+two sets of latent variables. The first set of latent variables z ∈ Rd1 , indicates the batch-independent latent
+variables, that comprises information shared across datasets such as cell types. The second set of latent
+variables s ∈ Rd2 denotes the batch-dependent latent variables, comprising biological and batch information
+heterogeneous across samples and datasets. The specific generative process of x given b is defined as follows:
+• Generation of batch-centralized full latent variable u: u ∼ N (0, Id ).
+• Definition of λ, z, s. We define λ : {1, ..., B} → Rd as a function indicating the effect of each batch
+b on u. λ comprises both batch effects and global biological condition differences across datasets.
+We further define the index set S(λ) = {i|∃b ∈ {1, 2, ..., B}, λi (b) ̸= 0} ⊆ [d], and S c (λ) as the
+complement set of S(λ). We define the latent variables z ∈ Rd1 and s ∈ Rd2 as the components in
+u + λ that are unaffected and affected by λ, respectively. Specifically, we have:
+z := uS c (λ) , sb := (u + λ(b))S(λ) ;
+
+d1 := |S c (λ)|, d2 := |S(λ)|.
+
+(1)
+
+• Generation of x. Finally, we assume the gene expression of cells in batch b (xb ) to be sampled from the
+following negative binomial distribution:
+xb ∼ N B(f (u + λ(b)), g).
+
+(2)
+
+With a slight abuse of notation, the above equation may be rewritten as:
+xb ∼ N B(f (z, s), g).
+
+(3)
+
+Here f : Rd → Rp indicates the mean of the negative binomial distribution, and g ∈ Rp is a constant
+vector indicating the dispersion of the distribution. We assume that f is injective and smooth with a
+smooth injective (thus f is a diffeomorphism). To simplify the problem setting, we assume the constant
+vector g is fixed and known. Our assumptions on the gene expression count distribution mostly align
+with those established in [1].
+We denote the image of f as P = {f (u)|u ∈ Rd }. Let θ = (λ, f ) represent the parameters of the underlying
+generative model. For notational convenience, we write fλ(b) (u) := f (u + λ(b)). Let pθ,b (x) represent the
+probability density function of gene expression vector x ∈ Rp for a cell from batch b. We then define the set of
+all possible parameters that yield the same distribution as pθ,b (x):
+Definition 1. (Parameter family) Let Θ be the set of all possible parameters yielding the same distribution for
+the gene expression of a single cell from any batch b:
+Θ = {θ̃ := (λ̃, f˜)|pθ̃,b (x) = pθ,b (x), ∀b ∈ {1, 2, ..., B}; f˜ : Rd → P is smooth
+and invertible with a smooth inverse}
+
+(4)
+
+Our goal here is to prove that the parameters of the generative process can be correctly identified from
+observation distribution p(x). More specifically, we aim to prove that, the identified parameter set (λ̃, f˜) ∈ Θ
+and the ground truth (λ, f ) are "equivalent" potentially upon certain transformations. We formally define
+the equivalence class of the parameter set as follows, which we term "disentanglement equivalence". The
+conditions here are very similar to the definition in [1]. The only difference is that the condition (ii) here is
+slightly stronger than that in [1], as we specify the function F to be bĳective:
+Definition 2. (Disentanglement equivalence) Let θ̃ = (λ̃, f˜) ∈ Θ be a set of parameters yielding the same
+distribution pθ̃,b (x) as the ground truth θ = (λ, f ). We say that θ̃ satisfies the disentanglement equivalence
+
+2
+
+relationship w.r.t. θ, denoted as θ̃ ∼ θ, if the following three conditions hold:
+(i):
+
+d˜1 = d1 , d˜2 = d2 ;
+
+(5)
+d1
+
+d1
+
+→ R , s.t. ∀ρ ∈ P, f
+
+−1
+
+(ρ)S c (λ) = F (f˜−1 (ρ)S c (λ̃) );
+
+(ii):
+
+∃ bĳective function F : R
+
+(iii):
+
+∃ invertible L ∈ Rd2 ×d2 , c ∈ Rd2 , s.t. ∀ρ ∈ P, f −1 (ρ)S(λ) = Lf˜−1 (ρ)S(λ̃) + c.
+
+(6)
+(7)
+
+Remark 1. Our problem setting differs from [2] in several key aspects. In our framework, the annotation label
+has only a "partial" effect on the latent variables—specifically affecting s but not z, unlike the settings in [3, 2].
+Consequently, the key results from previous works (theorem 1 in [3], theorem 23 in [2]) cannot be directly
+adopted since linear identifiability for z does not hold, necessitating novel theoretical approaches. Additionally,
+we do not assume the dimension of z, s are correctly specified. Instead, we show that the model identifiability
+under our assumptions indicate correct dimensionalities of disentangled representations z and s.
+We next state our assumptions. In our following text, (λ, f ) refers to the ground truth solution, a specific
+instance in the parameter set Θ. (λ̃, f˜) refers to any parameters within the parameter set Θ.
+
+1.2
+
+Assumptions
+
+Assumption 1. (MLP decoder) We define the multilayer perceptron (MLP) function family as follows:
+MLP = {f |f = fn ◦ fn−1 ... ◦ f1 , fi (x) = σ(Wi x + bi ), n ∈ N}
+
+(8)
+
+Here for simplicity, we suppose σ to be tanh, and Wi , bi are matrices and vectors that represent weights and
+biases for each layer. Then we assume for the ground truth f and any (λ̃, f˜) ∈ Θ, we have:
+f˜, f ∈ MLP.
+
+(9)
+
+Assumption 2. (Batch difference) We assume that the total number of batches B > d. Moreover, for the
+ground truth λ, we assume that ∀i ̸= j ∈ {1, ..., B}, λ(bi ) ̸= λ(bj ).
+2
+Assumption 3. (Sufficient variability) There exist batches (bi )d02 such that the d2 vectors (ai )di=1
+= (λ(bi ) −
+d2
+λ(b0 ))i=1 are linearly independent.
+
+Assumption 4. (Independence between batch and latent variables) We consider any value of u ∈ Rd
+and λ(1), ..., λ(B). By these we denote ρb = f (u + λ(b)), b ∈ {1, 2, ..., B}. We assume that ∀(λ̃, f˜) ∈
+Θ, f˜−1 (ρb ) − λ̃(b) is a constant with respect to b. In particular, f˜−1 (ρb )S c (λ̂) is a constant with respect to b.
+Remark 2. This assumption is crucial for preventing batch-specific information from being embedded in the
+centralized representation u, which would otherwise compromise model identifiability. It is automatically
+satisfied for ground truth (λ, f ). In practice, the assumption is encouraged by enforcing independence between
+f˜−1 (ρb ) − λ̃ and λ̃, where f˜−1 (ρb ) − λ̃ is approximated by the variational posterior.
+Assumption 5. (Non-exploding moments) We assume that the ground truth function f satisfies the element-wise
+2m
+property: ∀j ∈ {1, 2, ..., p}, ∀b ∈ {1, 2, ..., B}, Efλ(b)
+(u)j = O((2m)2m ) for m ∈ N.
+Remark 3. The moment assumption serves a technical purpose: it establishes conditions under which probability
+distributions can be uniquely determined by their moment sequences. Additional discussions can also be seen
+in [1].
+
+1.3
+
+Main theoretical results
+
+Before presenting the statement and proof of the main theorems, we introduce a lemma that will be used in the
+proof. The lemma aligns with Lemma 1 in the theoretical foundation of SIMVI [1]. For completeness, we
+restate this lemma within the context of scShift.
+
+3
+
+Lemma 1. Suppose θ, θ̃ ∈ Θ are two parameters that result in the same distribution of xb for any batch b. We
+denote the latent variables generated with θ, θ̃ as u and ũ respectively. Then under Assumption 5, for any
+batch b, f (u + λ(b)), f˜(ũ + λ̃(b))) have the same distribution:
+d
+
+pθ (xb ) = pθ̃ (xb ) ⇒ fλ(b) (u) = f˜λ̃(b) (ũ).
+
+(10)
+
+The proof of Lemma 1 coincides with the proof of Lemma 1 in [1]. Using the lemma, our first theorem
+demonstrates that the ground truth batch-dependent variable s can be represented as a linear projection of the
+estimated s̃. This result mirrors (iii) in Definition 2, differing only in dimensionality and the invertibility of the
+linear projection (because (i) in Definition 2 is not yet verified).
+Theorem 1. (Identifiability of biological components) For any θ̃ = (λ̃, f˜) ∈ Θ, under Assumptions 1, 3, 4,
+˜
+5, there exists a fixed matrix L ∈ Rd2 ×d2 and a constant vector c ∈ Rd2 , such that ∀ρ ∈ P, f −1 (ρ)S(λ) =
+Lf˜−1 (ρ)S(λ̃) + c.
+d
+Proof. Our proof follows a similar approach to that of [3]. Applying Lemma 1, we have fλ(b) (u) = f˜λ̃(b) (ũ).
+Inspecting the densities at a point ρ ∈ P on both sides thus yields
+
+∀ρ ∈ P, ∀b ∈ {1, 2, ..., B},
+
+p(fλ(b) (u) = ρ) = p(f˜λ̃(b) (ũ) = ρ).
+
+(11)
+
+Next, we apply the change of variables formula to both sides, resulting in
+p(fλ(b) (u) = ρ) = volJf −1 (ρ)p(u + λ(b) = f −1 (ρ))
+and
+p(f˜λ̃(b) (ũ) = ρ) = volJf˜−1 (ρ)p(ũ + λ̃(b) = f˜−1 (ρ)).
+Here volA denotes the product of singular values of a matrix A [3, 4]. Now because u, ũ ∈ N (0, Id ), we can
+explicitly write the log probability densities in Eq. (11). That is, ∀ρ ∈ P, ∀b ∈ {1, 2, ..., B},
+log volJf −1 (ρ) + log p(u = f −1 (ρ) − λ(b)) = log volJf˜−1 (ρ) + log p(ũ = f˜−1 (ρ) − λ̃(b))
+⇔ log volJf −1 (ρ) − ||f −1 (ρ) − λ(b)||2 /2 = log volJf˜−1 (ρ) − ||f˜−1 (ρ) − λ̃(b)||2 /2.
+
+(12)
+
+Now we fix ρ and plug each value (bi )d02 (described in Assumption 3) in Eq. (12) leading to d2 + 1 equations.
+We take the difference of 2, ..., d2 + 1th equation with the first equation, which leads to d2 equations of form:
+∀i ∈ {1, ..., d2 },
+−||f −1 (ρ) − λ(bi )||2 + ||f −1 (ρ) − λ(b0 )||2 = −||f˜−1 (ρ) − λ̃(bi )||2 + ||f˜−1 (ρ) − λ̃(b0 )||2
+⇔ ⟨f
+
+−1
+
+(13)
+
+1
+1
+(ρ), ai ⟩ − (||λ(bi )||2 − ||λ(b0 )||2 ) = ⟨f˜−1 (ρ), ãi ⟩ − (||λ̃(bi )||2 − ||λ̃(b0 )||2 ).
+2
+2
+
+2
+2
+2
+Here (ai )di=1
+= (λ(bi ) − λ(b0 ))di=1
+as defined in Assumption 3. Correspondingly, we denoted (ãi )di=1
+=
+d2
+1
+1
+d2
+2
+2
+2
+(λ̃(bi ) − λ̃(b0 ))i=1 . Further denote c ∈ R with ci = 2 (||λ(bi )|| − ||λ(b0 )|| ) − 2 (||λ̃(bi )|| − ||λ̃(b0 )||2 ),
+and matrix A ∈ Rd2 ×d = [a1 , ..., ad2 ]T , Ã ∈ Rd2 ×d = [ã1 , ..., ãd2 ]T , we have
+
+Af −1 (ρ) = Ãf˜−1 (ρ) + c.
+
+(14)
+
+By definition, A have d1 all-zero columns and the remaining d2 columns have non-zero entries. That is, the
+submatrix AS c (λ) ∈ Rd1 ×d2 ≡ 0. Moreover, by Assumption 3, the complementary submatrix AS(λ) ∈ Rd2 ×d2
+˜
+is of rank d2 thus invertible. Similarly for Ã, the submatrix ÃS c (λ̃) ∈ Rd1 ×d2 ≡ 0 by definition. Altogether,
+Eq. (14) can be further written as
+AS(λ) f −1 (ρ)S(λ) = ÃS(λ̃) f˜−1 (ρ)S(λ̃) + c
+−1
+˜−1 (ρ)
+⇔ f −1 (ρ)S(λ) = A−1
+S(λ̃) + AS(λ) c.
+S(λ) ÃS(λ̃) f
+
+4
+
+(15)
+
+−1
+Denote L := A−1
+S(λ) ÃS(λ̃) and c := AS(λ) c, then we have
+
+f −1 (ρ)S(λ) = Lf˜−1 (ρ)S(λ̃) + c
+
+(16)
+
+thus completing the proof.
+We note that without additional conditions, the matrix L may lack invertibility, suggesting that the inferred
+batch-dependent latent variables potentially encode more information than the ground truth. We now proceed
+to demonstrate that an equivalence relationship (as defined in Definition 2) can be established between the
+"sparsest solution" and the ground truth.
+Theorem 2. We define the sparsest parameter θ̂ := (λ̂, fˆ) as the element in Θ that minimizes the cardinality
+of S(λ̂):
+θ̂ ∈ Θ; ∀θ̃ ∈ Θ, |S(λ̂)| ≤ |S(λ̃)|.
+(17)
+Then the equivalence relationship in Definition 2 holds for θ̂ and ground truth θ: θ̂ ∼ θ.
+Proof. The ∼-identifiability requires verifying conditions (i), (ii), and (iii) in Definition 2 for θ̂ and θ. The core
+of our proof focuses on establishing conditions (i) and (ii), while condition (iii) is a consequence of combining
+(i) and Theorem 1. Our proof comprises four key steps: First, as a preparatory step, we show that the sparsity
+condition leads to linear independence in λ̂S(λ̂) . Second, leveraging the result from the first step, we establish
+condition (i), which consequently leads to condition (iii). Third, we prove a weaker version of condition (ii),
+i.e. the existence of a function F such that F (f −1 (ρ)S c (λ) ) = fˆ−1 (ρ)S c (λ̃) . Finally, we prove that condition
+(ii) holds by combining the results from the second and third steps.
+In the subsequent proof, with a slight abuse of notation, we use the form f (z, s + λS(λ) ) to denote f (u + λ)
+in cases where this substitution enhances readability.
+Step I. In this step, we prove that the rank of the matrix B̂ := [λ̂1 , ..., λ̂B ] ∈ Rd×B equals its non-all-zero-row
+number |S(λ̂)|. If not, then |S(λ̂)| is strictly larger than the rank of B̂. We next show that in this case, we can
+construct another parameter θ̂′ = (λ̂′ , fˆ′ ) ∈ Θ that satisfies |S(λ̂′ )| < |S(λ̂)|, leading to a contradiction.
+We next describe the construction of λ̂′ and fˆ′ . Denote the singular value decomposition of B̂ as B̂ = U ΛV T ,
+we define λ̂′ := U T λ̂. To construct fˆ′ , as fˆ ∈ MLP, we consider the following expression of fˆ:
+fˆ := fˆn ◦ fˆn−1 ... ◦ fˆ1 ,
+
+fˆi (x) := σ(Wi x + bi )
+
+(18)
+
+Accordingly, we define fˆ′ as follows:
+fˆ′ := fˆn ◦ fˆn−1 ... ◦ fˆ1′ ,
+
+fˆi (x) := σ(Wi x + bi )(i ≥ 2),
+
+f1 (x) = σ(Wi U x + bi ), U ∈ Rd×d is the left singular value matrix of B̂.
+
+(19)
+
+We next show that the constructed parameter (λ̂′ , fˆ′ ) is legitimate. First, as û′ , û ∼ N (0, Id ), and λ̂′ = U T λ̂,
+by the orthogonality of U ,
+d
+U (û′ + λ̂′ ) = U û′ + λ̂ = û + λ̂,
+d
+thus fˆ′ (û′ + λ̂′ ) = fˆ(U (û′ + λ̂′ )) = fˆ(û + λ̂). Therefore, pθ̂′ ,b (x) = pθ̂,b (x), implying that Definition
+1 holds for θ̂′ (all other conditions automatically hold). Second, the resulting function fˆ′ is still within the
+MLP family, thus Assumption 1 holds for (λ̂′ , fˆ′ ). Finally, by the construction of (λ̂′ , fˆ′ ), for any ρb ∈ P,
+fˆ′−1 (ρb ) = U T fˆ−1 (ρb ). Therefore we have
+
+fˆ′−1 (ρb ) − λ̂′ (b) = U T (fˆ−1 (ρb ) − λ̂(b)).
+Since (λ̂, fˆ) satisfies Assumption 4, Assumption 4 is also satisfied for (λ̂′ , fˆ′ ). Together, (λ̂′ , fˆ′ ) ∈ Θ.
+
+5
+
+By the definition of λ̂′ , |S(λ̂′ )| now equals the rank of B̂, which is strictly smaller than |S(λ̂)|. This contradicts
+ˆ
+with the definition of (λ̂, fˆ). Thus, the rank of B̂ equals dˆ2 , and the submatrix B̂S(λ̂) ∈ Rd2 ×B is of full
+row-rank dˆ2 .
+Step II. We now consider Eq. (12) in Theorem 1 for (λ̂, fˆ): ∀ρ ∈ P, ∀b ∈ {1, 2, ..., B},
+log volJf −1 (ρ) − ||f −1 (ρ) − λ(b)||2 = log volJfˆ−1 (ρ) − ||fˆ−1 (ρ) − λ̂(b)||2 .
+
+(20)
+
+ˆ2
+ˆ2
+Because B̂ is of rank dˆ2 , we can select {bi }di=1
+such that {λ̂(bi )}di=1
+are linearly independent. We further
+ˆ2
+ˆ2
+select another b0 ∈ {1, 2, ..., B} not in {bi }di=1
+. Now we fix ρ and plug each value {bi }di=0
+in Eq. (20) leading
+ˆ
+ˆ
+to d2 + 1 equations. We subtract the first equation for b0 from the remaining d2 equations, yielding dˆ2 new
+equations. Analogous to Eq. (13), these dˆ2 equations can be written together in the following matrix form:
+ˆ
+
+Af −1 (ρ) = Âfˆ−1 (ρ) + ĉ; where
+
+A ∈ Rd2 ×d := [λ(b1 ) − λ(b0 ), ..., λ(bdˆ2 ) − λ(b0 )]T ;
+
+ˆ
+
+Â ∈ Rd2 ×d := [λ̂(b1 ) − λ̂(b0 ), ..., λ̂(bdˆ2 ) − λ̂(b0 )]T ,
+
+ˆ
+
+ĉ ∈ Rd2 .
+
+(21)
+
+ˆ ˆ
+We next show that, under Assumption 2 and 4, the submatrix ÂS(λ̂) ∈ Rd2 ×d2 is of rank dˆ2 thus invertible.
+ˆ
+
+ˆ
+
+2
+2
+As {λ̂(bi )}di=1
+are linearly independent, it suffices to verify that ∀b ∈ {bi }di=1
+, λ̂(b) ̸= λ̂(b0 ). Denote
+ρb = f (z, s + λ(b)S(λ) ), then when z, s are fixed, by assumption 2 and the injectivity of f , ρb has B different
+values for b ∈ {1, ..., B}. Thus by the injectivity of fˆ, fˆ−1 (ρb ) has B different values. Meanwhile, by
+Assumption 4, fˆ−1 (ρb ) − λ̂(b) is a constant when z, s are fixed. Therefore, λ̂(b) must have B different values
+for b ∈ {1, 2, ..., B}. Thus ∀b ∈ {1, 2, ..., B} =
+̸ b0 , λ̂(b) ̸= λ̂(b0 ), which establishes the desired result.
+
+As ÂS(λ̂) is invertible, analogous to the derivation in Eq. (15),
+ˆ
+
+ˆ
+
+∃L̂ ∈ Rd2 ×d2 , ĉ ∈ Rd2 , s.t. fˆ−1 (ρ)S(λ̂) = L̂f −1 (ρ)S(λ) + ĉ.
+
+(22)
+
+Combining Eqs. (22, 16), the following two equations hold:
+(I − L̂L)fˆ−1 (ρ)S(λ̂) = L̂c + ĉ;
+
+(I − LL̂)f −1 (ρ)S(λ) = Lĉ + c.
+
+(23)
+
+ˆ
+
+Because the ranges of fˆ−1 (ρ)S(λ̂) and f −1 (ρ)S(λ) are Rd2 and Rd2 respectively, we must have L̂L = Id2 and
+L̂L = Idˆ2 . Therefore L̂ is invertible, which indicates that dˆ2 = d2 , thus dˆ1 = d1 . Together, (i) and (iii) in
+Definition 2 are verified.
+Step III. We consider arbitrary vectors (z, s) ∈ (Rd1 , Rd2 ) and λ(1), ..., λ(B). Denote ρb = f (z, s +
+ˆ
+λS(λ) (b)). By the injectivity of fˆ, we can define F1 : Rd → Rd1 as the S c (λ̂) components of fˆ−1 ◦ f :
+ˆ
+F1 := (fˆ−1 ◦ f )S c (λ̂) , and analogously define F2 : Rd → Rd2 as F2 := (fˆ−1 ◦ f )S(λ̂) , then we have
+fˆ−1 (ρb )S c (λ̂) = F1 (z, s + λS(λ) (b)),
+
+fˆ−1 (ρb )S(λ̂) = F2 (z, s + λS(λ) (b)).
+
+(24)
+
+By Assumption 4, fˆ−1 (ρb )S c (λ̂) is constant with respect to b. combining with the first part of Eq. (24) we have
+∀z ∈ Rd1 , s ∈ Rd2 , bi , bj ∈ {1, ..., B},
+
+F1 (z, s + λS(λ) (bi )) = F1 (z, s + λS(λ) (bj )).
+
+(25)
+
+Next, we consider d2 functions of the following form:
+Gz,c
+i (t) = F1 (z, c + t(λ(bi ) − λ(b0 ))).
+
+(26)
+
+2
+2
+Here {bi }di=0
+are defined in Assumption 3. By Assumption 3, (λ(bi ) − λ(b0 ))di=1
+are linear independent.
+z,c
+z,c
+Then by Eq. (25), ∀z, c, Gi (t) = Gi (0) when t is integer.
+
+6
+
+Next we prove that Gz,c
+i (t) must be a constant with respect to t ∈ R. By Theorem 2 in [5], we have that
+∀f ∈ MLP, lim f (z, c + t(λ(bi ) − λ(b0 ))) exists.
+t→∞
+
+(27)
+
+Because fˆ−1 is smooth, following Eq. (27), the limit limt→∞ fˆ−1 ◦ f (z, c + t(λ(bi ) − λ(b0 )))S c (λ̃) exists.
+c
+Since Gz,c
+i (t) is defined as the S (λ̃) components of this function, its limit also exists as t → ∞. Now we
+z,c
+show that Gi (t) is a constant function with respect to t by contradiction. If there exists t1 , t2 > 0 satisfying
+z,c
+|t1 − t2 | < 1, such that Gz,c
+i (t2 ) ̸= Gi (t1 ), then we have
+z,c
+|Gz,c
+i (t1 ) − Gi (t2 )|
+
+=
+≤
+
+lim
+
+z,c
+|Gz,c
+i (t1 + m) − Gi (t2 + m)|
+
+lim
++
+
+z,c
+z,c
+z,c
+|Gz,c
+i (t1 + m) − lim Gi (t)| + |Gi (t1 + m) − lim Gi (t)|
+
+m∈Z+ →∞
+m∈Z →∞
+
+t→∞
+
+(28)
+
+t→∞
+
+=0.
+This is a contradiction. Therefore, Gz,c
+i (t) is a constant function with respect to t.
+Finally, by Assumption 3, any vector s ∈ Rd2 can be expressed as a weighted sum of (λ(bi ) − λ(b0 ))d12 .
+Noting Gz,c
+i (t) are all constants, we have that
+∀b ∈ {1, 2, ..., B}, ∀z ∈ Rd1 , ∀s ∈ Rd2 ,
+
+F1 (z, s + λS(λ) (b)) = F1 (z, 0).
+
+(29)
+
+Now we define a function F (z) := F1 (z, 0). Then by the definition of F1 (Eq. (24)) and Eq. (29),
+fˆ−1 (ρb )S c (λ̂) = F1 (z, 0) = F (z).
+
+(30)
+
+Step IV. Finally we prove the function F (z) (defined in step III) is bĳective, thus verifying (ii) in Definition
+2. Analogous to step III, define functions F̂1 := (f −1 ◦ fˆ)S c (λ) , F̂2 := (f −1 ◦ fˆ)S(λ) , then the following
+equations hold:
+∀z ∈ Rd1 , s ∈ Rd2 , b ∈ {1, ..., B}, ρb := f (z, s + λ(b)S(λ) );
+z = F̂1 (fˆ−1 (ρb ) c , fˆ−1 (ρb )
+);
+S (λ̂)
+
+ˆ−1
+
+s + λ(b) = F̂2 (f
+
+ˆ−1
+
+(ρb )S c (λ̂) , f
+
+(31)
+
+S(λ̂)
+
+(32)
+
+(ρb )S(λ̂) ).
+
+(33)
+
+By Eq. (22) and Eq. (30), Eq. (32) can be rewritten as
+z = F̂1 (F (z), L̂(s + λ(b)S(λ) ) + ĉ).
+
+(34)
+
+Because Eq. (34) holds for all s ∈ Rd2 , b ∈ {1, ..., B}, by the invertibility of L̂ (step II), the following
+equation holds for any vector ŝ ∈ Rd2 :
+z = F̂1 (F (z), ŝ).
+Thus define F̂ : Rd1 → Rd1 ; ∀q ∈ Rd1 , F̂ (q) = F̂1 (q, 0), then we have
+∀z ∈ Rd1 ,
+
+z = F̂ ◦ F (z).
+
+(35)
+
+Therefore F must be injective. Moreover, by Definition 1, the range of ẑ is Rd1 , therefore the image of F (z) is
+Rd1 . This means that F is surjective. Together, F is bĳective, thus (ii) in Definition 2 is satisfied. Combining
+this with step II, we have verified all conditions (i)-(iii) in Definition 2, thus θ̂ ∼ θ holds.
+
+7
+
+1.4
+
+Implications of the theoretical results
+
+Our theoretical results demonstrate that batch-dependent and independent variations can be identified from
+observational distributions when sparsity conditions and other appropriate assumptions are met. Here,
+we explain why these disentangled variations, particularly the batch-dependent variation, are valuable for
+characterizing biological states.
+Different single-cell RNA sequencing datasets, even collected within same tissues, typically capture distinct
+biological phenomena, such as disease states, perturbation states, donor-level heterogeneity, etc. Differences
+of biological states across datasets leads to distinct shifts of gene expression distribution. Consequently, the
+ground truth batch-dependent latent variable s = (u + λ)S(λ) encompasses both pure batch effects and various
+biological heterogeneities in the observed data. When the pretraining dataset compendium is sufficiently large
+and contains all possible forms of biological heterogeneities, the ground truth batch-dependent representation
+s should encode all desired biological heterogeneities alongside batch effects. Thus within one batch, the
+variation in s or ŝ should only encode the biological heterogeneities of interest.
+When considering multiple datasets, the batch effect may not be canceled like the single-batch case. In general,
+the difference of batch-dependent variation s across datasets still comprises both batch effect and biological
+differences. Nevertheless, with additional mild assumptions, differences within one dataset (shifts) are still
+comparable across datasets. Specifically, we assume that batch effects and biological differences can be linearly
+decomposed in the ground truth s (i.e., no interactions between batch effect and biological state):
+s = sbio + λbatch ,
+
+(36)
+
+where λbatch is a batch-specific constant. As an example, this assumption holds when the batch-specific term λ
+can be decomposed as
+λ = λbatch + λbio ,
+(37)
+leading to the following decomposition of biological and batch information in s (for cells in batch b):
+s = (uS(λ) + λbio (b)) + λbatch (b).
+
+(38)
+
+Under this assumption, by the theoretical identifiability result, the inferred batch-dependent variation ŝ becomes
+equivalent to the biological state representation up to a linear projection and a batch-specific constant. Therefore,
+when computing the differences of batch-dependent variations within the same dataset, this dataset-specific
+constant would be canceled. Thus, these difference terms can then be compared both within and across datasets.
+Notably, such comparisons are not possible with methods lacking linear identifiability. In general cases where
+models learn nonlinear transformations of ground truth variations of the form
+h(z, s) = h(z, sbio + λbatch ),
+
+(39)
+
+even with perfectly controlled batch-independent state z, for any biological states sA , sB across two batches b1
+and b2 , we have the following result in general:
+h(z, sA + λbatch (b2 )) − h(z, sB + λbatch (b2 )) ̸= h(z, sA + λbatch (b1 )) − h(z, sB + λbatch (b1 )).
+
+(40)
+
+The equal sign above only unconditionally holds when h is a linear mapping regarding s + λbatch (b), as achieved
+by our framework. Notably, the argument may also be extended to biological differences across datasets that
+are not of interest, such as culturing conditions, baseline condition, etc. It underscores the crucial importance
+of linear identifiability in enabling cross-dataset comparisons, particularly in out-of-distribution settings where
+biological states are imperfectly aligned.
+While models lacking linear identifiability could in principle align biological states across batches through
+additional fine-tuning, the fine-tuning would require ground truth state annotations—making it impractical
+for most real-world applications—and demand extra computational resources. In contrast, scShift requires
+no additional fine-tuning and can readily scale biological state annotation to the atlas level through universal
+linear probing.
+8
+
+2
+
+Supplementary Methods
+
+Coarse-grained cell type label
+
+We standardized cell type annotations across multiple datasets to facilitate visualization and comparative
+analysis. For the blood compendium, we established broad cell type categories based on the original ’cell_type’
+annotations, including: CD4 T cells, CD8 T cells, other T cells, B cells, NK cells, monocytes, dendritic cells,
+megakaryocytes, and other cell populations.
+The lung compendium presents an additional need for annotation standardization due to significant imbalances
+in cell type proportions. We implemented a two-step annotation procedure based on the original ‘cell_type’
+annotations: First, we consolidated less frequent cell populations by grouping all cell types beyond the top 20
+most abundant categories into an "Others" category. The major cell types were then categorized based on the
+original ‘cell_type’ annotations, including T cells, B cells, monocytes, epithelial cells, pericytes, fibroblasts,
+and endothelial cells.
+Benchmarking on training sets
+
+For benchmarking the integrated representations on the training sets, we compared scShift embeddings against
+batch-integrated embeddings from five established methods: Harmony [6], scVI [7], scANVI [8], SCALEX [9],
+and scPoli [10]. Our evaluation framework was based on scIB [11], which quantifies both batch removal and
+biological preservation metrics using pre-defined batch labels, biological labels, and baseline pre-integrated
+embeddings. For the blood dataset, we implemented Harmony and SCALEX using their default settings. For
+both blood and lung datasets, we configured scVI to match scShift’s architecture, using 100 latent components
+and 1000 hidden components. The scANVI model built upon the trained scVI model, using coarse-grained
+cell type labels for supervision and additional training of 8 epochs for blood and 5 epochs for lung data. For
+scPoli, we followed the tutorial-recommended settings with 50-dimensional donor embeddings (comparable to
+scShift’s biological embedding) and trained for 18 pretraining epochs, followed by 2 epochs with the prototype
+loss (η = 5) for both datasets. We evaluated scIB batch removal scores (AvgBatch) and biological preservation
+scores (AvgBio) on a subsampled training set of 100,000 cells [11]. AvgBatch averages values of k-means
+NMI (Normalized Mutual Information), k-means ARI (Adjusted Rand Index), and silhouette label scores.
+AvgBio averages values of Silhouette batch, kBET (k-nearest-neighbor batch-effect test), graph connectivity,
+and PCR (Principal Component Regression) scores. We used coarse-grained cell type label as biological
+label and sequencing assay as the batch label for both AvgBio and AvgBatch. Additionally, for the blood
+dataset, we assessed cell type removal by treating coarse-grained cell type as the batch label and disease status
+(presence/absence) as the biological label.
+Benchmarking on hold-out interferon and pathogen stimulation datasets
+
+In the benchmarking, we included batch correction methods which require additional batch label inputs
+(Harmony, scVI [6, 7]), perturbation modeling approaches (Mixscape, contrastiveVI [12, 13]) that require
+ground truth perturbation label as input, and label-unaware approaches in either fine-tuned (scVI-scArches,
+scPoli [14, 10]) or zero-shot setting (CPA, sVAE [15, 16]). For scVI, the batch label (for the interferon dataset)
+and the perturbation label (for the pathogen dataset) were input into the models, covering two possible use
+settings. We implemented Harmony in the interferon stimulation dataset using default settings in Harmonypy.
+The scVI model was trained from scratch for both datasets with 2 layers and 20 latent components. Mixscape
+and ContrastiveVI received perturbation labels as inputs. We implemented the perturbation signature calculation
+in Mixscape approach on the PCA components with default neighbor numbers (20) to define its corresponding
+cell type representation and perturbation representation. The contrastiveVI model was implemented with
+suggested parameters in its Alzheimers tutorial and trained for 100 epochs with batch size 500. For scArches,
+we fine-tuned the scVI model trained from the assembled blood atlas for 100 epochs. For scPoli, we fine-tuned
+the scPoli trained from the assembled blood atlas for 50 epochs, with 40 pretraining epochs and η = 10. To
+enforce the scPoli model to account for stimulation conditions in the single-cell level embedding, we set the
+donor identity as a single index ("interferon" or "pathogen") for each dataset. We employed the SCALEX
+model trained on the atlas-level dataset in a zero-shot manner. We additionally trained a CPA model [15] on the
+
+9
+
+assembled blood compendium with batch size 1000 for 200 epochs, and a sVAE model [16] with compatible
+settings with scShift (100 latent components, 2 layers) for 50 epochs. The CPA and sVAE models were applied
+on interferon and pathogen stimulation data in a zero-shot manner.
+Ablation study
+
+We additionally performed ablation study of the scShift model and tested the performance difference on
+the hold-out interferon stimulation dataset. The ablation study was conducted by a combination of three
+components: 1. sparsity regularization; 2. the denoising autoencoding training scheme; 3. the MMD
+regularization. We trained models with the following combinations: None (base model); 1; 1+2; 1+3; 1+2+3
+(full model). All models were optimized using the same setting.
+Unsupervised characterization of donor-level CD4 T cell biological states
+
+For Fig. 2f, we first calculated the median CD4 T cell biological embedding of the donors with adjustment 2,
+and of the drugs centralized with respect to negative control (Dimethyl Sulfoxide). We applied (cosine) kernel
+principal component analysis on the calculated drug conditions. Then we applied the same transformation on
+the donor cohort. For Fig. 2g, we calculated the median CD4 T biological embedding for each perturbation
+from both interferon and pathogen stimulation datasets. Each condition was then centralized using the control
+condition. Then we calculated the principal component projection of these conditions, and applied the
+transformation on the donor (adjustment 1) and drug conditions (centralized by negative control). We defined
+the interferon stimulation score as the z-score of the sum of log normalized expressions of interferon stimulated
+genes (ISGs) from our selected list (IFITM1, ISG15, LY6E, MX1, IFI44L, IFI6, IFIT1, IFIT3), averaged among
+CD4 T cells for each donor/condition. For comparative analysis, we applied the same procedure used in Fig. 2g
+to evaluate scVI embeddings and scShift biological embeddings. To analyze the scPoli donor-level embedding,
+we conducted additional fine-tuning of the interferon and pathogen stimulation datasets, using their respective
+stimulation conditions as donor identity. To ensure comparability with the scPoli donor-level embedding
+(which encompasses all cell types), we computed donor-level average normalized ISG expression across all
+cell types as the ISG score. The subsequent analysis followed the same methodology as adopted for Fig. 2g.
+Benchmarking on humanized mouse dataset
+
+We further benchmarked zero-shot performances of different lung models on the chronic COVID-19 humanized
+mouse dataset [17]. We included a subset of methods that perform reasonably well in the blood benchmarking,
+covering all categories of methods: batch correction methods: scVI [7]; perturbation modeling approaches:
+Mixscape, contrastiveVI [12, 13]; fine-tuned label-unaware approaches: scArches-scVI, scArches-scANVI,
+scPoli [14, 10]. We also included the scShift full embedding in the comparison. We fine-tuned scVI and
+scANVI lung models on the dataset for 50 epochs. The hyperparameters of other methods were the same as
+the implementation on blood datasets. In benchmarking, we used the myeloid cell subset, which comprised
+four biological conditions (0 day post infection (dpi), 4dpi, 14dpi, 28dpi) and was annotated into four subtypes
+(CD14+ monocytes, CD14+CD16+ monocytes, CD16+ monocytes, macrophages). We further filtered out a
+small number of outliers and doublet cells (preserving Leiden clusters 0, 1, 13 in Supplementary Fig. 9c).
+We used the cell subtype annotation label as the label (batch) key, and the biological condition label as the
+batch (label) key, to evaluate unperturbed (biological) embeddings. Each individual metric was averaged and
+rescaled to have a minimum of 0 and maximum of 1.
+Definition of gene sets in fibrosis analysis
+
+To investigate gene expression patterns, we analyzed genes consistently upregulated in both lethal COVID-19
+patients and at 28 days post-infection (dpi) in our humanized mouse model. The genes expressed in fewer than
+100 cells were filtered out in the lethal COVID-19 dataset. The genes expressed in fewer than 50 myeloid cells
+were filtered out in the humanized mouse dataset. We calculated differential expression using pseudobulk
+log fold change (LFC) values from the lethal COVID-19 dataset and mean log-normalized differences in the
+humanized mouse model. We filtered out genes with mean expression smaller than 0.01 in the humanized
+mouse model dataset and those downregulated in lethal COVID-19 dataset (LFC≤0). From the remaining
+
+10
+
+genes (4174 in total), we created two lists based on the geometric average of log fold changes (LFC) between
+lethal COVID-19
+patients and the humanized mouse model (28 dpi vs 0 dpi). Genes√with a geometric average
+√
+exceeding 0.1 were assigned to the "strict" list (47 genes), while those exceeding 0.02 formed the "loose"
+list (229 genes). We then calculated ROC curves and AUC values using scShift correlation scores (derived
+from lethal COVID-19 patients) and pseudobulk log p-values (derived from lethal COVID-19 versus control)
+to assess how well these metrics predicted genes in both lists from the full set of 4174 genes. The optimal
+threshold for scShift correlation scores was determined using Youden’s index. After applying this threshold,
+we identified 39 true positive genes from the 47-gene list and 151 true positive genes from the 229-gene list
+(Supplementary Tables 3-4).
+We further defined genes aligning with patterns of COVID-19 and fibrosis scores in the humanized mouse
+model dataset. Using log-normalized expression values, we calculated mean differences between timepoints:
+4 dpi versus 0 dpi (4vs0), 14 dpi versus 0 dpi (14vs0), and 14 dpi versus 4 dpi (14vs4). COVID-19 pattern
+genes were defined by two criteria: the product of 4vs0 and 14vs0 exceeding 0.025, and the absolute value of
+14vs4 less than 0.05. Similarly, fibrosis pattern genes were identified where the product of 4vs0 and 14vs4
+exceeded 0.015 and the absolute value of 14vs4 was greater than 0.15. We computed the KEGG enrichment
+for COVID-pattern genes, fibrosis-pattern genes, and identified gene sets using EnrichR wrapped by GSEAPY
+[18, 19]. For the identified gene sets, we used a background gene list comprising the overlapping genes from
+the lethal COVID-19 and the humanized mouse dataset (7,018 genes in total).
+Probing of fibrosis state on drug perturbations
+
+To generate the results shown in Fig. 3k, we applied our trained scShift fibrosis classifier ("biological" setting)
+to myeloid cells from the drug perturbation dataset [20]. We also examined how drug-induced changes in
+log-normalized expression corresponded to our previously identified 47-gene (strict) and 229-gene (loose) lists
+for the analysis in Extended Data Fig. 6a. The resulting gene sets were smaller due to the additional filtering of
+genes present in the drug perturbation dataset.
+
+References
+[1] Dong, M., Su, D., Kluger, H., Fan, R. & Kluger, Y. Simvi reveals intrinsic and spatial-induced states in
+spatial omics data. bioRxiv 2023–08 (2024).
+[2] Lachapelle, S. et al. Disentanglement via mechanism sparsity regularization: A new principle for
+nonlinear ica. Conference on Causal Learning and Reasoning 428–484 (2022).
+[3] Khemakhem, I., Kingma, D., Monti, R. & Hyvarinen, A. Variational autoencoders and nonlinear ica: A
+unifying framework 2207–2217 (2020).
+[4] Ben-Israel, A. The change-of-variables formula using matrix volume. SIAM Journal on Matrix Analysis
+and Applications 21, 300–312 (1999).
+[5] Ziyin, L., Hartwig, T. & Ueda, M. Neural networks fail to learn periodic functions and how to fix it.
+Advances in Neural Information Processing Systems 33, 1583–1594 (2020).
+[6] Korsunsky, I. et al. Fast, sensitive and accurate integration of single-cell data with harmony. Nature
+methods 16, 1289–1296 (2019).
+[7] Lopez, R., Regier, J., Cole, M. B., Jordan, M. I. & Yosef, N. Deep generative modeling for single-cell
+transcriptomics. Nature methods 15, 1053–1058 (2018).
+[8] Xu, C. et al. Probabilistic harmonization and annotation of single-cell transcriptomics data with deep
+generative models. Molecular systems biology 17, e9620 (2021).
+[9] Xiong, L. et al. Online single-cell data integration through projecting heterogeneous datasets into a
+common cell-embedding space. Nature Communications 13, 6118 (2022).
+[10] De Donno, C. et al. Population-level integration of single-cell datasets enables multi-scale analysis across
+samples. Nature Methods 1–10 (2023).
+11
+
+[11] Luecken, M. D. et al. Benchmarking atlas-level data integration in single-cell genomics. Nature methods
+19, 41–50 (2022).
+[12] Papalexi, E. et al. Characterizing the molecular regulation of inhibitory immune checkpoints with
+multimodal single-cell screens. Nature genetics 53, 322–331 (2021).
+[13] Weinberger, E., Lin, C. & Lee, S.-I. Isolating salient variations of interest in single-cell data with
+contrastivevi. Nature Methods 1–10 (2023).
+[14] Lotfollahi, M. et al. Mapping single-cell data to reference atlases by transfer learning. Nature biotechnology
+40, 121–130 (2022).
+[15] Lotfollahi, M. et al. Predicting cellular responses to complex perturbations in high-throughput screens.
+Molecular Systems Biology e11517 (2023).
+[16] Lopez, R. et al. Learning causal representations of single cells via sparse mechanism shift modeling.
+Conference on Causal Learning and Reasoning 662–691 (2023).
+[17] Sefik, E. et al. A humanized mouse model of chronic covid-19. Nature biotechnology 40, 906–920
+(2022).
+[18] Xie, Z. et al. Gene set knowledge discovery with enrichr. Current protocols 1, e90 (2021).
+[19] Fang, Z., Liu, X. & Peltz, G. Gseapy: a comprehensive package for performing gene set enrichment
+analysis in python. Bioinformatics 39, btac757 (2023).
+[20] Burkhardt, D. et al.
+Open problems – single-cell perturbations.
+https://kaggle.com/competitions/open–problems–single–cell–perturbations (2023).
+
+Kaggle
+
+[21] Adams, T. S. et al. Single-cell rna-seq reveals ectopic and aberrant lung-resident cell populations in
+idiopathic pulmonary fibrosis. Science advances 6, eaba1983 (2020).
+
+12
+
+3
+
+Supplementary figures and tables
+a PCA (no integration)
+
+b scShift unperturbed embedding
+
+c scShift biological embedding (unadjusted)
+
+d scShift full embedding (unadjusted)
+
+e scShift biological embedding (adjusted)
+
+f
+
+scShift full embedding (adjusted)
+
+Supplementary Figure 1: UMAP visualizations of the blood training compendium using scShift embeddings
+and the baseline PCA representation. a-f. UMAP visualization using the PCA embedding (a), scShift
+unperturbed embedding (b), scShift unadjusted biological embedding (c), scShift unadjusted full embedding
+(d), scShift adjusted biological embedding (e), and scShift adjusted full embedding (f), colored by cell types,
+sequencing assays, and cell disease state.
+
+a
+
+b
+
+sVAE
+
+All components
+
+Selected components
+
+c
+
+scShift
+
+
+
+CPA
+
+Supplementary Figure 2: Visualization of dataset-specific encodings for CPA, sVAE and scShift. a. CPA
+dataset-specific encoding. b. sVAE dataset-specific encoding for all components (left) and components with at
+least one value with absolute value larger than 0.5 (right). c. scShift dataset-specific encoding on biological
+components. CPA fails to achieve sparsity in dataset-label encoding, while sVAE’s sparse components exhibit
+linear dependence. scShift’s dataset label encoding achieves both sparsity and linear independence across
+components, two essential properties for model theoretical identifiability.
+
+13
+
+a
+
+Unperturbed embedding evaluation (batch effect removal and cell type preservation)
+
+b
+
+Unperturbed embedding evaluation (perturbation removal and cell type preservation)
+
+c
+
+Unperturbed embedding evaluation (Average of metrics in a and b)
+
+d
+
+Biological embedding evaluation (cell type removal and perturbation preservation)
+
+Supplementary Figure 3: Evaluating biological representation and cell type preservation performances
+across different methods in interferon stimulation data. a. scIB scores of different methods’ unperturbed/integrated/background embeddings in batch removal and cell type preservation. b. scIB scores
+of different methods’ unperturbed/integrated/background embeddings in perturbation removal and cell type
+preservation. c. Averaged scIB scores of different methods’ unperturbed/integrated/background embeddings. d.
+scIB scores of different methods’ biological/integrated/salient embeddings in cell type removal and perturbation
+preservation. Each metric shown is rescaled to have min 0 and max 1.
+
+14
+
+a
+
+Unperturbed embedding evaluation (batch effect removal and low resolution cell type preservation)
+
+b Unperturbed embedding evaluation (batch effect removal and high resolution cell type preservation)
+
+c
+
+Biological embedding evaluation (cell type removal and perturbation preservation)
+
+Supplementary Figure 4: Evaluating biological representation and cell type preservation performances
+across different methods in pathogen stimulation data. a. scIB scores of different methods’ unperturbed/integrated/background embeddings in perturbation removal and low-resolution cell type preservation.
+b. scIB scores of different methods’ unperturbed/integrated/background embeddings in perturbation removal
+and high-resolution cell type preservation. c. scIB scores of different methods’ biological/integrated/salient
+embeddings in cell type removal and perturbation preservation. Each metric shown is rescaled to have min 0
+and max 1.
+
+15
+
+a
+
+Unperturbed embedding evaluation (batch effect removal and cell type preservation)
+
+b
+
+Unperturbed embedding evaluation (perturbation removal and cell type preservation)
+
+c
+
+Biological embedding evaluation (cell type removal and perturbation preservation)
+
+Supplementary Figure 5: Assessment of scShift ablation models in interferon stimulation data. a. scIB scores
+of different models’ unperturbed embeddings in batch removal and cell type preservation. b. scIB scores of
+different models’ unperturbed embeddings in perturbation removal and cell type preservation. c. scIB scores
+of different models’ biological embeddings in selected cell type removal and perturbation preservation.
+
+16
+
+a
+
+b
+
+c
+
+Supplementary Figure 6: Additional analysis interpreting scShift biological states. a, b. Dotplots showing
+representative differentially expressed genes in interferon (a) and pathogen (b) stimulation conditions. c.
+Visualization of donor CD4 T cells (left) and drug-perturbed CD4 T cells (right), colored by z-score of
+log-normalized ISG expressions. These coordinates are the same as those shown in Fig. 2g.
+
+17
+
+a
+
+scPoli fine-tuned donor embedding
+
+b
+
+scVI + scArches fine-tuned embedding,
+24hCA
+CD4 pseudobulk
+24hPA
+24hMTB
+
+4
+
+3
+
+2
+
+
+
+IFNg
+IL-6
+TNFa UT No stimulation
+IFN-III
+
+0
+
+IFNb + IFNg
+IFNb + IL-6
+IFNb + TNFa
+IFNb
+IFNa2
+
+í
+
+
+
+
+
+c
+
+í
+
+
+
+
+
+scPoli fine-tuned donor embedding
+
+3hCA
+3hPA
+3hMTB
+
+í
+
+í
+
+d scVI + scArches fine-tuned embedding, CD4 pseudobulk
+
+Supplementary Figure 7: Comparisons of scPoli donor-level embeddings and scVI median CD4 T cell
+embeddings. See Supplementary Methods for the procedure of generating these coordinates. a. scPoli
+donor-level embedding. Perturbation state were labeled in color. Grey points represent donors from the
+CellXGene blood atlas. b. scVI median CD4 T cell embedding. Perturbation state were labeled in discrete
+color. Other points represent donors from the CellXGene blood atlas, colored by z-score of ISG normalized
+expression. c. scPoli donor-level embedding. Points were colored by ISG score (As the scPoli donor-level
+embedding does not distinguish cell types, the median log-normalized ISG expression from all cell types for
+each donor was used), disease and assay. d. scVI median CD4 T cell embedding. Points were colored by ISG
+score (z-score of median CD4 T cell log-normalized ISG expressions), disease and assay.
+
+18
+
+a
+
+b
+
+Supplementary Figure 8: Additional results of scShift-based fibrosis analysis on the humanized mouse data. a.
+scIB scores of different methods’ unperturbed/integrated/background embeddings in condition removal and
+myeloid subtype preservation. b. scIB scores of different methods’ biological/integrated/salient embeddings in
+myeloid subtype removal and condition preservation.
+
+19
+
+a
+
+Expression of genes consistently upregulated in post-COVID fibrosis
+
+Fraction of cells
+in group (%)
+
+0dpi
+4dpi
+14dpi
+28dpi
+
+28dpi
+
+0.0
+
+4
+
+28dpi
+
+0
+
+0
+
+4dpi
+14dpi
+condition
+
+4dpi
+14dpi
+condition
+
+28dpi
+
+d
+
+CSTB
+
+2
+1
+0dpi
+
+4dpi
+14dpi
+condition
+
+28dpi
+
+0dpi
+
+4dpi
+14dpi
+condition
+
+28dpi
+
+2.0
+
+1
+0dpi
+
+2
+
+3
+
+0
+
+28dpi
+
+2
+
+0
+
+FOSB
+
+RPL17
+
+AC020916.1
+
+H3F3B
+
+MYL12B
+
+MT2A
+
+NME2
+
+RPS17
+
+POMP
+
+PSME2
+
+CARD16
+
+NEAT1
+
+0dpi
+
+3
+
+2
+1
+
+28dpi
+
+4dpi
+14dpi
+condition
+
+3
+
+1
+4dpi
+14dpi
+condition
+
+0dpi
+
+FCER1G
+
+0
+
+5
+
+0dpi
+
+MAFB
+
+0.5
+
+4
+2
+
+1.0
+
+1
+
+5
+3
+
+1.5
+
+CD36
+
+4dpi
+14dpi
+condition
+
+2
+
+ISG15
+
+0dpi
+
+IFITM3
+
+IFIT2
+
+IFITM2
+
+TMEM176A
+
+PSMB9
+
+TMEM176B
+
+HLA-DRB1
+
+HLA-DQB1
+
+LST1
+
+HLA-DRB5
+
+HLA-C
+
+VCAN
+
+HBEGF
+
+CXCL8
+
+TNFSF10
+
+RHOA
+
+SERP1
+
+H3F3A
+
+FCGR3A
+
+2
+
+CXCL10
+
+CXCL8
+
+GBP1
+
+4
+
+1
+
+4
+
+2.0
+
+3
+VCAN
+
+S100A8
+
+6
+
+0
+
+c
+
+ATP5MC3
+
+b
+
+SLAMF7
+
+PRDX1
+
+20 40 60 80100
+Mean expression
+in group
+
+1.5
+1.0
+0.5
+
+0dpi
+
+4dpi
+14dpi
+condition
+
+0.0
+
+28dpi
+
+e
+
+IPF atlas (Adams, Taylor S., et al.)
+
+Supplementary Figure 9: Additional analysis of the humanized mouse dataset. a. Dotplot showing lognormalized expressions of representative genes across different conditions (days post infection, dpi) in the
+humanized mouse dataset. b. Violin plots depicting log-normalized expression of signature genes in myeloid
+cells from the humanized mouse dataset across different conditions (days post infection, dpi). c. UMAP
+visualization of the dataset using scShift full embedding, colored by coarse-grained cell type and Leiden
+clustering. d. Stacked bar plot showing T-mono proportions across different days post infection. e. Boxplot
+of CD3+ macrophage ratios by disease condition for each donor in IPF atlas [21] (n=28,32,18). Statistical
+significance was determined by two-sided Mann-Whitney-Wilcoxon test. ns: 5.00e-02<p≤1.00e+00; *:
+1.00e-02<p≤5.00e-02; **: 1.00e-03<p≤1.00e-02; ***: 1.00e-04<p≤1.00e-03; ****: p≤1.00e-04.
+
+20
+
+1.0 0.93
+— —
+
+AT2
+Fibroblast
+
+AT
+2
+ob
+la
+st
+th
+el
+ia
+l
+Fi
+br
+
+En
+
+CD8 T
+
+1.0
+
+0.53
+Rĺ
+
+0.8
+1.0 0.61
+ĸR ĺ
+
+0.52
+ļ
+
+NK
+
+0.83
+ĸ
+
+B
+1.0 0.93
+o-o ĺ
+
+AT1
+AT2
+Fibroblast
+
+Stability Score
+
+CD4 T
+
+0.6
+
+0.4
+1.0
+o-o
+1.0
+ĺ
+
+Endothelial
+
+0.2
+
+lia
+l
+
+he
+
+st
+
+AT
+2
+
+B
+
+AT
+1
+
+bl
+a
+
+ro
+
+do
+t
+
+Fi
+b
+
+En
+
+on
+
+N
+K
+
+e
+
+oc
+yt
+e
+C
+D
+4
+T
+C
+D
+8
+T
+
+0.0
+
+ha
+g
+
+0.0
+
+1.0
+Rĺ
+0.89
+Rĺ
+
+Monocyte
+
+op
+
+0.2
+
+do
+
+B
+
+AT
+1
+
+T
+
+N
+K
+
+e
+
+T
+
+D
+8
+
+D
+4
+
+C
+
+ge
+
+yt
+
+ha
+
+oc
+
+on
+
+ro
+p
+
+M
+
+ac
+M
+
+FCI, alpha = 0.01
+
+ac
+r
+
+Endothelial
+
+0.2
+
+0.0
+
+Macrophage
+
+0.4
+1.0
+ĸ
+1.0
+ĺ
+
+0.6
+
+0.4
+1.0
+—
+1.0
+—
+
+Endothelial
+
+M
+
+Stability Score
+
+0.6
+
+0.83
+—
+
+Stability Score
+
+0.52
+ĸ
+
+AT1
+
+C
+
+Stability Score
+
+0.8
+1.0 0.61
+ĸ ĺ
+
+B
+
+l
+
+0.91
+ĸ
+
+1.0
+
+0.53
+ĺ
+
+NK
+
+ia
+
+st
+
+CD8 T
+
+M
+
+Fibroblast
+
+CD4 T
+
+el
+
+En
+
+AT2
+
+1.0
+ĺ
+0.89
+ĺ
+
+Monocyte
+
+th
+
+ob
+la
+
+Fi
+br
+
+do
+
+B
+
+AT
+1
+
+T
+
+N
+K
+
+e
+
+T
+
+D
+8
+
+D
+4
+
+C
+
+C
+
+ge
+ha
+ro
+p
+ac
+
+AT
+2
+
+0.71
+ļ
+
+1.0 0.97
+ĺ ĺ
+
+AT1
+
+lia
+l
+
+st
+
+AT
+2
+
+bl
+a
+
+0.8
+1.0 0.8
+ĸR ĺ
+
+B
+
+he
+
+ro
+
+do
+t
+
+Fi
+b
+
+En
+
+B
+
+AT
+1
+
+N
+K
+
+oc
+yt
+e
+C
+D
+4
+T
+C
+D
+8
+T
+
+e
+ha
+g
+
+on
+
+op
+
+0.2
+
+0.2
+
+1.0
+
+0.67
+Rĺ
+
+NK
+
+0.4
+
+0.0
+
+M
+
+ac
+r
+
+CD8 T
+
+B
+
+Fibroblast
+Endothelial
+
+CD4 T
+
+1.0
+ļ
+0.95
+Rĺ
+
+PC, alpha = 0.01
+Macrophage
+
+0.4
+1.0
+—
+1.0
+ĺ
+
+AT
+Fi
+br 2
+o
+En bla
+do st
+th
+el
+ia
+l
+
+AT2
+
+0.6
+
+Monocyte
+
+FCI, alpha = 0.025
+
+AT
+1
+
+AT1
+
+0.95
+ĸ
+0.57
+ĺ
+1.0 0.98 0.63
+ĺ ĺ ĺ
+1.0
+ĸ
+1.0
+ĺ
+
+0.52
+ļ
+
+Macrophage
+
+N
+K
+
+B
+
+0.82
+ĺ
+
+0.6
+
+0.0
+
+e
+
+NK
+
+1.0
+
+0.8
+1.0 0.87
+ĸ ĺ
+0.55
+ĺ
+
+Fibroblast
+
+ha
+g
+
+CD8 T
+
+0.77
+Rĺ
+
+0.91
+—
+
+Endothelial
+
+op
+
+CD4 T
+
+1.0
+ĸ
+0.97
+Rĺ
+
+1.0 0.97
+— —
+
+AT2
+
+M
+
+En
+
+Monocyte
+
+FCI, alpha = 0.05
+
+0.71
+ĸ
+
+AT1
+
+AT
+2
+ob
+la
+st
+th
+el
+ia
+l
+Fi
+br
+
+do
+
+B
+
+AT
+1
+
+T
+
+N
+K
+
+D
+8
+
+e
+
+T
+C
+
+ge
+
+yt
+
+D
+4
+
+C
+
+ha
+
+oc
+
+on
+
+ro
+p
+ac
+
+M
+
+0.65
+ļ
+
+Macrophage
+
+M
+
+0.2
+
+0.0
+
+M
+
+b
+
+0.4
+
+yt
+
+Fibroblast
+Endothelial
+
+0.8
+1.0 0.8
+ĸ —
+
+B
+
+oc
+
+AT2
+
+1.0
+
+0.67
+ĺ
+
+NK
+
+oc
+yt
+e
+C
+D
+4
+T
+C
+D
+8
+T
+
+AT1
+
+0.6
+
+CD8 T
+
+on
+
+0.95
+—
+0.57
+ĺ
+1.0 0.98 0.63
+— — —
+1.0
+—
+1.0
+ĺ
+
+B
+
+CD4 T
+
+M
+
+0.82
+ĺ
+
+1.0
+ĺ
+0.95
+ĺ
+
+Monocyte
+
+on
+
+NK
+
+0.8
+1.0 0.87
+ĸ —
+0.55
+ĺ
+
+PC, alpha = 0.025
+
+0.52
+ĸ
+
+Macrophage
+
+ac
+r
+
+CD8 T
+
+1.0
+
+M
+
+CD4 T
+
+0.77
+ĺ
+
+Stability Score
+
+1.0
+—
+0.97
+ĺ
+
+Monocyte
+
+M
+
+PC, alpha = 0.05
+
+0.65
+ĸ
+
+Macrophage
+
+Stability Score
+
+a
+
+Supplementary Figure 10: Additional results from scShift-based causal modeling of fibrosis across cell types.
+a. Heatmap of stability-selected PC edges, where colors indicate edge existence ratios and labels show edge
+types (→: row variable causes column variable; ←: column variable causes row variable; −: edge direction
+cannot be determined). b. Heatmap of stability-selected FCI edges, where colors indicate edge existence
+ratios and labels show edge types (→: row variable causes column variable; ←: column variable causes row
+variable; o→: column variable is not an ancestor of row variable; o−o: no set d-separates row and column
+variables; ↔: latent cause exists between row and column variables). Only the upper triangular entries are
+shown in the heatmaps.
+
+21
+
+a scShift blood model, zero-shot (Interferon stimulation, biological state score)
+
+b scShift blood model, zero-shot (Pathogen stimulation, biological state score)
+
+c scShift blood model, zero-shot (Interferon stimulation, cell type score)
+
+d scShift blood model, zero-shot (Pathogen stimulation, cell type score)
+
+e scShift lung model, out-of-distribution linear probing (lethal COVID-19, pearson correlation)
+
+Supplementary Figure 11: Scaling analysis of zero-shot and linear probing performance across scShift blood
+and lung models. a-d. Performance metrics for scShift blood models trained under different settings: a.
+biological state scores for interferon stimulation; b. biological state scores for pathogen stimulation; c. cell
+type scores for interferon stimulation; d. cell type scores for pathogen stimulation. e. Pearson correlation
+between lethal COVID-19 patient fibrosis score and pathological fibroblast ratio for scShift lung models trained
+under different settings.
+
+22
+
+2.5
+cell
+
+0.0
+
+pert
+2
+
+2.5
+donor
+
+0.0
+
+4
+
+2.5
+donor
+
+data
+
+4
+
+4
+
+pert
+2
+
+data
+
+4
+
+2
+
+0.0
+
+4
+
+4
+
+2
+
+2
+0
+
+2.5
+pert
+
+0.0
+
+2.5
+pert
+
+0.0
+
+0
+3
+
+4
+hidden
+
+2.5
+pert
+
+2
+
+0.0
+
+2.5
+donor
+
+4
+3
+
+3
+
+4
+hidden
+
+4
+3
+
+4
+
+2
+
+data
+
+4
+
+4
+3
+2.5
+pert
+
+4
+
+2
+0
+
+2.5
+cell
+
+0.0
+
+4
+data
+
+donor
+
+4
+
+2
+
+data
+
+data
+
+donor
+
+0
+
+2
+0
+
+4
+
+2
+
+2.5
+donor
+
+hidden
+
+2
+
+2
+0
+
+0.0
+
+4
+
+pert
+
+donor
+
+0
+
+2
+0
+0.0
+
+4
+
+2
+
+3
+
+2.5
+cell
+
+hidden
+
+0.0
+
+4
+
+4
+
+data
+
+cell
+
+2.5
+cell
+
+4
+
+0
+
+cell
+
+0
+0.0
+
+2
+
+2
+
+hidden
+
+0.0
+
+hidden
+
+2
+
+4
+
+cell
+
+pert
+
+2
+0
+
+cell
+
+4
+
+4
+data
+
+donor
+
+4
+
+2
+0
+
+3
+
+4
+hidden
+
+3
+
+4
+hidden
+
+Supplementary Figure 12: Pairwise relationships between variables in scShift blood model configurations.
+Variables are log-normalized according to xnorm = log(100x/xmax ).
+
+23
+
+2
+0
+2
+
+5
+
+0
+cell
+
+5
+
+5
+
+5
+
+hidden
+
+data
+
+2
+
+0
+cell
+
+5
+
+4
+3
+
+0.0 2.5
+donor
+
+5
+
+0.0 2.5
+donor
+
+4
+
+0
+5
+
+2
+data
+
+2
+
+hidden
+
+donor
+
+cell
+
+0
+cell
+
+0.0 2.5
+donor
+
+0
+
+4
+
+5
+
+2
+data
+
+4
+
+2
+data
+
+donor
+
+4
+
+0
+
+3
+
+4
+hidden
+
+4
+
+4
+
+2
+0
+2
+
+4
+3
+
+2
+
+data
+
+cell
+
+0
+
+4
+3
+
+4
+
+5
+
+cell
+
+2
+
+5
+
+5
+
+5
+
+hidden
+
+4
+data
+
+donor
+
+4
+
+3
+
+4
+hidden
+
+2
+3
+
+4
+hidden
+
+Supplementary Figure 13: Pairwise relationships between variables in scShift lung model configurations.
+Variables are log-normalized according to xnorm = log(100x/xmax ).
+
+24
+
+Variables
+
+Model 1
+
+Model 2
+
+Constant
+
+∗
+
+0.158
+(0.086)
+[0.074]
+
+0.194∗∗∗
+(0.067)
+[0.006]
+
+log(Cell × 100 / Cellmax )
+
+0.020∗∗∗
+(0.005)
+[0.001]
+
+0.020∗∗∗
+(0.005)
+[0.000]
+
+log(Donor × 100 / Donormax )
+
+0.019∗
+(0.010)
+[0.077]
+
+0.023∗∗∗
+(0.006)
+[0.000]
+
+log(Data × 100 / Datamax )
+
+0.017
+(0.018)
+[0.360]
+
+–
+–
+–
+
+log(Pert × 100 / Pertmax )
+
+-0.004
+(0.006)
+[0.509]
+
+–
+–
+–
+
+log(Hidden × 100 / Hiddenmax )
+
+0.023∗
+(0.012)
+[0.060]
+
+0.024∗∗
+(0.012)
+[0.043]
+
+41
+0.522
+0.454
+7.656∗∗∗
+-176.9
+-166.6
+
+41
+0.503
+0.463
+12.50∗∗∗
+-179.2
+-172.4
+
+Model Statistics
+Observations
+R-squared
+Adjusted R-squared
+F-statistic
+AIC
+BIC
+
+Notes: Standard errors in parentheses. P-values in square brackets.
+Significance levels: *** p<0.01, ** p<0.05, * p<0.1
+
+Supplementary Table 1: Scaling law model selection for scShift blood models (donor count > 258) based on
+average zero-shot biological state scores. Two models are evaluated: Model 1 incorporates all parameters
+(cells, donors, datasets, perturbations, hidden dimensions), while Model 2 considers only cells, donors, and
+hidden dimensions. Cellmax = 1,240,090; Donormax = 2,538; Datamax = 30; Pertmax = 147; Hiddenmax = 100.
+Model 1: y = Constant + log(Cell × 100 / Cellmax ) + log(Donor × 100 / Donormax ) + log(Data × 100 /
+Datamax ) + log(Pert × 100 / Pertmax ) + log(Hidden × 100 / Hiddenmax );
+Model 2: y = Constant + log(Cell × 100 / Cellmax ) + log(Donor × 100 / Donormax ) + log(Hidden × 100 /
+Hiddenmax ).
+
+25
+
+Variables
+
+Interferon stimulation data
+
+Pathogen stimulation data
+
+Model 1
+
+Model 2
+
+Model 1
+
+Model 2
+
+∗∗
+
+Constant
+
+0.046
+(0.106)
+[0.665]
+
+0.125
+(0.083)
+[0.141]
+
+0.270
+(0.130)
+[0.046]
+
+0.264∗∗
+(0.100)
+[0.012]
+
+log(Cell × 100 / Cellmax )
+
+0.015∗∗
+(0.006)
+[0.029]
+
+0.015∗∗
+(0.006)
+[0.031]
+
+0.026∗∗∗
+(0.008)
+[0.003]
+
+0.026∗∗∗
+(0.008)
+[0.002]
+
+log(Donor × 100 / Donormax )
+
+0.004
+(0.013)
+[0.767]
+
+0.014∗
+(0.007)
+[0.060]
+
+0.034∗∗
+(0.016)
+[0.037]
+
+0.031∗∗∗
+(0.009)
+[0.001]
+
+log(Data × 100 / Datamax )
+
+0.031
+(0.022)
+[0.174]
+
+–
+–
+–
+
+0.003
+(0.027)
+[0.922]
+
+–
+–
+–
+
+log(Pert × 100 / Pertmax )
+
+-0.003
+(0.007)
+[0.717]
+
+–
+–
+–
+
+-0.005
+(0.009)
+[0.564]
+
+–
+–
+–
+
+log(Hidden × 100 / Hiddenmax )
+
+0.041∗∗∗
+(0.014)
+[0.008]
+
+0.042∗∗∗
+(0.014)
+[0.006]
+
+0.005
+(0.018)
+[0.776]
+
+0.007
+(0.017)
+[0.711]
+
+41
+0.323
+0.227
+3.344∗∗
+-159.9
+-149.6
+
+41
+0.282
+0.224
+4.839∗∗∗
+-161.5
+-154.6
+
+41
+0.471
+0.396
+6.244∗∗∗
+-142.7
+-132.5
+
+41
+0.466
+0.423
+10.76∗∗∗
+-146.3
+-139.5
+
+Model Statistics
+Observations
+R-squared
+Adjusted R-squared
+F-statistic
+AIC
+BIC
+
+Notes: Standard errors in parentheses. P-values in square brackets.
+Significance levels: *** p<0.01, ** p<0.05, * p<0.1
+
+Supplementary Table 2: Scaling law model selection for scShift blood models (donor count > 258) based on
+biological state scores in interferon and pathogen stimulation datasets. Models 1 and 2 follow the definitions
+provided in Supplementary Table 1.
+
+26
+
+Gene List Name
+
+Genes
+
+COVID pattern genes
+
+PARK7, C1QA, C1QB, ATP6V0B, RPS27, KRTCAP2, VAMP5, IGKC, COX5B, DBI,
+UBXN4, ARPC2, SEPTIN2, BRK1, ARL6IP5, RPL24, RNF7, CXCL10, HINT1, ANKHD1,
+SERPINB1, CLIC1, HLA-DQA1, PSMB8, HLA-DMA, DNPH1, PSMB1, MRPS24, LINCPINT, GIMAP4, RAB2A, ZNF706, VPS28, TXN, OPTN, GSTO1, LSP1, SLC15A3,
+PLAAT4, FKBP2, RESF1, PTGES3, NACA, NAP1L1, NDUFA12, LCP1, RPS29,
+RPL36AL, COX5A, RPS15A, PYCARD, CIAO2B, PSMB6, C17orf49, GPS2, UBB,
+SNHG29, CCL2, CCL3, NDUFV2, C18orf32, CYB5A, MICOS13, EIF3K, RPS19,
+PPM1N, SELENOW, MAFB, ATP5PF, BID, IGLC2, IGLC3, SAT1, RPL36A, SEPTIN6,
+SSR4, RPS4Y1, DDX3Y, MT-CO1, MINOS1, FAM129A, SEPT2, COL4A3BP, SEPT7,
+XIST, SEPT6, C8orf59, RARRES3, FAM45A, KIAA1551, FAM96B, SEPT9, C19orf24,
+C19orf70
+
+Fibrosis pattern genes
+
+PRDX1, GBP1, SLAMF7, FCGR3A, H3F3A, ATP5MC3, RHOA, SERP1, TNFSF10,
+CXCL8, VCAN, HBEGF, HLA-C, LST1, HLA-DRB5, HLA-DRB1, HLA-DQB1, PSMB9,
+TMEM176B, TMEM176A, IFIT2, IFITM2, IFITM3, NEAT1, CARD16, POMP, PSME2,
+RPS17, MT2A, NME2, H3F3B, MYL12B, RPL17, AC020916.1, FOSB, CSTB
+
+The 47-gene list
+
+PTP4A2, C1orf162, CD48, FCER1G, PPP1CB, PCBP1, CAPG, VAMP5, H1FX, TNFSF10, SLC39A8, VCAN, HSP90AB1, MARCKS, ACTB, PSMA2, PPIA, CD36, SRGN,
+IFIT1, CTSD, MS4A6A, TMEM179B, CD63, ATP5F1B, UBC, KCTD12, NPC2, B2M,
+ANXA2, PSMA4, BCL2A1, MAF, ACTG1, MYL12A, MYL12B, CHMP1B, BST2, PLAUR,
+FTL, LILRA6, FKBP1A, MAFB, MRPS6, TYMP, SAT1, RBM3
+
+The 39-gene list (fil- PTP4A2, CD48, FCER1G, PCBP1, CAPG, VAMP5, H1FX, TNFSF10, SLC39A8, VCAN,
+tered by scShift)
+HSP90AB1, MARCKS, ACTB, PSMA2, PPIA, CD36, SRGN, IFIT1, CTSD, TMEM179B,
+CD63, ATP5F1B, UBC, KCTD12, NPC2, B2M, ANXA2, PSMA4, BCL2A1, ACTG1,
+MYL12A, MYL12B, BST2, FTL, LILRA6, FKBP1A, MAFB, TYMP, SAT1
+The 229-gene list
+
+VAMP3, PGD, SDHB, CDC42, EPHB2, RPL11, SH3BGRL3, IFI6, PEF1, PTP4A2,
+MACF1, PRDX1, UQCRH, TMEM59, PDE4B, GBP4, TMEM167B, C1orf162, CTSS,
+S100A4, ADAR, MNDA, CD48, FCER1G, CREG1, IER5, GLUL, SRP9, IRF2BP2, ID2,
+LAPTM4A, SF3B6, FOSL2, PPP1CB, RPS27A, MXD1, PCBP1, MOB1A, MTHFD2,
+TMSB10, CAPG, VAMP8, VAMP5, MAP3K2, KYNU, CLK1, SUMO1, IDH1, ARL4C,
+FLNB, EIF4E3, CD47, PARP9, PARP14, H1FX, CDV3, ATP1B3, RNF13, SELENOT,
+RAP2B, MFSD1, TNFSF10, ATP13A3, TMEM33, EREG, AREG, HERC5, H2AFZ,
+SLC39A8, UBE2D3, C4orf33, ACSL1, LPCAT1, SNX18, BTF3, TMEM167A, VCAN,
+ARRDC3, ST8SIA4, TGFBI, SSR1, C6orf62, HLA-F, AIF1, SRSF3, CDKN1A, VEGFA,
+HSP90AB1, CD2AP, ELOVL5, PNRC1, MARCKS, SMPDL3A, ARMT1, DYNLT1, QKI,
+PSMB1, ACTB, RAC1, PSMA2, PPIA, PURB, SNHG15, FGL2, CD36, BRI3, IFRD1,
+CTSB, ASAH1, PLEKHA2, SDCBP, LY96, PDP1, TP53INP1, COX6C, KLF10, FAM49B,
+EEF1D, C9orf72, CHMP5, CARD19, ATP5F1C, CREM, HNRNPF, SRGN, PPIF, GHITM,
+IFIT1, PIK3AP1, PRDX3, CTSD, ADM, RNF141, LMO2, MS4A6A, TMEM179B, NEAT1,
+CFL1, UCP2, TMEM123, CASP1, MLF2, SLC2A3, SLC38A2, TMBIM6, METTL7A,
+DAZAP2, PFDN5, CD63, STAT2, ATP5F1B, NACA, GNS, BTG1, PLXNC1, OAS1, UBC,
+POMP, KCTD12, PCID2, ARHGEF40, DAD1, SLC7A7, PSME1, PSME2, ARF6, GCH1,
+HIF1A, ZFP36L1, NPC2, GPR65, HSP90AA1, PDIA3, B2M, SQOR, DMXL2, ANXA2,
+PSTPIP1, PSMA4, BCL2A1, MEFV, ARL6IP1, PRKCB, TENT4B, MAF, PFN1, EIF4A1,
+UBB, WSB1, PRKAR1A, SUMO2, ACTG1, METRNL, MYL12A, MYL12B, CHMP1B,
+C18orf32, RPL17, MCOLN1, BST2, PLAUR, NAPA, FTL, LILRA6, LILRA5, LILRB1,
+LILRB4, FKBP1A, PRNP, RIN2, MAFB, ZFAS1, PRELID3B, SAMSN1, ATP5PO, MRPS6,
+ETS2, TCN2, HMOX1, APOL6, TSPO, TYMP, TMSB4X, SAT1, CYBB, ATP6AP2, RBM3,
+PGK1, ATP6AP1
+Supplementary Table 3: Gene lists identified in the analysis.
+
+27
+
+Gene List Name
+
+Genes
+
+The 151-gene list (filtered by scShift)
+
+PGD, CDC42, RPL11, SH3BGRL3, IFI6, PEF1, PTP4A2, PRDX1, GBP4, CTSS,
+S100A4, MNDA, CD48, FCER1G, IER5, GLUL, SRP9, IRF2BP2, ID2, LAPTM4A,
+SF3B6, RPS27A, MXD1, PCBP1, MOB1A, MTHFD2, TMSB10, CAPG, VAMP8,
+VAMP5, SUMO1, FLNB, EIF4E3, PARP14, H1FX, CDV3, SELENOT, RAP2B, TNFSF10, ATP13A3, TMEM33, H2AFZ, SLC39A8, BTF3, TMEM167A, VCAN, SSR1,
+HLA-F, AIF1, SRSF3, CDKN1A, HSP90AB1, ELOVL5, PNRC1, MARCKS, ARMT1,
+PSMB1, ACTB, RAC1, PSMA2, PPIA, FGL2, CD36, BRI3, CTSB, SDCBP, COX6C,
+KLF10, EEF1D, CHMP5, HNRNPF, SRGN, PPIF, GHITM, IFIT1, PIK3AP1, PRDX3,
+CTSD, ADM, RNF141, LMO2, TMEM179B, CFL1, UCP2, TMEM123, CASP1, MLF2,
+SLC2A3, TMBIM6, METTL7A, DAZAP2, PFDN5, CD63, ATP5F1B, NACA, GNS, BTG1,
+PLXNC1, OAS1, UBC, POMP, KCTD12, DAD1, SLC7A7, PSME1, PSME2, ARF6,
+GCH1, ZFP36L1, NPC2, HSP90AA1, PDIA3, B2M, SQOR, ANXA2, PSMA4, BCL2A1,
+ARL6IP1, PRKCB, PFN1, EIF4A1, UBB, PRKAR1A, SUMO2, ACTG1, METRNL,
+MYL12A, MYL12B, C18orf32, RPL17, BST2, FTL, LILRA6, LILRA5, LILRB1, LILRB4,
+FKBP1A, PRNP, MAFB, PRELID3B, ATP5PO, HMOX1, APOL6, TSPO, TYMP, TMSB4X,
+SAT1, CYBB, ATP6AP2, PGK1, ATP6AP1
+
+Supplementary Table 4: Gene lists identified in the analysis (continued).
+
+28
+
+

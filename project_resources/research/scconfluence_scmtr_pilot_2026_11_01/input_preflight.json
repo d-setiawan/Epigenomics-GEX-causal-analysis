@@ -1,0 +1,132 @@
+{
+  "linear_chain_0": {
+    "shapes": {
+      "RNA": [
+        1936,
+        1944
+      ],
+      "H3K27ac": [
+        2000,
+        15000
+      ],
+      "H3K4me3": [
+        2000,
+        15000
+      ]
+    },
+    "dropped_counts": {
+      "RNA": 0,
+      "H3K27ac": 0,
+      "H3K4me3": 0
+    },
+    "n_guide_genes": 1939,
+    "cost_shapes": {
+      "RNA+H3K27ac": [
+        1936,
+        2000
+      ],
+      "RNA+H3K4me3": [
+        1936,
+        2000
+      ],
+      "H3K27ac+H3K4me3": [
+        2000,
+        2000
+      ]
+    },
+    "costs_finite": true
+  },
+  "constrained_collider_0": {
+    "shapes": {
+      "RNA": [
+        1934,
+        1922
+      ],
+      "H3K27ac": [
+        2000,
+        15000
+      ],
+      "H3K4me3": [
+        2000,
+        15000
+      ]
+    },
+    "dropped_counts": {
+      "RNA": 0,
+      "H3K27ac": 0,
+      "H3K4me3": 0
+    },
+    "n_guide_genes": 1915,
+    "cost_shapes": {
+      "RNA+H3K27ac": [
+        1934,
+        2000
+      ],
+      "RNA+H3K4me3": [
+        1934,
+        2000
+      ],
+      "H3K27ac+H3K4me3": [
+        2000,
+        2000
+      ]
+    },
+    "costs_finite": true
+  },
+  "scmtr_s1": {
+    "train_shapes": {
+      "RNA": [
+        602,
+        23383
+      ],
+      "H3K27ac": [
+        615,
+        26569
+      ],
+      "H3K4me3": [
+        614,
+        22481
+      ]
+    },
+    "test_shapes": {
+      "RNA": [
+        595,
+        23383
+      ],
+      "H3K27ac": [
+        595,
+        26569
+      ],
+      "H3K4me3": [
+        595,
+        22481
+      ]
+    },
+    "train_dropped_counts": {
+      "RNA": 0,
+      "H3K27ac": 0,
+      "H3K4me3": 0
+    },
+    "test_dropped_counts": {
+      "RNA": 0,
+      "H3K27ac": 0,
+      "H3K4me3": 0
+    },
+    "n_guide_genes": 18524,
+    "cost_shapes": {
+      "RNA+H3K27ac": [
+        602,
+        615
+      ],
+      "RNA+H3K4me3": [
+        602,
+        614
+      ],
+      "H3K27ac+H3K4me3": [
+        615,
+        614
+      ]
+    },
+    "costs_finite": true
+  }
+}

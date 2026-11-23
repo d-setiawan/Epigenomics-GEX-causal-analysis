@@ -1,0 +1,25 @@
+{
+  "representation": "raw_counts",
+  "ica_seed": 0,
+  "control": "original",
+  "assays": [
+    "RNA",
+    "H3K4me3"
+  ],
+  "parent_result": "application_v1/scmtr_seq_s1__raw_counts__seed0/result.json",
+  "original_three_assay_adjusted_alpha": 9.259259259259259e-06,
+  "shared_source_count": 0,
+  "pair_adjusted_alpha": 2.777777777777778e-05,
+  "joint_factors": [],
+  "joint_signs": [],
+  "source_count_at_original_global_alpha": 0,
+  "graph_status": "no_shared_sources",
+  "valid_feature_pairs": 900,
+  "total_feature_pairs": 900,
+  "correlation_rmse": 0.06472494669685576,
+  "zero_correlation_rmse": 0.06472494669685576,
+  "rmse_improvement_over_zero": 0.0,
+  "status": "completed",
+  "warnings": [],
+  "arrays_sha256": "e2cdc16447f222b1fd0a5fec0dc7dadb1ea975c23b3ac69a7850292d005f58f1"
+}

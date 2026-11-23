@@ -1,0 +1,30 @@
+{
+  "status": "approved",
+  "date_utc": "2026-11-01T21:07:52.873572+00:00",
+  "reviewer": "causal_reliability_pilot",
+  "new_fits": 0,
+  "new_datasets": 0,
+  "scientific_scope": "Bounded finite estimator comparison and computational-rank sensitivity; no universal impossibility or causal recovery claim",
+  "performance_replay": "Independent raw heldout count replay in extension_metric_audit.json; this final document check additionally recomputes displayed aggregates from sealed results",
+  "decision_replay_scope": "Underlying gate decision replay is separately owned by the fit auditor; this review recomputed the displayed gate counts from saved assay/pair records",
+  "followup_not_independent_validation": true,
+  "checks": [
+    "All162 assay source statuses, zero cap flags, original selected ranks7\u201319 and54 rank-zero control records checked",
+    "Source-direction counts1152/25 eligible/1127 ineligible; all gate table totals recomputed from arm metadata",
+    "All422 real directions fail lower-decile loading stability; no real eligible endpoint comparisons",
+    "Fourteen eligible signed comparisons and closest15.8212624791 score independently aggregated from saved pair diagnostics",
+    "Every cap6-versus20 covariance win/loss cell and real anchor example recomputed; seeds counted once",
+    "Both state maxima and model/seed/assay identities checked",
+    "No accepted raw moment pair, CF unassessed, no causal graph or recovered independence claim",
+    "Adaptive development on reused cohorts explicitly separated from independent validation"
+  ],
+  "files_sha256": {
+    "README.md": "3338b914b9f3259462ed44c75527645b8157355804d657c17b7792456fc29fed",
+    "RESULTS.md": "ed2f8149ef78c3e76c8bf718055ec6a78025f2563b6fd22ad9a3eb6bd95c16d8",
+    "protocol.json": "e7c9373a1684d6667e213f247f0f7cee8fa1ce361ebf0394da5801859e5774fc",
+    "reviews/extension_metric_audit.json": "67e0ecf5bd56b18efdd680f99d434d404f0117badd9452f63cc2998eedd68b2c",
+    "reviews/result_interpretation_review.md": "9ebcf6efb63bac67bdbb9a03c0bc2a4bf0d87c7a2407f29ca8eeaa3a15162513"
+  },
+  "fit_provenance_sha256": "c8ff28601e1a063960a39788a39f44e9f2c7a11c4be463a1c7a328bcc1d7316b",
+  "evaluation_provenance_sha256": "4dd8187da4cc49a34def7c1169710075d3a96b0bbc073f968bcbed2e4549264c"
+}

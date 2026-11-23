@@ -1,0 +1,201 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_empirical_copula_pair_rescue_v452_record.v1",
+  "algorithm": "CA-BOSS v4.52 bootstrap-stable empirical-copula pair rescue",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_empirical_copula_pair_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_positive_labels_used_for_score_fit": false,
+    "other_block_sentinel_null_roles_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 190,
+      "true_positive_hyperedges": 190,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 119,
+      "precision": 1.0,
+      "recall": 0.6148867313915858
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 304,
+      "correctly_recovered_assay_participations": 304,
+      "precision": 1.0,
+      "recall": 0.4919093851132686,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 190,
+      "coverage": 0.6148867313915858,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 260,
+      "average_ambiguity_set_size": 1.368421052631579,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 152,
+      "exact_cross_assay_pair_true_positives": 152,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.4919093851132686,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v447_recommended_prebootstrap_baseline": {
+      "true_positive_hyperedges": 185,
+      "false_positive_hyperedges": 0,
+      "recall": 0.598705501618123
+    },
+    "v451_bootstrap_sparse_baseline": {
+      "true_positive_hyperedges": 187,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6051779935275081
+    },
+    "v452_bootstrap_empirical_copula": {
+      "true_positive_hyperedges": 190,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6148867313915858,
+      "incremental_stable_true_hyperedges": 3,
+      "incremental_stable_false_hyperedges": 0,
+      "interpretation": "restores the raw v4.48 campaign coverage with whole-world-reproducible additions"
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "eligible_pair_universe": "reporter-pair rows remaining after the fixed truth-blind v4.44 and v4.46 exclusions",
+    "pair_features": [
+      "statistical_context_support_count",
+      "global_reporter_coassignment_context_count",
+      "maximum_reporter_pair_scaled_ks_ratio",
+      "mean_coassigned_pair_exclusion_relative_margin"
+    ],
+    "feature_directions": [
+      "increasing",
+      "increasing",
+      "decreasing",
+      "increasing"
+    ],
+    "score": "product of four training-fold empirical-CDF percentiles",
+    "nested_score": "minimum target score over four leave-one-source-block calibration folds",
+    "null_threshold": "maximum corresponding score among eligible sentinel-null pairs in the other blocks",
+    "threshold_comparison": "strictly greater than",
+    "positive_labels_used_for_score_fit": false,
+    "other_block_truth_role": "identify empirical-null pairs only",
+    "proposal_source": "nominal empirical-copula pairs not already in target-safe v4.51",
+    "base_union": "target-safe v4.51 hypotheses",
+    "bootstrap_unit": "whole training world sampled with replacement within its original seed block",
+    "bootstrap_replicates": 100,
+    "bootstrap_frequency_threshold": 0.8,
+    "bootstrap_threshold_comparison": "inclusive greater than or equal",
+    "conflict_handling": "merge connected assay pairs into an unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never direct structure, exact cross-assay feature identity, or cross-assay direction"
+  },
+  "stability_audit": {
+    "retained_empirical_copula_proposals": [
+      {
+        "world_key": "development_34001_34016__world_seed34007",
+        "modalities": ["chrom_H3K27me3", "chrom_H3K4me3"],
+        "minimum_nested_copula_score": 0.943748926297101,
+        "calibration_null_upper_envelope": 0.8977400601553215,
+        "selection_count": 99,
+        "selection_frequency": 0.99,
+        "retained": true
+      },
+      {
+        "world_key": "train_46001_46024__world_seed46003",
+        "modalities": ["chrom_H3K27me3", "chrom_H3K9me3"],
+        "minimum_nested_copula_score": 0.9251756427453093,
+        "calibration_null_upper_envelope": 0.8949646365888648,
+        "selection_count": 100,
+        "selection_frequency": 1.0,
+        "retained": true
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49002",
+        "modalities": ["chrom_H3K4me1", "chrom_H3K9me3"],
+        "minimum_nested_copula_score": 0.9417080962041097,
+        "calibration_null_upper_envelope": 0.9124881140923872,
+        "selection_count": 98,
+        "selection_frequency": 0.98,
+        "retained": true
+      }
+    ],
+    "rejected_unstable_nominal_proposals": [
+      {
+        "world_key": "train_41001_41024__world_seed41018",
+        "modalities": ["chrom_H3K4me1", "chrom_H3K4me3"],
+        "selection_count": 39,
+        "selection_frequency": 0.39,
+        "retained": false
+      },
+      {
+        "world_key": "train_46001_46024__world_seed46005",
+        "modalities": ["chrom_H3K4me1", "chrom_H3K4me3"],
+        "selection_count": 28,
+        "selection_frequency": 0.28,
+        "retained": false
+      }
+    ],
+    "posttruth_maximum_null_selection_frequency": 0.19,
+    "posttruth_null_pairs_at_or_above_frequency_threshold": 0,
+    "new_stable_true_hyperedges_over_v451": 3,
+    "new_stable_false_hyperedges_over_v451": 0
+  },
+  "published_method_inspiration": {
+    "empirical_copula_tail_scoring": "Li, Zhao, Botta, Ionescu, and Hu (ICDM 2020), COPOD: Copula-Based Outlier Detection, DOI 10.1109/ICDM50108.2020.00135",
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "unpaired_multi_domain_causal_representation": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "multiway_matching": "Tang and Jebara (AISTATS 2017), Initialization and Coordinate Optimization for Multi-way Matching",
+    "relationship": "V4.52 adapts COPOD's empirical-copula tail idea to a conservative cross-fitted product score and combines it with CA-BOSS's held-out assay-local state evidence, permutation synchronization, sentinel-null calibration, and whole-world stability gate. It is not a direct implementation of COPOD or an application of a paper's identifiability theorem. No publication contributes data, pairings, features, or biological priors."
+  },
+  "limitations": {
+    "remaining_shared_state_hyperedge_abstentions": 119,
+    "complete_recovery_achieved": false,
+    "fresh_locked_generalization_established": false,
+    "cross_assay_direction_identified": false,
+    "interpretation": "The three gains are reproducible within cached-world resampling, but all 103 worlds have informed development. The result supports an improved retrospective checkpoint, not reliable out-of-sample complete recovery."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_empirical_copula_pair_rescue_v452_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "68238714044d6839b8af0d5e44d1728e09494269de55b41ba3e4c24fa6e8df38",
+    "campaign_summary_file_sha256": "1f98a6d8a199e9e3535c13ac699e60af7801ef19179e5b92b754295e9e5bd874",
+    "campaign_world_metrics_sha256": "0cf031da3103fc746556cf4162faf273ccd9a4c970bcf15c572ffdc7ea970353",
+    "campaign_panels_sha256": "f9e34926efa47abaa839c800c49223247c1b398a290c7eaa5e87ae59c5760c86",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "66adadec2fc42b2515a4ea51f6854ba47aa72a3fefedfab733d53f92f7890aa2",
+      "development_47001_47016": "cffe239c229c1f2b9ad9bcfc18793989448f8cace4f4873c9033a7017de779b0",
+      "train_41001_41024": "ca285e57e44d68a127bc0b352491febc6801d0c5feeb4a5e733ced1d08723c7e",
+      "train_46001_46024": "1745aad636db5f2ecce07925a2c5d92e99b3ddbe01d32676bb31bd8f299ab4e4",
+      "train_49001_49024": "61ac1badbf820dfd3b4ecdd3ec50eb0e8d010e3ca3c335de7a36c670b88f653d"
+    },
+    "calibrator_source_sha256": "f6f7e64a84bd1c9308bc544db8f2bc62bf722e70fcf5ed20a1829c3028eaf94e",
+    "scorer_source_sha256": "064ce61d4b94a489401db340c28df9328a614ee1b37ff850167e3c541a3d5a12"
+  }
+}

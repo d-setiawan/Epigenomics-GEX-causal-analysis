@@ -1,0 +1,44 @@
+{
+  "all_evaluated_arms": 225,
+  "all_fit_arms": 225,
+  "confirmed_matches": 0,
+  "contrast_summary_sha256": "5fc1037154679bc590cac0bef9531f1d8673bbe28f5b51559c97db16d07678df",
+  "covariance_seed_max_difference": 8.326672684688674e-17,
+  "data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "evaluation_seal_sha256": "bba8d5d74f696727ba0b71addaa45067b3f1346d481157a05f359759d88999b3",
+  "evaluation_statuses": {
+    "complete": 225
+  },
+  "evaluator_sha256": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db",
+  "feature_pairs_dropped": 0,
+  "fit_seal_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+  "fit_statuses": {
+    "completed": 225
+  },
+  "frozen_fit_or_evaluation_artifacts_mutated": false,
+  "full_source_data_replay_sha256": "58dcf72b4658cf9c854b16f0e4d33d548172e21c2a80a68fb5cc27f1de26c483",
+  "interpretation_limits": [
+    "All108 original unit-exposure300-feature assay fits exceeded cap6; this forced matching abstention byprotocol",
+    "No accepted matches yields defaultzero predictions, not a conclusion of true independence",
+    "Bootstrap improvement intervals are exactlyzero because model andzero predictions coincide",
+    "Better within-assay moment prediction does not establish cross-assay source identity or causal recovery",
+    "Existing internal holdouts and cachedworlds are repeatedly inspected development data",
+    "Source-noise and depth proxies are modeling sensitivities, with inherited QC and overlapping-promoter limitations"
+  ],
+  "moment_matches": 0,
+  "new_biological_observations_or_worlds": false,
+  "original30_anchor_scales_invariant_across_panel_widths": true,
+  "primary_cross_rmse_improvements": [
+    0.0
+  ],
+  "real_pair_level_view_scores": 900,
+  "scientific_fit_settings_changed": false,
+  "scope": "Independent data/evaluator implementation and complete artifact validation, followed by independent second-agent numerical replay; no new model fits",
+  "scoring_anomalies": [],
+  "second_agent_metric_replay_sha256": "8e18e86297e6f8e0ede626d2d972f43c12ba76342e7ad3feab848b03b9ab6d8d",
+  "state_correlation_matrices_independently_checked": 2250,
+  "status": "pass",
+  "summary_unit": "9 unique dataset-by-assay units per contrast; source seeds are not independent covariance replications",
+  "within_views": 1350,
+  "zero_or_nonfinite_scale_scoring_abstentions": 0
+}

@@ -1,0 +1,52 @@
+{
+  "C01_comparison": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -3.4546169128957582,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0629014323465201,
+        "standardized_offdiag_covariance_rmse": 0.051182116259329474,
+        "standardized_variance_rmse": 0.49468680153032923,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008817624961007554,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -3.710818018276517,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06290142985866981,
+        "standardized_offdiag_covariance_rmse": 0.06367651260026902,
+        "standardized_variance_rmse": 0.49087768817378635,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.008860214417767751,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": null,
+  "application": "scmtr_seq_s1__H3K4me3__30__original",
+  "execution": {
+    "application": "scmtr_seq_s1__H3K4me3__30__original",
+    "best_completed_penalized_objective": null,
+    "best_completed_start": null,
+    "complete_three_start_application": true,
+    "elapsed_seconds": 1.4232754909899086,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory test comparison; no state or causal target"
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "ca_boss_v4.cached_nested_empirical_null_v425_summary.v1",
+  "algorithm_schema_version": "empirical_null_state_calibration.v4.25",
+  "date": "2026-09-01",
+  "retrospective_development_only": true,
+  "fresh_locked_claim": false,
+  "new_worlds_or_datasets_created": false,
+  "user_constraint": "randomly replay existing cached worlds only; no generation",
+  "base_checkpoint": {
+    "path": "Evaluation/results/ca_boss_v4_cached_random_v424_summary.json",
+    "sha256": "fe1ffdec10a2ab58022c02902394b68ddbb7282fd660c72579ac94f48aec509e",
+    "state_supported_true_positive_members": 3246,
+    "state_supported_false_positive_members": 0,
+    "state_supported_false_negative_members": 554,
+    "state_supported_precision": 1.0,
+    "state_supported_recall": 0.8542105263157894
+  },
+  "method": {
+    "estimand": "within-assay evidence of participation in shared latent state",
+    "observable_score": "robust-null-standardized cross-fitted marginal state fit plus a selected weight times conditional Wald excess above the permutation-null 95th percentile",
+    "threshold": "one source-block-maximum spacing beyond the largest training-null score",
+    "outer_protocol": "nested leave-one-source-block-out weight selection, null fitting, threshold calibration, and prediction",
+    "conditional_weight_grid": [
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "production_application_requires_truth": false,
+    "strict_or_equivalence_membership_changed": false,
+    "direct_edges_created_or_changed": 0,
+    "pairwise_cross_assay_edges_created": 0
+  },
+  "nested_source_block_holdout": {
+    "worlds": 152,
+    "source_blocks": 7,
+    "outer_blocks_with_zero_false_additions": 7,
+    "true_positive_additions": 155,
+    "false_positive_additions": 0,
+    "false_addition_worlds": 0,
+    "world_familywise_false_addition_rate": 0.0,
+    "state_calibrated_true_positive_members": 3401,
+    "state_calibrated_false_positive_members": 0,
+    "state_calibrated_false_negative_members": 399,
+    "state_calibrated_precision": 1.0,
+    "state_calibrated_recall": 0.895,
+    "minimum_outer_block_recall": 0.865,
+    "maximum_outer_block_recall": 0.9083333333333333,
+    "role_recall": {
+      "P": 0.7927631578947368,
+      "Q": 0.9342105263157895,
+      "C": 0.8782894736842105,
+      "S": 0.9572368421052632,
+      "RNA": 1.0
+    }
+  },
+  "random_cached_panels": {
+    "selection_seeds": [
+      20260914,
+      20260915,
+      20260916,
+      20260917,
+      20260918
+    ],
+    "panels": 5,
+    "panel_size": 12,
+    "world_evaluations": 60,
+    "all_panels_zero_false_additions": true,
+    "mean_base_recall": 0.8586666666666666,
+    "mean_state_calibrated_recall": 0.8953333333333333,
+    "minimum_state_calibrated_recall": 0.8766666666666667,
+    "maximum_state_calibrated_recall": 0.93
+  },
+  "future_application_calibrator": {
+    "path": "Evaluation/outputs/ca_boss_v4/cached_nested_empirical_null_v425_full_pool/phase_b_full_calibrator.json",
+    "sha256": "adc8de2aae1b698c4d46899b7f5ca8137fd881bbd829e54b405aa064bc40cd87",
+    "conditional_weight": 1.5,
+    "selection_threshold": 10.535246436840787,
+    "training_rows_are_not_validation_rows": true,
+    "future_application_only": true
+  },
+  "audit_artifacts": {
+    "utility": "Evaluation/scripts/audit_nested_empirical_null_state_calibration_v4.py",
+    "algorithm_module": "Evaluation/scripts/empirical_null_state_calibration_v4.py",
+    "output": "Evaluation/outputs/ca_boss_v4/cached_nested_empirical_null_v425_full_pool",
+    "phase_a_manifest_sha256": "81ce1f1fe184f8a93009a0276f7d0c3da8b6bed74854c42d87ae1570609bfeaa",
+    "phase_b_summary_sha256": "abb342ebe3c1f798711376c2335fcfd4eb49c50425aa81bb342600bb24582e1c",
+    "phase_b_summary_payload_sha256": "6c5d1a0d928c283d27b08e8d9d86e9d2719ddb67249b494cc4c953968d305487"
+  },
+  "interpretation": {
+    "advance": "nested empirical-null calibration improved cached held-block state-feature recall from 0.8542 to 0.8950 without an observed false addition",
+    "cross_assay_structure": "a richer typed shared-state membership set; no exact cross-assay reporter pairing",
+    "cell_specific_cross_assay_direct_effects": "not identifiable from the agreed disjoint-cell variables",
+    "certification": "not fresh locked evidence; current user constraint forbids generation of the remaining fresh locked worlds"
+  }
+}

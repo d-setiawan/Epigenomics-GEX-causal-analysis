@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_adapter.py"
+  ],
+  "exit_code": 0,
+  "scope": "deterministic algebra fixtures, including one author-source iteration; no benchmark/world/evaluator input",
+  "source_sha256": {
+    "adapter.py": "b52e2eaf9f87b85afff1060405c2ab49cb6720f954da0153f000c8cc8c3d2ca8",
+    "common.py": "2a47c3f2aa0ac0c394d5fae4f28fc4526b3af5cacb7fd70672fa1eb3dd9e7df5",
+    "evaluate.py": "63ec612c1d2b2036c7e6cc7fc9929a263af9928c2f22a3df7f1ff94324db0d32",
+    "run.py": "e524311497245430d4ddceabdc4ceaaa80bb9039d7f7aef442315c4a1fc60d89",
+    "test_adapter.py": "8a6312bb0241bba12e7834e06d9fa698a9435358ea1931c66045afb8f63367dc",
+    "worker.py": "b4e709d2bdc5cb39e03acd3efb4036e0d531bb0eb7de00b8c826c515c896a3a0"
+  },
+  "stderr": "test_author_one_iteration_deterministic_fixture (test_adapter.Checks.test_author_one_iteration_deterministic_fixture) ... ok\ntest_boundary_and_stable_inverse (test_adapter.Checks.test_boundary_and_stable_inverse) ... ok\ntest_compat_and_restoration (test_adapter.Checks.test_compat_and_restoration) ... ok\ntest_objective_direct_distinct_coordinates (test_adapter.Checks.test_objective_direct_distinct_coordinates) ... ok\ntest_poisson_zero (test_adapter.Checks.test_poisson_zero) ... ok\ntest_qp_kkt_against_slsqp (test_adapter.Checks.test_qp_kkt_against_slsqp) ... /home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/scipy/optimize/_slsqp_py.py:434: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds\n  fx = wrapped_fun(x)\n/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/scipy/optimize/_slsqp_py.py:438: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds\n  g = append(wrapped_grad(x), 0.0)\nok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.029s\n\nOK\n",
+  "stdout": "\nAlgorithm Start.\n\nFail to converge in 1 iterations.\nDone.\n\n"
+}

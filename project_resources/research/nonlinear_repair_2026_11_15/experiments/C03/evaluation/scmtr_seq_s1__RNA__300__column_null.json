@@ -1,0 +1,132 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -43.667193930209606,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0580372451166126,
+        "standardized_offdiag_covariance_rmse": 0.13240279373806826,
+        "standardized_variance_rmse": 0.7398247823591261,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.2743040513845777,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      },
+      "300": {
+        "features": 300,
+        "log_score": -513.0235127637968,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06751852821593411,
+        "standardized_offdiag_covariance_rmse": 0.13097979835910442,
+        "standardized_variance_rmse": 1.02408238552897,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.2831707116148705,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -42.30101287783595,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.0580372455054646,
+        "standardized_offdiag_covariance_rmse": 0.13284997986469638,
+        "standardized_variance_rmse": 0.7280490958847001,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.26642721189173124,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      },
+      "300": {
+        "features": 300,
+        "log_score": -515.658226580333,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06751852830988915,
+        "standardized_offdiag_covariance_rmse": 0.13127710216721517,
+        "standardized_variance_rmse": 1.0123357806095572,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.2730727027464825,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": {
+    "30": {
+      "features": 30,
+      "log_score": -41.56376652808125,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.06897225123604553,
+      "standardized_offdiag_covariance_rmse": 0.13185800302337236,
+      "standardized_variance_rmse": 0.769580427848482,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.2519225582394855,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    },
+    "300": {
+      "features": 300,
+      "log_score": -486.76681447818186,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.08991171743180719,
+      "standardized_offdiag_covariance_rmse": 0.12950177914867358,
+      "standardized_variance_rmse": 1.0615443505552946,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.26009514925666255,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -42.45908810897114,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.0587505418522786,
+      "standardized_offdiag_covariance_rmse": 0.13303832132965368,
+      "standardized_variance_rmse": 0.7067510187832842,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.26774206871621675,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    },
+    "300": {
+      "features": 300,
+      "log_score": null,
+      "log_score_status": "negative_infinity",
+      "rows": 595,
+      "standardized_mean_rmse": 0.067497630927431,
+      "standardized_offdiag_covariance_rmse": 0.1321064026886006,
+      "standardized_variance_rmse": 0.9962139533459117,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.2728015564923996,
+      "zero_probability_rows": 20,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "scmtr_seq_s1__RNA__300__column_null",
+    "best_completed_objective": -0.11088471280724842,
+    "best_completed_seed": 0,
+    "complete_application": true,
+    "elapsed_seconds": 24.91528156599088,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

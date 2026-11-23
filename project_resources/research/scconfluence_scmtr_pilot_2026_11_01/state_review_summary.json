@@ -1,0 +1,160 @@
+{
+  "baselines": {
+    "constrained_collider_0": {
+      "glue_compressed_seed0": 0.13122404134972143,
+      "glue_full_counts_seed0": 0.12275633857327672
+    },
+    "linear_chain_0": {
+      "glue_compressed_seed0": 0.14763203779926992,
+      "glue_full_counts_seed0": 0.13645479807954766
+    }
+  },
+  "execution": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/state_execution_results.json",
+    "sha256": "3488f9a3d2512c757272389964d0acc54f039fc865731e9005f828efa9bbe3b0"
+  },
+  "independent_state_cost_audits_available": {
+    "constrained_collider_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed0_state_audit.json",
+      "sha256": "a45cc03261cd1d21a6fe668405c06aebcc25df6d2f3d15b293efa062609daaac"
+    },
+    "constrained_collider_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed1_state_audit.json",
+      "sha256": "cd3e79c3c43fbab02fa19988e61bc145cc49dc059200b2a168407ba99a689c71"
+    },
+    "linear_chain_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed0_state_audit.json",
+      "sha256": "1d79f97e1ee2d33505e2fa8dad0e50be08a4594d316fcc6aca787bfa45eaf071"
+    },
+    "linear_chain_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed1_state_audit.json",
+      "sha256": "a82c68c15db796590a70e1d28a799076bc09b8e744b7e1a87d93a775f83e7859"
+    }
+  },
+  "interpretation": [
+    "This fixed no-PCA/NB adaptation is not reliable across its two seeds on the two inspected worlds",
+    "Seed0 improves collider worst-pair matching and RNA-H3K4me3 matching on both worlds, while seed1 is near the random matching reference on both worlds",
+    "Linear source-state transfer remains weak even where matching improves; poor Ridge R2 does not prove all nonlinear state information is absent",
+    "Full-pool forced matching is an evaluation diagnostic distinct from native half-mass transport training",
+    "No universal conclusion about the published method, causal recovery guarantee, biological replication or tuned model selection follows"
+  ],
+  "protocol": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/protocol.json",
+    "sha256": "35f5c2590335eae9ad2f6b8a884d356aea1d7ee1fbf32b3c14d3713824b1754e"
+  },
+  "reports": {
+    "constrained_collider_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/constrained_collider_0_seed0.json",
+      "sha256": "45ed97cac192288672da91f521d45d3704f92c9877160f38b24372e629227fc2"
+    },
+    "constrained_collider_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/constrained_collider_0_seed1.json",
+      "sha256": "e053b91a088272348e5688d40b7f69c55d09794916c6420e334d73993c22f033"
+    },
+    "linear_chain_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/linear_chain_0_seed0.json",
+      "sha256": "d4271abf7ace63d61607efa094228924504ff3c52a0bc886e722d77e84e3d1ea"
+    },
+    "linear_chain_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/linear_chain_0_seed1.json",
+      "sha256": "2f27093585411c7aef34341af20a5d8c7c010f6531571df35381d35a2ec66bd6"
+    }
+  },
+  "review": {
+    "all_27_ridge_directions_per_report_audited": true,
+    "all_baseline_transport_reproduced": true,
+    "all_expected_world_seed_reports": true,
+    "all_fixed_pools_preserved": true,
+    "scconfluence_ridge_max_abs_error": 6.147615749796387e-11
+  },
+  "ridge_audits": {
+    "constrained_collider_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed0_state_transfer_audit.json",
+      "sha256": "f1ff6f7947e57cf52b094314e461e8bea5da9bb5e3f5128907d660efc3281e2c"
+    },
+    "constrained_collider_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/constrained_collider_0_seed1_state_transfer_audit.json",
+      "sha256": "39e1b520acb8ec996333c548474a7904ffc054816e6d70a37ec7b8b4ee06d0ec"
+    },
+    "linear_chain_0_seed0": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed0_state_transfer_audit.json",
+      "sha256": "4c8e238f4ec318b990daa166ab2528d2f47eaaebce21c4146c027272ae9623af"
+    },
+    "linear_chain_0_seed1": {
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/linear_chain_0_seed1_state_transfer_audit.json",
+      "sha256": "b35560fcfe6bf745de16d921586a366eae69fe0082b602c26b4d33704806e7ee"
+    }
+  },
+  "scconfluence": [
+    {
+      "cross_assay_linear_state_r2_max": 0.8450319115676102,
+      "cross_assay_linear_state_r2_min": -6.568084810620607,
+      "pair_gaps": {
+        "H3K27ac--H3K4me3": 0.37470298149260706,
+        "RNA--H3K27ac": 0.36494725972663683,
+        "RNA--H3K4me3": 0.060538163136431775
+      },
+      "seed": 0,
+      "within_assay_linear_state_r2": {
+        "H3K27ac": 0.5024839346699287,
+        "H3K4me3": 0.9670047483615037,
+        "RNA": 0.949982415831283
+      },
+      "world": "linear_chain_0",
+      "worst_pair_gap": 0.37470298149260706
+    },
+    {
+      "cross_assay_linear_state_r2_max": -2.9522234832156666,
+      "cross_assay_linear_state_r2_min": -71.69721793570385,
+      "pair_gaps": {
+        "H3K27ac--H3K4me3": 0.9808906834647572,
+        "RNA--H3K27ac": 1.0191439332935455,
+        "RNA--H3K4me3": 0.9754349702863921
+      },
+      "seed": 1,
+      "within_assay_linear_state_r2": {
+        "H3K27ac": 0.08380665801268194,
+        "H3K4me3": 0.11129900022452394,
+        "RNA": 0.19814358141546362
+      },
+      "world": "linear_chain_0",
+      "worst_pair_gap": 1.0191439332935455
+    },
+    {
+      "cross_assay_linear_state_r2_max": 0.7196158908598138,
+      "cross_assay_linear_state_r2_min": -0.6929288089594654,
+      "pair_gaps": {
+        "H3K27ac--H3K4me3": 0.09706680009488441,
+        "RNA--H3K27ac": 0.10105112758299842,
+        "RNA--H3K4me3": 0.06734930307049872
+      },
+      "seed": 0,
+      "within_assay_linear_state_r2": {
+        "H3K27ac": 0.8826325121143184,
+        "H3K4me3": 0.9593623388774271,
+        "RNA": 0.9364194654282998
+      },
+      "world": "constrained_collider_0",
+      "worst_pair_gap": 0.10105112758299842
+    },
+    {
+      "cross_assay_linear_state_r2_max": -1.4174201773607003,
+      "cross_assay_linear_state_r2_min": -36.2534127542703,
+      "pair_gaps": {
+        "H3K27ac--H3K4me3": 1.0212510297699897,
+        "RNA--H3K27ac": 1.0054147179040978,
+        "RNA--H3K4me3": 1.017104867196284
+      },
+      "seed": 1,
+      "within_assay_linear_state_r2": {
+        "H3K27ac": 0.05295696795431443,
+        "H3K4me3": 0.11186814715279658,
+        "RNA": 0.12386150973280396
+      },
+      "world": "constrained_collider_0",
+      "worst_pair_gap": 1.0212510297699897
+    }
+  ],
+  "scope": "Four fixed simulated state diagnostics; separate from causal reliability and real scMTR-seq outcomes",
+  "status": "complete"
+}

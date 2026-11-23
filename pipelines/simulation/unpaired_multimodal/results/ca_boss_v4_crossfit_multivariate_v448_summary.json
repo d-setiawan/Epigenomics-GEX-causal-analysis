@@ -1,0 +1,172 @@
+{
+  "schema_version": "ca_boss_v4.crossfit_multivariate_v448_record.v1",
+  "algorithm": "CA-BOSS v4.48 nested block-cross-fit multivariate reporter rescue",
+  "score_schema_version": "ca_boss_v4.crossfit_multivariate_reporter_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_simulation_truth_used_for_supervised_training": true,
+    "other_block_simulation_truth_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 190,
+      "true_positive_hyperedges": 190,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 119,
+      "precision": 1.0,
+      "recall": 0.6148867313915858
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 304,
+      "correctly_recovered_assay_participations": 304,
+      "precision": 1.0,
+      "recall": 0.4919093851132686,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 190,
+      "coverage": 0.6148867313915858,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 260,
+      "average_ambiguity_set_size": 1.368421052631579,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 152,
+      "exact_cross_assay_pair_true_positives": 152,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.4919093851132686,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v444_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 154,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.49838187702265374
+    },
+    "v445_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 156,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.5048543689320388
+    },
+    "v446_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 167,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.540453074433657
+    },
+    "v447_all_103_cached_worlds_crossfit_retrospective": {
+      "shared_state_hyperedge_true_positives": 185,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.598705501618123
+    },
+    "v448_all_103_cached_worlds_crossfit_retrospective": {
+      "shared_state_hyperedge_true_positives": 190,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.6148867313915858
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "contexts": "full fit plus two disjoint background-feature folds",
+    "base_union": "the target-safe v4.47 shared-state hypotheses",
+    "model_universe": "reporter evidence remaining after only truth-blind v4.44 and v4.46 exclusions",
+    "model_features": [
+      "statistical_context_support_count",
+      "global_reporter_coassignment_context_count",
+      "maximum_reporter_pair_scaled_ks_ratio",
+      "mean_coassigned_pair_exclusion_relative_margin"
+    ],
+    "model": "standardized L2 logistic regression with C=1 and balanced class weights",
+    "nested_crossfit": "for each target block, train four models; each excludes both the target block and one out-of-fold calibration block",
+    "conservative_target_score": "minimum probability across the four nested models",
+    "empirical_null_threshold": "maximum null probability across the four corresponding out-of-fold calibration blocks",
+    "selection": "strictly above the null envelope and only when every fold has the predeclared coefficient signs (+,+,-,+)",
+    "leakage_guard": "non-target v4.47 selections are not used to define the model universe because their thresholds could depend on target-block truth",
+    "conflict_handling": "merge selected assay pairs sharing an assay into one connected, unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never claim within-assay direct structure, exact cross-assay causal direction, or expansion of candidate alternatives"
+  },
+  "calibration_audit": {
+    "model_universe_assay_pair_count": 1194,
+    "retrospective_model_universe_true_pair_count": 116,
+    "retrospective_model_universe_null_pair_count": 1078,
+    "nested_model_count_per_target_block": 4,
+    "all_twenty_coefficient_sign_guards_passed": true,
+    "target_blocks_with_new_hypotheses": 4,
+    "new_assay_pair_hypotheses": 5,
+    "new_true_hyperedges": 5,
+    "new_false_hyperedges": 0,
+    "new_pairs_by_target_block": {
+      "development_34001_34016": 1,
+      "development_47001_47016": 1,
+      "train_41001_41024": 0,
+      "train_46001_46024": 2,
+      "train_49001_49024": 1
+    },
+    "null_probability_upper_envelope_by_target_block": {
+      "development_34001_34016": 0.991944048086197,
+      "development_47001_47016": 0.9928473936236232,
+      "train_41001_41024": 0.9971325134091401,
+      "train_46001_46024": 0.9954225795209505,
+      "train_49001_49024": 0.9968986520411715
+    }
+  },
+  "rejected_diagnostic": {
+    "name": "all-focal-feature assay-component synchronization",
+    "result": "149-166 true assay-pair recoveries but 307-319 false assay-pair selections depending on the component rule",
+    "interpretation": "a common latent axis can group many assays and therefore cannot by itself identify the designated cross-assay relation; reporter-specific evidence remains necessary",
+    "promoted_to_algorithm": false
+  },
+  "published_method_inspiration": {
+    "primary": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "multiway_matching": "Tang and Jebara (AISTATS 2017), Initialization and Coordinate Optimization for Multi-way Matching",
+    "relationship": "CA-BOSS uses multi-domain component alignment and synchronization evidence, then learns a conservative reporter-evidence discriminator across cached simulation blocks. It is not a theorem application and no publication contributes data, pairings, or biological priors."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/crossfit_multivariate_reporter_rescue_v448_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "07a17d2ba64ea6fea428dc73a0288df66d5c9ebf83e1daffe4d9f12e0a7a7ef3",
+    "campaign_summary_file_sha256": "3283c0481cd29825e3c23455d89560afc9bc4085819f88f80e2a10b3e47e38da",
+    "campaign_world_metrics_sha256": "2a1d3df851044a7c74c29baba217c1a033cacbebe26e58f30409d0a5a00a46bc",
+    "campaign_panels_sha256": "04d0ec314b244ee612a6db46d9e68526b970a9ca020177be32b8fcc1b07afda4",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "1ebfa1ecbbd1dbfbd1e6122e524378b6333186bab7733c4d7f3308fe56dd3046",
+      "development_47001_47016": "3c4fe6d1eab22215c2cee94beb137fcb1d631a5fe7d2a9a1fed335a94013c85b",
+      "train_41001_41024": "29457624045da6c5f7112eedc5c78b24a5740a2d66d436b2fea9eef77d257859",
+      "train_46001_46024": "4544d8ec16d2caf875a97286d261c4bb007ad3976c34cedafddbf41fa8b968d1",
+      "train_49001_49024": "2189fb2953dc101e99663776641c3c6014eb6619022e5f57c074351a8633ea24"
+    },
+    "calibrator_source_sha256": "e2e20cc35eeb83c5fc519a121d50534893258e0de4766650327f866bebcc1505",
+    "scorer_source_sha256": "179a2fba35a8ba786287761f625c16600725c06244901539e4a5524d9f7ec792"
+  }
+}

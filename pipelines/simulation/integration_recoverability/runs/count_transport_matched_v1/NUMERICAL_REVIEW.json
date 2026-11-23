@@ -1,0 +1,2257 @@
+{
+  "audit_script_sha256": "6f4a6bd436617babf03aa16c2912f75db3dea78a815ab3af088be403317059c1",
+  "convergence_outcomes": {
+    "capped600/capped_chunk_budget": 15,
+    "capped600/relative_objective_tolerance": 57,
+    "convergence/projected_gradient_convergence": 72
+  },
+  "counts": {
+    "boolean_checks": 14921,
+    "calibration_assays_recomputed": 432,
+    "hash_comparisons": 274,
+    "numeric_comparisons": 11296,
+    "per_cell_predictions_recomputed": 864000,
+    "selected_directions_recomputed": 216
+  },
+  "created_utc": "2026-11-15T23:42:18.422707+00:00",
+  "data_audits": {
+    "d1_rep0": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 1,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d1_rep1": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 1,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d1_rep2": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 1,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d2_rep0": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 2,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d2_rep1": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 2,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d2_rep2": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 2,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d3_rep0": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 3,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d3_rep1": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 3,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    },
+    "d3_rep2": {
+      "assays_disjoint_in_public_data": true,
+      "feature_order_verified": true,
+      "known_dimension": 3,
+      "paired_rows": 4000,
+      "public_rows_disjoint_from_assessment": true
+    }
+  },
+  "feasible_truth_suboptimality_witness_outcomes": {
+    "d1/capped600/truth_better=False": 12,
+    "d1/capped600/truth_better=True": 12,
+    "d1/convergence/truth_better=False": 12,
+    "d1/convergence/truth_better=True": 12,
+    "d2/capped600/truth_better=True": 24,
+    "d2/convergence/truth_better=True": 24,
+    "d3/capped600/truth_better=True": 24,
+    "d3/convergence/truth_better=True": 24
+  },
+  "fit_artifacts_verified": 144,
+  "independent_autodiff_selected_stationarity": {
+    "d1_rep0__n12000__capped600": {
+      "converged": false,
+      "objective": 1.335730438445076,
+      "projected_gradient_inf_norm": 5.7261679022868606e-06,
+      "raw_gradient_inf_norm": 5.7261679022651825e-06
+    },
+    "d1_rep0__n12000__convergence": {
+      "converged": true,
+      "objective": 1.3357304332430908,
+      "projected_gradient_inf_norm": 9.469483092106046e-07,
+      "raw_gradient_inf_norm": 9.469483092351569e-07
+    },
+    "d1_rep0__n3000__capped600": {
+      "converged": false,
+      "objective": 1.3329573671232504,
+      "projected_gradient_inf_norm": 1.6655284516442492e-05,
+      "raw_gradient_inf_norm": 1.6655284516464498e-05
+    },
+    "d1_rep0__n3000__convergence": {
+      "converged": true,
+      "objective": 1.33295734716836,
+      "projected_gradient_inf_norm": 9.168093606515271e-07,
+      "raw_gradient_inf_norm": 9.168093606852124e-07
+    },
+    "d1_rep1__n12000__capped600": {
+      "converged": false,
+      "objective": 1.2928022187546064,
+      "projected_gradient_inf_norm": 4.592742039832842e-05,
+      "raw_gradient_inf_norm": 4.592742039827309e-05
+    },
+    "d1_rep1__n12000__convergence": {
+      "converged": true,
+      "objective": 1.2928022066342844,
+      "projected_gradient_inf_norm": 9.6677697247749e-07,
+      "raw_gradient_inf_norm": 9.66776972470574e-07
+    },
+    "d1_rep1__n3000__capped600": {
+      "converged": false,
+      "objective": 1.2931407926555436,
+      "projected_gradient_inf_norm": 2.869225036228329e-06,
+      "raw_gradient_inf_norm": 2.869225036288003e-06
+    },
+    "d1_rep1__n3000__convergence": {
+      "converged": true,
+      "objective": 1.2931407833998674,
+      "projected_gradient_inf_norm": 6.876156647683818e-07,
+      "raw_gradient_inf_norm": 6.876156647553024e-07
+    },
+    "d1_rep2__n12000__capped600": {
+      "converged": false,
+      "objective": 1.321578251794891,
+      "projected_gradient_inf_norm": 4.4732903078381625e-06,
+      "raw_gradient_inf_norm": 4.473290307805594e-06
+    },
+    "d1_rep2__n12000__convergence": {
+      "converged": true,
+      "objective": 1.321578243347166,
+      "projected_gradient_inf_norm": 7.861212023563269e-07,
+      "raw_gradient_inf_norm": 7.861212023824664e-07
+    },
+    "d1_rep2__n3000__capped600": {
+      "converged": false,
+      "objective": 1.321660222164998,
+      "projected_gradient_inf_norm": 5.367581908943819e-06,
+      "raw_gradient_inf_norm": 5.3675819089665435e-06
+    },
+    "d1_rep2__n3000__convergence": {
+      "converged": true,
+      "objective": 1.321660214178251,
+      "projected_gradient_inf_norm": 8.58772737255542e-07,
+      "raw_gradient_inf_norm": 8.587727372381836e-07
+    },
+    "d2_rep0__n12000__capped600": {
+      "converged": false,
+      "objective": 1.3776469093681716,
+      "projected_gradient_inf_norm": 5.92269433608017e-06,
+      "raw_gradient_inf_norm": 0.00020288621788799378
+    },
+    "d2_rep0__n12000__convergence": {
+      "converged": true,
+      "objective": 1.3776468930754977,
+      "projected_gradient_inf_norm": 7.773022994150836e-07,
+      "raw_gradient_inf_norm": 0.00020288841349896483
+    },
+    "d2_rep0__n3000__capped600": {
+      "converged": false,
+      "objective": 1.3786499085877069,
+      "projected_gradient_inf_norm": 1.8680974744222922e-05,
+      "raw_gradient_inf_norm": 0.00020124772893082547
+    },
+    "d2_rep0__n3000__convergence": {
+      "converged": true,
+      "objective": 1.3786498808779797,
+      "projected_gradient_inf_norm": 5.918340888477758e-07,
+      "raw_gradient_inf_norm": 0.0002013464670820209
+    },
+    "d2_rep1__n12000__capped600": {
+      "converged": false,
+      "objective": 1.4028758537331467,
+      "projected_gradient_inf_norm": 5.979085561691466e-05,
+      "raw_gradient_inf_norm": 5.9790855616920964e-05
+    },
+    "d2_rep1__n12000__convergence": {
+      "converged": true,
+      "objective": 1.4028753577030335,
+      "projected_gradient_inf_norm": 8.536082983789939e-07,
+      "raw_gradient_inf_norm": 8.536082983500611e-07
+    },
+    "d2_rep1__n3000__capped600": {
+      "converged": false,
+      "objective": 1.4012258312524701,
+      "projected_gradient_inf_norm": 7.58022646674128e-06,
+      "raw_gradient_inf_norm": 7.580226466797694e-06
+    },
+    "d2_rep1__n3000__convergence": {
+      "converged": true,
+      "objective": 1.4012256881273883,
+      "projected_gradient_inf_norm": 7.811200057883383e-07,
+      "raw_gradient_inf_norm": 7.811200057483211e-07
+    },
+    "d2_rep2__n12000__capped600": {
+      "converged": false,
+      "objective": 1.4573699051095572,
+      "projected_gradient_inf_norm": 0.0001098663505487707,
+      "raw_gradient_inf_norm": 0.00010986635054876029
+    },
+    "d2_rep2__n12000__convergence": {
+      "converged": true,
+      "objective": 1.4573698322273876,
+      "projected_gradient_inf_norm": 8.00870651407326e-07,
+      "raw_gradient_inf_norm": 8.008706514038566e-07
+    },
+    "d2_rep2__n3000__capped600": {
+      "converged": false,
+      "objective": 1.4550451579044064,
+      "projected_gradient_inf_norm": 1.0419480528600644e-05,
+      "raw_gradient_inf_norm": 1.0419480528561396e-05
+    },
+    "d2_rep2__n3000__convergence": {
+      "converged": true,
+      "objective": 1.4550450874539522,
+      "projected_gradient_inf_norm": 8.250256484099161e-07,
+      "raw_gradient_inf_norm": 8.25025648419701e-07
+    },
+    "d3_rep0__n12000__capped600": {
+      "converged": false,
+      "objective": 1.3950566496892558,
+      "projected_gradient_inf_norm": 2.5020734793601562e-05,
+      "raw_gradient_inf_norm": 9.277568539056556e-05
+    },
+    "d3_rep0__n12000__convergence": {
+      "converged": true,
+      "objective": 1.3950566193350111,
+      "projected_gradient_inf_norm": 6.711068218923089e-07,
+      "raw_gradient_inf_norm": 9.288557545176152e-05
+    },
+    "d3_rep0__n3000__capped600": {
+      "converged": false,
+      "objective": 1.3907180013452545,
+      "projected_gradient_inf_norm": 7.778087484366925e-06,
+      "raw_gradient_inf_norm": 7.778087484347843e-06
+    },
+    "d3_rep0__n3000__convergence": {
+      "converged": true,
+      "objective": 1.3907179792723685,
+      "projected_gradient_inf_norm": 7.554916157115343e-07,
+      "raw_gradient_inf_norm": 7.554916157125101e-07
+    },
+    "d3_rep1__n12000__capped600": {
+      "converged": false,
+      "objective": 1.419183630380855,
+      "projected_gradient_inf_norm": 3.7101070994860486e-05,
+      "raw_gradient_inf_norm": 3.7101070994840834e-05
+    },
+    "d3_rep1__n12000__convergence": {
+      "converged": true,
+      "objective": 1.4191835922216562,
+      "projected_gradient_inf_norm": 5.16149976093061e-07,
+      "raw_gradient_inf_norm": 2.0685904108005275e-05
+    },
+    "d3_rep1__n3000__capped600": {
+      "converged": false,
+      "objective": 1.4115881620918556,
+      "projected_gradient_inf_norm": 9.566486148693265e-06,
+      "raw_gradient_inf_norm": 7.313200117092591e-05
+    },
+    "d3_rep1__n3000__convergence": {
+      "converged": true,
+      "objective": 1.4115881548412228,
+      "projected_gradient_inf_norm": 8.370048277805964e-07,
+      "raw_gradient_inf_norm": 7.315809868693392e-05
+    },
+    "d3_rep2__n12000__capped600": {
+      "converged": false,
+      "objective": 1.395388302842139,
+      "projected_gradient_inf_norm": 3.322813706937988e-05,
+      "raw_gradient_inf_norm": 3.3228137069378364e-05
+    },
+    "d3_rep2__n12000__convergence": {
+      "converged": true,
+      "objective": 1.3953882627857421,
+      "projected_gradient_inf_norm": 9.274742029385941e-07,
+      "raw_gradient_inf_norm": 2.2068187755876045e-05
+    },
+    "d3_rep2__n3000__capped600": {
+      "converged": false,
+      "objective": 1.3946813034053935,
+      "projected_gradient_inf_norm": 5.4744190128852566e-06,
+      "raw_gradient_inf_norm": 2.01328145643817e-05
+    },
+    "d3_rep2__n3000__convergence": {
+      "converged": true,
+      "objective": 1.3946812865998213,
+      "projected_gradient_inf_norm": 9.51346985522683e-07,
+      "raw_gradient_inf_norm": 2.013927931963096e-05
+    }
+  },
+  "issues": [],
+  "limitations": [
+    "Numerical stationarity does not prove a global optimum; feasible true-parameter NLL witnesses can disprove optimality.",
+    "The uncapped comparison changes both the total iteration cap and the relative-function stopping tolerance; it is not an isolated iteration-budget experiment.",
+    "Known source dimension and exact simulator assumptions do not establish realistic biological recovery or causal direction recovery."
+  ],
+  "maximum_absolute_errors": {
+    "all_true_training_gaps": 8.881784197001252e-16,
+    "all_true_training_witnesses": 4.440892098500626e-16,
+    "autodiff_objective": 4.440892098500626e-16,
+    "autodiff_projected_gradient": 1.1657341758564144e-15,
+    "autodiff_raw_gradient": 1.1885050684565701e-15,
+    "calibration_assay": 8.881784197001252e-16,
+    "calibration_total": 4.440892098500626e-16,
+    "chunk_continuity": 0.0,
+    "designed_probabilities": 0.0,
+    "designed_source_means": 0.0,
+    "deterministic_mechanism_reconstruction": 0.0,
+    "fit_scales": 0.0,
+    "fitted_training_objective": 6.661338147750939e-16,
+    "heldout_means": 2.842170943040401e-14,
+    "heldout_per_feature_means": 1.3322676295501878e-15,
+    "mean_lograte_transport": 8.881784197001252e-15,
+    "mode_comparison_means": 1.2006996959190719e-15,
+    "per_cell_gain_over_same_model_target_marginal": 1.9895196601282805e-13,
+    "per_cell_gain_over_true_independent_target": 3.623767952376511e-13,
+    "per_cell_model_conditional_loglik": 3.552713678800501e-13,
+    "per_cell_model_target_marginal_loglik": 3.623767952376511e-13,
+    "per_cell_oracle_conditional_loglik": 3.055333763768431e-13,
+    "per_cell_oracle_conditional_logscore_gap": 3.552713678800501e-13,
+    "per_cell_oracle_gain_over_true_independent_target": 6.394884621840902e-14,
+    "per_cell_target_marginal_logscore_gap": 3.552713678800501e-13,
+    "per_cell_true_independent_target_loglik": 3.019806626980426e-13,
+    "population_crosscovariance": 2.2737367544323206e-13,
+    "restricted_transport": 2.3092638912203256e-14,
+    "same_seed_capped_checkpoint": 0.0,
+    "same_seed_initial_loss": 0.0,
+    "source_covariance": 3.3306690738754696e-16,
+    "source_means": 1.1796119636642288e-16,
+    "source_normalization": 2.220446049250313e-16,
+    "state_probabilities": 1.1102230246251565e-16,
+    "strict_model_identity": 1.1102230246251565e-16,
+    "support_transport": 4.440892098500626e-15,
+    "symmetry_joint_difference": 0.0,
+    "symmetry_marginal_atoms": 2.1316282072803006e-14,
+    "symmetry_weights": 0.0,
+    "terminal_gradient_record": 0.0,
+    "true_loading_rank": 4.440892098500626e-15,
+    "true_training_gap": 6.661338147750939e-16,
+    "true_training_witness": 4.440892098500626e-16
+  },
+  "methods": "Independent NumPy/SciPy Poisson likelihoods, source-law enumeration, least-squares transport operators, exact second moments, calibration-only selection, and direct feasible-truth training objectives. Independent PyTorch float64 autodifferentiation verifies all 36 selected gradients. Reference predictive_rows used only after independent vector calculation; no evaluator aggregate helpers or fitting called.",
+  "native_optimizer_success_outcomes": {
+    "capped600/False": 15,
+    "capped600/True": 57,
+    "convergence/True": 72
+  },
+  "not_repeated": [
+    "No bootstrap interval replay; recovery threshold audit uses stored interval lower endpoints.",
+    "No optimization replay; independent derivatives checked for 36 selected points only, not all 144 candidates.",
+    "No new count draws; true deterministic loading reconstruction only.",
+    "No assessment replay for unselected restart directional metrics."
+  ],
+  "old_frozen_source_files_verified": 11,
+  "population_assumptions": [
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 1,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": null,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d1_rep0"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 1,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": null,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d1_rep1"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 1,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": null,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d1_rep2"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 2,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.15000000000000002,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d2_rep0"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 2,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.15000000000000002,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d2_rep1"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 2,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.15000000000000002,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d2_rep2"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 3,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.13,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d3_rep0"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 3,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.13,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d3_rep1"
+    },
+    {
+      "all_true_parameters_strictly_inside_bounds": true,
+      "dimension": 3,
+      "full_column_rank": true,
+      "independent_unit_variance_discrete_nongaussian_sources": true,
+      "minimum_p_gap": 0.13,
+      "nontrivial_signed_permutation_symmetries": 0,
+      "strict_positive_loglinear_rates": true,
+      "world": "d3_rep2"
+    }
+  ],
+  "reviewer": "Optimizer author; independent replay of generator/evaluator calculations",
+  "sealed_hashes": {
+    "evaluation.json": "be887bfcd1740a649487493ed74c4c0e75b138d4431c54a4cb7def9329035636",
+    "evaluation_seal.json": "d2e9b2317152ab6d512328808939c20b0d87fa99ac5948f7c9f846563b24e4da",
+    "fit_seal.json": "5006d067bbf115d084f4db1e67e92dc629617227a0ba7b4077853622dc630e08",
+    "generation_seal.json": "d848fdd86a652d6c48b1155470c18ca37331a3e68030fa6b0f0fcf4e4cc33bed",
+    "protocol.json": "7b955dc5c9baa8e0514ba609e9530ef6d57924240a6377ee9f749113fbe5f23f"
+  },
+  "selected_results": {
+    "d1_rep0__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.010262274529565239,
+          "mean_gain_per_feature": 0.019381518376577124,
+          "oracle_gap_per_feature": 6.8104325876481e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.01967504119385796
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.019529988761807986,
+          "mean_gain_per_feature": 0.011628911456172158,
+          "oracle_gap_per_feature": 2.5678462585896018e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.014675370050033023
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.010262274529565239,
+          "mean_gain_per_feature": 0.014536138782432843,
+          "oracle_gap_per_feature": 1.3762560262231141e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.016652077824719187
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.013685671167644419,
+          "mean_gain_per_feature": 0.011628911025946206,
+          "oracle_gap_per_feature": 2.5678382417157376e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.014659708757948456
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.019529988761807993,
+          "mean_gain_per_feature": 0.014536139320215198,
+          "oracle_gap_per_feature": 1.3762660473434736e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.016893283298065404
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.013685671167644417,
+          "mean_gain_per_feature": 0.01938151837657701,
+          "oracle_gap_per_feature": 6.810432587686715e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.01986812003418985
+        }
+      },
+      "fit": "fits/d1_rep0__n12000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": -3.997263049826394e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep0__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.010468821843686728,
+          "mean_gain_per_feature": 0.019381373975038904,
+          "oracle_gap_per_feature": 6.770042033175702e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.019581735561796862
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.019783332817167314,
+          "mean_gain_per_feature": 0.011628824813511417,
+          "oracle_gap_per_feature": 2.60828069849173e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014703390554778093
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.010468821843686726,
+          "mean_gain_per_feature": 0.014536030481279182,
+          "oracle_gap_per_feature": 1.3377058634978658e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.016595243678517974
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.013856699518879884,
+          "mean_gain_per_feature": 0.011628824385023271,
+          "oracle_gap_per_feature": 2.60827250783722e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.014700441168631617
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.019783332817167317,
+          "mean_gain_per_feature": 0.014536031016889273,
+          "oracle_gap_per_feature": 1.3377161018444403e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01683515796459592
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.013856699518879885,
+          "mean_gain_per_feature": 0.019381373975038783,
+          "oracle_gap_per_feature": 6.770042033215324e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.01978327466470751
+        }
+      },
+      "fit": "fits/d1_rep0__n12000__convergence__seed0.json",
+      "fitted_minus_true_training_objective": -3.9977832484217046e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep0__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.03861227403581806,
+          "mean_gain_per_feature": 0.01937054931515655,
+          "oracle_gap_per_feature": 0.0001940184370389057,
+          "recovery_pass": false,
+          "transport_relative_error": 0.040077586644592524
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.04628590962885667,
+          "mean_gain_per_feature": 0.011622329919075894,
+          "oracle_gap_per_feature": 0.0001563442804809463,
+          "recovery_pass": false,
+          "transport_relative_error": 0.037185118485656254
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.03861227403581805,
+          "mean_gain_per_feature": 0.014527911986367423,
+          "oracle_gap_per_feature": 0.000178273838124346,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04936979927470869
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.032955649431301574,
+          "mean_gain_per_feature": 0.011622329589093991,
+          "oracle_gap_per_feature": 0.0001563441000681586,
+          "recovery_pass": false,
+          "transport_relative_error": 0.037172420802268194
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.046285909628856675,
+          "mean_gain_per_feature": 0.01452791239884487,
+          "oracle_gap_per_feature": 0.00017827406364045683,
+          "recovery_pass": false,
+          "transport_relative_error": 0.049375289323627426
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.03295564943130158,
+          "mean_gain_per_feature": 0.01937054931515665,
+          "oracle_gap_per_feature": 0.00019401843703907836,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04007259566421044
+        }
+      },
+      "fit": "fits/d1_rep0__n3000__capped600__seed0.json",
+      "fitted_minus_true_training_objective": -0.00016740063494014024,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep0__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.03972844997080582,
+          "mean_gain_per_feature": 0.019370235971590384,
+          "oracle_gap_per_feature": 0.00019352011632309694,
+          "recovery_pass": true,
+          "transport_relative_error": 0.039836886554791395
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.04736339139895623,
+          "mean_gain_per_feature": 0.011622141913350688,
+          "oracle_gap_per_feature": 0.0001571913545762889,
+          "recovery_pass": true,
+          "transport_relative_error": 0.037145037737080625
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.03972844997080582,
+          "mean_gain_per_feature": 0.014527676978692788,
+          "oracle_gap_per_feature": 0.00017893925547237592,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04998729070038217
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.0339334977022819,
+          "mean_gain_per_feature": 0.011622141582954154,
+          "oracle_gap_per_feature": 0.00015719117457813224,
+          "recovery_pass": true,
+          "transport_relative_error": 0.03714620575891172
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.04736339139895624,
+          "mean_gain_per_feature": 0.01452767739168836,
+          "oracle_gap_per_feature": 0.00017893948047036502,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04998989803406097
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.033933497702281906,
+          "mean_gain_per_feature": 0.019370235971590256,
+          "oracle_gap_per_feature": 0.00019352011632349866,
+          "recovery_pass": true,
+          "transport_relative_error": 0.03984124815254965
+        }
+      },
+      "fit": "fits/d1_rep0__n3000__convergence__seed0.json",
+      "fitted_minus_true_training_objective": -0.00016742058983054697,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep1__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.044863746117468836,
+          "mean_gain_per_feature": 0.016172219374347943,
+          "oracle_gap_per_feature": 2.78052251667418e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04242667276808212
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.02664913718018618,
+          "mean_gain_per_feature": 0.011545908184201596,
+          "oracle_gap_per_feature": 3.6965709244167014e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.01334498320894136
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.04486374611746883,
+          "mean_gain_per_feature": 0.01212916453076096,
+          "oracle_gap_per_feature": 1.2685801312328438e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.029381505727657235
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.04204875526664236,
+          "mean_gain_per_feature": 0.009710834498682009,
+          "oracle_gap_per_feature": 1.9902909539305115e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.022768875297503592
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.02664913718018617,
+          "mean_gain_per_feature": 0.014432385230251995,
+          "oracle_gap_per_feature": 3.506945760566423e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023929255151883502
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.04204875526664236,
+          "mean_gain_per_feature": 0.016184724164470015,
+          "oracle_gap_per_feature": 2.9212100716415592e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04303775453941235
+        }
+      },
+      "fit": "fits/d1_rep1__n12000__capped600__seed0.json",
+      "fitted_minus_true_training_objective": -3.0884766360594895e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep1__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.04484653244653276,
+          "mean_gain_per_feature": 0.016172043934386163,
+          "oracle_gap_per_feature": 2.787731066052126e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04202296958968541
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.026728521033622086,
+          "mean_gain_per_feature": 0.011545938758715962,
+          "oracle_gap_per_feature": 3.640598797511426e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.013373230380891287
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.04484653244653275,
+          "mean_gain_per_feature": 0.01212903295078962,
+          "oracle_gap_per_feature": 1.3534181116601132e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02915383756560645
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.042161962671187575,
+          "mean_gain_per_feature": 0.009710724060854384,
+          "oracle_gap_per_feature": 1.9484200612241468e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.022417438765244126
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.026728521033622082,
+          "mean_gain_per_feature": 0.014432423448394953,
+          "oracle_gap_per_feature": 3.574803929564252e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023937900102268653
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.04216196267118759,
+          "mean_gain_per_feature": 0.016184540101423978,
+          "oracle_gap_per_feature": 2.929280929445187e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04260336931513704
+        }
+      },
+      "fit": "fits/d1_rep1__n12000__convergence__seed0.json",
+      "fitted_minus_true_training_objective": -3.0896886683118296e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep1__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.10171007159671505,
+          "mean_gain_per_feature": 0.016116192177383068,
+          "oracle_gap_per_feature": 0.0003330087422471919,
+          "recovery_pass": false,
+          "transport_relative_error": 0.08549677774965316
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.06740302200520386,
+          "mean_gain_per_feature": 0.011539828310928738,
+          "oracle_gap_per_feature": 0.0002319854926523504,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04730930678046565
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.10171007159671502,
+          "mean_gain_per_feature": 0.0120871441330373,
+          "oracle_gap_per_feature": 0.00017580003378621392,
+          "recovery_pass": false,
+          "transport_relative_error": 0.05927453717121447
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.09496117513823724,
+          "mean_gain_per_feature": 0.009677944262101012,
+          "oracle_gap_per_feature": 0.00024173305625562627,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04965584843725855
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.06740302200520386,
+          "mean_gain_per_feature": 0.01442478538866092,
+          "oracle_gap_per_feature": 0.00016376313394696443,
+          "recovery_pass": false,
+          "transport_relative_error": 0.061034972136682596
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.09496117513823726,
+          "mean_gain_per_feature": 0.01612990710350169,
+          "oracle_gap_per_feature": 0.0003332054818003138,
+          "recovery_pass": false,
+          "transport_relative_error": 0.08794833622552857
+        }
+      },
+      "fit": "fits/d1_rep1__n3000__capped600__seed0.json",
+      "fitted_minus_true_training_objective": -0.00021130917510459035,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep1__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.10263238345033326,
+          "mean_gain_per_feature": 0.01611671312953596,
+          "oracle_gap_per_feature": 0.00033255309307498855,
+          "recovery_pass": false,
+          "transport_relative_error": 0.08557103871530818
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.06875184090677004,
+          "mean_gain_per_feature": 0.011539746938300878,
+          "oracle_gap_per_feature": 0.00023154517626665068,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0465053450004619
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.10263238345033325,
+          "mean_gain_per_feature": 0.01208753484715197,
+          "oracle_gap_per_feature": 0.00017600799484042144,
+          "recovery_pass": false,
+          "transport_relative_error": 0.05948644666483524
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.09586618440066813,
+          "mean_gain_per_feature": 0.009678245626584103,
+          "oracle_gap_per_feature": 0.00024091000275897818,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04878819969800708
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.06875184090677003,
+          "mean_gain_per_feature": 0.014424683672876097,
+          "oracle_gap_per_feature": 0.00016446352490066457,
+          "recovery_pass": true,
+          "transport_relative_error": 0.06107499375651375
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.09586618440066813,
+          "mean_gain_per_feature": 0.016130409377640174,
+          "oracle_gap_per_feature": 0.00033276851064251877,
+          "recovery_pass": true,
+          "transport_relative_error": 0.08785460772375847
+        }
+      },
+      "fit": "fits/d1_rep1__n3000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": -0.00021131843078103785,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep2__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.012804132360412626,
+          "mean_gain_per_feature": 0.020066012189010628,
+          "oracle_gap_per_feature": 5.396319999254907e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04846441701099448
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.011859331596164565,
+          "mean_gain_per_feature": 0.012197608926030378,
+          "oracle_gap_per_feature": 0.00012781831109855556,
+          "recovery_pass": false,
+          "transport_relative_error": 0.02666605363974021
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.012804132360412626,
+          "mean_gain_per_feature": 0.015049509141757974,
+          "oracle_gap_per_feature": 2.6140300523160262e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.027155561436715773
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.01758747668358647,
+          "mean_gain_per_feature": 0.012039607313339648,
+          "oracle_gap_per_feature": 0.0001294369629053102,
+          "recovery_pass": false,
+          "transport_relative_error": 0.032806696942762614
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.011859331596164565,
+          "mean_gain_per_feature": 0.015247011157537972,
+          "oracle_gap_per_feature": 2.4116985765924398e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023420119201142002
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.017587476683586466,
+          "mean_gain_per_feature": 0.020066012188899408,
+          "oracle_gap_per_feature": 5.39631999941585e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.050162239894018926
+        }
+      },
+      "fit": "fits/d1_rep2__n12000__capped600__seed0.json",
+      "fitted_minus_true_training_objective": -4.7576908628554904e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep2__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.013216439277438255,
+          "mean_gain_per_feature": 0.020065989164271773,
+          "oracle_gap_per_feature": 5.376546751366046e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.04852018549727012
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.011584290545626562,
+          "mean_gain_per_feature": 0.012197597194062382,
+          "oracle_gap_per_feature": 0.00012843304672864418,
+          "recovery_pass": true,
+          "transport_relative_error": 0.02683846815401524
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.013216439277438251,
+          "mean_gain_per_feature": 0.015049491873203829,
+          "oracle_gap_per_feature": 2.6368663162382253e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.027011527828049466
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.0179774837068823,
+          "mean_gain_per_feature": 0.012039593498496197,
+          "oracle_gap_per_feature": 0.00013005378141085547,
+          "recovery_pass": true,
+          "transport_relative_error": 0.03288165171196805
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.011584290545626562,
+          "mean_gain_per_feature": 0.015246996492577977,
+          "oracle_gap_per_feature": 2.4342744810997076e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.023291640773201998
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.0179774837068823,
+          "mean_gain_per_feature": 0.020065989164160327,
+          "oracle_gap_per_feature": 5.376546751549465e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.05019295109295764
+        }
+      },
+      "fit": "fits/d1_rep2__n12000__convergence__seed0.json",
+      "fitted_minus_true_training_objective": -4.758535635374095e-05,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep2__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.020796432233795518,
+          "mean_gain_per_feature": 0.020060422425374737,
+          "oracle_gap_per_feature": 0.0001320357479565371,
+          "recovery_pass": false,
+          "transport_relative_error": 0.07715575952400514
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.024876788371421165,
+          "mean_gain_per_feature": 0.012197609675689067,
+          "oracle_gap_per_feature": 0.0002881852639933696,
+          "recovery_pass": false,
+          "transport_relative_error": 0.048679631830123825
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.020796432233795518,
+          "mean_gain_per_feature": 0.015045316819031053,
+          "oracle_gap_per_feature": 9.113551351721816e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04987727220979373
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.03184052973952367,
+          "mean_gain_per_feature": 0.01203625345516859,
+          "oracle_gap_per_feature": 0.00029315852362987255,
+          "recovery_pass": false,
+          "transport_relative_error": 0.05675691397285011
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.024876788371421165,
+          "mean_gain_per_feature": 0.015247012094611335,
+          "oracle_gap_per_feature": 8.491893895970255e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.035654992804972085
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.031840529739523664,
+          "mean_gain_per_feature": 0.020060422425280985,
+          "oracle_gap_per_feature": 0.00013203574794068082,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0749892938526408
+        }
+      },
+      "fit": "fits/d1_rep2__n3000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": -0.0001667850136486404,
+      "known_feasible_truth_better": false
+    },
+    "d1_rep2__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.020731080481765283,
+          "mean_gain_per_feature": 0.0200604810066506,
+          "oracle_gap_per_feature": 0.00013149544666572334,
+          "recovery_pass": true,
+          "transport_relative_error": 0.07709679955389545
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.024950130304332158,
+          "mean_gain_per_feature": 0.012197622572780826,
+          "oracle_gap_per_feature": 0.00028818327719887335,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0491192007939947
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.02073108048176528,
+          "mean_gain_per_feature": 0.015045360754987948,
+          "oracle_gap_per_feature": 9.110130545273317e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.0500656908205395
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.031841487863907704,
+          "mean_gain_per_feature": 0.01203628860393408,
+          "oracle_gap_per_feature": 0.0002931342851616465,
+          "recovery_pass": true,
+          "transport_relative_error": 0.05730186260514919
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.024950130304332147,
+          "mean_gain_per_feature": 0.015247028215976031,
+          "oracle_gap_per_feature": 8.491254548741193e-05,
+          "recovery_pass": true,
+          "transport_relative_error": 0.035691829901863724
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.0318414878639077,
+          "mean_gain_per_feature": 0.020060481006556802,
+          "oracle_gap_per_feature": 0.0001314954466499157,
+          "recovery_pass": true,
+          "transport_relative_error": 0.074948535592093
+        }
+      },
+      "fit": "fits/d1_rep2__n3000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": -0.0001667930003956819,
+      "known_feasible_truth_better": false
+    },
+    "d2_rep0__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.231500069433766,
+          "mean_gain_per_feature": 0.0721426442611692,
+          "oracle_gap_per_feature": 4.238630031624406e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.021097407602299514
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.8972806409911278,
+          "mean_gain_per_feature": 0.0442922736192177,
+          "oracle_gap_per_feature": 0.0001104552134132673,
+          "recovery_pass": false,
+          "transport_relative_error": 0.02673097992673036
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.2315000694337659,
+          "mean_gain_per_feature": 0.054106983195876916,
+          "oracle_gap_per_feature": 0.000156333905288932,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023862730871693084
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.2187377127648744,
+          "mean_gain_per_feature": 0.043178957584675645,
+          "oracle_gap_per_feature": 0.00010776257940617059,
+          "recovery_pass": false,
+          "transport_relative_error": 0.026981419658720612
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.897280640991128,
+          "mean_gain_per_feature": 0.05536534202402212,
+          "oracle_gap_per_feature": 0.00028719296695951796,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023258265743273544
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.2187377127648744,
+          "mean_gain_per_feature": 0.07196492930779275,
+          "oracle_gap_per_feature": 0.000212377325865194,
+          "recovery_pass": false,
+          "transport_relative_error": 0.020736772474245338
+        }
+      },
+      "fit": "fits/d2_rep0__n12000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.017943264279245863,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep0__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.2314258582330349,
+          "mean_gain_per_feature": 0.0721425556336142,
+          "oracle_gap_per_feature": 4.2739045822313336e-05,
+          "recovery_pass": false,
+          "transport_relative_error": 0.02115885510376758
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.8972855186014774,
+          "mean_gain_per_feature": 0.04429197084919007,
+          "oracle_gap_per_feature": 0.00011038533000368164,
+          "recovery_pass": false,
+          "transport_relative_error": 0.026519615810498363
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.231425858233035,
+          "mean_gain_per_feature": 0.05410691672521064,
+          "oracle_gap_per_feature": 0.00015656150617615364,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023932581992727065
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.21851345869187,
+          "mean_gain_per_feature": 0.04317867089287391,
+          "oracle_gap_per_feature": 0.00010767661777068846,
+          "recovery_pass": false,
+          "transport_relative_error": 0.027041026040440952
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.8972855186014779,
+          "mean_gain_per_feature": 0.05536496356148759,
+          "oracle_gap_per_feature": 0.0002877325597150032,
+          "recovery_pass": false,
+          "transport_relative_error": 0.023511000617851014
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.2185134586918702,
+          "mean_gain_per_feature": 0.0719644514881232,
+          "oracle_gap_per_feature": 0.00021311926348579346,
+          "recovery_pass": false,
+          "transport_relative_error": 0.021356448143951202
+        }
+      },
+      "fit": "fits/d2_rep0__n12000__convergence__seed3.json",
+      "fitted_minus_true_training_objective": 0.017943247986571764,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep0__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.2329470734934431,
+          "mean_gain_per_feature": 0.07209800987869411,
+          "oracle_gap_per_feature": 0.0002877827032399049,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0388415210957212
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.9464485776723073,
+          "mean_gain_per_feature": 0.044289095870940716,
+          "oracle_gap_per_feature": 0.00033966181527528267,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0436440071674844
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.2329470734934431,
+          "mean_gain_per_feature": 0.05407350740902058,
+          "oracle_gap_per_feature": 0.000465687214807908,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04457678903283585
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.223097304901992,
+          "mean_gain_per_feature": 0.04316198710556108,
+          "oracle_gap_per_feature": 0.00035076191210576206,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0425339353079662
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.9464485776723073,
+          "mean_gain_per_feature": 0.05536136983867588,
+          "oracle_gap_per_feature": 0.0005670426749684029,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04280079932945908
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.2230973049019922,
+          "mean_gain_per_feature": 0.07193664517593513,
+          "oracle_gap_per_feature": 0.00044142347817136625,
+          "recovery_pass": false,
+          "transport_relative_error": 0.0353513226665179
+        }
+      },
+      "fit": "fits/d2_rep0__n3000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.01738409695218679,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep0__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.2327360705869836,
+          "mean_gain_per_feature": 0.07209794198059141,
+          "oracle_gap_per_feature": 0.0002874705383398323,
+          "recovery_pass": false,
+          "transport_relative_error": 0.03873142632968367
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.9459050184707234,
+          "mean_gain_per_feature": 0.04428892010377337,
+          "oracle_gap_per_feature": 0.00033858770646260776,
+          "recovery_pass": false,
+          "transport_relative_error": 0.043084983967465205
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.2327360705869836,
+          "mean_gain_per_feature": 0.05407345648544356,
+          "oracle_gap_per_feature": 0.0004660325502951284,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04459354746514023
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.2227528033155552,
+          "mean_gain_per_feature": 0.04316173579159494,
+          "oracle_gap_per_feature": 0.0003497633500918832,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04210138156343002
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.9459050184707234,
+          "mean_gain_per_feature": 0.05536115012971671,
+          "oracle_gap_per_feature": 0.0005675567958377804,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04275929460734485
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.222752803315555,
+          "mean_gain_per_feature": 0.07193622631932489,
+          "oracle_gap_per_feature": 0.00044146227177882833,
+          "recovery_pass": false,
+          "transport_relative_error": 0.03532635599053777
+        }
+      },
+      "fit": "fits/d2_rep0__n3000__convergence__seed3.json",
+      "fitted_minus_true_training_objective": 0.01738406924245961,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep1__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 4.702666778872931,
+          "mean_gain_per_feature": -3.344928344422764,
+          "oracle_gap_per_feature": 3.5081726854538626,
+          "recovery_pass": false,
+          "transport_relative_error": 3.040392187650323
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2135579741376779,
+          "mean_gain_per_feature": 0.04014734540860942,
+          "oracle_gap_per_feature": 0.00020515473610292642,
+          "recovery_pass": false,
+          "transport_relative_error": 0.026172342005618895
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 4.702666778872931,
+          "mean_gain_per_feature": -2.508696258317073,
+          "oracle_gap_per_feature": 2.5578484150047074,
+          "recovery_pass": false,
+          "transport_relative_error": 4.492069357767345
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 5.719487212544894,
+          "mean_gain_per_feature": -1.3061587442711386,
+          "oracle_gap_per_feature": 1.3459359193998859,
+          "recovery_pass": false,
+          "transport_relative_error": 4.47414921417608
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.2135579741376776,
+          "mean_gain_per_feature": 0.050184181760761774,
+          "oracle_gap_per_feature": 0.00018523025172688628,
+          "recovery_pass": false,
+          "transport_relative_error": 0.021535620719648686
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 5.719487212544892,
+          "mean_gain_per_feature": -2.176931240451898,
+          "oracle_gap_per_feature": 2.3408397135561936,
+          "recovery_pass": false,
+          "transport_relative_error": 3.038178886009118
+        }
+      },
+      "fit": "fits/d2_rep1__n12000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.04676087926411254,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep1__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 4.578837644287921,
+          "mean_gain_per_feature": -3.335986633893212,
+          "oracle_gap_per_feature": 3.4994242402623557,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0362238918615203
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2115508522264116,
+          "mean_gain_per_feature": 0.04005979202548936,
+          "oracle_gap_per_feature": 0.00020394332096037652,
+          "recovery_pass": false,
+          "transport_relative_error": 0.02650750644715577
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 4.578837644287922,
+          "mean_gain_per_feature": -2.501989975419909,
+          "oracle_gap_per_feature": 2.551032025628118,
+          "recovery_pass": false,
+          "transport_relative_error": 4.497600289396747
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 5.533756178331547,
+          "mean_gain_per_feature": -1.3049295333786308,
+          "oracle_gap_per_feature": 1.3446179437091152,
+          "recovery_pass": false,
+          "transport_relative_error": 4.47922898637852
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.2115508522264113,
+          "mean_gain_per_feature": 0.05007474003186169,
+          "oracle_gap_per_feature": 0.00018456550120294582,
+          "recovery_pass": false,
+          "transport_relative_error": 0.02157567467575241
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 5.533756178331546,
+          "mean_gain_per_feature": -2.1748825556310516,
+          "oracle_gap_per_feature": 2.338984294073394,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0336485631461563
+        }
+      },
+      "fit": "fits/d2_rep1__n12000__convergence__seed3.json",
+      "fitted_minus_true_training_objective": 0.04676038323399956,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep1__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 5.108258050768039,
+          "mean_gain_per_feature": -3.3420588809842866,
+          "oracle_gap_per_feature": 3.5059175318372024,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0631447375130714
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2034246738255645,
+          "mean_gain_per_feature": 0.039980978619453024,
+          "oracle_gap_per_feature": 0.0003329115636331216,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04598096731514263
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 5.108258050768039,
+          "mean_gain_per_feature": -2.506544160738215,
+          "oracle_gap_per_feature": 2.5557763632549415,
+          "recovery_pass": false,
+          "transport_relative_error": 4.322027132725478
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 6.412624167191118,
+          "mean_gain_per_feature": -1.3184993382151844,
+          "oracle_gap_per_feature": 1.3582379033823055,
+          "recovery_pass": false,
+          "transport_relative_error": 4.3051929991755395
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.2034246738255645,
+          "mean_gain_per_feature": 0.04997622327431628,
+          "oracle_gap_per_feature": 0.00047323456726537557,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04420491425174448
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 6.412624167191115,
+          "mean_gain_per_feature": -2.1974988970253078,
+          "oracle_gap_per_feature": 2.3620216799514213,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0249324624486604
+        }
+      },
+      "fit": "fits/d2_rep1__n3000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.046907656423833766,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep1__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 5.196219593979019,
+          "mean_gain_per_feature": -3.3457934910239047,
+          "oracle_gap_per_feature": 3.5097609662152576,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0645395071023622
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2024275242992561,
+          "mean_gain_per_feature": 0.039932268073270286,
+          "oracle_gap_per_feature": 0.00033390328923962333,
+          "recovery_pass": false,
+          "transport_relative_error": 0.04594541231548906
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 5.196219593979019,
+          "mean_gain_per_feature": -2.5093451182679285,
+          "oracle_gap_per_feature": 2.558516058164828,
+          "recovery_pass": false,
+          "transport_relative_error": 4.320773784733862
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 6.545742880348701,
+          "mean_gain_per_feature": -1.3194187094473535,
+          "oracle_gap_per_feature": 1.359109555793898,
+          "recovery_pass": false,
+          "transport_relative_error": 4.305994454011002
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.202427524299256,
+          "mean_gain_per_feature": 0.049915335091587854,
+          "oracle_gap_per_feature": 0.0004728601301665655,
+          "recovery_pass": false,
+          "transport_relative_error": 0.044213760266379465
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 6.5457428803486986,
+          "mean_gain_per_feature": -2.1990311824122557,
+          "oracle_gap_per_feature": 2.3636627896768063,
+          "recovery_pass": false,
+          "transport_relative_error": 3.0255615858023344
+        }
+      },
+      "fit": "fits/d2_rep1__n3000__convergence__seed1.json",
+      "fitted_minus_true_training_objective": 0.04690751329875198,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep2__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.9176090499989646,
+          "mean_gain_per_feature": -0.01060865241775635,
+          "oracle_gap_per_feature": 0.11081801356108628,
+          "recovery_pass": false,
+          "transport_relative_error": 0.47191564080356185
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 4.428171727303774,
+          "mean_gain_per_feature": -1.0586544136252634,
+          "oracle_gap_per_feature": 1.244800346737369,
+          "recovery_pass": false,
+          "transport_relative_error": 3.987206717497525
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.9176090499989646,
+          "mean_gain_per_feature": -0.00795648931331726,
+          "oracle_gap_per_feature": 0.18957392827964303,
+          "recovery_pass": false,
+          "transport_relative_error": 0.7177921365916856
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 2.7120561240101053,
+          "mean_gain_per_feature": -0.39039752803175287,
+          "oracle_gap_per_feature": 0.5746809431395182,
+          "recovery_pass": false,
+          "transport_relative_error": 4.491051581566735
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 4.428171727303775,
+          "mean_gain_per_feature": -1.3233180170315793,
+          "oracle_gap_per_feature": 1.507428186439383,
+          "recovery_pass": false,
+          "transport_relative_error": 4.520850416829398
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 2.7120561240101053,
+          "mean_gain_per_feature": -0.6506625467195881,
+          "oracle_gap_per_feature": 0.7510913517776547,
+          "recovery_pass": false,
+          "transport_relative_error": 3.6240558550139887
+        }
+      },
+      "fit": "fits/d2_rep2__n12000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.11525391344567493,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep2__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.9188384689621247,
+          "mean_gain_per_feature": -0.010605329161052522,
+          "oracle_gap_per_feature": 0.1108226914909099,
+          "recovery_pass": false,
+          "transport_relative_error": 0.4720491769555539
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 4.429535087673329,
+          "mean_gain_per_feature": -1.0587737685492684,
+          "oracle_gap_per_feature": 1.2449047864403613,
+          "recovery_pass": false,
+          "transport_relative_error": 3.988924892262986
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.9188384689621247,
+          "mean_gain_per_feature": -0.007953996870789392,
+          "oracle_gap_per_feature": 0.18957828253295816,
+          "recovery_pass": false,
+          "transport_relative_error": 0.7178138117433538
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 2.712278939087621,
+          "mean_gain_per_feature": -0.39019420083993667,
+          "oracle_gap_per_feature": 0.574462700726689,
+          "recovery_pass": false,
+          "transport_relative_error": 4.494655129872634
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 4.429535087673329,
+          "mean_gain_per_feature": -1.3234672106865855,
+          "oracle_gap_per_feature": 1.5075842267902324,
+          "recovery_pass": false,
+          "transport_relative_error": 4.521467203842176
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 2.712278939087622,
+          "mean_gain_per_feature": -0.650323668066561,
+          "oracle_gap_per_feature": 0.7507604743111551,
+          "recovery_pass": false,
+          "transport_relative_error": 3.622108740677993
+        }
+      },
+      "fit": "fits/d2_rep2__n12000__convergence__seed3.json",
+      "fitted_minus_true_training_objective": 0.11525384056350552,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep2__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.826572216648445,
+          "mean_gain_per_feature": -0.009072752926009757,
+          "oracle_gap_per_feature": 0.10968124535271034,
+          "recovery_pass": false,
+          "transport_relative_error": 0.49552440354795974
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 4.395008266888377,
+          "mean_gain_per_feature": -1.0787039357105832,
+          "oracle_gap_per_feature": 1.2657768753940735,
+          "recovery_pass": false,
+          "transport_relative_error": 3.9930797151885074
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.826572216648445,
+          "mean_gain_per_feature": -0.006804564694507318,
+          "oracle_gap_per_feature": 0.18851092492183466,
+          "recovery_pass": false,
+          "transport_relative_error": 0.7078705172029429
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 2.7125110926241622,
+          "mean_gain_per_feature": -0.3996654155960415,
+          "oracle_gap_per_feature": 0.5848758372751911,
+          "recovery_pass": false,
+          "transport_relative_error": 4.367275869252529
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 4.395008266888377,
+          "mean_gain_per_feature": -1.3483799196382291,
+          "oracle_gap_per_feature": 1.5325790103070345,
+          "recovery_pass": false,
+          "transport_relative_error": 4.563686962157386
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 2.7125110926241627,
+          "mean_gain_per_feature": -0.6661090259934026,
+          "oracle_gap_per_feature": 0.7669369623348399,
+          "recovery_pass": false,
+          "transport_relative_error": 3.697236116426042
+        }
+      },
+      "fit": "fits/d2_rep2__n3000__capped600__seed3.json",
+      "fitted_minus_true_training_objective": 0.11313971776027865,
+      "known_feasible_truth_better": true
+    },
+    "d2_rep2__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.829507938828812,
+          "mean_gain_per_feature": -0.00911910729074389,
+          "oracle_gap_per_feature": 0.10971804276054427,
+          "recovery_pass": false,
+          "transport_relative_error": 0.49580118752052
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 4.400027301485695,
+          "mean_gain_per_feature": -1.0785316466980275,
+          "oracle_gap_per_feature": 1.2656063547856702,
+          "recovery_pass": false,
+          "transport_relative_error": 3.9899659820952196
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.8295079388288125,
+          "mean_gain_per_feature": -0.006839330468057919,
+          "oracle_gap_per_feature": 0.18855432936674707,
+          "recovery_pass": false,
+          "transport_relative_error": 0.707867354373546
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 2.7136541690906584,
+          "mean_gain_per_feature": -0.3996068677143543,
+          "oracle_gap_per_feature": 0.5848190577976567,
+          "recovery_pass": false,
+          "transport_relative_error": 4.368130053406114
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 4.400027301485696,
+          "mean_gain_per_feature": -1.3481645583725343,
+          "oracle_gap_per_feature": 1.5323722877127013,
+          "recovery_pass": false,
+          "transport_relative_error": 4.566206950665329
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 2.7136541690906584,
+          "mean_gain_per_feature": -0.6660114461905905,
+          "oracle_gap_per_feature": 0.7668298255751276,
+          "recovery_pass": false,
+          "transport_relative_error": 3.6984925777621007
+        }
+      },
+      "fit": "fits/d2_rep2__n3000__convergence__seed3.json",
+      "fitted_minus_true_training_objective": 0.11313964730982473,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep0__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.8892879621636007,
+          "mean_gain_per_feature": -0.4007890698211723,
+          "oracle_gap_per_feature": 0.5120869776495613,
+          "recovery_pass": false,
+          "transport_relative_error": 1.5365602609379119
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2768731163707603,
+          "mean_gain_per_feature": -0.29947304074018216,
+          "oracle_gap_per_feature": 0.4179476980216744,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1114886092598364
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.8892879621636007,
+          "mean_gain_per_feature": -0.30059180236587923,
+          "oracle_gap_per_feature": 0.41889736569097763,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2009722770669902
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.604134087267997,
+          "mean_gain_per_feature": -0.036191460773735674,
+          "oracle_gap_per_feature": 0.1524128723428195,
+          "recovery_pass": false,
+          "transport_relative_error": 0.5694018145173009
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.27687311637076,
+          "mean_gain_per_feature": -0.3743413009252277,
+          "oracle_gap_per_feature": 0.49540427346606536,
+          "recovery_pass": false,
+          "transport_relative_error": 1.179971456939245
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.6041340872679963,
+          "mean_gain_per_feature": -0.06031910128955943,
+          "oracle_gap_per_feature": 0.17153814521825328,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1612800327810935
+        }
+      },
+      "fit": "fits/d3_rep0__n12000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": 0.049400086142566746,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep0__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.8895788936380231,
+          "mean_gain_per_feature": -0.4007686966024433,
+          "oracle_gap_per_feature": 0.5120827507845912,
+          "recovery_pass": false,
+          "transport_relative_error": 1.5359058433420454
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.2769926584951576,
+          "mean_gain_per_feature": -0.29950153495159515,
+          "oracle_gap_per_feature": 0.4179810951814435,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1114372299640156
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.8895788936380231,
+          "mean_gain_per_feature": -0.3005765224518325,
+          "oracle_gap_per_feature": 0.41886309174330183,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2009982520968092
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.6060976220890306,
+          "mean_gain_per_feature": -0.03622612104020703,
+          "oracle_gap_per_feature": 0.15245243555764695,
+          "recovery_pass": false,
+          "transport_relative_error": 0.5694356346984788
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.2769926584951574,
+          "mean_gain_per_feature": -0.3743769186894939,
+          "oracle_gap_per_feature": 0.4954208971967026,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1800056582954355
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.6060976220890302,
+          "mean_gain_per_feature": -0.06037686840034503,
+          "oracle_gap_per_feature": 0.1716120586827978,
+          "recovery_pass": false,
+          "transport_relative_error": 1.160794796920643
+        }
+      },
+      "fit": "fits/d3_rep0__n12000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": 0.04940005578832207,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep0__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.4103415301537731,
+          "mean_gain_per_feature": -0.3994953603682693,
+          "oracle_gap_per_feature": 0.5905433947795138,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3093025519838029
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.8567549680540177,
+          "mean_gain_per_feature": -0.32430114790010506,
+          "oracle_gap_per_feature": 0.39160932137741317,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1052150735168291
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.4103415301537731,
+          "mean_gain_per_feature": -0.299621520276202,
+          "oracle_gap_per_feature": 0.3735417476995002,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1440295003902328
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.7402672357746062,
+          "mean_gain_per_feature": -0.2486219502576161,
+          "oracle_gap_per_feature": 0.3136768780225157,
+          "recovery_pass": false,
+          "transport_relative_error": 0.9129781776063371
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.8567549680540176,
+          "mean_gain_per_feature": -0.40537643487513136,
+          "oracle_gap_per_feature": 0.48205407151416896,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2641044035507627
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.740267235774606,
+          "mean_gain_per_feature": -0.4143699170960267,
+          "oracle_gap_per_feature": 0.605339087607576,
+          "recovery_pass": false,
+          "transport_relative_error": 1.303616135058035
+        }
+      },
+      "fit": "fits/d3_rep0__n3000__capped600__seed0.json",
+      "fitted_minus_true_training_objective": 0.045893619468686975,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep0__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.4109184842317946,
+          "mean_gain_per_feature": -0.39949349857196015,
+          "oracle_gap_per_feature": 0.590533994292923,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3092518606831094
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.8567614646147114,
+          "mean_gain_per_feature": -0.3243218833580694,
+          "oracle_gap_per_feature": 0.391629846761518,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1054045191320354
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.4109184842317946,
+          "mean_gain_per_feature": -0.29962012392897014,
+          "oracle_gap_per_feature": 0.373547812632599,
+          "recovery_pass": false,
+          "transport_relative_error": 1.14383102697994
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.7405731349911561,
+          "mean_gain_per_feature": -0.24864027992934126,
+          "oracle_gap_per_feature": 0.31369499762038155,
+          "recovery_pass": false,
+          "transport_relative_error": 0.9130178790397993
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.8567614646147113,
+          "mean_gain_per_feature": -0.4054023541975868,
+          "oracle_gap_per_feature": 0.4820874521169547,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2640653769415429
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.7405731349911562,
+          "mean_gain_per_feature": -0.41440046654890206,
+          "oracle_gap_per_feature": 0.6053620983701697,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3035381700786028
+        }
+      },
+      "fit": "fits/d3_rep0__n3000__convergence__seed0.json",
+      "fitted_minus_true_training_objective": 0.04589359739580101,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep1__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.124561820138076,
+          "mean_gain_per_feature": -0.7347177319313662,
+          "oracle_gap_per_feature": 0.8372587002314579,
+          "recovery_pass": false,
+          "transport_relative_error": 3.657273188077362
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 2.1302828706106274,
+          "mean_gain_per_feature": -0.7186757951924967,
+          "oracle_gap_per_feature": 0.7786477453857217,
+          "recovery_pass": false,
+          "transport_relative_error": 3.6672671082813273
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.124561820138076,
+          "mean_gain_per_feature": -0.5510382989485246,
+          "oracle_gap_per_feature": 0.7283605204905922,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7413600383788912
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.0753858911790717,
+          "mean_gain_per_feature": -0.2448836078819186,
+          "oracle_gap_per_feature": 0.30373387566699617,
+          "recovery_pass": false,
+          "transport_relative_error": 1.15916767722991
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 2.130282870610627,
+          "mean_gain_per_feature": -0.8983447439906209,
+          "oracle_gap_per_feature": 1.078083872509638,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7238729678962845
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.0753858911790717,
+          "mean_gain_per_feature": -0.40813934646986433,
+          "oracle_gap_per_feature": 0.5120333867256432,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1446733807825273
+        }
+      },
+      "fit": "fits/d3_rep1__n12000__capped600__seed1.json",
+      "fitted_minus_true_training_objective": 0.0470059483519818,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep1__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 2.124730640445745,
+          "mean_gain_per_feature": -0.7351318589285077,
+          "oracle_gap_per_feature": 0.8376629596430983,
+          "recovery_pass": false,
+          "transport_relative_error": 3.663804397538806
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 2.1304921681879607,
+          "mean_gain_per_feature": -0.7190142078628025,
+          "oracle_gap_per_feature": 0.7789815384597255,
+          "recovery_pass": false,
+          "transport_relative_error": 3.677226980121691
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 2.1247306404457444,
+          "mean_gain_per_feature": -0.5513488941963808,
+          "oracle_gap_per_feature": 0.728687489473799,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7416478518068574
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 1.07582966585136,
+          "mean_gain_per_feature": -0.2449128202759417,
+          "oracle_gap_per_feature": 0.30375846846471727,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1591537448605589
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 2.1304921681879607,
+          "mean_gain_per_feature": -0.8987677598285032,
+          "oracle_gap_per_feature": 1.0785232620828713,
+          "recovery_pass": false,
+          "transport_relative_error": 1.7241738763793493
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 1.0758296658513602,
+          "mean_gain_per_feature": -0.40818803379323615,
+          "oracle_gap_per_feature": 0.5120722064635141,
+          "recovery_pass": false,
+          "transport_relative_error": 1.14477475438757
+        }
+      },
+      "fit": "fits/d3_rep1__n12000__convergence__seed1.json",
+      "fitted_minus_true_training_objective": 0.047005910192782885,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep1__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.5146677262068369,
+          "mean_gain_per_feature": -0.4446277820869748,
+          "oracle_gap_per_feature": 0.5446344238792181,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4264968093143162
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.4611527041715153,
+          "mean_gain_per_feature": -0.5018555262650918,
+          "oracle_gap_per_feature": 0.6115367656787034,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2361895061289623
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.5146677262068369,
+          "mean_gain_per_feature": -0.3334708365652311,
+          "oracle_gap_per_feature": 0.4624061778770212,
+          "recovery_pass": false,
+          "transport_relative_error": 1.454046213642821
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.779848705956662,
+          "mean_gain_per_feature": -0.2447829734913475,
+          "oracle_gap_per_feature": 0.3533425304968116,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2608425402158678
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.461152704171515,
+          "mean_gain_per_feature": -0.6273194078313648,
+          "oracle_gap_per_feature": 0.7586716561201047,
+          "recovery_pass": false,
+          "transport_relative_error": 1.133136497051303
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.7798487059566621,
+          "mean_gain_per_feature": -0.40797162248557917,
+          "oracle_gap_per_feature": 0.50933133623351,
+          "recovery_pass": false,
+          "transport_relative_error": 1.344262555840326
+        }
+      },
+      "fit": "fits/d3_rep1__n3000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": 0.04262553388737622,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep1__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 1.5146521339966952,
+          "mean_gain_per_feature": -0.44464021295115647,
+          "oracle_gap_per_feature": 0.5446538015099144,
+          "recovery_pass": false,
+          "transport_relative_error": 1.426139040456872
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 1.4611415893343398,
+          "mean_gain_per_feature": -0.5018414536746715,
+          "oracle_gap_per_feature": 0.6115184485233349,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2362950969744022
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 1.5146521339966947,
+          "mean_gain_per_feature": -0.3334801597133674,
+          "oracle_gap_per_feature": 0.462412338203396,
+          "recovery_pass": false,
+          "transport_relative_error": 1.4541717022046925
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.7800066268751787,
+          "mean_gain_per_feature": -0.2447674031398995,
+          "oracle_gap_per_feature": 0.3533227155804156,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2607546230558084
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 1.4611415893343394,
+          "mean_gain_per_feature": -0.6273018170933393,
+          "oracle_gap_per_feature": 0.7586509025603179,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1330680823910966
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.7800066268751789,
+          "mean_gain_per_feature": -0.4079456718998325,
+          "oracle_gap_per_feature": 0.5093123324142778,
+          "recovery_pass": false,
+          "transport_relative_error": 1.3439001413830476
+        }
+      },
+      "fit": "fits/d3_rep1__n3000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": 0.04262552663674324,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep2__n12000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.8182058950763954,
+          "mean_gain_per_feature": -0.5386470299747467,
+          "oracle_gap_per_feature": 0.6384829548963029,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1510932075018518
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.9009950791240613,
+          "mean_gain_per_feature": -0.3292297947333909,
+          "oracle_gap_per_feature": 0.40138950782972,
+          "recovery_pass": false,
+          "transport_relative_error": 1.104582297527901
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.8182058950763955,
+          "mean_gain_per_feature": -0.40398527248106,
+          "oracle_gap_per_feature": 0.47195647756235143,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1660807846070458
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.505854627165546,
+          "mean_gain_per_feature": -0.2920682756502365,
+          "oracle_gap_per_feature": 0.3624069756035876,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1091840563342206
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.9009950791240618,
+          "mean_gain_per_feature": -0.41153724341673864,
+          "oracle_gap_per_feature": 0.48193672934450765,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1837794541047166
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.5058546271655461,
+          "mean_gain_per_feature": -0.4867804594170609,
+          "oracle_gap_per_feature": 0.5868190702289574,
+          "recovery_pass": false,
+          "transport_relative_error": 1.261606166554465
+        }
+      },
+      "fit": "fits/d3_rep2__n12000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": 0.011827535006929235,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep2__n12000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.8190908056792273,
+          "mean_gain_per_feature": -0.5386591713403686,
+          "oracle_gap_per_feature": 0.6384927039530113,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1511055308087408
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.9016713250417752,
+          "mean_gain_per_feature": -0.32923726376169266,
+          "oracle_gap_per_feature": 0.4014022250883353,
+          "recovery_pass": false,
+          "transport_relative_error": 1.104944780148724
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.8190908056792274,
+          "mean_gain_per_feature": -0.4039943785052764,
+          "oracle_gap_per_feature": 0.4719646788764798,
+          "recovery_pass": false,
+          "transport_relative_error": 1.166049516582325
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.5057139243591849,
+          "mean_gain_per_feature": -0.2920790457157049,
+          "oracle_gap_per_feature": 0.3624229938993695,
+          "recovery_pass": false,
+          "transport_relative_error": 1.109727726889013
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.9016713250417754,
+          "mean_gain_per_feature": -0.41154657970211583,
+          "oracle_gap_per_feature": 0.4819451609197969,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1838844711571035
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.505713924359185,
+          "mean_gain_per_feature": -0.4867984095261748,
+          "oracle_gap_per_feature": 0.5868346280291579,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2617257587079393
+        }
+      },
+      "fit": "fits/d3_rep2__n12000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": 0.011827494950532591,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep2__n3000__capped600": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.814532036412339,
+          "mean_gain_per_feature": -0.5372867338399607,
+          "oracle_gap_per_feature": 0.6374039632496306,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1501803427053994
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.8938291377380448,
+          "mean_gain_per_feature": -0.32644389471665675,
+          "oracle_gap_per_feature": 0.3988336752984019,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1062301062876394
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.814532036412339,
+          "mean_gain_per_feature": -0.40296505037997044,
+          "oracle_gap_per_feature": 0.4714445454117666,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1669026783634038
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.5049657173876111,
+          "mean_gain_per_feature": -0.2924501194574669,
+          "oracle_gap_per_feature": 0.3630188868962341,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1213686455675609
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.893829137738045,
+          "mean_gain_per_feature": -0.40805486839582095,
+          "oracle_gap_per_feature": 0.47896264427409463,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1777343418545614
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.5049657173876112,
+          "mean_gain_per_feature": -0.48741686576244475,
+          "oracle_gap_per_feature": 0.5877367810624547,
+          "recovery_pass": false,
+          "transport_relative_error": 1.2597429506860167
+        }
+      },
+      "fit": "fits/d3_rep2__n3000__capped600__seed2.json",
+      "fitted_minus_true_training_objective": 0.011433486033872953,
+      "known_feasible_truth_better": true
+    },
+    "d3_rep2__n3000__convergence": {
+      "directions": {
+        "H3K27ac__to__H3K4me3": {
+          "covariance_relative_error": 0.813940458945851,
+          "mean_gain_per_feature": -0.5372764308103567,
+          "oracle_gap_per_feature": 0.6373944408346099,
+          "recovery_pass": false,
+          "transport_relative_error": 1.150188205869509
+        },
+        "H3K27ac__to__RNA": {
+          "covariance_relative_error": 0.8932282160659416,
+          "mean_gain_per_feature": -0.3264366835140114,
+          "oracle_gap_per_feature": 0.39882555887883003,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1060901070159668
+        },
+        "H3K4me3__to__H3K27ac": {
+          "covariance_relative_error": 0.8139404589458511,
+          "mean_gain_per_feature": -0.4029573231077675,
+          "oracle_gap_per_feature": 0.47143539975687654,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1668961096337103
+        },
+        "H3K4me3__to__RNA": {
+          "covariance_relative_error": 0.5050840828557135,
+          "mean_gain_per_feature": -0.2924394178838919,
+          "oracle_gap_per_feature": 0.36300728010573263,
+          "recovery_pass": false,
+          "transport_relative_error": 1.1212095645315943
+        },
+        "RNA__to__H3K27ac": {
+          "covariance_relative_error": 0.8932282160659419,
+          "mean_gain_per_feature": -0.40804585439251423,
+          "oracle_gap_per_feature": 0.4789522118881007,
+          "recovery_pass": false,
+          "transport_relative_error": 1.177710487157024
+        },
+        "RNA__to__H3K4me3": {
+          "covariance_relative_error": 0.5050840828557134,
+          "mean_gain_per_feature": -0.4873990298064865,
+          "oracle_gap_per_feature": 0.5877197257210798,
+          "recovery_pass": false,
+          "transport_relative_error": 1.259727100730596
+        }
+      },
+      "fit": "fits/d3_rep2__n3000__convergence__seed2.json",
+      "fitted_minus_true_training_objective": 0.011433469228300686,
+      "known_feasible_truth_better": true
+    }
+  },
+  "selections_recomputed": 36,
+  "source_files_verified": 11,
+  "status": "pass",
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "uncapped_statistics": {
+    "max_projected_gradient": 9.905566347168104e-07,
+    "maximum_iterations": 8959,
+    "minimum_iterations": 93,
+    "streams": 72,
+    "streams_exceeding_600_iterations": 22,
+    "streams_with_budget_resumptions": 16,
+    "total_budget_resumptions": 49
+  }
+}

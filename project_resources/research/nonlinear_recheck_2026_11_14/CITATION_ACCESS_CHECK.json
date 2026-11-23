@@ -1,0 +1,54 @@
+{
+  "date_utc": "2026-11-15T04:02:46.856672+00:00",
+  "tool": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "tool_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "method": "CitationVerifier.verify_url; unauthenticated HEAD with redirects",
+  "records": [
+    {
+      "url": "https://arxiv.org/html/2411.03755",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://arxiv.org/html/2605.17827",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://proceedings.mlr.press/v162/kong22a/kong22a.pdf",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://openreview.net/pdf?id=U2g8OGONA_V",
+      "http_status": 403,
+      "accessible": false
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/afda6bf3fb086eabbaf161ba1cec5a9a-Paper-Conference.pdf",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://openreview.net/pdf/a66a6b861f8b2b91dd14ebb34d881a0b0b7ff063.pdf",
+      "http_status": 403,
+      "accessible": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/xu24ac/xu24ac.pdf",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://arxiv.org/html/2611.11460",
+      "http_status": 200,
+      "accessible": true
+    },
+    {
+      "url": "https://www.econ2.jhu.edu/REPEC/papers/wp586_khan.pdf",
+      "http_status": 200,
+      "accessible": true
+    }
+  ],
+  "limits": "URL accessibility only; theorem/citation identity inspection is recorded separately in the primary-source inventory and skeptical review. HTTP failure is not a finding that the paper is invalid."
+}

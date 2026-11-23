@@ -1,0 +1,263 @@
+{
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "datasets": {
+    "constrained_collider_0": {
+      "cohorts": {
+        "test": {
+          "H3K27ac": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/discovery/H3K27ac.h5ad",
+            "sha256": "7eca5dc4661ea933212b85e1acaa8c24f5994941c370efc9cd9648ae8ae95f0f"
+          },
+          "H3K4me3": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/discovery/H3K4me3.h5ad",
+            "sha256": "6c97f587e8365b2a7e68708c91548cc16e8a604f9a1984a2daa2ad2061f3a002"
+          },
+          "RNA": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/discovery/RNA.h5ad",
+            "sha256": "66f8b1e2b5fe5ad2527c17bf5da36a7c35be3c8bb1feb4697b63ef2f126f7d17"
+          }
+        },
+        "train": {
+          "H3K27ac": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/train/H3K27ac.h5ad",
+            "sha256": "571ead1a2d95308413aa3f80de7eded43dacb31a6450a6e62d3a48b47f7d7c1d"
+          },
+          "H3K4me3": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/train/H3K4me3.h5ad",
+            "sha256": "c138cafa1888aaacd367ca94b766d6963c7919ef1df721839356bceef57a90b1"
+          },
+          "RNA": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/observed/informative/train/RNA.h5ad",
+            "sha256": "97930aaf19d23322cb0a74606a178e327a39ba2731a245373b41a4b543711032"
+          }
+        }
+      },
+      "exclusion_note": "Only the existing nine scored target IDs are used as a fixed heldout-feature exclusion. No candidate role, graph, coefficient, state or outcome enters feature ranking. Public var has no background-role field.",
+      "exclusion_source": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/truth/manifest.json",
+        "sha256": "6153d821aa271832d12133f8c90e937e051ba9db2aaf16433177a46ae5c653ef"
+      },
+      "exclusions": {
+        "H3K27ac": [
+          "f_191d5de3c08028e30c37",
+          "f_ffe4bef8ccdb7e81736d",
+          "f_8c87adbe525e69356cd4"
+        ],
+        "H3K4me3": [
+          "f_6554faa50d107ec21452",
+          "f_959f43411805ca3a2701",
+          "f_3f4c6cf4846a05c1421e"
+        ],
+        "RNA": [
+          "f_70775e66c8e02bba33ca",
+          "f_6175b9e5d41b9077c8ad",
+          "f_0d823da3b4d459031aa3"
+        ]
+      },
+      "locked_cohorts_unused": [
+        "probe",
+        "assessment"
+      ],
+      "public_evaluation_cohort": "discovery",
+      "source_manifest": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/manifest.json",
+      "source_manifest_sha256": "8d8919dcd8a7d61e7b8aa69335200f35332c92c5eb1d1c2957f6deb6aa459b74"
+    },
+    "linear_chain_0": {
+      "cohorts": {
+        "test": {
+          "H3K27ac": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/discovery/H3K27ac.h5ad",
+            "sha256": "936a444eb47a2641aeb37e9dd328aa4c647b1c62856bcee6271d8e95c6633b60"
+          },
+          "H3K4me3": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/discovery/H3K4me3.h5ad",
+            "sha256": "66787bdb7d623127fffd6b64b94dac604dc8dba2463641c9f3642d3aeb10b1af"
+          },
+          "RNA": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/discovery/RNA.h5ad",
+            "sha256": "68a811dde223b992070f817a73e05e8e36796804fd79bfb097fbaa0f00a87c74"
+          }
+        },
+        "train": {
+          "H3K27ac": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/train/H3K27ac.h5ad",
+            "sha256": "7be2ad515658662d639a91d693ff6ef976216c725ad417f3e14153b22bb6ba51"
+          },
+          "H3K4me3": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/train/H3K4me3.h5ad",
+            "sha256": "0d29da40c222bfb39fd11b6f4e9fc68f5c2d32ff0f31b7de93fb216af40a9b80"
+          },
+          "RNA": {
+            "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/observed/informative/train/RNA.h5ad",
+            "sha256": "4defd86c8b8503491ea45e089d9c935e7679c1f856c39b7cec8264285d862e59"
+          }
+        }
+      },
+      "exclusion_note": "Only the existing nine scored target IDs are used as a fixed heldout-feature exclusion. No candidate role, graph, coefficient, state or outcome enters feature ranking. Public var has no background-role field.",
+      "exclusion_source": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/manifest.json",
+        "sha256": "d5970cae4a4661134f9d06b5beb528b81cb17833c64992e6ca929ec56c9bb0ab"
+      },
+      "exclusions": {
+        "H3K27ac": [
+          "f_60971c0b5dfbbafd05a8",
+          "f_9e9c97de68faed4aca2a",
+          "f_c0155194bfc7afc7c066"
+        ],
+        "H3K4me3": [
+          "f_a8d56f81ccf9ce1967fb",
+          "f_4d78cfca81f7177b1292",
+          "f_9228b4c85c26f8e9ded7"
+        ],
+        "RNA": [
+          "f_5c945b1aaa9adec344b5",
+          "f_32db126430b89b6e97fe",
+          "f_7747b8c0395328350eaa"
+        ]
+      },
+      "locked_cohorts_unused": [
+        "probe",
+        "assessment"
+      ],
+      "public_evaluation_cohort": "discovery",
+      "source_manifest": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/manifest.json",
+      "source_manifest_sha256": "f05a1e1c72b348956e9fe050e081bbb342b88ac0e14ede53d652c785facdb68f"
+    },
+    "scmtr_seq_s1": {
+      "cohorts": {
+        "test": {
+          "H3K27ac": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/H3K27ac.h5ad",
+            "sha256": "a9e5c3e6b35a27e110c3c8c6ec5fe3154d5b6368329ad78f68ada4101c1a70ca"
+          },
+          "H3K4me3": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/H3K4me3.h5ad",
+            "sha256": "89e2f0e478c2fd09f825589fdc50a1d6dcdfde3ecaaa5f2e0849df885d41626c"
+          },
+          "RNA": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/test/RNA.h5ad",
+            "sha256": "f1c8b648822132a999b3ef876d3ff85b3418f8598d587d5b3349a93dc7c1eff5"
+          }
+        },
+        "train": {
+          "H3K27ac": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/H3K27ac.h5ad",
+            "sha256": "06334190910dd7c08f0ed37259609d79dd129c3e50d092a7dec9f30f7d4ded6a"
+          },
+          "H3K4me3": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/H3K4me3.h5ad",
+            "sha256": "398f843dc9ebc26407c0bd84b6913403b44cae27475056de4f41028a5c63333a"
+          },
+          "RNA": {
+            "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/train/RNA.h5ad",
+            "sha256": "9c0609fc44274aee794b41b9aba7fb7064d3951ccdb1b1f8dc6d19b2c3762fa1"
+          }
+        }
+      },
+      "exclusion_note": "Existing model_inputs already exclude all six panel-overlap/alias features; use only these matrices.",
+      "exclusions": {
+        "H3K27ac": [],
+        "H3K4me3": [],
+        "RNA": []
+      },
+      "source_manifest": "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/manifest.json",
+      "source_manifest_sha256": "71cf29e209c644eaf7d475a9968c22224d1e00d242c5f824c7f7a00e6ef8372b"
+    }
+  },
+  "evaluator_only": {
+    "scmtr_seq_s1": "Reuse only existing595 heldout canonical IDs and paired_indices from old evaluator NPZ. Build595x900 paired raw/normalized reference from expanded public test matrices. Do not open canonical training pairing maps or day labels. Existing source-pair disjointness audit remains inherited.",
+    "simulation": "Copy old evaluator state_reference.npz bytes after hash verification, without loading state values; no new latent truth, private probes, assessment cohorts or count regeneration."
+  },
+  "failure_policy": "New directory is nonoverwrite. Fewer than300 eligible features or any prefix/source mismatch is a hard failure; no relaxed thresholds or replacement features.",
+  "frozen_at_utc": "2026-11-01T20:08:43.672229+00:00",
+  "materialized_feature_count": 300,
+  "memory_policy": "One source CSR at a time; materialize only selected300 columns. No full dense source count matrix or p-cubed tensor.",
+  "old_data_manifest": {
+    "path": "project_resources/research/sturma_pilot_2026_11_01/data_pilot_v1/manifest.json",
+    "sha256": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8"
+  },
+  "old_evaluator_artifacts": {
+    "constrained_collider_0": {
+      "bytes": 191759,
+      "path": "project_resources/research/sturma_pilot_2026_11_01/data_pilot_v1/evaluator/constrained_collider_0/state_reference.npz",
+      "private_cohorts_accessed": false,
+      "selected_background_cross_covariance_available": false,
+      "sha256": "91d4edaecb16cad8c8c367ecadd8a4e8c1e3526996ffaec0b0d4662b51bd8ce1",
+      "source": {
+        "bytes": 1514064,
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/truth/discovery.npz",
+        "sha256": "2842e5d15cc1f9b1270bfca5fdafee66af83ddca4ca278f6d0a4c36a716155f7"
+      },
+      "target": "Heldout state association only; not a latent DAG oracle"
+    },
+    "linear_chain_0": {
+      "bytes": 191774,
+      "path": "project_resources/research/sturma_pilot_2026_11_01/data_pilot_v1/evaluator/linear_chain_0/state_reference.npz",
+      "private_cohorts_accessed": false,
+      "selected_background_cross_covariance_available": false,
+      "sha256": "34b2396c56583197658167bfb09ad30095b2bb533f5ac061697f1e6046fc5080",
+      "source": {
+        "bytes": 1515623,
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/discovery.npz",
+        "sha256": "2416fe5eccf5e4b8aed4c7be80fc6e67b4db46bb47f2b64dd5c7becca0f7948a"
+      },
+      "target": "Heldout state association only; not a latent DAG oracle"
+    },
+    "scmtr_seq_s1": {
+      "bytes": 47753,
+      "canonical_train_test_and_assay_disjoint": true,
+      "n_cells": 595,
+      "n_features": 90,
+      "path": "project_resources/research/sturma_pilot_2026_11_01/data_pilot_v1/evaluator/scmtr_seq_s1/paired_reference.npz",
+      "sha256": "9ffe3270eb59674652a0011d6d8b439aa649baf4c89406da6f66a5500f518909",
+      "source": {
+        "bytes": 51278,
+        "path": "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/heldout_pairs.tsv",
+        "sha256": "e2c6dee541d691656e516c124d40844d6fc149a654250f0ece30b0eeb67adfa2"
+      },
+      "target": "Observed heldout joint; not causal truth"
+    }
+  },
+  "old_extraction_protocol": {
+    "path": "project_resources/research/sturma_pilot_2026_11_01/data_extraction_protocol.json",
+    "sha256": "7e8e158a0e64913efb6078b3ec51f281e48a2b1de7598cd74c7df01a5cd4e9fe"
+  },
+  "panel_sizes": [
+    30,
+    300
+  ],
+  "prefix_validation": "For each18 public source arrays, selected first30 raw/log1p columns and featureIDs plus full cellIDs/library_depth must match immutable old NPZ dtype,shape,and C-order bytes exactly. Fail on any discrepancy; never silently rewrite old data.",
+  "preprocessing": {
+    "depth": "Same original full allowed-feature sum as the immutable30-column dataset; does not depend on chosen panel width. Library-depth proxy variants belong to a separately frozen model protocol.",
+    "fitted_transform": "None: no PCA, HVG, learned normalization or row matching. Native numerical covariance rank is a diagnostic, not a feature-selection criterion.",
+    "log1p_cp10k": "log1p(1e4 * selected_counts / full_allowed_feature_depth)",
+    "raw": "Unmodified selected integer count columns",
+    "zero_depth": "Set denominator to1; retain row and report zero-depth count."
+  },
+  "public_arrays": [
+    "raw_counts",
+    "log1p_cp10k",
+    "library_depth",
+    "cell_ids",
+    "feature_ids"
+  ],
+  "schema_version": "count_extensions_cached_panels_v1",
+  "selection": {
+    "count": 300,
+    "insufficient_features": "fail without relaxing thresholds",
+    "minimum_training_detected_cells": 10,
+    "nested_panels": "The30-column panel is the exact prefix of300; preserve original selected column order and array byte values.",
+    "nonconstant_training_counts_required": true,
+    "ordering": "ascending SHA256 of UTF-8 feature_id only; ties resolved by feature_id",
+    "overlapping_or_duplicate_features": "Do not silently remove or replace; report after selection; retain original feature units",
+    "scope": "Own training assay only; no test values, covariance, variance ranking, labels, pairs, feature roles or ground-truth outcome selection"
+  },
+  "source_access": "Only declared public train/test H5AD count matrices, existing source manifests, old public30-column NPZs and old evaluator artifacts. No private cohorts or additional datasets.",
+  "split": "Preserve every source train/test row and existing opaque IDs; no new partition, assignment or QC. Simulation test means public discovery.",
+  "statistics_boundary": "Extract and verify counts/IDs only. No covariance/state/cross-assay performance readouts until all scientific fit artifacts are sealed. Training detection/sparsity and annotation overlap diagnostics may be recorded.",
+  "status": "frozen_before_expanded_feature_extraction"
+}

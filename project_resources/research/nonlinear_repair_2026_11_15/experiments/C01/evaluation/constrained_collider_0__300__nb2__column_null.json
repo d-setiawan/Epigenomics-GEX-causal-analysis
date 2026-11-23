@@ -1,0 +1,231 @@
+{
+  "alignment_status": "abstain",
+  "assignments": 0,
+  "control": "column_null",
+  "dataset": "constrained_collider_0",
+  "kernel": "nb2",
+  "paired": {},
+  "paired_caveat": "selected populations differ and CI completion is an assumption",
+  "panel": 300,
+  "selected_K": 4,
+  "state": {
+    "H3K27ac": {
+      "note": "public discovery/test rows matched by ID; descriptive, no truth-driven selection or alignment",
+      "responsibility_state_correlations": [
+        [
+          0.019768511068584377,
+          0.005433523970243693
+        ],
+        [
+          -0.1173166776550751,
+          0.01228512774792361
+        ],
+        [
+          0.03012677630377461,
+          -0.006919083692569739
+        ],
+        [
+          0.12193431723414026,
+          -0.01605974239390406
+        ]
+      ]
+    },
+    "H3K4me3": {
+      "note": "public discovery/test rows matched by ID; descriptive, no truth-driven selection or alignment",
+      "responsibility_state_correlations": [
+        [
+          -0.2550750666462139,
+          0.295792403973354
+        ],
+        [
+          -0.059296859662539406,
+          -0.03459173814673122
+        ],
+        [
+          0.12198322886431409,
+          -0.05038787474318333
+        ],
+        [
+          0.19531414970730698,
+          -0.20567619435433807
+        ]
+      ]
+    },
+    "RNA": {
+      "note": "public discovery/test rows matched by ID; descriptive, no truth-driven selection or alignment",
+      "responsibility_state_correlations": [
+        [
+          0.15804689892711804,
+          0.015420403765806247
+        ],
+        [
+          -0.009793602596222674,
+          -0.031491618970571976
+        ],
+        [
+          -0.0015433944395138708,
+          -0.019076448657644463
+        ],
+        [
+          -0.12189095934167886,
+          0.020627825162313332
+        ]
+      ]
+    }
+  },
+  "within": {
+    "H3K27ac": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -11.313068225930794,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.02943814147444008,
+          "standardized_offdiag_covariance_rmse": 0.0615237821450724,
+          "standardized_variance_rmse": 0.40229473936748983,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.030782085011268095,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -115.17718513584842,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.030711034872883437,
+          "standardized_offdiag_covariance_rmse": 0.06512455396811173,
+          "standardized_variance_rmse": 0.46345949531675057,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.02703971929632582,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -11.018013939128515,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.029438141474440075,
+          "standardized_offdiag_covariance_rmse": 0.06149071326661862,
+          "standardized_variance_rmse": 0.38345681156799694,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.02640739094707472,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -114.81202406709687,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.030711034872883427,
+          "standardized_offdiag_covariance_rmse": 0.06519427538722697,
+          "standardized_variance_rmse": 0.4520944119392802,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.02508049080256997,
+          "zero_scale_features": 0
+        }
+      }
+    },
+    "H3K4me3": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -25.329210747140742,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03152960302686954,
+          "standardized_offdiag_covariance_rmse": 0.1379400716123243,
+          "standardized_variance_rmse": 0.462360461851777,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.03199246457253127,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -250.73334819692994,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03497457025610742,
+          "standardized_offdiag_covariance_rmse": 0.13181354032275186,
+          "standardized_variance_rmse": 0.4411681303274149,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.03580827487890846,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -25.19596869926739,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03152960302686942,
+          "standardized_offdiag_covariance_rmse": 0.1377592529251118,
+          "standardized_variance_rmse": 0.4463474294472773,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.028871703722785576,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -250.90140571663866,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03497457025610731,
+          "standardized_offdiag_covariance_rmse": 0.13187293806475267,
+          "standardized_variance_rmse": 0.4277231675693965,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.03240275431178659,
+          "zero_scale_features": 0
+        }
+      }
+    },
+    "RNA": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -27.297790834543786,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03135061769167374,
+          "standardized_offdiag_covariance_rmse": 0.10443699491187165,
+          "standardized_variance_rmse": 0.9017780057713514,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.14793594210917974,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -345.03665080971115,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.030482753681126074,
+          "standardized_offdiag_covariance_rmse": 0.13414540673583622,
+          "standardized_variance_rmse": 3.9118470728765704,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.13113446282703617,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -25.3374276616628,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.03135061772993294,
+          "standardized_offdiag_covariance_rmse": 0.10452329496336468,
+          "standardized_variance_rmse": 0.8967491073820627,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.0794351413212605,
+          "zero_scale_features": 0
+        },
+        "300": {
+          "features": 300,
+          "log_score": -332.62790603859736,
+          "rows": 2000,
+          "standardized_mean_rmse": 0.030482753834195835,
+          "standardized_offdiag_covariance_rmse": 0.13417059569931122,
+          "standardized_variance_rmse": 3.9104321827507356,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.09295360865102664,
+          "zero_scale_features": 0
+        }
+      }
+    }
+  }
+}

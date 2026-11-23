@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "date": "2026-11-01",
+  "k": 20,
+  "p": 300,
+  "fixture_rows": 21,
+  "maximum_exact_tensor_alignment_error": 8.881784197001252e-16,
+  "exact_tensor_residual": 4.0113879419218516e-15,
+  "fit_shapes_and_numerics": [
+    {
+      "orientation": "c3",
+      "status": "ok",
+      "orientation_residual": 0.8191441102044302
+    },
+    {
+      "orientation": "c3_shrink",
+      "status": "ok",
+      "orientation_residual": 0.8589694657742417
+    },
+    {
+      "orientation": "pgf",
+      "status": "ok",
+      "orientation_residual": 0.3220295555303858
+    }
+  ],
+  "invalid_requested_mode": {
+    "status": "abstained",
+    "reason": "requested covariance modes are not positive"
+  },
+  "source_sha256": {
+    "protocol.json": "e7c9373a1684d6667e213f247f0f7cee8fa1ce361ebf0394da5801859e5774fc",
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "fixture_source_sha256": "4ed0d0cb5d2212a9537587aa29e510f2d0ee572e4751e4ea99fe50f5d57138ed",
+  "elapsed_seconds": 0.08388689201092348,
+  "scope": "Exact rotated tensor and deterministic indicator-count API fixture only; no project training/test arrays, labels, state references, or scientific performance evaluated.",
+  "interpretation": "Supports the computational rank extension; does not establish source recovery on the project data. The prior cap-only exclusions cannot predict this higher-rank refit."
+}

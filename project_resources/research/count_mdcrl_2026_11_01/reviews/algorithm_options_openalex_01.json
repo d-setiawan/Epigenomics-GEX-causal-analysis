@@ -1,0 +1,1759 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 41,
+    "db_response_time_ms": 84,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (discrete ICA gamma Poisson cumulants) in the full text",
+      "x_new_oql": "get works with (discrete ICA gamma Poisson cumulants) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "discrete ICA gamma Poisson cumulants",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:discrete ICA gamma Poisson cumulants&per_page=100",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W1560385679",
+      "doi": "https://doi.org/10.1214/lnms/1215091133",
+      "title": "Poisson-Kingman partitions",
+      "publication_year": 2003,
+      "primary_location": {
+        "id": "doi:10.1214/lnms/1215091133",
+        "doi": "https://doi.org/10.1214/lnms/1215091133",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/lnms/1215091133",
+        "pdf_url": "https://projecteuclid.org/ebooks/institute-of-mathematical-statistics-lecture-notes-monograph-series/Statistics-and-science-a-Festschrift-for-Terry-Speed/chapter/Poisson-Kingman-partitions/10.1214/lnms/1215091133.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210235996",
+          "display_name": "Lecture notes-monograph series",
+          "issn_l": "0749-2170",
+          "issn": [
+            "0749-2170",
+            "2328-3874"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "book series"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Institute of Mathematical Statistics Lecture Notes - Monograph Series",
+        "raw_type": "book-chapter"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/ebooks/institute-of-mathematical-statistics-lecture-notes-monograph-series/Statistics-and-science-a-Festschrift-for-Terry-Speed/chapter/Poisson-Kingman-partitions/10.1214/lnms/1215091133.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2147344735",
+      "doi": "https://doi.org/10.48550/arxiv.1311.2891",
+      "title": "The More, the Merrier: the Blessing of Dimensionality for Learning Large Gaussian Mixtures",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1311.2891",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1311.2891",
+        "pdf_url": "https://arxiv.org/pdf/1311.2891",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1311.2891",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2185720888",
+      "doi": null,
+      "title": "ADVANCES IN INDEPENDENT COMPONENT ANALYSIS WITH APPLICATIONS TO DATA MINING",
+      "publication_year": 2003,
+      "primary_location": {
+        "id": "pmh:oai:aaltodoc.aalto.fi:123456789/2141",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "pdf_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "source": {
+          "id": "https://openalex.org/S4306401662",
+          "display_name": "Aaltodoc (Aalto University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I9927081",
+          "host_organization_name": "Aalto University",
+          "host_organization_lineage": [
+            "https://openalex.org/I9927081"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "G5 Artikkeliv\u00e4it\u00f6skirja"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2619277441",
+      "doi": "https://doi.org/10.48550/arxiv.1705.09269",
+      "title": "Geometric Methods for Robust Data Analysis in High Dimension",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1705.09269",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1705.09269",
+        "pdf_url": "https://arxiv.org/pdf/1705.09269",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1705.09269",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W167002468",
+      "doi": "https://doi.org/10.70675/cb9da457z4823z41efz946cz9f2a063ac3d8",
+      "title": "ID Photograph hashing : a global approach",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:HAL:tel-00719585v1",
+        "doi": "https://doi.org/10.70675/cb9da457z4823z41efz946cz9f2a063ac3d8",
+        "is_oa": true,
+        "landing_page_url": "https://hal.science/tel-00719585v1",
+        "pdf_url": "https://theses.hal.science/tel-00719585v1/file/ThA_se_-_SMOACA.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402512",
+          "display_name": "HAL",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4405252976",
+          "host_organization_name": "Centre pour la Communication Scientifique Directe",
+          "host_organization_lineage": [
+            "https://openalex.org/I4405252976"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Other. Universit\u00e9 Jean Monnet - Saint-Etienne; Universitatea politehnica (Bucarest), 2011. English. &#x27E8;NNT : 2011STET4034&#x27E9;",
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-00719585v1/file/ThA_se_-_SMOACA.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2523568971",
+      "doi": "https://doi.org/10.17615/q0w7-c335",
+      "title": "Temporal-spatial modeling for fMRI data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:cdr.lib.unc.edu:uuid:3f02f8b0-6a57-4093-a8c1-b35dac1e60dc",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://cdr.lib.unc.edu/record/uuid:3f02f8b0-6a57-4093-a8c1-b35dac1e60dc",
+        "pdf_url": "https://cdr.lib.unc.edu/record/uuid:3f02f8b0-6a57-4093-a8c1-b35dac1e60dc",
+        "source": {
+          "id": "https://openalex.org/S4306401075",
+          "display_name": "Carolina Digital Repository (University of North Carolina at Chapel Hill)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I114027177",
+          "host_organization_name": "University of North Carolina at Chapel Hill",
+          "host_organization_lineage": [
+            "https://openalex.org/I114027177"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://cdr.lib.unc.edu/record/uuid:3f02f8b0-6a57-4093-a8c1-b35dac1e60dc",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7165625977",
+      "doi": "https://doi.org/10.48550/arxiv.2606.22951",
+      "title": "The kurtosis of normal variance-mean mixtures",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2606.22951",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2606.22951",
+        "pdf_url": "https://arxiv.org/pdf/2606.22951",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2606.22951",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7203465268",
+      "doi": "https://doi.org/10.48550/arxiv.2608.13229",
+      "title": "Foundations of Independent Component Analysis",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2608.13229",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2608.13229",
+        "pdf_url": "https://arxiv.org/pdf/2608.13229",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2608.13229",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2586768459",
+      "doi": "https://doi.org/10.70675/2ceb8cc2zcf75z442fzbf4dz69d3aa5692bd",
+      "title": "Sur la m\u00e9thode des moments pour l'estimation des mod\u00e8les \u00e0 variables latentes",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:HAL:tel-01489260v2",
+        "doi": "https://doi.org/10.70675/2ceb8cc2zcf75z442fzbf4dz69d3aa5692bd",
+        "is_oa": true,
+        "landing_page_url": "https://hal.science/tel-01489260v2",
+        "pdf_url": "https://theses.hal.science/tel-01489260/document",
+        "source": {
+          "id": "https://openalex.org/S4306402512",
+          "display_name": "HAL",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4405252976",
+          "host_organization_name": "Centre pour la Communication Scientifique Directe",
+          "host_organization_lineage": [
+            "https://openalex.org/I4405252976"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Machine Learning [cs.LG]. Universit\u00e9 Paris sciences et lettres, 2016. English. &#x27E8;NNT : 2016PSLEE050&#x27E9;",
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-01489260/document",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4200470958",
+      "doi": "https://doi.org/10.1371/journal.pone.0260764",
+      "title": "Novel feature extraction method for signal analysis based on independent component analysis and wavelet transform",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pone.0260764",
+        "doi": "https://doi.org/10.1371/journal.pone.0260764",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pone.0260764",
+        "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0260764&type=printable",
+        "source": {
+          "id": "https://openalex.org/S202381698",
+          "display_name": "PLoS ONE",
+          "issn_l": "1932-6203",
+          "issn": [
+            "1932-6203"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "erih-plus",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS ONE",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0260764&type=printable",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4248624687",
+      "doi": "https://doi.org/10.1002/9781119994398.index",
+      "title": "Index",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1002/9781119994398.index",
+        "doi": "https://doi.org/10.1002/9781119994398.index",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/9781119994398.index",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/9781119994398.index",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Image Processing: The Fundamentals",
+        "raw_type": "other"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/9781119994398.index",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W1507165138",
+      "doi": null,
+      "title": "Generalized statistical methods for mixed exponential families",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "pmh:oai:escholarship.org/ark:/13030/qt55t4g0bt",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://escholarship.org/uc/item/55t4g0bt",
+        "pdf_url": "https://escholarship.org/uc/item/55t4g0bt",
+        "source": {
+          "id": "https://openalex.org/S4306400115",
+          "display_name": "eScholarship (California Digital Library)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801248553",
+          "host_organization_name": "California Digital Library",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801248553"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "etd"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/uc/item/55t4g0bt",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2294085353",
+      "doi": "https://doi.org/10.82444/warw.33712855",
+      "title": "Essays on practical issues in asset pricing : estimation and simulation",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:wrap.warwick.ac.uk:77466",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://wrap.warwick.ac.uk/77466/1/WRAP_Thesis_Wang_2015.pdf",
+        "pdf_url": "http://wrap.warwick.ac.uk/77466/1/WRAP_Thesis_Wang_2015.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400665",
+          "display_name": "Warwick Research Archive Portal (University of Warwick)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I39555362",
+          "host_organization_name": "University of Warwick",
+          "host_organization_lineage": [
+            "https://openalex.org/I39555362"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis or Dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://wrap.warwick.ac.uk/77466/1/WRAP_Thesis_Wang_2015.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7144349650",
+      "doi": "https://doi.org/10.70675/af0a0297z9e12z4ce7z9074z132e5b6b803e",
+      "title": "Decomposition methods of NMR signal of complex mixtures : models ans applications",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.70675/af0a0297z9e12z4ce7z9074z132e5b6b803e",
+        "doi": "https://doi.org/10.70675/af0a0297z9e12z4ce7z9074z132e5b6b803e",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.70675/af0a0297z9e12z4ce7z9074z132e5b6b803e",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Aix-Marseille",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.theses.fr/2013AIXM4351/document",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2615574353",
+      "doi": "https://doi.org/10.32657/10356/71740",
+      "title": "EEG-based attention recognition using machine learning",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.32657/10356/71740",
+        "doi": "https://doi.org/10.32657/10356/71740",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.32657/10356/71740",
+        "pdf_url": "https://dr.ntu.edu.sg/bitstream/10356/71740/1/Thesis-Main-SunHaoqi.pdf",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nanyang Technological University",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dr.ntu.edu.sg/bitstream/10356/71740/1/Thesis-Main-SunHaoqi.pdf",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W7148730801",
+      "doi": "https://doi.org/10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+      "title": "Contributions to probabilistic non-negative matrix factorization - Maximum marginal likelihood estimation and Markovian temporal models",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+        "doi": "https://doi.org/10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Toulouse, INPT",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://oatao.univ-toulouse.fr/25586/1/Filstroff_Louis.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7036838589",
+      "doi": "https://doi.org/10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+      "title": "Contributions to probabilistic non-negative matrix factorization - Maximum marginal likelihood estimation and Markovian temporal models",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:HAL:tel-04169894v1",
+        "doi": "https://doi.org/10.70675/7b4a46f0zf68ez4d6cza5a2z71255fa2f74e",
+        "is_oa": true,
+        "landing_page_url": "https://theses.hal.science/tel-04169894",
+        "pdf_url": "https://theses.hal.science/tel-04169894v1/document",
+        "source": {
+          "id": "https://openalex.org/S4306402512",
+          "display_name": "HAL",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4405252976",
+          "host_organization_name": "Centre pour la Communication Scientifique Directe",
+          "host_organization_lineage": [
+            "https://openalex.org/I4405252976"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Other [cs.OH]. Institut National Polytechnique de Toulouse - INPT, 2019. English. &#x27E8;NNT : 2019INPT0143&#x27E9;",
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-04169894v1/document",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7161917956",
+      "doi": null,
+      "title": "Todenn\u00e4k\u00f6isyyspohjaisia malleja ja algoritmeja energiatehokkaille ja tiheille langattomille anturiverkoille",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:aaltodoc.aalto.fi:123456789/20006",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://aaltodoc.aalto.fi/handle/123456789/20006",
+        "pdf_url": "https://aaltodoc.aalto.fi/handle/123456789/20006",
+        "source": {
+          "id": "https://openalex.org/S4306401662",
+          "display_name": "Aaltodoc (Aalto University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I9927081",
+          "host_organization_name": "Aalto University",
+          "host_organization_lineage": [
+            "https://openalex.org/I9927081"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "G4 Monografiav\u00e4it\u00f6skirja"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://aaltodoc.aalto.fi/handle/123456789/20006",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4286750937",
+      "doi": "https://doi.org/10.48550/arxiv.2207.10185",
+      "title": "An Introduction to Modern Statistical Learning",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2207.10185",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2207.10185",
+        "pdf_url": "https://arxiv.org/pdf/2207.10185",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2207.10185",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4405407650",
+      "doi": "https://doi.org/10.18187/pjsor.v20i3.4151",
+      "title": "A New Pareto Model: Risk Application, Reliability MOOP and PORT Value-at-Risk Analysis",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.18187/pjsor.v20i3.4151",
+        "doi": "https://doi.org/10.18187/pjsor.v20i3.4151",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.18187/pjsor.v20i3.4151",
+        "pdf_url": "https://pjsor.com/pjsor/article/download/4151/1310",
+        "source": {
+          "id": "https://openalex.org/S2764549733",
+          "display_name": "Pakistan Journal of Statistics and Operation Research",
+          "issn_l": "1816-2711",
+          "issn": [
+            "1816-2711",
+            "2220-5810"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "poland-40",
+            "russia-white-list-2"
+          ],
+          "host_organization": "https://openalex.org/P4310319273",
+          "host_organization_name": "University of the Punjab",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319273"
+          ],
+          "host_organization_lineage_names": [
+            "University of the Punjab"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Pakistan Journal of Statistics and Operation Research",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pjsor.com/pjsor/article/download/4151/1310",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2767195769",
+      "doi": "https://doi.org/10.48550/arxiv.1710.06818",
+      "title": "Weighted Tensor Decomposition for Learning Latent Variables with Partial Data",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1710.06818",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1710.06818",
+        "pdf_url": "https://arxiv.org/pdf/1710.06818",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1710.06818",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2957970547",
+      "doi": "https://doi.org/10.3389/fninf.2019.00057",
+      "title": "Comparing Open-Source Toolboxes for Processing and Analysis of Spike and Local Field Potentials Data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.3389/fninf.2019.00057",
+        "doi": "https://doi.org/10.3389/fninf.2019.00057",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fninf.2019.00057",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fninf.2019.00057/pdf",
+        "source": {
+          "id": "https://openalex.org/S179816892",
+          "display_name": "Frontiers in Neuroinformatics",
+          "issn_l": "1662-5196",
+          "issn": [
+            "1662-5196"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Neuroinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fninf.2019.00057/pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2242971353",
+      "doi": null,
+      "title": "Multivariate L\u00e8vy models: estimation and asset allocation",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "pmh:oai:boa.unimib.it:10281/49727",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10281/49727",
+        "pdf_url": "http://hdl.handle.net/10281/49727",
+        "source": {
+          "id": "https://openalex.org/S4306401259",
+          "display_name": "BOA (University of Milano-Bicocca)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I66752286",
+          "host_organization_name": "University of Milano-Bicocca",
+          "host_organization_lineage": [
+            "https://openalex.org/I66752286"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10281/49727",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7144769977",
+      "doi": null,
+      "title": "Effective Optimization Algorithms for Blind and Supervised Music Source Separation with Nonnegative Matrix Factorization",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:ir.soken.ac.jp:00005607",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://ir.soken.ac.jp/?action=repository_uri&item_id=5607",
+        "pdf_url": "https://ir.soken.ac.jp/record/5607/files/A1931\u672c\u6587.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401394",
+          "display_name": "SOKENDAI (Graduate University for Advanced Studies)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I200475212",
+          "host_organization_name": "The Graduate University for Advanced Studies, SOKENDAI",
+          "host_organization_lineage": [
+            "https://openalex.org/I200475212"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "doctoral thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://ir.soken.ac.jp/record/5607/files/A1931\u672c\u6587.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4400978325",
+      "doi": "https://doi.org/10.4103/jmss.jmss_11_24",
+      "title": "A Review of EEG-based Localization of Epileptic Seizure Foci: Common Points with Multimodal Fusion of Brain Data",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.4103/jmss.jmss_11_24",
+        "doi": "https://doi.org/10.4103/jmss.jmss_11_24",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.4103/jmss.jmss_11_24",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2764790739",
+          "display_name": "Journal of Medical Signals & Sensors",
+          "issn_l": "2228-7477",
+          "issn": [
+            "2228-7477"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "poland-40",
+            "russia-white-list-3"
+          ],
+          "host_organization": "https://openalex.org/P4310319032",
+          "host_organization_name": "Isfahan University of Medical Sciences",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319032"
+          ],
+          "host_organization_lineage_names": [
+            "Isfahan University of Medical Sciences"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Medical Signals &amp; Sensors",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.4103/jmss.jmss_11_24",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2226424700",
+      "doi": null,
+      "title": "Information-geometric method for multiple neuronal spike data analysis",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "pmh:oai:www.uleth.ca:10133/3528",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10133/3528",
+        "pdf_url": "http://hdl.handle.net/10133/3528",
+        "source": {
+          "id": "https://openalex.org/S4306401508",
+          "display_name": "Open ULeth Scholarship (OPUS) (University of Lethbridge)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I107949126",
+          "host_organization_name": "University of Lethbridge",
+          "host_organization_lineage": [
+            "https://openalex.org/I107949126"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10133/3528",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4410819663",
+      "doi": "https://doi.org/10.54014/167k-by1z",
+      "title": "Bayesian signal detection and source separation in simulated brain computer interface systems",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.54014/167k-by1z",
+        "doi": "https://doi.org/10.54014/167k-by1z",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.54014/167k-by1z",
+        "pdf_url": "https://scholarsarchive.library.albany.edu/cgi/viewcontent.cgi?article=2678&context=legacy-etd",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "University at Albany, State University of New York",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://scholarsarchive.library.albany.edu/cgi/viewcontent.cgi?article=2678&context=legacy-etd",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W2619542760",
+      "doi": null,
+      "title": "Small-Variance Asymptotics for Bayesian Models",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:etd.ohiolink.edu:osu1492465751839975",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1492465751839975",
+        "pdf_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1492465751839975",
+        "source": {
+          "id": "https://openalex.org/S4377196344",
+          "display_name": "OhioLink ETD Center (Ohio Library and Information Network)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210155183",
+          "host_organization_name": "Ohio Library and Information Network",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210155183"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1492465751839975",
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1492465751839975",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7172179621",
+      "doi": "https://doi.org/10.82308/50679",
+      "title": "Inference for asymptotically Gaussian random fields",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "pmh:oai:escholarship.mcgill.ca:tb09j892w",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://escholarship.mcgill.ca/concern/theses/tb09j892w",
+        "pdf_url": "https://escholarship.mcgill.ca/concern/theses/tb09j892w",
+        "source": {
+          "id": "https://openalex.org/S4306401568",
+          "display_name": "eScholarship@McGill (McGill)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I5023651",
+          "host_organization_name": "McGill University",
+          "host_organization_lineage": [
+            "https://openalex.org/I5023651"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.mcgill.ca/concern/theses/tb09j892w",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7146096471",
+      "doi": null,
+      "title": "\u30de\u30eb\u30c1\u30a6\u30a7\u30a4\u30c7\u30fc\u30bf\u89e3\u6790\u306e\u305f\u3081\u306e\u7279\u5fb4\u62bd\u51fa\u304a\u3088\u3073\u8b58\u5225\u6cd5",
+      "publication_year": null,
+      "primary_location": {
+        "id": "pmh:oai:irdb.nii.ac.jp:00897:0004074445",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://t2r2.star.titech.ac.jp/cgi-bin/publicationinfo.cgi?q_publication_content_number=CTT100687206",
+        "pdf_url": "http://t2r2.star.titech.ac.jp/rrws/file/CTT100687206/ATD100000413/result_11D18022.pdf",
+        "source": {
+          "id": "https://openalex.org/S7407056385",
+          "display_name": "Institutional Repositories DataBase (IRDB)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I184597095",
+          "host_organization_name": "National Institute of Informatics",
+          "host_organization_lineage": [
+            "https://openalex.org/I184597095"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "conference paper"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://t2r2.star.titech.ac.jp/rrws/file/CTT100687206/ATD100000413/result_11D18022.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W178995863",
+      "doi": null,
+      "title": "Classical and quantum mechanics with chaos",
+      "publication_year": 1999,
+      "primary_location": {
+        "id": "pmh:oai:etheses.dur.ac.uk:4968",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://etheses.dur.ac.uk/4968/",
+        "pdf_url": "http://etheses.dur.ac.uk/4968/",
+        "source": {
+          "id": "https://openalex.org/S4306402363",
+          "display_name": "Durham e-Theses (Durham University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I190082696",
+          "host_organization_name": "Durham University",
+          "host_organization_lineage": [
+            "https://openalex.org/I190082696"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://etheses.dur.ac.uk/4968/",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2949658187",
+      "doi": null,
+      "title": "Kernel Learning: Automatic Selection of Optimal Kernels",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "mag:2949658187",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pure.mpg.de/pubman/faces/ViewItemOverviewPage.jsp?itemId=item_3055677",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363606243",
+          "display_name": "neural information processing systems",
+          "issn_l": "1049-5258",
+          "issn": [
+            "1049-5258"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "norway-2"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "neural information processing systems",
+        "raw_type": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2955575209",
+      "doi": null,
+      "title": "Structured Input - Structured Output",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "mag:2955575209",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pure.mpg.de/pubman/faces/ViewItemOverviewPage.jsp?itemId=item_3055690",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363606243",
+          "display_name": "neural information processing systems",
+          "issn_l": "1049-5258",
+          "issn": [
+            "1049-5258"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "norway-2"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "neural information processing systems",
+        "raw_type": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2952245652",
+      "doi": null,
+      "title": "Machine learning in the service of understanding human learning: an ideal observer-based analysis of the learning curve",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "pmh:oai:pure.mpg.de:item_3055687",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/21.11116/0000-0003-A0AA-8",
+        "pdf_url": "http://hdl.handle.net/21.11116/0000-0003-A0AA-8",
+        "source": {
+          "id": "https://openalex.org/S4306400654",
+          "display_name": "MPG.PuRe (Max Planck Society)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I149899117",
+          "host_organization_name": "Max Planck Society",
+          "host_organization_lineage": [
+            "https://openalex.org/I149899117"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "NIPS 2008: Mini Symposia &amp; Workshops",
+        "raw_type": "info:eu-repo/semantics/other"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/21.11116/0000-0003-A0AA-8",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4283805901",
+      "doi": "https://doi.org/10.1109/ncc55593.2022.9806717",
+      "title": "Program",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1109/ncc55593.2022.9806717",
+        "doi": "https://doi.org/10.1109/ncc55593.2022.9806717",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1109/ncc55593.2022.9806717",
+        "pdf_url": "https://ieeexplore.ieee.org/ielx7/9806463/9806464/09806717.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306420578",
+          "display_name": "National Conference on Communications",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "2022 National Conference on Communications (NCC)",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/9806463/9806464/09806717.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1533808563",
+      "doi": null,
+      "title": "Value of information based distributed inference and planning",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "pmh:oai:dspace.mit.edu:1721.1/82487",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/1721.1/82487",
+        "pdf_url": "https://dspace.mit.edu/bitstreams/fe9a8088-0c52-4670-856a-690b44a83630/download",
+        "source": {
+          "id": "https://openalex.org/S4306400425",
+          "display_name": "DSpace@MIT (Massachusetts Institute of Technology)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I63966007",
+          "host_organization_name": "Massachusetts Institute of Technology",
+          "host_organization_lineage": [
+            "https://openalex.org/I63966007"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.mit.edu/bitstreams/fe9a8088-0c52-4670-856a-690b44a83630/download",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W167204211",
+      "doi": "https://doi.org/10.70675/786914d2zff1fz4dd4z862ezdf88cd233884",
+      "title": "D\u00e9tection de patterns d'activit\u00e9 bio\u00e9lectrique simul\u00e9e et mod\u00e9lisation de r\u00e9seaux neuraux bioinspir\u00e9s par l'expression g\u00e9nique",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.70675/786914d2zff1fz4dd4z862ezdf88cd233884",
+        "doi": "https://doi.org/10.70675/786914d2zff1fz4dd4z862ezdf88cd233884",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.70675/786914d2zff1fz4dd4z862ezdf88cd233884",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Grenoble",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-00685211v1/file/20071_SHAPOSHNYK_2011_archivage.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4415796369",
+      "doi": "https://doi.org/10.52202/079017-2683",
+      "title": "FASTopic: Pretrained Transformer is a Fast, Adaptive, Stable, and Transferable Topic Model",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.52202/079017-2683",
+        "doi": "https://doi.org/10.52202/079017-2683",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.52202/079017-2683",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363606243",
+          "display_name": "neural information processing systems",
+          "issn_l": "1049-5258",
+          "issn": [
+            "1049-5258"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "norway-2"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Advances in Neural Information Processing Systems 37",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2405.17978",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1150448096",
+      "doi": null,
+      "title": "Measurement of print quality: Joint statistical analysis of paper topography and print defects",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "pmh:oai:trepo.tuni.fi:10024/115021",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://trepo.tuni.fi//handle/10024/115021",
+        "pdf_url": "https://trepo.tuni.fi//handle/10024/115021",
+        "source": {
+          "id": "https://openalex.org/S4306401860",
+          "display_name": "Tampere University Institutional Repository (Tampere University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I150589677",
+          "host_organization_name": "Tampere University of Applied Sciences",
+          "host_organization_lineage": [
+            "https://openalex.org/I150589677"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "fi=Artikkeliv\u00e4it\u00f6skirja | en=Doctoral dissertation (article-based) |"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://trepo.tuni.fi//handle/10024/115021",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7065582980",
+      "doi": "https://doi.org/10.70675/51ea2bbcz7bdcz43cbza597z841d21a01dbe",
+      "title": "Factorisation inform\u00e9es de matrice pour la s\u00e9paration de sources non-n\u00e9gatives",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:HAL:tel-01725238v1",
+        "doi": "https://doi.org/10.70675/51ea2bbcz7bdcz43cbza597z841d21a01dbe",
+        "is_oa": true,
+        "landing_page_url": "https://theses.hal.science/tel-01725238",
+        "pdf_url": "https://theses.hal.science/tel-01725238v1/file/Thse_Robert_Chreiky.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402512",
+          "display_name": "HAL",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4405252976",
+          "host_organization_name": "Centre pour la Communication Scientifique Directe",
+          "host_organization_lineage": [
+            "https://openalex.org/I4405252976"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Signal and Image Processing. Universit\u00e9 du Littoral C\u00f4te d'Opale; Universit\u00e9 de Balamand (Tripoli, Liban), 2017. English. &#x27E8;NNT : 2017DUNK0464&#x27E9;",
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-01725238v1/file/Thse_Robert_Chreiky.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7149516734",
+      "doi": "https://doi.org/10.70675/77a7138ezcd90z4f21z850ez67001e43c062",
+      "title": "Approches parcimonieuses appliqu\u00e9es \u00e0 la tomographie \u00e9lectronique analytique",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.70675/77a7138ezcd90z4f21z850ez67001e43c062",
+        "doi": "https://doi.org/10.70675/77a7138ezcd90z4f21z850ez67001e43c062",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.70675/77a7138ezcd90z4f21z850ez67001e43c062",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Universit\u00e9 Grenoble Alpes",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://theses.hal.science/tel-03426859v1/file/JACOB_2021_archivage.pdf",
+        "any_repository_has_fulltext": true
+      }
+    }
+  ],
+  "group_by": []
+}

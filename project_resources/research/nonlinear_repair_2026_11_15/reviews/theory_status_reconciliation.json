@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-15",
+  "author": "Astra coordinator",
+  "scope": "Header-only status reconciliation after independent acceptance; all mathematical statements/proofs unchanged. Historical review hashes remain reconstructible from current files by the recorded reverse replacement.",
+  "records": [
+    {
+      "path": "theory/FIXED_SHAPE_NB_BRIDGE.md",
+      "reviewed_before_sha256": "2841bdefced8cb76c35f64537389c6832064543a57c0648b5249d74c78e1e6a1",
+      "current_after_sha256": "cf88ce401bc66306f8a911b98cd6988b4b83c4e22391b9fa89455afb6cedfe35",
+      "old_status_text": "Independent review pending.",
+      "new_status_text": "Independent review accepted; see [independent review](../reviews/FIXED_SHAPE_NB_INDEPENDENT_REVIEW.md).",
+      "old_file_reconstructible_by_reverse_replacement": true
+    },
+    {
+      "path": "theory/UNKNOWN_SHAPE_NB_COUNTERMODEL.md",
+      "reviewed_before_sha256": "348a8cc1d6603982df30a156705054bb4c424e11b91742b10f7b6bf7efa0855d",
+      "current_after_sha256": "6b6349519a4dce95b718d073d5613bf844ee73bc06d014a1aadeecda055e2f02",
+      "old_status_text": "independent review requested.",
+      "new_status_text": "independent review accepted; see [review](../reviews/UNKNOWN_SHAPE_NB_INDEPENDENT_REVIEW.md).",
+      "old_file_reconstructible_by_reverse_replacement": true
+    },
+    {
+      "path": "theory/COMP_COUNT_SHARED_TRANSPORT.md",
+      "reviewed_before_sha256": "6c551238055aa78226d21ca8fd8d18038b79595bef468ba8aff536a2140c2a9f",
+      "current_after_sha256": "a7db6816635644da661022b45fb985eacfe5e065b44295b3163ab2a1a94e2ad3",
+      "old_status_text": "Full independent correspondence review of this statement is requested separately.",
+      "new_status_text": "The [independent correspondence review](../reviews/COMP_COUNT_TRANSPORT_INDEPENDENT_REVIEW.md) accepted this statement within its assumptions.",
+      "old_file_reconstructible_by_reverse_replacement": true
+    },
+    {
+      "path": "theory/COMP_TALL_MATRIX_COROLLARY.md",
+      "reviewed_before_sha256": "83a7290e7c2aeb0302e92e8c38f39b357d299f5e554fad22708c3876ba31801c",
+      "current_after_sha256": "5afb58db56a10a0dc65ed816da56c13c2159b706863b850d24531a08753cb263",
+      "old_status_text": "Independent review pending.",
+      "new_status_text": "The [independent review](../reviews/COMP_TALL_INDEPENDENT_REVIEW.md) accepted this corollary within its assumptions.",
+      "old_file_reconstructible_by_reverse_replacement": true
+    }
+  ]
+}

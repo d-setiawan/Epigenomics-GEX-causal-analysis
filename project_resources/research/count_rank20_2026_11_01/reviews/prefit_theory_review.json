@@ -1,0 +1,45 @@
+{
+  "status": "approved_before_followup_fits",
+  "date_utc": "2026-11-01T20:55:34.429824+00:00",
+  "reviewer": "causal_reliability_pilot",
+  "scientific_fits_by_reviewer": 0,
+  "followup_outcomes_read": false,
+  "prior_outcomes_previously_inspected": true,
+  "expected_arms": 54,
+  "scientific_change": "Computational rank ceiling6 to20, including its cap-binding source-eligibility barrier; no other acceptance thresholds changed.",
+  "selected_scope": "All six unit-exposure300-feature variants, all three existing datasets, two original source seeds plus one independent-column control.",
+  "independent_training_rationale_check": {
+    "original_arms": 36,
+    "original_assay_fits": 108,
+    "every_fit_cap6_binding": true,
+    "uncapped_min": 7,
+    "uncapped_max": 19
+  },
+  "checks": [
+    "Selected variants are exactly the complete original unit300 family with byte-identical settings",
+    "Rank protocol differs only at cap; evaluation differs only at block completion wording",
+    "Runner, estimator and evaluator are byte-identical to the prior reviewed files",
+    "Prior rank/null RNG is keyed by settings rather than variant traversal order",
+    "Same original public training panels, source/calibration splits, evaluation references and controls",
+    "All54 arms must seal before any followup heldout performance read"
+  ],
+  "limits": [
+    "Exploratory adaptation after prior225-arm fit/evaluation seals; not independent validation",
+    "Ranks7\u201319 are empirical coherent-variation ranks, not known biological dimensions",
+    "Larger dimension can worsen uncertainty, overfitting or computation; failures and unchanged gates remain explicit",
+    "A source match remains a finite-fingerprint candidate, not recovered causal structure"
+  ],
+  "source_sha256": {
+    "protocol.json": "e7c9373a1684d6667e213f247f0f7cee8fa1ce361ebf0394da5801859e5774fc",
+    "apply_extensions.py": "d887cf9023cdcd633d3af5a81c7e11daa84f59c093e4f638bc113e1c998cc91e",
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  },
+  "prior_fit_provenance_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+  "prior_metric_audit_sha256": "8e18e86297e6f8e0ede626d2d972f43c12ba76342e7ad3feab848b03b9ab6d8d",
+  "metadata_correction": {
+    "previous_protocol_sha256": "0a69976996d250ec43b67787569c8e3763cf646d79291b97ab5e172020dcf3a9",
+    "reason": "Runtime description corrected from Rank<=6 to Rank<=20 before fits; numeric cap already20.",
+    "date_utc": "2026-11-01T20:56:09.846743+00:00"
+  }
+}

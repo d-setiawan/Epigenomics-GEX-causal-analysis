@@ -1,0 +1,291 @@
+{
+  "checkpoint_sha256": "3e102a6cbc034d7d3fa92c6193da147d692c08f8d92d233f3b3f391083adb5ed",
+  "configuration": {
+    "align_burnin": 20,
+    "data_batch_size": 128,
+    "device": "cuda",
+    "dropout": 0.2,
+    "encode_batch_size": 256,
+    "graph_batch_size": 8192,
+    "h_depth": 2,
+    "h_dim": 256,
+    "lam_align": 0.2,
+    "lam_data": 1,
+    "lam_graph": 0.02,
+    "lam_kl": 1,
+    "lam_sup": 0.02,
+    "latent_dim": 30,
+    "learning_rate": 0.002,
+    "max_epochs": 120,
+    "neg_samples": 10,
+    "patience": 8,
+    "reduce_lr_patience": 4,
+    "seed": 0,
+    "val_split": 0.1,
+    "wait_n_lrs": 1
+  },
+  "created_utc": "2026-10-25T23:03:08.104201+00:00",
+  "files": {
+    "discovery/H3K27ac.npz": {
+      "cell_ids_sha256": "8177c739bce5c540f70962fb5f410b8049cb853b74274f1f31d600cc666a3870",
+      "rows": 1000,
+      "sha256": "17811fd0aa329b49922a0d6b85527af51853b9d610a5096469f085bd77a14224",
+      "shape": [
+        1000,
+        30
+      ]
+    },
+    "discovery/H3K4me3.npz": {
+      "cell_ids_sha256": "da6896bce12882280987e29b4e5907823ababf4ef6a97cccf7db3f0f6f143b91",
+      "rows": 1000,
+      "sha256": "9c2d1d607bffa2f2718ecbadb806027edc3cfd230fe839b1bb544300c2704c33",
+      "shape": [
+        1000,
+        30
+      ]
+    },
+    "discovery/RNA.npz": {
+      "cell_ids_sha256": "d3dd7d0e6f99d6bfcfa7c736661d4f89f9babecd2e026494cd3614d8a6a97f36",
+      "rows": 969,
+      "sha256": "7b49414725c77819c9e456716f676dda3430b3d22a07359d9a8b38eec8cd2ba7",
+      "shape": [
+        969,
+        30
+      ]
+    },
+    "train/H3K27ac.npz": {
+      "cell_ids_sha256": "1158d1ff80876d9fdc953069aadf62a4180cfeb49c314a8dc17a0e637784e2c3",
+      "rows": 2000,
+      "sha256": "127af34784442182799874911b3c9745c9826db5130132ec21b67484316b1f93",
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    "train/H3K4me3.npz": {
+      "cell_ids_sha256": "54e3cfcb3cd7b33727e4dfc1e5a3f20348af1a1a25d0a009bd26b15537dd3a70",
+      "rows": 2000,
+      "sha256": "38d0720d181e031d768fdcb65ca2e123ce58b211c03860f85a7f56b3fc705dfd",
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    "train/RNA.npz": {
+      "cell_ids_sha256": "2f407d9bbfabab4a736b2803eca482e8748115f5f705f6c3468080dfe4202ce5",
+      "rows": 1936,
+      "sha256": "f8c7f3f7550e23d584d0a5ded3187b7170db3c708b76c8c21b622ae2158fd580",
+      "shape": [
+        1936,
+        30
+      ]
+    },
+    "val/H3K27ac.npz": {
+      "cell_ids_sha256": "a1560d011715370c3b6f9ad4028e79cddd6700fed8093f02b8920195cf98f0ff",
+      "rows": 500,
+      "sha256": "821e76f54afae11bf6163bbf6ca09f6be7ca40a94a4234f4a1982090bee20158",
+      "shape": [
+        500,
+        30
+      ]
+    },
+    "val/H3K4me3.npz": {
+      "cell_ids_sha256": "337b7a7c37744d7ade4880ea96ea9f5f1f883a95e183f16ebf4be3601c599d2b",
+      "rows": 500,
+      "sha256": "bdfa27c685c59f01e02d57640c29845b935d5a3c34a1747a4ec4d1cda86ef10d",
+      "shape": [
+        500,
+        30
+      ]
+    },
+    "val/RNA.npz": {
+      "cell_ids_sha256": "a94fdf145f182c91a18020421e041e89b44ae50c4ce2605d538fdc5260730c5c",
+      "rows": 487,
+      "sha256": "be1e1dd4f1cd7431b5460bc8c29dd218054513e21510f22faca165dc1d8d5558",
+      "shape": [
+        487,
+        30
+      ]
+    }
+  },
+  "interpretation": "The successful alternative demonstrates completion for this declared world/config/runtime. It does not establish that launch blocking fixed the earlier different-world/default-configuration CUDA failure, does not establish convergence at a population optimum, and supplies no causal validity claim.",
+  "native_phase_artifact_hashes": {
+    "checkpoints/fine-tune/checkpoint_27.pt": "a802b3de852cd2f7431a8067e7c2944a7695d45cd7e04b9beac9564b4fe7cc21",
+    "checkpoints/fine-tune/checkpoint_28.pt": "cc1f8b1aa08eb520d471088012eb0acc9c27b99f4bc30d55aad85832bf7c19fe",
+    "checkpoints/fine-tune/checkpoint_34.pt": "4c8eb9fa190627cd766376ae58aa71047763df8eacd6cce0c367f06f11c8fcda",
+    "checkpoints/fine-tune/fine-tune.dill": "73c950eab530f6d5ee5b2b205a18a28ea0865ae9df8ef1c6f65c8d835e72d1e6",
+    "checkpoints/fine-tune/tensorboard/events.out.tfevents.1792968916.DuckStation": "2419bfade807cf421a554db8143a36de0ff418d064d40b7cf4eb14fcdbd78e9c",
+    "checkpoints/pretrain/checkpoint_22.pt": "27f0e0e5ce9639fcf1f80c212eda5d211bd164ae01e7ccbcda268050655206db",
+    "checkpoints/pretrain/checkpoint_28.pt": "99c2e0b0daf34df242f70e0581b4451daf5515cf87936a2ee68fe3acfcca41b4",
+    "checkpoints/pretrain/checkpoint_34.pt": "1c99a433e6742590d0543eab8330b376e255451ca799082077c5ed7205284a26",
+    "checkpoints/pretrain/pretrain.dill": "e151211323771548455026f129d85e4d1bb15e7ccb57ef164a0cf1d326db5409",
+    "checkpoints/pretrain/tensorboard/events.out.tfevents.1792968714.DuckStation": "0929eb81c4c7e89de2468d66a451d1817cf6e12bfc27581c2fc128ab8510ecea"
+  },
+  "phase_summaries": {
+    "fine-tune": {
+      "all_final_recorded_scalars_finite": true,
+      "last_recorded_epoch": 36,
+      "most_recent_retained_checkpoint": 34,
+      "retained_checkpoints": [
+        "checkpoint_27.pt",
+        "checkpoint_28.pt",
+        "checkpoint_34.pt"
+      ]
+    },
+    "pretrain": {
+      "all_final_recorded_scalars_finite": true,
+      "last_recorded_epoch": 36,
+      "most_recent_retained_checkpoint": 34,
+      "retained_checkpoints": [
+        "checkpoint_22.pt",
+        "checkpoint_28.pt",
+        "checkpoint_34.pt"
+      ]
+    }
+  },
+  "prepared_cohort_manifest_hashes": {
+    "discovery": "cf044bffff7ae3f6f2cd4bffbaa338225ec69980551af5b856e114eb53f31613",
+    "train": "dfb97922a30c2c706932985adcdb8a8fd64ba184cd654b6b197124e141bee9de",
+    "val": "0c11632b6067bb5cd2cac7db60053713498cc946c32ff6079614d34d19db1b0b"
+  },
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "reported_model_state_sha256": "ecc0cc08b15a6449651bd3c0397f788ca54febdef023cfb6300b865f4e30bffa",
+  "run": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0",
+  "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+  "runtime_overrides": {
+    "CUDA_LAUNCH_BLOCKING": "1",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "LD_LIBRARY_PATH": null,
+    "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+  },
+  "scope": "JSON/NPZ/source reads and binary hashes only; no CUDA, model/checkpoint deserialization, fitting, biological state scoring or private/protected-cohort reads. Input H5AD identities reconciled against frozen preprocessing/world receipts without reopening counts. TensorBoard event bytes hashed, not independently parsed; recorded native phase summaries and frozen all-scalar validation code checked. Native checkpoint restoration semantics select the most recent retained checkpoint (34); binary weights were not deserialized to independently compare restored state.",
+  "status": "passed_scoped_independent_audit",
+  "total_unique_public_ids": 10392,
+  "verified_checks": [
+    "declared full configuration",
+    "only lam_align differs from defaults",
+    "native and bridge overrides",
+    "complete native fit and export",
+    "protocol receipt",
+    "outer study to export seal",
+    "inner fit manifest seal",
+    "fit fingerprint",
+    "embedding fingerprint",
+    "CLI source snapshot",
+    "bridge source",
+    "frozen scientific sources",
+    "native installed source identities",
+    "native installed package versions",
+    "native adapter identity",
+    "native phase sequence",
+    "native initialization configuration",
+    "native compile weights",
+    "native per-phase epoch interpretation",
+    "native runtime unchanged objective",
+    "reported exact checkpoint roundtrip",
+    "checkpoint chain",
+    "native phase finite final scalars fine-tune",
+    "native phase recorded 36 fine-tune",
+    "native retained checkpoint names fine-tune",
+    "native most recent retained checkpoint 34 fine-tune",
+    "native phase finite final scalars pretrain",
+    "native phase recorded 36 pretrain",
+    "native retained checkpoint names pretrain",
+    "native most recent retained checkpoint 34 pretrain",
+    "nine public exports only",
+    "cached cohort complete train",
+    "export digest train/RNA.npz",
+    "native export schema and finite latent train/RNA.npz",
+    "frozen preprocessing exact ID order train/RNA.npz",
+    "public ID disjointness train/RNA.npz",
+    "cached baseline export identity train/RNA.npz",
+    "same public cells as cached baseline train/RNA.npz",
+    "retention metadata train/RNA.npz",
+    "training contract IDs and features RNA",
+    "prepared public input receipt train/RNA.npz",
+    "raw public input receipt train/RNA.npz",
+    "export digest train/H3K27ac.npz",
+    "native export schema and finite latent train/H3K27ac.npz",
+    "frozen preprocessing exact ID order train/H3K27ac.npz",
+    "public ID disjointness train/H3K27ac.npz",
+    "cached baseline export identity train/H3K27ac.npz",
+    "same public cells as cached baseline train/H3K27ac.npz",
+    "retention metadata train/H3K27ac.npz",
+    "training contract IDs and features H3K27ac",
+    "prepared public input receipt train/H3K27ac.npz",
+    "raw public input receipt train/H3K27ac.npz",
+    "export digest train/H3K4me3.npz",
+    "native export schema and finite latent train/H3K4me3.npz",
+    "frozen preprocessing exact ID order train/H3K4me3.npz",
+    "public ID disjointness train/H3K4me3.npz",
+    "cached baseline export identity train/H3K4me3.npz",
+    "same public cells as cached baseline train/H3K4me3.npz",
+    "retention metadata train/H3K4me3.npz",
+    "training contract IDs and features H3K4me3",
+    "prepared public input receipt train/H3K4me3.npz",
+    "raw public input receipt train/H3K4me3.npz",
+    "cached cohort complete val",
+    "export digest val/RNA.npz",
+    "native export schema and finite latent val/RNA.npz",
+    "frozen preprocessing exact ID order val/RNA.npz",
+    "public ID disjointness val/RNA.npz",
+    "cached baseline export identity val/RNA.npz",
+    "same public cells as cached baseline val/RNA.npz",
+    "retention metadata val/RNA.npz",
+    "prepared public input receipt val/RNA.npz",
+    "raw public input receipt val/RNA.npz",
+    "export digest val/H3K27ac.npz",
+    "native export schema and finite latent val/H3K27ac.npz",
+    "frozen preprocessing exact ID order val/H3K27ac.npz",
+    "public ID disjointness val/H3K27ac.npz",
+    "cached baseline export identity val/H3K27ac.npz",
+    "same public cells as cached baseline val/H3K27ac.npz",
+    "retention metadata val/H3K27ac.npz",
+    "prepared public input receipt val/H3K27ac.npz",
+    "raw public input receipt val/H3K27ac.npz",
+    "export digest val/H3K4me3.npz",
+    "native export schema and finite latent val/H3K4me3.npz",
+    "frozen preprocessing exact ID order val/H3K4me3.npz",
+    "public ID disjointness val/H3K4me3.npz",
+    "cached baseline export identity val/H3K4me3.npz",
+    "same public cells as cached baseline val/H3K4me3.npz",
+    "retention metadata val/H3K4me3.npz",
+    "prepared public input receipt val/H3K4me3.npz",
+    "raw public input receipt val/H3K4me3.npz",
+    "cached cohort complete discovery",
+    "export digest discovery/RNA.npz",
+    "native export schema and finite latent discovery/RNA.npz",
+    "frozen preprocessing exact ID order discovery/RNA.npz",
+    "public ID disjointness discovery/RNA.npz",
+    "cached baseline export identity discovery/RNA.npz",
+    "same public cells as cached baseline discovery/RNA.npz",
+    "retention metadata discovery/RNA.npz",
+    "prepared public input receipt discovery/RNA.npz",
+    "raw public input receipt discovery/RNA.npz",
+    "export digest discovery/H3K27ac.npz",
+    "native export schema and finite latent discovery/H3K27ac.npz",
+    "frozen preprocessing exact ID order discovery/H3K27ac.npz",
+    "public ID disjointness discovery/H3K27ac.npz",
+    "cached baseline export identity discovery/H3K27ac.npz",
+    "same public cells as cached baseline discovery/H3K27ac.npz",
+    "retention metadata discovery/H3K27ac.npz",
+    "prepared public input receipt discovery/H3K27ac.npz",
+    "raw public input receipt discovery/H3K27ac.npz",
+    "export digest discovery/H3K4me3.npz",
+    "native export schema and finite latent discovery/H3K4me3.npz",
+    "frozen preprocessing exact ID order discovery/H3K4me3.npz",
+    "public ID disjointness discovery/H3K4me3.npz",
+    "cached baseline export identity discovery/H3K4me3.npz",
+    "same public cells as cached baseline discovery/H3K4me3.npz",
+    "retention metadata discovery/H3K4me3.npz",
+    "prepared public input receipt discovery/H3K4me3.npz",
+    "raw public input receipt discovery/H3K4me3.npz",
+    "frozen transformations",
+    "annotation guidance identity",
+    "no private or failure outputs",
+    "runtime preload binary",
+    "launch blocking recorded",
+    "logged command and success",
+    "house log receipt hash"
+  ]
+}

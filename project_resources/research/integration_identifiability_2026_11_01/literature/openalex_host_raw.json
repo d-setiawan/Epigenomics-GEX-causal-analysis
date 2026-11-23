@@ -1,0 +1,4333 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 30644,
+    "db_response_time_ms": 226,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (statistical matching identification conditional independence) in the full text",
+      "x_new_oql": "get works with (statistical matching identification conditional independence) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "statistical matching identification conditional independence",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:statistical matching identification conditional independence&per_page=100",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W1515828664",
+      "doi": "https://doi.org/10.1007/978-3-642-57615-7_3",
+      "title": "Identification and estimation of causal effects of multiple treatments under the conditional independence assumption",
+      "publication_year": 2001,
+      "primary_location": {
+        "id": "doi:10.1007/978-3-642-57615-7_3",
+        "doi": "https://doi.org/10.1007/978-3-642-57615-7_3",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/978-3-642-57615-7_3",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210176333",
+          "display_name": "ZEW economic studies",
+          "issn_l": "1615-6781",
+          "issn": [
+            "1615-6781",
+            "1867-2027"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "book series"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "ZEW Economic Studies",
+        "raw_type": "book-chapter"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3122290059",
+      "doi": "https://doi.org/10.2139/ssrn.177089",
+      "title": "Identification and Estimation of Causal Effects of Multiple Treatments Under the Conditional Independence Assumption",
+      "publication_year": 1999,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.177089",
+        "doi": "https://doi.org/10.2139/ssrn.177089",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.177089",
+        "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=177089",
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7165641419",
+      "doi": "https://doi.org/10.48550/arxiv.2606.22770",
+      "title": "Statistical Matching via Schr\u00f6dinger Bridge beyond Conditional Independence",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2606.22770",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2606.22770",
+        "pdf_url": "https://arxiv.org/pdf/2606.22770",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2018135501",
+      "doi": "https://doi.org/10.1111/1467-9574.00221",
+      "title": "A Non\u2010Iterative Bayesian Approach to Statistical Matching",
+      "publication_year": 2003,
+      "primary_location": {
+        "id": "doi:10.1111/1467-9574.00221",
+        "doi": "https://doi.org/10.1111/1467-9574.00221",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1111/1467-9574.00221",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S152229401",
+          "display_name": "Statistica Neerlandica",
+          "issn_l": "0039-0402",
+          "issn": [
+            "0039-0402",
+            "1467-9574"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistica Neerlandica",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4297950174",
+      "doi": null,
+      "title": "Identification and Estimation of Causal Effects of Multiple Treatments Under the Conditional Independence Assumption",
+      "publication_year": 1999,
+      "primary_location": {
+        "id": "pmh:oai:www.alexandria.unisg.ch:15408",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "http://www.alexandria.unisg.ch/15408/1/Identification_and_Estimation_of_Causal_Effects_of_Multiple_Treatments_Under_the_Conditional_Independence_Assumption.pdf",
+        "pdf_url": "http://www.alexandria.unisg.ch/15408/1/Identification_and_Estimation_of_Causal_Effects_of_Multiple_Treatments_Under_the_Conditional_Independence_Assumption.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400650",
+          "display_name": "Alexandria (UniSG) (University of St.Gallen)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210158813",
+          "host_organization_name": "St.Gallen University of Teacher Education",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210158813"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Book Section"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417036602",
+      "doi": "https://doi.org/10.20378/irbo-55154",
+      "title": "A Non-Iterative Bayesian Approach to Statistical Matching",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.20378/irbo-55154",
+        "doi": "https://doi.org/10.20378/irbo-55154",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.20378/irbo-55154",
+        "pdf_url": "http://fis.uni-bamberg.de/bitstreams/c6e62cc7-b4da-4e65-854a-fb89df74637f/download",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2616996754",
+      "doi": "https://doi.org/10.17713/ajs.v33i1&2.436",
+      "title": "Data Fusion: Identification Problems, Validity, and Multiple Imputation",
+      "publication_year": 2004,
+      "primary_location": {
+        "id": "pmh:oai:ajs.or.at:article/436",
+        "doi": "https://doi.org/10.17713/ajs.v33i1&2.436",
+        "is_oa": true,
+        "landing_page_url": "https://www.ajs.or.at/index.php/ajs/article/view/vol33%2C%20no1%262%20-%209",
+        "pdf_url": "https://www.ajs.or.at/index.php/ajs/article/download/vol33%2C%20no1%262%20-%209/380",
+        "source": {
+          "id": "https://openalex.org/S2764411241",
+          "display_name": "Austrian Journal of Statistics",
+          "issn_l": "1026-597X",
+          "issn": [
+            "1026-597X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "ddh",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310317894",
+          "host_organization_name": "Austrian Journal of Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310317894"
+          ],
+          "host_organization_lineage_names": [
+            "Austrian Journal of Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "1026-597X",
+        "raw_type": "info:eu-repo/semantics/article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2561476088",
+      "doi": "https://doi.org/10.1016/j.ijar.2016.12.015",
+      "title": "Partial identification in statistical matching with misclassification",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1016/j.ijar.2016.12.015",
+        "doi": "https://doi.org/10.1016/j.ijar.2016.12.015",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.ijar.2016.12.015",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0888613X16303462/pdf",
+        "source": {
+          "id": "https://openalex.org/S33368595",
+          "display_name": "International Journal of Approximate Reasoning",
+          "issn_l": "0888-613X",
+          "issn": [
+            "0888-613X",
+            "1873-4731"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Approximate Reasoning",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3121357611",
+      "doi": "https://doi.org/10.1017/s0266466615000286",
+      "title": "A FLEXIBLE NONPARAMETRIC TEST FOR CONDITIONAL INDEPENDENCE",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1017/s0266466615000286",
+        "doi": "https://doi.org/10.1017/s0266466615000286",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1017/s0266466615000286",
+        "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/99369924FEF3EC5D64C5AD4162E062CE/S0266466615000286a.pdf/div-class-title-a-flexible-nonparametric-test-for-conditional-independence-div.pdf",
+        "source": {
+          "id": "https://openalex.org/S49389958",
+          "display_name": "Econometric Theory",
+          "issn_l": "0266-4666",
+          "issn": [
+            "0266-4666",
+            "1469-4360"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "erih-plus",
+            "jufo-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311721",
+          "host_organization_name": "Cambridge University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311721",
+            "https://openalex.org/P4310311702"
+          ],
+          "host_organization_lineage_names": [
+            "Cambridge University Press",
+            "University of Cambridge"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Econometric Theory",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2949186958",
+      "doi": "https://doi.org/10.2139/ssrn.3010774",
+      "title": "Identification of Treatment Effects under Conditional Partial Independence",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.3010774",
+        "doi": "https://doi.org/10.2139/ssrn.3010774",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.3010774",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "SSRN Electronic Journal",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3015073649",
+      "doi": "https://doi.org/10.1080/07350015.2018.1497509",
+      "title": "Identification and Efficiency Bounds for the Average Match Function Under Conditionally Exogenous Matching",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1080/07350015.2018.1497509",
+        "doi": "https://doi.org/10.1080/07350015.2018.1497509",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1080/07350015.2018.1497509",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S18095783",
+          "display_name": "Journal of Business and Economic Statistics",
+          "issn_l": "0735-0015",
+          "issn": [
+            "0735-0015",
+            "1537-2707"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "fnege-1",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320547",
+          "host_organization_name": "Taylor & Francis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320547",
+            "https://openalex.org/P4310320449"
+          ],
+          "host_organization_lineage_names": [
+            "Taylor & Francis",
+            "Informa"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Business &amp; Economic Statistics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4299799834",
+      "doi": "https://doi.org/10.3386/w22098",
+      "title": "Identification and Efficiency Bounds for the Average Match Function under Conditionally Exogenous Matching",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.3386/w22098",
+        "doi": "https://doi.org/10.3386/w22098",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3386/w22098",
+        "pdf_url": "https://doi.org/10.3386/w22098",
+        "source": {
+          "id": "https://openalex.org/S2809516038",
+          "display_name": "National Bureau of Economic Research",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [
+            "https://openalex.org/P4322614461"
+          ],
+          "host_organization_lineage_names": [
+            "National Bureau of Economic Research"
+          ],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "National Bureau of Economic Research",
+        "raw_type": "report"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2889973950",
+      "doi": "https://doi.org/10.1145/1807406.1807503",
+      "title": "Identification in matching games",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1145/1807406.1807503",
+        "doi": "https://doi.org/10.1145/1807406.1807503",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/1807406.1807503",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306417825",
+          "display_name": "Behavioral and Quantitative Game Theory on Conference on Future Directions",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the Behavioral and Quantitative Game Theory: Conference on Future Directions",
+        "raw_type": "proceedings-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2557997740",
+      "doi": null,
+      "title": "Equation Section 1Identification and estimation of causal effects of multiple treatments under the conditional independence assumption",
+      "publication_year": 2001,
+      "primary_location": {
+        "id": "mag:2557997740",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "http://michael-lechner.eu/pdf/contributions/104_0D108E4FFA4840A0BED2D4B59B8D8178.pdf",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W4398191624",
+      "doi": "https://doi.org/10.1145/3661814.3662132",
+      "title": "Equivalence and Conditional Independence in Atomic Sheaf Logic",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1145/3661814.3662132",
+        "doi": "https://doi.org/10.1145/3661814.3662132",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/3661814.3662132",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210192682",
+          "display_name": "ACM/IEEE Symposium on Logic in Computer Science (LICS)",
+          "issn_l": "1043-6871",
+          "issn": [
+            "1043-6871",
+            "2575-5528"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 39th Annual ACM/IEEE Symposium on Logic in Computer Science",
+        "raw_type": "proceedings-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7222936847",
+      "doi": "https://doi.org/10.48550/arxiv.2610.23543",
+      "title": "Causal Discovery beyond Conditional Independence: Identifiability, Algorithms, and Statistical Inference for Directed Acyclic and Cyclic Graphs",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2610.23543",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2610.23543",
+        "pdf_url": "https://arxiv.org/pdf/2610.23543",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4409362848",
+      "doi": "https://doi.org/10.1609/aaai.v39i21.34354",
+      "title": "Conditional Diffusion Models Based Conditional Independence Testing",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1609/aaai.v39i21.34354",
+        "doi": "https://doi.org/10.1609/aaai.v39i21.34354",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1609/aaai.v39i21.34354",
+        "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/34354/36509",
+        "source": {
+          "id": "https://openalex.org/S4210191458",
+          "display_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "issn_l": "2159-5399",
+          "issn": [
+            "2159-5399",
+            "2374-3468"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "jufo-2",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320058",
+          "host_organization_name": "Association for the Advancement of Artificial Intelligence",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320058"
+          ],
+          "host_organization_lineage_names": [
+            "Association for the Advancement of Artificial Intelligence"
+          ],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1788747970",
+      "doi": "https://doi.org/10.3386/w15092",
+      "title": "Identification in Matching Games",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "doi:10.3386/w15092",
+        "doi": "https://doi.org/10.3386/w15092",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3386/w15092",
+        "pdf_url": "https://doi.org/10.3386/w15092",
+        "source": {
+          "id": "https://openalex.org/S2809516038",
+          "display_name": "National Bureau of Economic Research",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [
+            "https://openalex.org/P4322614461"
+          ],
+          "host_organization_lineage_names": [
+            "National Bureau of Economic Research"
+          ],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "National Bureau of Economic Research",
+        "raw_type": "report"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2012753472",
+      "doi": "https://doi.org/10.1016/j.tcs.2014.09.008",
+      "title": "On the conditional diagnosability of matching composition networks",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1016/j.tcs.2014.09.008",
+        "doi": "https://doi.org/10.1016/j.tcs.2014.09.008",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.tcs.2014.09.008",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0304397514006732/pdf",
+        "source": {
+          "id": "https://openalex.org/S90727058",
+          "display_name": "Theoretical Computer Science",
+          "issn_l": "0304-3975",
+          "issn": [
+            "0304-3975",
+            "1879-2294"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Theoretical Computer Science",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2281067520",
+      "doi": null,
+      "title": "An assessment of deviations from conditional independence in binary data fusion",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:wiredspace.wits.ac.za:10539/10279",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10539/10279",
+        "pdf_url": "http://wiredspace.wits.ac.za/bitstream/10539/10279/1/Research%20Report_MCRR_0718809A_2011.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400603",
+          "display_name": "University of the Witwatersrand, Johannesburg Institutional Repository on DSpace (University of the Witwatersrand, Johannesburg)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I192619145",
+          "host_organization_name": "University of the Witwatersrand",
+          "host_organization_lineage": [
+            "https://openalex.org/I192619145"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3212551895",
+      "doi": "https://doi.org/10.1016/j.csda.2021.107387",
+      "title": "Statistical file-matching of non-Gaussian data: A game theoretic approach",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1016/j.csda.2021.107387",
+        "doi": "https://doi.org/10.1016/j.csda.2021.107387",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.csda.2021.107387",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S132362803",
+          "display_name": "Computational Statistics & Data Analysis",
+          "issn_l": "0167-9473",
+          "issn": [
+            "0167-9473",
+            "1872-7352"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Computational Statistics &amp; Data Analysis",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2925865978",
+      "doi": "https://doi.org/10.48550/arxiv.1903.12342",
+      "title": "Statistical matching of non-Gaussian data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1903.12342",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1903.12342",
+        "pdf_url": "https://arxiv.org/pdf/1903.12342",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2150200001",
+      "doi": "https://doi.org/10.1016/j.ijar.2012.06.009",
+      "title": "Incoherence correction strategies in statistical matching",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1016/j.ijar.2012.06.009",
+        "doi": "https://doi.org/10.1016/j.ijar.2012.06.009",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.ijar.2012.06.009",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0888613X12000850/pdf",
+        "source": {
+          "id": "https://openalex.org/S33368595",
+          "display_name": "International Journal of Approximate Reasoning",
+          "issn_l": "0888-613X",
+          "issn": [
+            "0888-613X",
+            "1873-4731"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Approximate Reasoning",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4282942627",
+      "doi": "https://doi.org/10.48550/arxiv.2206.05829",
+      "title": "Learning general conditional independence structures via the neighbourhood lattice",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2206.05829",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2206.05829",
+        "pdf_url": "https://arxiv.org/pdf/2206.05829",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2007530825",
+      "doi": "https://doi.org/10.1162/rest_a_00109",
+      "title": "Causal Effects of Monetary Shocks: Semiparametric Conditional Independence Tests with a Multinomial Propensity Score",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1162/rest_a_00109",
+        "doi": "https://doi.org/10.1162/rest_a_00109",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1162/rest_a_00109",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S180061323",
+          "display_name": "The Review of Economics and Statistics",
+          "issn_l": "0034-6535",
+          "issn": [
+            "0034-6535",
+            "1530-9142"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315718",
+          "host_organization_name": "The MIT Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315718",
+            "https://openalex.org/P4310316440"
+          ],
+          "host_organization_lineage_names": [
+            "The MIT Press",
+            "Massachusetts Institute of Technology"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Review of Economics and Statistics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7214925364",
+      "doi": "https://doi.org/10.48550/arxiv.2609.36771",
+      "title": "Beyond Conditional Independence: Root Cause Analysis with Deep Causal Models",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2609.36771",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2609.36771",
+        "pdf_url": "https://arxiv.org/pdf/2609.36771",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416365902",
+      "doi": "https://doi.org/10.48550/arxiv.2507.05689",
+      "title": "Optimal structure learning and conditional independence testing",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2507.05689",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2507.05689",
+        "pdf_url": "https://arxiv.org/pdf/2507.05689",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1490895714",
+      "doi": "https://doi.org/10.1920/wp.cem.2004.0304",
+      "title": "Estimating average partial effects under conditional moment independence assumptions",
+      "publication_year": 2004,
+      "primary_location": {
+        "id": "doi:10.1920/wp.cem.2004.0304",
+        "doi": "https://doi.org/10.1920/wp.cem.2004.0304",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1920/wp.cem.2004.0304",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210169331",
+          "display_name": "Cemmap working papers",
+          "issn_l": "1753-9196",
+          "issn": [
+            "1753-9196"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Working Paper Series",
+        "raw_type": "report"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399729897",
+      "doi": "https://doi.org/10.31274/td-20240617-95",
+      "title": "Statistical matching rules and applications for common source identification",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.31274/td-20240617-95",
+        "doi": "https://doi.org/10.31274/td-20240617-95",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.31274/td-20240617-95",
+        "pdf_url": "https://dr.lib.iastate.edu/bitstreams/4f1a976f-e37b-4031-9161-93dace4c33c3/download",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Iowa State University",
+        "raw_type": "dissertation"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3122519602",
+      "doi": "https://doi.org/10.48550/arxiv.0911.3787",
+      "title": "Testing conditional independence via Rosenblatt transforms",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "pmh:oai:RePEc:pen:papers:07-026",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://economics.sas.upenn.edu/sites/default/files/filevault/working-papers/07-026.pdf",
+        "pdf_url": "https://economics.sas.upenn.edu/sites/default/files/filevault/working-papers/07-026.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401271",
+          "display_name": "RePEc: Research Papers in Economics",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I77793887",
+          "host_organization_name": "Federal Reserve Bank of St. Louis",
+          "host_organization_lineage": [
+            "https://openalex.org/I77793887"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "preprint"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1976430105",
+      "doi": "https://doi.org/10.1177/0049124113486622",
+      "title": "Statistical Matching of Administrative and Survey Data",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.1177/0049124113486622",
+        "doi": "https://doi.org/10.1177/0049124113486622",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1177/0049124113486622",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S9536269",
+          "display_name": "Sociological Methods & Research",
+          "issn_l": "0049-1241",
+          "issn": [
+            "0049-1241",
+            "1552-8294"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "fnege-4",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320017",
+          "host_organization_name": "SAGE Publishing",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320017"
+          ],
+          "host_organization_lineage_names": [
+            "SAGE Publishing"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Sociological Methods &amp; Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404401048",
+      "doi": "https://doi.org/10.48550/arxiv.2411.06140",
+      "title": "Deep Nonparametric Conditional Independence Tests for Images",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2411.06140",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2411.06140",
+        "pdf_url": "https://arxiv.org/pdf/2411.06140",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7128593529",
+      "doi": "https://doi.org/10.70593/978-93-7185-895-3_3",
+      "title": "Statistical and Econometric Foundations of Causal Economics",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.70593/978-93-7185-895-3_3",
+        "doi": "https://doi.org/10.70593/978-93-7185-895-3_3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.70593/978-93-7185-895-3_3",
+        "pdf_url": "https://deepscienceresearch.com/dsr/catalog/download/475/2046/3847",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics and the Science of Causal Economics: A New Paradigm for Data Science",
+        "raw_type": "book-chapter"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7165384416",
+      "doi": "https://doi.org/10.48550/arxiv.2606.20351",
+      "title": "A cubical formalisation of conditional independence, Bayesian conditioning, and Pearl's d-separation soundness",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2606.20351",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2606.20351",
+        "pdf_url": "https://arxiv.org/pdf/2606.20351",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2900772622",
+      "doi": "https://doi.org/10.3390/su10114320",
+      "title": "AES Impact Evaluation With Integrated Farm Data: Combining Statistical Matching and Propensity Score Matching",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.3390/su10114320",
+        "doi": "https://doi.org/10.3390/su10114320",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.3390/su10114320",
+        "pdf_url": "https://www.mdpi.com/2071-1050/10/11/4320/pdf?version=1542851093",
+        "source": {
+          "id": "https://openalex.org/S10134376",
+          "display_name": "Sustainability",
+          "issn_l": "2071-1050",
+          "issn": [
+            "2071-1050"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Sustainability",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W869397631",
+      "doi": null,
+      "title": "An Empirical Evaluation of Statistical Matching Methodologies",
+      "publication_year": 1982,
+      "primary_location": {
+        "id": "pmh:oai:scholar.smu.edu:business_workingpapers-1180",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://scholar.smu.edu/business_workingpapers/181",
+        "pdf_url": "https://scholar.smu.edu/cgi/viewcontent.cgi?article=1180&context=business_workingpapers",
+        "source": {
+          "id": "https://openalex.org/S4377196617",
+          "display_name": "SMU Scholar (Southern Methodist University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I178169726",
+          "host_organization_name": "Southern Methodist University",
+          "host_organization_lineage": [
+            "https://openalex.org/I178169726"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Historical Working Papers",
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2921168788",
+      "doi": "https://doi.org/10.1016/j.jspi.2019.03.001",
+      "title": "Matching information from two independent informative samples",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1016/j.jspi.2019.03.001",
+        "doi": "https://doi.org/10.1016/j.jspi.2019.03.001",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.jspi.2019.03.001",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S25707077",
+          "display_name": "Journal of Statistical Planning and Inference",
+          "issn_l": "0378-3758",
+          "issn": [
+            "0378-3758",
+            "1873-1171"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Statistical Planning and Inference",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7114773005",
+      "doi": "https://doi.org/10.1007/978-3-032-10004-7_11",
+      "title": "An Automated Machine Learning Pipeline for Statistical Matching",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1007/978-3-032-10004-7_11",
+        "doi": "https://doi.org/10.1007/978-3-032-10004-7_11",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/978-3-032-10004-7_11",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/978-3-032-10004-7_11.pdf",
+        "source": {
+          "id": "https://openalex.org/S4393920006",
+          "display_name": "Society, environment and statistics",
+          "issn_l": "2948-2763",
+          "issn": [
+            "2948-2763",
+            "2948-2771"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Society, Environment and Statistics",
+        "raw_type": "book-chapter"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4410106709",
+      "doi": "https://doi.org/10.1093/jssam/smaf004",
+      "title": "On the Use of Proxy Variables in Statistical Matching Under Complex Sampling Designs",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1093/jssam/smaf004",
+        "doi": "https://doi.org/10.1093/jssam/smaf004",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/jssam/smaf004",
+        "pdf_url": "https://academic.oup.com/jssam/advance-article-pdf/doi/10.1093/jssam/smaf004/63070380/smaf004.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210204360",
+          "display_name": "Journal of Survey Statistics and Methodology",
+          "issn_l": "2325-0984",
+          "issn": [
+            "2325-0984",
+            "2325-0992"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Survey Statistics and Methodology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2938196824",
+      "doi": "https://doi.org/10.5282/ubm/epub.61678",
+      "title": "Utilizing log-linear Markov networks to integrate categorical data files",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:epub.ub.uni-muenchen.de:61678",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://nbn-resolving.de/urn:nbn:de:bvb:19-epub-61678-9",
+        "pdf_url": "https://epub.ub.uni-muenchen.de/61678/1/Endres_Augustin_Utilizing_log-linear_Markov_networks.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401845",
+          "display_name": "Open access LMU (Ludwid Maxmilian's Universitat Munchen)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I8204097",
+          "host_organization_name": "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen",
+          "host_organization_lineage": [
+            "https://openalex.org/I8204097"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "doc-type:workingPaper"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387964054",
+      "doi": "https://doi.org/10.48550/arxiv.2310.16626",
+      "title": "Scalable Causal Structure Learning via Amortized Conditional Independence Testing",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2310.16626",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2310.16626",
+        "pdf_url": "https://arxiv.org/pdf/2310.16626",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3086480491",
+      "doi": "https://doi.org/10.1007/s00704-020-03372-4",
+      "title": "Identification of potential causal variables for statistical downscaling models: effectiveness of graphical modeling approach",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1007/s00704-020-03372-4",
+        "doi": "https://doi.org/10.1007/s00704-020-03372-4",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s00704-020-03372-4",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S202078656",
+          "display_name": "Theoretical and Applied Climatology",
+          "issn_l": "0066-6424",
+          "issn": [
+            "0066-6424",
+            "0177-798X",
+            "1434-4483"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Theoretical and Applied Climatology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385965611",
+      "doi": "https://doi.org/10.48550/arxiv.2308.08148",
+      "title": "Hierarchical Topological Ordering with Conditional Independence Test for Limited Time Series",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2308.08148",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2308.08148",
+        "pdf_url": "https://arxiv.org/pdf/2308.08148",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W207179610",
+      "doi": "https://doi.org/10.1007/978-1-4613-0053-3_6",
+      "title": "Synopsis and Outlook",
+      "publication_year": 2002,
+      "primary_location": {
+        "id": "doi:10.1007/978-1-4613-0053-3_6",
+        "doi": "https://doi.org/10.1007/978-1-4613-0053-3_6",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/978-1-4613-0053-3_6",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210230340",
+          "display_name": "Lecture notes in statistics",
+          "issn_l": "0930-0325",
+          "issn": [
+            "0930-0325",
+            "2197-7186"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "book series"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Lecture Notes in Statistics",
+        "raw_type": "book-chapter"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4401499977",
+      "doi": "https://doi.org/10.1214/24-aos2372",
+      "title": "Reconciling model-X and doubly robust approaches to conditional independence testing",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1214/24-aos2372",
+        "doi": "https://doi.org/10.1214/24-aos2372",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1214/24-aos2372",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S119757635",
+          "display_name": "The Annals of Statistics",
+          "issn_l": "0090-5364",
+          "issn": [
+            "0090-5364",
+            "2168-8966"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Statistics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7168407106",
+      "doi": "https://doi.org/10.48550/arxiv.2607.12830",
+      "title": "MixCIT: A Kernel Based Local-Polynomial Debiased Test for Conditional Independence on Mixed-Type Data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2607.12830",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2607.12830",
+        "pdf_url": "https://arxiv.org/pdf/2607.12830",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4392341630",
+      "doi": "https://doi.org/10.48550/arxiv.2402.18477",
+      "title": "Signature Kernel Conditional Independence Tests in Causal Discovery for Stochastic Processes",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2402.18477",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2402.18477",
+        "pdf_url": "https://arxiv.org/pdf/2402.18477",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7161737586",
+      "doi": "https://doi.org/10.48550/arxiv.2605.17827",
+      "title": "Content-Style Identification via Differential Independence",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2605.17827",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2605.17827",
+        "pdf_url": "https://arxiv.org/pdf/2605.17827",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1823171956",
+      "doi": "https://doi.org/10.18235/0008567",
+      "title": "A Primer for Applying Propensity-Score Matching",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.18235/0008567",
+        "doi": "https://doi.org/10.18235/0008567",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.18235/0008567",
+        "pdf_url": "https://publications.iadb.org/publications/english/document/A-Primer-for-Applying-Propensity-Score-Matching.pdf",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": null,
+        "raw_type": "report"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3115320590",
+      "doi": "https://doi.org/10.1086/722415",
+      "title": "Partial Identification in Matching Models for the Marriage Market",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1086/722415",
+        "doi": "https://doi.org/10.1086/722415",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1086/722415",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S95323914",
+          "display_name": "Journal of Political Economy",
+          "issn_l": "0022-3808",
+          "issn": [
+            "0022-3808",
+            "1537-534X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "fnege-1-star",
+            "ft50",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315672",
+          "host_organization_name": "University of Chicago Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315672",
+            "https://openalex.org/P4310315690"
+          ],
+          "host_organization_lineage_names": [
+            "University of Chicago Press",
+            "University of Chicago"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Political Economy",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4407273313",
+      "doi": "https://doi.org/10.1101/2025.02.05.636660",
+      "title": "Knockoff procedure improves causal gene identifications in conditional transcriptome-wide association studies",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.02.05.636660",
+        "doi": "https://doi.org/10.1101/2025.02.05.636660",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.02.05.636660",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4413947467",
+      "doi": "https://doi.org/10.1016/j.ajhg.2025.08.007",
+      "title": "Knockoff procedure improves susceptibility gene identifications in conditional transcriptome-wide association studies",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1016/j.ajhg.2025.08.007",
+        "doi": "https://doi.org/10.1016/j.ajhg.2025.08.007",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.ajhg.2025.08.007",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S134425043",
+          "display_name": "The American Journal of Human Genetics",
+          "issn_l": "0002-9297",
+          "issn": [
+            "0002-9297",
+            "1537-6605"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The American Journal of Human Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3043702167",
+      "doi": "https://doi.org/10.7275/16097059",
+      "title": "INFORMATION-THEORETIC LIMITS ON STATISTICAL MATCHING WITH APPLICATIONS TO PRIVACY",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "pmh:oai:scholarworks.umass.edu:dissertations_2-2931",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://scholarworks.umass.edu/dissertations_2/1877",
+        "pdf_url": "https://scholarworks.umass.edu/dissertations_2/1877",
+        "source": {
+          "id": "https://openalex.org/S4306402240",
+          "display_name": "ScholarWorks@UMassAmherst (University of Massachusetts Amherst)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I24603500",
+          "host_organization_name": "University of Massachusetts Amherst",
+          "host_organization_lineage": [
+            "https://openalex.org/I24603500"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Doctoral Dissertations",
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4306849141",
+      "doi": "https://doi.org/10.1111/insr.12524",
+      "title": "Accounting for Non\u2010ignorable Sampling and Non\u2010response in Statistical Matching",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1111/insr.12524",
+        "doi": "https://doi.org/10.1111/insr.12524",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1111/insr.12524",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/insr.12524",
+        "source": {
+          "id": "https://openalex.org/S17395904",
+          "display_name": "International Statistical Review",
+          "issn_l": "0306-7734",
+          "issn": [
+            "0306-7734",
+            "1751-5823"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Statistical Review",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4388259985",
+      "doi": "https://doi.org/10.1920/wp.cem.2016.1003",
+      "title": "Partial independence in nonseparable models",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1920/wp.cem.2016.1003",
+        "doi": "https://doi.org/10.1920/wp.cem.2016.1003",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.1920/wp.cem.2016.1003",
+        "pdf_url": "https://ifs.org.uk/sites/default/files/output_url_files/cwp261616.pdf",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The IFS",
+        "raw_type": "report"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4386847904",
+      "doi": "https://doi.org/10.1007/s00362-023-01468-3",
+      "title": "Integrating rather than collecting: statistical matching in the data flood era",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1007/s00362-023-01468-3",
+        "doi": "https://doi.org/10.1007/s00362-023-01468-3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s00362-023-01468-3",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210184815",
+          "display_name": "Statistical Papers",
+          "issn_l": "0932-5026",
+          "issn": [
+            "0932-5026",
+            "1613-9798"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistical Papers",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3124592425",
+      "doi": null,
+      "title": "The finite sample performance of estimators for mediation analysis under sequential conditional independence",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "pmh:oai:www.alexandria.unisg.ch:232019",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "http://www.alexandria.unisg.ch/232019/1/causalmechsim.6.pdf",
+        "pdf_url": "http://www.alexandria.unisg.ch/232019/1/causalmechsim.6.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400650",
+          "display_name": "Alexandria (UniSG) (University of St.Gallen)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210158813",
+          "host_organization_name": "St.Gallen University of Teacher Education",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210158813"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Journal paper"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7203676772",
+      "doi": "https://doi.org/10.48550/arxiv.2608.15332",
+      "title": "GFCM: A Tail-Sensitive Mixed-Type Conditional Independence Test for Causal Discovery",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2608.15332",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2608.15332",
+        "pdf_url": "https://arxiv.org/pdf/2608.15332",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2055649245",
+      "doi": "https://doi.org/10.1137/1115049",
+      "title": "Prescribing a System of Random Variables by Conditional Distributions",
+      "publication_year": 1970,
+      "primary_location": {
+        "id": "doi:10.1137/1115049",
+        "doi": "https://doi.org/10.1137/1115049",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1137/1115049",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S177771411",
+          "display_name": "Theory of Probability and Its Applications",
+          "issn_l": "0040-585X",
+          "issn": [
+            "0040-585X",
+            "1095-7219"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-2"
+          ],
+          "host_organization": "https://openalex.org/P4310320508",
+          "host_organization_name": "Society for Industrial and Applied Mathematics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320508"
+          ],
+          "host_organization_lineage_names": [
+            "Society for Industrial and Applied Mathematics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Theory of Probability &amp; Its Applications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2803792991",
+      "doi": "https://doi.org/10.6092/unibo/amsdottorato/7788",
+      "title": "Statistical Matching Imputation among Different Farm Data Sources",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:amsdottorato.cib.unibo.it:7788",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://amsdottorato.unibo.it/7788/1/R_DAlberto_PhD.pdf",
+        "pdf_url": "http://amsdottorato.unibo.it/7788/1/R_DAlberto_PhD.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400630",
+          "display_name": "AMS Dottorato Institutional Doctoral Theses Repository (University of Bologna)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I9360294",
+          "host_organization_name": "University of Bologna",
+          "host_organization_lineage": [
+            "https://openalex.org/I9360294"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Tesi di dottorato"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2794094647",
+      "doi": "https://doi.org/10.2478/jos-2019-0025",
+      "title": "Imprecise Imputation: A Nonparametric Micro Approach Reflecting the Natural Uncertainty of Statistical Matching with Categorical Data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.2478/jos-2019-0025",
+        "doi": "https://doi.org/10.2478/jos-2019-0025",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2478/jos-2019-0025",
+        "pdf_url": "https://content.sciendo.com/downloadpdf/journals/jos/35/3/article-p599.pdf",
+        "source": {
+          "id": "https://openalex.org/S79505318",
+          "display_name": "Journal of Official Statistics",
+          "issn_l": "0282-423X",
+          "issn": [
+            "0282-423X",
+            "2001-7367"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "erih-plus",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320322",
+          "host_organization_name": "De Gruyter Open",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320322",
+            "https://openalex.org/P4310313990"
+          ],
+          "host_organization_lineage_names": [
+            "De Gruyter Open",
+            "De Gruyter"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Official Statistics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4285810016",
+      "doi": "https://doi.org/10.1016/j.csda.2022.107569",
+      "title": "Assessment of the effect of constraints in a new multivariate mixed method for statistical matching",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1016/j.csda.2022.107569",
+        "doi": "https://doi.org/10.1016/j.csda.2022.107569",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.csda.2022.107569",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0167947322001499",
+        "source": {
+          "id": "https://openalex.org/S132362803",
+          "display_name": "Computational Statistics & Data Analysis",
+          "issn_l": "0167-9473",
+          "issn": [
+            "0167-9473",
+            "1872-7352"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Computational Statistics &amp; Data Analysis",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7127089587",
+      "doi": "https://doi.org/10.48550/arxiv.2601.23124",
+      "title": "Semi-knockoffs: a model-agnostic conditional independence testing method with finite-sample guarantees",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2601.23124",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2601.23124",
+        "pdf_url": "https://arxiv.org/pdf/2601.23124",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7221552823",
+      "doi": "https://doi.org/10.48550/arxiv.2610.12938",
+      "title": "Conditional Indexing Lower Bounds and Normalization Boundaries for Elastic Subsequence Matching",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2610.12938",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2610.12938",
+        "pdf_url": "https://arxiv.org/pdf/2610.12938",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2133259950",
+      "doi": "https://doi.org/10.1177/1536867x0700700303",
+      "title": "Simulation-Based Sensitivity Analysis for Matching Estimators",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.1177/1536867x0700700303",
+        "doi": "https://doi.org/10.1177/1536867x0700700303",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1177/1536867x0700700303",
+        "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/1536867X0700700303",
+        "source": {
+          "id": "https://openalex.org/S88220793",
+          "display_name": "The Stata Journal Promoting communications on statistics and Stata",
+          "issn_l": "1536-867X",
+          "issn": [
+            "1536-867X",
+            "1536-8734"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320017",
+          "host_organization_name": "SAGE Publishing",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320017"
+          ],
+          "host_organization_lineage_names": [
+            "SAGE Publishing"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Stata Journal: Promoting communications on statistics and Stata",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3084390859",
+      "doi": "https://doi.org/10.1016/j.seps.2020.100935",
+      "title": "A Statistical Matching approach to reproduce the heterogeneity of willingness to pay in benefit transfer",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1016/j.seps.2020.100935",
+        "doi": "https://doi.org/10.1016/j.seps.2020.100935",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.seps.2020.100935",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S003801211930641X/pdf",
+        "source": {
+          "id": "https://openalex.org/S153485742",
+          "display_name": "Socio-Economic Planning Sciences",
+          "issn_l": "0038-0121",
+          "issn": [
+            "0038-0121",
+            "1873-6041"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-c",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "fnege-4",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Socio-Economic Planning Sciences",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3003197721",
+      "doi": null,
+      "title": "Conditional random field-based offline map matching for indoor positioning",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:deustoteka.deusto.es:20.500.14454/823",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://hdl.handle.net/20.500.14454/823",
+        "pdf_url": "https://deustoteka.deusto.es/bitstreams/50ffd949-f7b4-4d12-b3bd-88cb9deb5412/download",
+        "source": {
+          "id": "https://openalex.org/S7407055256",
+          "display_name": "DeustoTeka",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "info:eu-repo/semantics/doctoralThesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3121564675",
+      "doi": "https://doi.org/10.48550/arxiv.1902.05610",
+      "title": "Partial Identification in Matching Models for the Marriage Market",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:publications.ut-capitole.fr:31540",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://www.idref.fr/241586755>",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306401335",
+          "display_name": "Toulouse 1 Capitole Publications (Universit\u00e9 Toulouse I Capitole)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I3131550300",
+          "host_organization_name": "Universit\u00e9 Toulouse-I-Capitole",
+          "host_organization_lineage": [
+            "https://openalex.org/I3131550300"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Monograph"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2168415909",
+      "doi": null,
+      "title": "The use of propensity score matching in the evaluation of active labour market policies",
+      "publication_year": 2002,
+      "primary_location": {
+        "id": "pmh:oai:eprints.lse.ac.uk:4993",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://eprints.lse.ac.uk/4993/1/The_use_of_propensity_score_matching_in_the_evaluation_of_active_labour_market_policies.pdf",
+        "pdf_url": "http://eprints.lse.ac.uk/4993/1/The_use_of_propensity_score_matching_in_the_evaluation_of_active_labour_market_policies.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401593",
+          "display_name": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I909854389",
+          "host_organization_name": "London School of Economics and Political Science",
+          "host_organization_lineage": [
+            "https://openalex.org/I909854389"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Monograph"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2007042460",
+      "doi": "https://doi.org/10.1145/1816123.1816168",
+      "title": "Context identification of sentences in related work sections using a conditional random field",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1145/1816123.1816168",
+        "doi": "https://doi.org/10.1145/1816123.1816168",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/1816123.1816168",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306417562",
+          "display_name": "ACM/IEEE Joint Conference on Digital Libraries",
+          "issn_l": "1552-5996",
+          "issn": [
+            "1552-5996"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 10th annual joint conference on Digital libraries",
+        "raw_type": "proceedings-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2136140395",
+      "doi": "https://doi.org/10.3115/1220575.1220620",
+      "title": "Identifying sources of opinions with conditional random fields and extraction patterns",
+      "publication_year": 2005,
+      "primary_location": {
+        "id": "doi:10.3115/1220575.1220620",
+        "doi": "https://doi.org/10.3115/1220575.1220620",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3115/1220575.1220620",
+        "pdf_url": "https://dl.acm.org/doi/pdf/10.3115/1220575.1220620",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the conference on Human Language Technology and Empirical Methods in Natural Language Processing - HLT '05",
+        "raw_type": "proceedings-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7155898967",
+      "doi": "https://doi.org/10.48550/arxiv.2604.22532",
+      "title": "Causal Identification under Interference: The Role of Treatment Assignment Independence",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2604.22532",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2604.22532",
+        "pdf_url": "https://arxiv.org/pdf/2604.22532",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4311997037",
+      "doi": "https://doi.org/10.48550/arxiv.2212.08645",
+      "title": "Efficient Conditionally Invariant Representation Learning",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2212.08645",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2212.08645",
+        "pdf_url": "https://arxiv.org/pdf/2212.08645",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2904919240",
+      "doi": "https://doi.org/10.1007/s11558-018-9332-5",
+      "title": "How to evaluate the effects of IMF conditionality",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1007/s11558-018-9332-5",
+        "doi": "https://doi.org/10.1007/s11558-018-9332-5",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s11558-018-9332-5",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11558-018-9332-5.pdf",
+        "source": {
+          "id": "https://openalex.org/S71858213",
+          "display_name": "The Review of International Organizations",
+          "issn_l": "1559-7431",
+          "issn": [
+            "1559-7431",
+            "1559-744X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-c",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Review of International Organizations",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7212221966",
+      "doi": "https://doi.org/10.2139/ssrn.7445835",
+      "title": "Integrating Household Expenditure and Residential Energy Surveys: A Statistical-Matching Workflow",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.7445835",
+        "doi": "https://doi.org/10.2139/ssrn.7445835",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.7445835",
+        "pdf_url": "https://doi.org/10.2139/ssrn.7445835",
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2769800825",
+      "doi": "https://doi.org/10.3982/qe736",
+      "title": "Latent indices in assortative matching models",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.3982/qe736",
+        "doi": "https://doi.org/10.3982/qe736",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3982/qe736",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.3982/QE736",
+        "source": {
+          "id": "https://openalex.org/S156003414",
+          "display_name": "Quantitative Economics",
+          "issn_l": "1759-7323",
+          "issn": [
+            "1759-7323",
+            "1759-7331"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "erih-plus",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Quantitative Economics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3121555544",
+      "doi": "https://doi.org/10.1515/jci-2021-0005",
+      "title": "Causality and independence in perfectly adapted dynamical systems",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1515/jci-2021-0005",
+        "doi": "https://doi.org/10.1515/jci-2021-0005",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1515/jci-2021-0005",
+        "pdf_url": "https://www.degruyter.com/document/doi/10.1515/jci-2021-0005/pdf",
+        "source": {
+          "id": "https://openalex.org/S4210169353",
+          "display_name": "Journal of Causal Inference",
+          "issn_l": "2193-3677",
+          "issn": [
+            "2193-3677",
+            "2193-3685"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310313990",
+          "host_organization_name": "De Gruyter",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310313990"
+          ],
+          "host_organization_lineage_names": [
+            "De Gruyter"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Causal Inference",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3124521426",
+      "doi": "https://doi.org/10.2139/ssrn.1660002",
+      "title": "Identification of Social Interactions",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.1660002",
+        "doi": "https://doi.org/10.2139/ssrn.1660002",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.1660002",
+        "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=1660002",
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2136484149",
+      "doi": "https://doi.org/10.1162/rest_a_00318",
+      "title": "Genetic Matching for Estimating Causal Effects: A General Multivariate Matching Method for Achieving Balance in Observational Studies",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1162/rest_a_00318",
+        "doi": "https://doi.org/10.1162/rest_a_00318",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1162/rest_a_00318",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S180061323",
+          "display_name": "The Review of Economics and Statistics",
+          "issn_l": "0034-6535",
+          "issn": [
+            "0034-6535",
+            "1530-9142"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315718",
+          "host_organization_name": "The MIT Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315718",
+            "https://openalex.org/P4310316440"
+          ],
+          "host_organization_lineage_names": [
+            "The MIT Press",
+            "Massachusetts Institute of Technology"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Review of Economics and Statistics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2118944179",
+      "doi": "https://doi.org/10.3982/ecta5434",
+      "title": "Identification and Estimation of a Discrete Game of Complete Information",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.3982/ecta5434",
+        "doi": "https://doi.org/10.3982/ecta5434",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3982/ecta5434",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.3982/ECTA5434",
+        "source": {
+          "id": "https://openalex.org/S95464858",
+          "display_name": "Econometrica",
+          "issn_l": "0012-9682",
+          "issn": [
+            "0012-9682",
+            "1468-0262"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "fnege-1-star",
+            "ft50",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Econometrica",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2498304849",
+      "doi": "https://doi.org/10.14279/depositonce-3101",
+      "title": "The Distribution of Pension Wealth and the Process of Pension Building: Augmenting Survey Data with Administrative Pension Records by Statistical Matching",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "pmh:oai:depositonce.tu-berlin.de:11303/3398",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://depositonce.tu-berlin.de/handle/11303/3398",
+        "pdf_url": "http://depositonce.tu-berlin.de/handle/11303/3398",
+        "source": {
+          "id": "https://openalex.org/S4406922277",
+          "display_name": "DepositOnce",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "public-domain",
+        "license_id": "https://openalex.org/licenses/public-domain",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Doctoral Thesis"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7140317962",
+      "doi": "https://doi.org/10.48550/arxiv.2603.23305",
+      "title": "Sharp Statistical Thresholds for Attributed Gaussian Graph Matching",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2603.23305",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2603.23305",
+        "pdf_url": "https://arxiv.org/pdf/2603.23305",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2100768052",
+      "doi": "https://doi.org/10.4310/sii.2012.v5.n1.a2",
+      "title": "A review of statistical methods for protein identification using tandem mass spectrometry",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.4310/sii.2012.v5.n1.a2",
+        "doi": "https://doi.org/10.4310/sii.2012.v5.n1.a2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.4310/sii.2012.v5.n1.a2",
+        "pdf_url": "http://www.intlpress.com/site/pub/files/_fulltext/journals/sii/2012/0005/0001/SII-2012-0005-0001-a002.pdf",
+        "source": {
+          "id": "https://openalex.org/S2502110258",
+          "display_name": "Statistics and Its Interface",
+          "issn_l": "1938-7989",
+          "issn": [
+            "1938-7989",
+            "1938-7997"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-4",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310316281",
+          "host_organization_name": "Lehigh University",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310316281"
+          ],
+          "host_organization_lineage_names": [
+            "Lehigh University"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics and Its Interface",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2162551798",
+      "doi": "https://doi.org/10.1093/genetics/130.4.873",
+      "title": "Independence of VNTR alleles defined as fixed bins.",
+      "publication_year": 1992,
+      "primary_location": {
+        "id": "doi:10.1093/genetics/130.4.873",
+        "doi": "https://doi.org/10.1093/genetics/130.4.873",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1093/genetics/130.4.873",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S65932378",
+          "display_name": "Genetics",
+          "issn_l": "0016-6731",
+          "issn": [
+            "0016-6731",
+            "1943-2631"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3123059484",
+      "doi": "https://doi.org/10.1257/jep.15.4.69",
+      "title": "Instrumental Variables and the Search for Identification: From Supply and Demand to Natural Experiments",
+      "publication_year": 2001,
+      "primary_location": {
+        "id": "doi:10.1257/jep.15.4.69",
+        "doi": "https://doi.org/10.1257/jep.15.4.69",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1257/jep.15.4.69",
+        "pdf_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.15.4.69",
+        "source": {
+          "id": "https://openalex.org/S72880728",
+          "display_name": "The Journal of Economic Perspectives",
+          "issn_l": "0895-3309",
+          "issn": [
+            "0895-3309",
+            "1944-7965"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-2",
+            "norway-1",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315912",
+          "host_organization_name": "American Economic Association",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315912"
+          ],
+          "host_organization_lineage_names": [
+            "American Economic Association"
+          ],
+          "type": "journal"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Economic Perspectives",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7134911821",
+      "doi": "https://doi.org/10.48550/arxiv.2603.09009",
+      "title": "Statistical Inference via Generative Models: Flow Matching and Causal Inference",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2603.09009",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2603.09009",
+        "pdf_url": "https://arxiv.org/pdf/2603.09009",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1719651905",
+      "doi": null,
+      "title": "Gene Prediction with Conditional Random Fields",
+      "publication_year": 2005,
+      "primary_location": {
+        "id": "pmh:oai:works.bepress.com:andrew_mccallum-1261",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://works.bepress.com/andrew_mccallum/143",
+        "pdf_url": "https://works.bepress.com/andrew_mccallum/143",
+        "source": {
+          "id": "https://openalex.org/S4306402240",
+          "display_name": "ScholarWorks@UMassAmherst (University of Massachusetts Amherst)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I24603500",
+          "host_organization_name": "University of Massachusetts Amherst",
+          "host_organization_lineage": [
+            "https://openalex.org/I24603500"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Andrew McCallum",
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4415069131",
+      "doi": "https://doi.org/10.48550/arxiv.2506.11653",
+      "title": "DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2506.11653",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2506.11653",
+        "pdf_url": "https://arxiv.org/pdf/2506.11653",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2119295783",
+      "doi": "https://doi.org/10.1007/s10994-012-5296-5",
+      "title": "Structured learning with constrained conditional models",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1007/s10994-012-5296-5",
+        "doi": "https://doi.org/10.1007/s10994-012-5296-5",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s10994-012-5296-5",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007%2Fs10994-012-5296-5.pdf",
+        "source": {
+          "id": "https://openalex.org/S62148650",
+          "display_name": "Machine Learning",
+          "issn_l": "0885-6125",
+          "issn": [
+            "0885-6125",
+            "1573-0565"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Machine Learning",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W1578269006",
+      "doi": "https://doi.org/10.18174/210483",
+      "title": "Statistical identification of major genes in pigs",
+      "publication_year": 1997,
+      "primary_location": {
+        "id": "doi:10.18174/210483",
+        "doi": "https://doi.org/10.18174/210483",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.18174/210483",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Agricultural University",
+        "raw_type": "dissertation"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3037205366",
+      "doi": "https://doi.org/10.2139/ssrn.3619503",
+      "title": "Identification of School Admission Effects Using Propensity Scores Based on a Matching Market Structure",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.3619503",
+        "doi": "https://doi.org/10.2139/ssrn.3619503",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.3619503",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "SSRN Electronic Journal",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3169274804",
+      "doi": "https://doi.org/10.1007/s11558-021-09427-z",
+      "title": "Power, ideas, and World Bank conditionality",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1007/s11558-021-09427-z",
+        "doi": "https://doi.org/10.1007/s11558-021-09427-z",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s11558-021-09427-z",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S71858213",
+          "display_name": "The Review of International Organizations",
+          "issn_l": "1559-7431",
+          "issn": [
+            "1559-7431",
+            "1559-744X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-c",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Review of International Organizations",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W224465207",
+      "doi": null,
+      "title": "Essays on the definition, identification, and estimation of causal effects",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "pmh:oai:escholarship.org/ark:/13030/qt66t7m0cd",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://escholarship.org/uc/item/66t7m0cd",
+        "pdf_url": "https://escholarship.org/uc/item/66t7m0cd",
+        "source": {
+          "id": "https://openalex.org/S4306400115",
+          "display_name": "eScholarship (California Digital Library)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801248553",
+          "host_organization_name": "California Digital Library",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801248553"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "etd"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2210376527",
+      "doi": "https://doi.org/10.1111/jofi.12692",
+      "title": "Creditor Control Rights and Board Independence",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1111/jofi.12692",
+        "doi": "https://doi.org/10.1111/jofi.12692",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1111/jofi.12692",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jofi.12692",
+        "source": {
+          "id": "https://openalex.org/S5353659",
+          "display_name": "The Journal of Finance",
+          "issn_l": "0022-1082",
+          "issn": [
+            "0022-1082",
+            "1540-6261"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "fnege-1-star",
+            "ft50",
+            "jufo-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "utd24",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Journal of Finance",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3123949305",
+      "doi": "https://doi.org/10.1002/jae.998",
+      "title": "From temporary help jobs to permanent employment: what can we learn from matching estimators and their sensitivity?",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "doi:10.1002/jae.998",
+        "doi": "https://doi.org/10.1002/jae.998",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1002/jae.998",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S85739584",
+          "display_name": "Journal of Applied Econometrics",
+          "issn_l": "0883-7252",
+          "issn": [
+            "0883-7252",
+            "1099-1255"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Applied Econometrics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7162404904",
+      "doi": "https://doi.org/10.48550/arxiv.2605.25483",
+      "title": "Partial Identification of Causal Effects that Vary by Setting",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2605.25483",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2605.25483",
+        "pdf_url": "https://arxiv.org/pdf/2605.25483",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2098866485",
+      "doi": "https://doi.org/10.1007/s11187-011-9413-9",
+      "title": "Life satisfaction and self-employment: a matching approach",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1007/s11187-011-9413-9",
+        "doi": "https://doi.org/10.1007/s11187-011-9413-9",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s11187-011-9413-9",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S41869786",
+          "display_name": "Small Business Economics",
+          "issn_l": "0921-898X",
+          "issn": [
+            "0921-898X",
+            "1573-0913"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "erih-plus",
+            "fnege-2",
+            "jufo-2",
+            "ki-jl-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Small Business Economics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2076544181",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1003765",
+      "title": "Identification of Allelic Imbalance with a Statistical Model for Subtle Genomic Mosaicism",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pcbi.1003765",
+        "doi": "https://doi.org/10.1371/journal.pcbi.1003765",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pcbi.1003765",
+        "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003765&type=printable",
+        "source": {
+          "id": "https://openalex.org/S86033158",
+          "display_name": "PLoS Computational Biology",
+          "issn_l": "1553-734X",
+          "issn": [
+            "1553-734X",
+            "1553-7358"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLoS Computational Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W2738398112",
+      "doi": null,
+      "title": "Essays on Identification",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:escholarship.org/ark:/13030/qt8xk4w1zm",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://escholarship.org/uc/item/8xk4w1zm",
+        "pdf_url": "https://escholarship.org/uc/item/8xk4w1zm",
+        "source": {
+          "id": "https://openalex.org/S4306400115",
+          "display_name": "eScholarship (California Digital Library)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801248553",
+          "host_organization_name": "California Digital Library",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801248553"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "etd"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7223998532",
+      "doi": "https://doi.org/10.48550/arxiv.2610.35028",
+      "title": "Testing independence in contamination models",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2610.35028",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2610.35028",
+        "pdf_url": "https://arxiv.org/pdf/2610.35028",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    }
+  ],
+  "group_by": []
+}

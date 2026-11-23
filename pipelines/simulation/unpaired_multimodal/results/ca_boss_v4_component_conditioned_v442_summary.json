@@ -1,0 +1,105 @@
+{
+  "schema_version": "ca_boss_v4.component_conditioned_v442_record.v1",
+  "algorithm": "CA-BOSS v4.42 cross-context alternative-set component ambiguity graph equivalence",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 135,
+      "true_positive_hyperedges": 135,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 174,
+      "precision": 1.0,
+      "recall": 0.4368932038834951
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 208,
+      "correctly_recovered_assay_participations": 208,
+      "precision": 1.0,
+      "recall": 0.3365695792880259,
+      "ambiguous_assay_participation_hypotheses": 31,
+      "assay_participation_point_abstentions": 31,
+      "candidate_assay_pair_alternatives": 91,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 135,
+      "coverage": 0.4368932038834951,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 195,
+      "average_ambiguity_set_size": 1.4444444444444444,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 104,
+      "exact_cross_assay_pair_true_positives": 104,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.3365695792880259,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v440_clean_panel12": {
+      "shared_state_hyperedge_true_positives": 11,
+      "shared_state_hyperedge_false_positives": 1,
+      "truth_hyperedges": 30
+    },
+    "v441_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 112,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.36245954692556637
+    },
+    "v442_all_103_cached_worlds_retrospective": {
+      "shared_state_hyperedge_true_positives": 135,
+      "shared_state_hyperedge_false_positives": 0,
+      "truth_hyperedges": 309,
+      "recall": 0.4368932038834951
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "contexts": "full fit plus two disjoint background-feature folds",
+    "reporter_stability": "128 within-assay cell bootstraps in every context with Bonferroni runner-up tests",
+    "exact_two_assay_participation": "requires statistical and reporter-bootstrap support in all three contexts",
+    "alternative_set_rescue": "when exactly one statistical context disagrees but all reporter bootstraps pass, retain the focal pair plus non-core directly matched partners from the disagreeing context only if at least two alternatives exist",
+    "alternative_set_semantics": "one set-valued shared-state hyperedge; never expand alternatives into edges, exact participation, or direction"
+  },
+  "published_method_inspiration": {
+    "primary": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "relationship": "The rank-three ICA/KS implementation is a diagnostic adaptation, not a direct theorem application; the cached Poisson count simulation violates the paper's noiseless injective linear-ICA assumptions.",
+    "additional": [
+      "Silva et al. (JMLR 2006), Learning the Structure of Linear Latent Variable Models",
+      "Triantafillou and Tsamardinos (JMLR 2015), Constraint-based Causal Discovery from Multiple Interventions over Overlapping Variable Sets",
+      "Tillman and Spirtes (AAAI 2011), Learning Equivalence Classes of Acyclic Models with Latent and Selection Variables from Multiple Datasets with Overlapping Variables"
+    ]
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/component_conditioned_bridge_v442_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "0cec843986bf95790950f72983ae6152436f16b138bf29c1f8e225d1a9d6776d",
+    "campaign_summary_file_sha256": "c8995a33dc05abf322d0dd1f5391aa69da96f58b12cf23245c795068821173dd",
+    "campaign_world_metrics_sha256": "4a78db16bbbdf79b6a401d17e3b4aa946f61dea90e9362c916d326c937d4b07e",
+    "campaign_panels_sha256": "e296ce2b0bee8953a98ce3b9a1525d0dce29bbf94ecb210610df66dca38989af"
+  }
+}

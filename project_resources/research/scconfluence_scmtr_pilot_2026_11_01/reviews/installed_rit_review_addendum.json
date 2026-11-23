@@ -1,0 +1,66 @@
+{
+  "scope": "Separate descriptive/source-inspection addendum; no frozen code, CI settings, primary outputs or prior reviews changed",
+  "confirmed_from_original_counts_and_sealed_query_logs": {
+    "pair": [
+      "H3K27ac|ENSG00000178567",
+      "H3K4me3|ENSG00000219481"
+    ],
+    "n": 595,
+    "detection_margins": [
+      23,
+      25
+    ],
+    "independent_joint_detection_histogram": {
+      "0": 23,
+      "1": 18,
+      "2": 5,
+      "3": 4
+    },
+    "edge_present_iff_no_joint_detection_across_all_50_seeds": true,
+    "logged_marginal_p_when_no_joint_detection": 0.00044150102894546794,
+    "fixed_margin_probability_of_no_joint_detection": 0.36552506440303295,
+    "probability_formula": "comb(595-23,25)/comb(595,25)",
+    "expected_joint_detection": 0.9663865546218487
+  },
+  "all_50_marginal_query_logs_match_descriptive_diagnostic": true,
+  "installed_source": {
+    "path": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/RCIT/RCIT.py",
+    "sha256": "6dd2e8f0275efbc2fa5f6253a9ca71c7329d84788d68eeae7b4607ffc5b75e06",
+    "line_references": {
+      "statistic": [
+        287,
+        288
+      ],
+      "permutation_branch": [
+        290,
+        300
+      ],
+      "same_row_centered_feature_products": [
+        303,
+        308
+      ],
+      "covariance_eigenvalues_and_HBE_tail": [
+        317,
+        324
+      ]
+    }
+  },
+  "confirmed_code_behavior": {
+    "HBE_null_covariance": "Cov = res.T @ res / n, with res formed from same-row products of centered Fourier features; HBE uses its positive eigenvalues.",
+    "native_permutation_tail": "Line300 computes p = proportion(permuted_stat > observed_stat), excluding tied statistics and without a Monte Carlo plus-one correction. This branch was not run or substituted into the pilot."
+  },
+  "mechanistic_inference_not_established": "With very sparse counts, absence of rare joint detections may distort the plug-in covariance estimate and the asymptotic HBE tail. This source inspection motivates that mechanism; it does not isolate or prove it experimentally.",
+  "future_design_constraint": "A future discrete-count permutation procedure must address tied statistics and finite-Monte-Carlo correction explicitly. Changing approx to the installed perm branch alone is not a verified calibration remedy. No CI code was changed.",
+  "prior_review": {
+    "path": "project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/recurrent_edge_diagnostic_review.json",
+    "sha256": "845df3887e772debbb872b632ba8c68b10b1e902b377d595e14e2c4c2c8ec559"
+  },
+  "source_diagnostic": {
+    "path": "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/recurrent_edge_count_diagnostic.json",
+    "sha256": "68fa302c577ded213321baf19e70a19bd9fdd45601d34f115e9dfce3cd335647"
+  },
+  "full_50_graph_replay": {
+    "path": "empirical_product_null_audit.json",
+    "sha256": "1eb4bf0e3dba240a89a900abd3bb181b4b81f1658f13ccd4cdd0964b8dcc20c0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "scope": "Post-primary descriptive review of the already selected most recurrent null edge; no new test, threshold, model fit or scientific comparison",
+  "independently_checked_from_original_source_counts": true,
+  "pair": [
+    "H3K27ac|ENSG00000178567",
+    "H3K4me3|ENSG00000219481"
+  ],
+  "n": 595,
+  "detection_margins": [
+    23,
+    25
+  ],
+  "independent_joint_detection_histogram": {
+    "0": 23,
+    "1": 18,
+    "2": 5,
+    "3": 4
+  },
+  "edge_present_iff_no_joint_detection_across_all_50_seeds": true,
+  "logged_marginal_p_when_no_joint_detection": 0.00044150102894546794,
+  "fixed_margin_probability_of_no_joint_detection": 0.36552506440303295,
+  "probability_formula": "comb(595-23,25)/comb(595,25)",
+  "expected_joint_detection": 0.9663865546218487,
+  "probability_role": "Descriptive probability under random matching with fixed binary detection margins; not replacing the frozen count test",
+  "native_code_review": {
+    "path": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/RCIT/RCIT.py",
+    "sha256": "6dd2e8f0275efbc2fa5f6253a9ca71c7329d84788d68eeae7b4607ffc5b75e06",
+    "HBE_covariance": "The implementation estimates the covariance of same-row centered random Fourier-feature products (res.T @ res / n). Sparse missing joint detections could affect this estimate; this is a mechanistic hypothesis, not a separately tested causal explanation.",
+    "permutation_branch": "The native branch uses p = 1 - sum(observed_stat >= permutation_stats)/B, a strict upper tail with no plus-one correction. A future discrete-count permutation implementation needs explicit tie handling; no such change was made."
+  },
+  "source_diagnostic": {
+    "path": "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/recurrent_edge_count_diagnostic.json",
+    "sha256": "68fa302c577ded213321baf19e70a19bd9fdd45601d34f115e9dfce3cd335647"
+  },
+  "independent_full_null_replay": {
+    "path": "empirical_product_null_audit.json",
+    "sha256": "1eb4bf0e3dba240a89a900abd3bb181b4b81f1658f13ccd4cdd0964b8dcc20c0"
+  }
+}

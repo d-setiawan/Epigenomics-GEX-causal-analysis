@@ -1,0 +1,78 @@
+{
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "assessment_rows": 4000,
+  "authorization": "User requested simulations without model mismatch and optimization budget limits; targeted new simulated counts are authorized",
+  "calibration_rows": 2000,
+  "chunk_evaluations": 15000,
+  "chunk_iterations": 600,
+  "created_utc": "2026-11-15T23:34:28.927546+00:00",
+  "dimension": "Known and supplied as a controlled design condition; no dimension-discovery claim",
+  "environment": {
+    "numpy": "2.2.6",
+    "python": "3.11.14",
+    "scipy": "1.14.1"
+  },
+  "fit_sizes": [
+    3000,
+    12000
+  ],
+  "gtol": 1e-06,
+  "numerical_gates": {
+    "minimum_loading_singular_ratio": 0.001,
+    "minimum_probability_gap": 0.03,
+    "projected_gradient": 1e-06
+  },
+  "optimizer_modes": [
+    "capped600",
+    "convergence"
+  ],
+  "recovery_thresholds": {
+    "covariance_relative_error": 0.1,
+    "oracle_conditional_gap_per_feature": 0.02,
+    "positive_nominal_gain_ci95": true,
+    "transport_relative_error": 0.1
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "selection": "Highest equal-assay per-feature calibration LL among gradient-converged finite fits; otherwise highest finite diagnostic. Exact ties lower seed. No assessment-based reselection.",
+  "sources": {
+    "pipelines/simulation/integration_recoverability/count_transport_converged.py": "82ef9c17d70fdf9f9d6e1d6bdb65332b8c9716d470f4036b0bcf56490b6edd68",
+    "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+    "pipelines/simulation/integration_recoverability/count_transport_matched.py": "c89c92f6d52d50caa03448af721c429dca88db9ca2af83c5890c32f7205cffca",
+    "pipelines/simulation/integration_recoverability/count_transport_matched_evaluate.py": "232a3a012945642ecdeb06bba503338c63c5e3d0c760ba6b1400ee363352c825",
+    "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+    "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+    "pipelines/simulation/integration_recoverability/runs/count_transport_matched_v1/PLAN.md": "47477b62432271d1b2545c46a4a566118b331daaf6140416a21728794630f2e9",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_converged.py": "a3a2014c44d78e7d27bef40ca5cd6f70f695b20a9af682a68d43166b811c4788",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched.py": "3aac2ca6ca884aa95c4f0d7f85e38d261dda6be3fe5d60db8d8bd27f8a771212",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched_evaluate.py": "b4b1990f2bc6670e23e9232dbf8929a738e6b2e729c074f2f4b3ba1cf1d54b33",
+    "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1"
+  },
+  "uncertainty": "Nominal fixed-fit paired bootstrap95 intervals,1000replicates; no familywise or global-optimization guarantee",
+  "version": "count_transport_matched_v1",
+  "widths": {
+    "H3K27ac": 24,
+    "H3K4me3": 18,
+    "RNA": 30
+  },
+  "workers": 2,
+  "worlds": [
+    "d1_rep0",
+    "d1_rep1",
+    "d1_rep2",
+    "d2_rep0",
+    "d2_rep1",
+    "d2_rep2",
+    "d3_rep0",
+    "d3_rep1",
+    "d3_rep2"
+  ]
+}

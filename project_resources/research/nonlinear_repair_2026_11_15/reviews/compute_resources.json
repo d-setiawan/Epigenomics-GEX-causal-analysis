@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-11-15T15:01:23.346782",
+  "os": {
+    "system": "Linux",
+    "release": "6.18.58.1-microsoft-standard-WSL2",
+    "version": "#1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026",
+    "machine": "x86_64",
+    "python_version": "3.11.14"
+  },
+  "cpu": {
+    "physical_cores": 10,
+    "logical_cores": 20,
+    "max_frequency_mhz": 0.0,
+    "architecture": "x86_64",
+    "processor": "x86_64",
+    "current_frequency_mhz": 2687.9989999999984
+  },
+  "memory": {
+    "total_gb": 11.68,
+    "available_gb": 8.08,
+    "used_gb": 3.6,
+    "percent_used": 30.9,
+    "swap_total_gb": 4.0,
+    "swap_available_gb": 4.0
+  },
+  "disk": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis",
+    "total_gb": 1006.85,
+    "available_gb": 566.18,
+    "used_gb": 389.46,
+    "percent_used": 40.8
+  },
+  "gpu": {
+    "nvidia_gpus": [],
+    "amd_gpus": [],
+    "apple_silicon": null,
+    "total_gpus": 0,
+    "available_backends": []
+  },
+  "recommendations": {
+    "parallel_processing": {
+      "strategy": "high_parallelism",
+      "suggested_workers": 18,
+      "libraries": [
+        "joblib",
+        "multiprocessing",
+        "dask"
+      ]
+    },
+    "memory_strategy": {
+      "strategy": "moderate_memory",
+      "libraries": [
+        "dask",
+        "zarr"
+      ],
+      "note": "Consider chunking for datasets > 2GB"
+    },
+    "gpu_acceleration": {
+      "available": false,
+      "note": "No GPU detected, use CPU-based libraries"
+    },
+    "large_data_handling": {
+      "strategy": "disk_abundant",
+      "note": "Sufficient space for large intermediate files"
+    }
+  },
+  "python_packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.3.3",
+    "torch": "2.10.0",
+    "psutil": "7.2.2"
+  },
+  "lean_existing": {
+    "/tmp/epigenomics-elan/bin/lake": true,
+    "project_resources/research/research_program_2026_11_14/lean/.lake": true
+  },
+  "gpu_caveat": "Snapshot taken in sandbox; absence here does not establish lack of host GPU/CUDA.",
+  "host_nvidia_smi": {
+    "model": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "driver": "610.88",
+    "total_MiB": 8192,
+    "free_MiB": 8017
+  },
+  "host_torch_probe": {
+    "exit_code": 139,
+    "status": "segmentation_fault",
+    "stage": "before successful tensor result; exact failing CUDA/import call not isolated",
+    "decision": "CPU NumPy/SciPy usable; do not claim GPU framework readiness"
+  }
+}

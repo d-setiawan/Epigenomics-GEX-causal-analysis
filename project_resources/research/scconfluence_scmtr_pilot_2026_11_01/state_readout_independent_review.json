@@ -1,0 +1,24 @@
+{
+  "blocking_issues": [],
+  "created_unix": 1793509698.5939267,
+  "findings": [
+    "Pins original reports/protocol/source/config/input and selection-reference bytes",
+    "Requires complete old ordered train/val pools and checks them again after unchanged evaluate_views",
+    "Restores scoped COHORT immediately after sealed loader reuse",
+    "Assignments are formed before states=True loads; only training and public validation states are accessed",
+    "Evaluator-only scaling and probes cannot feed back into the integration model or matching",
+    "Existing GLUE gap reproduction supplies a consistency guard",
+    "Native half-mass transport versus forced full matching is explicitly labeled"
+  ],
+  "protocol": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/protocol.json",
+    "sha256": "35f5c2590335eae9ad2f6b8a884d356aea1d7ee1fbf32b3c14d3713824b1754e"
+  },
+  "review_scope": "Independent source/data-flow review; new scientific outcomes still pending",
+  "reviewer": "/root/causal_reliability_pilot",
+  "source": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/state_readout.py",
+    "sha256": "b5dfb4bbad3a7e88f0778497ead0d60665f66533109b66a64621ccb394cc7c16"
+  },
+  "status": "passed"
+}

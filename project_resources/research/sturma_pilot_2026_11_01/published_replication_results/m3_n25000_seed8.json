@@ -1,0 +1,39 @@
+{
+  "domains": 3,
+  "n_per_domain": 25000,
+  "seed": 8,
+  "ica_seed": 100008,
+  "protocol_sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+  "status": "correct_dimension_graph_available",
+  "nr_joint": 3,
+  "mixing_error_raw": 0.17490048695701252,
+  "mixing_error_native_normalized": 0.0019433387439668057,
+  "mixing_error_sqrt_beta_normalized": 0.018436130088557722,
+  "graph_error_raw": 0.6432138154145458,
+  "graph_error_normalized": 0.21440460513818194,
+  "unconditional_coefficient_criterion": false,
+  "data_sha256": [
+    "5c0023ce7d8b0b15b2cc9553824ed9e30bf8ce5225faaacd3fb7165725def5f7",
+    "c86bc7c52277070508e6374bcb4d7808ed09b0664bd0715fea51ed2aeeee3b8c",
+    "45b8c7e4f1c88b5feea39338580cee752c3102447ad1c523052e5985dd2911e5"
+  ],
+  "fit_seconds": 21.11590081601753,
+  "ica_components": [
+    5,
+    5,
+    5
+  ],
+  "graph_numeric_diagnostics": {
+    "diagonal_entries_above_1e_minus12": 3,
+    "bidirectional_pairs_above_1e_minus12": 3
+  },
+  "warnings": [
+    {
+      "category": "ConvergenceWarning",
+      "message": "FastICA did not converge. Consider increasing tolerance or the maximum number of iterations."
+    }
+  ],
+  "ica_convergence_warning": true,
+  "elapsed_seconds": 21.157878980011446,
+  "matrices_sha256": "8ca199952badd2fa546b67479859cce4c77c0e8e3daa8f75a09a1f6af87e2aac"
+}

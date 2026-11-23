@@ -1,0 +1,392 @@
+{
+  "align_low_interim_report": {
+    "interpretation": "Interim one-world candidate diagnostic only; no candidate selected or ranked by this audit.",
+    "pairwise_normalized_gaps": {
+      "H3K27ac--H3K4me3": 0.18133957604177528,
+      "RNA--H3K27ac": 0.16082841231411138,
+      "RNA--H3K4me3": 0.19236596656460306
+    },
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/linear_chain_0_informative_val_seed0_scglue_align_low_8366327f.json",
+    "same_selected_ID_hashes_and_state_scaling_as_align_high": true,
+    "sha256": "36849c49fdc4f789ddfa3ea42432ed90366bca4c57349a3df674d7ad456b259d",
+    "verified": "Export/source/evidence receipts, saved-gap arithmetic, worst-pair maximum, source-transfer averaging and shared eligibility/scale metadata; no true-state array reads or scoring reruns.",
+    "worst_pair_gap": 0.19236596656460306
+  },
+  "checks_passed": 175,
+  "created_utc": "2026-10-25T23:36:21.411741+00:00",
+  "fits": {
+    "scglue/align_low": {
+      "checkpoint_sha256": "28103909907aefc252ed3d2ab1040dd621b876ab3aeb2e9d73b0ab511f26c506",
+      "configuration": {
+        "align_burnin": 20,
+        "data_batch_size": 128,
+        "device": "cuda",
+        "dropout": 0.2,
+        "encode_batch_size": 256,
+        "graph_batch_size": 8192,
+        "h_depth": 2,
+        "h_dim": 256,
+        "lam_align": 0.01,
+        "lam_data": 1.0,
+        "lam_graph": 0.02,
+        "lam_kl": 1.0,
+        "lam_sup": 0.02,
+        "latent_dim": 30,
+        "learning_rate": 0.002,
+        "max_epochs": 120,
+        "neg_samples": 10,
+        "patience": 8,
+        "reduce_lr_patience": 4,
+        "seed": 0,
+        "val_split": 0.1,
+        "wait_n_lrs": 1
+      },
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "8177c739bce5c540f70962fb5f410b8049cb853b74274f1f31d600cc666a3870",
+          "rows": 1000,
+          "sha256": "9abd0b877668ec723d8eef9f024eac59dd628f89dc4a3765ed2fad81f62c78a3"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "da6896bce12882280987e29b4e5907823ababf4ef6a97cccf7db3f0f6f143b91",
+          "rows": 1000,
+          "sha256": "ccbc2c97f116557dfbf5d68c16a23de575aea150f3f77de188f1e98074164688"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "d3dd7d0e6f99d6bfcfa7c736661d4f89f9babecd2e026494cd3614d8a6a97f36",
+          "rows": 969,
+          "sha256": "7af61de3974b597a58099b047d4d342f85d643ff7cecad591b537244a59d82a7"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "1158d1ff80876d9fdc953069aadf62a4180cfeb49c314a8dc17a0e637784e2c3",
+          "rows": 2000,
+          "sha256": "459b0b36f4ed5c2a3f09cd5f9f1682503be59d3f55c37048937986d4ce690cc0"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "54e3cfcb3cd7b33727e4dfc1e5a3f20348af1a1a25d0a009bd26b15537dd3a70",
+          "rows": 2000,
+          "sha256": "f18d7e90fca13b36cf07c71dab14196d8e8ba090545f3f89908b124166d20174"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "2f407d9bbfabab4a736b2803eca482e8748115f5f705f6c3468080dfe4202ce5",
+          "rows": 1936,
+          "sha256": "03a8361e34f25d99b39aee4d4982e3bd5b49f463b70fec00bdc70eb753088b4e"
+        },
+        "val/H3K27ac.npz": {
+          "cell_ids_sha256": "a1560d011715370c3b6f9ad4028e79cddd6700fed8093f02b8920195cf98f0ff",
+          "rows": 500,
+          "sha256": "28000bab4e3d0bf610b79b6b700dcb5b226c39fdf3ea353fd3f70972d526a611"
+        },
+        "val/H3K4me3.npz": {
+          "cell_ids_sha256": "337b7a7c37744d7ade4880ea96ea9f5f1f883a95e183f16ebf4be3601c599d2b",
+          "rows": 500,
+          "sha256": "dd42cbea5315695e86a15f9db6b0dcb83cf1c53c9cdf5321f83af4c14850877e"
+        },
+        "val/RNA.npz": {
+          "cell_ids_sha256": "a94fdf145f182c91a18020421e041e89b44ae50c4ce2605d538fdc5260730c5c",
+          "rows": 487,
+          "sha256": "1ff3efc24bf00c73a23f3c64ca2241b6263f10efea494d77ded8b3e2daa9fb61"
+        }
+      },
+      "runtime_overrides": {
+        "CUDA_LAUNCH_BLOCKING": "1",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "LD_LIBRARY_PATH": null,
+        "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+      },
+      "study_sha256": "ca79b081f0fa004b98f0669d3be9a402a8eea961f09d1c190ef6dd755f5b37d6",
+      "training": {
+        "most_recent_retained_native_checkpoints": {
+          "fine-tune": 34,
+          "pretrain": 34
+        },
+        "phase_last_recorded_epochs": {
+          "fine-tune": 36,
+          "pretrain": 36
+        },
+        "restoration_semantics": "Native most-recent-retained; checkpoint states not independently loaded"
+      },
+      "unique_public_ids": 10392,
+      "validation_fit_sha256": "e98d1be47b359bd8eacecdefc0378fe3777f4d85f6463b232ddb05f2f6eaae21"
+    },
+    "scmrdr/baseline": {
+      "checkpoint_sha256": "8d2df81732e8b7c5db02fccd3a862784974483ba47253402034bd69953c1bdda",
+      "configuration": {
+        "batch_size": 128,
+        "beta": 5.0,
+        "cosine_learning_rate": true,
+        "device": "cuda",
+        "dispersion_strategy": "gene",
+        "dropout_rate": 0.2,
+        "gamma": 10.0,
+        "gradient_clip_norm": 1.0,
+        "hidden_layers": [
+          128,
+          128
+        ],
+        "lambda_adv": 10.0,
+        "latent_dim_shared": 20,
+        "latent_dim_specific": 20,
+        "learning_rate": 0.001,
+        "max_epochs": 200,
+        "min_delta": 0.0,
+        "patience": 10,
+        "seed": 0,
+        "validation_fraction": 0.1,
+        "validation_mc_samples": 1
+      },
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "8177c739bce5c540f70962fb5f410b8049cb853b74274f1f31d600cc666a3870",
+          "rows": 1000,
+          "sha256": "f6ff2bcb5d4ffbfe59e2a8477231bc3ee09e403558d8f08159055943d38d1086"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "da6896bce12882280987e29b4e5907823ababf4ef6a97cccf7db3f0f6f143b91",
+          "rows": 1000,
+          "sha256": "660d1aad1df7f2314fc1b1a4bea5f13f0505af4dad1eacf8ddb61d94c0a34488"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "4d77cdb6bb3f5948b1d28baf384d0772ea630f450c03ab5d357887bfca211ff1",
+          "rows": 1000,
+          "sha256": "643671ef410e4d3dc2900234e30a4f46629a6d540d97e13aae24694285348aeb"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "1158d1ff80876d9fdc953069aadf62a4180cfeb49c314a8dc17a0e637784e2c3",
+          "rows": 2000,
+          "sha256": "77f38c560e2d38132d533b7b4d431ef02d469ee4c45cfa6c2f5140779662a470"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "54e3cfcb3cd7b33727e4dfc1e5a3f20348af1a1a25d0a009bd26b15537dd3a70",
+          "rows": 2000,
+          "sha256": "22f9dc2523bb088b082d6c9d380783478494234437ecea9e9327053a08b6e1d4"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "fad717872b02830a884e3584550447a962b723a51fd54f15305bba49fda47906",
+          "rows": 2000,
+          "sha256": "9f15d7e2981cb1bcce5d3130cbaa81639f2906abdbb25727c114dec429c21eb1"
+        },
+        "val/H3K27ac.npz": {
+          "cell_ids_sha256": "a1560d011715370c3b6f9ad4028e79cddd6700fed8093f02b8920195cf98f0ff",
+          "rows": 500,
+          "sha256": "daad98f89a763a68751d0e15595732a59039996d1ffd90802793cc930e877707"
+        },
+        "val/H3K4me3.npz": {
+          "cell_ids_sha256": "337b7a7c37744d7ade4880ea96ea9f5f1f883a95e183f16ebf4be3601c599d2b",
+          "rows": 500,
+          "sha256": "6bd19ea8104394a6c87a47cf855744cd1dadd1d707ed747bbe5e0f8d2b96ce32"
+        },
+        "val/RNA.npz": {
+          "cell_ids_sha256": "eb79a5404db385a39c87c9366f7da284ec4cab4baf02f3c375ed3ac60b5594c9",
+          "rows": 500,
+          "sha256": "5cb313392c8a9dd6ce6bddf4d05f250ce233da6513997dcfdbeaeefcb4474d86"
+        }
+      },
+      "runtime_overrides": {
+        "CUDA_LAUNCH_BLOCKING": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "LD_LIBRARY_PATH": null,
+        "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+      },
+      "study_sha256": "b7fed943d6e5f3c2cf17a09c785c1018a0f9900e51f562c95a290c9a57d7f372",
+      "training": {
+        "best_epoch": 172,
+        "best_validation_loss": 2533.227546875,
+        "epochs_completed": 182,
+        "features": 2009,
+        "training_rows": {
+          "H3K27ac": 2000,
+          "H3K4me3": 2000,
+          "RNA": 2000
+        },
+        "validation_rows": {
+          "H3K27ac": 500,
+          "H3K4me3": 500,
+          "RNA": 500
+        }
+      },
+      "unique_public_ids": 10500,
+      "validation_fit_sha256": "0e7d00f3f07a180b307b847965eb6c0dd18bc161d371964f6303e8ca09bc51bd"
+    }
+  },
+  "matrix_observed_start_sha256": "136d6076a733b5d1874d9f5c897c9769f6e42ab14122ddeb77f99d588de5c861",
+  "scope": "Bounded audit of fresh scMRDR baseline and scGLUE align_low, plus existing align_low report arithmetic. Public train/val/discovery artifacts, JSON/NPZ/source reads and checkpoint hashes only; no state/truth/protected cohort arrays, CUDA, fitting (including probes), causal scores, setting selection or existing-output/source/plan edits. Input H5AD identities reconciled through archived hashes without opening counts; checkpoints not deserialized.",
+  "status": "passed_scoped_independent_audit",
+  "verified_checks": [
+    "matrix pin pipelines/simulation/integration_recoverability/configs/integration_validation_v1.json",
+    "matrix pin pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/execution_plan.json",
+    "matrix pin pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/matrix_orchestration.py.txt",
+    "analysis pin validate_integration.py",
+    "analysis pin integration_validation_fit.py",
+    "analysis pin integration_validation_metrics.py",
+    "all17 frozen source pins",
+    "scmrdr/baseline full actual configuration",
+    "scmrdr/baseline outer/inner completed seals",
+    "scmrdr/baseline protocol/source receipts",
+    "scmrdr/baseline world/bank receipt",
+    "scmrdr/baseline runtime preload/flags",
+    "scmrdr/baseline checkpoint chain",
+    "scmrdr/baseline exact defaults and summary config",
+    "scmrdr/baseline full epoch history and restored best metadata",
+    "scmrdr/baseline all recorded losses finite",
+    "scmrdr/baseline explicit external validation",
+    "scmrdr/baseline frozen gene and feature budget",
+    "scmrdr/baseline native paper source",
+    "scmrdr/baseline vendored model.py",
+    "scmrdr/baseline vendored loss.py",
+    "scmrdr/baseline vendored LICENSE",
+    "scmrdr/baseline nine public exports",
+    "scmrdr/baseline export hash train/RNA.npz",
+    "scmrdr/baseline baseline reference hash train/RNA.npz",
+    "scmrdr/baseline finite shared and unique public IDs train/RNA.npz",
+    "scmrdr/baseline exact cached public IDs train/RNA.npz",
+    "scmrdr/baseline exact frozen gene train IDs RNA",
+    "scmrdr/baseline raw public input metadata train/RNA.npz",
+    "scmrdr/baseline export hash train/H3K27ac.npz",
+    "scmrdr/baseline baseline reference hash train/H3K27ac.npz",
+    "scmrdr/baseline finite shared and unique public IDs train/H3K27ac.npz",
+    "scmrdr/baseline exact cached public IDs train/H3K27ac.npz",
+    "scmrdr/baseline exact frozen gene train IDs H3K27ac",
+    "scmrdr/baseline raw public input metadata train/H3K27ac.npz",
+    "scmrdr/baseline export hash train/H3K4me3.npz",
+    "scmrdr/baseline baseline reference hash train/H3K4me3.npz",
+    "scmrdr/baseline finite shared and unique public IDs train/H3K4me3.npz",
+    "scmrdr/baseline exact cached public IDs train/H3K4me3.npz",
+    "scmrdr/baseline exact frozen gene train IDs H3K4me3",
+    "scmrdr/baseline raw public input metadata train/H3K4me3.npz",
+    "scmrdr/baseline heldout frozen encoding val",
+    "scmrdr/baseline export hash val/RNA.npz",
+    "scmrdr/baseline baseline reference hash val/RNA.npz",
+    "scmrdr/baseline finite shared and unique public IDs val/RNA.npz",
+    "scmrdr/baseline exact cached public IDs val/RNA.npz",
+    "scmrdr/baseline raw public input metadata val/RNA.npz",
+    "scmrdr/baseline export hash val/H3K27ac.npz",
+    "scmrdr/baseline baseline reference hash val/H3K27ac.npz",
+    "scmrdr/baseline finite shared and unique public IDs val/H3K27ac.npz",
+    "scmrdr/baseline exact cached public IDs val/H3K27ac.npz",
+    "scmrdr/baseline raw public input metadata val/H3K27ac.npz",
+    "scmrdr/baseline export hash val/H3K4me3.npz",
+    "scmrdr/baseline baseline reference hash val/H3K4me3.npz",
+    "scmrdr/baseline finite shared and unique public IDs val/H3K4me3.npz",
+    "scmrdr/baseline exact cached public IDs val/H3K4me3.npz",
+    "scmrdr/baseline raw public input metadata val/H3K4me3.npz",
+    "scmrdr/baseline heldout frozen encoding discovery",
+    "scmrdr/baseline export hash discovery/RNA.npz",
+    "scmrdr/baseline baseline reference hash discovery/RNA.npz",
+    "scmrdr/baseline finite shared and unique public IDs discovery/RNA.npz",
+    "scmrdr/baseline exact cached public IDs discovery/RNA.npz",
+    "scmrdr/baseline raw public input metadata discovery/RNA.npz",
+    "scmrdr/baseline export hash discovery/H3K27ac.npz",
+    "scmrdr/baseline baseline reference hash discovery/H3K27ac.npz",
+    "scmrdr/baseline finite shared and unique public IDs discovery/H3K27ac.npz",
+    "scmrdr/baseline exact cached public IDs discovery/H3K27ac.npz",
+    "scmrdr/baseline raw public input metadata discovery/H3K27ac.npz",
+    "scmrdr/baseline export hash discovery/H3K4me3.npz",
+    "scmrdr/baseline baseline reference hash discovery/H3K4me3.npz",
+    "scmrdr/baseline finite shared and unique public IDs discovery/H3K4me3.npz",
+    "scmrdr/baseline exact cached public IDs discovery/H3K4me3.npz",
+    "scmrdr/baseline raw public input metadata discovery/H3K4me3.npz",
+    "scmrdr/baseline no partial/private cohort outputs",
+    "scglue/align_low full actual configuration",
+    "scglue/align_low outer/inner completed seals",
+    "scglue/align_low protocol/source receipts",
+    "scglue/align_low world/bank receipt",
+    "scglue/align_low runtime preload/flags",
+    "scglue/align_low checkpoint chain",
+    "scglue/align_low lam_align-only deviation",
+    "scglue/align_low native phase sequence/config",
+    "scglue/align_low native installed sources",
+    "scglue/align_low native fit-export seal",
+    "scglue/align_low native checkpoint roundtrip",
+    "scglue/align_low frozen transforms",
+    "scglue/align_low finite phase summary fine-tune",
+    "scglue/align_low retained phase checkpoint names fine-tune",
+    "scglue/align_low finite phase summary pretrain",
+    "scglue/align_low retained phase checkpoint names pretrain",
+    "scglue/align_low nine public exports",
+    "scglue/align_low export hash train/RNA.npz",
+    "scglue/align_low baseline reference hash train/RNA.npz",
+    "scglue/align_low finite shared and unique public IDs train/RNA.npz",
+    "scglue/align_low exact cached public IDs train/RNA.npz",
+    "scglue/align_low exact prepared public IDs train/RNA.npz",
+    "scglue/align_low raw public input metadata train/RNA.npz",
+    "scglue/align_low export hash train/H3K27ac.npz",
+    "scglue/align_low baseline reference hash train/H3K27ac.npz",
+    "scglue/align_low finite shared and unique public IDs train/H3K27ac.npz",
+    "scglue/align_low exact cached public IDs train/H3K27ac.npz",
+    "scglue/align_low exact prepared public IDs train/H3K27ac.npz",
+    "scglue/align_low raw public input metadata train/H3K27ac.npz",
+    "scglue/align_low export hash train/H3K4me3.npz",
+    "scglue/align_low baseline reference hash train/H3K4me3.npz",
+    "scglue/align_low finite shared and unique public IDs train/H3K4me3.npz",
+    "scglue/align_low exact cached public IDs train/H3K4me3.npz",
+    "scglue/align_low exact prepared public IDs train/H3K4me3.npz",
+    "scglue/align_low raw public input metadata train/H3K4me3.npz",
+    "scglue/align_low export hash val/RNA.npz",
+    "scglue/align_low baseline reference hash val/RNA.npz",
+    "scglue/align_low finite shared and unique public IDs val/RNA.npz",
+    "scglue/align_low exact cached public IDs val/RNA.npz",
+    "scglue/align_low exact prepared public IDs val/RNA.npz",
+    "scglue/align_low raw public input metadata val/RNA.npz",
+    "scglue/align_low export hash val/H3K27ac.npz",
+    "scglue/align_low baseline reference hash val/H3K27ac.npz",
+    "scglue/align_low finite shared and unique public IDs val/H3K27ac.npz",
+    "scglue/align_low exact cached public IDs val/H3K27ac.npz",
+    "scglue/align_low exact prepared public IDs val/H3K27ac.npz",
+    "scglue/align_low raw public input metadata val/H3K27ac.npz",
+    "scglue/align_low export hash val/H3K4me3.npz",
+    "scglue/align_low baseline reference hash val/H3K4me3.npz",
+    "scglue/align_low finite shared and unique public IDs val/H3K4me3.npz",
+    "scglue/align_low exact cached public IDs val/H3K4me3.npz",
+    "scglue/align_low exact prepared public IDs val/H3K4me3.npz",
+    "scglue/align_low raw public input metadata val/H3K4me3.npz",
+    "scglue/align_low export hash discovery/RNA.npz",
+    "scglue/align_low baseline reference hash discovery/RNA.npz",
+    "scglue/align_low finite shared and unique public IDs discovery/RNA.npz",
+    "scglue/align_low exact cached public IDs discovery/RNA.npz",
+    "scglue/align_low exact prepared public IDs discovery/RNA.npz",
+    "scglue/align_low raw public input metadata discovery/RNA.npz",
+    "scglue/align_low export hash discovery/H3K27ac.npz",
+    "scglue/align_low baseline reference hash discovery/H3K27ac.npz",
+    "scglue/align_low finite shared and unique public IDs discovery/H3K27ac.npz",
+    "scglue/align_low exact cached public IDs discovery/H3K27ac.npz",
+    "scglue/align_low exact prepared public IDs discovery/H3K27ac.npz",
+    "scglue/align_low raw public input metadata discovery/H3K27ac.npz",
+    "scglue/align_low export hash discovery/H3K4me3.npz",
+    "scglue/align_low baseline reference hash discovery/H3K4me3.npz",
+    "scglue/align_low finite shared and unique public IDs discovery/H3K4me3.npz",
+    "scglue/align_low exact cached public IDs discovery/H3K4me3.npz",
+    "scglue/align_low exact prepared public IDs discovery/H3K4me3.npz",
+    "scglue/align_low raw public input metadata discovery/H3K4me3.npz",
+    "scglue/align_low no partial/private cohort outputs",
+    "align_low interim role",
+    "align_low scoring source integration_validation_metrics.py",
+    "align_low scoring source validate_integration.py",
+    "align_low evidence outer seals",
+    "align_low report export evidence H3K27ac",
+    "align_low report export evidence H3K4me3",
+    "align_low report export evidence RNA",
+    "align_low/high same state center and scale",
+    "align_low/high same selected public IDs train/RNA",
+    "align_low/high same selected public IDs train/H3K27ac",
+    "align_low/high same selected public IDs train/H3K4me3",
+    "align_low/high same selected public IDs val/RNA",
+    "align_low/high same selected public IDs val/H3K27ac",
+    "align_low/high same selected public IDs val/H3K4me3",
+    "align_low normalized gap arithmetic H3K27ac--H3K4me3",
+    "align_low normalized gap arithmetic RNA--H3K27ac",
+    "align_low normalized gap arithmetic RNA--H3K4me3",
+    "align_low worst-pair maximum",
+    "align_low source transfer average H3K27ac->H3K27ac",
+    "align_low source transfer average H3K27ac->H3K4me3",
+    "align_low source transfer average H3K27ac->RNA",
+    "align_low source transfer average H3K4me3->H3K27ac",
+    "align_low source transfer average H3K4me3->H3K4me3",
+    "align_low source transfer average H3K4me3->RNA",
+    "align_low source transfer average RNA->H3K27ac",
+    "align_low source transfer average RNA->H3K4me3",
+    "align_low source transfer average RNA->RNA",
+    "align_low public truth hash metadata train",
+    "align_low public truth hash metadata val"
+  ]
+}

@@ -1,0 +1,27 @@
+# Independent interpretation of the frozen 225-arm extension sweep
+
+The complete fit and evaluation blocks were sealed before this review. The independent [metric replay](extension_metric_audit.json) passed all 225 arms without changing its predeclared helper. It reconstructed all 1,350 within-assay scoring views, 900 real cross-assay pair/stage/panel views, 2,250 simulated-state matrices, and their reported summaries. The maximum numerical difference was $1.45\times10^{-15}$ after rounding upward. Its bootstrap scope is explicit: three prespecified literal paired-cell resamples per scoring context, all 200 model-versus-zero error identities, and all saved percentile summaries. The all-200 identity check conditions on the saved zero-error norms; it is not a claim that every 300-by-300 bootstrap covariance was separately materialized.
+
+## What the cross-assay result establishes
+
+There were no accepted signed moment-equivalent pairs, no unique moment matches, no CF-confirmed matches, and no all-assay matches in any arm. Thus the negative result arose **before the CF stage**. CF evaluation was not triggered; this sweep does not empirically show that the generalized CF formula or its uncertainty check failed. The formulas have separate deterministic algebra checks.
+
+Every real cross-assay prediction was the declared empty-candidate zero default. Its improvement over the zero baseline is therefore exactly zero by construction. This establishes absence of supported cross-assay predictions under these settings, not biological independence, accurate recovery of an empty true graph, or proof that the observations contain no usable structure. Graph extraction was not attempted because fewer than two confirmed all-assay candidates existed.
+
+All 225 arm records and 675 assay-source records completed without a failed status. The latter includes rank-zero fits, so successful execution must not be described as recovery of a source representation in every assay.
+
+The source gates admitted 234 within-assay source instances across 81 arms. These are repeated fitted instances across settings and seeds, not 234 distinct biological factors. Original collider arms contributed 126, original linear-chain arms 97, original real-data arms six, and collider column controls five. All six eligible real-data instances were RNA sources; neither histone assay supplied an eligible source in this block. An eligible direction within one assay does not establish its counterpart in another. The column controls are a diagnostic for within-assay coherence, not a calibrated source-sharing or biological false-discovery test.
+
+## Why the dimension ceiling matters
+
+Every original assay fit in the six unit-exposure 300-feature variants reached the ceiling of six: 108 assay fits in 36 arms. Their uncapped empirical ranks were 7–19. The protocol forbids matching when this ceiling binds. Those arms therefore do not test the full selected-dimension source model, and their empty match sets cannot establish failure of that full model.
+
+A separately frozen [54-arm cap20 follow-up](../../count_rank20_2026_11_01/protocol.json) addresses this specific computational limitation using the complete affected family, both original seeds, and the unchanged controls. Its motivation is the saved training ranks. It was nevertheless designed after the first evaluation and uses the same development references; it is an exploratory sensitivity, not independent validation. Raising the ceiling also changes fitted dimension and removes a cap-binding eligibility barrier. All other gates remain fixed. Its completed outcomes are interpreted in a [separate review](../../count_rank20_2026_11_01/reviews/result_interpretation_review.md); the original result block remains unchanged.
+
+## Limits on within-assay conclusions
+
+Covariance prediction and cross-assay source matching answer different questions. Better full covariance error can reflect a better observation-noise diagonal even when source orientation or matching does not improve. Off-diagonal errors and the observed-training diagonal baseline must therefore remain visible. Equal covariance scores across source orientations can follow from invariance of $BB^\top$ under orthogonal rotations; they are not independent replication of source identity.
+
+Compare panel widths on the unchanged 30-feature anchor and the same exposure treatment. Full 30- versus 300-feature scores average different entries. Unit, fixed-depth and learned-elasticity predictions also have different rate targets and scales, so a smaller number across those treatments does not by itself rank recovery quality. Real paired covariances are observational moment references, not causal truth. Simulated background-source associations do not establish recovery of the separate focal-feature DAG.
+
+The sweep covers the six identified extension families and selected interactions, not every possible algorithm. Existing cells and references were reused, fixed kernel parameters are sensitivities rather than identified technical truth, and source fingerprints remain finite summaries. The [known-kernel population derivation](kernel_population_identifiability.md) also shows why failure of these finite estimators cannot establish a universal count-law impossibility. None of these qualifications changes the central empirical finding: the original 225-arm sweep produced no supported cross-assay source match.

@@ -1,0 +1,658 @@
+{
+  "date_utc": "2026-11-01T17:48:49Z",
+  "upstream_commit": "578b5900590164b2ed1750fb6a7f98ae7153e220",
+  "upstream_clean": true,
+  "fit_count": 60,
+  "files": [
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/replicate_published_model.py",
+      "sha256": "b598a47ec743cf44ba55cfc56bf4a78b94dc884877b652aa1ecdad36d7e56851",
+      "bytes": 15162
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/test_published_replication.py",
+      "sha256": "4a6039eb6b7a349f8c5b6d91441818d100ddd71dc8de861e329e55453cc1e29b",
+      "bytes": 1597
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_protocol.json",
+      "sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+      "bytes": 4709
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_summary.json",
+      "sha256": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+      "bytes": 11228
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_self_check.json",
+      "sha256": "eea7ada36390b2e11e27a341808f681f53e073bba1155cfaca036546a4143f09",
+      "bytes": 524
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_run.log",
+      "sha256": "57a29f68b5a1f395506e588c88c0ba7e777b46c6ae5b5abe0bc65def3e2cf2b1",
+      "bytes": 12199
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/replication_resources.json",
+      "sha256": "460447742ef279715ab8be904ec35bc6df1150e03b11aa501566502aa4ca4260",
+      "bytes": 1641
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/PUBLISHED_REPLICATION.md",
+      "sha256": "9bd28319fe86ca6682f61b02147fa0e51bf584f7cf4f7bbafbd9c91e60cc419e",
+      "bytes": 7873
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed0.json",
+      "sha256": "7e18ed614ab9530eed5916be8e4ed838b89389a318c2b0409c4fb77d36105839",
+      "bytes": 1089
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed0.npz",
+      "sha256": "2146ce62ede081cf5e065f63c308fc2f2756538e60a337c629250139ddb1232f",
+      "bytes": 3590
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed1.json",
+      "sha256": "70cf5aa71a99e27f59bac189148a3f720b2f9d14aa8436463292641fcee8bb80",
+      "bytes": 1088
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed1.npz",
+      "sha256": "9b3472e1100920f66ac0c59e1adafb941fdf9b68c4e6ffe4aad7d4c16e3a9cdd",
+      "bytes": 3610
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed2.json",
+      "sha256": "f4b1757d6576987db3d88d919dd0c13c336828bcf2c7e480b0261153545a80d4",
+      "bytes": 1090
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed2.npz",
+      "sha256": "6a451d204fc54cdcd7da5ae4612c4a73e35a9fd6830a3da0d5a3baad29cf472f",
+      "bytes": 3583
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed3.json",
+      "sha256": "316e2dcd87818d2850bf608df7f854e22a9f995a2cfb31c0bb1436ae5d186179",
+      "bytes": 1090
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed3.npz",
+      "sha256": "253208706e64c1e093b011581807ff14644f41bf6f09709b7913ceef3c5c97bd",
+      "bytes": 3602
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed4.json",
+      "sha256": "e370f05eddbe811d3443c265c9b4987cb696647a397c0bc7d7b91148f17bf014",
+      "bytes": 1087
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed4.npz",
+      "sha256": "c7d1795ef19ead7567f133ed5e3788b94437cf1b658871c6738bc295b2eaf42f",
+      "bytes": 3552
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed5.json",
+      "sha256": "7bc99c13150a898f398815cfdf2fd972d06152ecbc70a7ecfa2a9439d2fe15d0",
+      "bytes": 1091
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed5.npz",
+      "sha256": "f13e3ef1a64dc79678ca7d87d088c14f6fce0bbebf48613b745cdf4356423398",
+      "bytes": 3578
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed6.json",
+      "sha256": "a685970f80e6ad8d1b6f83686233eae4965175781af301f64d14465a9f4ca532",
+      "bytes": 1091
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed6.npz",
+      "sha256": "898a36f734de4a7d21767261ead9308f9428ee201ea956d617e6b57d6e887139",
+      "bytes": 3543
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed7.json",
+      "sha256": "b3ea2f6e1c6fe919498cbc862004249b4b209339d08aae7b380641c69d342167",
+      "bytes": 1091
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed7.npz",
+      "sha256": "299893636e64aecaa78f57bc5cbbcaa241c5d0caadfdf3f8121ba5c945d128a8",
+      "bytes": 3591
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed8.json",
+      "sha256": "c01629b5c0f336da27dc7a9cc5c7b7ffe1b447e05f702a090399a769b772d8f6",
+      "bytes": 1087
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed8.npz",
+      "sha256": "c3b9c87080b02d2ee3aabd62df69cfc15ab2cc386f10ae21d38f04373d0a4336",
+      "bytes": 3533
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed9.json",
+      "sha256": "ee6d3b783be6f7df18fec113f360f11d342a16e3e967110e0f30050856974e8f",
+      "bytes": 1090
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed9.npz",
+      "sha256": "6a01700651731181b06f869f501e2ac6168f217369fd31f82b0fdf69552621ac",
+      "bytes": 3603
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed0.json",
+      "sha256": "2d457f00ac9dd1cfc2a5f5ea82bfb0836ec3089bd92c97086ac0686245a989f9",
+      "bytes": 1088
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed0.npz",
+      "sha256": "92addcea2fb0823392add11cb8cbcf016327b1430f9301a989c48ed45970f81c",
+      "bytes": 3619
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed1.json",
+      "sha256": "7188b6d38aaddca45fd7228efc71efc5d645528c5f0668264d0721b77c6dea40",
+      "bytes": 923
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed1.npz",
+      "sha256": "dec87177f720a902240ecd25a6d64eb4af7953f8f4a5d81fad6e3c8dfb9f630f",
+      "bytes": 3269
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed2.json",
+      "sha256": "79e8d75b284452a400f1fd95bb03dddb6215708b6ae37d6500d55f85e5f2c376",
+      "bytes": 922
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed2.npz",
+      "sha256": "b1a784d397edcc62d6d6c0d085eab716e822ea375047f3dfeab96ae026abb571",
+      "bytes": 3285
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed3.json",
+      "sha256": "2c4c691141b7b978bd39133b4903aa194187b79dd631d939f59e7a82452ba3e0",
+      "bytes": 923
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed3.npz",
+      "sha256": "5755a08514bda7cbe1458aebe1210311ba8255fdafb3fc34bfcf26ffe06ed48a",
+      "bytes": 3277
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed4.json",
+      "sha256": "69a4d48515c61ca24c043178991845606c0c0232ebf7abb240c9e0d490def84f",
+      "bytes": 1085
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed4.npz",
+      "sha256": "f0f8f3dbb76cf1730c8f82bc97ae9d02297b85521211bd79db6fb0d83cbb0e59",
+      "bytes": 3524
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed5.json",
+      "sha256": "f5e5c5d865886d5ce8e594e091bf78c4caba8754bcd141190c2325e53b6c954b",
+      "bytes": 1085
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed5.npz",
+      "sha256": "05c97a2f5a618d313915b61a50340ddfe6385fb1e712129b25816f3a2ef1981e",
+      "bytes": 3552
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed6.json",
+      "sha256": "da7588d5aabccdd9bfc43dc2c544e9ae84964a5a7e8925889761b02e1e43be17",
+      "bytes": 1086
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed6.npz",
+      "sha256": "6251f1e0e67a8edcddb91288f8e69dc191b952e2fd626c12ff9735ec5f3f5571",
+      "bytes": 3506
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed7.json",
+      "sha256": "ff0d588282cfda9f21902d0d38017a42e6c57325002ad30f1f79426898df971f",
+      "bytes": 922
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed7.npz",
+      "sha256": "a7eab5a620b885dd38cc7d3464bc19afdc1e4e69cf747598c36aabc40a6a504d",
+      "bytes": 3267
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed8.json",
+      "sha256": "1d64ce903510554f2535dcb001e8d1dc3a72ad82f255699ba53bb7daee998c9c",
+      "bytes": 1088
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed8.npz",
+      "sha256": "0429d6804fe29068d02cb7eb394aeff19cf6553afb173eefe4dc80bc26a1c880",
+      "bytes": 3506
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed9.json",
+      "sha256": "172239fc111b0da87c518b99d992ab439ed7ba11cf45e645b47d8af2dac3bef7",
+      "bytes": 923
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed9.npz",
+      "sha256": "19dcef913e6c2418359de2a9e3e232b006e90425925a535cbf888383861c9fa5",
+      "bytes": 3250
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed0.json",
+      "sha256": "e62995ede443d478fce9fc6f148e37ae6899be6a848c1ca9e8658f4f063dab44",
+      "bytes": 1088
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed0.npz",
+      "sha256": "d1d86a611f3ceb61e099e629da691fd78ecaa617d7474c6db8e46c256390a148",
+      "bytes": 3573
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed1.json",
+      "sha256": "1e763897d80d48114936dcfddbe14f73da878c5ecd58d300033d8e91af993622",
+      "bytes": 1089
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed1.npz",
+      "sha256": "36b62443caabef4313e50519f3b7ef3d428b6de124f166609407f7831c650577",
+      "bytes": 3616
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed2.json",
+      "sha256": "e88fccfa24180f383146c74b8beb231a62b2799f78b39e55825e6e26bc36918f",
+      "bytes": 1090
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed2.npz",
+      "sha256": "4d87071641b2586e69d866af169fd8463dae9dd063623a05aa47871059b30221",
+      "bytes": 3565
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed3.json",
+      "sha256": "09af7b28538782f2c5717360ff005a46dcac94fe1b30386098dbd90876b34b05",
+      "bytes": 1089
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed3.npz",
+      "sha256": "ff18f49199a4c91de3ebea30593f296e81b61965edd8dd8b077ca274dea906b6",
+      "bytes": 3607
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed4.json",
+      "sha256": "93bfacc838bbc38b2d81ead40f4f0dbcf98229e11be683f300c49233e37a7354",
+      "bytes": 1087
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed4.npz",
+      "sha256": "d868fe25e1064c52141e104484e653ec1093b398676f404e3d548065312e22ec",
+      "bytes": 3554
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed5.json",
+      "sha256": "605784705e154da1e8eb7a318eda34bd5fc313d8371506ca22c3645b1d8df342",
+      "bytes": 1093
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed5.npz",
+      "sha256": "dd092cd2dc9e7922bc6819ace8c75abfd48a72310902573435c2c8a41129934f",
+      "bytes": 3589
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed6.json",
+      "sha256": "5c419b5640a0f32acedb98bcca466884d8af4914ed40ab7d58556fc082df686f",
+      "bytes": 1092
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed6.npz",
+      "sha256": "2fef0ab48d38f75e86a1db270728939a8eff0f3d59bc036820fe950f03c1e646",
+      "bytes": 3564
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed7.json",
+      "sha256": "7e89e8f7d1c0ce80a21cead91484954add705c5bab3ff9fed6d0e03a458263a1",
+      "bytes": 1090
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed7.npz",
+      "sha256": "6d0ea7941beaf862abf54d8307210dc17279a6e6fa51cc347400c8ee2f08ad22",
+      "bytes": 3579
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed8.json",
+      "sha256": "f4663a04f99f16cfbeb05872ada2f216b0048975ab0142b32a31ea9b2d425cd6",
+      "bytes": 1092
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed8.npz",
+      "sha256": "a79dd929fee63cef2a90dc85222045aac9621cb1114261d69d519b413664e8e2",
+      "bytes": 3492
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed9.json",
+      "sha256": "9cf431666940873539243ead47b2cc5bd293c3631135bde48fdd5e04c9b6c943",
+      "bytes": 1088
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed9.npz",
+      "sha256": "78879d91ba23362e9ae30581a46ca1eabf0a4634b18d46a07b11443cc0d2bd2e",
+      "bytes": 3614
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed0.json",
+      "sha256": "b9f0c9dd282cdcd39d795b389c6140a59d83dc9248a1b86363fe98ce1d935130",
+      "bytes": 1163
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed0.npz",
+      "sha256": "b76d166e661a5ac5d0b0c72bf26260839818dd947b36b7714e2308d5ce86ef78",
+      "bytes": 3620
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed1.json",
+      "sha256": "c7b8f07aab5c8f6afc7cf5790c7848f968eecbb0fe0fd28cd5b43032494f4125",
+      "bytes": 1165
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed1.npz",
+      "sha256": "730baf3cc20452fb3243bd9c702b7584622131cea83007ce8d27890f8fa271da",
+      "bytes": 3663
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed2.json",
+      "sha256": "35df894f59becbe9d5a72741194ce0bc650789f9403f2ea8e22859dd990cfffb",
+      "bytes": 1171
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed2.npz",
+      "sha256": "e429bc42e13daba926f7c42999eb827b351869428855775ffdbf411e1875e8c3",
+      "bytes": 3633
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed3.json",
+      "sha256": "164ad018bc251b62c9afc212aacd9b71b206a6dbfd00f604b6f1e55d9c884f04",
+      "bytes": 1169
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed3.npz",
+      "sha256": "0cfe6733ee68e039276c0c73eb9623f45cdb93aece1ca9e070d6509f78ce486a",
+      "bytes": 3641
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed4.json",
+      "sha256": "7c132216efb679eec1b339ed258c216243441f659f18d1f82e5963cd4429bbee",
+      "bytes": 1166
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed4.npz",
+      "sha256": "b2cbbe4c44bddf6d3c0948afe9ad555bd3784e7fa4964a59f548c663bee12cce",
+      "bytes": 3584
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed5.json",
+      "sha256": "16ab0ca585258ad358279494d7cc2bdbdb550290ae3b7b3218611e0d73ab9670",
+      "bytes": 1168
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed5.npz",
+      "sha256": "39cb0d7861e097f26e721713d22e9aafdfe076afddfaef6bb2d77f0297fa508b",
+      "bytes": 3651
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed6.json",
+      "sha256": "d94bb5b3e5c5ea787c11c384fa39b1c566db6a621e5503321c71d47b5027eec7",
+      "bytes": 1001
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed6.npz",
+      "sha256": "5df1fbc049c8b91f89c822e3dc7dfc200db7b1c8c52808442704399500c3c593",
+      "bytes": 3289
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed7.json",
+      "sha256": "59367d7b0f7a986b790f56c348e0c4bcafca40bd29698cc2793bf14d465c78f5",
+      "bytes": 1165
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed7.npz",
+      "sha256": "6c0e6ac9c63184775c34a13db772530dad830037aa0ac9d2ff92345bf4f442f7",
+      "bytes": 3614
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed8.json",
+      "sha256": "3ea963296fb77fc4af17bc60c281fbd642c49db44cc9695fee3013c565cf3375",
+      "bytes": 1000
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed8.npz",
+      "sha256": "429d279502b1e149d569eb0b76becd2161a3cdf6f6d3a6c54104f5643195a86b",
+      "bytes": 3251
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed9.json",
+      "sha256": "cdbc4118cb60bd3aa5424dc097b54907fd6075816b442ff3e00435f983f96771",
+      "bytes": 1165
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed9.npz",
+      "sha256": "151751fa57ae58784b40f81f93751fec68558b28d4ce96204c4030da8e70eb77",
+      "bytes": 3641
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed0.json",
+      "sha256": "ac5bd395530aa8b5a82ef58f84ccf0b05996426064a57e5243c10ae32da5905a",
+      "bytes": 950
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed0.npz",
+      "sha256": "f311f6e46875687446e256b4e5ebc97b1f5a8d37273d3d9584d4ecc0d02cb391",
+      "bytes": 3095
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed1.json",
+      "sha256": "79088b5ca12b017f8f34f62dfcc06aa85c2719752e5faf159b01694601ba1ae3",
+      "bytes": 1002
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed1.npz",
+      "sha256": "44827e46d302792845702b2eeff30d45193b33e483fc2382e7cd2edc60db9401",
+      "bytes": 3361
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed2.json",
+      "sha256": "0a6bfb62d1acb67044da329198fcef66872e987f91c6de9388a7777709c2deaa",
+      "bytes": 1002
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed2.npz",
+      "sha256": "d707306e23a4c1ac4061a0511c8391e17d0c348518229cdd283e386210e7b95b",
+      "bytes": 3296
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed3.json",
+      "sha256": "a2946a8a6e5e15db7ee7784c08be8e9e6388344dbbe41a28d08863d7bd3dd0b3",
+      "bytes": 1114
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed3.npz",
+      "sha256": "4384be189aa0767a61b02e44f0828a4dc99032a865926bb16d6a7e1d25504dd4",
+      "bytes": 3103
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed4.json",
+      "sha256": "8d262de925728f20c8f6187d59397a9843a3267b843bce8141a9214cbb71ce92",
+      "bytes": 1001
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed4.npz",
+      "sha256": "fe9594f2d921c39b2e733da99d6cced812182cb49f8efb82f08f339e759b308e",
+      "bytes": 3272
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed5.json",
+      "sha256": "dbd076bd6821b8d894de3fa054c6e43c281c8134da20d02a8b1737d43e9645a2",
+      "bytes": 999
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed5.npz",
+      "sha256": "675c7a97db2d7a60804b007928a601e15c7cb2bcc32b7e0b32fb1e4df9654239",
+      "bytes": 3279
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed6.json",
+      "sha256": "6c0b8d28f8d56f3ef4eaf88a5557c140d44c2d72a7c5aa77a684e8cb4112c8f0",
+      "bytes": 999
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed6.npz",
+      "sha256": "a8504ae05c00bd83811ea960b637597d417853905dac0f17edf6eba66be4a8bf",
+      "bytes": 3282
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed7.json",
+      "sha256": "6792d22816da3c8b92b986e2fabc146ffad9aa40b1c8275090a38a7bcfad1e71",
+      "bytes": 1166
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed7.npz",
+      "sha256": "995e27dfe24d380e0cbe09df0252c60476f333038e25472b709d30f1e03ff565",
+      "bytes": 3246
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed8.json",
+      "sha256": "f200efb5ab1a6fb71793cbf03b5d982702861bfe882f097882c3a9e0e18ac416",
+      "bytes": 1166
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed8.npz",
+      "sha256": "b7cd6dc57aa37849e159f3340e861d99621816c5cefee822610851c96a247806",
+      "bytes": 3513
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed9.json",
+      "sha256": "6fc1c5bd7317b847e45703f96dd8ea4eb911bcf72fd0fae46e06d01d8c219712",
+      "bytes": 1002
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed9.npz",
+      "sha256": "79543253881c70a62a79895982b985e630f6cb9ef0955fb73c76d27a208cf54f",
+      "bytes": 3326
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed0.json",
+      "sha256": "8ea69460110fc59929ea1f59c7ebd94e9e3efe65d994387195b9b0822a023ed1",
+      "bytes": 1170
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed0.npz",
+      "sha256": "4b9aeb42f4876857b9c8b8224b2229b906ffd40307d4eb0692fd7acd804cb8d1",
+      "bytes": 3659
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed1.json",
+      "sha256": "fc47605a88bddc6c08a5bcfabb38933c70e914ff585679d39ef88a01910a7254",
+      "bytes": 1167
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed1.npz",
+      "sha256": "549d161351490d1e945fc572fb1fb002cadd50ad9103e0d27c9d86e177069b8b",
+      "bytes": 3686
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed2.json",
+      "sha256": "ff350d2d1a727c446f4dfac5719913ad47ba7c5daa5454ccc4863671914033b3",
+      "bytes": 1167
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed2.npz",
+      "sha256": "262e634fd6e4d0b04efe58f9cc9afaaa5e435d5e14b828b610888a8919d8fee8",
+      "bytes": 3643
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed3.json",
+      "sha256": "d281644dfae073ebb5b9f12d98779e3b5dad61164701f43a4c66e54272ad54e7",
+      "bytes": 1168
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed3.npz",
+      "sha256": "b48f2e311e4fbc3a74eefc55a94b34a796682c3b0d810fad464936039f52d656",
+      "bytes": 3631
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed4.json",
+      "sha256": "2f24b969ba30609737a478f6b48afd8600cec4df43168746b2272bfb699df941",
+      "bytes": 1171
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed4.npz",
+      "sha256": "121f08d97c2ae8b259fae49ee55fc9f9a6e922b4598de13a5fb2c77cb006005e",
+      "bytes": 3607
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed5.json",
+      "sha256": "04bd0c9b914fe921349da067235b6524f3a77e73a623880cdcb68c738ff09638",
+      "bytes": 1170
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed5.npz",
+      "sha256": "f5d058a1d73ecc404096e9d44b1e0e116bc7b5386458285e5ebd9e4f6a50daf7",
+      "bytes": 3626
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed6.json",
+      "sha256": "cb90bcde9768951943b170a496ce19958ed24baac8a59f4945ddb4c6ca7a2b8c",
+      "bytes": 1168
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed6.npz",
+      "sha256": "2d7a869436a49e01d0b89cc483e233312fab3f5ad5b69b82fe8ae270c484a301",
+      "bytes": 3594
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed7.json",
+      "sha256": "c1793d33aed4fdcb3f24232ba5a2b82daf55d31b683ace6d82ca64660b27a725",
+      "bytes": 1004
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed7.npz",
+      "sha256": "a8d08a64c02f1e9af54b0b11220bd845ea6c2ec464be839ee9bdab669d052ee8",
+      "bytes": 3323
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed8.json",
+      "sha256": "46610581d34c566c2553626b2ecfa627ca46cbe9af304ef838518bab4f4fd9a1",
+      "bytes": 1335
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed8.npz",
+      "sha256": "8ca199952badd2fa546b67479859cce4c77c0e8e3daa8f75a09a1f6af87e2aac",
+      "bytes": 3512
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed9.json",
+      "sha256": "e24e83499a7020163eff55f4497706f877eba0c9dcba206f60d7fdc0068d33e8",
+      "bytes": 1168
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed9.npz",
+      "sha256": "827fd84847b28fd01f9a48aaf84a3d31799edbb42a140f8fbba4f0326dfee54f",
+      "bytes": 3652
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/upstream/experiments/experiment_l=3/results_gamma=0.2/stats.json",
+      "sha256": "bc5af02d1379192fe644632d7228b8b6e246e953a68b4edffee58ddd18fce0e8",
+      "bytes": 2620
+    },
+    {
+      "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/native_replication_audit.json",
+      "sha256": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+      "bytes": 1371
+    }
+  ]
+}

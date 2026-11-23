@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "passed_focused_software_checks",
+  "checked_utc": "2026-10-26 00:18:35 UTC",
+  "command": "env NUMBA_CACHE_DIR=/tmp/ir_numba_cache MPLCONFIGDIR=/tmp/ir_mpl_cache OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest -q pipelines/simulation/integration_recoverability/tests/test_retry_constrained_chain_baseline.py",
+  "exit_code": 0,
+  "tests_passed": 22,
+  "elapsed_seconds": 1.36,
+  "source_sha256": "38dfdb5e2e1c853375354085ec7f984607d791099a9cc752f1b697c444c494b2",
+  "test_sha256": "e04eba4c19a8255cbf6fe8060e9258432ae016fb7bc46c540c67ced7caa6dcf3",
+  "production_retry_ledger_present": false,
+  "matrix_completion_present": false,
+  "independent_review": "retry_constrained_chain_baseline_independent_review_2026_10_25.json",
+  "scope": "Root independently reran the focused temporary-fixture and tiny CPU-process tests. No scientific fit, production archive/move, GPU operation, protected-array read, or new validation world. Actual post-matrix GPU retry and live interruption remain untested."
+}

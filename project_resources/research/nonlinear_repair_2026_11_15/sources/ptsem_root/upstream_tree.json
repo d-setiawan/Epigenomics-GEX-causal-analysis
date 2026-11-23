@@ -1,0 +1,1211 @@
+{
+  "sha": "d70467c4a17756d76ce3b9299c4beebc8086d73a",
+  "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/d70467c4a17756d76ce3b9299c4beebc8086d73a",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f8f3d0f9250dc1292739fccc553ee3c9712c71c",
+      "size": 176,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/9f8f3d0f9250dc1292739fccc553ee3c9712c71c"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6387ed1e54ac85401405163e8569ee185f2c451f",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/6387ed1e54ac85401405163e8569ee185f2c451f"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9e89db365e997f936644f8fbd9e71a040c76fae5",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/9e89db365e997f936644f8fbd9e71a040c76fae5"
+    },
+    {
+      "path": ".github/workflows/reproducibility.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "def5752bad5ebd9be76076ec7df7214ccd3c8ea9",
+      "size": 445,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/def5752bad5ebd9be76076ec7df7214ccd3c8ea9"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c60d913a501ab46773a7124258030f7f99f36d5c",
+      "size": 335,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c60d913a501ab46773a7124258030f7f99f36d5c"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "977be147897aa663154d0509fe8dafc78549edc6",
+      "size": 1077,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/977be147897aa663154d0509fe8dafc78549edc6"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6315df9b09a8e5cea3f39497ed37ebf7ada02f7",
+      "size": 1098,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d6315df9b09a8e5cea3f39497ed37ebf7ada02f7"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb65d658e837a3b1f8e453540917e11db65a735",
+      "size": 2208,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1eb65d658e837a3b1f8e453540917e11db65a735"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bf3760efa273d11b4480306f8e7eae91826f07c",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/3bf3760efa273d11b4480306f8e7eae91826f07c"
+    },
+    {
+      "path": "config/all_poisson.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9425de06d919b605398b2d037fea51d380d9484",
+      "size": 2743,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c9425de06d919b605398b2d037fea51d380d9484"
+    },
+    {
+      "path": "config/external_baselines.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f73f89e73ec81b62465935f765eaf9e3be7b8a1",
+      "size": 741,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5f73f89e73ec81b62465935f765eaf9e3be7b8a1"
+    },
+    {
+      "path": "config/mixed_family.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d47b250b8d86fba05879a8a31cb1bfa40bb25b6",
+      "size": 2210,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/8d47b250b8d86fba05879a8a31cb1bfa40bb25b6"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "84dacfb4fe9bf835e7f95a1b5d5d140dcfac3817",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/84dacfb4fe9bf835e7f95a1b5d5d140dcfac3817"
+    },
+    {
+      "path": "data/nba",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "77d63d3170bcf473273b29efd659ea63d1dc0d83",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/77d63d3170bcf473273b29efd659ea63d1dc0d83"
+    },
+    {
+      "path": "data/nba/processed_team_quarter",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e50582a0008394f511b44c9d817d90a6521d43a",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/2e50582a0008394f511b44c9d817d90a6521d43a"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2015-16.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96c6ccacf3e5f8946cf3c0a1171779645e9f1ed0",
+      "size": 445293,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/96c6ccacf3e5f8946cf3c0a1171779645e9f1ed0"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2016-17.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4bce26f81192c2f4ced324a71fc43a6a7a2744f",
+      "size": 445175,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c4bce26f81192c2f4ced324a71fc43a6a7a2744f"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2017-18.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69723628961836d0013ab0bcd123dc5981e465a4",
+      "size": 444783,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/69723628961836d0013ab0bcd123dc5981e465a4"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2018-19.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e637183dd870c1ce995a2af2edc0dba0697826fa",
+      "size": 445186,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e637183dd870c1ce995a2af2edc0dba0697826fa"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2019-20.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "073a6fc876990cd37a08edc635f7c6916fcb3da9",
+      "size": 382270,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/073a6fc876990cd37a08edc635f7c6916fcb3da9"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2020-21.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a59f93df310f1505d5b1fffbbe2a2fe73ba6f55",
+      "size": 390579,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/6a59f93df310f1505d5b1fffbbe2a2fe73ba6f55"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2021-22.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b03dac8baa8f2308e34cb3238ff9a132f9c5484b",
+      "size": 405401,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/b03dac8baa8f2308e34cb3238ff9a132f9c5484b"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2022-23.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd0d73b9f13d1a89b9ac1f4aae0a8848a68d9183",
+      "size": 405746,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/cd0d73b9f13d1a89b9ac1f4aae0a8848a68d9183"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2023-24.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae9be4bc2854691bfdebc52949ac3695ad138d7e",
+      "size": 405362,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/ae9be4bc2854691bfdebc52949ac3695ad138d7e"
+    },
+    {
+      "path": "data/nba/processed_team_quarter/expanded_team_quarter_2024-25.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "249a547385e93317905a27ebd384977f57584b03",
+      "size": 405299,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/249a547385e93317905a27ebd384977f57584b03"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "340835714cb77962d2dcaf452aa3e23724254e8b",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/340835714cb77962d2dcaf452aa3e23724254e8b"
+    },
+    {
+      "path": "docs/DATA.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb17ca821f7c94dc3650ba10a7a81f012672843c",
+      "size": 2075,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/eb17ca821f7c94dc3650ba10a7a81f012672843c"
+    },
+    {
+      "path": "docs/REPRODUCING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "687b193032843231871910d9538466a6d9382a43",
+      "size": 2887,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/687b193032843231871910d9538466a6d9382a43"
+    },
+    {
+      "path": "experiments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "89d484c33234dfc33988ac04e0195a50922bc7ed",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/89d484c33234dfc33988ac04e0195a50922bc7ed"
+    },
+    {
+      "path": "experiments/nba",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c258468b084e409f3aaae0fb402fe4deb0d896d7",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/c258468b084e409f3aaae0fb402fe4deb0d896d7"
+    },
+    {
+      "path": "experiments/nba/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f4785602d248817b5e9babd7f6163aeaf94c1bbe",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/f4785602d248817b5e9babd7f6163aeaf94c1bbe"
+    },
+    {
+      "path": "experiments/nba/scripts/build_expanded_team_quarter_fouls.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c423b06aff1f269b4276b078948d0250c22f8d0",
+      "size": 2554,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/2c423b06aff1f269b4276b078948d0250c22f8d0"
+    },
+    {
+      "path": "experiments/nba/scripts/build_nba_five_var_extension.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dab9d57bd263ecfffb3badb242b80647f3b4e157",
+      "size": 2142,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/dab9d57bd263ecfffb3badb242b80647f3b4e157"
+    },
+    {
+      "path": "experiments/nba/scripts/build_quarter_counts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19f9fb09671aa530cf5c7dc8a320fbf742dac51b",
+      "size": 6439,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/19f9fb09671aa530cf5c7dc8a320fbf742dac51b"
+    },
+    {
+      "path": "experiments/nba/scripts/plot_nba_figures.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b4ab43fdf362e0c8e7e65b7f0d9d151c5aaca4f",
+      "size": 8546,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/4b4ab43fdf362e0c8e7e65b7f0d9d151c5aaca4f"
+    },
+    {
+      "path": "experiments/nba/scripts/ptsem_three_node.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f6a591f02a39d8758072e24109922e2a9656aca",
+      "size": 7455,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1f6a591f02a39d8758072e24109922e2a9656aca"
+    },
+    {
+      "path": "experiments/nba/scripts/run_adaptive_ptsem_real_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cae24da64ac8cd6bb1c695554a21a68787ab6776",
+      "size": 65846,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/cae24da64ac8cd6bb1c695554a21a68787ab6776"
+    },
+    {
+      "path": "experiments/nba/scripts/run_expanded_candidate_baselines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd6fff3a9059eb984c44153c5c261bcbd4bd0ee4",
+      "size": 1664,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/bd6fff3a9059eb984c44153c5c261bcbd4bd0ee4"
+    },
+    {
+      "path": "experiments/nba/scripts/run_expanded_candidate_optimization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8b19544a8fb1ab06b9cc07b29a7f260e96c3104",
+      "size": 5460,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/a8b19544a8fb1ab06b9cc07b29a7f260e96c3104"
+    },
+    {
+      "path": "experiments/nba/scripts/run_four_var_baseline_comparison.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5092cfb2c4dc069d8bf016f5045ef877e3969b19",
+      "size": 17247,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5092cfb2c4dc069d8bf016f5045ef877e3969b19"
+    },
+    {
+      "path": "experiments/nba/scripts/run_four_var_candidate_scan.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07dfa0fd3b6be89a5d28b2105453891a61b5eb5c",
+      "size": 10508,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/07dfa0fd3b6be89a5d28b2105453891a61b5eb5c"
+    },
+    {
+      "path": "experiments/nba/scripts/scan_expanded_candidates_moment.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b73ca4864e93c8d6b48f3e24077e24ff5cd9f73",
+      "size": 8165,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/4b73ca4864e93c8d6b48f3e24077e24ff5cd9f73"
+    },
+    {
+      "path": "experiments/nba/scripts/test_adaptive_ptsem_real_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e75900055a7ac90e9f9fef2b4f94ce8b4b3b1e5",
+      "size": 21749,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/9e75900055a7ac90e9f9fef2b4f94ce8b4b3b1e5"
+    },
+    {
+      "path": "manifests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cf37ade37aa17fd3c28ae4f35fcc05c67d249fb8",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/cf37ade37aa17fd3c28ae4f35fcc05c67d249fb8"
+    },
+    {
+      "path": "manifests/NBA_DATA_SHA256.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36582dc69e85794997c2d2345b0a70dd3e10ba90",
+      "size": 1174,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/36582dc69e85794997c2d2345b0a70dd3e10ba90"
+    },
+    {
+      "path": "manifests/NBA_RAW_DATA_SHA256.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64cd995eac990c85dc4b80cd59def7ab99c72295",
+      "size": 952,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/64cd995eac990c85dc4b80cd59def7ab99c72295"
+    },
+    {
+      "path": "manifests/PAPER_OBJECTS.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6752454af838087202a3cd0783fb5c7ab61086b0",
+      "size": 1325,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/6752454af838087202a3cd0783fb5c7ab61086b0"
+    },
+    {
+      "path": "outputs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f7bad2649b1842f987ad7c5e1fbbd25adb5f1f7c",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/f7bad2649b1842f987ad7c5e1fbbd25adb5f1f7c"
+    },
+    {
+      "path": "outputs/figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43e816b71a2f4a12a77feecb2299900ccc786bb7",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/43e816b71a2f4a12a77feecb2299900ccc786bb7"
+    },
+    {
+      "path": "outputs/figures/figure1_all_poisson.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c15ab7130659711dbf0b629296afee473aa8f786",
+      "size": 40284,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c15ab7130659711dbf0b629296afee473aa8f786"
+    },
+    {
+      "path": "outputs/figures/figure2_dag_recovery_f1.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8973051e7f911aacb504052a2c964e3ce79d1068",
+      "size": 39330,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/8973051e7f911aacb504052a2c964e3ce79d1068"
+    },
+    {
+      "path": "outputs/figures/figure3_coefficient_mape.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61cf77a530639276c49c70355e879a5c619349d6",
+      "size": 30914,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/61cf77a530639276c49c70355e879a5c619349d6"
+    },
+    {
+      "path": "outputs/figures/figure4_family_selection.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d0e369fa61561ceea6035de6711b2f23b604488",
+      "size": 25302,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/8d0e369fa61561ceea6035de6711b2f23b604488"
+    },
+    {
+      "path": "outputs/figures/figure5_nba_reference_dag.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a189c3c624dcfac42980e94bb98b03d6fe230aa",
+      "size": 8161,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1a189c3c624dcfac42980e94bb98b03d6fe230aa"
+    },
+    {
+      "path": "outputs/figures/figure6_nba_season_estimates.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fc35b516ebfdb28565317218b5dc760a51cca3f",
+      "size": 19450,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/4fc35b516ebfdb28565317218b5dc760a51cca3f"
+    },
+    {
+      "path": "outputs/tables",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c28030e24a0749f614edd827744bc6bc29ed1497",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/c28030e24a0749f614edd827744bc6bc29ed1497"
+    },
+    {
+      "path": "outputs/tables/nba_structural_recovery.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2aea817fb2c1880f05746d5d3fea1ea3438a7c7",
+      "size": 665,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e2aea817fb2c1880f05746d5d3fea1ea3438a7c7"
+    },
+    {
+      "path": "reproduce.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a7eca662818d1467548c545fec47c9a3b9f0c6c",
+      "size": 4095,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/9a7eca662818d1467548c545fec47c9a3b9f0c6c"
+    },
+    {
+      "path": "requirements-nba.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6b98f4a9c7f30fb73b726a18a1ac4df3ce17277",
+      "size": 350,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d6b98f4a9c7f30fb73b726a18a1ac4df3ce17277"
+    },
+    {
+      "path": "requirements-simulation.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69e5f4b435deb70754877cfc52671365ef53cd9d",
+      "size": 359,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/69e5f4b435deb70754877cfc52671365ef53cd9d"
+    },
+    {
+      "path": "results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "562a408d877b9773ffc03db1f3b6ad510456580f",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/562a408d877b9773ffc03db1f3b6ad510456580f"
+    },
+    {
+      "path": "results/all_poisson",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "25d632080440fb80be372ab4c533edb62ff28ac3",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/25d632080440fb80be372ab4c533edb62ff28ac3"
+    },
+    {
+      "path": "results/all_poisson/metadata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9a8b7615d342380346fd2bc337c2433f92213181",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/9a8b7615d342380346fd2bc337c2433f92213181"
+    },
+    {
+      "path": "results/all_poisson/metadata/formal_run_plan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3954911120641656f13451ca31952f54b2ab7e6c",
+      "size": 38796,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/3954911120641656f13451ca31952f54b2ab7e6c"
+    },
+    {
+      "path": "results/all_poisson/metadata/framework_validation.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e80a228763779a73c9a8c1fb3556ec40212295f",
+      "size": 2051,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/2e80a228763779a73c9a8c1fb3556ec40212295f"
+    },
+    {
+      "path": "results/all_poisson/metadata/seeds.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46d67a71086e6636ea2c5c07b589e5e22bf6f119",
+      "size": 3552499,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/46d67a71086e6636ea2c5c07b589e5e22bf6f119"
+    },
+    {
+      "path": "results/all_poisson/metadata/validation_report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7031521b4c936447a7ed1da804a2b18b92bffcd5",
+      "size": 2488,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7031521b4c936447a7ed1da804a2b18b92bffcd5"
+    },
+    {
+      "path": "results/all_poisson/raw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "686ae4f45c964a3a91cd70c2c5f48c69b05b1013",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/686ae4f45c964a3a91cd70c2c5f48c69b05b1013"
+    },
+    {
+      "path": "results/all_poisson/raw/all_poisson_per_replication.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "beba8b85be393d23199d3f4fd28395abdb1d086b",
+      "size": 36989558,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/beba8b85be393d23199d3f4fd28395abdb1d086b"
+    },
+    {
+      "path": "results/all_poisson/summaries",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eefbbaeba8ca4a64916800b9540e1a6f488fdcdc",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/eefbbaeba8ca4a64916800b9540e1a6f488fdcdc"
+    },
+    {
+      "path": "results/all_poisson/summaries/all_poisson_summary.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "635520d6e510fe38ef37de0336f3aa975db4b92a",
+      "size": 53116,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/635520d6e510fe38ef37de0336f3aa975db4b92a"
+    },
+    {
+      "path": "results/mixed_family",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff2f4113bf3d32aff059024233c5d1578c659d94",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/ff2f4113bf3d32aff059024233c5d1578c659d94"
+    },
+    {
+      "path": "results/mixed_family/metadata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "756126de678e2259041def96dbf4b2681fd556dc",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/756126de678e2259041def96dbf4b2681fd556dc"
+    },
+    {
+      "path": "results/mixed_family/metadata/formal_run_plan.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de49da31b77e75dae7b9592c66b959f4909137af",
+      "size": 18593,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/de49da31b77e75dae7b9592c66b959f4909137af"
+    },
+    {
+      "path": "results/mixed_family/metadata/seeds.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1dd6cb8cf761f7b16b6bddf7b09971dc1144ecb",
+      "size": 3282868,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/a1dd6cb8cf761f7b16b6bddf7b09971dc1144ecb"
+    },
+    {
+      "path": "results/mixed_family/raw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ecdd9c044dfccf0594edfc4d148e1b472713a4c5",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/ecdd9c044dfccf0594edfc4d148e1b472713a4c5"
+    },
+    {
+      "path": "results/mixed_family/raw/mixed_family_all_sweeps_raw.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e332cb511e8313130331a4715f2b905c0e2c3071",
+      "size": 40417830,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e332cb511e8313130331a4715f2b905c0e2c3071"
+    },
+    {
+      "path": "results/mixed_family/summaries",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d0c583f35ba9a30af55b6d338022a23112107995",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/d0c583f35ba9a30af55b6d338022a23112107995"
+    },
+    {
+      "path": "results/mixed_family/summaries/mixed_family_all_metrics_summary.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b5276e6916c0a0a926e4b3b5eec22aa7fe76eb7",
+      "size": 79802,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5b5276e6916c0a0a926e4b3b5eec22aa7fe76eb7"
+    },
+    {
+      "path": "results/mixed_family/summaries/mixed_family_anchor_confusion.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4914aada0e5c00365effc906239fedbfb1bd449",
+      "size": 2198,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d4914aada0e5c00365effc906239fedbfb1bd449"
+    },
+    {
+      "path": "results/mixed_family/summaries/validation_report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87f126cd1eacdc13661a683ec9b2b289b0a57e73",
+      "size": 520,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/87f126cd1eacdc13661a683ec9b2b289b0a57e73"
+    },
+    {
+      "path": "results/nba",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "48f6ad283c5019a907355af3c450cfffc173f536",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/48f6ad283c5019a907355af3c450cfffc173f536"
+    },
+    {
+      "path": "results/nba/baselines",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "85132069c256051a1c82798704aed62b7fb7a81c",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/85132069c256051a1c82798704aed62b7fb7a81c"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "32561b5b7b64de8e7ba5ae4356159da48c9f9960",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/32561b5b7b64de8e7ba5ae4356159da48c9f9960"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team/checkpoint.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5273f56030e3e0227d11389456079d8ad77877c",
+      "size": 976,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/b5273f56030e3e0227d11389456079d8ad77877c"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team/metadata.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b482b267b94ff5bbed6974ca854d6cb34727e67",
+      "size": 611,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/6b482b267b94ff5bbed6974ca854d6cb34727e67"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team/method_summary.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a52c64e5da068272ca4cc029662bba5a9ca61a17",
+      "size": 849,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/a52c64e5da068272ca4cc029662bba5a9ca61a17"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team/per_season_graph_recovery.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2d3d08a626c0762fc265b99305f3bd14756e309",
+      "size": 11493,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e2d3d08a626c0762fc265b99305f3bd14756e309"
+    },
+    {
+      "path": "results/nba/baselines/foul_leaves_5_team/season_input_summary.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac9683377684ee1c0968b58c9020680ef8586c70",
+      "size": 2466,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/ac9683377684ee1c0968b58c9020680ef8586c70"
+    },
+    {
+      "path": "results/nba/fits",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f9ee1ed2572d7db6aea064d33433ed679c88f231",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/f9ee1ed2572d7db6aea064d33433ed679c88f231"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a0911069bd5361825e638057f3581a16dd3e995c",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/a0911069bd5361825e638057f3581a16dd3e995c"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2015-16",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6283979256a346cc7ea436c88dcb1c463e9ffc2e",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/6283979256a346cc7ea436c88dcb1c463e9ffc2e"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2015-16/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d16b6f4cbf5bc702a8e4958773dc8d6855b2ab31",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/d16b6f4cbf5bc702a8e4958773dc8d6855b2ab31"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2015-16/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "360b45d2c3b6306b9fe8e48359de0a7abb90e772",
+      "size": 14880,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/360b45d2c3b6306b9fe8e48359de0a7abb90e772"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2015-16/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c73d081c752fc011d29135eb1a7eaa386222c4bf",
+      "size": 672066,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c73d081c752fc011d29135eb1a7eaa386222c4bf"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2016-17",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8b89ab54ef6cba5f12c9cb9fa8e0e234bfa38e4e",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/8b89ab54ef6cba5f12c9cb9fa8e0e234bfa38e4e"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2016-17/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "86df1a8554bda706beb01e952a3a497c7c7fa015",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/86df1a8554bda706beb01e952a3a497c7c7fa015"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2016-17/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7498b658366d9c0452b74cd762956d940be8d0b4",
+      "size": 14898,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7498b658366d9c0452b74cd762956d940be8d0b4"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2016-17/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ab4f5b48f3360e8978ed1de2b8ef7495b614483",
+      "size": 663787,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7ab4f5b48f3360e8978ed1de2b8ef7495b614483"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2017-18",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9109af7a08355fdf01b712f953d48ad1a27fe58",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/a9109af7a08355fdf01b712f953d48ad1a27fe58"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2017-18/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4466bb6659a2bbc64fe4b0a2b7ee8a5551abe4cf",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/4466bb6659a2bbc64fe4b0a2b7ee8a5551abe4cf"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2017-18/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7ea019282eb8121ee128854a15360b5732c61de",
+      "size": 14881,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c7ea019282eb8121ee128854a15360b5732c61de"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2017-18/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d853637a88ea1cb9eacb5b306b0d9864e5e7ff6f",
+      "size": 662471,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d853637a88ea1cb9eacb5b306b0d9864e5e7ff6f"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2018-19",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "73250a521155fa02951daec26fd7bd42e7c2a517",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/73250a521155fa02951daec26fd7bd42e7c2a517"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2018-19/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "741e3c57f586e0faf38f0d9d4bb24e81e8880963",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/741e3c57f586e0faf38f0d9d4bb24e81e8880963"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2018-19/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e26b943f53e5331ec39705f0775cd3d6fce4071",
+      "size": 14971,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1e26b943f53e5331ec39705f0775cd3d6fce4071"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2018-19/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fbc37bf58eb43b4f89844fa4d54fbf6bd2a7498",
+      "size": 664398,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/8fbc37bf58eb43b4f89844fa4d54fbf6bd2a7498"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2019-20",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c692ebbf88917de416042d9721f5de6428087d76",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/c692ebbf88917de416042d9721f5de6428087d76"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2019-20/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b99778484d1ee434b95173cab27e3049ab876be2",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/b99778484d1ee434b95173cab27e3049ab876be2"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2019-20/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eedcd5849ebe7795a7da1ddb716d62be9384a08b",
+      "size": 14933,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/eedcd5849ebe7795a7da1ddb716d62be9384a08b"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2019-20/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d834a746ec0692defc48aeb9be0850b5db9b3de5",
+      "size": 674477,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d834a746ec0692defc48aeb9be0850b5db9b3de5"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2020-21",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea185537f1a438c7758a7439a7183da79a931ad3",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/ea185537f1a438c7758a7439a7183da79a931ad3"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2020-21/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d86f15fe1d96de2da6e3f0e3605df7b11e3a230f",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/d86f15fe1d96de2da6e3f0e3605df7b11e3a230f"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2020-21/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9485051b14c6d535c4cd487d5b0fb45931a823bc",
+      "size": 14895,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/9485051b14c6d535c4cd487d5b0fb45931a823bc"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2020-21/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b95c741de8cb1c3bb026bfcb6669ce1e9debb666",
+      "size": 665602,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/b95c741de8cb1c3bb026bfcb6669ce1e9debb666"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2021-22",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9f25f837a2ee203c5f411afa87cb15448708050",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/a9f25f837a2ee203c5f411afa87cb15448708050"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2021-22/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0f89bbab1b2e2193dadb0c78d08bc4c9fc5291b7",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/0f89bbab1b2e2193dadb0c78d08bc4c9fc5291b7"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2021-22/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c40cdbf753f82ff0b66aebc8ad3893114bb6334",
+      "size": 14885,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7c40cdbf753f82ff0b66aebc8ad3893114bb6334"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2021-22/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f135ae52206fffa01e90919bae2aea90389a4ca",
+      "size": 671168,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1f135ae52206fffa01e90919bae2aea90389a4ca"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2022-23",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd147cc64fd8f3f8d9d4d0c9152d609d913d88db",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/bd147cc64fd8f3f8d9d4d0c9152d609d913d88db"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2022-23/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a78105e98fd247d5031ed41ee5f380b842456719",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/a78105e98fd247d5031ed41ee5f380b842456719"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2022-23/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "950ad025aa4b2ad4d230a07c56ff4809b67dd111",
+      "size": 14881,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/950ad025aa4b2ad4d230a07c56ff4809b67dd111"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2022-23/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5977ec449bae06547634a0936a13c6b398830925",
+      "size": 673817,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5977ec449bae06547634a0936a13c6b398830925"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2023-24",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2db7f98fd2ee9c3cf23670c305d79fd464a9abf",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/c2db7f98fd2ee9c3cf23670c305d79fd464a9abf"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2023-24/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "265f0fae3b53f35817119d84ec921359c98062ae",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/265f0fae3b53f35817119d84ec921359c98062ae"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2023-24/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a246e37f850f31b4d66b6da4172efb1455ce4ba",
+      "size": 14892,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/1a246e37f850f31b4d66b6da4172efb1455ce4ba"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2023-24/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9214ae94af992ff9ed84d83f1abcbcde922a57b",
+      "size": 657333,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c9214ae94af992ff9ed84d83f1abcbcde922a57b"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2024-25",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2cdd8660666f0b97887f353a212e1e9e1d34fbe",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/c2cdd8660666f0b97887f353a212e1e9e1d34fbe"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2024-25/optimization",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "010459bf1d0df8ec17cc4ad1cd3c706ae0cd02b6",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/010459bf1d0df8ec17cc4ad1cd3c706ae0cd02b6"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2024-25/optimization/graph_result.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74accf080a1b434479976425ebbbb46dd78a5244",
+      "size": 14882,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/74accf080a1b434479976425ebbbb46dd78a5244"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/2024-25/optimization/local_family_fits.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c256c22f7ab7cf1ce5eb33885c40c0acfccf12cc",
+      "size": 670482,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/c256c22f7ab7cf1ce5eb33885c40c0acfccf12cc"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/evaluation.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ee5c7d244e9efb74bcceabc7d931c4be4186a10",
+      "size": 3325,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5ee5c7d244e9efb74bcceabc7d931c4be4186a10"
+    },
+    {
+      "path": "results/nba/fits/foul_leaves_5_team/summary.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8730651b235686167359bd183eadfa91bd1f00f",
+      "size": 242,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d8730651b235686167359bd183eadfa91bd1f00f"
+    },
+    {
+      "path": "results/nba/input_manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acbe72ec6f9c697dd02f165d0db63be9b25f461f",
+      "size": 813,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/acbe72ec6f9c697dd02f165d0db63be9b25f461f"
+    },
+    {
+      "path": "results/nba/summaries",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f6225fc93f52085f837d2c51836a3715866ddbc1",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/f6225fc93f52085f837d2c51836a3715866ddbc1"
+    },
+    {
+      "path": "results/nba/summaries/nba_all_methods_by_season.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d3199734053d38fe1355bd0f17362ea5bec02c4",
+      "size": 9386,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7d3199734053d38fe1355bd0f17362ea5bec02c4"
+    },
+    {
+      "path": "results/nba/summaries/nba_coefficients_by_season.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4764348714bb72ea6c40fce6265916b988716e3",
+      "size": 1841,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/f4764348714bb72ea6c40fce6265916b988716e3"
+    },
+    {
+      "path": "results/nba/summaries/nba_working_families_by_season.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4e61ef3bcff562bd017b500217256f59b1f2323",
+      "size": 1066,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d4e61ef3bcff562bd017b500217256f59b1f2323"
+    },
+    {
+      "path": "results/nba/validation_report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "818004d7eeb987ffa8b451d5bd9769c5ac9eff5f",
+      "size": 2651,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/818004d7eeb987ffa8b451d5bd9769c5ac9eff5f"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "74655a75f0fea13041ffce2cee2ae886a5a79159",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/74655a75f0fea13041ffce2cee2ae886a5a79159"
+    },
+    {
+      "path": "scripts/check_environment.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fe2761182633d9c2ecfb33eb8c99426664a0775",
+      "size": 4880,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7fe2761182633d9c2ecfb33eb8c99426664a0775"
+    },
+    {
+      "path": "scripts/fetch_external_baselines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40dc55e214240270e73b9b1db1a4cb5709bfdd45",
+      "size": 6472,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/40dc55e214240270e73b9b1db1a4cb5709bfdd45"
+    },
+    {
+      "path": "scripts/plot_all_poisson.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff956e2e9e22aadc2ec8a17803f81791eb23c09c",
+      "size": 7705,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/ff956e2e9e22aadc2ec8a17803f81791eb23c09c"
+    },
+    {
+      "path": "scripts/plot_mixed_family.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e918e871bb2e4e7deef8cef7b232a49e1b3f49dc",
+      "size": 11605,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e918e871bb2e4e7deef8cef7b232a49e1b3f49dc"
+    },
+    {
+      "path": "scripts/run_all_poisson.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b848275e1e802842cb4ae38ac5df9147e2190ab",
+      "size": 23347,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/3b848275e1e802842cb4ae38ac5df9147e2190ab"
+    },
+    {
+      "path": "scripts/run_mixed_family.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "031c961dba5d8813a8b28e85599ccd99666a9d66",
+      "size": 13432,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/031c961dba5d8813a8b28e85599ccd99666a9d66"
+    },
+    {
+      "path": "scripts/summarize_all_poisson.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67be833fd3a28c2cfd2216dce7416d69ba520887",
+      "size": 26536,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/67be833fd3a28c2cfd2216dce7416d69ba520887"
+    },
+    {
+      "path": "scripts/summarize_mixed_family.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e97892df94756e6a876d31168463242befa20c3e",
+      "size": 13166,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/e97892df94756e6a876d31168463242befa20c3e"
+    },
+    {
+      "path": "scripts/summarize_nba.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3958c390b13c8add3ff4fc86e29a54cb71fa4de",
+      "size": 2531,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/d3958c390b13c8add3ff4fc86e29a54cb71fa4de"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bea51bb196e71d41b67036b839e7b8edddc64447",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/bea51bb196e71d41b67036b839e7b8edddc64447"
+    },
+    {
+      "path": "src/all_poisson_framework.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5606780f9f7a444a1414e746e88818f8925d9d82",
+      "size": 4924,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/5606780f9f7a444a1414e746e88818f8925d9d82"
+    },
+    {
+      "path": "src/mixed_family_framework.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3eb4c5fcd824934f204c7989818db8812b1ccf65",
+      "size": 2499,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/3eb4c5fcd824934f204c7989818db8812b1ccf65"
+    },
+    {
+      "path": "src/nba_core.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfebc083fc01f10d1af4987f29a0e81524093bf3",
+      "size": 122603,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/bfebc083fc01f10d1af4987f29a0e81524093bf3"
+    },
+    {
+      "path": "src/simulation_core.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff896361d3461bd9e587981aa14131a1ad8a69ec",
+      "size": 121694,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/ff896361d3461bd9e587981aa14131a1ad8a69ec"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bda856b11974c8248cae831707935a2f97865cd4",
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/trees/bda856b11974c8248cae831707935a2f97865cd4"
+    },
+    {
+      "path": "tests/test_method_correctness.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "173b8ce243a819da6e07299337f9a0a78587a78a",
+      "size": 30500,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/173b8ce243a819da6e07299337f9a0a78587a78a"
+    },
+    {
+      "path": "tests/test_reproducibility.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a4fdddb77c7e4232e81116bdc89ad3b082bef3b",
+      "size": 4627,
+      "url": "https://api.github.com/repos/KOUHOUKOU/PT-SEM/git/blobs/7a4fdddb77c7e4232e81116bdc89ad3b082bef3b"
+    }
+  ],
+  "truncated": false
+}

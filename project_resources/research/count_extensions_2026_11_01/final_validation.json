@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "date_utc": "2026-11-01T21:29:35.414243+00:00",
+  "total_arms": 279,
+  "preflight_tests": 29,
+  "unit_tests_xml_sha256": "2b58867bca03397e34844befcb19e95ae66d63db730fb7bbc496fd6c2bc1ac11",
+  "studies": [
+    {
+      "study": "count_extensions_2026_11_01",
+      "arms": 225,
+      "artifacts_verified": 903,
+      "source_hashes_match": true,
+      "fit_provenance_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+      "evaluation_provenance_sha256": "bba8d5d74f696727ba0b71addaa45067b3f1346d481157a05f359759d88999b3",
+      "eligible_source_instances": 234,
+      "raw_moment_pairs": 0,
+      "cf_confirmed_pairs": 0,
+      "cf_assessed": false,
+      "fit_wall_seconds": 686.7618260879826,
+      "independent_review_sha256": {
+        "reviews/audit_extension_fits.json": "cb381ae274ec2314a55306766b0466f8ca4284a3c13cc9bae413ce3b87006ed8",
+        "reviews/data_and_evaluation_audit.json": "e290b819fd948fdd55b5588cdfd5d26422046c968652c6eefaf218490d82872c",
+        "reviews/data_extraction_audit.json": "58dcf72b4658cf9c854b16f0e4d33d548172e21c2a80a68fb5cc27f1de26c483",
+        "reviews/extension_algebra_audit.json": "f4484068428cb487b4b7d7e65ad8eb6988588e9ab582d73b058ec65df56741aa",
+        "reviews/extension_metric_audit.json": "8e18e86297e6f8e0ede626d2d972f43c12ba76342e7ad3feab848b03b9ab6d8d",
+        "reviews/final_document_review.json": "ef81a7f6cd782d5157b81d637cc40ca40d2d404a5226f1a7ee9305a152dc750a",
+        "reviews/final_scale_schema_review.json": "850d628b2c171b6ea93a1a9370091b746fba5ada202fc01a95f7c36d2490cad9",
+        "reviews/gram_algebra_audit.json": "b02b48cf5adf2f1a08562553c92cef8a7e02a936e8d8cbdb5003a8fdb5e4ef49",
+        "reviews/prefit_theory_review.json": "8d431f6a50011dde59be1716fe7e22faabf783e2a09ecce3823aef6dc37ef493",
+        "reviews/prefit_theory_review_before_constant_completion.json": "b8e515d7464d89119d444ce170fec8f290940a2c9a56f104d444e4697986cfaf",
+        "reviews/results_numerical_review.json": "6aadb218ddc6881d489ee94ba34d2104066e127be2b1da5e96d9d6daeae91c8c",
+        "reviews/runner_preflight_review.json": "4120f35c274b528e101857ccc456b5d487adb3799d30dc8de3516f34142b2529"
+      }
+    },
+    {
+      "study": "count_rank20_2026_11_01",
+      "arms": 54,
+      "artifacts_verified": 219,
+      "source_hashes_match": true,
+      "fit_provenance_sha256": "c8ff28601e1a063960a39788a39f44e9f2c7a11c4be463a1c7a328bcc1d7316b",
+      "evaluation_provenance_sha256": "4dd8187da4cc49a34def7c1169710075d3a96b0bbc073f968bcbed2e4549264c",
+      "eligible_source_instances": 25,
+      "raw_moment_pairs": 0,
+      "cf_confirmed_pairs": 0,
+      "cf_assessed": false,
+      "fit_wall_seconds": 313.57579616300063,
+      "independent_review_sha256": {
+        "reviews/audit_rank20_fits.json": "22bc72ac80e30959cda1e1bc437b8c0192f4a24e03e06d9bc7cb65a2f94e5fb9",
+        "reviews/data_and_evaluation_audit.json": "327d5041a4e4f6616ad2ed72d5be68245a444f87f833c536cd882d6e72575ee7",
+        "reviews/extension_metric_audit.json": "67e0ecf5bd56b18efdd680f99d434d404f0117badd9452f63cc2998eedd68b2c",
+        "reviews/final_document_review.json": "c48ce3e42b87e7fffba9d40822a432f115d7be9d7afec454c342e2d35689138c",
+        "reviews/high_rank_preflight.json": "f9443d48e6a3e84b478ca85fb1f8c3f5c59f3e24b1cbca2272c478fe116609d3",
+        "reviews/prefit_theory_review.json": "53814dc36e2c46f465bde5207b03ef99402a7006412dd4e1fa0017424c1bb0e2",
+        "reviews/results_numerical_review.json": "e71381412f435a0004232486fbce945a6b3d9d28ef6825cc3bced6ca3bab0548"
+      }
+    }
+  ],
+  "preceding_study_seals_unchanged": {
+    "count_mdcrl_2026_11_01/runs_v1/provenance.json": "0cf85208a3e08480c732ee80cd741b7425b5baafadaa7b362a84a32a7c96494a",
+    "count_mdcrl_2026_11_01/evaluation_v1/provenance.json": "8d563cf6dc0c26978aef92582c7cd1a77ff29f591d81c7e03ba2404517d962b4",
+    "count_mdcrl_2026_11_01/evaluation_v1/summary.json": "7697a7cbf356cbe3648edced8644dc8e28f7142c4092a968e1f1d14349fea856"
+  },
+  "documentation": {
+    "files": 23,
+    "local_links": 302,
+    "problems": [],
+    "markdown_sha256": {
+      "README.md": "d6454af9501b16795e923d27152012570226b3868a3e632b083f0c397ad375f9",
+      "pipelines/empirical/integration/README.md": "7c5738bdbc2207b2bc7d3381cbe196b17770b1b434710767a83ddce957e2c412",
+      "project_resources/research/LIMITATIONS.md": "9ad07d89dd6af8c6ed67f26ed10816cad5a185a2803af8e5cb815cfde26797db",
+      "project_resources/research/ROADMAP.md": "8a17a1cbb7dd4c9c02269a95cc1b8c90cdb4c0a87b1e78da583d6eca144fd7f5",
+      "project_resources/research/count_extensions_2026_11_01/.pytest_cache/README.md": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "project_resources/research/count_extensions_2026_11_01/METHOD.md": "528a68342666be268b21ea97a1d31f067d0576b4dceb74a7fff90aee1b965f5a",
+      "project_resources/research/count_extensions_2026_11_01/README.md": "83419ba27c6ce4793195e05ff6b49a9f3b1d3e6b3e9b298ff06e2488f133c8a4",
+      "project_resources/research/count_extensions_2026_11_01/RESULTS.md": "f91c1900c98707151b5854ef22763b9ff9b44898059f260b62f8650433e1d6a6",
+      "project_resources/research/count_extensions_2026_11_01/reviews/cf_variance_note.md": "14b36ee59af0c312994adab44bea89e7bcbd76e407c42173d8b550b7d1241b1d",
+      "project_resources/research/count_extensions_2026_11_01/reviews/data_freeze_review.md": "b2657fc1ca25fbbe890ef17177649e8783a99144e55ebcb6178338a83677e621",
+      "project_resources/research/count_extensions_2026_11_01/reviews/estimator_grounding.md": "dfedcc1d7ffa92cb6f40c96f79ada58a8aeb156e13e05e31b8f82f099b9f5214",
+      "project_resources/research/count_extensions_2026_11_01/reviews/evaluation_protocol_review.md": "86e60b7d9c819f9eb51c804d58cdd70defbe7221e8349d924ef1aa9ba7b1563f",
+      "project_resources/research/count_extensions_2026_11_01/reviews/evaluation_readout_review.md": "4df3f620b97570da4d52444d51dacda50c57acd7a5b86cada67720b3b693f250",
+      "project_resources/research/count_extensions_2026_11_01/reviews/kernel_population_identifiability.md": "8f58a65e6c657af7d7f2b7a032dc3755880944aa24157113de19be59290e1b2d",
+      "project_resources/research/count_extensions_2026_11_01/reviews/primary_references.md": "0b41fcc5d13fcf49bff75fbb3c2dc819cc4bc25f212c9e64564c95c35b986afe",
+      "project_resources/research/count_extensions_2026_11_01/reviews/result_interpretation_review.md": "775f41c5fdf133b16d79c11625ebb29f8b5aa270c220236adac43b0526e8f226",
+      "project_resources/research/count_extensions_2026_11_01/reviews/runner_preflight_review.md": "3c1a21f5b5a2834c9d71d8207e4caa877ede97e80b987ca3663d3966b47ad3bc",
+      "project_resources/research/count_extensions_2026_11_01/reviews/theory_protocol_review.md": "ea0c1933dd0fe4a54b0c46d73eb7ac346b420d0eac2f60dd60180b86fedf2c1e",
+      "project_resources/research/count_rank20_2026_11_01/README.md": "3338b914b9f3259462ed44c75527645b8157355804d657c17b7792456fc29fed",
+      "project_resources/research/count_rank20_2026_11_01/RESULTS.md": "ed2f8149ef78c3e76c8bf718055ec6a78025f2563b6fd22ad9a3eb6bd95c16d8",
+      "project_resources/research/count_rank20_2026_11_01/reviews/fit_decision_review.md": "0c5e1bd2493990b4d65f4d1973611b489b4549301d6cc19a1cc9911fc2081c83",
+      "project_resources/research/count_rank20_2026_11_01/reviews/result_interpretation_review.md": "9ebcf6efb63bac67bdbb9a03c0bc2a4bf0d87c7a2407f29ca8eeaa3a15162513",
+      "project_resources/research/theory/README.md": "f774a99d5be9ab24dd5cddefd2a13e7a124e0e447da99d5f12a6ecc62cff7151"
+    }
+  },
+  "graphify": {
+    "status": "completed_ast_only",
+    "nodes": 9988,
+    "newest_helper_present": true,
+    "log_sha256": "9c4927902be3b8c60509cf29ea890816b53c9ecb7affd1e23325124f93d21b22"
+  },
+  "limits": [
+    "Finite coverage of six identified model/estimator families plus one dimension sensitivity, not every possible algorithm",
+    "No new biological data or benchmark worlds; deterministic algebra fixtures only",
+    "Existing cohorts reused; exploratory findings rather than fresh validation",
+    "No accepted moment candidate, so scientific CF confirmation and causal graph extraction were not reached",
+    "Whole-repository migration and unrelated pipelines were not audited"
+  ]
+}

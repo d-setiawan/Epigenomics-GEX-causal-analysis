@@ -1,0 +1,307 @@
+{
+  "checks_passed": 7060,
+  "created_utc": "2026-10-26T00:17:12.459502+00:00",
+  "fits": {
+    "scglue/align_high": {
+      "checkpoint_sha256": "f99ea53465a2aa4ff1df9eca5343d5ed35eb0c53c055db9c3e8043d07b4fdee6",
+      "configuration": {
+        "align_burnin": 20,
+        "data_batch_size": 128,
+        "device": "cuda",
+        "dropout": 0.2,
+        "encode_batch_size": 256,
+        "graph_batch_size": 8192,
+        "h_depth": 2,
+        "h_dim": 256,
+        "lam_align": 0.2,
+        "lam_data": 1.0,
+        "lam_graph": 0.02,
+        "lam_kl": 1.0,
+        "lam_sup": 0.02,
+        "latent_dim": 30,
+        "learning_rate": 0.002,
+        "max_epochs": 120,
+        "neg_samples": 10,
+        "patience": 8,
+        "reduce_lr_patience": 4,
+        "seed": 0,
+        "val_split": 0.1,
+        "wait_n_lrs": 1
+      },
+      "directory": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/constrained_collider_0/informative/scglue/align_high_seed0",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "deca66eaa612e65716aded35fef0bbb5a897b66f10185ff61dbf61019c9e70b0",
+          "latent_dimension": 30,
+          "rows": 1000,
+          "sha256": "3b787994b8792d393f3c8fcaaced4daa2fdd23c834ec013f4c0b1badc6866891"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "0314670381879d560deb778bc70f7860f5e293e46a3c5c3047e7e64f50a06e29",
+          "latent_dimension": 30,
+          "rows": 1000,
+          "sha256": "36e814bd1f4975eb325ab1598be6eadff764e64488b95cbaa7bc82124878a721"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "eb6c5c24c3a92fcd69b2abbb60e16e45e0cc54a219d30aa82992127955d35049",
+          "latent_dimension": 30,
+          "rows": 967,
+          "sha256": "f043f8ca8ee711ab5a9d0fc8858257ae79be0078d7cfa0aa1498228e8414def5"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "8a017258ab5b6e426506b8b93688c16c445aa963cf4fc5b5b052e5a62450aadd",
+          "latent_dimension": 30,
+          "rows": 2000,
+          "sha256": "3d7934a96a5278389f734873be3d9f114364b19da3e2c75e51d1eb37d7f82319"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "203801695d3e61892eff80e49d425786ea6ec6f515bd1c734928d7e69ec0ff50",
+          "latent_dimension": 30,
+          "rows": 2000,
+          "sha256": "603706365b803f1c68ab012709648bb430b010a096f2b5fdf557b2e2dfec3578"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "c859bcac7d5619746521215448773158cb93468af635a22853f41166193f2541",
+          "latent_dimension": 30,
+          "rows": 1934,
+          "sha256": "24bcfdc9a9af91e7d17e115275f36506ae6fd99e42de350e8e2b1e3053278841"
+        },
+        "val/H3K27ac.npz": {
+          "cell_ids_sha256": "f343dae7c3a0e9ba0d5b75355978026a64496171b14a893e092083111ead3e74",
+          "latent_dimension": 30,
+          "rows": 500,
+          "sha256": "9380f5a51c46be4e9605dd7180d55b8a9bbb583a911180507c065450ee7fe665"
+        },
+        "val/H3K4me3.npz": {
+          "cell_ids_sha256": "637646889d1dc1ae3e02359cbf8acddbdf73e3035e7dccb059e1534065f945ac",
+          "latent_dimension": 30,
+          "rows": 500,
+          "sha256": "26fd7a4573c9a9558d184e6b115e88e134d8ddb5763cfb0e48e6acfc67da2ae3"
+        },
+        "val/RNA.npz": {
+          "cell_ids_sha256": "32bde8bb59898d03f21f31cb1c48a139e2064ec353ad3e2e655de955878c6fd9",
+          "latent_dimension": 30,
+          "rows": 491,
+          "sha256": "d5899ac705116f5c89481aaa784e35aadf63b79cc18574dc1e3867ec86d03bd7"
+        }
+      },
+      "runtime_overrides": {
+        "CUDA_LAUNCH_BLOCKING": "1",
+        "CUDA_VISIBLE_DEVICES": "0",
+        "LD_LIBRARY_PATH": null,
+        "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+      },
+      "sole_change_from_recorded_baseline": {
+        "lam_align": {
+          "baseline": 0.05,
+          "candidate": 0.2
+        }
+      },
+      "study_sha256": "f0a615f452f71aa9c2b20688dd016bcf46f0aefc13cd6f9b0b2cd491ad88fe62",
+      "training": {
+        "phases": {
+          "fine-tune": {
+            "event_sha256": "9dc2c988e756d714f55adc096e4262a837333558c982cebd9369cac3853723f1",
+            "last_recorded_epoch": 37,
+            "most_recent_retained_native_checkpoint": 35,
+            "retained_checkpoint_sha256": {
+              "checkpoint_29.pt": "075c5171a2013f3c8a09d33bb247e380b4270af404cd5dcd1cea9e4e215d32d4",
+              "checkpoint_31.pt": "ca81371b7b691d987d2091985473da33cd044bea03f94c4e115a7180fd45f5aa",
+              "checkpoint_35.pt": "dedad0ff00b8a0fe691921fce2d2f2ec244454f40d43d3b5757b8622065d81ee"
+            },
+            "scalar_observations_checked": 1110
+          },
+          "pretrain": {
+            "event_sha256": "1bb72c6c0e74d697b2c4ce7bbfb341da4358979922f4e9f92ba473bb6376ef03",
+            "last_recorded_epoch": 37,
+            "most_recent_retained_native_checkpoint": 35,
+            "retained_checkpoint_sha256": {
+              "checkpoint_23.pt": "6fe9a7c9de533ef92520d5616671ddc36b3fa6678a899b6587d03898ec48546a",
+              "checkpoint_29.pt": "87618f49480b2e0a299a10f52d428a28347ce120f7206d9e5c601fe771a8ca32",
+              "checkpoint_35.pt": "fead5be3c9439d420153fd652d39118db86ea4810b9efab05c96e206d3c1377f"
+            },
+            "scalar_observations_checked": 1110
+          }
+        },
+        "restoration_scope": "Native most-recent-retained semantics; checkpoint tensors not deserialized"
+      },
+      "unique_public_ids": 10392,
+      "validation_fit_sha256": "d8fec24d71a233c8d63b1ef254de31470feba194be444a6a668290c081e77096"
+    },
+    "scmrdr/adversarial_low": {
+      "checkpoint_sha256": "0d67d9d1f04584723ec6554c409168f505f01ec5fff346e645dbb1b65c8e39d2",
+      "configuration": {
+        "batch_size": 128,
+        "beta": 5.0,
+        "cosine_learning_rate": true,
+        "device": "cuda",
+        "dispersion_strategy": "gene",
+        "dropout_rate": 0.2,
+        "gamma": 10.0,
+        "gradient_clip_norm": 1.0,
+        "hidden_layers": [
+          128,
+          128
+        ],
+        "lambda_adv": 5,
+        "latent_dim_shared": 20,
+        "latent_dim_specific": 20,
+        "learning_rate": 0.001,
+        "max_epochs": 200,
+        "min_delta": 0.0,
+        "patience": 10,
+        "seed": 0,
+        "validation_fraction": 0.1,
+        "validation_mc_samples": 1
+      },
+      "directory": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/constrained_collider_0/informative/scmrdr/adversarial_low_seed0",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "deca66eaa612e65716aded35fef0bbb5a897b66f10185ff61dbf61019c9e70b0",
+          "latent_dimension": 20,
+          "rows": 1000,
+          "sha256": "c393bd82f00f6f2c29246052a817ece8c10b2923176b2e0409bc998217e8ccea"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "0314670381879d560deb778bc70f7860f5e293e46a3c5c3047e7e64f50a06e29",
+          "latent_dimension": 20,
+          "rows": 1000,
+          "sha256": "d1de7de11e6bb3128058ba9df6167015973e679e56a260b14e41cb1b1ee552d8"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "03f7ddd8cbb71d2c70266b1916200c3f6fd7b1718ff2a1b2b453d3a292bc2c24",
+          "latent_dimension": 20,
+          "rows": 1000,
+          "sha256": "770ddda276a182312f719688a0ab04a8f5853a122e1604c1c4879f735a0eef15"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "8a017258ab5b6e426506b8b93688c16c445aa963cf4fc5b5b052e5a62450aadd",
+          "latent_dimension": 20,
+          "rows": 2000,
+          "sha256": "6d955bb95cb193af7b7b5ec53b2b3273af4c6a9851890eac0683d321e68c5a74"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "203801695d3e61892eff80e49d425786ea6ec6f515bd1c734928d7e69ec0ff50",
+          "latent_dimension": 20,
+          "rows": 2000,
+          "sha256": "840eceae1960c7913928a62fa52fca58e913e1270aba86b2dfc2023e0d4bc3bc"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "3f44668949f8e13327715690e23bc18ecc73135f9ade921f764b91b9339be277",
+          "latent_dimension": 20,
+          "rows": 2000,
+          "sha256": "52b4ba73d37d691e784d4f7ef88fcc6e1a5f153881a6bc4a181ca196a16a3d7c"
+        },
+        "val/H3K27ac.npz": {
+          "cell_ids_sha256": "f343dae7c3a0e9ba0d5b75355978026a64496171b14a893e092083111ead3e74",
+          "latent_dimension": 20,
+          "rows": 500,
+          "sha256": "e8f1e4e82bcf83d2debdc9fe46021f29e2e0b8cf8efdce025063b451977fa1cd"
+        },
+        "val/H3K4me3.npz": {
+          "cell_ids_sha256": "637646889d1dc1ae3e02359cbf8acddbdf73e3035e7dccb059e1534065f945ac",
+          "latent_dimension": 20,
+          "rows": 500,
+          "sha256": "a5e44c16f6c2211e77057d30787ce5557fd5233c83e613ddb403368b3b115d5c"
+        },
+        "val/RNA.npz": {
+          "cell_ids_sha256": "bf7015d6e5cb8bdf4a7f76bcf069070b56183f2c214070b18b47ecc5cb3e896b",
+          "latent_dimension": 20,
+          "rows": 500,
+          "sha256": "c52c5ff18f8af45e0549dbb7917ec5f1de8d237688521f5ed1c99043e46d47c2"
+        }
+      },
+      "runtime_overrides": {
+        "CUDA_LAUNCH_BLOCKING": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "LD_LIBRARY_PATH": null,
+        "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+      },
+      "sole_change_from_recorded_baseline": {
+        "lambda_adv": {
+          "baseline": 10,
+          "candidate": 5
+        }
+      },
+      "study_sha256": "4d6bc5eb5830633a031346712e8ea37f75b24bdb1124384031b7b7ccb2385f9c",
+      "training": {
+        "best_checkpoint_sha256": "0d67d9d1f04584723ec6554c409168f505f01ec5fff346e645dbb1b65c8e39d2",
+        "best_epoch": 181,
+        "best_validation_loss": 2513.074292317708,
+        "checkpoint_scope": "Best-restoration metadata and binary identities only; checkpoint tensors not deserialized",
+        "early_stopped": true,
+        "epochs_completed": 191,
+        "history_sha256": "340f53c66d94e11ed0c4d8f8e7562840e27ebd3e815a25d53db47e0eec7111be",
+        "largest_weighted_objective_roundoff": 0.00010114428368979134,
+        "last_checkpoint_sha256": "e12765156d8c7ee1a7c692df09a45233143590c329d74eca042bc07ccf02743e",
+        "n_features": 2009,
+        "training_rows": {
+          "H3K27ac": 2000,
+          "H3K4me3": 2000,
+          "RNA": 2000
+        },
+        "validation_rows": {
+          "H3K27ac": 500,
+          "H3K4me3": 500,
+          "RNA": 500
+        }
+      },
+      "unique_public_ids": 10500,
+      "validation_fit_sha256": "510f29ced5b0d49592dbb02f6c59afb0cc0557fbd9652ed1920fbd42a2290937"
+    }
+  },
+  "interim_reports": {
+    "scglue/align_high": {
+      "pairwise_normalized_gaps": {
+        "H3K27ac--H3K4me3": 0.13328598990469057,
+        "RNA--H3K27ac": 0.09531643256586594,
+        "RNA--H3K4me3": 0.10146726677988406
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/constrained_collider_0_informative_val_seed0_scglue_align_high_8366327f.json",
+      "sha256": "ee1d9e9cf946b533ae133b218231a71825c4ac8f9a0f460ab966cdbfaf2ec235",
+      "training_cells_per_assay": 1934,
+      "validation_cells_per_assay": 491,
+      "verification_scope": "Saved state-cost and decoder-average arithmetic plus public-ID/config/source/export evidence; no state arrays or score/probe reruns.",
+      "worst_pair_gap": 0.13328598990469057
+    },
+    "scmrdr/adversarial_low": {
+      "pairwise_normalized_gaps": {
+        "H3K27ac--H3K4me3": 0.03628842203671056,
+        "RNA--H3K27ac": 0.03551213591612036,
+        "RNA--H3K4me3": 0.03310520252214296
+      },
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/constrained_collider_0_informative_val_seed0_scmrdr_adversarial_low_8366327f.json",
+      "sha256": "98778f4aaef79c220105e511b362acf1ec335ac5500af323e157873686937e2b",
+      "training_cells_per_assay": 1934,
+      "validation_cells_per_assay": 491,
+      "verification_scope": "Saved state-cost and decoder-average arithmetic plus public-ID/config/source/export evidence; no state arrays or score/probe reruns.",
+      "worst_pair_gap": 0.03628842203671056
+    }
+  },
+  "limitations": [
+    "State costs were not independently recomputed from state labels.",
+    "Checkpoint tensors were not independently deserialized; restoration checks are metadata and binary identity checks.",
+    "This audit does not certify integration truth, select settings or establish matrix completion."
+  ],
+  "matrix_observed_start_sha256": "136d6076a733b5d1874d9f5c897c9769f6e42ab14122ddeb77f99d588de5c861",
+  "prior_batch_receipt_sha256": "6201ca846c5101c8e94a24642b404920d1c6bae5cafe3af1857bf02d3f773e0b",
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "regime": "informative",
+  "same_selected_ID_hashes_and_saved_state_scaling_across_batches": true,
+  "scope": "Completed scGLUE align_high and scMRDR adversarial_low only. Public train/val/discovery NPZ cell_ids/shared fields, JSON/source metadata and checkpoint byte hashes. No state/truth/private/probe/assessment arrays, causal scores, CUDA, model/probe fits, scoring reruns, setting selection, running study baseline, retry helper, or existing-source/plan/fit edits. Raw H5AD counts not opened; lineage reconciled through archived metadata. Checkpoints not deserialized.",
+  "seed": 0,
+  "status": "passed_scoped_independent_audit",
+  "verified_check_groups": [
+    "Three matrix-start file hashes, protocol, 17 frozen source pins, three current analysis sources and process-local runtime byte identity.",
+    "Full inner/native/outer configurations, declared jobs and sole requested overrides.",
+    "Outer study/model/fit/export/checkpoint chains, frozen transforms/guidance, installed and vendored native source identities.",
+    "GLUE complete finite native event histories, saved final scalar agreement and retained native checkpoint names/hashes.",
+    "scMRDR consecutive finite epoch history, first validation minimum, patience stop, cosine schedule, external validation and weighted objective arithmetic.",
+    "All18 public export hashes, finite shared dimensions, disjoint unique IDs and exact frozen/cache public identities.",
+    "Raw input identities reconciled through archived world/preprocessing/model/export metadata.",
+    "Both interim report scope/config/source/export/reference evidence chains and truth-file hash strings checked without truth-file reads.",
+    "Independent public-ID pool reconstruction and matching permutations, saved embedding-distance arithmetic, public shared variances and saved geometry/hubness domains.",
+    "Saved squared-cost normalization, three-pair maxima and18 source-decoder means; same pools/scaling as prior completed batch."
+  ],
+  "world_id": "constrained_collider_0"
+}

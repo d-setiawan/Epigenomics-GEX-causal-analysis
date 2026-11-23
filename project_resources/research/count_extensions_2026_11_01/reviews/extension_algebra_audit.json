@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checks": [
+    "all_12_kernel_projected_moments_and_repeated_index_C2_C3_against_multinomial_factorial_expansion",
+    "13_kernel_constant_coordinate_positive_subspace_and_unit_scale_checks",
+    "all_eight_PGF_matrices_against_unwhitened_direct_PGF_derivatives",
+    "unequal_group_size_shrinkage_partition_mean_variance_and_amplitude",
+    "36_implemented_CF_kernel_frequency_checks_against_finite_factorial_polynomial",
+    "36_conditional_CF_means_and_absolute_second_moments_by_probability_sums"
+  ],
+  "counts": {
+    "kernel_parameter_combinations": 12
+  },
+  "project_data_read": false,
+  "scientific_model_fits": 0,
+  "new_benchmark_worlds": 0,
+  "maximum_conditional_CF_mean_error": 7.850462293418876e-16,
+  "maximum_conditional_CF_second_moment_error": 4.6629367034256575e-15,
+  "source_sha256": {
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "verify_extension_algebra.py": "138bf6bd6757a553d57d6b6d0e75c93b04919c9179dac60b23ec71744efdf3f4"
+  }
+}

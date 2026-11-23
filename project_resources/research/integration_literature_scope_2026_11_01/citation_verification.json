@@ -1,0 +1,1527 @@
+{
+  "date_utc": "2026-11-01T07:07:37.293605+00:00",
+  "tool": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "tool_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "note": "DOI existence is separate from bibliographic identity and claim validity. HEAD failures can reflect access controls. Crossref formatter can fail on missing container titles; see manual primary-source reconciliation.",
+  "results": [
+    {
+      "paper_id": "P01",
+      "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+      "year": 2022,
+      "doi": "10.1038/s41587-022-01284-4",
+      "primary_url": "https://www.nature.com/articles/s41587-022-01284-4",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+        "authors": "Cao, Z., Gao, G.",
+        "year": "2022",
+        "journal": "Nature Biotechnology",
+        "volume": "40",
+        "pages": "1458-1466",
+        "doi": "10.1038/s41587-022-01284-4"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P02",
+      "title": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+      "year": 2024,
+      "doi": "10.1038/s41467-024-51382-x",
+      "primary_url": "https://www.nature.com/articles/s41467-024-51382-x",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+        "authors": "Samaran, J., Peyré, G., Cantini, L.",
+        "year": "2024",
+        "journal": "Nature Communications",
+        "volume": "15",
+        "pages": "",
+        "doi": "10.1038/s41467-024-51382-x"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P03",
+      "title": "scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration",
+      "year": 2025,
+      "doi": "10.52202/085713-5170",
+      "primary_url": "https://arxiv.org/html/2510.24987v2",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scMRDR: A scalable and flexible framework for unpaired single-cell multi-omics data integration",
+        "authors": "Sun, J., Liang, C., Wei, R., et al.",
+        "year": "2025",
+        "journal": "Advances in Neural Information Processing Systems 38",
+        "volume": "",
+        "pages": "171573-171600",
+        "doi": "10.52202/085713-5170"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2025,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P04",
+      "title": "SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport",
+      "year": 2022,
+      "doi": "10.1089/cmb.2021.0446",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8812493/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport",
+        "authors": "Demetci, P., Santorella, R., Sandstede, B., et al.",
+        "year": "2022",
+        "journal": "Journal of Computational Biology",
+        "volume": "29",
+        "pages": "3-18",
+        "doi": "10.1089/cmb.2021.0446"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P05",
+      "title": "SCOTv2: Single-Cell Multiomic Alignment with Disproportionate Cell-Type Representation",
+      "year": 2022,
+      "doi": "10.1089/cmb.2022.0270",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9805876/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SCOTv2: Single-Cell Multiomic Alignment with Disproportionate Cell-Type Representation",
+        "authors": "Demetci, P., Santorella, R., Chakravarthy, M., et al.",
+        "year": "2022",
+        "journal": "Journal of Computational Biology",
+        "volume": "29",
+        "pages": "1213-1228",
+        "doi": "10.1089/cmb.2022.0270"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P06",
+      "title": "Manifold alignment for heterogeneous single-cell multi-omics data integration using Pamona",
+      "year": 2022,
+      "doi": "10.1093/bioinformatics/btab594",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696097/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Manifold alignment for heterogeneous single-cell multi-omics data integration using Pamona",
+        "authors": "Cao, K., Hong, Y., Wan, L.",
+        "year": "2021",
+        "journal": "Bioinformatics",
+        "volume": "38",
+        "pages": "211-219",
+        "doi": "10.1093/bioinformatics/btab594"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": {
+        "online": "2021-08-16",
+        "issue": "2022-01",
+        "preferred_year_basis": "journal issue year, matching publisher citation",
+        "note": "Crossref online publication year 2021 and issue year 2022 are both correct; they identify the same article.",
+        "primary_url": "https://academic.oup.com/bioinformatics/article/38/1/211/6353029"
+      },
+      "publication_year_reconciliation": "Preferred journal issue year; earlier online year retained and verified."
+    },
+    {
+      "paper_id": "P07",
+      "title": "Unsupervised topological alignment for single-cell multi-omics integration",
+      "year": 2020,
+      "doi": "10.1093/bioinformatics/btaa443",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7355262/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Unsupervised topological alignment for single-cell multi-omics integration",
+        "authors": "Cao, K., Bai, X., Hong, Y., et al.",
+        "year": "2020",
+        "journal": "Bioinformatics",
+        "volume": "36",
+        "pages": "i48-i56",
+        "doi": "10.1093/bioinformatics/btaa443"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P08",
+      "title": "Jointly Embedding Multiple Single-Cell Omics Measurements",
+      "year": 2019,
+      "doi": "10.4230/LIPIcs.WABI.2019.10",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8496402/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Jointly Embedding Multiple Single-Cell Omics Measurements",
+        "year": 2019,
+        "publisher": "Schloss Dagstuhl – Leibniz-Zentrum für Informatik"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2019,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P09",
+      "title": "Unsupervised manifold alignment for single-cell multi-omics data",
+      "year": 2020,
+      "doi": "10.1145/3388440.3412410",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8095090/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Unsupervised manifold alignment for single-cell multi-omics data",
+        "authors": "Singh, R., Demetci, P., Bonora, G., et al.",
+        "year": "2020",
+        "journal": "Proceedings of the 11th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics",
+        "volume": "",
+        "pages": "1-10",
+        "doi": "10.1145/3388440.3412410"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P10",
+      "title": "MATCHER: manifold alignment reveals correspondence between single cell transcriptome and epigenome dynamics",
+      "year": 2017,
+      "doi": "10.1186/s13059-017-1269-0",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5525279/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MATCHER: manifold alignment reveals correspondence between single cell transcriptome and epigenome dynamics",
+        "authors": "Welch, J., Hartemink, A., Prins, J.",
+        "year": "2017",
+        "journal": "Genome Biology",
+        "volume": "18",
+        "pages": "",
+        "doi": "10.1186/s13059-017-1269-0"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2017,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P11",
+      "title": "Bi-order multimodal integration of single-cell data",
+      "year": 2022,
+      "doi": "10.1186/s13059-022-02679-x",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082907/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Bi-order multimodal integration of single-cell data",
+        "authors": "Dou, J., Liang, S., Mohanty, V., et al.",
+        "year": "2022",
+        "journal": "Genome Biology",
+        "volume": "23",
+        "pages": "",
+        "doi": "10.1186/s13059-022-02679-x"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P12",
+      "title": "scDART: integrating unmatched scRNA-seq and scATAC-seq data and learning cross-modality relationship simultaneously",
+      "year": 2022,
+      "doi": "10.1186/s13059-022-02706-x",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9238247/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scDART: integrating unmatched scRNA-seq and scATAC-seq data and learning cross-modality relationship simultaneously",
+        "authors": "Zhang, Z., Yang, C., Zhang, X.",
+        "year": "2022",
+        "journal": "Genome Biology",
+        "volume": "23",
+        "pages": "",
+        "doi": "10.1186/s13059-022-02706-x"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P13",
+      "title": "scJoint integrates atlas-scale single-cell RNA-seq and ATAC-seq data with transfer learning",
+      "year": 2022,
+      "doi": "10.1038/s41587-021-01161-6",
+      "primary_url": "https://pubmed.ncbi.nlm.nih.gov/35058621/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scJoint integrates atlas-scale single-cell RNA-seq and ATAC-seq data with transfer learning",
+        "publication_dates": {
+          "published": [
+            [
+              2022,
+              1,
+              20
+            ]
+          ],
+          "published-print": [
+            [
+              2022,
+              5
+            ]
+          ],
+          "published-online": [
+            [
+              2022,
+              1,
+              20
+            ]
+          ]
+        },
+        "journal": "Nature Biotechnology"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P14",
+      "title": "sciCAN: single-cell chromatin accessibility and gene expression data integration via cycle-consistent adversarial network",
+      "year": 2022,
+      "doi": "10.1038/s41540-022-00245-6",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464763/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "sciCAN: single-cell chromatin accessibility and gene expression data integration via cycle-consistent adversarial network",
+        "authors": "Xu, Y., Begoli, E., McCord, R.",
+        "year": "2022",
+        "journal": "npj Systems Biology and Applications",
+        "volume": "8",
+        "pages": "",
+        "doi": "10.1038/s41540-022-00245-6"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P15",
+      "title": "scTopoGAN: unsupervised manifold alignment of single-cell data",
+      "year": 2023,
+      "doi": "10.1093/bioadv/vbad171",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10701792/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scTopoGAN: unsupervised manifold alignment of single-cell data",
+        "publication_dates": {
+          "published": [
+            [
+              2023,
+              1,
+              1
+            ]
+          ],
+          "published-print": [
+            [
+              2023,
+              1,
+              5
+            ]
+          ],
+          "published-online": [
+            [
+              2023,
+              11,
+              24
+            ]
+          ]
+        },
+        "journal": "Bioinformatics Advances"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P16",
+      "title": "SCIM: universal single-cell matching with unpaired feature sets",
+      "year": 2020,
+      "doi": "10.1093/bioinformatics/btaa843",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7773480/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SCIM: universal single-cell matching with unpaired feature sets",
+        "authors": "Stark, S., Ficek, J., Locatello, F., et al.",
+        "year": "2020",
+        "journal": "Bioinformatics",
+        "volume": "36",
+        "pages": "i919-i927",
+        "doi": "10.1093/bioinformatics/btaa843"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P17",
+      "title": "MultiMAP: dimensionality reduction and integration of multimodal data",
+      "year": 2021,
+      "doi": "10.1186/s13059-021-02565-y",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8686224/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MultiMAP: dimensionality reduction and integration of multimodal data",
+        "publication_dates": {
+          "published": [
+            [
+              2021,
+              12
+            ]
+          ],
+          "published-print": [
+            [
+              2021,
+              12
+            ]
+          ],
+          "published-online": [
+            [
+              2021,
+              12,
+              20
+            ]
+          ]
+        },
+        "journal": "Genome Biology"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P18",
+      "title": "SCOT+: a comprehensive software suite for single-cell alignment using optimal transport",
+      "year": 2026,
+      "doi": "10.1093/bioadv/vbaf314",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198364/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SCOT+: a comprehensive software suite for single-cell alignment using optimal transport",
+        "authors": "Baker, C., Pham, T., Demetci, P., et al.",
+        "year": "2026",
+        "journal": "Bioinformatics Advances",
+        "volume": "6",
+        "pages": "",
+        "doi": "10.1093/bioadv/vbaf314"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P19",
+      "title": "BiCLUM: Bilateral contrastive learning for unpaired single-cell multi-omics integration",
+      "year": 2026,
+      "doi": "10.1371/journal.pcbi.1013932",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12904586/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "BiCLUM: Bilateral contrastive learning for unpaired single-cell multi-omics integration",
+        "authors": "Guo, Y., Mallona, I., Robinson, M., et al.",
+        "year": "2026",
+        "journal": "PLOS Computational Biology",
+        "volume": "22",
+        "pages": "e1013932",
+        "doi": "10.1371/journal.pcbi.1013932"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P20",
+      "title": "Integration of single-cell multi-omics data by regression analysis on unpaired observations",
+      "year": 2022,
+      "doi": "10.1186/s13059-022-02726-7",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295346/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Integration of single-cell multi-omics data by regression analysis on unpaired observations",
+        "publication_dates": {
+          "published": [
+            [
+              2022,
+              7,
+              19
+            ]
+          ],
+          "published-print": [
+            [
+              2022,
+              12
+            ]
+          ],
+          "published-online": [
+            [
+              2022,
+              7,
+              19
+            ]
+          ]
+        },
+        "journal": "Genome Biology"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P21",
+      "title": "Single-cell multi-omics integration for unpaired data by a siamese network with graph-based contrastive loss",
+      "year": 2023,
+      "doi": "10.1186/s12859-022-05126-7",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9812356/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Single-cell multi-omics integration for unpaired data by a siamese network with graph-based contrastive loss",
+        "authors": "Liu, C., Wang, L., Liu, Z.",
+        "year": "2023",
+        "journal": "BMC Bioinformatics",
+        "volume": "24",
+        "pages": "",
+        "doi": "10.1186/s12859-022-05126-7"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P22",
+      "title": "An interpretable Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis",
+      "year": 2026,
+      "doi": "10.1093/gigascience/giag012",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12970605/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "An interpretable Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis",
+        "authors": "Wang, Z., Zhan, Q., Yang, S., et al.",
+        "year": "2026",
+        "journal": "GigaScience",
+        "volume": "15",
+        "pages": "",
+        "doi": "10.1093/gigascience/giag012"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P23",
+      "title": "A unified computational framework for single-cell data integration with optimal transport",
+      "year": 2022,
+      "doi": "10.1038/s41467-022-35094-8",
+      "primary_url": "https://www.nature.com/articles/s41467-022-35094-8",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "A unified computational framework for single-cell data integration with optimal transport",
+        "authors": "Cao, K., Gong, Q., Hong, Y., et al.",
+        "year": "2022",
+        "journal": "Nature Communications",
+        "volume": "13",
+        "pages": "",
+        "doi": "10.1038/s41467-022-35094-8"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P24",
+      "title": "SIMBA: single-cell embedding along with features",
+      "year": 2023,
+      "doi": "10.1038/s41592-023-01899-8",
+      "primary_url": "https://www.nature.com/articles/s41592-023-01899-8",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SIMBA: single-cell embedding along with features",
+        "authors": "Chen, H., Ryu, J., Vinyard, M., et al.",
+        "year": "2024",
+        "journal": "Nature Methods",
+        "volume": "21",
+        "pages": "1003-1013",
+        "doi": "10.1038/s41592-023-01899-8"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/unpaired_methods.json",
+      "publication_date_note": {
+        "online": "2023-05-29",
+        "version_of_record": "2023-05-29",
+        "issue": "2024-06",
+        "preferred_year_basis": "journal issue year, matching publisher citation",
+        "note": "The original extraction used online year 2023; issue year 2024 is now the preferred bibliographic year, consistently with Pamona.",
+        "primary_url": "https://www.nature.com/articles/s41592-023-01899-8"
+      },
+      "publication_year_reconciliation": "Preferred journal issue year; earlier online year retained and verified."
+    },
+    {
+      "paper_id": "P25",
+      "title": "Comprehensive Integration of Single-Cell Data",
+      "year": 2019,
+      "doi": "10.1016/j.cell.2019.05.031",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687398/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Comprehensive Integration of Single-Cell Data",
+        "authors": "Stuart, T., Butler, A., Hoffman, P., et al.",
+        "year": "2019",
+        "journal": "Cell",
+        "volume": "177",
+        "pages": "1888-1902.e21",
+        "doi": "10.1016/j.cell.2019.05.031"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2019,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P26",
+      "title": "Integrated analysis of multimodal single-cell data",
+      "year": 2021,
+      "doi": "10.1016/j.cell.2021.04.048",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238499/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Integrated analysis of multimodal single-cell data",
+        "authors": "Hao, Y., Hao, S., Andersen-Nissen, E., et al.",
+        "year": "2021",
+        "journal": "Cell",
+        "volume": "184",
+        "pages": "3573-3587.e29",
+        "doi": "10.1016/j.cell.2021.04.048"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P27",
+      "title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+      "year": 2024,
+      "doi": "10.1038/s41587-023-01767-y",
+      "primary_url": "https://www.nature.com/articles/s41587-023-01767-y",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+        "authors": "Hao, Y., Stuart, T., Kowalski, M., et al.",
+        "year": "2024",
+        "journal": "Nature Biotechnology",
+        "volume": "42",
+        "pages": "293-304",
+        "doi": "10.1038/s41587-023-01767-y"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P28",
+      "title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+      "year": 2019,
+      "doi": "10.1016/j.cell.2019.05.006",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6716797/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+        "authors": "Welch, J., Kozareva, V., Ferreira, A., et al.",
+        "year": "2019",
+        "journal": "Cell",
+        "volume": "177",
+        "pages": "1873-1887.e17",
+        "doi": "10.1016/j.cell.2019.05.006"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2019,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P29",
+      "title": "Multi-Omics Factor Analysis—a framework for unsupervised integration of multi-omics data sets",
+      "year": 2018,
+      "doi": "10.15252/msb.20178124",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6010767/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets",
+        "authors": "Argelaguet, R., Velten, B., Arnol, D., et al.",
+        "year": "2018",
+        "journal": "Molecular Systems Biology",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.15252/msb.20178124"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "metadata_addendum": "agents/bridge_citation_verification_addendum.json",
+      "metadata_addendum_sha256": "c5ad53ced88661b914edf94aaf97dc4d0cd49912e02bb158f89365c9d630e781",
+      "selected_year": 2018,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P30",
+      "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+      "year": 2020,
+      "doi": "10.1186/s13059-020-02015-1",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7212577/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+        "authors": "Argelaguet, R., Arnol, D., Bredikhin, D., et al.",
+        "year": "2020",
+        "journal": "Genome Biology",
+        "volume": "21",
+        "pages": "",
+        "doi": "10.1186/s13059-020-02015-1"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2020,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P31",
+      "title": "MultiVI: deep generative model for the integration of multimodal data",
+      "year": 2023,
+      "doi": "10.1038/s41592-023-01909-9",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10406609/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MultiVI: deep generative model for the integration of multimodal data",
+        "authors": "Ashuach, T., Gabitto, M., Koodli, R., et al.",
+        "year": "2023",
+        "journal": "Nature Methods",
+        "volume": "20",
+        "pages": "1222-1231",
+        "doi": "10.1038/s41592-023-01909-9"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P32",
+      "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+      "year": 2021,
+      "doi": "10.1038/s41592-020-01050-x",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7954949/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+        "publication_dates": {
+          "published": [
+            [
+              2021,
+              2,
+              15
+            ]
+          ],
+          "published-print": [
+            [
+              2021,
+              3
+            ]
+          ],
+          "published-online": [
+            [
+              2021,
+              2,
+              15
+            ]
+          ]
+        },
+        "journal": "Nature Methods"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P33",
+      "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+      "year": 2021,
+      "doi": "10.1186/s13059-021-02556-z",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715620/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+        "authors": "Gong, B., Zhou, Y., Purdom, E.",
+        "year": "2021",
+        "journal": "Genome Biology",
+        "volume": "22",
+        "pages": "",
+        "doi": "10.1186/s13059-021-02556-z"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P34",
+      "title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+      "year": 2022,
+      "doi": "10.1186/s13059-021-02595-6",
+      "primary_url": "https://link.springer.com/article/10.1186/s13059-021-02595-6",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+        "authors": "Li, G., Fu, S., Wang, S., et al.",
+        "year": "2022",
+        "journal": "Genome Biology",
+        "volume": "23",
+        "pages": "",
+        "doi": "10.1186/s13059-021-02595-6"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "metadata_addendum": "agents/bridge_citation_verification_addendum.json",
+      "metadata_addendum_sha256": "c5ad53ced88661b914edf94aaf97dc4d0cd49912e02bb158f89365c9d630e781",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P35",
+      "title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+      "year": 2021,
+      "doi": "10.1016/j.crmeth.2021.100071",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9017195/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+        "authors": "Minoura, K., Abe, K., Nam, H., et al.",
+        "year": "2021",
+        "journal": "Cell Reports Methods",
+        "volume": "1",
+        "pages": "100071",
+        "doi": "10.1016/j.crmeth.2021.100071"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P36",
+      "title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+      "year": 2021,
+      "doi": "10.1073/pnas.2023070118",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8054007/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+        "authors": "Wu, K., Yost, K., Chang, H., et al.",
+        "year": "2021",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "volume": "118",
+        "pages": "",
+        "doi": "10.1073/pnas.2023070118"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P37",
+      "title": "Cross-Linked Unified Embedding for cross-modality representation learning",
+      "year": 2022,
+      "doi": "10.52202/068431-1160",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/662b1774ba8845fc1fa3d1fc0177ceeb-Abstract-Conference.html",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Cross-Linked Unified Embedding for Cross-Modality Representation Learning",
+        "authors": "Tu, X., Cao, Z., Chenrui, X., et al.",
+        "year": "2022",
+        "journal": "Advances in Neural Information Processing Systems 35",
+        "volume": "",
+        "pages": "15942-15955",
+        "doi": "10.52202/068431-1160"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "metadata_addendum": "agents/bridge_citation_verification_addendum.json",
+      "metadata_addendum_sha256": "c5ad53ced88661b914edf94aaf97dc4d0cd49912e02bb158f89365c9d630e781",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P38",
+      "title": "Joint variational autoencoders for multimodal imputation and embedding",
+      "year": 2023,
+      "doi": "10.1038/s42256-023-00663-z",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11340721/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Joint variational autoencoders for multimodal imputation and embedding",
+        "authors": "Cohen Kalafut, N., Huang, X., Wang, D.",
+        "year": "2023",
+        "journal": "Nature Machine Intelligence",
+        "volume": "5",
+        "pages": "631-642",
+        "doi": "10.1038/s42256-023-00663-z"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P39",
+      "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+      "year": 2019,
+      "doi": "10.1038/s41592-019-0619-0",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6884693/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+        "authors": "Korsunsky, I., Millard, N., Fan, J., et al.",
+        "year": "2019",
+        "journal": "Nature Methods",
+        "volume": "16",
+        "pages": "1289-1296",
+        "doi": "10.1038/s41592-019-0619-0"
+      },
+      "verification_source": "agents/bridge_citation_verification.json",
+      "verification_source_sha256": "10647a695c08c4b34569123b690387450cf9842a929ae397fad23a4523ca2ccb",
+      "selected_year": 2019,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P40",
+      "title": "Paired single-cell multi-omics data integration with Mowgli",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-43019-2",
+      "primary_url": "https://www.nature.com/articles/s41467-023-43019-2",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Paired single-cell multi-omics data integration with Mowgli",
+        "authors": "Huizing, G., Deutschmann, I., Peyré, G., et al.",
+        "year": "2023",
+        "journal": "Nature Communications",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.1038/s41467-023-43019-2"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P41",
+      "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-36066-2",
+      "primary_url": "https://www.nature.com/articles/s41467-023-36066-2",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+        "authors": "Zhang, Z., Sun, H., Mariappan, R., et al.",
+        "year": "2023",
+        "journal": "Nature Communications",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.1038/s41467-023-36066-2"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/bridge_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P42",
+      "title": "Old and new approaches in statistical matching when samples are drawn with complex survey designs",
+      "year": null,
+      "doi": null,
+      "primary_url": "https://www.istat.it/en/files/2013/12/Old-and-new-approaches-in-statistical-matching.pdf",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": null,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P43",
+      "title": "Unlinked Monotone Regression",
+      "year": 2021,
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v22/20-689.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2021,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P44",
+      "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
+      "year": 2019,
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v97/locatello19a.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2019,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P45",
+      "title": "Nonlinear ICA Using Auxiliary Variables and Generalized Contrastive Learning",
+      "year": 2019,
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v89/hyvarinen19a.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2019,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P46",
+      "title": "Variational Autoencoders and Nonlinear ICA: A Unifying Framework",
+      "year": 2020,
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v108/khemakhem20a.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P47",
+      "title": "The Incomplete Rosetta Stone problem: Identifiability results for Multi-view Nonlinear ICA",
+      "year": 2020,
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v115/gresele20a.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P48",
+      "title": "Causal Discovery with Continuous Additive Noise Models",
+      "year": 2014,
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v15/peters14a.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2014,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P49",
+      "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+      "year": 2026,
+      "doi": "10.48550/arXiv.2606.22770",
+      "primary_url": "https://arxiv.org/html/2606.22770v1",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+        "year": 2026,
+        "publisher": "arXiv"
+      },
+      "verification_source": "central_verifier",
+      "metadata_followup": "raw/citation_metadata_followup.json",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P50",
+      "title": "Statistical matching using fractional imputation",
+      "year": 2016,
+      "doi": null,
+      "primary_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2016001/article/14539-eng.pdf",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2016,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P51",
+      "title": "Unpaired Multi-Domain Causal Representation Learning",
+      "year": 2023,
+      "doi": "10.52202/075280-1496",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6c8985579293e0209bdaa4f21bb1d237-Abstract-Conference.html",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Unpaired Multi-Domain Causal Representation Learning",
+        "authors": "Sturma, N., Squires, C., Drton, M., et al.",
+        "year": "2023",
+        "journal": "Advances in Neural Information Processing Systems 36",
+        "volume": "",
+        "pages": "34465-34492",
+        "doi": "10.52202/075280-1496"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2023,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P52",
+      "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+      "year": 2024,
+      "doi": "10.52202/079017-4058",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6c967a0e4168df9614a81ed4195ba78-Abstract-Conference.html",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+        "authors": "Timilsina, S., Shrestha, S., Fu, X.",
+        "year": "2024",
+        "journal": "Advances in Neural Information Processing Systems 37",
+        "volume": "",
+        "pages": "127799-127833",
+        "doi": "10.52202/079017-4058"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P53",
+      "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+      "year": 2025,
+      "doi": null,
+      "primary_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/2ec91b31ac4aa578d99309d4f00c81ad-Abstract-Conference.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2025,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P54",
+      "title": "Causal integration of multi-omics data with prior knowledge to generate mechanistic hypotheses",
+      "year": 2021,
+      "doi": "10.15252/msb.20209730",
+      "primary_url": "https://link.springer.com/article/10.15252/msb.20209730",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Causal integration of multi‐omics data with prior knowledge to generate mechanistic hypotheses",
+        "authors": "Dugourd, A., Kuppe, C., Sciacovelli, M., et al.",
+        "year": "2021",
+        "journal": "Molecular Systems Biology",
+        "volume": "17",
+        "pages": "",
+        "doi": "10.15252/msb.20209730"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2021,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P55",
+      "title": "Propensity Score Alignment of Unpaired Multimodal Data",
+      "year": 2024,
+      "doi": "10.52202/079017-4480",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ff56c8dc4c61017eab9771481b7fda0d-Abstract-Conference.html",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Propensity Score Alignment of Unpaired Multimodal Data",
+        "authors": "Xi, J., Osea, J., Xu, Z., et al.",
+        "year": "2024",
+        "journal": "Advances in Neural Information Processing Systems 37",
+        "volume": "",
+        "pages": "141103-141128",
+        "doi": "10.52202/079017-4480"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P56",
+      "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-cell Data",
+      "year": 2026,
+      "doi": "10.1007/978-3-032-25311-8_21",
+      "primary_url": "https://link.springer.com/chapter/10.1007/978-3-032-25311-8_21",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-Cell Data",
+        "authors": "Tong, T., Wang, A., Panagopoulos, G., et al.",
+        "year": "2026",
+        "journal": "Communications in Computer and Information Science",
+        "volume": "",
+        "pages": "257-271",
+        "doi": "10.1007/978-3-032-25311-8_21"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P57",
+      "title": "Causal Discovery from Heterogeneous/Nonstationary Data",
+      "year": 2020,
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v21/19-232.html",
+      "primary_url_head_accessible": true,
+      "primary_url_head_status": 200,
+      "metadata_check": "primary_source_inspection_in_source_extraction",
+      "verification_source": "central_verifier",
+      "selected_year": 2020,
+      "bibliographic_identity_status": "primary_source_title_year_inspection_recorded",
+      "primary_evidence_record": "agents/theory_methods.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P58",
+      "title": "Benchmarking atlas-level data integration in single-cell genomics",
+      "year": 2022,
+      "doi": "10.1038/s41592-021-01336-8",
+      "primary_url": "https://www.nature.com/articles/s41592-021-01336-8",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Benchmarking atlas-level data integration in single-cell genomics",
+        "authors": "Luecken, M., Büttner, M., Chaichoompu, K., et al.",
+        "year": "2022",
+        "journal": "Nature Methods",
+        "volume": "19",
+        "pages": "41-50",
+        "doi": "10.1038/s41592-021-01336-8"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2022,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P59",
+      "title": "Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data",
+      "year": 2024,
+      "doi": "10.1093/bib/bbae095",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10944570/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data",
+        "authors": "Xiao, C., Chen, Y., Meng, Q., et al.",
+        "year": "2024",
+        "journal": "Briefings in Bioinformatics",
+        "volume": "25",
+        "pages": "",
+        "doi": "10.1093/bib/bbae095"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P60",
+      "title": "Benchmarking algorithms for single-cell multi-omics prediction and integration",
+      "year": 2024,
+      "doi": "10.1038/s41592-024-02429-w",
+      "primary_url": "https://www.nature.com/articles/s41592-024-02429-w",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Benchmarking algorithms for single-cell multi-omics prediction and integration",
+        "authors": "Hu, Y., Wan, S., Luo, Y., et al.",
+        "year": "2024",
+        "journal": "Nature Methods",
+        "volume": "21",
+        "pages": "2182-2194",
+        "doi": "10.1038/s41592-024-02429-w"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2024,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P61",
+      "title": "Benchmarking single-cell multi-modal data integrations",
+      "year": 2025,
+      "doi": "10.1038/s41592-025-02737-9",
+      "primary_url": "https://pubmed.ncbi.nlm.nih.gov/40640531/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Benchmarking single-cell multi-modal data integrations",
+        "authors": "Fu, S., Wang, S., Si, D., et al.",
+        "year": "2025",
+        "journal": "Nature Methods",
+        "volume": "22",
+        "pages": "2437-2448",
+        "doi": "10.1038/s41592-025-02737-9"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2025,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P62",
+      "title": "Multitask benchmarking of single-cell multimodal omics integration methods",
+      "year": 2025,
+      "doi": "10.1038/s41592-025-02856-3",
+      "primary_url": "https://www.nature.com/articles/s41592-025-02856-3",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Multitask benchmarking of single-cell multimodal omics integration methods",
+        "authors": "Liu, C., Ding, S., Kim, H., et al.",
+        "year": "2025",
+        "journal": "Nature Methods",
+        "volume": "22",
+        "pages": "2449-2460",
+        "doi": "10.1038/s41592-025-02856-3"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2025,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P63",
+      "title": "SCMBench: benchmarking domain-specific and foundation models for single-cell multi-omics data integration",
+      "year": 2026,
+      "doi": "10.1038/s41467-026-72570-x",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13342640/",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "SCMBench: benchmarking domain-specific and foundation models for single-cell multi-omics data integration",
+        "authors": "Wang, Y., Fan, Y., Wang, X., et al.",
+        "year": "2026",
+        "journal": "Nature Communications",
+        "volume": "17",
+        "pages": "",
+        "doi": "10.1038/s41467-026-72570-x"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    },
+    {
+      "paper_id": "P64",
+      "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+      "year": 2026,
+      "doi": "10.1186/s13059-026-04071-5",
+      "primary_url": "https://link.springer.com/article/10.1186/s13059-026-04071-5",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+        "authors": "Naqing, F., Yuan, Q., Duren, Z.",
+        "year": "2026",
+        "journal": "Genome Biology",
+        "volume": "27",
+        "pages": "",
+        "doi": "10.1186/s13059-026-04071-5"
+      },
+      "verification_source": "central_verifier",
+      "selected_year": 2026,
+      "normalized_registry_title_matches": true,
+      "bibliographic_identity_status": "registry_title_matched",
+      "primary_evidence_record": "agents/benchmark_papers.json",
+      "publication_date_note": null
+    }
+  ],
+  "metadata_followup_utc": "2026-11-01T07:14:03.083845+00:00",
+  "counts": {
+    "selected_papers": 64,
+    "doi_handles_valid": 54,
+    "no_doi_primary_urls_accessible": 10,
+    "registry_title_matches": 54
+  }
+}

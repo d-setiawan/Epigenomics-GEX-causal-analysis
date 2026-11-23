@@ -1,0 +1,135 @@
+[
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "unpaired single-cell multi-omics integration",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=unpaired+single-cell+multi-omics+integration&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:13.383904+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_01.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 8855
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "single cell multimodal integration",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=single+cell+multimodal+integration&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:13.384916+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_02.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 215439
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "single cell integration optimal transport",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=single+cell+integration+optimal+transport&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:13.385284+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_03.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 441744
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "statistical matching identifiability",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=statistical+matching+identifiability&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:14.302865+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_04.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 96481
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "causal discovery unpaired multimodal",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=causal+discovery+unpaired+multimodal&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:14.568402+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_05.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 1539
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "identifiable multi view nonlinear independent component analysis",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=identifiable+multi+view+nonlinear+independent+component+analysis&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:14.621358+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_06.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 24804
+  },
+  {
+    "database": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "benchmark single-cell multi-omics integration",
+      "filter": "to_publication_date:2026-11-01",
+      "per_page": 100,
+      "page": 1,
+      "sort": "relevance_score:desc",
+      "select": "id,title,doi,publication_year,publication_date,type,primary_location,abstract_inverted_index,cited_by_count"
+    },
+    "url": "https://api.openalex.org/works?search=benchmark+single-cell+multi-omics+integration&filter=to_publication_date%3A2026-11-01&per_page=100&page=1&sort=relevance_score%3Adesc&select=id%2Ctitle%2Cdoi%2Cpublication_year%2Cpublication_date%2Ctype%2Cprimary_location%2Cabstract_inverted_index%2Ccited_by_count",
+    "queried_utc": "2026-11-01T06:52:14.805810+00:00",
+    "authentication_header_used": false,
+    "raw_file": "openalex_07.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 25402
+  }
+]

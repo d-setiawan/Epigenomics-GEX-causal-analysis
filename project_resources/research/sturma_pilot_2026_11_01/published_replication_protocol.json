@@ -1,0 +1,108 @@
+{
+  "study": "Reduced published-model replication; not the original 1000-model experiment",
+  "frozen_utc": "2026-11-01T17:44:43Z",
+  "upstream_commit": "578b5900590164b2ed1750fb6a7f98ae7153e220",
+  "upstream_hashes": {
+    "experiments/rand.py": "aabc53d88587cb169bd3969afabd0f7e5fdcea61b882d441e3b4387d46b3e1b5",
+    "experiments/experiments.py": "8290ea9ab13b92dd3613ea752ac56046fdc74a8cbdb50f0af94c8e557a7862ce",
+    "experiments/utils.py": "10bee698458a7433ad92a847ffb49605076fe4843d28b5b6d17bc41faba1937a",
+    "src/learner.py": "4cf4627befcc2ac3c11dc16a0929bd88a442fc1fb0d259e23bbe794cb5ab5868",
+    "src/scoring.py": "6181c44e3b8d478244981ef30a907c811be361f81cb6f3734ee230e565206aa0",
+    "experiments/experiment_l=3/run_ndom=2.py": "432ea2dc715708a8c6784006bfb91a9c4f39cdd3bcc64f4ad9e8081ad66fe3fb",
+    "experiments/experiment_l=3/run_ndom=3.py": "de155b750e95f2f784e491b40429af2fa8cf58ece9061fce60ceec0eee85af07"
+  },
+  "runner_sha256": "b598a47ec743cf44ba55cfc56bf4a78b94dc884877b652aa1ecdad36d7e56851",
+  "test_sha256": "4a6039eb6b7a349f8c5b6d91441818d100ddd71dc8de861e329e55453cc1e29b",
+  "reference_stats_sha256": "bc5af02d1379192fe644632d7228b8b6e246e953a68b4edffee58ddd18fce0e8",
+  "environment": {
+    "python": "3.11.14 | packaged by conda-forge | (main, Jan 26 2026, 23:48:32) [GCC 14.3.0]",
+    "executable": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.14.1",
+      "scikit-learn": "1.8.0",
+      "causaldag": "0.1a163",
+      "networkx": "3.6.1"
+    },
+    "blas_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "settings": {
+    "l": 3,
+    "domains": [
+      2,
+      3
+    ],
+    "sample_sizes_per_domain": [
+      1000,
+      10000,
+      25000
+    ],
+    "replicate_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "measure": "ks-test",
+    "alpha": 0.05,
+    "gamma": 0.2,
+    "dims": {
+      "2": [
+        15,
+        15
+      ],
+      "3": [
+        10,
+        10,
+        10
+      ]
+    },
+    "private_latents_per_domain": 2,
+    "graph_density": 0.75,
+    "mixing_density": 0.9,
+    "mixing_distribution": "unif",
+    "two_pure_children": true,
+    "fit_timeout_seconds": 120
+  },
+  "noise_distributions": [
+    "beta(2,3)",
+    "beta(2,5)",
+    "chi2(df=4)",
+    "gumbel_r",
+    "lognorm(s=1)",
+    "weibull_min(c=2)",
+    "expon(scale=.1)",
+    "skewnorm(a=6)",
+    "skewnorm(a=12)"
+  ],
+  "rng": "Reset NumPy and Python random to replicate seed before generation, then to seed+100000 before native ICA. Seeds repeat across settings; comparisons across settings are not independent.",
+  "observations": "Native rand_model produces independent cell draws per domain. No biological benchmark worlds, count layer or integration embeddings are added.",
+  "metrics": {
+    "dimension": "P(lhat=3), under/over/zero rates; all ten assigned replicates remain in denominators.",
+    "mixing_native": "Unchanged native raw shared-column score divided by beta=min(lhat,3)*30, as upstream utils; lhat=0 is unavailable.",
+    "mixing_paper_normalization": "Same native alignment numerator divided by sqrt(beta), separately labeled; alignment itself remains the native two-step heuristic.",
+    "graph": "Unchanged native coefficient score divided by3, only when lhat=3 and graph finite; no adjacency threshold or exact-DAG claim.",
+    "unconditional_coefficient_criterion": "Correct dimension and finite native graph_error/3<=0.1; failures and missing graphs count as false. Descriptive coefficient criterion, not exact causal graph recovery.",
+    "convergence": "Capture all warnings; ConvergenceWarning marks ICA convergence concern. No-warning is not an identification certificate.",
+    "graph_diagnostic": "Count nonzero diagonal and bidirectional coefficient pairs above1e-12 solely as numerical diagnostics, not causal adjacency selection."
+  },
+  "known_limitations": [
+    "Current environment differs from upstream pinned historical dependencies.",
+    "Covariance numerical rank determines ICA component count; gamma is not the ICA rank threshold.",
+    "Native graph pure-child heuristic has reviewed duplicate-endpoint and candidate-exhaustion edge cases; unchanged and all exceptions retained.",
+    "Native signed/permutation scorers choose an absolute-entry permutation first; not exhaustive optimization of the final signed error.",
+    "Ten replicates per setting provide a small descriptive check, not a reliability guarantee.",
+    "Native graph estimate may be dense/cyclic; coefficient error is not exact DAG accuracy."
+  ]
+}

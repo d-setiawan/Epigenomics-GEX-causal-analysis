@@ -1,0 +1,86 @@
+{
+  "claim_scope": "Nonidentification across observationally indistinguishable models; explicitly excludes universal impossibility over every restricted model class",
+  "discovery": "OpenAlex first attempted unauthenticated; sandbox DNS/web access failed, identical host retry succeeded with100 archived records; primary pages followed",
+  "files": {
+    "DRAFT_REVIEW.md": {
+      "bytes": 2208,
+      "sha256": "c8cd8f6fe4a4725ed51716fb0d342237467924a13421feac4a202e91192abb65"
+    },
+    "FOCUSED_REVIEW.md": {
+      "bytes": 9185,
+      "sha256": "85b7f6c78c50ac1c4451819f4e9c554df1f96430828175c62e8cf15a95592443"
+    },
+    "SEARCH_LOG.md": {
+      "bytes": 5450,
+      "sha256": "2dfc8805724b0992f974b319e58802c805b00cd2292561c2c69e54acc9d23b57"
+    },
+    "citation_verification.json": {
+      "bytes": 2071,
+      "sha256": "4d3b1c71d2f04c4d9a7b147f4d37f3132f35d8f2d05c012c2381c6e3fb724f3d"
+    },
+    "final_assumption_checks.json": {
+      "bytes": 26803,
+      "sha256": "37efd92a16b189dc3d4bd85ffbfa6c7b6c1ed19a6565aeba4eb180de48b0ac2e"
+    },
+    "integration_objective_and_bridge_checks.json": {
+      "bytes": 36862,
+      "sha256": "92d384a6bc60587717874ae9c65a2dec25a4ea7ce457904d637723d6985b141e"
+    },
+    "openalex_01_search.json": {
+      "bytes": 982,
+      "sha256": "237455837116491007e224855d288e247365fffe691b3b9c869d406f218dd637"
+    },
+    "openalex_host_raw.json": {
+      "bytes": 153473,
+      "sha256": "ef2e627d90e1363318ecf336daceac3b3b1ef753a714d97e028bebe6b2098fe5"
+    },
+    "openalex_host_search.json": {
+      "bytes": 534,
+      "sha256": "209048cf4ff56fbf901099e8dae6448a07ebcb51f241df5da634f2c756a24004"
+    },
+    "openalex_web_attempt.json": {
+      "bytes": 868,
+      "sha256": "ec069bbee4f1070e04efe71bc95f34d1309bbc9f348d037b14977769421ee0c2"
+    },
+    "positive_results_and_nonidentification_primary.json": {
+      "bytes": 25370,
+      "sha256": "f63f11a62733ab99a8d5291db54c7f8285a4009464d3286b5a06c76d8576fdb4"
+    },
+    "primary_discovery_searches.json": {
+      "bytes": 34707,
+      "sha256": "46b6af744d71033da79d38dc329caee678968f967c2549bc9b281f6f15719b47"
+    },
+    "primary_pages_and_followup_searches.json": {
+      "bytes": 32236,
+      "sha256": "d31896ad61f8bfffcd8627c33226b4a1be4c285843d95928872e47e34c86880e"
+    },
+    "scope_and_assumptions_checks.json": {
+      "bytes": 28952,
+      "sha256": "5926219c4dacaa74e92264a47c3276391bc1370c201ef28cf55c2989ef96710a"
+    },
+    "verified_primary_fulltext.json": {
+      "bytes": 28180,
+      "sha256": "b2e925df2d3861740d14fb38a69c4bfc1f835e51ada1c934b6b642e72dedef6b"
+    }
+  },
+  "main_draft_review": {
+    "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/theory/07_unpaired_integration_nonidentifiability.md",
+    "remaining_must_fix_literature_issues": 0,
+    "review": "DRAFT_REVIEW.md",
+    "sha256": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+    "status": "scoped approval"
+  },
+  "no_chat_credentials_used": true,
+  "no_model_or_dataset_changes": true,
+  "review_type": "bounded narrative methods and identifiability review",
+  "reviewer": "scconfluence_adapter child agent",
+  "skill": "/home/dgsetiawan/.agents/skills/literature-review/SKILL.md",
+  "status": "complete",
+  "updated_utc": "2026-11-01T06:06:15.771763+00:00",
+  "utc": "2026-11-01T05:58:59.966333+00:00",
+  "verified_positive_counter_scope": [
+    "Unlinked monotone regression under monotone function and specified independent noise",
+    "Restricted ANM and LiNGAM identification from a joint law",
+    "Schrodinger-bridge existence result with compatibility/tuning information"
+  ]
+}

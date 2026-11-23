@@ -1,0 +1,105 @@
+"""One-off study execution using the existing fit, audit, lock and logging helpers."""
+from pathlib import Path
+import itertools
+import json
+import sys
+import time
+
+BASE = Path("/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability")
+sys.path[:0] = [str(BASE / "scripts"), str(BASE)]
+import validate_integration as validation
+import run_benchmark as runner
+
+SPEC = validation.protocol()
+ROOT = BASE / SPEC["output_root"]
+PLAN = validation.read(ROOT / "execution_plan.json")
+PINS = {
+    "validate_integration.py": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4",
+    "integration_validation_fit.py": "7734c84b4ce692cac18831a98eea7d1ea5db610e8e94cd278a7c362ac02604e5",
+    "integration_validation_metrics.py": "6fd960ef76757b68db4977a1a3a563eed56fe062a2b85e7f2b25dc195217fcb8",
+}
+jobs = PLAN["selection_fit_jobs"]
+keys = {tuple(job[k] for k in ("world", "regime", "method", "candidate", "seed")) for job in jobs}
+assert len(jobs) == len(keys) == 16, "Require the complete unique declared selection schedule"
+assert {j["world"] for j in jobs} == set(SPEC["selection_worlds"])
+executed, reused, reports = [], [], []
+active = None
+
+def check_sources():
+    if {name: runner.digest(BASE / "scripts" / name) for name in PINS} != PINS:
+        raise RuntimeError("Reviewed study source changed")
+    if runner.digest(PLAN["runtime_library"]) != PLAN["runtime_library_sha256"]:
+        raise RuntimeError("Verified CUDA runtime changed")
+    if validation.protocol()["protocol_sha256"] != SPEC["protocol_sha256"]:
+        raise RuntimeError("Study protocol changed during execution")
+
+def run_fit(job):
+    global active
+    active = job
+    check_sources()
+    directory = validation.candidate_directory(SPEC, job["world"], job["regime"], job["method"], job["candidate"], job["seed"])
+    if directory.exists():
+        for cohort in ("train", "val", "discovery"):
+            validation.public_run(SPEC, job["world"], job["regime"], job["method"], job["candidate"], job["seed"], cohort)
+        reused.append(job)
+        print(json.dumps({"event": "reused_verified_complete_fit", "job": job}), flush=True)
+    else:
+        runner.command(
+            "validation_" + "_".join(str(job[k]) for k in ("world", "regime", "method", "candidate", "seed")),
+            BASE / "scripts/validate_integration.py", "fit",
+            "--world", job["world"], "--regime", job["regime"],
+            "--method", job["method"], "--candidate", job["candidate"], "--seed", job["seed"],
+            gpu=False, log_dir=ROOT / "logs")
+        executed.append(job)
+        for cohort in ("train", "val", "discovery"):
+            validation.public_run(SPEC, job["world"], job["regime"], job["method"], job["candidate"], job["seed"], cohort)
+        print(json.dumps({"event": "fit_complete", "job": job, "new_fits_this_execution": len(executed)}), flush=True)
+
+try:
+    for job in jobs:
+        run_fit(job)
+        if job["candidate"] != "baseline":
+            path, audit = validation.audit(SPEC, job["world"], job["regime"], job["seed"], "val",
+                                           job["candidate"], (job["method"],))
+            print(json.dumps({"event": "interim_state_audit", "job": job,
+                              "worst_pair_gap": next(iter(audit["results"].values()))["worst_pair_gap"],
+                              "report": str(path), "selection_input": False}), flush=True)
+    selection_path, selection = validation.choose(SPEC)
+    print(json.dumps({"event": "selection_frozen", "selected": selection["selected"], "path": str(selection_path)}), flush=True)
+    confirmation_jobs = [
+        {"world": world, "regime": regime, "method": method,
+         "candidate": selection["selected"][method], "seed": seed}
+        for world, regime, method, seed in itertools.product(
+            SPEC["confirmation_worlds"], SPEC["confirmation_regimes"], SPEC["methods"], SPEC["confirmation_seeds"])
+    ]
+    assert len(confirmation_jobs) == 16
+    validation.write_new(ROOT / "confirmation_execution_plan.json", {
+        "protocol_sha256": SPEC["protocol_sha256"], "selected_settings_sha256": runner.digest(selection_path),
+        "order": "Declared world, regime, method and seed order; selected setting only",
+        "jobs": confirmation_jobs,
+    })
+    for job in confirmation_jobs:
+        run_fit(job)
+        path, audit = validation.audit(SPEC, job["world"], job["regime"], job["seed"], "discovery",
+                                       "selected", (job["method"],))
+        reports.append({"path": str(path), "sha256": runner.digest(path)})
+        print(json.dumps({"event": "confirmation_state_audit", "job": job,
+                          "worst_pair_gap": next(iter(audit["results"].values()))["worst_pair_gap"],
+                          "report": str(path)}), flush=True)
+    validation.write_new(ROOT / "matrix_execution_complete.json", {
+        "status": "complete", "protocol_sha256": SPEC["protocol_sha256"], "analysis_sources": PINS,
+        "selection_plan_sha256": runner.digest(ROOT / "execution_plan.json"),
+        "selected_settings_sha256": runner.digest(selection_path),
+        "planned_fit_count": 32, "newly_executed": executed, "verified_reused": reused,
+        "confirmation_reports": reports,
+        "scope": "Integration-only computation complete. Not a binary integration-truth or causal-recovery verdict. No new worlds.",
+    })
+    print(json.dumps({"event": "matrix_complete", "planned_fits": 32,
+                      "new_this_execution": len(executed), "verified_reused": len(reused)}), flush=True)
+except Exception as error:
+    validation.write_new(ROOT / f"matrix_execution_failure_{time.time_ns()}.json", {
+        "status": "failed", "active_job": active, "error_type": type(error).__name__, "error": str(error),
+        "protocol_sha256": SPEC["protocol_sha256"], "newly_executed": executed, "verified_reused": reused,
+        "scope": "No automatic retry or overwrite; inspect preserved native command logs and partial outputs.",
+    })
+    raise

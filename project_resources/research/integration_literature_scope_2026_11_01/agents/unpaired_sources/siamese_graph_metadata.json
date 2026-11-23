@@ -1,0 +1,282 @@
+{
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "params": {
+    "query": "DOI:10.1186/s12859-022-05126-7",
+    "format": "json",
+    "pageSize": 10,
+    "resultType": "core"
+  },
+  "status_code": 200,
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "DOI:10.1186/s12859-022-05126-7",
+      "resultType": "core",
+      "cursorMark": "*",
+      "pageSize": 10,
+      "sort": "",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "36600199",
+          "source": "MED",
+          "pmid": "36600199",
+          "pmcid": "PMC9812356",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9812356"
+            ]
+          },
+          "doi": "10.1186/s12859-022-05126-7",
+          "title": "Single-cell multi-omics integration for unpaired data by a siamese network with graph-based contrastive loss.",
+          "authorString": "Liu C, Wang L, Liu Z.",
+          "authorList": {
+            "author": [
+              {
+                "fullName": "Liu C",
+                "lastName": "Liu",
+                "firstName": "Chaozhong",
+                "initials": "C",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Graduate Program in Quantitative and Computational Biosciences, Baylor College of Medicine, Houston, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Wang L",
+                "lastName": "Wang",
+                "firstName": "Linhua",
+                "initials": "L",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Graduate Program in Quantitative and Computational Biosciences, Baylor College of Medicine, Houston, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Liu Z",
+                "lastName": "Liu",
+                "firstName": "Zhandong",
+                "initials": "Z",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-7608-0831"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Jan and Dan Duncan Neurological Research Institute at Texas Children's Hospital, Houston, USA. zhandong.liu@bcm.edu."
+                    },
+                    {
+                      "affiliation": "Department of Pediatrics, Baylor College of Medicine, Houston, USA. zhandong.liu@bcm.edu."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "authorIdList": {
+            "authorId": [
+              {
+                "type": "ORCID",
+                "value": "0000-0002-7608-0831"
+              }
+            ]
+          },
+          "dataLinksTagsList": {
+            "dataLinkstag": [
+              "altmetrics",
+              "supporting_data"
+            ]
+          },
+          "journalInfo": {
+            "issue": "1",
+            "volume": "24",
+            "journalIssueId": 3482943,
+            "dateOfPublication": "2023 Jan",
+            "monthOfPublication": 1,
+            "yearOfPublication": 2023,
+            "journal": {
+              "medlineAbbreviation": "BMC Bioinformatics",
+              "title": "BMC bioinformatics",
+              "essn": "1471-2105",
+              "issn": "1471-2105",
+              "isoabbreviation": "BMC Bioinformatics",
+              "nlmid": "100965194"
+            },
+            "printPublicationDate": "2023-01-01"
+          },
+          "pubYear": "2023",
+          "pageInfo": "5",
+          "abstractText": "<h4>Background</h4>Single-cell omics technology is rapidly developing to measure the epigenome, genome, and transcriptome across a range of cell types. However, it is still challenging to integrate omics data from different modalities. Here, we propose a variation of the Siamese neural network framework called MinNet, which is trained to integrate multi-omics data on the single-cell resolution by using graph-based contrastive loss.<h4>Results</h4>By training the model and testing it on several benchmark datasets, we showed its accuracy and generalizability in integrating scRNA-seq with scATAC-seq, and scRNA-seq with epitope data. Further evaluation demonstrated our model's unique ability to remove the batch effect, a common problem in actual practice. To show how the integration impacts downstream analysis, we established model-based smoothing and cis-regulatory element-inferring method and validated it with external pcHi-C evidence. Finally, we applied the framework to a COVID-19 dataset to bolster the original work with integration-based analysis, showing its necessity in single-cell multi-omics research.<h4>Conclusions</h4>MinNet is a novel deep-learning framework for single-cell multi-omics sequencing data integration. It ranked top among other methods in benchmarking and is especially suitable for integrating datasets with batch and biological variances. With the single-cell resolution integration results, analysis of the interplay between genome and transcriptome can be done to help researchers understand their data and question.",
+          "affiliation": "Graduate Program in Quantitative and Computational Biosciences, Baylor College of Medicine, Houston, USA.",
+          "publicationStatus": "epublish",
+          "language": "eng",
+          "pubModel": "Electronic",
+          "pubTypeList": {
+            "pubType": [
+              "research-article",
+              "Journal Article"
+            ]
+          },
+          "grantsList": {
+            "grant": [
+              {
+                "agency": "Eunice Kennedy Shriver National Institute of Child Health and Human Development",
+                "grantId": "P50HD103555",
+                "orderIn": 0
+              },
+              {
+                "agency": "NICHD NIH HHS",
+                "acronym": "HD",
+                "grantId": "P50 HD103555",
+                "orderIn": 0
+              }
+            ]
+          },
+          "meshHeadingList": {
+            "meshHeading": [
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Humans"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Single-Cell Analysis",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Transcriptome"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Neural Networks, Computer"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "COVID-19"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Multiomics"
+              }
+            ]
+          },
+          "keywordList": {
+            "keyword": [
+              "Data integration",
+              "Deep Learning",
+              "Single-cell Sequencing Analysis",
+              "Covid-19"
+            ]
+          },
+          "subsetList": {
+            "subset": [
+              {
+                "code": "IM",
+                "name": "Index Medicus"
+              }
+            ]
+          },
+          "fullTextUrlList": {
+            "fullTextUrl": [
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Unpaywall",
+                "url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-022-05126-7"
+              },
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1186/s12859-022-05126-7"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9812356"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC9812356?pdf=render"
+              }
+            ]
+          },
+          "commentCorrectionList": {
+            "commentCorrection": [
+              {
+                "source": "MED",
+                "id": "36991331",
+                "reference": "BMC Bioinformatics. 2023 Mar 29;24(1):123. doi: 10.1186/s12859-023-05249-5.",
+                "type": "Erratum in",
+                "orderIn": 1
+              },
+              {
+                "source": "PPR",
+                "id": "PPR503510",
+                "type": "Preprint in",
+                "note": "CrossRef Pre-print loader",
+                "orderIn": 10002
+              }
+            ]
+          },
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 5,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasData": "Y",
+          "license": "cc by",
+          "authMan": "N",
+          "epmcAuthMan": "N",
+          "nihAuthMan": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "geo"
+            ]
+          },
+          "dateOfCompletion": "2023-01-06",
+          "dateOfCreation": "2023-01-04",
+          "dateOfRevision": "2026-10-01",
+          "electronicPublicationDate": "2023-01-04",
+          "firstPublicationDate": "2023-01-04",
+          "firstIndexDate": "2023-01-05",
+          "fullTextReceivedDate": "2025-02-04",
+          "hasEvaluations": "N"
+        }
+      ]
+    }
+  }
+}

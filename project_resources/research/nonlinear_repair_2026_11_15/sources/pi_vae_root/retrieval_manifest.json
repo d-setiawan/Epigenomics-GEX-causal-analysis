@@ -1,0 +1,63 @@
+{
+  "commit": "cc77ac7068dabede095108000b07cf57abbd0f96",
+  "branch": "main",
+  "scope": "Supplement and code-only selectedfiles; no biological data or generated benchmarks",
+  "files": [
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/510f2318f324cf07fce24c3a4b89c771-Supplemental.pdf",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/supplement.pdf",
+      "sha256": "9187ae32a5462a8179bd0d3429101b4dc83b57bdaf4c3abb2b6d2f2420cd8091",
+      "bytes": 15019973,
+      "receipt_at_utc": "2026-11-15T20:04:27.854836+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/zhd96/pi-vae",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/repo_metadata.json",
+      "sha256": "b36a9d9c84979c4af82e5750510ba38ecc980be63d1fdc94d796a4ad620f08f2",
+      "bytes": 4773,
+      "receipt_at_utc": "2026-11-15T20:04:28.729887+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/zhd96/pi-vae/git/trees/main?recursive=1",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/upstream_tree.json",
+      "sha256": "799a168f2d6dbc2ecd17c88c030db74a1c010b8dfb0a53e39e2a86012edda73a",
+      "bytes": 6067,
+      "receipt_at_utc": "2026-11-15T20:04:29.021109+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhd96/pi-vae/cc77ac7068dabede095108000b07cf57abbd0f96/code/pi_vae.py",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/code/pi_vae.py",
+      "sha256": "86863f79c2a5d654882096ea093a5f44da7a734092d60db637e2be3e16d6ebb1",
+      "bytes": 22036,
+      "receipt_at_utc": "2026-11-15T20:04:29.210051+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhd96/pi-vae/cc77ac7068dabede095108000b07cf57abbd0f96/code/rat_preprocess_data.py",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/code/rat_preprocess_data.py",
+      "sha256": "5dd4e66c797553e0a67b847ff0ef286ebf46e07c613fbf26fd8ddfb08f7e5f1b",
+      "bytes": 4514,
+      "receipt_at_utc": "2026-11-15T20:04:29.386185+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhd96/pi-vae/cc77ac7068dabede095108000b07cf57abbd0f96/code/util.py",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/code/util.py",
+      "sha256": "3eba5ac26153ee6f2cd0bc7cf0085f4cbf92747e3adc0caf13fb3623ce349845",
+      "bytes": 2998,
+      "receipt_at_utc": "2026-11-15T20:04:29.580276+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhd96/pi-vae/cc77ac7068dabede095108000b07cf57abbd0f96/code/vae.py",
+      "path": "project_resources/research/nonlinear_repair_2026_11_15/sources/pi_vae_root/code/vae.py",
+      "sha256": "bda8aee66f79b538710c301f3f7def4eb9f1ef2495ca39e211929dcb48a0dbd1",
+      "bytes": 12501,
+      "receipt_at_utc": "2026-11-15T20:04:29.748630+00:00"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://api.github.com/repos/zhd96/pi-vae/git/trees/master?recursive=1",
+      "error": "HTTP404; corrected by discovering default branch from repo metadata"
+    }
+  ],
+  "correction": "First attempt downloaded supplement successfully;404 was tree/master, not paperURL. Prior interim failure attribution corrected after checking files."
+}

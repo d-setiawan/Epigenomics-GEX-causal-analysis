@@ -1,0 +1,457 @@
+{
+  "acceptance": {
+    "bound_hits": "reported, not an exclusion",
+    "converged": true,
+    "finite": true,
+    "minimum_loading_singular_ratio": 0.001,
+    "minimum_probability_gap": 0.03,
+    "one_source_gap_exempt": true,
+    "poisson_calibration_gain": "diagnostic only"
+  },
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "assessment_inputs": {
+    "constrained_collider_0": {
+      "H3K27ac": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/private_inputs/informative/assessment/H3K27ac.h5ad",
+        "sha256": "e78d59dfa00616dc7ac4520ce944015f15753310aa548145f0c877ccd098baff"
+      },
+      "H3K4me3": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/private_inputs/informative/assessment/H3K4me3.h5ad",
+        "sha256": "aae59089bef9eb395999472600d77fc5fe8ddb901cc51e094c44b3ae4cbd440e"
+      },
+      "RNA": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/private_inputs/informative/assessment/RNA.h5ad",
+        "sha256": "7e162e5c35cbe80f1c72c07bfb3413c00a6e814c3628ee68aa9a40497719292e"
+      }
+    },
+    "linear_chain_0": {
+      "H3K27ac": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/private_inputs/informative/assessment/H3K27ac.h5ad",
+        "sha256": "cbaa6a343aaf912ba1511e84dc795a9578801511a4f92b834e7382c301583ada"
+      },
+      "H3K4me3": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/private_inputs/informative/assessment/H3K4me3.h5ad",
+        "sha256": "38bc0860602f82b825a111032c262dd790c5b87b0d107f1fed892b94552ef3f8"
+      },
+      "RNA": {
+        "path": "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/private_inputs/informative/assessment/RNA.h5ad",
+        "sha256": "15a15ee3710829c11307c18780ed86e36d7f18b1cbcd6f0d07e3ee32303ea230"
+      }
+    }
+  },
+  "blas_threads_per_worker": 1,
+  "column_null_seed": "C01 key_seed(count-transport-v1,world,assay,column_null); permute independently inside fit and calibration",
+  "controls": [
+    "original",
+    "column_null"
+  ],
+  "created_utc": "2026-11-15T23:07:42.712434+00:00",
+  "data_manifest": "project_resources/research/count_extensions_2026_11_01/data_v1/manifest.json",
+  "data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "dimensions": [
+    1,
+    2,
+    3
+  ],
+  "environment": {
+    "numpy": "2.2.6",
+    "python": "3.11.14",
+    "scipy": "1.14.1"
+  },
+  "feature_ids": {
+    "constrained_collider_0": {
+      "H3K27ac": [
+        "f_834370c9158a1aed9b93",
+        "f_86df99d56f25e769d657",
+        "f_af9beed3bf7d12be5da7",
+        "f_3cc4f2dc440462769679",
+        "f_2785b22285f99edf275d",
+        "f_d0d1625e961f7a2ae5d8",
+        "f_99474e67ca5a82706453",
+        "f_c0a1a980ad96d60340c8",
+        "f_6661bf71f4b1477fde62",
+        "f_af3990b4e5b67b087c7d",
+        "f_035d4e29c7931795cb1e",
+        "f_7a4de735bd8f6db21b4e",
+        "f_f0334bd224e9e4e25cf9",
+        "f_bf1b9c9e5eba30f8506f",
+        "f_57e09c4c79827d53a8ed",
+        "f_a5698483559c6e43da2c",
+        "f_ea2c89c79ac40f5d58ce",
+        "f_9aacd4a9ab4bff4ea678",
+        "f_6a8ac98a5ab1c718434b",
+        "f_48a919d0fae24e3bd257",
+        "f_144d2270514ece58c94d",
+        "f_2de5f74eb535774ce7d2",
+        "f_9d3f1f20b747ef4c832a",
+        "f_d4f593e40d4ca2264207"
+      ],
+      "H3K4me3": [
+        "f_02a7fafe46a4fad05f57",
+        "f_7a60e2e1775850efc302",
+        "f_1903bd58d75c1a3bbe64",
+        "f_7cccc38ff691a1c13d7d",
+        "f_39b2ba808e3d83d1086e",
+        "f_362f17aecce79e747209",
+        "f_ef61e8d910fffdfd3e73",
+        "f_76484cb2e4e08281903c",
+        "f_7460b16cfedf621e22b8",
+        "f_2bf4410357f6a78936d0",
+        "f_4b129beb8f9c9944d319",
+        "f_51ef2f55a7a14f75719e",
+        "f_2ded8202e3ad0ae1abe1",
+        "f_67c13d7729dfbfa66d45",
+        "f_7b66a43a286ee620f197",
+        "f_6dac34dcd4d06417bd11",
+        "f_d1e5aed49a517ce74bd3",
+        "f_4ca6a8bf0804826c1ab7"
+      ],
+      "RNA": [
+        "f_3d1afc42357446d0ee98",
+        "f_a148b5ca7501e8f852cb",
+        "f_35cd951fc45e47c324ef",
+        "f_9bac51da071f990eb287",
+        "f_7d5c6b595db8caf3bd90",
+        "f_15956bfe8bce21690238",
+        "f_173dbf17897107b20313",
+        "f_8b0b9e5d754d0dcf6179",
+        "f_b8c17d3017e0e42864b6",
+        "f_d1d15dc5e5609e1b6c90",
+        "f_eeef95c9bec686bedf1b",
+        "f_91a574e8e18c68b2b405",
+        "f_948bb8b892dd8e6df427",
+        "f_fa81618ae327b12a6aef",
+        "f_82dd83d0dfc98f06d3e1",
+        "f_77d96c43fc7763064833",
+        "f_d9425f8dee0aca8f37cf",
+        "f_0a0321ff2d78881ba700",
+        "f_fc8164787a93c6f1a120",
+        "f_d30b47fa1498bf4383cd",
+        "f_8f043888cca1240d5369",
+        "f_66bf9d3f53dfcd0cc048",
+        "f_906a9ce468c0e7c864e6",
+        "f_082503ab4a608b02a460",
+        "f_c9a30bc44bacd95ecdbb",
+        "f_2f9b2e4ae9855f640534",
+        "f_f53d4d502d5db460c73c",
+        "f_2172a79673920b8cdde9",
+        "f_0d6c93de29961c73c5a9",
+        "f_513408cf2179b023cf06"
+      ]
+    },
+    "linear_chain_0": {
+      "H3K27ac": [
+        "f_2072377ba3ea4edc7949",
+        "f_92c03f0a60c03f6f9bff",
+        "f_5e15255a2b618b4874f7",
+        "f_68ce5d820d547ff5f321",
+        "f_51753566668f9277f2c8",
+        "f_954e7759b19801635a1e",
+        "f_fc7ef9586ea1b85d7ae2",
+        "f_25d31a267236c342194c",
+        "f_132a900de3cec17bb7f3",
+        "f_63c3277c04db06a77600",
+        "f_c3a559049dada0c77732",
+        "f_49a675892b526cb7ba66",
+        "f_2bbb7e9b95ce34157195",
+        "f_b9f0927f1c1fbb021a1e",
+        "f_fcc10ced1c5420504d97",
+        "f_74b1ac4d9b46555c0a95",
+        "f_4ee6eb34eb1c6eda3414",
+        "f_ce9cf81aee3a005d04ea",
+        "f_854e9f999873ad6bca78",
+        "f_d63a6164f26f512bd9bd",
+        "f_f7e266d9f718a3ece77d",
+        "f_11051a2fe88100ea421e",
+        "f_a0a1265a39a11a8d58c0",
+        "f_862e7dee99b379e897a5"
+      ],
+      "H3K4me3": [
+        "f_9d5775c5b3c259d7e1b2",
+        "f_73cc387e53ba01a05ac8",
+        "f_973bc2bba11100ead37c",
+        "f_c66c16b6f512a8d06406",
+        "f_ea6330001da245691812",
+        "f_4783d4ae79525dffd189",
+        "f_9dcd05bc7633b7b76e72",
+        "f_509fd36ee4c8bf29ce19",
+        "f_16ee71ee4077b114cf84",
+        "f_e66200e6bcc6450264b7",
+        "f_423242cc3b454627fb9e",
+        "f_9f419ec259d4f9fb80d9",
+        "f_f65e11be89aefc4d50f3",
+        "f_fa7f6b678671e7a11088",
+        "f_0a8f7f2e90fbb2b1dae1",
+        "f_6126c71dffc0a042b6c1",
+        "f_ba41b49557c3ca52961e",
+        "f_34724d6f3222fda60fe9"
+      ],
+      "RNA": [
+        "f_98dac0e3c7622cedaf7b",
+        "f_eb191ca577c5ac691bf8",
+        "f_c4cca7811452383d18ad",
+        "f_56a347aef2fb3af9bf76",
+        "f_5f50711fcf29c1342a28",
+        "f_002d1893de1f776a9c18",
+        "f_0d1436f7756874ac74f2",
+        "f_a60caac2e63e47ca6378",
+        "f_8af974bc4d4dfa72d4d6",
+        "f_1eace4e818867ddfeca0",
+        "f_4de8721f1a905b4d66d6",
+        "f_f878af90f77f553caadd",
+        "f_53f556ba883c46ef306d",
+        "f_327b63e8ece1d95a7442",
+        "f_fdb803178f30505b0834",
+        "f_192c3234f8a8077655ba",
+        "f_079b012a2843478189c2",
+        "f_d93cca39648c4d5b22d5",
+        "f_df778f9b7f6400951fa8",
+        "f_6df62e8ed2dadafc305f",
+        "f_8faca1a725a3deaeb9bb",
+        "f_b49bef7cec80880ed65c",
+        "f_b49815af2dc34e50820c",
+        "f_a8f3d41afacf60f059b1",
+        "f_a1ada7d64b948d8ad943",
+        "f_7da2146cae614839ace3",
+        "f_8e3b6693e47a597494c1",
+        "f_70ecf0eb669b875e6afa",
+        "f_98aeafa7cae9cc7d99e7",
+        "f_571a8a960e7454a484f8"
+      ]
+    }
+  },
+  "maxiter": 600,
+  "scope": "Cached informative-count background panels only; no motif edges, new worlds, paired training, PCA, guidance, labels or depth adjustment",
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "selection": "Highest equal-assay, per-feature calibration log likelihood among converged finite fits; fallback to best finite fit is diagnostic only. Exact ties: lower dimension then lower seed. No full-data refit.",
+  "source_indices": {
+    "constrained_collider_0": {
+      "H3K27ac": [
+        2341,
+        1211,
+        4430,
+        11742,
+        4678,
+        1750,
+        5675,
+        11608,
+        10729,
+        2713,
+        9746,
+        9754,
+        10250,
+        9906,
+        14707,
+        2882,
+        12600,
+        6087,
+        7321,
+        13976,
+        5174,
+        9642,
+        2043,
+        7449
+      ],
+      "H3K4me3": [
+        13777,
+        2352,
+        11130,
+        12780,
+        9762,
+        347,
+        8760,
+        14779,
+        10337,
+        12052,
+        1983,
+        3886,
+        5877,
+        13720,
+        395,
+        9968,
+        2846,
+        5957
+      ],
+      "RNA": [
+        375,
+        853,
+        339,
+        1312,
+        1505,
+        1508,
+        585,
+        1646,
+        490,
+        701,
+        1235,
+        823,
+        377,
+        1621,
+        304,
+        1625,
+        1525,
+        433,
+        1696,
+        1615,
+        1644,
+        638,
+        477,
+        1520,
+        91,
+        1263,
+        760,
+        751,
+        1009,
+        1206
+      ]
+    },
+    "linear_chain_0": {
+      "H3K27ac": [
+        12890,
+        3128,
+        1665,
+        11935,
+        4963,
+        7202,
+        4878,
+        13422,
+        2984,
+        10770,
+        7489,
+        6164,
+        804,
+        11673,
+        12418,
+        10181,
+        14784,
+        1735,
+        9759,
+        5182,
+        14586,
+        9163,
+        8605,
+        7088
+      ],
+      "H3K4me3": [
+        11410,
+        7690,
+        6096,
+        7951,
+        12747,
+        13619,
+        14247,
+        3219,
+        12040,
+        2250,
+        4135,
+        7071,
+        1532,
+        6114,
+        6242,
+        5604,
+        3113,
+        206
+      ],
+      "RNA": [
+        1025,
+        1283,
+        575,
+        964,
+        1606,
+        1112,
+        305,
+        1931,
+        1995,
+        457,
+        1652,
+        179,
+        1771,
+        342,
+        725,
+        1455,
+        1081,
+        616,
+        520,
+        1923,
+        928,
+        1939,
+        1736,
+        1161,
+        423,
+        127,
+        29,
+        1585,
+        724,
+        1504
+      ]
+    }
+  },
+  "sources": {
+    "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+    "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+    "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+    "pipelines/simulation/integration_recoverability/runs/count_transport_demo_v1/PLAN.md": "ba77fffa98abdd7f64caa3a0e7fa35302dae72b3e1f569a6ff0305f9e31bc8a4",
+    "pipelines/simulation/integration_recoverability/runs/worlds/constrained_collider_0/manifest.json": "8d8919dcd8a7d61e7b8aa69335200f35332c92c5eb1d1c2957f6deb6aa459b74",
+    "pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/manifest.json": "f05a1e1c72b348956e9fe050e081bbb342b88ac0e14ede53d652c785facdb68f",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_evaluate.py": "c8ffbd829f032398603b4099a4194ff73dda987ccdc5cf4ec47fbfe97cc708b5",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_model.py": "18c04ce7c0e6e379e61ece1ddba3cbc0c69009b330a7f023fd19ec1ca59db6f3",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_run.py": "cf16aef2acc535d4c6be53589af3e322eed74ebf99d1b903a6f5461414daeca4",
+    "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+    "project_resources/research/sturma_pilot_2026_11_01/prepare_cached_data_pilot.py": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5"
+  },
+  "split": "C01 SHA256 count-dica-v1 identifiers, 75% fit / 25% calibration",
+  "training_inputs": {
+    "constrained_collider_0": {
+      "H3K27ac": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz",
+        "sha256": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe"
+      },
+      "H3K4me3": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz",
+        "sha256": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9"
+      },
+      "RNA": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz",
+        "sha256": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9"
+      }
+    },
+    "linear_chain_0": {
+      "H3K27ac": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz",
+        "sha256": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d"
+      },
+      "H3K4me3": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz",
+        "sha256": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41"
+      },
+      "RNA": {
+        "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz",
+        "sha256": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd"
+      }
+    }
+  },
+  "variants": [
+    "strict",
+    "affine"
+  ],
+  "version": "count_transport_demo_v1",
+  "widths": {
+    "H3K27ac": 24,
+    "H3K4me3": 18,
+    "RNA": 30
+  },
+  "workers": 2,
+  "worlds": [
+    "linear_chain_0",
+    "constrained_collider_0"
+  ]
+}

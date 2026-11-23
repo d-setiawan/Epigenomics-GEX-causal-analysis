@@ -1,0 +1,11 @@
+# Independent review: finite-mixture alignment boundary
+
+**Correction, 2026-11-14:** The initial review below incorrectly cited Allman Theorem 8 for the Bernoulli example. Use discrete latent-class Corollary 2 (paper p. 17), based on Theorem 1: for two classes the three 2×2 conditional matrices each have Kruskal rank 2, summing to 6 = 2r+2; strictly positive class weights give identification up to a simultaneous label permutation. This correction preserves the initial erroneous attribution as review history. The arithmetic and conclusion are unchanged.
+
+Reviewed 2026-11-14, against `theory/MIXTURE_ALIGNMENT_BOUNDARY.md` and Allman, Matias and Rhodes (2009), Theorem 8, https://www.cs.uaf.edu/~jrhodes/papers/Latent.pdf. No code or simulation was run.
+
+The arithmetic is correct: E[A]=E[B]=1/2 and E[AB] is 31/100 for aligned low-low/high-high or 19/100 for low-high/high-low, giving covariances ±3/50. Within each assay the class-conditional Bernoulli distributions are distinct and therefore linearly independent as signed measures. Three features jointly measured in each cell and conditionally independent given a fixed, known two-class latent variable satisfy the premises of Allman Theorem 8, identifying mixture parameters up to an assay-specific permutation.
+
+Distinct class weights uniquely align those permutations only under the additional premise that the same complete classes and their post-selection probabilities occur in each assay. Pairwise distinct weights cannot be inferred merely from having many features. After label alignment, a cross-assay joint is still not identified without specifying residual coupling; the product expression is valid with the separate mutual cross-assay conditional-independence assumption. Equal weights in the example leave the two assignments indistinguishable by all complete within-assay laws, even though each assay’s latent mixture is individually identified. The example shows observational dependence ambiguity, not a causal effect or graph ambiguity by itself.
+
+No arithmetic or theorem-correspondence defect found. Real selected assay pools may differ in class proportions, continuous state may invalidate the model, and finite-sample estimation and near-equal weights are not addressed by this population argument.

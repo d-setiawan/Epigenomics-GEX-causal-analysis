@@ -1,0 +1,357 @@
+{
+  "date": "2026-11-14",
+  "status": "passed",
+  "scope": "Mechanical public-training schema and frozen provenance audit; no paired outcome values or biological conclusions computed",
+  "public_training_artifacts": [
+    {
+      "dataset": "scmtr_seq_s1",
+      "assay": "RNA",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/RNA.npz",
+      "sha256": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2",
+      "shape": [
+        602,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 23383
+    },
+    {
+      "dataset": "scmtr_seq_s1",
+      "assay": "H3K27ac",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K27ac.npz",
+      "sha256": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+      "shape": [
+        615,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 26569
+    },
+    {
+      "dataset": "scmtr_seq_s1",
+      "assay": "H3K4me3",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K4me3.npz",
+      "sha256": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+      "shape": [
+        614,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 22481
+    },
+    {
+      "dataset": "linear_chain_0",
+      "assay": "RNA",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz",
+      "sha256": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 1997
+    },
+    {
+      "dataset": "linear_chain_0",
+      "assay": "H3K27ac",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz",
+      "sha256": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 14997
+    },
+    {
+      "dataset": "linear_chain_0",
+      "assay": "H3K4me3",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz",
+      "sha256": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 14997
+    },
+    {
+      "dataset": "constrained_collider_0",
+      "assay": "RNA",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz",
+      "sha256": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 1997
+    },
+    {
+      "dataset": "constrained_collider_0",
+      "assay": "H3K27ac",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz",
+      "sha256": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 14997
+    },
+    {
+      "dataset": "constrained_collider_0",
+      "assay": "H3K4me3",
+      "path": "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz",
+      "sha256": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+      "shape": [
+        4000,
+        300
+      ],
+      "keys": [
+        "raw_counts",
+        "log1p_cp10k",
+        "library_depth",
+        "cell_ids",
+        "feature_ids"
+      ],
+      "exact_30_prefix_checks": {
+        "raw_counts": true,
+        "log1p_cp10k": true,
+        "library_depth": true,
+        "cell_ids": true,
+        "feature_ids": true
+      },
+      "integer_nonnegative_counts": true,
+      "feature_ids_match_manifest": true,
+      "allowed_depth_feature_count": 14997
+    }
+  ],
+  "evaluator_archive": {
+    "path": "project_resources/research/count_extensions_2026_11_01/data_v1/evaluator/scmtr_seq_s1/paired_reference.npz",
+    "sha256": "30810f85c00fa810f1252fa9a18c3ba03dd198c5edfd97ec10c371842e18bd1e",
+    "headers_only": {
+      "canonical_ids.npy": {
+        "shape": [
+          595
+        ],
+        "dtype": "<U11",
+        "fortran_order": false
+      },
+      "paired_indices_RNA.npy": {
+        "shape": [
+          595
+        ],
+        "dtype": "int64",
+        "fortran_order": false
+      },
+      "paired_indices_H3K27ac.npy": {
+        "shape": [
+          595
+        ],
+        "dtype": "int64",
+        "fortran_order": false
+      },
+      "paired_indices_H3K4me3.npy": {
+        "shape": [
+          595
+        ],
+        "dtype": "int64",
+        "fortran_order": false
+      },
+      "raw_counts.npy": {
+        "shape": [
+          595,
+          900
+        ],
+        "dtype": "int32",
+        "fortran_order": false
+      },
+      "log1p_cp10k.npy": {
+        "shape": [
+          595,
+          900
+        ],
+        "dtype": "float64",
+        "fortran_order": false
+      },
+      "column_ids.npy": {
+        "shape": [
+          900
+        ],
+        "dtype": "<U23",
+        "fortran_order": false
+      },
+      "column_assays.npy": {
+        "shape": [
+          900
+        ],
+        "dtype": "<U7",
+        "fortran_order": false
+      }
+    },
+    "outcome_values_loaded": false,
+    "layout_source": "prepare_panels.py:evaluator_references; assay-major RNA/H3K27ac/H3K4me3, 300 columns each; first30 per block preserves old public panel"
+  },
+  "selection": {
+    "training": {
+      "RNA": {
+        "assigned_before_QC": 615,
+        "retained_after_own_QC": 602,
+        "encoder_feature_count": 23383
+      },
+      "H3K27ac": {
+        "assigned_before_QC": 615,
+        "retained_after_own_QC": 615,
+        "encoder_feature_count": 26569
+      },
+      "H3K4me3": {
+        "assigned_before_QC": 614,
+        "retained_after_own_QC": 614,
+        "encoder_feature_count": 22481
+      }
+    },
+    "paired_reference_n": 595,
+    "paired_reference_QC": "All three assay QC conditions; internal complete-case population within 600 reserved source cells",
+    "source_QC_caveat": "Published S1 DNA files already used total six-target DNA counts >=2500; this inherited selection cannot be undone using released three-assay inputs"
+  },
+  "panel_distinction": {
+    "original_focal_panel": "Nine nodes: BRD2, EPM2AIP1, NBPF1 across three assays; outcome counts evaluator-only and excluded from encoder inputs",
+    "later_source_panels": "Public 30/300 background count features selected from allowed encoder inputs; P01 uses first30 of public training arrays"
+  },
+  "source_hashes": {
+    "project_resources/research/count_extensions_2026_11_01/data_v1/manifest.json": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+    "project_resources/research/count_extensions_2026_11_01/prepare_panels.py": "dc42bad122cdc020c8bee566da29f812b4cc168eb89ed34178d454dc5b2dbf49",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/frozen_protocol.json": "7d84e794c6347eda2cf195b601b1792040d35dd767c85ac549108027cce3326a",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/summary.json": "ef637c4a94b87af1753f2594dd9c04a8e9fd8a153fb55327119e2199003ff029",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/model_inputs/manifest.json": "71cf29e209c644eaf7d475a9968c22224d1e00d242c5f824c7f7a00e6ef8372b",
+    "pipelines/empirical/data/scmtr_seq/build_cohort_s1.py": "575a864709f1e48b0d310cd77aecc2dde2673dad5e45abe1312b83cb7341b42e",
+    "pipelines/empirical/data/scmtr_seq/build_model_inputs_s1.py": "0f9d8cb406d775bd73172e4377480912f3b531c3301e2b74983fe12f4fcd97cd"
+  },
+  "not_claimed": [
+    "Population equality after different QC events",
+    "Independent biological replication",
+    "Causal graph truth",
+    "Any evaluator metric"
+  ]
+}

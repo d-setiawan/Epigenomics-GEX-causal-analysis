@@ -1,0 +1,2005 @@
+{
+  "date": "2026-11-14",
+  "status": "passed_with_documented_intermediate_hash_reconciliation",
+  "scope": "Current file-integrity audit of historical study/review records; no new world, fit, scientific rerun, or theorem verification",
+  "sturma": {
+    "manifest_sha256": "2234bc1a80658ffe80f19c5da439abdf286d42f2fe413785caf0a987457050b2",
+    "upstream_commit_recorded": "578b5900590164b2ed1750fb6a7f98ae7153e220",
+    "manifest_checks": [
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/replicate_published_model.py",
+        "expected": "b598a47ec743cf44ba55cfc56bf4a78b94dc884877b652aa1ecdad36d7e56851",
+        "actual": "b598a47ec743cf44ba55cfc56bf4a78b94dc884877b652aa1ecdad36d7e56851",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/test_published_replication.py",
+        "expected": "4a6039eb6b7a349f8c5b6d91441818d100ddd71dc8de861e329e55453cc1e29b",
+        "actual": "4a6039eb6b7a349f8c5b6d91441818d100ddd71dc8de861e329e55453cc1e29b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_protocol.json",
+        "expected": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+        "actual": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_summary.json",
+        "expected": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+        "actual": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_self_check.json",
+        "expected": "eea7ada36390b2e11e27a341808f681f53e073bba1155cfaca036546a4143f09",
+        "actual": "eea7ada36390b2e11e27a341808f681f53e073bba1155cfaca036546a4143f09",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_run.log",
+        "expected": "57a29f68b5a1f395506e588c88c0ba7e777b46c6ae5b5abe0bc65def3e2cf2b1",
+        "actual": "57a29f68b5a1f395506e588c88c0ba7e777b46c6ae5b5abe0bc65def3e2cf2b1",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/replication_resources.json",
+        "expected": "460447742ef279715ab8be904ec35bc6df1150e03b11aa501566502aa4ca4260",
+        "actual": "460447742ef279715ab8be904ec35bc6df1150e03b11aa501566502aa4ca4260",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/PUBLISHED_REPLICATION.md",
+        "expected": "9bd28319fe86ca6682f61b02147fa0e51bf584f7cf4f7bbafbd9c91e60cc419e",
+        "actual": "9bd28319fe86ca6682f61b02147fa0e51bf584f7cf4f7bbafbd9c91e60cc419e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed0.json",
+        "expected": "7e18ed614ab9530eed5916be8e4ed838b89389a318c2b0409c4fb77d36105839",
+        "actual": "7e18ed614ab9530eed5916be8e4ed838b89389a318c2b0409c4fb77d36105839",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed0.npz",
+        "expected": "2146ce62ede081cf5e065f63c308fc2f2756538e60a337c629250139ddb1232f",
+        "actual": "2146ce62ede081cf5e065f63c308fc2f2756538e60a337c629250139ddb1232f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed1.json",
+        "expected": "70cf5aa71a99e27f59bac189148a3f720b2f9d14aa8436463292641fcee8bb80",
+        "actual": "70cf5aa71a99e27f59bac189148a3f720b2f9d14aa8436463292641fcee8bb80",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed1.npz",
+        "expected": "9b3472e1100920f66ac0c59e1adafb941fdf9b68c4e6ffe4aad7d4c16e3a9cdd",
+        "actual": "9b3472e1100920f66ac0c59e1adafb941fdf9b68c4e6ffe4aad7d4c16e3a9cdd",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed2.json",
+        "expected": "f4b1757d6576987db3d88d919dd0c13c336828bcf2c7e480b0261153545a80d4",
+        "actual": "f4b1757d6576987db3d88d919dd0c13c336828bcf2c7e480b0261153545a80d4",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed2.npz",
+        "expected": "6a451d204fc54cdcd7da5ae4612c4a73e35a9fd6830a3da0d5a3baad29cf472f",
+        "actual": "6a451d204fc54cdcd7da5ae4612c4a73e35a9fd6830a3da0d5a3baad29cf472f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed3.json",
+        "expected": "316e2dcd87818d2850bf608df7f854e22a9f995a2cfb31c0bb1436ae5d186179",
+        "actual": "316e2dcd87818d2850bf608df7f854e22a9f995a2cfb31c0bb1436ae5d186179",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed3.npz",
+        "expected": "253208706e64c1e093b011581807ff14644f41bf6f09709b7913ceef3c5c97bd",
+        "actual": "253208706e64c1e093b011581807ff14644f41bf6f09709b7913ceef3c5c97bd",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed4.json",
+        "expected": "e370f05eddbe811d3443c265c9b4987cb696647a397c0bc7d7b91148f17bf014",
+        "actual": "e370f05eddbe811d3443c265c9b4987cb696647a397c0bc7d7b91148f17bf014",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed4.npz",
+        "expected": "c7d1795ef19ead7567f133ed5e3788b94437cf1b658871c6738bc295b2eaf42f",
+        "actual": "c7d1795ef19ead7567f133ed5e3788b94437cf1b658871c6738bc295b2eaf42f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed5.json",
+        "expected": "7bc99c13150a898f398815cfdf2fd972d06152ecbc70a7ecfa2a9439d2fe15d0",
+        "actual": "7bc99c13150a898f398815cfdf2fd972d06152ecbc70a7ecfa2a9439d2fe15d0",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed5.npz",
+        "expected": "f13e3ef1a64dc79678ca7d87d088c14f6fce0bbebf48613b745cdf4356423398",
+        "actual": "f13e3ef1a64dc79678ca7d87d088c14f6fce0bbebf48613b745cdf4356423398",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed6.json",
+        "expected": "a685970f80e6ad8d1b6f83686233eae4965175781af301f64d14465a9f4ca532",
+        "actual": "a685970f80e6ad8d1b6f83686233eae4965175781af301f64d14465a9f4ca532",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed6.npz",
+        "expected": "898a36f734de4a7d21767261ead9308f9428ee201ea956d617e6b57d6e887139",
+        "actual": "898a36f734de4a7d21767261ead9308f9428ee201ea956d617e6b57d6e887139",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed7.json",
+        "expected": "b3ea2f6e1c6fe919498cbc862004249b4b209339d08aae7b380641c69d342167",
+        "actual": "b3ea2f6e1c6fe919498cbc862004249b4b209339d08aae7b380641c69d342167",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed7.npz",
+        "expected": "299893636e64aecaa78f57bc5cbbcaa241c5d0caadfdf3f8121ba5c945d128a8",
+        "actual": "299893636e64aecaa78f57bc5cbbcaa241c5d0caadfdf3f8121ba5c945d128a8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed8.json",
+        "expected": "c01629b5c0f336da27dc7a9cc5c7b7ffe1b447e05f702a090399a769b772d8f6",
+        "actual": "c01629b5c0f336da27dc7a9cc5c7b7ffe1b447e05f702a090399a769b772d8f6",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed8.npz",
+        "expected": "c3b9c87080b02d2ee3aabd62df69cfc15ab2cc386f10ae21d38f04373d0a4336",
+        "actual": "c3b9c87080b02d2ee3aabd62df69cfc15ab2cc386f10ae21d38f04373d0a4336",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed9.json",
+        "expected": "ee6d3b783be6f7df18fec113f360f11d342a16e3e967110e0f30050856974e8f",
+        "actual": "ee6d3b783be6f7df18fec113f360f11d342a16e3e967110e0f30050856974e8f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n10000_seed9.npz",
+        "expected": "6a01700651731181b06f869f501e2ac6168f217369fd31f82b0fdf69552621ac",
+        "actual": "6a01700651731181b06f869f501e2ac6168f217369fd31f82b0fdf69552621ac",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed0.json",
+        "expected": "2d457f00ac9dd1cfc2a5f5ea82bfb0836ec3089bd92c97086ac0686245a989f9",
+        "actual": "2d457f00ac9dd1cfc2a5f5ea82bfb0836ec3089bd92c97086ac0686245a989f9",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed0.npz",
+        "expected": "92addcea2fb0823392add11cb8cbcf016327b1430f9301a989c48ed45970f81c",
+        "actual": "92addcea2fb0823392add11cb8cbcf016327b1430f9301a989c48ed45970f81c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed1.json",
+        "expected": "7188b6d38aaddca45fd7228efc71efc5d645528c5f0668264d0721b77c6dea40",
+        "actual": "7188b6d38aaddca45fd7228efc71efc5d645528c5f0668264d0721b77c6dea40",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed1.npz",
+        "expected": "dec87177f720a902240ecd25a6d64eb4af7953f8f4a5d81fad6e3c8dfb9f630f",
+        "actual": "dec87177f720a902240ecd25a6d64eb4af7953f8f4a5d81fad6e3c8dfb9f630f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed2.json",
+        "expected": "79e8d75b284452a400f1fd95bb03dddb6215708b6ae37d6500d55f85e5f2c376",
+        "actual": "79e8d75b284452a400f1fd95bb03dddb6215708b6ae37d6500d55f85e5f2c376",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed2.npz",
+        "expected": "b1a784d397edcc62d6d6c0d085eab716e822ea375047f3dfeab96ae026abb571",
+        "actual": "b1a784d397edcc62d6d6c0d085eab716e822ea375047f3dfeab96ae026abb571",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed3.json",
+        "expected": "2c4c691141b7b978bd39133b4903aa194187b79dd631d939f59e7a82452ba3e0",
+        "actual": "2c4c691141b7b978bd39133b4903aa194187b79dd631d939f59e7a82452ba3e0",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed3.npz",
+        "expected": "5755a08514bda7cbe1458aebe1210311ba8255fdafb3fc34bfcf26ffe06ed48a",
+        "actual": "5755a08514bda7cbe1458aebe1210311ba8255fdafb3fc34bfcf26ffe06ed48a",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed4.json",
+        "expected": "69a4d48515c61ca24c043178991845606c0c0232ebf7abb240c9e0d490def84f",
+        "actual": "69a4d48515c61ca24c043178991845606c0c0232ebf7abb240c9e0d490def84f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed4.npz",
+        "expected": "f0f8f3dbb76cf1730c8f82bc97ae9d02297b85521211bd79db6fb0d83cbb0e59",
+        "actual": "f0f8f3dbb76cf1730c8f82bc97ae9d02297b85521211bd79db6fb0d83cbb0e59",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed5.json",
+        "expected": "f5e5c5d865886d5ce8e594e091bf78c4caba8754bcd141190c2325e53b6c954b",
+        "actual": "f5e5c5d865886d5ce8e594e091bf78c4caba8754bcd141190c2325e53b6c954b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed5.npz",
+        "expected": "05c97a2f5a618d313915b61a50340ddfe6385fb1e712129b25816f3a2ef1981e",
+        "actual": "05c97a2f5a618d313915b61a50340ddfe6385fb1e712129b25816f3a2ef1981e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed6.json",
+        "expected": "da7588d5aabccdd9bfc43dc2c544e9ae84964a5a7e8925889761b02e1e43be17",
+        "actual": "da7588d5aabccdd9bfc43dc2c544e9ae84964a5a7e8925889761b02e1e43be17",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed6.npz",
+        "expected": "6251f1e0e67a8edcddb91288f8e69dc191b952e2fd626c12ff9735ec5f3f5571",
+        "actual": "6251f1e0e67a8edcddb91288f8e69dc191b952e2fd626c12ff9735ec5f3f5571",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed7.json",
+        "expected": "ff0d588282cfda9f21902d0d38017a42e6c57325002ad30f1f79426898df971f",
+        "actual": "ff0d588282cfda9f21902d0d38017a42e6c57325002ad30f1f79426898df971f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed7.npz",
+        "expected": "a7eab5a620b885dd38cc7d3464bc19afdc1e4e69cf747598c36aabc40a6a504d",
+        "actual": "a7eab5a620b885dd38cc7d3464bc19afdc1e4e69cf747598c36aabc40a6a504d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed8.json",
+        "expected": "1d64ce903510554f2535dcb001e8d1dc3a72ad82f255699ba53bb7daee998c9c",
+        "actual": "1d64ce903510554f2535dcb001e8d1dc3a72ad82f255699ba53bb7daee998c9c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed8.npz",
+        "expected": "0429d6804fe29068d02cb7eb394aeff19cf6553afb173eefe4dc80bc26a1c880",
+        "actual": "0429d6804fe29068d02cb7eb394aeff19cf6553afb173eefe4dc80bc26a1c880",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed9.json",
+        "expected": "172239fc111b0da87c518b99d992ab439ed7ba11cf45e645b47d8af2dac3bef7",
+        "actual": "172239fc111b0da87c518b99d992ab439ed7ba11cf45e645b47d8af2dac3bef7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n1000_seed9.npz",
+        "expected": "19dcef913e6c2418359de2a9e3e232b006e90425925a535cbf888383861c9fa5",
+        "actual": "19dcef913e6c2418359de2a9e3e232b006e90425925a535cbf888383861c9fa5",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed0.json",
+        "expected": "e62995ede443d478fce9fc6f148e37ae6899be6a848c1ca9e8658f4f063dab44",
+        "actual": "e62995ede443d478fce9fc6f148e37ae6899be6a848c1ca9e8658f4f063dab44",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed0.npz",
+        "expected": "d1d86a611f3ceb61e099e629da691fd78ecaa617d7474c6db8e46c256390a148",
+        "actual": "d1d86a611f3ceb61e099e629da691fd78ecaa617d7474c6db8e46c256390a148",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed1.json",
+        "expected": "1e763897d80d48114936dcfddbe14f73da878c5ecd58d300033d8e91af993622",
+        "actual": "1e763897d80d48114936dcfddbe14f73da878c5ecd58d300033d8e91af993622",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed1.npz",
+        "expected": "36b62443caabef4313e50519f3b7ef3d428b6de124f166609407f7831c650577",
+        "actual": "36b62443caabef4313e50519f3b7ef3d428b6de124f166609407f7831c650577",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed2.json",
+        "expected": "e88fccfa24180f383146c74b8beb231a62b2799f78b39e55825e6e26bc36918f",
+        "actual": "e88fccfa24180f383146c74b8beb231a62b2799f78b39e55825e6e26bc36918f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed2.npz",
+        "expected": "4d87071641b2586e69d866af169fd8463dae9dd063623a05aa47871059b30221",
+        "actual": "4d87071641b2586e69d866af169fd8463dae9dd063623a05aa47871059b30221",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed3.json",
+        "expected": "09af7b28538782f2c5717360ff005a46dcac94fe1b30386098dbd90876b34b05",
+        "actual": "09af7b28538782f2c5717360ff005a46dcac94fe1b30386098dbd90876b34b05",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed3.npz",
+        "expected": "ff18f49199a4c91de3ebea30593f296e81b61965edd8dd8b077ca274dea906b6",
+        "actual": "ff18f49199a4c91de3ebea30593f296e81b61965edd8dd8b077ca274dea906b6",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed4.json",
+        "expected": "93bfacc838bbc38b2d81ead40f4f0dbcf98229e11be683f300c49233e37a7354",
+        "actual": "93bfacc838bbc38b2d81ead40f4f0dbcf98229e11be683f300c49233e37a7354",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed4.npz",
+        "expected": "d868fe25e1064c52141e104484e653ec1093b398676f404e3d548065312e22ec",
+        "actual": "d868fe25e1064c52141e104484e653ec1093b398676f404e3d548065312e22ec",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed5.json",
+        "expected": "605784705e154da1e8eb7a318eda34bd5fc313d8371506ca22c3645b1d8df342",
+        "actual": "605784705e154da1e8eb7a318eda34bd5fc313d8371506ca22c3645b1d8df342",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed5.npz",
+        "expected": "dd092cd2dc9e7922bc6819ace8c75abfd48a72310902573435c2c8a41129934f",
+        "actual": "dd092cd2dc9e7922bc6819ace8c75abfd48a72310902573435c2c8a41129934f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed6.json",
+        "expected": "5c419b5640a0f32acedb98bcca466884d8af4914ed40ab7d58556fc082df686f",
+        "actual": "5c419b5640a0f32acedb98bcca466884d8af4914ed40ab7d58556fc082df686f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed6.npz",
+        "expected": "2fef0ab48d38f75e86a1db270728939a8eff0f3d59bc036820fe950f03c1e646",
+        "actual": "2fef0ab48d38f75e86a1db270728939a8eff0f3d59bc036820fe950f03c1e646",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed7.json",
+        "expected": "7e89e8f7d1c0ce80a21cead91484954add705c5bab3ff9fed6d0e03a458263a1",
+        "actual": "7e89e8f7d1c0ce80a21cead91484954add705c5bab3ff9fed6d0e03a458263a1",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed7.npz",
+        "expected": "6d0ea7941beaf862abf54d8307210dc17279a6e6fa51cc347400c8ee2f08ad22",
+        "actual": "6d0ea7941beaf862abf54d8307210dc17279a6e6fa51cc347400c8ee2f08ad22",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed8.json",
+        "expected": "f4663a04f99f16cfbeb05872ada2f216b0048975ab0142b32a31ea9b2d425cd6",
+        "actual": "f4663a04f99f16cfbeb05872ada2f216b0048975ab0142b32a31ea9b2d425cd6",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed8.npz",
+        "expected": "a79dd929fee63cef2a90dc85222045aac9621cb1114261d69d519b413664e8e2",
+        "actual": "a79dd929fee63cef2a90dc85222045aac9621cb1114261d69d519b413664e8e2",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed9.json",
+        "expected": "9cf431666940873539243ead47b2cc5bd293c3631135bde48fdd5e04c9b6c943",
+        "actual": "9cf431666940873539243ead47b2cc5bd293c3631135bde48fdd5e04c9b6c943",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m2_n25000_seed9.npz",
+        "expected": "78879d91ba23362e9ae30581a46ca1eabf0a4634b18d46a07b11443cc0d2bd2e",
+        "actual": "78879d91ba23362e9ae30581a46ca1eabf0a4634b18d46a07b11443cc0d2bd2e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed0.json",
+        "expected": "b9f0c9dd282cdcd39d795b389c6140a59d83dc9248a1b86363fe98ce1d935130",
+        "actual": "b9f0c9dd282cdcd39d795b389c6140a59d83dc9248a1b86363fe98ce1d935130",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed0.npz",
+        "expected": "b76d166e661a5ac5d0b0c72bf26260839818dd947b36b7714e2308d5ce86ef78",
+        "actual": "b76d166e661a5ac5d0b0c72bf26260839818dd947b36b7714e2308d5ce86ef78",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed1.json",
+        "expected": "c7b8f07aab5c8f6afc7cf5790c7848f968eecbb0fe0fd28cd5b43032494f4125",
+        "actual": "c7b8f07aab5c8f6afc7cf5790c7848f968eecbb0fe0fd28cd5b43032494f4125",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed1.npz",
+        "expected": "730baf3cc20452fb3243bd9c702b7584622131cea83007ce8d27890f8fa271da",
+        "actual": "730baf3cc20452fb3243bd9c702b7584622131cea83007ce8d27890f8fa271da",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed2.json",
+        "expected": "35df894f59becbe9d5a72741194ce0bc650789f9403f2ea8e22859dd990cfffb",
+        "actual": "35df894f59becbe9d5a72741194ce0bc650789f9403f2ea8e22859dd990cfffb",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed2.npz",
+        "expected": "e429bc42e13daba926f7c42999eb827b351869428855775ffdbf411e1875e8c3",
+        "actual": "e429bc42e13daba926f7c42999eb827b351869428855775ffdbf411e1875e8c3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed3.json",
+        "expected": "164ad018bc251b62c9afc212aacd9b71b206a6dbfd00f604b6f1e55d9c884f04",
+        "actual": "164ad018bc251b62c9afc212aacd9b71b206a6dbfd00f604b6f1e55d9c884f04",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed3.npz",
+        "expected": "0cfe6733ee68e039276c0c73eb9623f45cdb93aece1ca9e070d6509f78ce486a",
+        "actual": "0cfe6733ee68e039276c0c73eb9623f45cdb93aece1ca9e070d6509f78ce486a",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed4.json",
+        "expected": "7c132216efb679eec1b339ed258c216243441f659f18d1f82e5963cd4429bbee",
+        "actual": "7c132216efb679eec1b339ed258c216243441f659f18d1f82e5963cd4429bbee",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed4.npz",
+        "expected": "b2cbbe4c44bddf6d3c0948afe9ad555bd3784e7fa4964a59f548c663bee12cce",
+        "actual": "b2cbbe4c44bddf6d3c0948afe9ad555bd3784e7fa4964a59f548c663bee12cce",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed5.json",
+        "expected": "16ab0ca585258ad358279494d7cc2bdbdb550290ae3b7b3218611e0d73ab9670",
+        "actual": "16ab0ca585258ad358279494d7cc2bdbdb550290ae3b7b3218611e0d73ab9670",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed5.npz",
+        "expected": "39cb0d7861e097f26e721713d22e9aafdfe076afddfaef6bb2d77f0297fa508b",
+        "actual": "39cb0d7861e097f26e721713d22e9aafdfe076afddfaef6bb2d77f0297fa508b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed6.json",
+        "expected": "d94bb5b3e5c5ea787c11c384fa39b1c566db6a621e5503321c71d47b5027eec7",
+        "actual": "d94bb5b3e5c5ea787c11c384fa39b1c566db6a621e5503321c71d47b5027eec7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed6.npz",
+        "expected": "5df1fbc049c8b91f89c822e3dc7dfc200db7b1c8c52808442704399500c3c593",
+        "actual": "5df1fbc049c8b91f89c822e3dc7dfc200db7b1c8c52808442704399500c3c593",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed7.json",
+        "expected": "59367d7b0f7a986b790f56c348e0c4bcafca40bd29698cc2793bf14d465c78f5",
+        "actual": "59367d7b0f7a986b790f56c348e0c4bcafca40bd29698cc2793bf14d465c78f5",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed7.npz",
+        "expected": "6c0e6ac9c63184775c34a13db772530dad830037aa0ac9d2ff92345bf4f442f7",
+        "actual": "6c0e6ac9c63184775c34a13db772530dad830037aa0ac9d2ff92345bf4f442f7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed8.json",
+        "expected": "3ea963296fb77fc4af17bc60c281fbd642c49db44cc9695fee3013c565cf3375",
+        "actual": "3ea963296fb77fc4af17bc60c281fbd642c49db44cc9695fee3013c565cf3375",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed8.npz",
+        "expected": "429d279502b1e149d569eb0b76becd2161a3cdf6f6d3a6c54104f5643195a86b",
+        "actual": "429d279502b1e149d569eb0b76becd2161a3cdf6f6d3a6c54104f5643195a86b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed9.json",
+        "expected": "cdbc4118cb60bd3aa5424dc097b54907fd6075816b442ff3e00435f983f96771",
+        "actual": "cdbc4118cb60bd3aa5424dc097b54907fd6075816b442ff3e00435f983f96771",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n10000_seed9.npz",
+        "expected": "151751fa57ae58784b40f81f93751fec68558b28d4ce96204c4030da8e70eb77",
+        "actual": "151751fa57ae58784b40f81f93751fec68558b28d4ce96204c4030da8e70eb77",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed0.json",
+        "expected": "ac5bd395530aa8b5a82ef58f84ccf0b05996426064a57e5243c10ae32da5905a",
+        "actual": "ac5bd395530aa8b5a82ef58f84ccf0b05996426064a57e5243c10ae32da5905a",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed0.npz",
+        "expected": "f311f6e46875687446e256b4e5ebc97b1f5a8d37273d3d9584d4ecc0d02cb391",
+        "actual": "f311f6e46875687446e256b4e5ebc97b1f5a8d37273d3d9584d4ecc0d02cb391",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed1.json",
+        "expected": "79088b5ca12b017f8f34f62dfcc06aa85c2719752e5faf159b01694601ba1ae3",
+        "actual": "79088b5ca12b017f8f34f62dfcc06aa85c2719752e5faf159b01694601ba1ae3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed1.npz",
+        "expected": "44827e46d302792845702b2eeff30d45193b33e483fc2382e7cd2edc60db9401",
+        "actual": "44827e46d302792845702b2eeff30d45193b33e483fc2382e7cd2edc60db9401",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed2.json",
+        "expected": "0a6bfb62d1acb67044da329198fcef66872e987f91c6de9388a7777709c2deaa",
+        "actual": "0a6bfb62d1acb67044da329198fcef66872e987f91c6de9388a7777709c2deaa",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed2.npz",
+        "expected": "d707306e23a4c1ac4061a0511c8391e17d0c348518229cdd283e386210e7b95b",
+        "actual": "d707306e23a4c1ac4061a0511c8391e17d0c348518229cdd283e386210e7b95b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed3.json",
+        "expected": "a2946a8a6e5e15db7ee7784c08be8e9e6388344dbbe41a28d08863d7bd3dd0b3",
+        "actual": "a2946a8a6e5e15db7ee7784c08be8e9e6388344dbbe41a28d08863d7bd3dd0b3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed3.npz",
+        "expected": "4384be189aa0767a61b02e44f0828a4dc99032a865926bb16d6a7e1d25504dd4",
+        "actual": "4384be189aa0767a61b02e44f0828a4dc99032a865926bb16d6a7e1d25504dd4",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed4.json",
+        "expected": "8d262de925728f20c8f6187d59397a9843a3267b843bce8141a9214cbb71ce92",
+        "actual": "8d262de925728f20c8f6187d59397a9843a3267b843bce8141a9214cbb71ce92",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed4.npz",
+        "expected": "fe9594f2d921c39b2e733da99d6cced812182cb49f8efb82f08f339e759b308e",
+        "actual": "fe9594f2d921c39b2e733da99d6cced812182cb49f8efb82f08f339e759b308e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed5.json",
+        "expected": "dbd076bd6821b8d894de3fa054c6e43c281c8134da20d02a8b1737d43e9645a2",
+        "actual": "dbd076bd6821b8d894de3fa054c6e43c281c8134da20d02a8b1737d43e9645a2",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed5.npz",
+        "expected": "675c7a97db2d7a60804b007928a601e15c7cb2bcc32b7e0b32fb1e4df9654239",
+        "actual": "675c7a97db2d7a60804b007928a601e15c7cb2bcc32b7e0b32fb1e4df9654239",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed6.json",
+        "expected": "6c0b8d28f8d56f3ef4eaf88a5557c140d44c2d72a7c5aa77a684e8cb4112c8f0",
+        "actual": "6c0b8d28f8d56f3ef4eaf88a5557c140d44c2d72a7c5aa77a684e8cb4112c8f0",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed6.npz",
+        "expected": "a8504ae05c00bd83811ea960b637597d417853905dac0f17edf6eba66be4a8bf",
+        "actual": "a8504ae05c00bd83811ea960b637597d417853905dac0f17edf6eba66be4a8bf",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed7.json",
+        "expected": "6792d22816da3c8b92b986e2fabc146ffad9aa40b1c8275090a38a7bcfad1e71",
+        "actual": "6792d22816da3c8b92b986e2fabc146ffad9aa40b1c8275090a38a7bcfad1e71",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed7.npz",
+        "expected": "995e27dfe24d380e0cbe09df0252c60476f333038e25472b709d30f1e03ff565",
+        "actual": "995e27dfe24d380e0cbe09df0252c60476f333038e25472b709d30f1e03ff565",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed8.json",
+        "expected": "f200efb5ab1a6fb71793cbf03b5d982702861bfe882f097882c3a9e0e18ac416",
+        "actual": "f200efb5ab1a6fb71793cbf03b5d982702861bfe882f097882c3a9e0e18ac416",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed8.npz",
+        "expected": "b7cd6dc57aa37849e159f3340e861d99621816c5cefee822610851c96a247806",
+        "actual": "b7cd6dc57aa37849e159f3340e861d99621816c5cefee822610851c96a247806",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed9.json",
+        "expected": "6fc1c5bd7317b847e45703f96dd8ea4eb911bcf72fd0fae46e06d01d8c219712",
+        "actual": "6fc1c5bd7317b847e45703f96dd8ea4eb911bcf72fd0fae46e06d01d8c219712",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n1000_seed9.npz",
+        "expected": "79543253881c70a62a79895982b985e630f6cb9ef0955fb73c76d27a208cf54f",
+        "actual": "79543253881c70a62a79895982b985e630f6cb9ef0955fb73c76d27a208cf54f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed0.json",
+        "expected": "8ea69460110fc59929ea1f59c7ebd94e9e3efe65d994387195b9b0822a023ed1",
+        "actual": "8ea69460110fc59929ea1f59c7ebd94e9e3efe65d994387195b9b0822a023ed1",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed0.npz",
+        "expected": "4b9aeb42f4876857b9c8b8224b2229b906ffd40307d4eb0692fd7acd804cb8d1",
+        "actual": "4b9aeb42f4876857b9c8b8224b2229b906ffd40307d4eb0692fd7acd804cb8d1",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed1.json",
+        "expected": "fc47605a88bddc6c08a5bcfabb38933c70e914ff585679d39ef88a01910a7254",
+        "actual": "fc47605a88bddc6c08a5bcfabb38933c70e914ff585679d39ef88a01910a7254",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed1.npz",
+        "expected": "549d161351490d1e945fc572fb1fb002cadd50ad9103e0d27c9d86e177069b8b",
+        "actual": "549d161351490d1e945fc572fb1fb002cadd50ad9103e0d27c9d86e177069b8b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed2.json",
+        "expected": "ff350d2d1a727c446f4dfac5719913ad47ba7c5daa5454ccc4863671914033b3",
+        "actual": "ff350d2d1a727c446f4dfac5719913ad47ba7c5daa5454ccc4863671914033b3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed2.npz",
+        "expected": "262e634fd6e4d0b04efe58f9cc9afaaa5e435d5e14b828b610888a8919d8fee8",
+        "actual": "262e634fd6e4d0b04efe58f9cc9afaaa5e435d5e14b828b610888a8919d8fee8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed3.json",
+        "expected": "d281644dfae073ebb5b9f12d98779e3b5dad61164701f43a4c66e54272ad54e7",
+        "actual": "d281644dfae073ebb5b9f12d98779e3b5dad61164701f43a4c66e54272ad54e7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed3.npz",
+        "expected": "b48f2e311e4fbc3a74eefc55a94b34a796682c3b0d810fad464936039f52d656",
+        "actual": "b48f2e311e4fbc3a74eefc55a94b34a796682c3b0d810fad464936039f52d656",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed4.json",
+        "expected": "2f24b969ba30609737a478f6b48afd8600cec4df43168746b2272bfb699df941",
+        "actual": "2f24b969ba30609737a478f6b48afd8600cec4df43168746b2272bfb699df941",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed4.npz",
+        "expected": "121f08d97c2ae8b259fae49ee55fc9f9a6e922b4598de13a5fb2c77cb006005e",
+        "actual": "121f08d97c2ae8b259fae49ee55fc9f9a6e922b4598de13a5fb2c77cb006005e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed5.json",
+        "expected": "04bd0c9b914fe921349da067235b6524f3a77e73a623880cdcb68c738ff09638",
+        "actual": "04bd0c9b914fe921349da067235b6524f3a77e73a623880cdcb68c738ff09638",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed5.npz",
+        "expected": "f5d058a1d73ecc404096e9d44b1e0e116bc7b5386458285e5ebd9e4f6a50daf7",
+        "actual": "f5d058a1d73ecc404096e9d44b1e0e116bc7b5386458285e5ebd9e4f6a50daf7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed6.json",
+        "expected": "cb90bcde9768951943b170a496ce19958ed24baac8a59f4945ddb4c6ca7a2b8c",
+        "actual": "cb90bcde9768951943b170a496ce19958ed24baac8a59f4945ddb4c6ca7a2b8c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed6.npz",
+        "expected": "2d7a869436a49e01d0b89cc483e233312fab3f5ad5b69b82fe8ae270c484a301",
+        "actual": "2d7a869436a49e01d0b89cc483e233312fab3f5ad5b69b82fe8ae270c484a301",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed7.json",
+        "expected": "c1793d33aed4fdcb3f24232ba5a2b82daf55d31b683ace6d82ca64660b27a725",
+        "actual": "c1793d33aed4fdcb3f24232ba5a2b82daf55d31b683ace6d82ca64660b27a725",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed7.npz",
+        "expected": "a8d08a64c02f1e9af54b0b11220bd845ea6c2ec464be839ee9bdab669d052ee8",
+        "actual": "a8d08a64c02f1e9af54b0b11220bd845ea6c2ec464be839ee9bdab669d052ee8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed8.json",
+        "expected": "46610581d34c566c2553626b2ecfa627ca46cbe9af304ef838518bab4f4fd9a1",
+        "actual": "46610581d34c566c2553626b2ecfa627ca46cbe9af304ef838518bab4f4fd9a1",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed8.npz",
+        "expected": "8ca199952badd2fa546b67479859cce4c77c0e8e3daa8f75a09a1f6af87e2aac",
+        "actual": "8ca199952badd2fa546b67479859cce4c77c0e8e3daa8f75a09a1f6af87e2aac",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed9.json",
+        "expected": "e24e83499a7020163eff55f4497706f877eba0c9dcba206f60d7fdc0068d33e8",
+        "actual": "e24e83499a7020163eff55f4497706f877eba0c9dcba206f60d7fdc0068d33e8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_results/m3_n25000_seed9.npz",
+        "expected": "827fd84847b28fd01f9a48aaf84a3d31799edbb42a140f8fbba4f0326dfee54f",
+        "actual": "827fd84847b28fd01f9a48aaf84a3d31799edbb42a140f8fbba4f0326dfee54f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/upstream/experiments/experiment_l=3/results_gamma=0.2/stats.json",
+        "expected": "bc5af02d1379192fe644632d7228b8b6e246e953a68b4edffee58ddd18fce0e8",
+        "actual": "bc5af02d1379192fe644632d7228b8b6e246e953a68b4edffee58ddd18fce0e8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/native_replication_audit.json",
+        "expected": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+        "actual": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+        "matches": true
+      }
+    ],
+    "historical_validation_checks": [
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/README.md",
+        "expected": "4870e0d181734e5e8470abf9a536bc5a531d1c6f80f404fc831ca2cf60192002",
+        "actual": "4870e0d181734e5e8470abf9a536bc5a531d1c6f80f404fc831ca2cf60192002",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/APPLICATION_RESULTS.md",
+        "expected": "dd0e1ca6022c2f1ee72b34a7c036ad49f7092b42b01257c6d2d711591764eadc",
+        "actual": "dd0e1ca6022c2f1ee72b34a7c036ad49f7092b42b01257c6d2d711591764eadc",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/application_protocol.json",
+        "expected": "4991e33d3866b001c8f1d1ac9f7a9ec92bc7fd5dfdc1dcba56d335c1d7550fff",
+        "actual": "4991e33d3866b001c8f1d1ac9f7a9ec92bc7fd5dfdc1dcba56d335c1d7550fff",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/data_extraction_protocol.json",
+        "expected": "7e8e158a0e64913efb6078b3ec51f281e48a2b1de7598cd74c7df01a5cd4e9fe",
+        "actual": "7e8e158a0e64913efb6078b3ec51f281e48a2b1de7598cd74c7df01a5cd4e9fe",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/pairwise_protocol.json",
+        "expected": "95138c0b3a00bf60f6ceeba3fbba6b21705c355d04e802e0094bb7687bcc1c7b",
+        "actual": "95138c0b3a00bf60f6ceeba3fbba6b21705c355d04e802e0094bb7687bcc1c7b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/apply_native.py",
+        "expected": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+        "actual": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/pairwise_followup.py",
+        "expected": "ede19a3641197414851b49e8a3ccd5ff8f3c5a9ce55ecefec9f56f37e6de3515",
+        "actual": "ede19a3641197414851b49e8a3ccd5ff8f3c5a9ce55ecefec9f56f37e6de3515",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/prepare_cached_data_pilot.py",
+        "expected": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5",
+        "actual": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/data_pilot_v1/manifest.json",
+        "expected": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+        "actual": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/application_v1/provenance.json",
+        "expected": "100964eb3b4506cbaaa5f6299bf46630cc756a9e5c521bcd901865b18bc1612d",
+        "actual": "100964eb3b4506cbaaa5f6299bf46630cc756a9e5c521bcd901865b18bc1612d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/application_v1/summary.json",
+        "expected": "ac6577a5abe0bd4cdda140203dcbcc3e2e546e2612dcb126c22150a5829c32e3",
+        "actual": "ac6577a5abe0bd4cdda140203dcbcc3e2e546e2612dcb126c22150a5829c32e3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/pairwise_v1/provenance.json",
+        "expected": "a2d160905e6d630c4c74e806c4cbb62cc545d73d5b46a7d2f49690c5deef8efb",
+        "actual": "a2d160905e6d630c4c74e806c4cbb62cc545d73d5b46a7d2f49690c5deef8efb",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/pairwise_v1/summary.json",
+        "expected": "5e221aab7929cee8f225e1348804840b6455eed223bcabf2d62fcd1bbbf43376",
+        "actual": "5e221aab7929cee8f225e1348804840b6455eed223bcabf2d62fcd1bbbf43376",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_protocol.json",
+        "expected": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+        "actual": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_manifest.json",
+        "expected": "2234bc1a80658ffe80f19c5da439abdf286d42f2fe413785caf0a987457050b2",
+        "actual": "2234bc1a80658ffe80f19c5da439abdf286d42f2fe413785caf0a987457050b2",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/published_replication_summary.json",
+        "expected": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+        "actual": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/focused_test_results.json",
+        "expected": "36cb9f18b25fa0ccc8fe3e11b2f60e8d427ba3dd996358f6d195c26bdaa799bb",
+        "actual": "36cb9f18b25fa0ccc8fe3e11b2f60e8d427ba3dd996358f6d195c26bdaa799bb",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/implementation_checks/encoder_correction.json",
+        "expected": "fd71cbe19d5cfaa7ebce20d21b0b2505ba0d0e04ae9ca44b40b756a247f3bfda",
+        "actual": "fd71cbe19d5cfaa7ebce20d21b0b2505ba0d0e04ae9ca44b40b756a247f3bfda",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/native_replication_audit.json",
+        "expected": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+        "actual": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/data_extraction_audit.json",
+        "expected": "113663f6ec58b256c9430996c01f63e2d74c6b531df8acd98a730a1a4a7e39ba",
+        "actual": "113663f6ec58b256c9430996c01f63e2d74c6b531df8acd98a730a1a4a7e39ba",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/data_consumer_audit.json",
+        "expected": "c48a9868cee17697addf1e2c1507194d96f6ea050d315af1787587a852f78004",
+        "actual": "c48a9868cee17697addf1e2c1507194d96f6ea050d315af1787587a852f78004",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/application_readout_audit.json",
+        "expected": "b83695fd0f8f43a30b7f8895540c5fe3d81f1b1e922b28e4aa198b5be3d18dca",
+        "actual": "b83695fd0f8f43a30b7f8895540c5fe3d81f1b1e922b28e4aa198b5be3d18dca",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/sturma_pilot_2026_11_01/reviews/pairwise_followup_audit.json",
+        "expected": "ecac3b62b94f92a433300183a69c19a4c5908474e1c744780ddc5cbe4c85b2c1",
+        "actual": "ecac3b62b94f92a433300183a69c19a4c5908474e1c744780ddc5cbe4c85b2c1",
+        "matches": true
+      }
+    ],
+    "fit_json_count": 60,
+    "fit_npz_count": 60,
+    "historical_independent_replay_counts": {
+      "fits": 60,
+      "correct_dimension": 43,
+      "under_dimension_positive": 15,
+      "zero_shared": 2,
+      "exceptions": 0,
+      "ica_convergence_warnings": 3,
+      "fixed_coefficient_criterion_pass": 21
+    },
+    "historical_replay_limitations": [
+      "Native heuristic scores reproduced, not replaced by a different optimum.",
+      "No biological causal-ground-truth claim.",
+      "Ten repeated seeds per setting; not independent across settings."
+    ]
+  },
+  "older_symbolic_argument": {
+    "source_checks": [
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/verify_algebra.py",
+        "expected": "971c83460db2171d28c38824fdb4e8d94f09ff5930eb4ba214a33ca0cc561e62",
+        "actual": "971c83460db2171d28c38824fdb4e8d94f09ff5930eb4ba214a33ca0cc561e62",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/theory/07_unpaired_integration_nonidentifiability.md",
+        "expected": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+        "actual": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+        "matches": true
+      }
+    ],
+    "historical_status": "passed",
+    "identity_count": 23,
+    "not_Lean": true,
+    "literature_manifest_checks": [
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/DRAFT_REVIEW.md",
+        "expected": "c8cd8f6fe4a4725ed51716fb0d342237467924a13421feac4a202e91192abb65",
+        "actual": "c8cd8f6fe4a4725ed51716fb0d342237467924a13421feac4a202e91192abb65",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/FOCUSED_REVIEW.md",
+        "expected": "85b7f6c78c50ac1c4451819f4e9c554df1f96430828175c62e8cf15a95592443",
+        "actual": "85b7f6c78c50ac1c4451819f4e9c554df1f96430828175c62e8cf15a95592443",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/SEARCH_LOG.md",
+        "expected": "2dfc8805724b0992f974b319e58802c805b00cd2292561c2c69e54acc9d23b57",
+        "actual": "2dfc8805724b0992f974b319e58802c805b00cd2292561c2c69e54acc9d23b57",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/citation_verification.json",
+        "expected": "4d3b1c71d2f04c4d9a7b147f4d37f3132f35d8f2d05c012c2381c6e3fb724f3d",
+        "actual": "4d3b1c71d2f04c4d9a7b147f4d37f3132f35d8f2d05c012c2381c6e3fb724f3d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/final_assumption_checks.json",
+        "expected": "37efd92a16b189dc3d4bd85ffbfa6c7b6c1ed19a6565aeba4eb180de48b0ac2e",
+        "actual": "37efd92a16b189dc3d4bd85ffbfa6c7b6c1ed19a6565aeba4eb180de48b0ac2e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/integration_objective_and_bridge_checks.json",
+        "expected": "92d384a6bc60587717874ae9c65a2dec25a4ea7ce457904d637723d6985b141e",
+        "actual": "92d384a6bc60587717874ae9c65a2dec25a4ea7ce457904d637723d6985b141e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/openalex_01_search.json",
+        "expected": "237455837116491007e224855d288e247365fffe691b3b9c869d406f218dd637",
+        "actual": "237455837116491007e224855d288e247365fffe691b3b9c869d406f218dd637",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/openalex_host_raw.json",
+        "expected": "ef2e627d90e1363318ecf336daceac3b3b1ef753a714d97e028bebe6b2098fe5",
+        "actual": "ef2e627d90e1363318ecf336daceac3b3b1ef753a714d97e028bebe6b2098fe5",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/openalex_host_search.json",
+        "expected": "209048cf4ff56fbf901099e8dae6448a07ebcb51f241df5da634f2c756a24004",
+        "actual": "209048cf4ff56fbf901099e8dae6448a07ebcb51f241df5da634f2c756a24004",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/openalex_web_attempt.json",
+        "expected": "ec069bbee4f1070e04efe71bc95f34d1309bbc9f348d037b14977769421ee0c2",
+        "actual": "ec069bbee4f1070e04efe71bc95f34d1309bbc9f348d037b14977769421ee0c2",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/positive_results_and_nonidentification_primary.json",
+        "expected": "f63f11a62733ab99a8d5291db54c7f8285a4009464d3286b5a06c76d8576fdb4",
+        "actual": "f63f11a62733ab99a8d5291db54c7f8285a4009464d3286b5a06c76d8576fdb4",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/primary_discovery_searches.json",
+        "expected": "46b6af744d71033da79d38dc329caee678968f967c2549bc9b281f6f15719b47",
+        "actual": "46b6af744d71033da79d38dc329caee678968f967c2549bc9b281f6f15719b47",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/primary_pages_and_followup_searches.json",
+        "expected": "d31896ad61f8bfffcd8627c33226b4a1be4c285843d95928872e47e34c86880e",
+        "actual": "d31896ad61f8bfffcd8627c33226b4a1be4c285843d95928872e47e34c86880e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/scope_and_assumptions_checks.json",
+        "expected": "5926219c4dacaa74e92264a47c3276391bc1370c201ef28cf55c2989ef96710a",
+        "actual": "5926219c4dacaa74e92264a47c3276391bc1370c201ef28cf55c2989ef96710a",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_identifiability_2026_11_01/literature/verified_primary_fulltext.json",
+        "expected": "b2e925df2d3861740d14fb38a69c4bfc1f835e51ada1c934b6b642e72dedef6b",
+        "actual": "b2e925df2d3861740d14fb38a69c4bfc1f835e51ada1c934b6b642e72dedef6b",
+        "matches": true
+      }
+    ]
+  },
+  "older_literature_review": {
+    "paper_records": 64,
+    "unique_extraction_sources": 4,
+    "source_extraction_checks": [
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/benchmark_papers.json",
+        "expected": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "actual": "5408bebce0f18b9d47767d98e8552b936d00261fd9f95c332dd99519d8653a76",
+        "matches": true
+      }
+    ],
+    "unpaired_manifest_checks": [
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_cross_review.md",
+        "expected": "99387b1d70302c54b2e7d4832bf9b54970dff25c0df0dd47c074ddff39a00200",
+        "actual": "99387b1d70302c54b2e7d4832bf9b54970dff25c0df0dd47c074ddff39a00200",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_cross_review_sources.json",
+        "expected": "a3ec101aee1af0215c0b43a777adaf54c766fabc174662f87273f450de474ff0",
+        "actual": "a3ec101aee1af0215c0b43a777adaf54c766fabc174662f87273f450de474ff0",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_discovery_provenance.json",
+        "expected": "fdc5bee2c871c5bfd4cb98afe01757408c30784263a41bedeb5005a9ad6a8529",
+        "actual": "fdc5bee2c871c5bfd4cb98afe01757408c30784263a41bedeb5005a9ad6a8529",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+        "expected": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "actual": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_checks.json",
+        "expected": "6d6540f9a0ed854df7db8e40725ac3ff080dc3fa8bd17d647ca36f8078088e26",
+        "actual": "6d6540f9a0ed854df7db8e40725ac3ff080dc3fa8bd17d647ca36f8078088e26",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_following.json",
+        "expected": "64d941d695477f33e70bdfaa42c107fae9b648c98370ef227ca079e0397278b3",
+        "actual": "64d941d695477f33e70bdfaa42c107fae9b648c98370ef227ca079e0397278b3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_reuse.json",
+        "expected": "fcb4b058c4fe189b22ccf39a7e56a98e64911dede6d6a31ef1d02ab9ed071c0f",
+        "actual": "fcb4b058c4fe189b22ccf39a7e56a98e64911dede6d6a31ef1d02ab9ed071c0f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_publication_date_verification.json",
+        "expected": "5b7249658518217e611024d204fdc18081add267a2c2263a294c7ef856fb2a97",
+        "actual": "5b7249658518217e611024d204fdc18081add267a2c2263a294c7ef856fb2a97",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_review.md",
+        "expected": "dd39e8910f910a05acb58edfc26ae97c570382e69ccf27f03a044a7b58471b23",
+        "actual": "dd39e8910f910a05acb58edfc26ae97c570382e69ccf27f03a044a7b58471b23",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_search_log.md",
+        "expected": "cb1cafd139ef18256af0a8bd417922d74d7548746e8bcbd0bb50f26319371bc6",
+        "actual": "cb1cafd139ef18256af0a8bd417922d74d7548746e8bcbd0bb50f26319371bc6",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_fullText.txt",
+        "expected": "b1c8507867a8069ac3de7bbd3daea48587be89308621ae63a48078afd20bd959",
+        "actual": "b1c8507867a8069ac3de7bbd3daea48587be89308621ae63a48078afd20bd959",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_fullText.xml",
+        "expected": "26ed1e3607afcf06b7d846883a9f101317c21e727ae2394a72a1161db11d7b90",
+        "actual": "26ed1e3607afcf06b7d846883a9f101317c21e727ae2394a72a1161db11d7b90",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_metadata.json",
+        "expected": "94cde044bcf407e0ce939622b994747bd6fcce7e41815608d922105074960d9f",
+        "actual": "94cde044bcf407e0ce939622b994747bd6fcce7e41815608d922105074960d9f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_retrieval.json",
+        "expected": "35b2f3bae7b8558f52a9f73aa4cf0874ea24bcbb638f7b37199ea4fa9ddf861b",
+        "actual": "35b2f3bae7b8558f52a9f73aa4cf0874ea24bcbb638f7b37199ea4fa9ddf861b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_fullText.txt",
+        "expected": "bd4893fc504e21bedfedf6fdfdad6d2292af3d7af1c16b5eb36836d87fd08b65",
+        "actual": "bd4893fc504e21bedfedf6fdfdad6d2292af3d7af1c16b5eb36836d87fd08b65",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_fullText.xml",
+        "expected": "cf10046fc16305977899dc753f878227728a2543f4af2e04a462f8a85a163d5f",
+        "actual": "cf10046fc16305977899dc753f878227728a2543f4af2e04a462f8a85a163d5f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_retrieval.json",
+        "expected": "c4959cc8fbe73ad2532190a4ba8c4982bbc9263c9a505e2712b6cd7598007eef",
+        "actual": "c4959cc8fbe73ad2532190a4ba8c4982bbc9263c9a505e2712b6cd7598007eef",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_fullText.txt",
+        "expected": "bd345c9c7b98869649d1b3c2000b96d687120c6ff5bdd8f2ad42f7f7441094ff",
+        "actual": "bd345c9c7b98869649d1b3c2000b96d687120c6ff5bdd8f2ad42f7f7441094ff",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_fullText.xml",
+        "expected": "b250f2cf2b91ca56665fb145b375e631d852ca5df8aaad65a4c70b7b97b4a4a3",
+        "actual": "b250f2cf2b91ca56665fb145b375e631d852ca5df8aaad65a4c70b7b97b4a4a3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_retrieval.json",
+        "expected": "268503218a082b067bab7ee9795f82ccde5faf1b1d98ed969e8627033150c048",
+        "actual": "268503218a082b067bab7ee9795f82ccde5faf1b1d98ed969e8627033150c048",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_fullText.txt",
+        "expected": "1286d73503df131f272d881351629f68baf430ee21885e1ad44b191093824605",
+        "actual": "1286d73503df131f272d881351629f68baf430ee21885e1ad44b191093824605",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_fullText.xml",
+        "expected": "2f77ed1f009c4004b880ad5a0c6c69c67d199d6f86c458d60754b5a8decc821e",
+        "actual": "2f77ed1f009c4004b880ad5a0c6c69c67d199d6f86c458d60754b5a8decc821e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_retrieval.json",
+        "expected": "eb9784585615bee27f937b1cb2729cd71d9ae69dbe055e0fb40c303f1359c9cb",
+        "actual": "eb9784585615bee27f937b1cb2729cd71d9ae69dbe055e0fb40c303f1359c9cb",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2020_retrieval.json",
+        "expected": "f34e72b3bba7cd686cc751a73e89a0e7ec534bba9a6c1c360b3f06f925414438",
+        "actual": "f34e72b3bba7cd686cc751a73e89a0e7ec534bba9a6c1c360b3f06f925414438",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_fullText.txt",
+        "expected": "023d522dbd90b1d38acac06810b9459e5d4edfb2d0ac60c0c12a096261a25e66",
+        "actual": "023d522dbd90b1d38acac06810b9459e5d4edfb2d0ac60c0c12a096261a25e66",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_fullText.xml",
+        "expected": "648d6196ed6a072570fbaf6a605d8cb738039bcdf03328729421fd298f155c6a",
+        "actual": "648d6196ed6a072570fbaf6a605d8cb738039bcdf03328729421fd298f155c6a",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_metadata.json",
+        "expected": "f3fcf13ed804e021e39136da964d30c23bb7b199937f04e30646d7dc95fc5996",
+        "actual": "f3fcf13ed804e021e39136da964d30c23bb7b199937f04e30646d7dc95fc5996",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_retrieval.json",
+        "expected": "fc7de7011e151e7c3d7628f021871cf1f15cfa66de5eefd4f7a0ccff21d1519f",
+        "actual": "fc7de7011e151e7c3d7628f021871cf1f15cfa66de5eefd4f7a0ccff21d1519f",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_fullText.txt",
+        "expected": "7e71a6c7d17c8f231a85104420f8d2bebe1ff4b895f6157f27f089239f9202a3",
+        "actual": "7e71a6c7d17c8f231a85104420f8d2bebe1ff4b895f6157f27f089239f9202a3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_fullText.xml",
+        "expected": "7d414650393805df05dae09b9e2c4e48f87daab466501653d22b587093504dd7",
+        "actual": "7d414650393805df05dae09b9e2c4e48f87daab466501653d22b587093504dd7",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_retrieval.json",
+        "expected": "0fcc965797d81d38848d0ca42e77529cdb79ea1cfc41f314b0c4b7b1034a4d48",
+        "actual": "0fcc965797d81d38848d0ca42e77529cdb79ea1cfc41f314b0c4b7b1034a4d48",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_fullText.txt",
+        "expected": "3c32fb1f679cb1c0c8887a9c5c1e9df12ed5bbcae89203ff7db2b810289e4371",
+        "actual": "3c32fb1f679cb1c0c8887a9c5c1e9df12ed5bbcae89203ff7db2b810289e4371",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_fullText.xml",
+        "expected": "0df406fdf0574ad1eaf467a5700d05f2dd226c00a69e79659ff2d3f036948707",
+        "actual": "0df406fdf0574ad1eaf467a5700d05f2dd226c00a69e79659ff2d3f036948707",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_retrieval.json",
+        "expected": "83b5ebf86bf949193748a903247dbf074a9fe855a4d4253a19adb44068c15f01",
+        "actual": "83b5ebf86bf949193748a903247dbf074a9fe855a4d4253a19adb44068c15f01",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_fullText.txt",
+        "expected": "ed1d214affe6cfcbdfba96ee1c8bb878675fe62a4a37eec4d8d36b8e7c7941dc",
+        "actual": "ed1d214affe6cfcbdfba96ee1c8bb878675fe62a4a37eec4d8d36b8e7c7941dc",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_fullText.xml",
+        "expected": "227bd9505a38cc7ce29d87dc413b57ca49843ea4435f686f179213b869734e2e",
+        "actual": "227bd9505a38cc7ce29d87dc413b57ca49843ea4435f686f179213b869734e2e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_retrieval.json",
+        "expected": "e8ec4f8a32ed89525bf3be181eabee34d36449030e58d8303eb835dec23c8d8c",
+        "actual": "e8ec4f8a32ed89525bf3be181eabee34d36449030e58d8303eb835dec23c8d8c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_retrieval.json",
+        "expected": "a95cf2fcb013ec0e3ed5ad2aa6b64ac59c159bfe67344f6fb28ce5da77454697",
+        "actual": "a95cf2fcb013ec0e3ed5ad2aa6b64ac59c159bfe67344f6fb28ce5da77454697",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOTv2_retrieval.json",
+        "expected": "0d869f57b191dfcb79f408d38d8904587a2d00949fa85d3be4b389ff95d59ee3",
+        "actual": "0d869f57b191dfcb79f408d38d8904587a2d00949fa85d3be4b389ff95d59ee3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_fullText.txt",
+        "expected": "a315c10c3242e99e6076259753bf27dbb8417bd16af6eecd1cdb5c8be7572ef9",
+        "actual": "a315c10c3242e99e6076259753bf27dbb8417bd16af6eecd1cdb5c8be7572ef9",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_fullText.xml",
+        "expected": "5012b668df227a8da872f52d183c36e3e482114bcecc13f38c3ba6b4db0bd588",
+        "actual": "5012b668df227a8da872f52d183c36e3e482114bcecc13f38c3ba6b4db0bd588",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_retrieval.json",
+        "expected": "9b61bff968a5dc73f57feaaa47874e398b3fbc837d6fe5376829a092e9e7c100",
+        "actual": "9b61bff968a5dc73f57feaaa47874e398b3fbc837d6fe5376829a092e9e7c100",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_fullText.txt",
+        "expected": "3bd721a6180bb3bf74f44afe2dced6a003d9c3c6cb3bb3f7e99148a287273388",
+        "actual": "3bd721a6180bb3bf74f44afe2dced6a003d9c3c6cb3bb3f7e99148a287273388",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_fullText.xml",
+        "expected": "35d42cddd8e1b2f8c75447a889935ae19272a528caaf5efc944acf927f66b8df",
+        "actual": "35d42cddd8e1b2f8c75447a889935ae19272a528caaf5efc944acf927f66b8df",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_retrieval.json",
+        "expected": "259a1cfa355492a9f55dd1d3e069425d1ce92c418ad59a2c494fcf4d450afb3e",
+        "actual": "259a1cfa355492a9f55dd1d3e069425d1ce92c418ad59a2c494fcf4d450afb3e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_fullText.txt",
+        "expected": "61868b6850bf191c637e71de2d88209caebc3a8efdf22cd3854a8ce6b4f79964",
+        "actual": "61868b6850bf191c637e71de2d88209caebc3a8efdf22cd3854a8ce6b4f79964",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_fullText.xml",
+        "expected": "3c3256f51d5ad596cb7e55b97e360f2ddf0e254977fd086eb5ee8f744d8fb189",
+        "actual": "3c3256f51d5ad596cb7e55b97e360f2ddf0e254977fd086eb5ee8f744d8fb189",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_retrieval.json",
+        "expected": "0b0e69725453d665263dccde3f19d50c39c62671c163e8b44d15994f643b3760",
+        "actual": "0b0e69725453d665263dccde3f19d50c39c62671c163e8b44d15994f643b3760",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_fullText.txt",
+        "expected": "ddf308259822241908195386d332aaa4e107ae667eb867f65c5e211deb7a944c",
+        "actual": "ddf308259822241908195386d332aaa4e107ae667eb867f65c5e211deb7a944c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_fullText.xml",
+        "expected": "b177c27a631f119317ba2e4e365e01c73f97edb92bdaca1d27a224eca0893603",
+        "actual": "b177c27a631f119317ba2e4e365e01c73f97edb92bdaca1d27a224eca0893603",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_metadata.json",
+        "expected": "e19ef32be5a2f51c2ef1115b76aab726f914b8de4528f82f1d14465bb337fa92",
+        "actual": "e19ef32be5a2f51c2ef1115b76aab726f914b8de4528f82f1d14465bb337fa92",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_retrieval.json",
+        "expected": "b1f1542b4763262f894ab055f2e136f7fd77ebed7d1244798b34b31c598aa34d",
+        "actual": "b1f1542b4763262f894ab055f2e136f7fd77ebed7d1244798b34b31c598aa34d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_fullText.txt",
+        "expected": "93f2f662daa7ab69553d93990c034ae687e579f6619dcdac80c717ae9c2ccf39",
+        "actual": "93f2f662daa7ab69553d93990c034ae687e579f6619dcdac80c717ae9c2ccf39",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_fullText.xml",
+        "expected": "956c109629a717ed0e65fa5487955384aef161a666214d3cceb6e50a8be1b64c",
+        "actual": "956c109629a717ed0e65fa5487955384aef161a666214d3cceb6e50a8be1b64c",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_metadata.json",
+        "expected": "2bf3f136db4f0aba196e7e1f173f26ca28b93bd099a2f14d35581acd5b11c731",
+        "actual": "2bf3f136db4f0aba196e7e1f173f26ca28b93bd099a2f14d35581acd5b11c731",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_retrieval.json",
+        "expected": "1c90cb1d0bf3b1ea6f3a72e30d63f721b9f8c42fd511c30cf0e82c9d7f304512",
+        "actual": "1c90cb1d0bf3b1ea6f3a72e30d63f721b9f8c42fd511c30cf0e82c9d7f304512",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_fullText.txt",
+        "expected": "910505704fd55473583021b526e6e0f04f89b9fbf41a3a7543c17f4884e78bc3",
+        "actual": "910505704fd55473583021b526e6e0f04f89b9fbf41a3a7543c17f4884e78bc3",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_fullText.xml",
+        "expected": "fe951e5bf85d7fd6e79cc1fd146f36e95f28c0e12802da5f8bbe1c405e8b631e",
+        "actual": "fe951e5bf85d7fd6e79cc1fd146f36e95f28c0e12802da5f8bbe1c405e8b631e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_retrieval.json",
+        "expected": "a2a43d83c1981c2a5c0f992a49a9a987471603c4ff92b327767c37331d9c6637",
+        "actual": "a2a43d83c1981c2a5c0f992a49a9a987471603c4ff92b327767c37331d9c6637",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scJoint_retrieval.json",
+        "expected": "92c55952665600ad31d7cb92c7c1992d179d029d5664b88687025346c0921909",
+        "actual": "92c55952665600ad31d7cb92c7c1992d179d029d5664b88687025346c0921909",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_fullText.txt",
+        "expected": "fd4de5b9aa3f409c46ab4101edc4133d63537caf55c7c91d266d91d840605c61",
+        "actual": "fd4de5b9aa3f409c46ab4101edc4133d63537caf55c7c91d266d91d840605c61",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_fullText.xml",
+        "expected": "925dde0417c5572bdc02c58603831a73b3d9c2eb42927c990f9e6ce9b8b45dce",
+        "actual": "925dde0417c5572bdc02c58603831a73b3d9c2eb42927c990f9e6ce9b8b45dce",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_retrieval.json",
+        "expected": "8aa776aa9afc147b20ecd7f972f09e5e80ac379eaf5108c5062e066625408fa9",
+        "actual": "8aa776aa9afc147b20ecd7f972f09e5e80ac379eaf5108c5062e066625408fa9",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_fullText.txt",
+        "expected": "03cff0065e0fd2d4b8c5ddfddb2c3ff9cb005ba70b044e9d407aea3b940ace1d",
+        "actual": "03cff0065e0fd2d4b8c5ddfddb2c3ff9cb005ba70b044e9d407aea3b940ace1d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_fullText.xml",
+        "expected": "40179fc7349ecf0b3000fb2ef9edbdf52f405dc12aba49ff54d2b53618e4381d",
+        "actual": "40179fc7349ecf0b3000fb2ef9edbdf52f405dc12aba49ff54d2b53618e4381d",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_metadata.json",
+        "expected": "ddd3a5d9879404615d7bdba1e73a02b4ae62e33007567b37ed7aa0b2f899e020",
+        "actual": "ddd3a5d9879404615d7bdba1e73a02b4ae62e33007567b37ed7aa0b2f899e020",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_retrieval.json",
+        "expected": "6299dd6c9d42081ad2d3db3508966c2ed64e3e28d9b3ad7fb5bc725ee78d1bce",
+        "actual": "6299dd6c9d42081ad2d3db3508966c2ed64e3e28d9b3ad7fb5bc725ee78d1bce",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_fullText.txt",
+        "expected": "f76b677382a5cf223d0c70120dd4e576471a1ab9797f7187c9789fb6a3940b29",
+        "actual": "f76b677382a5cf223d0c70120dd4e576471a1ab9797f7187c9789fb6a3940b29",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_fullText.xml",
+        "expected": "3fb11cffb83df3f7f968e71857e23a6c9d3ba834ad0cc3d1a46ad487769d0595",
+        "actual": "3fb11cffb83df3f7f968e71857e23a6c9d3ba834ad0cc3d1a46ad487769d0595",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_metadata.json",
+        "expected": "39422587707c85ed4b599740fbc9928a75745230e362285562e384a8cc11c083",
+        "actual": "39422587707c85ed4b599740fbc9928a75745230e362285562e384a8cc11c083",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_retrieval.json",
+        "expected": "1dc38ea7b9a9ee776cc532aca696e2bea12195b05c273e104e54798879fe29ad",
+        "actual": "1dc38ea7b9a9ee776cc532aca696e2bea12195b05c273e104e54798879fe29ad",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_fullText.txt",
+        "expected": "3f0f540a06a42dd2e3a21783feb3e4e889349a9da2957cea2f439a961525825e",
+        "actual": "3f0f540a06a42dd2e3a21783feb3e4e889349a9da2957cea2f439a961525825e",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_fullText.xml",
+        "expected": "6f8aa67a72e5b7485771864be6ab6edc48b26beb1fde37540732e241e7c3dd46",
+        "actual": "6f8aa67a72e5b7485771864be6ab6edc48b26beb1fde37540732e241e7c3dd46",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_retrieval.json",
+        "expected": "4cd03db30b4eebe050049304c91c283654e286bf9cc572e401854181e9d1eabd",
+        "actual": "4cd03db30b4eebe050049304c91c283654e286bf9cc572e401854181e9d1eabd",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_supplementary_searches.json",
+        "expected": "1fdfa941ab9fe03b69f168f7f6ce1ac4abc5a8f55b8bcc3d89d12cc46b39e995",
+        "actual": "1fdfa941ab9fe03b69f168f7f6ce1ac4abc5a8f55b8bcc3d89d12cc46b39e995",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/final_unpaired_cross_review.md",
+        "expected": "a8d08c8974b6b53778317954e2a58995c5122b7e1a3f583f55fbc137b811ffd5",
+        "actual": "a8d08c8974b6b53778317954e2a58995c5122b7e1a3f583f55fbc137b811ffd5",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+        "expected": "1bf92e1c8550fee6fa080d74b29153fbac081adb94725bf6aee085859d8c02ed",
+        "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+        "matches": false
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+        "expected": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "actual": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md",
+        "expected": "26be6e5c9c02bc801bb2bd45e8803b3953bfb94ba14b30da63c348f8ae516291",
+        "actual": "cf0bd186f7ca1bbb81cca0ff6ceabd47bce69862509d5bcf6a8adfb990d6c546",
+        "matches": false
+      }
+    ],
+    "frozen_theory_checks": [
+      {
+        "path": "project_resources/research/theory/07_unpaired_integration_nonidentifiability.md",
+        "expected": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+        "actual": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+        "matches": true
+      },
+      {
+        "path": "project_resources/research/theory/08_modern_integration_objectives.md",
+        "expected": "5cd4091f949886ac32d15e13d09c1d2e52929fbaa6e5abdb080a0e88e9ef793d",
+        "actual": "5cd4091f949886ac32d15e13d09c1d2e52929fbaa6e5abdb080a0e88e9ef793d",
+        "matches": true
+      }
+    ],
+    "historical_selected_papers": 64,
+    "historical_reconciled_citations": 64
+  },
+  "checked_references_total_with_duplicates": 315,
+  "mismatches": [
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+      "expected": "1bf92e1c8550fee6fa080d74b29153fbac081adb94725bf6aee085859d8c02ed",
+      "actual": "284b9fbf89eb3c37d3e83c944e058deb682b026922aaf507149eb81a3bd4868b",
+      "matches": false,
+      "resolution": "Intermediate reviewed hash superseded by documented final reconciliation; current final hash verified"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md",
+      "expected": "26be6e5c9c02bc801bb2bd45e8803b3953bfb94ba14b30da63c348f8ae516291",
+      "actual": "cf0bd186f7ca1bbb81cca0ff6ceabd47bce69862509d5bcf6a8adfb990d6c546",
+      "matches": false,
+      "resolution": "Intermediate reviewed hash superseded by documented final reconciliation; current final hash verified"
+    }
+  ],
+  "limitations": [
+    "Hash equality establishes unchanged evidence, not scientific correctness",
+    "Historical native scores are not exact DAG accuracy or biological causal truth",
+    "No exhaustive new paper or citation review performed in this mechanical audit"
+  ],
+  "reconciliation_checks": [
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md",
+      "expected": "cf0bd186f7ca1bbb81cca0ff6ceabd47bce69862509d5bcf6a8adfb990d6c546",
+      "actual": "cf0bd186f7ca1bbb81cca0ff6ceabd47bce69862509d5bcf6a8adfb990d6c546",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/PAPER_MATRIX.md",
+      "expected": "2d851c48b7c34304daeb5968f6e8bdedba9d632b05584ca1e53e278ba605c4ad",
+      "actual": "2d851c48b7c34304daeb5968f6e8bdedba9d632b05584ca1e53e278ba605c4ad",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/PAPER_EVIDENCE.json",
+      "expected": "f38f89e1e7c100e794eceebd6be71c456232753a72e323ed174c48904f5f751b",
+      "actual": "f38f89e1e7c100e794eceebd6be71c456232753a72e323ed174c48904f5f751b",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/SEARCH_LOG.md",
+      "expected": "94bb5e66511b6d0d193ee2e99d20912aade679ded826c6ca3b93abb7d0b39798",
+      "actual": "94bb5e66511b6d0d193ee2e99d20912aade679ded826c6ca3b93abb7d0b39798",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/SCREENING_SUMMARY.json",
+      "expected": "7b532833e550a71d00985a4286b416c8baf4a758e216f094b1d6a740fd7b976e",
+      "actual": "7b532833e550a71d00985a4286b416c8baf4a758e216f094b1d6a740fd7b976e",
+      "matches": true
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/citation_verification.json",
+      "expected": "1f753b0d0acbcf8c3cbd69ffbfda897bc87c712766f05742f375f1e1b3626c83",
+      "actual": "1f753b0d0acbcf8c3cbd69ffbfda897bc87c712766f05742f375f1e1b3626c83",
+      "matches": true
+    }
+  ],
+  "reconciliation_sources": {
+    "project_resources/research/integration_literature_scope_2026_11_01/REVIEW_RECONCILIATION.md": "bd1159e33a13a1efdf3ebd9030434b7f68b57418407c8712ce89d54fdcfc095d",
+    "project_resources/research/integration_literature_scope_2026_11_01/agents/final_theory_cross_review.md": "0ab7618ea34aa7acf31b6f3ab325e4a93f15634081bd0945a02015fc6e6373e5"
+  },
+  "unresolved_mismatches": []
+}

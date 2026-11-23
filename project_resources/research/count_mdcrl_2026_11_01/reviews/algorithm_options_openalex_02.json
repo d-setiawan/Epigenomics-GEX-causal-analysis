@@ -1,0 +1,5106 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 4955,
+    "db_response_time_ms": 280,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (Gamma Poisson factorization independent component analysis) in the full text",
+      "x_new_oql": "get works with (Gamma Poisson factorization independent component analysis) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "Gamma Poisson factorization independent component analysis",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:Gamma Poisson factorization independent component analysis&per_page=100",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W1966626570",
+      "doi": "https://doi.org/10.1145/2792838.2800174",
+      "title": "Dynamic Poisson Factorization",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1145/2792838.2800174",
+        "doi": "https://doi.org/10.1145/2792838.2800174",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/2792838.2800174",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S7407086088",
+          "display_name": "ACM Conference on Recommender Systems (RecSys)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 9th ACM Conference on Recommender Systems",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1509.04640",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2123528936",
+      "doi": "https://doi.org/10.48550/arxiv.1311.1704",
+      "title": "Scalable Recommendation with Poisson Factorization",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1311.1704",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1311.1704",
+        "pdf_url": "https://arxiv.org/pdf/1311.1704",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1311.1704",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2340224460",
+      "doi": "https://doi.org/10.48550/arxiv.1604.03853",
+      "title": "Hierarchical Compound Poisson Factorization",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1604.03853",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1604.03853",
+        "pdf_url": "https://arxiv.org/pdf/1604.03853",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1604.03853",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7165055869",
+      "doi": "https://doi.org/10.48550/arxiv.2606.17267",
+      "title": "Bayesian Poisson-Randomized Gamma Tensor Factorization with Application to International Trade Flows",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2606.17267",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2606.17267",
+        "pdf_url": "https://arxiv.org/pdf/2606.17267",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2606.17267",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2556738441",
+      "doi": "https://doi.org/10.48550/arxiv.1701.05573",
+      "title": "Poisson--Gamma Dynamical Systems",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1701.05573",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1701.05573",
+        "pdf_url": "https://arxiv.org/pdf/1701.05573",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1701.05573",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2750216450",
+      "doi": "https://doi.org/10.5183/jjscs.1608001_233",
+      "title": "AUTOMATIC RELEVANCE DETERMINATION IN NONNEGATIVE MATRIX FACTORIZATION BASED ON A ZERO-INFLATED COMPOUND POISSON-GAMMA DISTRIBUTION",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.5183/jjscs.1608001_233",
+        "doi": "https://doi.org/10.5183/jjscs.1608001_233",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.5183/jjscs.1608001_233",
+        "pdf_url": "https://www.jstage.jst.go.jp/article/jjscs/29/1/29_1608001_233/_pdf",
+        "source": {
+          "id": "https://openalex.org/S2764823463",
+          "display_name": "Journal of the Japanese Society of Computational Statistics",
+          "issn_l": "0915-2350",
+          "issn": [
+            "0915-2350",
+            "1881-1337"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "poland-20"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of the Japanese Society of Computational Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.jstage.jst.go.jp/article/jjscs/29/1/29_1608001_233/_pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2890548663",
+      "doi": "https://doi.org/10.48550/arxiv.1810.11209",
+      "title": "Deep Poisson gamma dynamical systems",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1810.11209",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1810.11209",
+        "pdf_url": "https://arxiv.org/pdf/1810.11209",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1810.11209",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2741601682",
+      "doi": "https://doi.org/10.24963/ijcai.2017/247",
+      "title": "Understanding Users' Budgets for Recommendation with Hierarchical Poisson Factorization",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.24963/ijcai.2017/247",
+        "doi": "https://doi.org/10.24963/ijcai.2017/247",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.24963/ijcai.2017/247",
+        "pdf_url": "https://www.ijcai.org/proceedings/2017/0247.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306419999",
+          "display_name": "International Joint Conference on Artificial Intelligence",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.ijcai.org/proceedings/2017/0247.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1995368504",
+      "doi": "https://doi.org/10.1145/2783258.2783414",
+      "title": "Bayesian Poisson Tensor Factorization for Inferring Multilateral Relations from Sparse Dyadic Event Counts",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1145/2783258.2783414",
+        "doi": "https://doi.org/10.1145/2783258.2783414",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/2783258.2783414",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363608767",
+          "display_name": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1506.03493",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7212768902",
+      "doi": "https://doi.org/10.48550/arxiv.2609.12468",
+      "title": "Gibbs Sampling for Bayesian Generalized Poisson Matrix Factorization",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2609.12468",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2609.12468",
+        "pdf_url": "https://arxiv.org/pdf/2609.12468",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2609.12468",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7118014118",
+      "doi": "https://doi.org/10.48550/arxiv.2512.24604",
+      "title": "Generalized Poisson Matrix Factorization for Overdispersed Count Data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2512.24604",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2512.24604",
+        "pdf_url": "https://arxiv.org/pdf/2512.24604",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2512.24604",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3207486557",
+      "doi": "https://doi.org/10.48550/arxiv.2110.10082",
+      "title": "Nonparametric Sparse Tensor Factorization with Hierarchical Gamma Processes",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2110.10082",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2110.10082",
+        "pdf_url": "https://arxiv.org/pdf/2110.10082",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2110.10082",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2950640959",
+      "doi": "https://doi.org/10.15252/msb.20188557",
+      "title": "De novo gene signature identification from single\u2010cell RNA\u2010seq with hierarchical Poisson factorization",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.15252/msb.20188557",
+        "doi": "https://doi.org/10.15252/msb.20188557",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.15252/msb.20188557",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.15252/msb.20188557",
+        "source": {
+          "id": "https://openalex.org/S200893805",
+          "display_name": "Molecular Systems Biology",
+          "issn_l": "1744-4292",
+          "issn": [
+            "1744-4292"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecular Systems Biology",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.15252/msb.20188557",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4407160745",
+      "doi": "https://doi.org/10.30757/alea.v22-02",
+      "title": "Bivariate gamma subordination for a Poisson shock model",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.30757/alea.v22-02",
+        "doi": "https://doi.org/10.30757/alea.v22-02",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.30757/alea.v22-02",
+        "pdf_url": "https://doi.org/10.30757/alea.v22-02",
+        "source": {
+          "id": "https://openalex.org/S2475989817",
+          "display_name": "Latin American Journal of Probability and Mathematical Statistics",
+          "issn_l": "1980-0436",
+          "issn": [
+            "1980-0436"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Latin American Journal of Probability and Mathematical Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.30757/alea.v22-02",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7170276886",
+      "doi": "https://doi.org/10.48550/arxiv.2607.20680",
+      "title": "Exact Scale--Shape Factorization of the Typical Poisson--Voronoi Cell Volume in Arbitrary Dimension",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2607.20680",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2607.20680",
+        "pdf_url": "https://arxiv.org/pdf/2607.20680",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2607.20680",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4413099091",
+      "doi": "https://doi.org/10.1016/j.knosys.2025.114116",
+      "title": "Seeded Poisson Factorization: leveraging domain knowledge to fit topic models",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1016/j.knosys.2025.114116",
+        "doi": "https://doi.org/10.1016/j.knosys.2025.114116",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.knosys.2025.114116",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S10169007",
+          "display_name": "Knowledge-Based Systems",
+          "issn_l": "0950-7051",
+          "issn": [
+            "0950-7051",
+            "1872-7409"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-c",
+            "cwts-core",
+            "dongbi-b",
+            "fnege-4",
+            "jufo-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Knowledge-Based Systems",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.knosys.2025.114116",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2808391139",
+      "doi": "https://doi.org/10.24963/ijcai.2018/695",
+      "title": "Metadata-dependent Infinite Poisson Factorization for Efficiently Modelling Sparse and Large Matrices in Recommendation",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.24963/ijcai.2018/695",
+        "doi": "https://doi.org/10.24963/ijcai.2018/695",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.24963/ijcai.2018/695",
+        "pdf_url": "https://www.ijcai.org/proceedings/2018/0695.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306419999",
+          "display_name": "International Joint Conference on Artificial Intelligence",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.ijcai.org/proceedings/2018/0695.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385965553",
+      "doi": "https://doi.org/10.48550/arxiv.2308.08060",
+      "title": "Robust Bayesian Tensor Factorization with Zero-Inflated Poisson Model and Consensus Aggregation",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2308.08060",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2308.08060",
+        "pdf_url": "https://arxiv.org/pdf/2308.08060",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-sa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2308.08060",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2788315269",
+      "doi": "https://doi.org/10.1609/aaai.v32i1.11689",
+      "title": "Coupled Poisson Factorization Integrated With User/Item Metadata for Modeling Popular and Sparse Ratings in Scalable Recommendation",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1609/aaai.v32i1.11689",
+        "doi": "https://doi.org/10.1609/aaai.v32i1.11689",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1609/aaai.v32i1.11689",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210191458",
+          "display_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "issn_l": "2159-5399",
+          "issn": [
+            "2159-5399",
+            "2374-3468"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "jufo-2",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320058",
+          "host_organization_name": "Association for the Advancement of Artificial Intelligence",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320058"
+          ],
+          "host_organization_lineage_names": [
+            "Association for the Advancement of Artificial Intelligence"
+          ],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1609/aaai.v32i1.11689",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2766623924",
+      "doi": "https://doi.org/10.1093/bioinformatics/btz177",
+      "title": "Probabilistic count matrix factorization for single cell expression data analysis",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btz177",
+        "doi": "https://doi.org/10.1093/bioinformatics/btz177",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btz177",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1710.11028",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2185720888",
+      "doi": null,
+      "title": "ADVANCES IN INDEPENDENT COMPONENT ANALYSIS WITH APPLICATIONS TO DATA MINING",
+      "publication_year": 2003,
+      "primary_location": {
+        "id": "pmh:oai:aaltodoc.aalto.fi:123456789/2141",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "pdf_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "source": {
+          "id": "https://openalex.org/S4306401662",
+          "display_name": "Aaltodoc (Aalto University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I9927081",
+          "host_organization_name": "Aalto University",
+          "host_organization_lineage": [
+            "https://openalex.org/I9927081"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "G5 Artikkeliv\u00e4it\u00f6skirja"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://aaltodoc.aalto.fi/handle/123456789/2141",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3196361248",
+      "doi": "https://doi.org/10.1186/s40537-021-00510-1",
+      "title": "Localizing hot spots in Poisson radiation data matrices: nonnegative tensor factorization and phase congruency",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1186/s40537-021-00510-1",
+        "doi": "https://doi.org/10.1186/s40537-021-00510-1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s40537-021-00510-1",
+        "pdf_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-021-00510-1",
+        "source": {
+          "id": "https://openalex.org/S2737955091",
+          "display_name": "Journal Of Big Data",
+          "issn_l": "2196-1115",
+          "issn": [
+            "2196-1115"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Big Data",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-021-00510-1",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2103981179",
+      "doi": null,
+      "title": "Clicks prediction with L1 regularized logistic regression and a study on poisson factorization recommender evaluation",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "pmh:oai:repositories.lib.utexas.edu:2152/26580",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/2152/26580",
+        "pdf_url": "http://hdl.handle.net/2152/26580",
+        "source": {
+          "id": "https://openalex.org/S4306400568",
+          "display_name": "Texas ScholarWorks (Texas Digital Library)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210102904",
+          "host_organization_name": "Texas Digital Library",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210102904"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/2152/26580",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7206186343",
+      "doi": "https://doi.org/10.48550/arxiv.2609.00896",
+      "title": "Poisson-Gamma Dynamical Systems with Time-varying Transition Dynamics",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2609.00896",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2609.00896",
+        "pdf_url": "https://arxiv.org/pdf/2609.00896",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2609.00896",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2547554208",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1005189",
+      "title": "Using Matrix and Tensor Factorizations for the Single-Trial Analysis of Population Spike Trains",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pcbi.1005189",
+        "doi": "https://doi.org/10.1371/journal.pcbi.1005189",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pcbi.1005189",
+        "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1005189&type=printable",
+        "source": {
+          "id": "https://openalex.org/S86033158",
+          "display_name": "PLoS Computational Biology",
+          "issn_l": "1553-734X",
+          "issn": [
+            "1553-734X",
+            "1553-7358"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Computational Biology",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1005189&type=printable",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2949623225",
+      "doi": null,
+      "title": "Beta-negative binomial process and Poisson factor analysis",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "pmh:oai:dukespace.lib.duke.edu:10161/15597",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10161/15597",
+        "pdf_url": "http://hdl.handle.net/10161/15597",
+        "source": {
+          "id": "https://openalex.org/S4306400687",
+          "display_name": "DukeSpace (Duke University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I170897317",
+          "host_organization_name": "Duke University",
+          "host_organization_lineage": [
+            "https://openalex.org/I170897317"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Journal Article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10161/15597",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4380077959",
+      "doi": "https://doi.org/10.1007/s11009-023-10040-3",
+      "title": "Exact Simulation of Poisson-Dirichlet Distribution and Generalised Gamma Process",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1007/s11009-023-10040-3",
+        "doi": "https://doi.org/10.1007/s11009-023-10040-3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s11009-023-10040-3",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11009-023-10040-3.pdf",
+        "source": {
+          "id": "https://openalex.org/S94688346",
+          "display_name": "Methodology And Computing In Applied Probability",
+          "issn_l": "1387-5841",
+          "issn": [
+            "1387-5841",
+            "1573-7713"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Methodology and Computing in Applied Probability",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11009-023-10040-3.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4392222303",
+      "doi": "https://doi.org/10.48550/arxiv.2402.16297",
+      "title": "A Poisson-Gamma Dynamic Factor Model with Time-Varying Transition Dynamics",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2402.16297",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2402.16297",
+        "pdf_url": "https://arxiv.org/pdf/2402.16297",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2402.16297",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2946312372",
+      "doi": "https://doi.org/10.1093/biomet/asaa008",
+      "title": "Bayesian cumulative shrinkage for infinite factorizations",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1093/biomet/asaa008",
+        "doi": "https://doi.org/10.1093/biomet/asaa008",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/biomet/asaa008",
+        "pdf_url": "https://academic.oup.com/biomet/article-pdf/107/3/745/33658376/asaa008.pdf",
+        "source": {
+          "id": "https://openalex.org/S172180718",
+          "display_name": "Biometrika",
+          "issn_l": "0006-3444",
+          "issn": [
+            "0006-3444",
+            "1464-3510"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Biometrika",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/biomet/article-pdf/107/3/745/33658376/asaa008.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3164430054",
+      "doi": "https://doi.org/10.3390/math9111189",
+      "title": "Probabilistic Non-Negative Matrix Factorization with Binary Components",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.3390/math9111189",
+        "doi": "https://doi.org/10.3390/math9111189",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/math9111189",
+        "pdf_url": "https://www.mdpi.com/2227-7390/9/11/1189/pdf?version=1622013630",
+        "source": {
+          "id": "https://openalex.org/S4210192031",
+          "display_name": "Mathematics",
+          "issn_l": "2227-7390",
+          "issn": [
+            "2227-7390"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "poland-20",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Mathematics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-7390/9/11/1189/pdf?version=1622013630",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2787950247",
+      "doi": "https://doi.org/10.48550/arxiv.1802.06931",
+      "title": "Empirical Bayes Matrix Factorization",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "pmid:37920532",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/37920532",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306525036",
+          "display_name": "PubMed",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1299303238",
+          "host_organization_name": "National Institutes of Health",
+          "host_organization_lineage": [
+            "https://openalex.org/I1299303238"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of machine learning research : JMLR",
+        "raw_type": "Journal Article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10621241/pdf/nihms-1908884.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2950100689",
+      "doi": "https://doi.org/10.1101/211938",
+      "title": "Probabilistic Count Matrix Factorization for Single Cell Expression Data Analysis",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1101/211938",
+        "doi": "https://doi.org/10.1101/211938",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/211938",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2019/03/15/211938.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.biorxiv.org/content/biorxiv/early/2019/03/15/211938.full.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2762512166",
+      "doi": "https://doi.org/10.14988/di.2017.0000016946",
+      "title": "Extensions of nonnegative matrix factorization for exploratory data analysis",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:irdb.nii.ac.jp:01431:0000436816",
+        "doi": "https://doi.org/10.14988/di.2017.0000016946",
+        "is_oa": true,
+        "landing_page_url": "https://doshisha.repo.nii.ac.jp/records/1348",
+        "pdf_url": "https://doshisha.repo.nii.ac.jp/record/1348/files/zk839.pdf",
+        "source": {
+          "id": "https://openalex.org/S7407056385",
+          "display_name": "Institutional Repositories DataBase (IRDB)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I184597095",
+          "host_organization_name": "National Institute of Informatics",
+          "host_organization_lineage": [
+            "https://openalex.org/I184597095"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "doctoral thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doshisha.repo.nii.ac.jp/record/1348/files/zk839.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3211638470",
+      "doi": "https://doi.org/10.48550/arxiv.2111.09409",
+      "title": "The range of a self-similar additive gamma process is a scale invariant Poisson point process",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2111.09409",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2111.09409",
+        "pdf_url": "https://arxiv.org/pdf/2111.09409",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2111.09409",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3086924043",
+      "doi": "https://doi.org/10.3390/risks8030097",
+      "title": "EM Estimation for the Poisson-Inverse Gamma Regression Model with Varying Dispersion: An Application to Insurance Ratemaking",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.3390/risks8030097",
+        "doi": "https://doi.org/10.3390/risks8030097",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/risks8030097",
+        "pdf_url": "https://www.mdpi.com/2227-9091/8/3/97/pdf?version=1599818797",
+        "source": {
+          "id": "https://openalex.org/S4210214252",
+          "display_name": "Risks",
+          "issn_l": "2227-9091",
+          "issn": [
+            "2227-9091"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Risks",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-9091/8/3/97/pdf?version=1599818797",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389565604",
+      "doi": "https://doi.org/10.1214/23-ejs2174",
+      "title": "Deviance matrix factorization",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1214/23-ejs2174",
+        "doi": "https://doi.org/10.1214/23-ejs2174",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/23-ejs2174",
+        "pdf_url": "https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-17/issue-2/Deviance-matrix-factorization/10.1214/23-EJS2174.pdf",
+        "source": {
+          "id": "https://openalex.org/S997959834",
+          "display_name": "Electronic Journal of Statistics",
+          "issn_l": "1935-7524",
+          "issn": [
+            "1935-7524"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "jufo-2",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Electronic Journal of Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-17/issue-2/Deviance-matrix-factorization/10.1214/23-EJS2174.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4394947118",
+      "doi": "https://doi.org/10.48550/arxiv.2404.10974",
+      "title": "Compressive Bayesian non-negative matrix factorization for mutational signatures analysis",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2404.10974",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2404.10974",
+        "pdf_url": "https://arxiv.org/pdf/2404.10974",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2404.10974",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2905570754",
+      "doi": "https://doi.org/10.1101/496810",
+      "title": "Scalable probabilistic matrix factorization for single-cell RNA-seq analysis",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1101/496810",
+        "doi": "https://doi.org/10.1101/496810",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/496810",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2018/12/14/496810.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.biorxiv.org/content/biorxiv/early/2018/12/14/496810.full.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7214092774",
+      "doi": "https://doi.org/10.48550/arxiv.2609.25341",
+      "title": "Distinct exponents in the prime factorization",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2609.25341",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2609.25341",
+        "pdf_url": "https://arxiv.org/pdf/2609.25341",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2609.25341",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4410819282",
+      "doi": "https://doi.org/10.54014/z3sw-57y1",
+      "title": "Topic analysis and application using nonnegative matrix factorizations (NMF)",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.54014/z3sw-57y1",
+        "doi": "https://doi.org/10.54014/z3sw-57y1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.54014/z3sw-57y1",
+        "pdf_url": "https://scholarsarchive.library.albany.edu/cgi/viewcontent.cgi?article=2534&context=legacy-etd",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "University at Albany, State University of New York",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://scholarsarchive.library.albany.edu/cgi/viewcontent.cgi?article=2534&context=legacy-etd",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W4390547046",
+      "doi": "https://doi.org/10.1080/10618600.2023.2301072",
+      "title": "Accelerated Structured Matrix Factorization",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1080/10618600.2023.2301072",
+        "doi": "https://doi.org/10.1080/10618600.2023.2301072",
+        "is_oa": false,
+        "landing_page_url": "http://dx.doi.org/10.1080/10618600.2023.2301072",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S76159266",
+          "display_name": "Journal of Computational and Graphical Statistics",
+          "issn_l": "1061-8600",
+          "issn": [
+            "1061-8600",
+            "1537-2715"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320547",
+          "host_organization_name": "Taylor & Francis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320547",
+            "https://openalex.org/P4310320449"
+          ],
+          "host_organization_lineage_names": [
+            "Taylor & Francis",
+            "Informa"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Computational and Graphical Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.unipd.it/bitstream/11577/3540745/1/2212.06504v1.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2087309226",
+      "doi": "https://doi.org/10.1214/aop/1024404422",
+      "title": "The two-parameter Poisson-Dirichlet distribution derived from a stable subordinator",
+      "publication_year": 1997,
+      "primary_location": {
+        "id": "doi:10.1214/aop/1024404422",
+        "doi": "https://doi.org/10.1214/aop/1024404422",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/aop/1024404422",
+        "pdf_url": "https://projecteuclid.org/journals/annals-of-probability/volume-25/issue-2/The-two-parameter-Poisson-Dirichlet-distribution-derived-from-a-stable/10.1214/aop/1024404422.pdf",
+        "source": {
+          "id": "https://openalex.org/S40212770",
+          "display_name": "The Annals of Probability",
+          "issn_l": "0091-1798",
+          "issn": [
+            "0091-1798",
+            "2168-894X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Probability",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/journals/annals-of-probability/volume-25/issue-2/The-two-parameter-Poisson-Dirichlet-distribution-derived-from-a-stable/10.1214/aop/1024404422.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W3012632571",
+      "doi": "https://doi.org/10.1109/tnnls.2020.2978761",
+      "title": "Kernelized Sparse Bayesian Matrix Factorization",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1109/tnnls.2020.2978761",
+        "doi": "https://doi.org/10.1109/tnnls.2020.2978761",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/tnnls.2020.2978761",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210175523",
+          "display_name": "IEEE Transactions on Neural Networks and Learning Systems",
+          "issn_l": "2162-237X",
+          "issn": [
+            "2162-237X",
+            "2162-2388"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Transactions on Neural Networks and Learning Systems",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://lirias.kuleuven.be/retrieve/b559b4f5-252d-45a4-badf-f0d04a39bf1b",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2541242421",
+      "doi": "https://doi.org/10.5555/2946645.3053468",
+      "title": "Electronic health record analysis via deep Poisson factor models",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:osti.gov:1366989",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://www.osti.gov/biblio/1366989",
+        "pdf_url": "https://www.osti.gov/servlets/purl/1366989",
+        "source": {
+          "id": "https://openalex.org/S4306402487",
+          "display_name": "OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I139351228",
+          "host_organization_name": "Office of Scientific and Technical Information",
+          "host_organization_lineage": [
+            "https://openalex.org/I139351228"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.osti.gov/servlets/purl/1366989",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2029187874",
+      "doi": "https://doi.org/10.1371/journal.pone.0105071",
+      "title": "Independent Components of Neural Activity Carry Information on Individual Populations",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pone.0105071",
+        "doi": "https://doi.org/10.1371/journal.pone.0105071",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pone.0105071",
+        "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0105071&type=printable",
+        "source": {
+          "id": "https://openalex.org/S202381698",
+          "display_name": "PLoS ONE",
+          "issn_l": "1932-6203",
+          "issn": [
+            "1932-6203"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "erih-plus",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLoS ONE",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0105071&type=printable",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4414260826",
+      "doi": "https://doi.org/10.1145/3767726",
+      "title": "Nonnegative Matrix Factorization in Dimensionality Reduction: A Survey",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1145/3767726",
+        "doi": "https://doi.org/10.1145/3767726",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1145/3767726",
+        "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3767726",
+        "source": {
+          "id": "https://openalex.org/S157921468",
+          "display_name": "ACM Computing Surveys",
+          "issn_l": "0360-0300",
+          "issn": [
+            "0360-0300",
+            "1557-7341"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319798",
+          "host_organization_name": "Association for Computing Machinery",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319798"
+          ],
+          "host_organization_lineage_names": [
+            "Association for Computing Machinery"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "ACM Computing Surveys",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3767726",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4311555235",
+      "doi": "https://doi.org/10.48550/arxiv.2212.06504",
+      "title": "Accelerated Structured Matrix Factorization",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2212.06504",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2212.06504",
+        "pdf_url": "https://arxiv.org/pdf/2212.06504",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2212.06504",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2601035857",
+      "doi": "https://doi.org/10.1214/18-aoas1177",
+      "title": "Variational inference for probabilistic Poisson PCA",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1214/18-aoas1177",
+        "doi": "https://doi.org/10.1214/18-aoas1177",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1214/18-aoas1177",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S112778392",
+          "display_name": "The Annals of Applied Statistics",
+          "issn_l": "1932-6157",
+          "issn": [
+            "1932-6157",
+            "1941-7330"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1703.06633",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2750458177",
+      "doi": "https://doi.org/10.3390/e19080424",
+      "title": "Survey on Probabilistic Models of Low-Rank Matrix Factorizations",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.3390/e19080424",
+        "doi": "https://doi.org/10.3390/e19080424",
+        "is_oa": true,
+        "landing_page_url": "https://dx.doi.org/10.3390/e19080424",
+        "pdf_url": "https://www.mdpi.com/1099-4300/19/8/424/pdf?version=1503480662",
+        "source": {
+          "id": "https://openalex.org/S195231649",
+          "display_name": "Entropy",
+          "issn_l": "1099-4300",
+          "issn": [
+            "1099-4300"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Entropy",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1099-4300/19/8/424/pdf?version=1503480662",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1514379994",
+      "doi": "https://doi.org/10.2172/1011706",
+      "title": "Making tensor factorizations robust to non-gaussian noise.",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.2172/1011706",
+        "doi": "https://doi.org/10.2172/1011706",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2172/1011706",
+        "pdf_url": "https://www.osti.gov/servlets/purl/1011706",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Sandia National Laboratories (SNL)",
+        "raw_type": "report"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.osti.gov/servlets/purl/1011706",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2782428339",
+      "doi": "https://doi.org/10.48550/arxiv.1801.01708",
+      "title": "Negative Binomial Matrix Factorization for Recommender Systems",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1801.01708",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1801.01708",
+        "pdf_url": "https://arxiv.org/pdf/1801.01708",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1801.01708",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4403836028",
+      "doi": "https://doi.org/10.3390/math12213365",
+      "title": "Matrix Factorization and Prediction for High-Dimensional Co-Occurrence Count Data via Shared Parameter Alternating Zero Inflated Gamma Model",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.3390/math12213365",
+        "doi": "https://doi.org/10.3390/math12213365",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/math12213365",
+        "pdf_url": "https://www.mdpi.com/2227-7390/12/21/3365/pdf?version=1730019725",
+        "source": {
+          "id": "https://openalex.org/S4210192031",
+          "display_name": "Mathematics",
+          "issn_l": "2227-7390",
+          "issn": [
+            "2227-7390"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "poland-20",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Mathematics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-7390/12/21/3365/pdf?version=1730019725",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3217463697",
+      "doi": "https://doi.org/10.1007/s44196-021-00022-z",
+      "title": "Evolutionary Social Poisson Factorizationfor Temporal Recommendation",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1007/s44196-021-00022-z",
+        "doi": "https://doi.org/10.1007/s44196-021-00022-z",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s44196-021-00022-z",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44196-021-00022-z.pdf",
+        "source": {
+          "id": "https://openalex.org/S190680769",
+          "display_name": "International Journal of Computational Intelligence Systems",
+          "issn_l": "1875-6883",
+          "issn": [
+            "1875-6883",
+            "1875-6891"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Computational Intelligence Systems",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s44196-021-00022-z.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1978838225",
+      "doi": "https://doi.org/10.1214/00-aoas223",
+      "title": "Estimating limits from Poisson counting data using Dempster\u2013Shafer analysis",
+      "publication_year": 2009,
+      "primary_location": {
+        "id": "doi:10.1214/00-aoas223",
+        "doi": "https://doi.org/10.1214/00-aoas223",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1214/00-aoas223",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S112778392",
+          "display_name": "The Annals of Applied Statistics",
+          "issn_l": "1932-6157",
+          "issn": [
+            "1932-6157",
+            "1941-7330"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/0812.1690",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2041320002",
+      "doi": "https://doi.org/10.1214/12-ba711",
+      "title": "Mixture Modeling for Marked Poisson Processes",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1214/12-ba711",
+        "doi": "https://doi.org/10.1214/12-ba711",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/12-ba711",
+        "pdf_url": "https://projecteuclid.org/journals/bayesian-analysis/volume-7/issue-2/Mixture-Modeling-for-Marked-Poisson-Processes/10.1214/12-BA711.pdf",
+        "source": {
+          "id": "https://openalex.org/S127898559",
+          "display_name": "Bayesian Analysis",
+          "issn_l": "1931-6690",
+          "issn": [
+            "1931-6690",
+            "1936-0975"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310321640",
+          "host_organization_name": "International Society for Bayesian Analysis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310321640"
+          ],
+          "host_organization_lineage_names": [
+            "International Society for Bayesian Analysis"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bayesian Analysis",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://projecteuclid.org/journals/bayesian-analysis/volume-7/issue-2/Mixture-Modeling-for-Marked-Poisson-Processes/10.1214/12-BA711.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3202998373",
+      "doi": "https://doi.org/10.1109/tcss.2021.3114419",
+      "title": "A Survey of Community Detection in Complex Networks Using Nonnegative Matrix Factorization",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1109/tcss.2021.3114419",
+        "doi": "https://doi.org/10.1109/tcss.2021.3114419",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/tcss.2021.3114419",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2490693980",
+          "display_name": "IEEE Transactions on Computational Social Systems",
+          "issn_l": "2329-924X",
+          "issn": [
+            "2329-924X",
+            "2373-7476"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "ccf-c",
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Transactions on Computational Social Systems",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://pureportal.coventry.ac.uk/en/publications/0eaeca15-605c-4f01-ac21-10f53c38a24f",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2164077590",
+      "doi": "https://doi.org/10.1111/rssa.12057",
+      "title": "Bayesian Inference for Transportation Origin\u2013Destination Matrices: the Poisson\u2013Inverse Gaussian and Other Poisson Mixtures",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1111/rssa.12057",
+        "doi": "https://doi.org/10.1111/rssa.12057",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1111/rssa.12057",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S185328345",
+          "display_name": "Journal of the Royal Statistical Society Series A (Statistics in Society)",
+          "issn_l": "0964-1998",
+          "issn": [
+            "0964-1998",
+            "1467-985X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311763",
+          "host_organization_name": "Royal Statistical Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311763"
+          ],
+          "host_organization_lineage_names": [
+            "Royal Statistical Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of the Royal Statistical Society Series A: Statistics in Society",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://durham-repository.worktribe.com/file/1320233/1/Accepted%20Journal%20Article",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2482534780",
+      "doi": "https://doi.org/10.48550/arxiv.1608.00075",
+      "title": "Online Nonnegative Matrix Factorization with General Divergences",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1608.00075",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/1608.00075",
+        "pdf_url": "https://arxiv.org/pdf/1608.00075",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1608.00075",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2431671827",
+      "doi": "https://doi.org/10.48550/arxiv.1606.04642",
+      "title": "Poisson and independent process approximation for random combinatorial structures with a given number of components, and near-universal behavior for low rank assemblies",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1606.04642",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1606.04642",
+        "pdf_url": "https://arxiv.org/pdf/1606.04642",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1606.04642",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7220967834",
+      "doi": "https://doi.org/10.48550/arxiv.1910.03906",
+      "title": "Probabilistic sequential matrix factorization",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1910.03906",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1910.03906",
+        "pdf_url": "https://arxiv.org/pdf/1910.03906",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1910.03906",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385705520",
+      "doi": "https://doi.org/10.1051/0004-6361/202346488",
+      "title": "Gammapy: A Python package for gamma-ray astronomy",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1051/0004-6361/202346488",
+        "doi": "https://doi.org/10.1051/0004-6361/202346488",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1051/0004-6361/202346488",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S205231332",
+          "display_name": "Astronomy and Astrophysics",
+          "issn_l": "0004-6361",
+          "issn": [
+            "0004-6361",
+            "1432-0746"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319748",
+          "host_organization_name": "EDP Sciences",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319748",
+            "https://openalex.org/P4310319982"
+          ],
+          "host_organization_lineage_names": [
+            "EDP Sciences",
+            "Science Press"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Astronomy &amp; Astrophysics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1051/0004-6361/202346488",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3205263760",
+      "doi": "https://doi.org/10.16925/2357-6014.2021.01.10",
+      "title": "Locus recommendation using probabilistic matrix factorization techniques",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.16925/2357-6014.2021.01.10",
+        "doi": "https://doi.org/10.16925/2357-6014.2021.01.10",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.16925/2357-6014.2021.01.10",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210207940",
+          "display_name": "Ingenieria Solidaria",
+          "issn_l": "1900-3102",
+          "issn": [
+            "1900-3102",
+            "2357-6014"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": false,
+          "listed_in": [
+            "doaj",
+            "dongbi-c",
+            "poland-20",
+            "publindex-c",
+            "russia-white-list-4"
+          ],
+          "host_organization": "https://openalex.org/P4310318830",
+          "host_organization_name": "Universidad Cooperativa de Colombia",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310318830"
+          ],
+          "host_organization_lineage_names": [
+            "Universidad Cooperativa de Colombia"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Ingenier\u00eda Solidaria",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.16925/2357-6014.2021.01.10",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3114378557",
+      "doi": "https://doi.org/10.1145/3437963.3441806",
+      "title": "F-FADE: Frequency Factorization for Anomaly Detection in Edge Streams",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1145/3437963.3441806",
+        "doi": "https://doi.org/10.1145/3437963.3441806",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1145/3437963.3441806",
+        "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3437963.3441806",
+        "source": {
+          "id": "https://openalex.org/S4363608885",
+          "display_name": "ACM International Conference on Web Search and Data Mining (WSDM)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 14th ACM International Conference on Web Search and Data Mining",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3437963.3441806",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4412661067",
+      "doi": "https://doi.org/10.36227/techrxiv.175356120.00921058/v1",
+      "title": "Analysis of Handheld Gamma-Ray Spectrometers for Urban Threat Detection: II - Spectral Analysis Methods",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.36227/techrxiv.175356120.00921058/v1",
+        "doi": "https://doi.org/10.36227/techrxiv.175356120.00921058/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.36227/techrxiv.175356120.00921058/v1",
+        "pdf_url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175356120.00921058",
+        "source": null,
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175356120.00921058",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W1989709004",
+      "doi": "https://doi.org/10.1214/009053605000000732",
+      "title": "Poisson calculus for spatial neutral to the right processes",
+      "publication_year": 2006,
+      "primary_location": {
+        "id": "doi:10.1214/009053605000000732",
+        "doi": "https://doi.org/10.1214/009053605000000732",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/009053605000000732",
+        "pdf_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-34/issue-1/Poisson-calculus-for-spatial-neutral-to-the-right-processes/10.1214/009053605000000732.pdf",
+        "source": {
+          "id": "https://openalex.org/S119757635",
+          "display_name": "The Annals of Statistics",
+          "issn_l": "0090-5364",
+          "issn": [
+            "0090-5364",
+            "2168-8966"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-34/issue-1/Poisson-calculus-for-spatial-neutral-to-the-right-processes/10.1214/009053605000000732.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387697644",
+      "doi": "https://doi.org/10.1002/sim.9934",
+      "title": "Rank selection for non\u2010negative matrix factorization",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1002/sim.9934",
+        "doi": "https://doi.org/10.1002/sim.9934",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/sim.9934",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sim.9934",
+        "source": {
+          "id": "https://openalex.org/S55189604",
+          "display_name": "Statistics in Medicine",
+          "issn_l": "0277-6715",
+          "issn": [
+            "0277-6715",
+            "1097-0258"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics in Medicine",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sim.9934",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2076492765",
+      "doi": "https://doi.org/10.1162/neco_a_00576",
+      "title": "On Nonnegative Matrix Factorization Algorithms for Signal-Dependent Noise with Application to Electromyography Data",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1162/neco_a_00576",
+        "doi": "https://doi.org/10.1162/neco_a_00576",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1162/neco_a_00576",
+        "pdf_url": "https://direct.mit.edu/neco/article-pdf/26/6/1128/914492/neco_a_00576.pdf",
+        "source": {
+          "id": "https://openalex.org/S207023548",
+          "display_name": "Neural Computation",
+          "issn_l": "0899-7667",
+          "issn": [
+            "0899-7667",
+            "1530-888X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "erih-plus",
+            "jufo-3",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315718",
+          "host_organization_name": "The MIT Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315718",
+            "https://openalex.org/P4310316440"
+          ],
+          "host_organization_lineage_names": [
+            "The MIT Press",
+            "Massachusetts Institute of Technology"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Neural Computation",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://direct.mit.edu/neco/article-pdf/26/6/1128/914492/neco_a_00576.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3093235525",
+      "doi": "https://doi.org/10.1186/s12859-020-03796-9",
+      "title": "CoGAPS 3: Bayesian non-negative matrix factorization for single-cell analysis with asynchronous updates and sparse data structures",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1186/s12859-020-03796-9",
+        "doi": "https://doi.org/10.1186/s12859-020-03796-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s12859-020-03796-9",
+        "pdf_url": "https://bmcbioinformatics.biomedcentral.com/track/pdf/10.1186/s12859-020-03796-9",
+        "source": {
+          "id": "https://openalex.org/S19032547",
+          "display_name": "BMC Bioinformatics",
+          "issn_l": "1471-2105",
+          "issn": [
+            "1471-2105"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-c",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Bioinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcbioinformatics.biomedcentral.com/track/pdf/10.1186/s12859-020-03796-9",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2149161954",
+      "doi": "https://doi.org/10.1111/j.1467-9876.2005.00474.x",
+      "title": "A Useful Distribution for Fitting Discrete Data: Revival of the Conway\u2013Maxwell\u2013Poisson Distribution",
+      "publication_year": 2004,
+      "primary_location": {
+        "id": "doi:10.1111/j.1467-9876.2005.00474.x",
+        "doi": "https://doi.org/10.1111/j.1467-9876.2005.00474.x",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1111/j.1467-9876.2005.00474.x",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2764642956",
+          "display_name": "Journal of the Royal Statistical Society Series C (Applied Statistics)",
+          "issn_l": "0035-9254",
+          "issn": [
+            "0035-9254",
+            "1467-9876"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of the Royal Statistical Society Series C: Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7172448136",
+      "doi": "https://doi.org/10.48550/arxiv.2608.00788",
+      "title": "Positive Bidiagonal Factorizations for Banded Markov Processes",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2608.00788",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2608.00788",
+        "pdf_url": "https://arxiv.org/pdf/2608.00788",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2608.00788",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2068218596",
+      "doi": "https://doi.org/10.1016/j.astropartphys.2012.07.005",
+      "title": "A model-independent analysis of the Fermi Large Area Telescope gamma-ray data from the Milky Way dwarf galaxies and halo to constrain dark matter scenarios",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.1016/j.astropartphys.2012.07.005",
+        "doi": "https://doi.org/10.1016/j.astropartphys.2012.07.005",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.astropartphys.2012.07.005",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S202958571",
+          "display_name": "Astroparticle Physics",
+          "issn_l": "0927-6505",
+          "issn": [
+            "0927-6505",
+            "1873-2852"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Astroparticle Physics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1203.6731",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2915541866",
+      "doi": "https://doi.org/10.48550/arxiv.1902.08804",
+      "title": "Wiener-Hopf Factorization for the Normal Inverse Gaussian Process",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1902.08804",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1902.08804",
+        "pdf_url": "https://arxiv.org/pdf/1902.08804",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1902.08804",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W804775216",
+      "doi": "https://doi.org/10.70675/eb3f285fz47bbz4af8z85caz88a424aca3d9",
+      "title": "Nonnegative joint diagonalization by congruence for semi-nonnegative independent component analysis",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.70675/eb3f285fz47bbz4af8z85caz88a424aca3d9",
+        "doi": "https://doi.org/10.70675/eb3f285fz47bbz4af8z85caz88a424aca3d9",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.70675/eb3f285fz47bbz4af8z85caz88a424aca3d9",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Rennes 1",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.theses.fr/2014REN1S141/document",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2395373614",
+      "doi": "https://doi.org/10.7776/ask.2015.34.3.240",
+      "title": "Speech Enhancement Using Nonnegative Matrix Factorization with Temporal Continuity",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.7776/ask.2015.34.3.240",
+        "doi": "https://doi.org/10.7776/ask.2015.34.3.240",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7776/ask.2015.34.3.240",
+        "pdf_url": "http://koreascience.or.kr:80/article/JAKO201518564243940.pdf",
+        "source": {
+          "id": "https://openalex.org/S2914221356",
+          "display_name": "The Journal of the Acoustical Society of Korea",
+          "issn_l": "1225-4428",
+          "issn": [
+            "1225-4428",
+            "2287-3775"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "dongbi-d",
+            "kci-registered",
+            "poland-20",
+            "russia-white-list-4"
+          ],
+          "host_organization": "https://openalex.org/P4360969198",
+          "host_organization_name": "The Acoustical Society of Korea",
+          "host_organization_lineage": [
+            "https://openalex.org/P4360969198"
+          ],
+          "host_organization_lineage_names": [
+            "The Acoustical Society of Korea"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Journal of the Acoustical Society of Korea",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://koreascience.or.kr:80/article/JAKO201518564243940.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4405862633",
+      "doi": "https://doi.org/10.1093/bioinformatics/btae758",
+      "title": "VarNMF: non-negative probabilistic factorization with source variation",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btae758",
+        "doi": "https://doi.org/10.1093/bioinformatics/btae758",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btae758",
+        "pdf_url": "https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btae758/61290454/btae758.pdf",
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btae758/61290454/btae758.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2346260508",
+      "doi": null,
+      "title": "hpcNMF: A high-performance toolbox for non-negative matrix factorization",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:biostats.bepress.com:cobra-1168",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://biostats.bepress.com/cobra/art115",
+        "pdf_url": "https://biostats.bepress.com/cgi/viewcontent.cgi?article=1168&context=cobra",
+        "source": {
+          "id": "https://openalex.org/S4377196124",
+          "display_name": "Collection of Biostatistics Research Archive",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "COBRA Preprint Series",
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://biostats.bepress.com/cgi/viewcontent.cgi?article=1168&context=cobra",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2612617244",
+      "doi": null,
+      "title": "Energy Models for Signal Processing and Matrix Factorization",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:escholarship.org/ark:/13030/qt2tq857mm",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://escholarship.org/uc/item/2tq857mm",
+        "pdf_url": "https://escholarship.org/uc/item/2tq857mm",
+        "source": {
+          "id": "https://openalex.org/S4306400115",
+          "display_name": "eScholarship (California Digital Library)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2801248553",
+          "host_organization_name": "California Digital Library",
+          "host_organization_lineage": [
+            "https://openalex.org/I2801248553"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "etd"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/uc/item/2tq857mm",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3190590697",
+      "doi": "https://doi.org/10.1002/rcm.9181",
+      "title": "A mathematical comparison of non\u2010negative matrix factorization related methods with practical implications for the analysis of mass spectrometry imaging data",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1002/rcm.9181",
+        "doi": "https://doi.org/10.1002/rcm.9181",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/rcm.9181",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rcm.9181",
+        "source": {
+          "id": "https://openalex.org/S89689683",
+          "display_name": "Rapid Communications in Mass Spectrometry",
+          "issn_l": "0951-4198",
+          "issn": [
+            "0951-4198",
+            "1097-0231"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Rapid Communications in Mass Spectrometry",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/rcm.9181",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3173653226",
+      "doi": "https://doi.org/10.1609/aaai.v35i5.16541",
+      "title": "Hierarchical Negative Binomial Factorization for Recommender Systems on Implicit Feedback",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1609/aaai.v35i5.16541",
+        "doi": "https://doi.org/10.1609/aaai.v35i5.16541",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1609/aaai.v35i5.16541",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210191458",
+          "display_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "issn_l": "2159-5399",
+          "issn": [
+            "2159-5399",
+            "2374-3468"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "jufo-2",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320058",
+          "host_organization_name": "Association for the Advancement of Artificial Intelligence",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320058"
+          ],
+          "host_organization_lineage_names": [
+            "Association for the Advancement of Artificial Intelligence"
+          ],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.1609/aaai.v35i5.16541",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3171661673",
+      "doi": "https://doi.org/10.48550/arxiv.2107.02757",
+      "title": "Sawtooth Factorial Topic Embeddings Guided Gamma Belief Network",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2107.02757",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2107.02757",
+        "pdf_url": "https://arxiv.org/pdf/2107.02757",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2107.02757",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2735629975",
+      "doi": "https://doi.org/10.1109/ijcnn.2017.7965865",
+      "title": "Probabilistic matrix factorization from quantized measurements",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1109/ijcnn.2017.7965865",
+        "doi": "https://doi.org/10.1109/ijcnn.2017.7965865",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/ijcnn.2017.7965865",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4363607707",
+          "display_name": "International Joint Conference on Neural Networks (IJCNN)",
+          "issn_l": "2161-4407",
+          "issn": [
+            "2161-4407"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "jufo-1",
+            "norway-1"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "2017 International Joint Conference on Neural Networks (IJCNN)",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://lirias.kuleuven.be/retrieve/5f3ba428-8112-4a46-9bcb-d6e7a2684285",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2736874493",
+      "doi": "https://doi.org/10.1038/s41467-017-00156-9",
+      "title": "Inference of neuronal functional circuitry with spike-triggered non-negative matrix factorization",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-017-00156-9",
+        "doi": "https://doi.org/10.1038/s41467-017-00156-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-017-00156-9",
+        "pdf_url": "https://www.nature.com/articles/s41467-017-00156-9.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41467-017-00156-9.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3160425084",
+      "doi": "https://doi.org/10.1109/jstars.2021.3081984",
+      "title": "A Modified Huber Nonnegative Matrix Factorization Algorithm for Hyperspectral Unmixing",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1109/jstars.2021.3081984",
+        "doi": "https://doi.org/10.1109/jstars.2021.3081984",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1109/jstars.2021.3081984",
+        "pdf_url": "https://ieeexplore.ieee.org/ielx7/4609443/9314330/09435989.pdf",
+        "source": {
+          "id": "https://openalex.org/S117727964",
+          "display_name": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+          "issn_l": "1939-1404",
+          "issn": [
+            "1939-1404",
+            "2151-1535"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/4609443/9314330/09435989.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2950716594",
+      "doi": "https://doi.org/10.48550/arxiv.1111.6085",
+      "title": "Automatic Relevance Determination in Nonnegative Matrix Factorization with the \u03b2-Divergence",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1111.6085",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1111.6085",
+        "pdf_url": "https://arxiv.org/pdf/1111.6085",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1111.6085",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2973190954",
+      "doi": "https://doi.org/10.1109/access.2019.2940598",
+      "title": "Cauchy Matrix Factorization for Tag-Based Social Image Retrieval",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1109/access.2019.2940598",
+        "doi": "https://doi.org/10.1109/access.2019.2940598",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1109/access.2019.2940598",
+        "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8600701/08831368.pdf",
+        "source": {
+          "id": "https://openalex.org/S2485537415",
+          "display_name": "IEEE Access",
+          "issn_l": "2169-3536",
+          "issn": [
+            "2169-3536"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Access",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8600701/08831368.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4288088760",
+      "doi": "https://doi.org/10.48550/arxiv.1910.12263",
+      "title": "Prior Specification for Bayesian Matrix Factorization via Prior Predictive Matching",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1910.12263",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1910.12263",
+        "pdf_url": "https://arxiv.org/pdf/1910.12263",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1910.12263",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2753536369",
+      "doi": "https://doi.org/10.1186/s40168-017-0323-1",
+      "title": "Learning Microbial Community Structures with Supervised and Unsupervised Non-negative Matrix Factorization",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1186/s40168-017-0323-1",
+        "doi": "https://doi.org/10.1186/s40168-017-0323-1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s40168-017-0323-1",
+        "pdf_url": "https://microbiomejournal.biomedcentral.com/track/pdf/10.1186/s40168-017-0323-1",
+        "source": {
+          "id": "https://openalex.org/S3004984423",
+          "display_name": "Microbiome",
+          "issn_l": "2049-2618",
+          "issn": [
+            "2049-2618"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Microbiome",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://microbiomejournal.biomedcentral.com/track/pdf/10.1186/s40168-017-0323-1",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4410858998",
+      "doi": "https://doi.org/10.1016/j.patcog.2025.111732",
+      "title": "Instance-wise distributionally robust nonnegative matrix factorization",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1016/j.patcog.2025.111732",
+        "doi": "https://doi.org/10.1016/j.patcog.2025.111732",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1016/j.patcog.2025.111732",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S414566",
+          "display_name": "Pattern Recognition",
+          "issn_l": "0031-3203",
+          "issn": [
+            "0031-3203",
+            "1873-5142"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Pattern Recognition",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://orbi.umons.ac.be/bitstream/20.500.12907/52534/1/90%20Instance-wise%20distributionally%20robust%20nonnegative%20matrix%20factorization.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1714642268",
+      "doi": "https://doi.org/10.5072/zenodo.24736",
+      "title": "Optimal weight learning for Coupled Tensor Factorization with mixed divergences",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "pmh:oai:pure.atira.dk:openaire_cris_publications/e49688e6-d9b0-4ecb-96c6-0b514aa806e2",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://researchprofiles.ku.dk/da/publications/e49688e6-d9b0-4ecb-96c6-0b514aa806e2",
+        "pdf_url": "http://www.eurasip.org/Proceedings/Eusipco/Eusipco2013/papers/1569746439.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401983",
+          "display_name": "Research at the University of Copenhagen (University of Copenhagen)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I124055696",
+          "host_organization_name": "University of Copenhagen",
+          "host_organization_lineage": [
+            "https://openalex.org/I124055696"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Simsekli , U , Ermis , B , Cemgil , T & Evrim , A A 2013 , ' Optimal weight learning for coupled tensor factorization with mixed divergences ' , Paper presented at EUSIPCO 2013 , Turkey , 01/06/2013 . < http://www.eurasip.org/Proceedings/Eusipco/Eusipco2013/papers/1569746439.pdf >",
+        "raw_type": "conferenceObject"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.eurasip.org/Proceedings/Eusipco/Eusipco2013/papers/1569746439.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4281478370",
+      "doi": "https://doi.org/10.48550/arxiv.2205.11025",
+      "title": "Flexible and Hierarchical Prior for Bayesian Nonnegative Matrix Factorization",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2205.11025",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2205.11025",
+        "pdf_url": "https://arxiv.org/pdf/2205.11025",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2205.11025",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404942684",
+      "doi": "https://doi.org/10.1093/biomet/asae067",
+      "title": "Partially factorized variational inference for high-dimensional mixed models",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/biomet/asae067",
+        "doi": "https://doi.org/10.1093/biomet/asae067",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/biomet/asae067",
+        "pdf_url": "https://academic.oup.com/biomet/advance-article-pdf/doi/10.1093/biomet/asae067/60923732/asae067.pdf",
+        "source": {
+          "id": "https://openalex.org/S172180718",
+          "display_name": "Biometrika",
+          "issn_l": "0006-3444",
+          "issn": [
+            "0006-3444",
+            "1464-3510"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Biometrika",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/biomet/advance-article-pdf/doi/10.1093/biomet/asae067/60923732/asae067.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2150070703",
+      "doi": "https://doi.org/10.3390/e12061532",
+      "title": "Families of Alpha- Beta- and Gamma- Divergences: Flexible and Robust Measures of Similarities",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.3390/e12061532",
+        "doi": "https://doi.org/10.3390/e12061532",
+        "is_oa": true,
+        "landing_page_url": "https://dx.doi.org/10.3390/e12061532",
+        "pdf_url": "https://www.mdpi.com/1099-4300/12/6/1532/pdf?version=1424784739",
+        "source": {
+          "id": "https://openalex.org/S195231649",
+          "display_name": "Entropy",
+          "issn_l": "1099-4300",
+          "issn": [
+            "1099-4300"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Entropy",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1099-4300/12/6/1532/pdf?version=1424784739",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2551802732",
+      "doi": "https://doi.org/10.48550/arxiv.1611.05572",
+      "title": "On the central role of the scale invariant Poisson processes on (0,infty)",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1611.05572",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1611.05572",
+        "pdf_url": "https://arxiv.org/pdf/1611.05572",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1611.05572",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2554348171",
+      "doi": "https://doi.org/10.48550/arxiv.1611.07460",
+      "title": "Poisson Random Fields for Dynamic Feature Models",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1611.07460",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1611.07460",
+        "pdf_url": "https://arxiv.org/pdf/1611.07460",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1611.07460",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7203463219",
+      "doi": "https://doi.org/10.1109/access.2026.3724122",
+      "title": "A Survey of Typical-Cell Volume Distributions in Poisson\u2013Voronoi and Poisson\u2013Delaunay Tessellations: Analytical Theory, High-Dimensional Limits, and Wireless Applications",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1109/access.2026.3724122",
+        "doi": "https://doi.org/10.1109/access.2026.3724122",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1109/access.2026.3724122",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2485537415",
+          "display_name": "IEEE Access",
+          "issn_l": "2169-3536",
+          "issn": [
+            "2169-3536"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319808",
+          "host_organization_name": "Institute of Electrical and Electronics Engineers",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Access",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1109/access.2026.3724122",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4292951310",
+      "doi": "https://doi.org/10.48550/arxiv.2208.10053",
+      "title": "Robust Bayesian Nonnegative Matrix Factorization with Implicit Regularizers",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2208.10053",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2208.10053",
+        "pdf_url": "https://arxiv.org/pdf/2208.10053",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2208.10053",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3152975900",
+      "doi": "https://doi.org/10.3847/1538-4365/ac5cb7",
+      "title": "A Compound Poisson Generator Approach to Point-source Inference in Astrophysics",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.3847/1538-4365/ac5cb7",
+        "doi": "https://doi.org/10.3847/1538-4365/ac5cb7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3847/1538-4365/ac5cb7",
+        "pdf_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ac5cb7/pdf",
+        "source": {
+          "id": "https://openalex.org/S183686791",
+          "display_name": "The Astrophysical Journal Supplement Series",
+          "issn_l": "0067-0049",
+          "issn": [
+            "0067-0049",
+            "1538-4365"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311669",
+          "host_organization_name": "Institute of Physics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311669"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Physics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Astrophysical Journal Supplement Series",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ac5cb7/pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3160887931",
+      "doi": "https://doi.org/10.3390/jne2020018",
+      "title": "Neural Network Approaches for Mobile Spectroscopic Gamma-Ray Source Detection",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.3390/jne2020018",
+        "doi": "https://doi.org/10.3390/jne2020018",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/jne2020018",
+        "pdf_url": "https://www.mdpi.com/2673-4362/2/2/18/pdf?version=1621243477",
+        "source": {
+          "id": "https://openalex.org/S4210181358",
+          "display_name": "Journal of Nuclear Engineering",
+          "issn_l": "2673-4362",
+          "issn": [
+            "2673-4362"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Nuclear Engineering",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2673-4362/2/2/18/pdf?version=1621243477",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2033116442",
+      "doi": "https://doi.org/10.1007/s10994-014-5470-z",
+      "title": "A unified statistical approach to non-negative matrix factorization and probabilistic latent semantic indexing",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1007/s10994-014-5470-z",
+        "doi": "https://doi.org/10.1007/s10994-014-5470-z",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s10994-014-5470-z",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10994-014-5470-z.pdf",
+        "source": {
+          "id": "https://openalex.org/S62148650",
+          "display_name": "Machine Learning",
+          "issn_l": "0885-6125",
+          "issn": [
+            "0885-6125",
+            "1573-0565"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Machine Learning",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10994-014-5470-z.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2787529084",
+      "doi": "https://doi.org/10.1080/01621459.2019.1585358",
+      "title": "A Hierarchical Model of Nonhomogeneous Poisson Processes for Twitter Retweets",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1080/01621459.2019.1585358",
+        "doi": "https://doi.org/10.1080/01621459.2019.1585358",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1080/01621459.2019.1585358",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4394736638",
+          "display_name": "Journal of the American Statistical Association",
+          "issn_l": "0162-1459",
+          "issn": [
+            "0162-1459",
+            "1537-274X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of the American Statistical Association",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1802.01987",
+        "any_repository_has_fulltext": true
+      }
+    }
+  ],
+  "group_by": []
+}

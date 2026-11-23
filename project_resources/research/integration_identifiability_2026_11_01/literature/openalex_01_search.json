@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-01T05:51:12.047806+00:00",
+  "service": "OpenAlex",
+  "endpoint": "https://api.openalex.org/works",
+  "query": "statistical matching identification conditional independence",
+  "params": {
+    "search": "statistical matching identification conditional independence",
+    "per_page": 100,
+    "select": "id,doi,title,publication_year,primary_location",
+    "sort": "relevance_score:desc"
+  },
+  "page": 1,
+  "cursor": null,
+  "authentication": "unauthenticated",
+  "request_error": "ConnectionError",
+  "error_detail": "HTTPSConnectionPool(host='api.openalex.org', port=443): Max retries exceeded with url: /works?search=statistical+matching+identification+conditional+independence&per_page=100&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location&sort=relevance_score%3Adesc (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7551c393f610>: Failed to resolve 'api.openalex.org' ([Errno -2] Name or service not known)\"))"
+}

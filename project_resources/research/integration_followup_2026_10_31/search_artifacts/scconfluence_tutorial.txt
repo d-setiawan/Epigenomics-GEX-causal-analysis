@@ -1,0 +1,124 @@
+Integrating scRNA and scATAC in PBMCs - scConfluence Contents Menu Expand Light mode Dark mode Auto light/dark mode Hide navigation sidebar Hide table of contents sidebar Toggle site navigation sidebar scConfluence Toggle Light / Dark / Auto color theme Toggle table of contents sidebar scConfluence Tutorials Integrating scRNA and scATAC in PBMCs Gene imputation with scRNA and smFISH in mouse cortex Integrating scRNA and protein in bone marrow cells Frequently Asked Questions API ScConfluence model Unimodal autoencoder Abstract model class dataset_utils Neural network utils distributions utils Back to top Edit this page Toggle Light / Dark / Auto color theme Toggle table of contents sidebar Integrating scRNA and scATAC in PBMCs # Given two single-cell datasets profiled with different modalities scConfluence can map each in low-dimensional latent space shared by both modalities where distances between cell embeddings depends only on their biological similarity. We show here an example of integration on a PBMC dataset where gene expression and chromatin accessibility were measured. Prerequisites # scConfluence is well integrated within the scverse framework. Therefore the input data is loaded from a MuData object and preprocessed using scanpy and muon following common practices in the literature such as the one described in this book . For the purpose of this tutorial, we assume that the user is familiar with the basics of single-cell data analysis and the scverse framework. Imports # [1]: import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+from scipy.spatial.distance import cdist
+import muon as mu
+import numpy as np
+import anndata as ad
+import scanpy as sc
+
+import scconfluence /pasteur/appa/homes/jsamaran/venvs/clean_conf/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm Read data # You can download unpaired multimodal demo dataset for this tutorial from https://figshare.com/s/b0840d90e42e37fa165f . [2]: mdata = mu.read_h5mu("RNA_ATAC_PBMC_demo.h5mu.gz")
+mdata [2]: MuData object with n_obs × n_vars = 8000 × 145834
+  obs:      'celltype', 'modality'
+  2 modalities
+    rna:    4000 x 15417
+    atac:   4000 x 130417
+      uns:  'gene_activities_names'
+      obsm: 'gene_activities' Perform basic quality control # We can use scanpy functions to filter out cells or features with low quality measurements, more advanced quality control could be appropriate depending on the technologies used to obtain the data. [3]: sc.pp.filter_cells(mdata["rna"], min_genes=100)
+sc.pp.filter_genes(mdata["rna"], min_cells=20)
+
+sc.pp.filter_cells(mdata["atac"], min_genes=100)
+# we're actually filtering peaks here
+sc.pp.filter_genes(mdata["atac"], min_cells=20)
+mdata.update()
+mdata [3]: MuData object with n_obs × n_vars = 8000 × 142375
+  obs:      'celltype', 'modality'
+  var:      'n_cells'
+  2 modalities
+    rna:    4000 x 15145
+      obs:  'n_genes'
+      var:  'n_cells'
+    atac:   4000 x 127230
+      obs:  'n_genes'
+      var:  'n_cells'
+      uns:  'gene_activities_names'
+      obsm: 'gene_activities' Preprocess common features and obtain cross-modality distance matrix # Diagonal integration, i.e. single cell multimodal unpaired integration, is a very challenging task as it aims at aligning cells in which different features were measured. To guide the alignment, we need to leverage prior biological knowledge to obtain a set of common features across modalities which will serve as a bridge for the integration. For RNA-ATAC integration, those common features are derived from the computation of gene activities for the ATAC data, which can be performed using tools
+such as Signac . In this tutorial, we assume that the gene activities have been pre-computed and stored in the obsm attribute of the ATAC modality under the name gene_activities . We also expect that the genes corresponding to the columns of this matrix have been saved under gene_activities_names in the uns field of the ATAC modality. [4]: # Keep only genes present in both scRNA counts and scATAC gene activities
+cm_genes = list(set(mdata["rna"].var_names) & set(mdata["atac"].uns["gene_activities_names"]))
+cm_features_rna = mdata["rna"][:, cm_genes].copy()
+atac_genes = list(mdata["atac"].uns["gene_activities_names"])
+atac_genes_idx = [atac_genes.index(g) for g in cm_genes]
+cm_features_atac = ad.AnnData(mdata["atac"].obsm["gene_activities"][:, atac_genes_idx]) [5]: # Log-normalize scRNA counts
+sc.pp.normalize_total(cm_features_rna, target_sum=10000.)
+sc.pp.log1p(cm_features_rna)
+
+# Log-normalize scATAC gene activities
+sc.pp.normalize_total(cm_features_atac, target_sum=10000.)
+sc.pp.log1p(cm_features_atac)
+
+# Select highly variable genes for both modalities using the more reliable scRNA counts
+cm_hvg_genes = sc.pp.highly_variable_genes(cm_features_rna, n_top_genes=3000, subset=False, inplace=False)
+cm_features_rna = cm_features_rna[:, cm_hvg_genes["highly_variable"]].copy()
+cm_features_atac = cm_features_atac[:, cm_hvg_genes["highly_variable"]].copy()
+
+sc.pp.scale(cm_features_rna)
+sc.pp.scale(cm_features_atac) Once those common feature representations have been obtained, we can derive a distance matrix whose rows correspond to cells in the RNA modality and columns correspond to the cells in the ATAC modality which will be used by scConfluence. [6]: # Compute the pearson correlation distance between the common features of the RNA and ATAC cells
+mdata.uns["cross_rna+atac"] = cdist(cm_features_rna.X, cm_features_atac.X, metric="correlation")
+mdata.uns["cross_keys"] = ["cross_rna+atac"] Preprocess each modality # While the computation of the distance matrix only involved features that were present both in the RNA modality and the ATAC-inferred gene activities, our method leverages the original features of each modalities (i.e. genes for RNA and peaks for ATAC) to perform dimension reductions. Therefore, we need to preprocess each modality separately once again. [7]: mdata["rna"].layers["counts"] = mdata["rna"].X.copy()
+
+# Log-normalize the scRNA counts
+sc.pp.normalize_total(mdata["rna"], target_sum=10000.)
+sc.pp.log1p(mdata["rna"])
+
+# Since we use both raw and normalized gene counts in our autoencoder it makes sense to select highly variable genes based on both criteria
+raw_hvg = sc.pp.highly_variable_genes(mdata["rna"], layer="counts", n_top_genes=3000, subset=False, inplace=False,
+                                     flavor="seurat_v3")["highly_variable"].values
+norm_hvg = sc.pp.highly_variable_genes(mdata["rna"], n_top_genes=3000, subset=False,
+                                       inplace=False)["highly_variable"].values
+mdata.mod["rna"] = mdata["rna"][:, np.logical_or(raw_hvg, norm_hvg)].copy()
+
+# Perform PCA on the selected genes
+sc.tl.pca(mdata["rna"], n_comps=100, zero_center=None) Since there are many peaks, this preprocessing step can take up to 5 minutes but we do not encourage subsetting the scATAC data to a few thousand highly variable features as is often done with scRNA data. We observed that keeping most scATAC peaks is beneficial for the integration process. [8]: mu.atac.pp.tfidf(mdata["atac"], log_tf=True, log_idf=True)
+sc.tl.pca(mdata["atac"], n_comps=100, zero_center=None) Define autoencoders for each modality # We define one autoencoder per modality whose aim is to extract all the biological information present in the original features while accounting for batch effects (not present here since there’s only one batch) and projecting the cells to a shared latent space of low dimension (hence the dimension of the latent space n_latent should be the same for all autoencoders). Multiple options can be set to adapt the autoencoders to the specificity of the modalities measured, see the API’s documention for details about the arguments. [9]: import torch
+torch.manual_seed(1792)
+autoencoders = {"rna": scconfluence.unimodal.AutoEncoder(mdata["rna"],
+                                                         modality="rna",
+                                                         rep_in="X_pca",
+                                                         rep_out="counts",
+                                                         batch_key=None,
+                                                         n_hidden=64,
+                                                         n_latent=16,
+                                                         type_loss="zinb"),
+                "atac": scconfluence.unimodal.AutoEncoder(mdata["atac"],
+                                                          modality="atac",
+                                                          rep_in="X_pca",
+                                                          rep_out=None,
+                                                          batch_key=None,
+                                                          n_hidden=64,
+                                                          n_latent=16,
+                                                          type_loss="l2",
+                                                          reconstruction_weight=5.)} Create and train the model # The scConfluence model leverages the distance matrix stored in mdata to align the latent embeddings learned by autoencoders from each modality. We used here the default parameters, see the API’s documention or the FAQ for details on their meaning. While the maximum over of epochs is set to 1000, we use earlystopping to interrupt the training when the loss has converged
+on validation samples which generally happens long before the upper limit of 1000 epochs. With a GPU, this training is expected to take less than 20 minutes. [10]: %%time
+%%capture
+model = scconfluence.model.ScConfluence(mdata=mdata, unimodal_aes=autoencoders,
+                                        mass=0.5, reach=0.3, iot_loss_weight=0.01, sinkhorn_loss_weight=0.1)
+model.fit(save_path="demo_rna_atac", use_cuda=True, max_epochs=1000) GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA A100-SXM4-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name | Type       | Params
+------------------------------------
+0 | aes  | ModuleDict | 9.1 M
+------------------------------------
+9.1 M     Trainable params
+0         Non-trainable params
+9.1 M     Total params
+36.315    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers. CPU times: user 2min 24s, sys: 3min 46s, total: 6min 11s
+Wall time: 6min 15s Obtaining and visualizing latent embeddings of all cells # [11]: mdata.obsm["latent"] = model.get_latent(use_cuda=True).loc[mdata.obs_names] GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers. Predicting DataLoader 0: 100%|██████████████████| 16/16 [00:02<00:00,  5.89it/s] While conclusions should not be drawn from UMAP plots we use it here to visualize the results of the integration. [12]: sc.pp.neighbors(mdata, use_rep="latent", key_added="scConfluence")
+sc.tl.umap(mdata, neighbors_key="scConfluence")
+sc.pl.umap(mdata, color=["modality", "celltype"], size=50, alpha=0.7) /pasteur/appa/homes/jsamaran/venvs/clean_conf/lib/python3.10/site-packages/scanpy/plotting/_tools/scatterplots.py:394: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+  cax = scatter(
+/pasteur/appa/homes/jsamaran/venvs/clean_conf/lib/python3.10/site-packages/scanpy/plotting/_tools/scatterplots.py:394: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+  cax = scatter( Clustering the latent embeddings # Once the cells have been projected to the shared latent space, we can use any clustering algorithm to identify groups of cells with similar biological properties. Here we use the Louvain algorithm to cluster the cells. [13]: sc.tl.louvain(mdata, resolution=.5, neighbors_key='scConfluence', key_added='scConfluence_clusters')
+sc.pl.umap(mdata, color=['scConfluence_clusters'], size=50, alpha=0.7) /pasteur/appa/homes/jsamaran/venvs/clean_conf/lib/python3.10/site-packages/scanpy/plotting/_tools/scatterplots.py:394: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+  cax = scatter( Next Gene imputation with scRNA and smFISH in mouse cortex Previous Home Copyright © 2024, Jules Samaran, Gabriel Peyré, Laura Cantini Made with Sphinx and @pradyunsg 's Furo On this page Integrating scRNA and scATAC in PBMCs Prerequisites Imports Read data Perform basic quality control Preprocess common features and obtain cross-modality distance matrix Preprocess each modality Define autoencoders for each modality Create and train the model Obtaining and visualizing latent embeddings of all cells Clustering the latent embeddings

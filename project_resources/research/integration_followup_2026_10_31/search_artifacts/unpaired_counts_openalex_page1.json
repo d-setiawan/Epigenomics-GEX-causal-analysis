@@ -1,0 +1,4914 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 288,
+    "db_response_time_ms": 129,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (unpaired single cell multiomics integration count optimal transport) in the full text",
+      "x_new_oql": "get works with (unpaired single cell multiomics integration count optimal transport) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "unpaired single cell multiomics integration count optimal transport",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:unpaired single cell multiomics integration count optimal transport&per_page=100&page=1",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W7163319735",
+      "doi": "https://doi.org/10.1093/bioinformatics/btag353",
+      "display_name": "Network methods for diagonal integration of unpaired single-cell multiomics data: a review",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btag353",
+        "doi": "https://doi.org/10.1093/bioinformatics/btag353",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btag353",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4310530587",
+      "doi": "https://doi.org/10.1038/s41467-022-35094-8",
+      "display_name": "A unified computational framework for single-cell data integration with optimal transport",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-022-35094-8",
+        "doi": "https://doi.org/10.1038/s41467-022-35094-8",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-022-35094-8",
+        "pdf_url": "https://www.nature.com/articles/s41467-022-35094-8.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7128389775",
+      "doi": "https://doi.org/10.1093/gigascience/giag012",
+      "display_name": "An interpretable Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1093/gigascience/giag012",
+        "doi": "https://doi.org/10.1093/gigascience/giag012",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/gigascience/giag012",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2735135405",
+          "display_name": "GigaScience",
+          "issn_l": "2047-217X",
+          "issn": [
+            "2047-217X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311647",
+          "host_organization_name": "University of Oxford",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "GigaScience",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4210832122",
+      "doi": "https://doi.org/10.1093/bioinformatics/btac084",
+      "display_name": "Optimal transport improves cell\u2013cell similarity inference in single-cell omics data",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btac084",
+        "doi": "https://doi.org/10.1093/bioinformatics/btac084",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btac084",
+        "pdf_url": "https://academic.oup.com/bioinformatics/article-pdf/38/8/2169/43370259/btac084.pdf",
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4396572195",
+      "doi": "https://doi.org/10.1093/bioinformatics/btae300",
+      "display_name": "Scalable integration of multiomic single-cell data using generative adversarial networks",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btae300",
+        "doi": "https://doi.org/10.1093/bioinformatics/btae300",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btae300",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4378212544",
+      "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+      "display_name": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-023-01767-y",
+        "doi": "https://doi.org/10.1038/s41587-023-01767-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-023-01767-y",
+        "pdf_url": "https://www.nature.com/articles/s41587-023-01767-y.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4402272904",
+      "doi": "https://doi.org/10.1038/s41467-024-51382-x",
+      "display_name": "scConfluence: single-cell diagonal integration with regularized Inverse Optimal Transport on weakly connected features",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-024-51382-x",
+        "doi": "https://doi.org/10.1038/s41467-024-51382-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-024-51382-x",
+        "pdf_url": "https://www.nature.com/articles/s41467-024-51382-x.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7223102879",
+      "doi": "https://doi.org/10.64898/2026.10.15.759426",
+      "display_name": "Optimal transport reveals unresolved cells in single-cell multi-omics",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.10.15.759426",
+        "doi": "https://doi.org/10.64898/2026.10.15.759426",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.10.15.759426",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/10/20/2026.10.15.759426.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7154508970",
+      "doi": "https://doi.org/10.1186/s13059-026-04071-5",
+      "display_name": "Benchmarking component choices for unpaired single cell RNA and epigenomic integration",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1186/s13059-026-04071-5",
+        "doi": "https://doi.org/10.1186/s13059-026-04071-5",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13059-026-04071-5",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S81160022",
+          "display_name": "Genome biology",
+          "issn_l": "1465-6906",
+          "issn": [
+            "1465-6906",
+            "1465-6914",
+            "1474-7596",
+            "1474-760X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4388969005",
+      "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+      "display_name": "Paired single-cell multi-omics data integration with Mowgli",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-023-43019-2",
+        "doi": "https://doi.org/10.1038/s41467-023-43019-2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-023-43019-2",
+        "pdf_url": "https://www.nature.com/articles/s41467-023-43019-2.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385421874",
+      "doi": "https://doi.org/10.3390/cells12151970",
+      "display_name": "A Review of Single-Cell RNA-Seq Annotation, Integration, and Cell\u2013Cell Communication",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.3390/cells12151970",
+        "doi": "https://doi.org/10.3390/cells12151970",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/cells12151970",
+        "pdf_url": "https://www.mdpi.com/2073-4409/12/15/1970/pdf?version=1690707695",
+        "source": {
+          "id": "https://openalex.org/S2736626452",
+          "display_name": "Cells",
+          "issn_l": "2073-4409",
+          "issn": [
+            "2073-4409"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "medline",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cells",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4308834225",
+      "doi": "https://doi.org/10.1101/2022.11.09.515883",
+      "display_name": "Jointly aligning cells and genomic features of single-cell multi-omics data with co-optimal transport",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1101/2022.11.09.515883",
+        "doi": "https://doi.org/10.1101/2022.11.09.515883",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2022.11.09.515883",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2022/12/12/2022.11.09.515883.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4229366049",
+      "doi": "https://doi.org/10.1186/s13059-022-02679-x",
+      "display_name": "Bi-order multimodal integration of single-cell data",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1186/s13059-022-02679-x",
+        "doi": "https://doi.org/10.1186/s13059-022-02679-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13059-022-02679-x",
+        "pdf_url": "https://genomebiology.biomedcentral.com/track/pdf/10.1186/s13059-022-02679-x",
+        "source": {
+          "id": "https://openalex.org/S81160022",
+          "display_name": "Genome biology",
+          "issn_l": "1465-6906",
+          "issn": [
+            "1465-6906",
+            "1465-6914",
+            "1474-7596",
+            "1474-760X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4225278475",
+      "doi": "https://doi.org/10.1038/s41587-022-01284-4",
+      "display_name": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-022-01284-4",
+        "doi": "https://doi.org/10.1038/s41587-022-01284-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-022-01284-4",
+        "pdf_url": "https://www.nature.com/articles/s41587-022-01284-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416935895",
+      "doi": "https://doi.org/10.1093/bioinformatics/btaf639",
+      "display_name": "Guided co-clustering transfer across unpaired and paired single-cell multi-omics data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btaf639",
+        "doi": "https://doi.org/10.1093/bioinformatics/btaf639",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btaf639",
+        "pdf_url": "https://academic.oup.com/bioinformatics/article-pdf/41/12/btaf639/65667524/btaf639.pdf",
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4405228668",
+      "doi": "https://doi.org/10.34133/bmef.0084",
+      "display_name": "Spatially Resolved Multiomics: Data Analysis from Monoomics to Multiomics",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.34133/bmef.0084",
+        "doi": "https://doi.org/10.34133/bmef.0084",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.34133/bmef.0084",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210233487",
+          "display_name": "BME Frontiers",
+          "issn_l": "2765-8031",
+          "issn": [
+            "2765-8031"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "ki-jl-1",
+            "oarl"
+          ],
+          "host_organization": "https://openalex.org/P4310315823",
+          "host_organization_name": "American Association for the Advancement of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315823"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for the Advancement of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BME Frontiers",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7160134873",
+      "doi": "https://doi.org/10.64898/2026.04.28.721317",
+      "display_name": "CHAMPOLLION: Robust Multi-Omics Integration via Inverse Optimal Transport Using Paired Cells",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.04.28.721317",
+        "doi": "https://doi.org/10.64898/2026.04.28.721317",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.04.28.721317",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/04/30/2026.04.28.721317.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7204202591",
+      "doi": "https://doi.org/10.64898/2026.08.20.746112",
+      "display_name": "MultiFlow: coupled flow matching for predicting single-cell multiomic perturbation responses in unseen cellular contexts",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.08.20.746112",
+        "doi": "https://doi.org/10.64898/2026.08.20.746112",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.08.20.746112",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/08/25/2026.08.20.746112.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4391168615",
+      "doi": "https://doi.org/10.1038/s41587-023-02040-y",
+      "display_name": "Mosaic integration and knowledge transfer of single-cell multimodal data with MIDAS",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-023-02040-y",
+        "doi": "https://doi.org/10.1038/s41587-023-02040-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41587-023-02040-y",
+        "pdf_url": "https://www.nature.com/articles/s41587-023-02040-y.pdf",
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416955083",
+      "doi": "https://doi.org/10.1093/nar/gkaf1270",
+      "display_name": "CelLink: integrating single-cell multi-omics data with weak feature linkage and imbalanced cell populations",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1093/nar/gkaf1270",
+        "doi": "https://doi.org/10.1093/nar/gkaf1270",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nar/gkaf1270",
+        "pdf_url": "https://academic.oup.com/nar/article-pdf/53/22/gkaf1270/65728135/gkaf1270.pdf",
+        "source": {
+          "id": "https://openalex.org/S134668137",
+          "display_name": "Nucleic Acids Research",
+          "issn_l": "0305-1048",
+          "issn": [
+            "0305-1048",
+            "1362-4954",
+            "1362-4962"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nucleic Acids Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4377232678",
+      "doi": "https://doi.org/10.1101/2023.05.18.541381",
+      "display_name": "scTIE: data integration and inference of gene regulation using single-cell temporal multimodal data",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.05.18.541381",
+        "doi": "https://doi.org/10.1101/2023.05.18.541381",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.1101/2023.05.18.541381",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/05/22/2023.05.18.541381.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389774765",
+      "doi": "https://doi.org/10.1101/gr.277960.123",
+      "display_name": "Data integration and inference of gene regulation using single-cell temporal multimodal data with scTIE",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/gr.277960.123",
+        "doi": "https://doi.org/10.1101/gr.277960.123",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/gr.277960.123",
+        "pdf_url": "https://genome.cshlp.org/content/early/2023/12/15/gr.277960.123.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S43092948",
+          "display_name": "Genome Research",
+          "issn_l": "1088-9051",
+          "issn": [
+            "1088-9051",
+            "1549-5469"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310315909",
+          "host_organization_name": "Cold Spring Harbor Laboratory Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315909"
+          ],
+          "host_organization_lineage_names": [
+            "Cold Spring Harbor Laboratory Press"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4362521490",
+      "doi": "https://doi.org/10.1038/s41576-023-00586-w",
+      "display_name": "Best practices for single-cell analysis across modalities",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1038/s41576-023-00586-w",
+        "doi": "https://doi.org/10.1038/s41576-023-00586-w",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41576-023-00586-w",
+        "pdf_url": "https://www.nature.com/articles/s41576-023-00586-w.pdf",
+        "source": {
+          "id": "https://openalex.org/S8553189",
+          "display_name": "Nature Reviews Genetics",
+          "issn_l": "1471-0056",
+          "issn": [
+            "1471-0056",
+            "1471-0064"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Reviews Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7118171371",
+      "doi": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+      "display_name": "Accurate, scalable, and unified single-cell atlas integration with scBIOT",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.21203/rs.3.rs-8310482/v1",
+        "doi": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.21203/rs.3.rs-8310482/v1",
+        "pdf_url": "https://www.researchsquare.com/article/rs-8310482/latest.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306525896",
+          "display_name": "Research Square",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Research Square",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4392166966",
+      "doi": "https://doi.org/10.3389/fmicb.2024.1268813",
+      "display_name": "Multiomics integration for the function of bacterial outer membrane vesicles in the larval settlement of marine sponges",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.3389/fmicb.2024.1268813",
+        "doi": "https://doi.org/10.3389/fmicb.2024.1268813",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fmicb.2024.1268813",
+        "pdf_url": "https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2024.1268813/pdf",
+        "source": {
+          "id": "https://openalex.org/S2484704948",
+          "display_name": "Frontiers in Microbiology",
+          "issn_l": "1664-302X",
+          "issn": [
+            "1664-302X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Microbiology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4361190647",
+      "doi": "https://doi.org/10.1093/bioinformatics/btad162",
+      "display_name": "Con-AAE: contrastive cycle adversarial autoencoders for single-cell multi-omics alignment and integration",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1093/bioinformatics/btad162",
+        "doi": "https://doi.org/10.1093/bioinformatics/btad162",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bioinformatics/btad162",
+        "pdf_url": "https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btad162/49677006/btad162.pdf",
+        "source": {
+          "id": "https://openalex.org/S52395412",
+          "display_name": "Bioinformatics",
+          "issn_l": "1367-4803",
+          "issn": [
+            "1367-4803",
+            "1367-4811"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-a",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4377942410",
+      "doi": "https://doi.org/10.3389/fmolb.2023.1184748",
+      "display_name": "Unsupervised neural network for single cell Multi-omics INTegration (UMINT): an application to health and disease",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.3389/fmolb.2023.1184748",
+        "doi": "https://doi.org/10.3389/fmolb.2023.1184748",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fmolb.2023.1184748",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fmolb.2023.1184748/pdf",
+        "source": {
+          "id": "https://openalex.org/S2595797843",
+          "display_name": "Frontiers in Molecular Biosciences",
+          "issn_l": "2296-889X",
+          "issn": [
+            "2296-889X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Molecular Biosciences",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4406715779",
+      "doi": "https://doi.org/10.1038/s41586-024-08453-2",
+      "display_name": "Mapping cells through time and space with moscot",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41586-024-08453-2",
+        "doi": "https://doi.org/10.1038/s41586-024-08453-2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41586-024-08453-2",
+        "pdf_url": "https://www.nature.com/articles/s41586-024-08453-2.pdf",
+        "source": {
+          "id": "https://openalex.org/S137773608",
+          "display_name": "Nature",
+          "issn_l": "0028-0836",
+          "issn": [
+            "0028-0836",
+            "1476-4687"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "erih-plus",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7160239963",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1014231",
+      "display_name": "Single-cell data integration across weakly linked modalities",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pcbi.1014231",
+        "doi": "https://doi.org/10.1371/journal.pcbi.1014231",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pcbi.1014231",
+        "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014231&type=printable",
+        "source": {
+          "id": "https://openalex.org/S86033158",
+          "display_name": "PLoS Computational Biology",
+          "issn_l": "1553-734X",
+          "issn": [
+            "1553-734X",
+            "1553-7358"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Computational Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4395676074",
+      "doi": "https://doi.org/10.1093/lifemedi/lnae015",
+      "display_name": "Integration of single-cell transcriptome and chromatin accessibility and its application on tumor investigation",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/lifemedi/lnae015",
+        "doi": "https://doi.org/10.1093/lifemedi/lnae015",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/lifemedi/lnae015",
+        "pdf_url": "https://academic.oup.com/lifemedi/advance-article-pdf/doi/10.1093/lifemedi/lnae015/57339407/lnae015.pdf",
+        "source": {
+          "id": "https://openalex.org/S4387281028",
+          "display_name": "Life Medicine",
+          "issn_l": "2755-1733",
+          "issn": [
+            "2755-1733"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Life Medicine",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4406859571",
+      "doi": "https://doi.org/10.1101/2025.01.24.634799",
+      "display_name": "ECLARE: multi-teacher contrastive learning via ensemble distillation for diagonal integration of single-cell multi-omic data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.01.24.634799",
+        "doi": "https://doi.org/10.1101/2025.01.24.634799",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.01.24.634799",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/01/27/2025.01.24.634799.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4409349227",
+      "doi": "https://doi.org/10.1093/bib/bbaf157",
+      "display_name": "FactVAE: a factorized variational autoencoder for single-cell multi-omics data integration analysis",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbaf157",
+        "doi": "https://doi.org/10.1093/bib/bbaf157",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbaf157",
+        "pdf_url": "https://academic.oup.com/bib/article-pdf/26/2/bbaf157/62909356/bbaf157.pdf",
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4410972974",
+      "doi": "https://doi.org/10.1111/acel.70111",
+      "display_name": "A Comprehensive Multiomics Signature of Doxorubicin\u2010Induced Cellular Senescence in the Postmenopausal Human Ovary",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1111/acel.70111",
+        "doi": "https://doi.org/10.1111/acel.70111",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1111/acel.70111",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/acel.70111",
+        "source": {
+          "id": "https://openalex.org/S174672550",
+          "display_name": "Aging Cell",
+          "issn_l": "1474-9718",
+          "issn": [
+            "1474-9718",
+            "1474-9726",
+            "1474-9728"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Aging Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7151346912",
+      "doi": "https://doi.org/10.1002/mco2.70713",
+      "display_name": "Single\u2010Cell and Spatial Omics: Methods and Applications",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1002/mco2.70713",
+        "doi": "https://doi.org/10.1002/mco2.70713",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/mco2.70713",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210236862",
+          "display_name": "MedComm",
+          "issn_l": "2688-2663",
+          "issn": [
+            "2688-2663"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "poland-20",
+            "russia-white-list-2"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "MedComm",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4220823167",
+      "doi": "https://doi.org/10.1158/2159-8290.cd-21-0980",
+      "display_name": "Integrated Multiomic Profiling Identifies the Epigenetic Regulator PRC2 as a Therapeutic Target to Counteract Leukemia Immune Escape and Relapse",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1158/2159-8290.cd-21-0980",
+        "doi": "https://doi.org/10.1158/2159-8290.cd-21-0980",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1158/2159-8290.cd-21-0980",
+        "pdf_url": "https://aacrjournals.org/cancerdiscovery/article-pdf/12/6/1449/3153181/1449.pdf",
+        "source": {
+          "id": "https://openalex.org/S2486275289",
+          "display_name": "Cancer Discovery",
+          "issn_l": "2159-8274",
+          "issn": [
+            "2159-8274",
+            "2159-8290"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320273",
+          "host_organization_name": "American Association for Cancer Research",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320273"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for Cancer Research"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cancer Discovery",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4200005198",
+      "doi": "https://doi.org/10.1101/2021.12.12.472268",
+      "display_name": "Contrastive Cycle Adversarial Autoencoders for Single-cell Multi-omics Alignment and Integration",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1101/2021.12.12.472268",
+        "doi": "https://doi.org/10.1101/2021.12.12.472268",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2021.12.12.472268",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2022/04/04/2021.12.12.472268.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417428122",
+      "doi": "https://doi.org/10.69622/30515915.v1",
+      "display_name": "Efficient integration of human skin single-cell RNA sequencing data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.69622/30515915.v1",
+        "doi": "https://doi.org/10.69622/30515915.v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.69622/30515915.v1",
+        "pdf_url": null,
+        "source": null,
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Karolinska Institutet",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4417428414",
+      "doi": "https://doi.org/10.69622/30515915",
+      "display_name": "Efficient integration of human skin single-cell RNA sequencing data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.69622/30515915",
+        "doi": "https://doi.org/10.69622/30515915",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.69622/30515915",
+        "pdf_url": "https://openarchive.ki.se/articles/thesis/Efficient_integration_of_human_skin_single-cell_RNA_sequencing_data/30515915/1/files/60449705.pdf",
+        "source": null,
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Karolinska Institutet",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387358535",
+      "doi": "https://doi.org/10.1101/2023.10.03.560734",
+      "display_name": "CellPLM: Pre-training of Cell Language Model Beyond Single Cells",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.10.03.560734",
+        "doi": "https://doi.org/10.1101/2023.10.03.560734",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2023.10.03.560734",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/10/05/2023.10.03.560734.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7214149873",
+      "doi": "https://doi.org/10.21203/rs.3.rs-11143489/v1",
+      "display_name": "Multi-Layer Single-Cell Integration with Deep Embedded Clustering Reveals Metabolic Heterogeneity in Peripheral Blood Mononuclear Cells",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.21203/rs.3.rs-11143489/v1",
+        "doi": "https://doi.org/10.21203/rs.3.rs-11143489/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.21203/rs.3.rs-11143489/v1",
+        "pdf_url": "https://www.researchsquare.com/article/rs-11143489/latest.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306525896",
+          "display_name": "Research Square",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Research Square",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7211926463",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1014773",
+      "display_name": "scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pcbi.1014773",
+        "doi": "https://doi.org/10.1371/journal.pcbi.1014773",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pcbi.1014773",
+        "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014773&type=printable",
+        "source": {
+          "id": "https://openalex.org/S86033158",
+          "display_name": "PLoS Computational Biology",
+          "issn_l": "1553-734X",
+          "issn": [
+            "1553-734X",
+            "1553-7358"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Computational Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4376561104",
+      "doi": "https://doi.org/10.1101/2023.05.11.540374",
+      "display_name": "Mapping cells through time and space with moscot",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.05.11.540374",
+        "doi": "https://doi.org/10.1101/2023.05.11.540374",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2023.05.11.540374",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/05/12/2023.05.11.540374.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416727673",
+      "doi": "https://doi.org/10.1038/s41598-025-29070-7",
+      "display_name": "Multiomics approach identifies SERPINB1 as candidate biomarker for spinocerebellar ataxia type 2",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s41598-025-29070-7",
+        "doi": "https://doi.org/10.1038/s41598-025-29070-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41598-025-29070-7",
+        "pdf_url": "https://www.nature.com/articles/s41598-025-29070-7_reference.pdf",
+        "source": {
+          "id": "https://openalex.org/S196734849",
+          "display_name": "Scientific Reports",
+          "issn_l": "2045-2322",
+          "issn": [
+            "2045-2322"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Scientific Reports",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3128617908",
+      "doi": "https://doi.org/10.1016/j.coisb.2021.04.006",
+      "display_name": "Machine learning for single-cell genomics data analysis",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1016/j.coisb.2021.04.006",
+        "doi": "https://doi.org/10.1016/j.coisb.2021.04.006",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.coisb.2021.04.006",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2452310021000172",
+        "source": {
+          "id": "https://openalex.org/S2764941636",
+          "display_name": "Current Opinion in Systems Biology",
+          "issn_l": "2452-3100",
+          "issn": [
+            "2452-3100"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-c",
+            "poland-20",
+            "russia-white-list-2"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Current Opinion in Systems Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389286555",
+      "doi": "https://doi.org/10.1101/2023.11.30.569500",
+      "display_name": "Multimodal generation of astrocyte by integrating single-cell multi-omics data via deep learning",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.11.30.569500",
+        "doi": "https://doi.org/10.1101/2023.11.30.569500",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2023.11.30.569500",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/12/02/2023.11.30.569500.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4305013698",
+      "doi": "https://doi.org/10.1038/s41587-022-01476-y",
+      "display_name": "Multi-omic single-cell velocity models epigenome\u2013transcriptome interactions and improves cell fate prediction",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41587-022-01476-y",
+        "doi": "https://doi.org/10.1038/s41587-022-01476-y",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1038/s41587-022-01476-y",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S106963461",
+          "display_name": "Nature Biotechnology",
+          "issn_l": "0733-222X",
+          "issn": [
+            "0733-222X",
+            "1087-0156",
+            "1546-1696",
+            "2331-3684"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Biotechnology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7163578808",
+      "doi": "https://doi.org/10.1038/s41467-026-73948-7",
+      "display_name": "Inference of spatial chromatin accessibility via integration of spatial transcriptomics and single-cell multi-omics data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-026-73948-7",
+        "doi": "https://doi.org/10.1038/s41467-026-73948-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-026-73948-7",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7117732451",
+      "doi": "https://doi.org/10.3390/cells15010067",
+      "display_name": "Multiomic Analyses Reveal Brainstem Metabolic Changes in a Mouse Model of Dravet Syndrome",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.3390/cells15010067",
+        "doi": "https://doi.org/10.3390/cells15010067",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/cells15010067",
+        "pdf_url": "https://www.mdpi.com/2073-4409/15/1/67/pdf?version=1767159800",
+        "source": {
+          "id": "https://openalex.org/S2736626452",
+          "display_name": "Cells",
+          "issn_l": "2073-4409",
+          "issn": [
+            "2073-4409"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "medline",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cells",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4394930851",
+      "doi": "https://doi.org/10.1101/2024.04.15.589472",
+      "display_name": "Nicheformer: A Foundation Model for Single-Cell and Spatial Omics",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1101/2024.04.15.589472",
+        "doi": "https://doi.org/10.1101/2024.04.15.589472",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2024.04.15.589472",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2024/04/17/2024.04.15.589472.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4409151516",
+      "doi": "https://doi.org/10.1038/s42003-025-07883-6",
+      "display_name": "A bovine pulmosphere model and multiomics reveal early host response signature in tuberculosis",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1038/s42003-025-07883-6",
+        "doi": "https://doi.org/10.1038/s42003-025-07883-6",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s42003-025-07883-6",
+        "pdf_url": "https://www.nature.com/articles/s42003-025-07883-6.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210225776",
+          "display_name": "Communications Biology",
+          "issn_l": "2399-3642",
+          "issn": [
+            "2399-3642"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "doyens",
+            "jufo-1",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-20",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Communications Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7220997266",
+      "doi": "https://doi.org/10.48550/arxiv.2610.09530",
+      "display_name": "Unpaired Canonical Correlation Analysis",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2610.09530",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2610.09530",
+        "pdf_url": "https://arxiv.org/pdf/2610.09530",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4394011009",
+      "doi": "https://doi.org/10.1038/s41467-024-47418-x",
+      "display_name": "scButterfly: a versatile single-cell cross-modality translation method via dual-aligned variational autoencoders",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-024-47418-x",
+        "doi": "https://doi.org/10.1038/s41467-024-47418-x",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-024-47418-x",
+        "pdf_url": "https://www.nature.com/articles/s41467-024-47418-x.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385876924",
+      "doi": "https://doi.org/10.7554/elife.89214",
+      "display_name": "Multiomics analyses reveal dynamic bioenergetic pathways and functional remodeling of the heart during intermittent fasting",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.7554/elife.89214",
+        "doi": "https://doi.org/10.7554/elife.89214",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7554/elife.89214",
+        "pdf_url": "https://elifesciences.org/reviewed-preprints/89214.pdf",
+        "source": {
+          "id": "https://openalex.org/S1336409049",
+          "display_name": "eLife",
+          "issn_l": "2050-084X",
+          "issn": [
+            "2050-084X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311710",
+          "host_organization_name": "eLife Sciences Publications Ltd",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311710"
+          ],
+          "host_organization_lineage_names": [
+            "eLife Sciences Publications Ltd"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "eLife",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4396653585",
+      "doi": "https://doi.org/10.48550/arxiv.2405.00838",
+      "display_name": "Cross-modality Matching and Prediction of Perturbation Responses with Labeled Gromov-Wasserstein Optimal Transport",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2405.00838",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2405.00838",
+        "pdf_url": "https://arxiv.org/pdf/2405.00838",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4395482102",
+      "doi": "https://doi.org/10.1016/j.csbj.2024.04.058",
+      "display_name": "A mini-review on perturbation modelling across single-cell omic modalities",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1016/j.csbj.2024.04.058",
+        "doi": "https://doi.org/10.1016/j.csbj.2024.04.058",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.csbj.2024.04.058",
+        "pdf_url": "http://www.csbj.org/article/S2001037024001417/pdf",
+        "source": {
+          "id": "https://openalex.org/S2764539591",
+          "display_name": "Computational and Structural Biotechnology Journal",
+          "issn_l": "2001-0370",
+          "issn": [
+            "2001-0370"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Computational and Structural Biotechnology Journal",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385877182",
+      "doi": "https://doi.org/10.7554/elife.89214.1",
+      "display_name": "Multiomics Analyses Reveal Dynamic Bioenergetic Pathways and Functional Remodeling of the Heart During Intermittent Fasting",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.7554/elife.89214.1",
+        "doi": "https://doi.org/10.7554/elife.89214.1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7554/elife.89214.1",
+        "pdf_url": "https://github.com/elifesciences/enhanced-preprints-data/raw/master/data/89214/v1/89214-v1.pdf",
+        "source": {
+          "id": "https://openalex.org/S1336409049",
+          "display_name": "eLife",
+          "issn_l": "2050-084X",
+          "issn": [
+            "2050-084X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311710",
+          "host_organization_name": "eLife Sciences Publications Ltd",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311710"
+          ],
+          "host_organization_lineage_names": [
+            "eLife Sciences Publications Ltd"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "eLife",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4213269074",
+      "doi": "https://doi.org/10.3390/genes13020380",
+      "display_name": "A Primer for Single-Cell Sequencing in Non-Model Organisms",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.3390/genes13020380",
+        "doi": "https://doi.org/10.3390/genes13020380",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/genes13020380",
+        "pdf_url": "https://www.mdpi.com/2073-4425/13/2/380/pdf?version=1645257795",
+        "source": {
+          "id": "https://openalex.org/S194631498",
+          "display_name": "Genes",
+          "issn_l": "2073-4425",
+          "issn": [
+            "2073-4425"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genes",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3207986298",
+      "doi": "https://doi.org/10.3390/nu13113913",
+      "display_name": "Inhibition of Soluble Epoxide Hydrolase Is Protective against the Multiomic Effects of a High Glycemic Diet on Brain Microvascular Inflammation and Cognitive Dysfunction",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.3390/nu13113913",
+        "doi": "https://doi.org/10.3390/nu13113913",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/nu13113913",
+        "pdf_url": "https://www.mdpi.com/2072-6643/13/11/3913/pdf?version=1637749161",
+        "source": {
+          "id": "https://openalex.org/S110785341",
+          "display_name": "Nutrients",
+          "issn_l": "2072-6643",
+          "issn": [
+            "2072-6643"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nutrients",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7213402011",
+      "doi": "https://doi.org/10.3350/cmh.2026.0820",
+      "display_name": "Toward AI Virtual Cells for Hepatology: Representation, Generation, Dynamics, and Intervention in Single-Cell Models",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3350/cmh.2026.0820",
+        "doi": "https://doi.org/10.3350/cmh.2026.0820",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3350/cmh.2026.0820",
+        "pdf_url": "https://www.e-cmh.org/upload/pdf/cmh-2026-0820.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764482685",
+          "display_name": "Clinical and Molecular Hepatology",
+          "issn_l": "2287-2728",
+          "issn": [
+            "2287-2728",
+            "2287-285X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "kci-registered",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-70",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310319460",
+          "host_organization_name": "Korean Association for the Study of the Liver",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319460"
+          ],
+          "host_organization_lineage_names": [
+            "Korean Association for the Study of the Liver"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Clinical and Molecular Hepatology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389490937",
+      "doi": "https://doi.org/10.1101/2023.12.07.570553",
+      "display_name": "A bovine pulmosphere model and multiomics analyses identify a signature of early host response to Mycobacterium tuberculosis infection",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.12.07.570553",
+        "doi": "https://doi.org/10.1101/2023.12.07.570553",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.1101/2023.12.07.570553",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/12/08/2023.12.07.570553.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4409212286",
+      "doi": "https://doi.org/10.1093/bib/bbaf136",
+      "display_name": "Deep learning in single-cell and spatial transcriptomics data analysis: advances and challenges from a data science perspective",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbaf136",
+        "doi": "https://doi.org/10.1093/bib/bbaf136",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbaf136",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399535090",
+      "doi": "https://doi.org/10.1038/s41467-023-42013-y",
+      "display_name": "Single-cell analysis identifies conserved features of immune dysfunction in simulated microgravity and spaceflight",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-023-42013-y",
+        "doi": "https://doi.org/10.1038/s41467-023-42013-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-023-42013-y",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4412545652",
+      "doi": "https://doi.org/10.3389/fimmu.2025.1634830",
+      "display_name": "Single-cell and multi-omics analysis reveals the role of stem cells in prognosis and immunotherapy of lung adenocarcinoma patients",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.3389/fimmu.2025.1634830",
+        "doi": "https://doi.org/10.3389/fimmu.2025.1634830",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fimmu.2025.1634830",
+        "pdf_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1634830/pdf",
+        "source": {
+          "id": "https://openalex.org/S2595292759",
+          "display_name": "Frontiers in Immunology",
+          "issn_l": "1664-3224",
+          "issn": [
+            "1664-3224"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Immunology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4414360413",
+      "doi": "https://doi.org/10.24963/ijcai.2025/1031",
+      "display_name": "CycSeq: Leveraging Cyclic Data Generation for Accurate Perturbation Prediction in Single-Cell RNA-Seq",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.24963/ijcai.2025/1031",
+        "doi": "https://doi.org/10.24963/ijcai.2025/1031",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.24963/ijcai.2025/1031",
+        "pdf_url": "https://www.ijcai.org/proceedings/2025/1031.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306419999",
+          "display_name": "International Joint Conference on Artificial Intelligence",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+        "raw_type": "proceedings-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7172301572",
+      "doi": "https://doi.org/10.3389/fimmu.2026.1883667",
+      "display_name": "Integrative multi-omics identifies PANX2 as a ferroptosis suppressor and potential therapeutic target in clear cell renal cell carcinoma",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3389/fimmu.2026.1883667",
+        "doi": "https://doi.org/10.3389/fimmu.2026.1883667",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fimmu.2026.1883667",
+        "pdf_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1883667/pdf",
+        "source": {
+          "id": "https://openalex.org/S2595292759",
+          "display_name": "Frontiers in Immunology",
+          "issn_l": "1664-3224",
+          "issn": [
+            "1664-3224"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Immunology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4380989965",
+      "doi": "https://doi.org/10.1016/j.isci.2023.107124",
+      "display_name": "SCING: Inference of robust, interpretable gene regulatory networks from single cell and spatial transcriptomics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1016/j.isci.2023.107124",
+        "doi": "https://doi.org/10.1016/j.isci.2023.107124",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.isci.2023.107124",
+        "pdf_url": "https://doi.org/10.1016/j.isci.2023.107124",
+        "source": {
+          "id": "https://openalex.org/S2898358376",
+          "display_name": "iScience",
+          "issn_l": "2589-0042",
+          "issn": [
+            "2589-0042"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-20",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315673",
+          "host_organization_name": "Cell Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315673",
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Cell Press",
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "iScience",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7125782364",
+      "doi": "https://doi.org/10.3389/fbinf.2025.1715821",
+      "display_name": "Applications of AI to single-cell and spatial transcriptomics: current state-of-the-art and challenges",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3389/fbinf.2025.1715821",
+        "doi": "https://doi.org/10.3389/fbinf.2025.1715821",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fbinf.2025.1715821",
+        "pdf_url": "https://public-pages-files-2025.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2025.1715821/pdf",
+        "source": {
+          "id": "https://openalex.org/S4210219554",
+          "display_name": "Frontiers in Bioinformatics",
+          "issn_l": "2673-7647",
+          "issn": [
+            "2673-7647"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385874060",
+      "doi": "https://doi.org/10.7554/elife.89214.1.sa1",
+      "display_name": "Reviewer #1 (Public Review): Multiomics Analyses Reveal Dynamic Bioenergetic Pathways and Functional Remodeling of the Heart During Intermittent Fasting",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.7554/elife.89214.1.sa1",
+        "doi": "https://doi.org/10.7554/elife.89214.1.sa1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7554/elife.89214.1.sa1",
+        "pdf_url": "https://elifesciences.org/reviewed-preprints/89214v1.pdf",
+        "source": {
+          "id": "https://openalex.org/S1336409049",
+          "display_name": "eLife",
+          "issn_l": "2050-084X",
+          "issn": [
+            "2050-084X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311710",
+          "host_organization_name": "eLife Sciences Publications Ltd",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311710"
+          ],
+          "host_organization_lineage_names": [
+            "eLife Sciences Publications Ltd"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": null,
+        "raw_type": "peer-review"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7222934521",
+      "doi": "https://doi.org/10.3389/fgene.2026.1982712",
+      "display_name": "AI and computational methods for reconstructing cell-state-specific gene regulatory networks from single-cell transcriptome and chromatin accessibility data in cancer: methods, applications, and perspectives",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3389/fgene.2026.1982712",
+        "doi": "https://doi.org/10.3389/fgene.2026.1982712",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fgene.2026.1982712",
+        "pdf_url": "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1982712/pdf",
+        "source": {
+          "id": "https://openalex.org/S2597340651",
+          "display_name": "Frontiers in Genetics",
+          "issn_l": "1664-8021",
+          "issn": [
+            "1664-8021"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Genetics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7222886916",
+      "doi": "https://doi.org/10.1093/bib/bbag562",
+      "display_name": "Virtual cells: progress and challenges from mechanistic modeling to data-driven integration",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbag562",
+        "doi": "https://doi.org/10.1093/bib/bbag562",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbag562",
+        "pdf_url": "https://academic.oup.com/bib/article-pdf/27/5/bbag562/72077466/bbag562.pdf",
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399546383",
+      "doi": "https://doi.org/10.1186/s13073-024-01350-3",
+      "display_name": "Machine learning integrative approaches to advance computational immunology",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1186/s13073-024-01350-3",
+        "doi": "https://doi.org/10.1186/s13073-024-01350-3",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13073-024-01350-3",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S149201819",
+          "display_name": "Genome Medicine",
+          "issn_l": "1756-994X",
+          "issn": [
+            "1756-994X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Medicine",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4404092297",
+      "doi": "https://doi.org/10.1093/bfgp/elae044",
+      "display_name": "Application of computational algorithms for single-cell RNA-seq and ATAC-seq in neurodegenerative diseases",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1093/bfgp/elae044",
+        "doi": "https://doi.org/10.1093/bfgp/elae044",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bfgp/elae044",
+        "pdf_url": "https://academic.oup.com/bfg/advance-article-pdf/doi/10.1093/bfgp/elae044/60431048/elae044.pdf",
+        "source": {
+          "id": "https://openalex.org/S159707322",
+          "display_name": "Briefings in Functional Genomics",
+          "issn_l": "2041-2647",
+          "issn": [
+            "2041-2647",
+            "2041-2649",
+            "2041-2657"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Functional Genomics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7125190273",
+      "doi": "https://doi.org/10.1042/bcj20253273",
+      "display_name": "An expanded role for single-cell chemical genomics profiling in drug discovery",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1042/bcj20253273",
+        "doi": "https://doi.org/10.1042/bcj20253273",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1042/bcj20253273",
+        "pdf_url": "https://portlandpress.com/biochemj/article-pdf/483/2/BCJ20253273/983665/bcj-2025-3273.pdf",
+        "source": {
+          "id": "https://openalex.org/S44425019",
+          "display_name": "Biochemical Journal",
+          "issn_l": "0264-6021",
+          "issn": [
+            "0264-6021",
+            "1470-8728"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311608",
+          "host_organization_name": "Portland Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311608",
+            "https://openalex.org/P4310311715"
+          ],
+          "host_organization_lineage_names": [
+            "Portland Press",
+            "Biochemical Society"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Biochemical Journal",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7167491936",
+      "doi": "https://doi.org/10.1016/j.nbd.2026.107521",
+      "display_name": "Single-cell multiome profiling reveals neuronal bias of modulatory role of MeCP2 phosphorylation",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1016/j.nbd.2026.107521",
+        "doi": "https://doi.org/10.1016/j.nbd.2026.107521",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.nbd.2026.107521",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S35878148",
+          "display_name": "Neurobiology of Disease",
+          "issn_l": "0969-9961",
+          "issn": [
+            "0969-9961",
+            "1095-953X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Neurobiology of Disease",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7123417188",
+      "doi": "https://doi.org/10.3390/ijms27020801",
+      "display_name": "AI-Based Prediction of Gene Expression in Single-Cell and Multiscale Genomics and Transcriptomics",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.3390/ijms27020801",
+        "doi": "https://doi.org/10.3390/ijms27020801",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/ijms27020801",
+        "pdf_url": "https://www.mdpi.com/1422-0067/27/2/801/pdf?version=1768385539",
+        "source": {
+          "id": "https://openalex.org/S10623703",
+          "display_name": "International Journal of Molecular Sciences",
+          "issn_l": "1422-0067",
+          "issn": [
+            "1422-0067",
+            "1661-6596"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "medline",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Molecular Sciences",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7132851603",
+      "doi": "https://doi.org/10.64898/2026.02.25.707961",
+      "display_name": "Achieving spatial multi-omics integration from unaligned serial sections with DIME",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.02.25.707961",
+        "doi": "https://doi.org/10.64898/2026.02.25.707961",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.02.25.707961",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/02/28/2026.02.25.707961.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4385429015",
+      "doi": "https://doi.org/10.1101/gr.277491.122",
+      "display_name": "A transcriptome-based single-cell biological age model and resource for tissue-specific aging measures",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/gr.277491.122",
+        "doi": "https://doi.org/10.1101/gr.277491.122",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/gr.277491.122",
+        "pdf_url": "https://genome.cshlp.org/content/early/2023/07/27/gr.277491.122.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S43092948",
+          "display_name": "Genome Research",
+          "issn_l": "1088-9051",
+          "issn": [
+            "1088-9051",
+            "1549-5469"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310315909",
+          "host_organization_name": "Cold Spring Harbor Laboratory Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315909"
+          ],
+          "host_organization_lineage_names": [
+            "Cold Spring Harbor Laboratory Press"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Genome Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4389134031",
+      "doi": "https://doi.org/10.1093/bib/bbad416",
+      "display_name": "An in-depth comparison of linear and non-linear joint embedding methods for bulk and single-cell multi-omics",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbad416",
+        "doi": "https://doi.org/10.1093/bib/bbad416",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbad416",
+        "pdf_url": "https://academic.oup.com/bib/article-pdf/25/1/bbad416/53896396/bbad416.pdf",
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7207791929",
+      "doi": "https://doi.org/10.1093/nargab/lqag104",
+      "display_name": "Scalable joint non-negative matrix factorization for paired single cell gene expression and chromatin accessibility data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1093/nargab/lqag104",
+        "doi": "https://doi.org/10.1093/nargab/lqag104",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/nargab/lqag104",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210241000",
+          "display_name": "NAR Genomics and Bioinformatics",
+          "issn_l": "2631-9268",
+          "issn": [
+            "2631-9268"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-20",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "NAR Genomics and Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7131628005",
+      "doi": "https://doi.org/10.64898/2026.02.24.707729",
+      "display_name": "BARTsc identifies key transcriptional regulators from single-cell omics data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.02.24.707729",
+        "doi": "https://doi.org/10.64898/2026.02.24.707729",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.02.24.707729",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/02/25/2026.02.24.707729.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7172384936",
+      "doi": "https://doi.org/10.1016/j.cmet.2026.07.023",
+      "display_name": "A single-cell multi-omic atlas of the human pancreas reveals potential for cellular plasticity across development, health, and disease",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1016/j.cmet.2026.07.023",
+        "doi": "https://doi.org/10.1016/j.cmet.2026.07.023",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.cmet.2026.07.023",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S177533077",
+          "display_name": "Cell Metabolism",
+          "issn_l": "1550-4131",
+          "issn": [
+            "1550-4131",
+            "1932-7420"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315673",
+          "host_organization_name": "Cell Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315673",
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Cell Press",
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cell Metabolism",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416286738",
+      "doi": "https://doi.org/10.1371/journal.pbio.3003477",
+      "display_name": "Cell2Spatial is a computational framework that maps single cells to spatial transcriptomic spots to reconstruct tissue architecture",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pbio.3003477",
+        "doi": "https://doi.org/10.1371/journal.pbio.3003477",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pbio.3003477",
+        "pdf_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3003477&type=printable",
+        "source": {
+          "id": "https://openalex.org/S154343897",
+          "display_name": "PLoS Biology",
+          "issn_l": "1544-9173",
+          "issn": [
+            "1544-9173",
+            "1545-7885"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7133844771",
+      "doi": "https://doi.org/10.48130/targetome-0026-0009",
+      "display_name": "AI-driven deciphering of cell niches with single-cell and spatial omics: a new perspective for traditional Chinese medicine research",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.48130/targetome-0026-0009",
+        "doi": "https://doi.org/10.48130/targetome-0026-0009",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.48130/targetome-0026-0009",
+        "pdf_url": "https://www.maxapress.com/data/article/opr/preview/pdf/targetome-0026-0009.pdf",
+        "source": {
+          "id": "https://openalex.org/S5407055479",
+          "display_name": "Targetome",
+          "issn_l": "3070-3808",
+          "issn": [
+            "3070-3808"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": false,
+          "listed_in": [
+            "doaj"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Targetome",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387006431",
+      "doi": "https://doi.org/10.1101/2023.09.25.559293",
+      "display_name": "Scalable joint non-negative matrix factorisation for paired single cell gene expression and chromatin accessibility data",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1101/2023.09.25.559293",
+        "doi": "https://doi.org/10.1101/2023.09.25.559293",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2023.09.25.559293",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2023/09/25/2023.09.25.559293.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7223688611",
+      "doi": "https://doi.org/10.1093/bib/bbag482",
+      "display_name": "scDRP: disentangled representation learning for predicting single-cell responses to perturbations and estimating individual treatment effects",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1093/bib/bbag482",
+        "doi": "https://doi.org/10.1093/bib/bbag482",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/bib/bbag482",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S91767247",
+          "display_name": "Briefings in Bioinformatics",
+          "issn_l": "1467-5463",
+          "issn": [
+            "1467-5463",
+            "1477-4054"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "ccf-b",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Briefings in Bioinformatics",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4416721860",
+      "doi": "https://doi.org/10.1101/2025.11.21.689783",
+      "display_name": "scDRP: Disentangled representation learning for predicting single-cell responses to perturbations and estimating individual treatment effects",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.11.21.689783",
+        "doi": "https://doi.org/10.1101/2025.11.21.689783",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.11.21.689783",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/11/24/2025.11.21.689783.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W3157187100",
+      "doi": "https://doi.org/10.3390/cancers13092146",
+      "display_name": "Integration of Metabolomics and Gene Expression Profiling Elucidates IL4I1 as Modulator of Ibrutinib Resistance in ABC-Diffuse Large B Cell Lymphoma",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.3390/cancers13092146",
+        "doi": "https://doi.org/10.3390/cancers13092146",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/cancers13092146",
+        "pdf_url": "https://www.mdpi.com/2072-6694/13/9/2146/pdf?version=1620900945",
+        "source": {
+          "id": "https://openalex.org/S168415115",
+          "display_name": "Cancers",
+          "issn_l": "2072-6694",
+          "issn": [
+            "2072-6694"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cancers",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7114244693",
+      "doi": null,
+      "display_name": "Incorporation of prior knowledge to improve gene regulatory network inference from single-cell transcriptomics data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "pmh:oai:aleph.bib-bvb.de:BVB01-035810114",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://mediatum.ub.tum.de/?id=1774290",
+        "pdf_url": "https://nbn-resolving.org/urn:nbn:de:bvb:91-diss-20250918-1774290-0-4",
+        "source": null,
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Hochschulschrift"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7220874140",
+      "doi": null,
+      "display_name": "Deep visual multi-omics profiling reveals mechanisms that underlie cancer cell differentiation and aggressiveness in clear cell renal cell carcinoma",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:real.mtak.hu:248331",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://real.mtak.hu/248331/1/Bolck_HA_2026.pdf",
+        "pdf_url": "https://real.mtak.hu/248331/1/Bolck_HA_2026.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400081",
+          "display_name": "Repository of the Academy's Library (Library of the Hungarian Academy of Sciences)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210140733",
+          "host_organization_name": "Library and Information Centre of the Hungarian Academy of Sciences",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210140733"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4407273357",
+      "doi": "https://doi.org/10.1101/2025.02.05.636621",
+      "display_name": "Primitive Steroidogenesis in Mast Cells: A Novel Regulatory Mechanism for Mast Cell Function",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.02.05.636621",
+        "doi": "https://doi.org/10.1101/2025.02.05.636621",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.02.05.636621",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/02/08/2025.02.05.636621.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387937410",
+      "doi": "https://doi.org/10.1186/s12915-023-01742-8",
+      "display_name": "Unveiling adcyap1 as a protective factor linking pain and nerve regeneration through single-cell RNA sequencing of rat dorsal root ganglion neurons",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1186/s12915-023-01742-8",
+        "doi": "https://doi.org/10.1186/s12915-023-01742-8",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s12915-023-01742-8",
+        "pdf_url": "https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-023-01742-8",
+        "source": {
+          "id": "https://openalex.org/S25903957",
+          "display_name": "BMC Biology",
+          "issn_l": "1741-7007",
+          "issn": [
+            "1741-7007"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Biology",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4396746727",
+      "doi": "https://doi.org/10.1016/j.cell.2024.04.015",
+      "display_name": "Circadian tumor infiltration and function of CD8+ T cells dictate immunotherapy efficacy",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1016/j.cell.2024.04.015",
+        "doi": "https://doi.org/10.1016/j.cell.2024.04.015",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.cell.2024.04.015",
+        "pdf_url": "http://www.cell.com/article/S0092867424004100/pdf",
+        "source": {
+          "id": "https://openalex.org/S110447773",
+          "display_name": "Cell",
+          "issn_l": "0092-8674",
+          "issn": [
+            "0092-8674",
+            "1097-4172"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315673",
+          "host_organization_name": "Cell Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315673",
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Cell Press",
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cell",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4403911213",
+      "doi": "https://doi.org/10.1158/2159-8290.cd-24-0187",
+      "display_name": "Copper Drives Remodeling of Metabolic State and Progression of Clear Cell Renal Cell Carcinoma",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1158/2159-8290.cd-24-0187",
+        "doi": "https://doi.org/10.1158/2159-8290.cd-24-0187",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1158/2159-8290.cd-24-0187",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2486275289",
+          "display_name": "Cancer Discovery",
+          "issn_l": "2159-8274",
+          "issn": [
+            "2159-8274",
+            "2159-8290"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320273",
+          "host_organization_name": "American Association for Cancer Research",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320273"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for Cancer Research"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cancer Discovery",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4319438932",
+      "doi": "https://doi.org/10.1186/s13046-023-02607-2",
+      "display_name": "GPX8 regulates clear cell renal cell carcinoma tumorigenesis through promoting lipogenesis by NNMT",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1186/s13046-023-02607-2",
+        "doi": "https://doi.org/10.1186/s13046-023-02607-2",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s13046-023-02607-2",
+        "pdf_url": "https://jeccr.biomedcentral.com/counter/pdf/10.1186/s13046-023-02607-2",
+        "source": {
+          "id": "https://openalex.org/S33781645",
+          "display_name": "Journal of Experimental & Clinical Cancer Research",
+          "issn_l": "0392-9078",
+          "issn": [
+            "0392-9078",
+            "1756-9966"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Experimental &amp; Clinical Cancer Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4405104482",
+      "doi": "https://doi.org/10.1158/2326-6066.cir-24-0189",
+      "display_name": "Natural Killer Cell\u2013Mediated Cytotoxicity Shapes the Clonal Evolution of B-cell Leukemia",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.1158/2326-6066.cir-24-0189",
+        "doi": "https://doi.org/10.1158/2326-6066.cir-24-0189",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1158/2326-6066.cir-24-0189",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2765010658",
+          "display_name": "Cancer Immunology Research",
+          "issn_l": "2326-6066",
+          "issn": [
+            "2326-6066",
+            "2326-6074"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320273",
+          "host_organization_name": "American Association for Cancer Research",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320273"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for Cancer Research"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cancer Immunology Research",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4411226928",
+      "doi": "https://doi.org/10.1101/2025.06.10.657924",
+      "display_name": "Biologically Informed Variational Inference Enables Interpretable Cell Phenotyping and Discovery",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.06.10.657924",
+        "doi": "https://doi.org/10.1101/2025.06.10.657924",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.06.10.657924",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2025/06/12/2025.06.10.657924.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7160283228",
+      "doi": "https://doi.org/10.64898/2026.04.30.721618",
+      "display_name": "Targeting ZC3H12C improves T cell persistence and antitumor function in adoptive T cell therapy",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.64898/2026.04.30.721618",
+        "doi": "https://doi.org/10.64898/2026.04.30.721618",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.64898/2026.04.30.721618",
+        "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/02/2026.04.30.721618.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7196929329",
+      "doi": "https://doi.org/10.1038/s44321-026-00484-8",
+      "display_name": "Deep visual multi-omics profiling links morphology and molecular programs in clear cell renal cell carcinoma",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1038/s44321-026-00484-8",
+        "doi": "https://doi.org/10.1038/s44321-026-00484-8",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s44321-026-00484-8",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S163075119",
+          "display_name": "EMBO Molecular Medicine",
+          "issn_l": "1757-4676",
+          "issn": [
+            "1757-4676",
+            "1757-4684"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "EMBO Molecular Medicine",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W4310937776",
+      "doi": "https://doi.org/10.1038/s41467-022-35233-1",
+      "display_name": "Graph-based autoencoder integrates spatial transcriptomics with chromatin images and identifies joint biomarkers for Alzheimer\u2019s disease",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1038/s41467-022-35233-1",
+        "doi": "https://doi.org/10.1038/s41467-022-35233-1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1038/s41467-022-35233-1",
+        "pdf_url": "https://www.nature.com/articles/s41467-022-35233-1.pdf",
+        "source": {
+          "id": "https://openalex.org/S64187185",
+          "display_name": "Nature Communications",
+          "issn_l": "2041-1723",
+          "issn": [
+            "2041-1723"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319908",
+          "host_organization_name": "Nature Portfolio",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319908",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Nature Portfolio",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Nature Communications",
+        "raw_type": "journal-article"
+      }
+    },
+    {
+      "id": "https://openalex.org/W7114392493",
+      "doi": null,
+      "display_name": "Towards Modelling Spatial Components of Cellular Variation",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:aleph.bib-bvb.de:BVB01-035871663",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://mediatum.ub.tum.de/?id=1738084",
+        "pdf_url": "https://mediatum.ub.tum.de/doc/1738084/document.pdf",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Hochschulschrift"
+      }
+    }
+  ],
+  "group_by": []
+}

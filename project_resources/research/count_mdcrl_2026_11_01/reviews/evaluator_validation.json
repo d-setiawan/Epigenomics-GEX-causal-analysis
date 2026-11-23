@@ -1,0 +1,14 @@
+{
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest project_resources/research/count_mdcrl_2026_11_01/test_evaluate_count_sources.py -q",
+  "data_review_sha256": "d5a3f9f2a15dea8432af4b6f738fa94dd6fd7828daab952b05cf8d2ff49de5ff",
+  "date_utc": "2026-11-01T19:18:58.709057+00:00",
+  "evaluator_sha256": "b50731038d185398c15fe97d88768ebed45b9dfec62c6882d7317c5af67da890",
+  "fixtures": "Deterministic numerical and metadata fixtures only; no new experimental worlds or biological measurements",
+  "initial_test_correction": "One manually specified covariance fixture entry was corrected from2 to1 after hand verification. No estimator or scoring formula changed in response.",
+  "peer_review": "Separate causal_reliability_pilot agent reviewed complete evaluator source; requested explicit endpoint abstention/default-zero labeling, which was added with its own passing test.",
+  "protocol_sha256": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c",
+  "status": "passed_before_heldout_evaluation",
+  "test_count": 9,
+  "test_result": "9 passed in 0.16s",
+  "test_sha256": "215c20f51df59931a10b5072790d517b0088f2a2ca5b8dde4f3e107f28c6e20f"
+}

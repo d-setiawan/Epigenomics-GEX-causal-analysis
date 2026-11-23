@@ -1,0 +1,26 @@
+{
+  "status": "frozen_before_application_fits",
+  "date": "2026-11-01",
+  "upstream_commit": "578b5900590164b2ed1750fb6a7f98ae7153e220",
+  "datasets": ["scmtr_seq_s1", "linear_chain_0", "constrained_collider_0"],
+  "assays": ["RNA", "H3K27ac", "H3K4me3"],
+  "data_contract": "data_extraction_protocol.json",
+  "features_per_assay": 30,
+  "inputs": ["raw_counts", "log1p_cp10k"],
+  "ica_seeds": [0, 1],
+  "native_parameters": {"measure": "ks-test", "alpha": 0.05, "gamma": 0.2},
+  "latent_dimension": "Native numerical covariance rank; no fixed latent cap or prior PCA representation.",
+  "diagnostic_control": {"operation": "independent within-assay column permutation after preprocessing", "permutation_seed": 1000, "ica_seed": 0, "interpretation": "Preserves marginal shapes while destroying within-assay dependence. Not biological FDR or a condition-valid causal-null test."},
+  "expected_fits": 18,
+  "runtime": "CPU, one BLAS/OpenMP thread per process; original sklearn FastICA limit/tolerance unchanged.",
+  "heldout_encoding": "(test_X - train_column_means) @ pseudoinverse(train_mixing); verify equality to native standardized training sources.",
+  "readouts": [
+    "Shared source count, per-assay estimated rank, ICA warnings and native graph failures for every run.",
+    "Native anonymous graph coefficient matrix, order/sign bookkeeping, finite-value and condition diagnostics; not original-feature causal edges.",
+    "Real heldout paired-count cross-assay correlation RMSE for all three assay pairs, compared with zero cross-correlation baseline. Covariance from shared mixing columns; no paired reference used in fitting/selection.",
+    "Existing public simulation discovery-state correlations with matched ICA disturbances, full factor counts retained. Descriptive only; no claim that these are causally related latent-state coordinates.",
+    "Comparison with independent-column controls without tuning or selecting seeds."
+  ],
+  "failure_policy": "Capture native exceptions and convergence warnings. Preserve a successfully estimated mixing matrix if graph extraction fails. Do not patch native heuristics or discard failed fits.",
+  "scope": "No new project worlds, locked simulation cohorts, pairing labels, day labels, truth graph, or additional modalities used in training. Published-model replication is separate. Two seeds do not establish statistical reliability."
+}

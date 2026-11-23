@@ -1,0 +1,25 @@
+{
+  "source_sha256": "efe4b9410b810798ffd872a0d850f9386de22b116a4a3d2b1bdb4770bc87164d",
+  "runs": {
+    "build": {
+      "exit_code": 0,
+      "sha256": "87ca76694b9429a24881fcb000c09ee1495d082eab938ab1488dd500f8ad71f7",
+      "command": [
+        "lake",
+        "build"
+      ]
+    },
+    "axioms": {
+      "exit_code": 0,
+      "sha256": "9e6e77f2552378ada63fe6208ff647b2636258bf82f3e76034fc1caa8773a407",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "EpigenomicsIdentification.lean"
+      ]
+    }
+  },
+  "statement": "countBlock b = (b,1-b) as natural-valued 0/1 pair; first coordinate recovers b and components sum to one",
+  "scope": "deterministic identity encoding; not a formal arbitrary count/depth kernel or nonidentification theorem on count blocks"
+}

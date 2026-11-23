@@ -1,0 +1,240 @@
+{
+  "evaluator_joins": {
+    "constrained_collider_0": {
+      "private_cohorts_read": false,
+      "state_and_ID_joins_exact": true
+    },
+    "linear_chain_0": {
+      "private_cohorts_read": false,
+      "state_and_ID_joins_exact": true
+    },
+    "scmtr_seq_s1": {
+      "n_paired_cells": 595,
+      "paired_reference_exact_from_independent_per_assay_maps": true
+    }
+  },
+  "fit_or_dependence_test_run": false,
+  "imported_extraction_helper": false,
+  "manifest_sha256": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+  "public_archives": [
+    {
+      "assay": "H3K27ac",
+      "cohort": "train",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K27ac",
+      "cohort": "test",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "train",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "test",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "train",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "test",
+      "dataset": "constrained_collider_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K27ac",
+      "cohort": "train",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K27ac",
+      "cohort": "test",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "train",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "test",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "train",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        4000,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "test",
+      "dataset": "linear_chain_0",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        2000,
+        30
+      ]
+    },
+    {
+      "assay": "H3K27ac",
+      "cohort": "train",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        615,
+        30
+      ]
+    },
+    {
+      "assay": "H3K27ac",
+      "cohort": "test",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        595,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "train",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        614,
+        30
+      ]
+    },
+    {
+      "assay": "H3K4me3",
+      "cohort": "test",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        595,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "train",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        602,
+        30
+      ]
+    },
+    {
+      "assay": "RNA",
+      "cohort": "test",
+      "dataset": "scmtr_seq_s1",
+      "exact_counts_ids_features_depth": true,
+      "metadata_keys_allowlist_only": true,
+      "normalization_matches": true,
+      "shape": [
+        595,
+        30
+      ]
+    }
+  ],
+  "reviewer": "scmtr_data_pilot; separate replay implementation",
+  "script_sha256": "59c5bd4e66ee2cc55f315f7de07973ba3d49bd15dbf0f767e09ed4a6f26013dc",
+  "status": "passed"
+}

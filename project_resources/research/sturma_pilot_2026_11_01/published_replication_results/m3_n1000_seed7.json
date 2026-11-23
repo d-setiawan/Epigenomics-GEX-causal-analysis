@@ -1,0 +1,35 @@
+{
+  "domains": 3,
+  "n_per_domain": 1000,
+  "seed": 7,
+  "ica_seed": 100007,
+  "protocol_sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+  "status": "underestimated_dimension",
+  "nr_joint": 1,
+  "mixing_error_raw": 0.5060111589258413,
+  "mixing_error_native_normalized": 0.016867038630861374,
+  "mixing_error_sqrt_beta_normalized": 0.09238457536433828,
+  "graph_error_raw": null,
+  "graph_error_normalized": null,
+  "unconditional_coefficient_criterion": false,
+  "data_sha256": [
+    "f65d9c4d6953c177df48fe85aaeabe5d2880a4a9f7b6b9e562e46b87d91e5267",
+    "8c5d5c6c905969783155f5a931e60c5cd860a1831421d0c2c0a53f53fac59e12",
+    "92224cb48eed13ddceec28e93fa2db0a5d443f51a1ffa6e93b3535a9860bd706"
+  ],
+  "fit_seconds": 1.9830912869947497,
+  "ica_components": [
+    5,
+    5,
+    5
+  ],
+  "warnings": [
+    {
+      "category": "ConvergenceWarning",
+      "message": "FastICA did not converge. Consider increasing tolerance or the maximum number of iterations."
+    }
+  ],
+  "ica_convergence_warning": true,
+  "elapsed_seconds": 1.9910762819927186,
+  "matrices_sha256": "995e27dfe24d380e0cbe09df0252c60476f333038e25472b709d30f1e03ff565"
+}

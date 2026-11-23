@@ -1,98 +1,152 @@
 # Epigenomics-GEX Causal Analysis
 
-> **New here, or picking this back up after time away? Read these two:**
-> **[docs/MISSION.md](docs/MISSION.md)** — the scientific intent and *why this is novel* (recovering the
-> local causal **architecture** among a gene's regulatory elements, not just enhancer→gene links), then
-> **[docs/DECISIONS.md](docs/DECISIONS.md)** — *why the pipeline looks the way it does*: the diagnostic
-> that forced each choice, the alternatives rejected, and what each one cost.
->
-> This README is the operational hub; [docs/ROADMAP.md](docs/ROADMAP.md) is the live plan and status.
+This project studies local regulatory structure using existing single-cell RNA
+and CUT&Tag histone measurements. Empirical pipelines handle preprocessing,
+integration, causal discovery and biological evaluation. Separate simulations
+study what structure survives integration and aggregation of unpaired cells.
 
->
-> **Current status (2026-07-22) — the project has pivoted methods-forward.** Rigorous testing found
-> that single-partition metacell causal discovery is **not reproducible** (re-clustering the cells
-> changes which edges are recovered), and a controlled simulation shows **why**: metacell aggregation
-> induces collinearity between causal and confounded elements that collapses the causation-vs-confounding
-> distinction — identifiable at the cell level, lost after aggregation. The strongest contribution is now
-> this **methodological finding + the partition-bootstrap that quantifies it** (a Modifiable Areal Unit
-> Problem in single-cell causal discovery, apparently uncharacterized), with a *small* partition-stable
-> edge list and the co-accessibility contrast as the applied biology. Start with
-> [docs/ROADMAP.md](docs/ROADMAP.md) §changelog and these results:
-> [partition_bootstrap_results](Evaluation/results/partition_bootstrap_results.md) ·
-> [simulation_identifiability_results](Evaluation/results/simulation_identifiability_results.md) ·
-> [aggregation survey](CausalDiscovery/results/aggregation_partition_dependence_survey.md).
+## Start here
 
-Single-cell gene expression (scRNA) + single-cell CUT&Tag histone marks → **local causal graphs**
-for monocyte gene regulation. For one target gene we learn a causal graph over its nearby chromatin
-peaks, observed confounders, and its expression, then test the edges against orthogonal biological
-evidence.
+- [Mission](project_resources/research/MISSION.md),
+  [decisions](project_resources/research/DECISIONS.md), and
+  [limitations](project_resources/research/LIMITATIONS.md) explain the scientific scope.
+- [Pipeline map](pipelines/README.md) connects the runnable workflows.
+- [Git transfer and reproduction guide](TRANSFER.md) covers environment setup,
+  verified input downloads and simulation replay.
+
+## Research status
+
+The latest [exact-model count-source search](pipelines/simulation/integration_recoverability/COUNT_TRANSPORT_SOURCE_SEARCH.md)
+meets the shared-state transport and cross-assay count recovery criteria in all nine existing
+one-, two- and three-source worlds using raw counts, multiple starts and
+unpaired calibration selection. Parameter boxes and cumulative optimization
+budgets are absent. Individual starts remain unreliable; the report preserves
+all failures and independent audits. This is a known-dimension, matched-model
+simulation result, not general cross-assay causal-direction recovery.
+
+The [nonlinear repair and count-model program](project_resources/research/nonlinear_repair_2026_11_15/README.md)
+contains the expanded literature review, independently checked identification
+results and completed experiments on existing count inputs. Its
+[synthesis](project_resources/research/nonlinear_repair_2026_11_15/SYNTHESIS.md) and
+[requirement audit](project_resources/research/nonlinear_repair_2026_11_15/reviews/FINAL_REQUIREMENT_AUDIT.md)
+distinguish conditional population recovery from the empirical results.
+Reliable cross-assay causal recovery remains unestablished.
+
+The [nonlinear literature recheck](project_resources/research/nonlinear_recheck_2026_11_14/ASTRA_REASSESSMENT.md)
+corrects gaps in the earlier theorem coverage and distinguishes the papers
+with assumption issues from other nonlinear identification approaches.
+
+The preceding [unpaired-assay identification program](project_resources/research/research_program_2026_11_14/README.md)
+connects the observation contract, primary theorem review, Lean proofs and
+existing-input experiments. Its [requirement ledger](project_resources/research/research_program_2026_11_14/REQUIREMENTS.md)
+preserves the earlier review record and evidence; the recheck above corrects
+its nonlinear coverage. Earlier frozen studies remain intact.
+
+The preceding work is the [count-source extension comparison](project_resources/research/count_extensions_2026_11_01/README.md)
+and its [selected-dimension follow-up](project_resources/research/count_rank20_2026_11_01/README.md).
+It tests noise models, depth treatment, source estimation and larger nested
+feature panels using the existing observations. Independent agents check the
+algebra, fit decisions and heldout readouts. Within-assay covariance gains are
+reported separately from cross-assay source matching and causal recovery.
+Neither completed block accepted a cross-assay source pair under the fixed
+rules; raising the computational dimension ceiling did not resolve this.
+
+The preceding [count-aware source pilot](project_resources/research/count_mdcrl_2026_11_01/README.md)
+introduced explicit Poisson correction with a matched-dimension comparison.
+It improved a narrower within-assay covariance task but did not recover
+supported cross-assay sources or a causal graph on the existing panels.
+
+The preceding [Sturma unpaired causal-representation pilot](project_resources/research/sturma_pilot_2026_11_01/README.md) contains
+a reduced native replication followed by a frozen application to existing counts,
+with independent source, implementation and result reviews. It separates recovery
+under the published linear model from the outcome on our sparse count panels.
+
+The [integration literature and identification review](project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md)
+distinguishes general nonidentification from published positive results for
+restricted unpaired latent models. The [population proof](project_resources/research/theory/07_unpaired_integration_nonidentifiability.md)
+establishes why general cross-assay direct-structure recovery can fail even with
+perfect state alignment. Its [research record](project_resources/research/integration_identifiability_2026_11_01/README.md)
+links independent reviews and symbolic checks. Those theory studies are separate
+from the subsequent Sturma fitting experiment.
+
+The [method-specific companion](project_resources/research/theory/08_modern_integration_objectives.md)
+connects this proof to the objectives of scGLUE, scMRDR and scConfluence.
+
+The [scConfluence/scMTR-seq pilot](project_resources/research/scconfluence_scmtr_pilot_2026_11_01/README.md)
+completed a count-input integration comparison on cached simulations and a
+separate real-data holdout, with independent reviews. It exposed integration
+seed instability and a sparse-count causal-test calibration problem. It does
+not replace the historical monocyte setup or establish reliable causal recovery.
+
+The bounded [integration-validation study](pipelines/simulation/integration_recoverability/INTEGRATION_VALIDATION.md)
+is complete; the broader frozen simulation benchmark remains unfinished.
+Use its [execution record](pipelines/simulation/integration_recoverability/IMPLEMENTATION_STATUS.md)
+for current results and remaining work. State alignment has not established
+reliable cross-assay causal recovery.
+
+The empirical biology track retains its
+[reviewed alignment baseline](pipelines/empirical/integration/results/biological_alignment_2026-09-16.md).
+The [CA-BOSS track](pipelines/simulation/unpaired_multimodal/README.md) is parked;
+its code, cached worlds, results and negative controls remain available.
+[ROADMAP](project_resources/research/ROADMAP.md) records the project history and
+scientific priorities. Result numbers belong to the linked result reports.
 
 ## Repository structure
 
-The repo is four pipeline sections plus a docs folder. **Every section has the same three
-subfolders**, so you always know where to look:
+The repository is organized around two workflow families and shared project resources:
 
-| subfolder | holds |
-| --- | --- |
-| `scripts/` | code you run |
-| `outputs/` | raw machine output (gitignored — regenerable) |
-| `results/` | human-readable interpretation and write-ups |
-
-```
-Data/             raw inputs + CUT&Tag preprocessing        -> peak/bin matrices per histone mark
-Integration/      scGLUE / scMRDR cross-modality alignment  -> joint latent space, pseudo-pairs
-CausalDiscovery/  pairing, nearby-peak matrices, discovery  -> PAGs (FCI/GFCI, PC, DAGMA)
-Evaluation/       validation of the discovered edges        -> external support, peak<->peak axes
-docs/             MISSION, ROADMAP, theory, reports, papers
-envs/             pinned conda envs per stage
+```text
+pipelines/empirical/    data → integration → analysis → evaluation
+pipelines/simulation/   aggregation, unpaired multimodal, and integration-recoverability studies
+project_resources/      research, reports, shared outputs, and archive
+envs/                   pinned environments used by both workflow families
 ```
 
-Data flows left to right: **`Data/` → `Integration/` → `CausalDiscovery/` → `Evaluation/`.**
-`Data/` is the single source of truth for inputs to all three downstream sections.
-
-| Section | What it does | README |
-| --- | --- | --- |
-| [`Data/`](Data) | raw CUT&Tag + GEX + external DBs; preprocessing → peaks & matrices | [Data/README.md](Data/README.md) |
-| [`Integration/`](Integration) | RNA ↔ CUT&Tag shared latent space (scGLUE `joint_v2` active) | [Integration/README.md](Integration/README.md) |
-| [`CausalDiscovery/`](CausalDiscovery) | metacell pairing, nearby-peak matrices, graph discovery | [CausalDiscovery/README.md](CausalDiscovery/README.md) |
-| [`Evaluation/`](Evaluation) | edge validation: external support + element↔element axes | [Evaluation/README.md](Evaluation/README.md) |
+Start with the [pipeline map](pipelines/README.md). The empirical pipeline’s
+[`data/`](pipelines/empirical/data/README.md) directory remains the source of
+truth for biological inputs. Each integration run has a separate directory
+under [`integration/runs/`](pipelines/empirical/integration/runs/) so new method
+and parameter experiments can be compared without overwriting one another.
+The former combined Evaluation area is divided between empirical validation and
+the simulation tracks that produced the formal worlds and runs.
 
 ## Pipeline at a glance
 
 `CUT&Tag preprocessing → scGLUE joint integration → metacell pairing → nearby-peak matrices → causal discovery (FCI/GFCI · PC · DAGMA) → edge validation`
 
-## Current setup
+## Existing real-data setup
 
-Fixed choices only. Live status, rationale and open work: **[docs/ROADMAP.md](docs/ROADMAP.md)**.
+Historical monocyte configuration. The separate scMTR-seq pilot is linked above.
+Live status, rationale and open work: **[ROADMAP](project_resources/research/ROADMAP.md)**.
 
 | | |
 | --- | --- |
 | Genome / cell type | GRCh38 · monocyte (CD14+/classical) |
-| Identifiability target | local PAG/MAG — no causal sufficiency assumed |
-| Integration | scGLUE `joint_v2` |
+| Desired graph target | local PAG/MAG; its biological joint is not certified by integration |
+| Integration | scGLUE `joint_v2`; biological review tracked in [ROADMAP](project_resources/research/ROADMAP.md#two-goals-2026-09-10) |
 | Aggregation | non-overlapping metacells (n=133) |
 | Discovery | FCI/GFCI → PAG, bootstrap stability selection as headline |
 | Validation | 3 axes peak→gene (rE2G · eQTL · PCHi-C) + element↔element framework |
-| Observed confounders | library depth only — donor is **not available** ([L1](docs/LIMITATIONS.md#l1-donor-is-not-an-available-variable)) |
+| Observed confounders | library depth only; donor identity is not verified ([L1](project_resources/research/LIMITATIONS.md#l1-donor-is-not-an-available-variable)) |
 
 ## Quick start
 
 End-to-end per-gene run (discovery + stability + 3-axis validation):
 
 ```bash
-python CausalDiscovery/scripts/run_gene_pipeline.py --gene CD14 \
-  --dataset-root CausalDiscovery/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_metacell \
+python pipelines/empirical/analysis/scripts/run_gene_pipeline.py --gene CD14 \
+  --dataset-root pipelines/empirical/analysis/outputs/datasets/joint_v2/monocyte_cuttag_peak_genes_300kb_metacell \
   --methods gfci,fci --stability-method fci
 ```
 
 Individual stages run through the single CLI — `causal_cli.py match | dataset | graph | support`.
-See [CausalDiscovery/README.md](CausalDiscovery/README.md) for the CLI and
-[CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md) for the full driver.
+See [Analysis/README.md](pipelines/empirical/analysis/README.md) for the CLI and
+[Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) for the full driver.
 
-Rebuild the integration input workspace (regenerates all symlinks into `Data/`):
+Rebuild the integration input workspace (regenerates all symlinks into `pipelines/empirical/data/`):
 
 ```bash
-python Integration/scripts/setup_integration_workspace.py
+python pipelines/empirical/integration/scripts/setup_integration_workspace.py
 ```
 
 ## Documentation ownership (read before editing any doc)
@@ -103,14 +157,15 @@ never copy the content outward.
 
 | Fact | Owner — the only place it is written | Everyone else |
 | --- | --- | --- |
-| Why / novelty / competitive positioning | [docs/MISSION.md](docs/MISSION.md) | link |
-| Status · open work · changelog · one-line decisions | [docs/ROADMAP.md](docs/ROADMAP.md) | link |
-| **Decision *rationale*** (why, options, cost) | [docs/DECISIONS.md](docs/DECISIONS.md) | link |
-| **Caveats & limitations** | [docs/LIMITATIONS.md](docs/LIMITATIONS.md) | link to `#lN` |
+| Why / novelty / competitive positioning | [project_resources/research/MISSION.md](project_resources/research/MISSION.md) | link |
+| Status · open work · changelog · one-line decisions | [project_resources/research/ROADMAP.md](project_resources/research/ROADMAP.md) | link |
+| **Decision *rationale*** (why, options, cost) | [project_resources/research/DECISIONS.md](project_resources/research/DECISIONS.md) | link |
+| **Caveats & limitations** | [project_resources/research/LIMITATIONS.md](project_resources/research/LIMITATIONS.md) | link to `#lN` |
 | **Result numbers** | the relevant `*/results/*.md` | link — never restate |
+| **Data origin and sample identity** | [Data/results/data_sources.md](pipelines/empirical/data/results/data_sources.md) | link |
 | Repo structure · quick start | this README | link |
 | How to run one section | that section's README | link |
-| Driver stages + axis-aware rule | [CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md) | link |
+| Driver stages + axis-aware rule | [Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) | link |
 
 Rules of thumb: a **results doc** carries numbers and gets *superseded*, never silently edited — add
 a dated correction instead. The **ROADMAP** carries verdicts and links, not tables. A **caveat**
@@ -120,7 +175,7 @@ Drift is checked automatically by the pre-commit hook (enable once per clone:
 `git config core.hooksPath .githooks`), or manually:
 
 ```bash
-python docs/check_docs.py
+python project_resources/research/check_docs.py
 ```
 
 ## Where did this number come from?
@@ -128,30 +183,37 @@ python docs/check_docs.py
 Any result can be traced back to the raw data it derives from:
 
 ```bash
-python docs/provenance.py --gene CD14        # --list to see what's traceable
+python project_resources/research/provenance.py --gene CD14        # --list to see what's traceable
 ```
 
 It walks the manifests each run wrote — pipeline → dataset → pairing → metacells → scGLUE run →
 per-mark matrices → raw CUT&Tag/GEX — and labels every hop `[recorded]` or `[CONVENTION]` so an
-inferred link is never mistaken for a documented one. See [docs/README.md](docs/README.md#tooling).
+inferred link is never mistaken for a documented one. See [project_resources/research/README.md](project_resources/research/README.md#tooling).
 
 ## Documentation map
 
 **Start here**
-- [docs/MISSION.md](docs/MISSION.md) — scientific intent & novelty (the *why*). **Read first.**
-- [docs/DECISIONS.md](docs/DECISIONS.md) — **why the pipeline looks like this**: each decision, the diagnostic that forced it, the options rejected, and the cost.
-- [docs/ROADMAP.md](docs/ROADMAP.md) — living master plan: status, method decisions, phased actions, changelog. §0.5 is the publication-push hub.
+
+- [project_resources/research/MISSION.md](project_resources/research/MISSION.md) — scientific intent & novelty (the *why*). **Read first.**
+- [project_resources/research/DECISIONS.md](project_resources/research/DECISIONS.md) — **why the pipeline looks like this**: each decision, the diagnostic that forced it, the options rejected, and the cost.
+- [project_resources/research/ROADMAP.md](project_resources/research/ROADMAP.md) — living master plan: status, method decisions, phased actions, changelog. §0.5 is the publication-push hub.
 
 **How each stage works**
-- [Data/README.md](Data/README.md) — inputs and CUT&Tag preprocessing → peaks + matrices.
-- [Integration/README.md](Integration/README.md) — scGLUE (active) and scMRDR (comparison) tracks.
-- [CausalDiscovery/README.md](CausalDiscovery/README.md) — pairing, nearby-peak matrices, the discovery CLI, screening.
-- [CausalDiscovery/PIPELINE.md](CausalDiscovery/PIPELINE.md) — end-to-end per-gene driver.
-- [Evaluation/README.md](Evaluation/README.md) — validation axes and the evidence sources.
+
+- [Data/README.md](pipelines/empirical/data/README.md) — inputs and CUT&Tag preprocessing → peaks + matrices.
+- [Integration/README.md](pipelines/empirical/integration/README.md) — scGLUE baseline under review and scMRDR comparison.
+- [Analysis/README.md](pipelines/empirical/analysis/README.md) — pairing, nearby-peak matrices, the discovery CLI, screening.
+- [Analysis/PIPELINE.md](pipelines/empirical/analysis/PIPELINE.md) — end-to-end per-gene driver.
+- [Evaluation/README.md](pipelines/empirical/evaluation/README.md) — validation axes and the evidence sources.
 - [envs/README.md](envs/README.md) — pinned conda envs and which env runs which stage.
 
 **Research notes**
-- **[docs/README.md](docs/README.md)** — index of all project-level docs: theory (identifiability), earlier design plans, LaTeX reports, reference papers.
-- [docs/LIMITATIONS.md](docs/LIMITATIONS.md) — every known caveat (L1–L10), the single source of truth.
-- [CausalDiscovery/results/](CausalDiscovery/results) — modeling-design notes, competitive landscape, literature reviews.
-- [Evaluation/results/](Evaluation/results) — validation write-ups and the saved-run audit.
+
+- [Biological foundation review](pipelines/empirical/data/results/biological_foundation_review_2026-09-10.md) — existing-data QC, ADT consistency, and data/integration candidates.
+- [Latent-space aggregation](project_resources/research/theory/06_latent_space_aggregation.md) — why integrated state
+  geometry does not itself reconstruct the missing same-cell joint distribution, and what the next
+  aggregation benchmark must identify.
+- **[project_resources/research/README.md](project_resources/research/README.md)** — index of project-level research notes, theory, earlier design plans, reports, and reference papers.
+- [project_resources/research/LIMITATIONS.md](project_resources/research/LIMITATIONS.md) — every known caveat, the single source of truth.
+- [Analysis/results/](pipelines/empirical/analysis/results) — modeling-design notes, competitive landscape, literature reviews.
+- [Evaluation/results/](pipelines/empirical/evaluation/results) — validation write-ups and the saved-run audit.

@@ -1,0 +1,143 @@
+{
+  "schema_version": "ca_boss_v4.cached_full_pool_v422_summary.v1",
+  "algorithm_schema_version": "crossfit_hierarchical_collider.v4.22",
+  "date": "2026-09-01",
+  "retrospective_development_only": true,
+  "fresh_locked_claim": false,
+  "new_worlds_or_datasets_created": false,
+  "v3_baseline": {
+    "candidate": "channel_final_v3",
+    "gapca_locked_world_successes": 37,
+    "gapca_locked_worlds": 40,
+    "gapca_locked_success_rate": 0.925,
+    "gapca_mean_estimated_biological_edges": 22.725,
+    "gapca_mean_matched_skeleton_f1": 0.5440125776606399,
+    "h3k4me3_direct_recovered_worlds": 38,
+    "validation_summary_sha256": "e55d84181cbce7ee9c3ae350413c2a760d130c0647000efc611cd3fe7785aaa1"
+  },
+  "random_cached_panel_extension": {
+    "sampling_method": "block_balanced_without_replacement_within_panel; seed search used block and world identifiers only to maximize previously unseen coverage",
+    "eligible_cached_world_pool_size": 152,
+    "total_panels": 23,
+    "total_panel_world_evaluations": 276,
+    "exact_panel_world_evaluations": 276,
+    "unique_existing_worlds": 152,
+    "cached_pool_coverage_fraction": 1.0,
+    "added_panels": [
+      {
+        "selection_seed": 20260943,
+        "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_fast_seed20260943",
+        "phase_a_manifest_sha256": "e0ec356eff76cdf84f18841289ad54f9a56681cc34b63742ec1ca40b8b70164c",
+        "phase_b_summary_sha256": "e5cf0e09c02c9ec315c2c767ec367b50387a692926e2ce189821c96e12c2513c"
+      },
+      {
+        "selection_seed": 20261007,
+        "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20261007",
+        "phase_a_manifest_sha256": "8694a4f073782ee7419bcd6297bc74e95d2231f38d217247dbb42f9b5af7fb07",
+        "phase_b_summary_sha256": "68c9c191b90e726e36e18f19b328e7686d20acaca5a098cb549672b6be82d2ef"
+      },
+      {
+        "selection_seed": 20261971,
+        "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20261971",
+        "phase_a_manifest_sha256": "3d205366c3ec9a87eca98c52d64ad79661198b4cdec8b9ab6aaf205449d55dd7",
+        "phase_b_summary_sha256": "feec0f6060d7708365ac1eeea7260de2a3cf9077ec3632b49d14c020d7986e85"
+      },
+      {
+        "selection_seed": 20262971,
+        "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v422_coverage_seed20262971",
+        "phase_a_manifest_sha256": "44f03b63b3f8d77bb2aeef12f6880f0846a337b14bc2dca69a5c3654f0444bb6",
+        "phase_b_summary_sha256": "cb3d34634b43f1c351d692d9db92b69d2a37b494871c1c4b4759125c214e81e2"
+      }
+    ]
+  },
+  "direct_layer": {
+    "exact_worlds": 152,
+    "true_positive_directed_arms": 1824,
+    "false_positive_directed_arms": 0,
+    "false_negative_directed_arms": 0,
+    "strict_reversals": 0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "mean_direct_adjacencies_per_world": 12.0
+  },
+  "shared_state_assay_layer": {
+    "estimand": "multi_assay_state_responsive_set represented without pairwise expansion",
+    "assay_tests": 1064,
+    "selected_assays": 1064,
+    "worlds_with_all_seven_modalities": 152,
+    "assay_participation_recall": 1.0,
+    "assay_precision_identifiable_from_current_worlds": false,
+    "sentinel_pseudo_assay_false_calls": 6,
+    "sentinel_pseudo_assay_tests": 720,
+    "sentinel_world_familywise_rate": 0.041666666666666664,
+    "nominal_world_familywise_target": 0.1
+  },
+  "strict_state_feature_layer": {
+    "true_positive_members": 2990,
+    "false_positive_members": 0,
+    "false_negative_members": 810,
+    "precision": 1.0,
+    "recall": 0.7868421052631579,
+    "role_recall": {
+      "P": 0.6721491228070176,
+      "Q": 0.8125,
+      "C": 0.7576754385964912,
+      "S": 0.8695175438596491,
+      "RNA": 1.0
+    }
+  },
+  "integration_robustness": {
+    "held_out_background_only": true,
+    "cross_fitted_feature_models": true,
+    "assay_local_embedding_feature_folds": 2,
+    "aggregation_resolutions": 3,
+    "integration_seeds_per_resolution": 2,
+    "conditional_model_views": 6,
+    "assay_participation_requires_all_views": 6,
+    "common_coordinate_registration_used": false
+  },
+  "existing_world_factor_coverage": {
+    "modalities_per_world": 7,
+    "chromatin_marks_per_world": 6,
+    "factorial_design_cells": 8,
+    "worlds_per_factorial_design_cell": 19,
+    "assay_cell_count_range": [780, 3600],
+    "focal_detection_probability_range": [0.0270237591508864, 0.13],
+    "population_fraction_range": [0.44999999999999996, 0.75],
+    "background_state_proxy_noise_sd_range": [0.0, 0.2],
+    "peak_gene_coefficient_range": [0.6501157506919798, 1.1992633438721088],
+    "unique_feature_layouts": 152,
+    "unique_null_feature_layouts": 152,
+    "unique_state_loading_layouts": 152,
+    "unique_mark_rotations": 137,
+    "unique_stress_mark_sets": 20,
+    "detection_stress_worlds": 76,
+    "population_divergence_worlds": 76,
+    "background_integration_stress_worlds": 76
+  },
+  "tests": {
+    "collider_tests_passed": 105,
+    "cached_layered_audit_tests_passed": 3,
+    "full_evaluation_tests_passed": 447,
+    "full_evaluation_warnings": 62,
+    "warnings": "scikit-learn deprecations from the unchanged frozen rank-fusion derivation audit"
+  },
+  "audit_artifacts": {
+    "utility": "Evaluation/scripts/audit_cached_layered_contract_v4.py",
+    "output": "Evaluation/outputs/ca_boss_v4/cached_layered_contract_v422_full_pool_v2",
+    "phase_a_manifest_sha256": "357733ca5dc852dabfa92a9576a79059d881f84f0a629449aec8e84892effd2b",
+    "phase_b_summary_sha256": "abccc9c8b0a04824295eefdfc691ed0499958a1feeb21933d7c88b7c4d0ef1e8",
+    "phase_b_summary_payload_sha256": "d13477cb6811e296cbe839bee5e1c7f1be290f62053656162885caa31a66d1aa",
+    "existing_world_factor_input_hash_list_sha256": "0a0a051c727abd3be3400ca201380332f24b485d90b14cb23f724b39e9c9242b",
+    "audit_source_sha256": "cc567da415ff4dad6b694de782f9d9a37936ca4b056c37c4ed44f4b170d7adad",
+    "crossfit_source_sha256": "218dd3ec857473be35a61466397fcafd6952a62e38e8ce0678687ee74b377975",
+    "shared_state_source_sha256": "1c879a109cfc60a5db3b2c75f46a9bcb7baa6714d18507a405b5a68c601f0ba7"
+  },
+  "interpretation": {
+    "within_assay_direct_structure": "retrospectively exact on the complete eligible cached pool",
+    "cross_assay_structure": "complete assay-level shared latent-state participation represented as one hypothesis-only n-ary set",
+    "strict_feature_membership": "precision-first and incomplete",
+    "exact_cross_assay_feature_pairing": "not claimed",
+    "cell_specific_cross_assay_direct_effects": "not identifiable from disjoint cells under the agreed data contract"
+  }
+}

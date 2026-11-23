@@ -1,0 +1,631 @@
+{
+  "review_metadata": {
+    "reviewer": "causal_reliability_pilot",
+    "date": "2026-11-01",
+    "review_type": "bounded scoping review with primary theorem and observation-contract checks",
+    "question": "Which assumptions permit or preclude joint-distribution, shared-source, or causal-graph recovery from integrated assay data?",
+    "discovery": "Parent coordinated OpenAlex first. Known primary sources were verified directly; supplementary web searches began after parent confirmed OpenAlex discovery was running.",
+    "scope": "Sixteen core records include positive unpaired identification results and explicit causal biomedical challengers. This is not an exhaustive systematic review or a proof that all integration methods fail.",
+    "evidence_policy": "Theorem statements and relevant methods were inspected in primary full texts. Formal proof correctness and implementations were not independently re-established for every publication. No new data, simulations, or fits were used.",
+    "funding_and_conflicts": "Not extracted; theoretical applicability was assessed from observation contracts, target definitions, and assumptions.",
+    "record_schema_version": 1
+  },
+  "records": [
+    {
+      "id": "d_orazio_statistical_matching",
+      "title": "Old and new approaches in statistical matching when samples are drawn with complex survey designs",
+      "authors": [
+        "Marcello D'Orazio",
+        "Marco Di Zio",
+        "Mauro Scanu"
+      ],
+      "year": null,
+      "publication_status": "Istat-hosted author manuscript; publication year and venue not established from inspected copy",
+      "doi": null,
+      "primary_url": "https://www.istat.it/en/files/2013/12/Old-and-new-approaches-in-statistical-matching.pdf",
+      "family": "statistical_matching_nonidentification",
+      "observation_contract": "Distinct independent samples observe (X,Y) and (X,Z) from a common population.",
+      "target": "Joint relationships among never-coobserved variables; identified sets rather than only sampling uncertainty.",
+      "assumptions": "General block marginals do not determine the joint. Conditional independence or auxiliary restrictions can select a completion; complex survey designs require separate sampling treatment.",
+      "theorem_applicability": "Direct context for the missing residual-coupling problem. Supports model-class-qualified nonidentification, not universal failure of restricted models.",
+      "evidence_locator": "Author manuscript pp.1–2; §3 equations (5)–(6) define compatible joint distributions.",
+      "evidence_level": "primary_full_text_argument_reviewed",
+      "discovery_origin": "prior focused review; direct primary retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "balabdaoui_unlinked_monotone",
+      "title": "Unlinked Monotone Regression",
+      "authors": [
+        "Fadoua Balabdaoui",
+        "Charles R. Doss",
+        "Cécile Durot"
+      ],
+      "year": 2021,
+      "publication_status": "JMLR 22(172):1–60",
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v22/20-689.html",
+      "full_text_url": "https://www.jmlr.org/papers/volume22/20-689/20-689.pdf",
+      "family": "positive_unlinked_regression",
+      "observation_contract": "Separate predictor and response samples; unlike shuffled regression they need not contain the same individuals or sample sizes.",
+      "target": "A scalar monotone regression function, not an unrestricted multivariate causal DAG.",
+      "assumptions": "Independent additive structural noise with known distribution; monotonicity; stated design/deconvolution regularity. Unknown-noise extensions use additional information.",
+      "theorem_applicability": "Genuine recovery from unpaired marginals within a restricted model class. Known count-measurement noise does not automatically supply the required biological structural-noise law.",
+      "evidence_locator": "Introduction pp.3–4; Assumption A0 §2.2; Theorems 1–5; §7 unknown-noise extensions.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "prior focused review; direct primary retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "locatello_unsupervised_disentanglement",
+      "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
+      "authors": [
+        "Francesco Locatello",
+        "Stefan Bauer",
+        "Mario Lucic",
+        "Gunnar Raetsch",
+        "Sylvain Gelly",
+        "Bernhard Schölkopf",
+        "Olivier Bachem"
+      ],
+      "year": 2019,
+      "publication_status": "ICML, PMLR 97:4114–4124",
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v97/locatello19a.html",
+      "full_text_url": "https://proceedings.mlr.press/v97/locatello19a/locatello19a.pdf",
+      "family": "latent_disentanglement_nonidentification",
+      "observation_contract": "Unsupervised observations from an unrestricted latent generative model; no informative auxiliary supervision.",
+      "target": "Recovery of disentangled latent coordinates.",
+      "assumptions": "Dimension greater than one and a factorized latent density; the model class admits entangling bijections with identical observable distributions.",
+      "theorem_applicability": "Related information argument, but not a theorem about original measured-variable DAGs or every structured multimodal model. Correct inductive restrictions can exclude alternatives.",
+      "evidence_locator": "§3, Theorem 1 and following construction; Appendix A.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "known primary source; direct retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "hyvarinen_auxiliary_nonlinear_ica",
+      "title": "Nonlinear ICA Using Auxiliary Variables and Generalized Contrastive Learning",
+      "authors": [
+        "Aapo Hyvarinen",
+        "Hiroaki Sasaki",
+        "Richard Turner"
+      ],
+      "year": 2019,
+      "publication_status": "AISTATS, PMLR 89:859–868",
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v89/hyvarinen19a.html",
+      "full_text_url": "https://proceedings.mlr.press/v89/hyvarinen19a/hyvarinen19a.pdf",
+      "family": "positive_auxiliary_variable_nonlinear_ica",
+      "observation_contract": "Each observed mixture accompanies an auxiliary variable such as time, history, or treatment label.",
+      "target": "Latent components up to componentwise transformations; some exponential-family cases retain linear ambiguity.",
+      "assumptions": "Conditional source independence, invertible smooth mixing/demixing, sufficiently diverse auxiliary modulation, and specified contrastive regression class.",
+      "theorem_applicability": "Auxiliary information can identify sources under restrictions. An arbitrary integrated state or label does not automatically satisfy variability or independence, and sources are not a causal DAG.",
+      "evidence_locator": "§4 Theorems 1–3; §5 warns against arbitrary auxiliary-variable construction.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "known primary source; direct retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "khemakhem_ivae",
+      "title": "Variational Autoencoders and Nonlinear ICA: A Unifying Framework",
+      "authors": [
+        "Ilyes Khemakhem",
+        "Diederik Kingma",
+        "Ricardo Monti",
+        "Aapo Hyvarinen"
+      ],
+      "year": 2020,
+      "publication_status": "AISTATS, PMLR 108:2207–2217",
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v108/khemakhem20a.html",
+      "full_text_url": "https://proceedings.mlr.press/v108/khemakhem20a/khemakhem20a.pdf",
+      "family": "positive_identifiable_latent_generative_model",
+      "observation_contract": "An observed mixture and auxiliary covariate are jointly available per sample.",
+      "target": "Latent generative model/posterior equivalence class, not arbitrary original cross-assay causal edges.",
+      "assumptions": "Injective mixing; conditionally factorized exponential-family latents; fixed observation-noise model with the characteristic-function condition; full-rank auxiliary modulation. Stronger equivalence needs further conditions.",
+      "theorem_applicability": "A positive restricted identification result. Basic Theorem 1 permits linear sufficient-statistic ambiguity; ordinary multimodal VAEs do not inherit it merely by using a shared latent space.",
+      "evidence_locator": "§4 Theorems 1–4; Proposition 1 covers unresolved Gaussian location-modulation ambiguity.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "known primary source; direct retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "gresele_multiview_ica",
+      "title": "The Incomplete Rosetta Stone problem: Identifiability results for Multi-view Nonlinear ICA",
+      "authors": [
+        "Luigi Gresele",
+        "Paul K. Rubenstein",
+        "Arash Mehrjou",
+        "Francesco Locatello",
+        "Bernhard Schölkopf"
+      ],
+      "year": 2020,
+      "publication_status": "UAI 2019 proceedings published as PMLR 115:217–227 in 2020",
+      "doi": null,
+      "primary_url": "https://proceedings.mlr.press/v115/gresele20a.html",
+      "full_text_url": "https://proceedings.mlr.press/v115/gresele20a/gresele20a.pdf",
+      "family": "positive_paired_multiview_nonlinear_ica",
+      "observation_contract": "Simultaneous views of the same source realization; contrastive learning distinguishes genuine joint tuples from shuffled tuples.",
+      "target": "Shared independent sources or their corrupted versions, up to stated transformations.",
+      "assumptions": "Invertible view mixing, componentwise independent corruption and sufficiently distinct views; noiseless/noisy/many-view results differ.",
+      "theorem_applicability": "The true joint-view information differs from disjoint assay marginals. It cannot justify treating integration-generated pairs as observed positive pairs.",
+      "evidence_locator": "§3 model equations (5)–(7), Theorems 1, 4, 5 and 8; §2 contrastive sampling.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "known primary source and central OpenAlex query06",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W2946649969",
+          "title": "The Incomplete Rosetta Stone Problem: Identifiability Results for Multi-View Nonlinear ICA",
+          "year": 2019,
+          "doi": "https://doi.org/10.48550/arxiv.1905.06642",
+          "query_files": [
+            "raw/openalex_06.json"
+          ],
+          "relation": "related preprint or earlier version; canonical metadata verified separately"
+        }
+      ]
+    },
+    {
+      "id": "peters_restricted_anm",
+      "title": "Causal Discovery with Continuous Additive Noise Models",
+      "authors": [
+        "Jonas Peters",
+        "Joris M. Mooij",
+        "Dominik Janzing",
+        "Bernhard Schölkopf"
+      ],
+      "year": 2014,
+      "publication_status": "JMLR 15(58):2009–2053",
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v15/peters14a.html",
+      "full_text_url": "https://www.jmlr.org/papers/volume15/peters14a/peters14a.pdf",
+      "family": "positive_causal_orientation_given_joint",
+      "observation_contract": "The joint distribution of all modeled observed variables is available.",
+      "target": "The causal DAG, beyond its usual Markov equivalence class.",
+      "assumptions": "Restricted additive-noise SEM, independent exogenous errors, causal minimality and the stated non-reversibility/regularity conditions.",
+      "theorem_applicability": "Supports orientation after justified joint recovery. Additive neural equations alone are insufficient; the theorem does not recover missing cross-assay couplings.",
+      "evidence_locator": "Definition 27 and Theorem 28; Condition 19; Examples 24 and 26.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "prior focused review; direct primary retrieval",
+      "openalex_related_records": []
+    },
+    {
+      "id": "koo_schrodinger_statistical_matching",
+      "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+      "authors": [
+        "Eunho Koo",
+        "Tongseok Lim",
+        "Jinwon Sohn"
+      ],
+      "year": 2026,
+      "publication_status": "arXiv preprint 2606.22770v1, 22 June 2026",
+      "doi": "10.48550/arXiv.2606.22770",
+      "primary_url": "https://arxiv.org/html/2606.22770v1",
+      "family": "positive_structured_transport_completion",
+      "observation_contract": "Partially overlapping (X,Y) and (X,Z) samples; reported tuning can additionally use complete auxiliary triplets.",
+      "target": "Joint-distribution recovery and predictive completion, not causal orientation.",
+      "assumptions": "Gaussian recovery theorem requires an oracle cost or residual-sign-compatible alignment cost and a suitable regularization parameter.",
+      "theorem_applicability": "Existence of a recovering parameter is not identification of it from marginals. The oracle/sign restriction and parameter selection depend on missing joint information or extra assumptions.",
+      "evidence_locator": "Theorem 3.2; §3.2 tuning discussion; Appendix A parameter formula and B.4 auxiliary-triplet validation.",
+      "evidence_level": "primary_full_text_theorem_statement_and_protocol_reviewed",
+      "discovery_origin": "prior focused review and central OpenAlex query04",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W7165641419",
+          "title": "Statistical Matching via Schrödinger Bridge beyond Conditional Independence",
+          "year": 2026,
+          "doi": "https://doi.org/10.48550/arxiv.2606.22770",
+          "query_files": [
+            "raw/openalex_04.json"
+          ],
+          "relation": "same publication"
+        }
+      ]
+    },
+    {
+      "id": "kim_fractional_imputation",
+      "title": "Statistical matching using fractional imputation",
+      "authors": [
+        "Jae Kwang Kim",
+        "Emily Berg",
+        "Taesung Park"
+      ],
+      "year": 2016,
+      "publication_status": "Survey Methodology 42(1):19–40; final publisher version",
+      "doi": null,
+      "primary_url": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2016001/article/14539-eng.pdf",
+      "family": "positive_identified_statistical_matching_model",
+      "observation_contract": "Independent samples measure common covariates with different outcomes.",
+      "target": "Joint-model parameters and imputed joint analyses.",
+      "assumptions": "A correctly specified identified parametric model. One sufficient construction uses instrumental-variable relevance and exclusion with a linear outcome equation.",
+      "theorem_applicability": "Recovery can use restrictions rather than new measurements. IV validity is not guaranteed by a shared state. Numerical EM convergence alone should not be treated as a general identification proof.",
+      "evidence_locator": "§2 Remark 2.1 and Example 2.1; §3 identified-model premise; §7 limitations. Final version differs from 2015 preprint wording.",
+      "evidence_level": "primary_full_text_model_and_derivation_reviewed",
+      "discovery_origin": "Koo reference snowball; central OpenAlex query04 preprint; supplementary publisher verification",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W2432928090",
+          "title": "Statistical Matching using Fractional Imputation",
+          "year": 2015,
+          "doi": "https://doi.org/10.48550/arxiv.1510.03782",
+          "query_files": [
+            "raw/openalex_04.json"
+          ],
+          "relation": "related preprint or earlier version; canonical metadata verified separately"
+        }
+      ]
+    },
+    {
+      "id": "sturma_unpaired_causal_representation",
+      "title": "Unpaired Multi-Domain Causal Representation Learning",
+      "authors": [
+        "Nils Sturma",
+        "Chandler Squires",
+        "Mathias Drton",
+        "Caroline Uhler"
+      ],
+      "year": 2023,
+      "publication_status": "NeurIPS 36, main conference",
+      "doi": "10.52202/075280-1496",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6c8985579293e0209bdaa4f21bb1d237-Abstract-Conference.html",
+      "full_text_url": "https://arxiv.org/html/2302.00993v2",
+      "family": "positive_unpaired_joint_and_shared_causal_graph",
+      "observation_contract": "Only separate domain marginals; no paired measurements or interventions required by the theorem.",
+      "target": "The observed joint law is identified exactly; signed-block representation ambiguities leave that law invariant. The shared latent DAG is identified up to relabeling; its coefficients can retain sign ambiguities.",
+      "assumptions": "Linear latent SEM and full-column-rank linear views, with no unspecified extra count kernel; independent distinct nonsymmetric standardized errors. Graph recovery needs separated shared/private blocks, two partial pure children per shared latent and rank faithfulness.",
+      "theorem_applicability": "A genuine counterexample to blanket impossibility from unpaired data. Its restricted model excludes the Gaussian counterfamily; it does not establish arbitrary feature-level regulation from raw counts.",
+      "evidence_locator": "Official PDF: Eq. (1)–(2) and Definition 2.1, pp4–5; C1–C2 and Theorem 3.1, p6; Definition 4.2 and C3–C4, pp7–8; Theorem 4.4, p8; Remark 3.3 and Appendix C.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "central OpenAlex query05 and supplementary primary search",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/6c8985579293e0209bdaa4f21bb1d237-Paper-Conference.pdf",
+      "measurement_scope": "Domain-private latent factors can represent noise within this model; appending Poisson/negative-binomial observations is not licensed by the theorem without another identification argument.",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W7133240739",
+          "title": "Unpaired Multi-Domain Causal Representation Learning",
+          "year": 2023,
+          "doi": "https://doi.org/10.52202/075280-1496",
+          "query_files": [
+            "raw/openalex_05.json"
+          ],
+          "relation": "same publication"
+        }
+      ],
+      "joint_graph_scope_distinction": "Remark 3.3 permits shared-to-private directed paths for joint-law identification, but no private-to-shared paths. Section 4 uses separated shared/private blocks for its shared-graph identification theorem."
+    },
+    {
+      "id": "timilsina_unpaired_sca",
+      "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+      "authors": [
+        "Subash Timilsina",
+        "Sagar Shrestha",
+        "Xiao Fu"
+      ],
+      "year": 2024,
+      "publication_status": "NeurIPS 37, main conference",
+      "doi": "10.52202/079017-4058",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6c967a0e4168df9614a81ed4195ba78-Abstract-Conference.html",
+      "full_text_url": "https://arxiv.org/html/2409.19422v2",
+      "family": "positive_unpaired_shared_subspace",
+      "observation_contract": "Unpaired linear mixtures of common and private components; separate variants add identical mixing structure or a few paired anchors.",
+      "target": "Aligned shared components up to a common invertible linear transform; stronger ICA variants recover individual components.",
+      "assumptions": "Full-column-rank mixing, full-rank shared covariance, modality variability and restrictions removing distribution-preserving ambiguities; anchor variants have different assumptions.",
+      "theorem_applicability": "Unpaired distribution matching can be identifiable within restricted models. The shared-subspace result is not a theorem identifying arbitrary residual couplings or a causal DAG.",
+      "evidence_locator": "Official PDF: Eq. (1), §2; Assumption 1 and Theorem 1, pp4–5; Corollary 1, p5; additional same-mixing and paired-anchor variants in §4, pp6–7; Appendix H private components.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "central OpenAlex query06 and supplementary primary search",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e6c967a0e4168df9614a81ed4195ba78-Paper-Conference.pdf",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W4415795218",
+          "title": "Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures",
+          "year": 2024,
+          "doi": "https://doi.org/10.52202/079017-4058",
+          "query_files": [
+            "raw/openalex_04.json",
+            "raw/openalex_06.json"
+          ],
+          "relation": "same publication"
+        }
+      ]
+    },
+    {
+      "id": "sun_biomedical_causal_representation",
+      "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+      "authors": [
+        "Yuewen Sun",
+        "Lingjing Kong",
+        "Guangyi Chen",
+        "Loka Li",
+        "Gongxu Luo",
+        "Zijian Li",
+        "Yixuan Zhang",
+        "Yujia Zheng",
+        "Mengyue Yang",
+        "Petar Stojanov",
+        "Eran Segal",
+        "Eric P. Xing",
+        "Kun Zhang"
+      ],
+      "year": 2025,
+      "publication_status": "ICLR 2025; proceedings verified despite PMC copy being labeled preprint",
+      "doi": null,
+      "primary_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/2ec91b31ac4aa578d99309d4f00c81ad-Abstract-Conference.html",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11952583/",
+      "family": "positive_joint_multimodal_causal_representation",
+      "observation_contract": "Theorems compare complete multimodal joint laws p(x), and the estimator uses jointly observed modality tuples.",
+      "target": "Latent subspaces/components connected across modalities; graph estimates evaluated empirically.",
+      "assumptions": "Smooth invertible generating maps, sufficient cross-modality influence/Jacobian rank and a structural sparsity condition excluding denser mixed representations.",
+      "theorem_applicability": "A relevant nonlinear biomedical positive result with a different observation contract. Replacing joint tuples by integration-generated pairs is not covered by its theorem.",
+      "evidence_locator": "Official PDF: Conditions 4.1/4.3 and Theorems 4.2/4.4, pp4–7; §5 joint estimation, pp8–9; proofs Appendix C. Theorem 4.4 explicitly assumes equality of full p(x).",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "central OpenAlex query05; supplementary PMC and ICLR verification",
+      "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/2ec91b31ac4aa578d99309d4f00c81ad-Paper-Conference.pdf",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W4404401814",
+          "title": "Causal Representation Learning from Multimodal Biomedical Observations",
+          "year": 2024,
+          "doi": "https://doi.org/10.48550/arxiv.2411.06518",
+          "query_files": [
+            "raw/openalex_05.json"
+          ],
+          "relation": "related preprint or earlier version; canonical metadata verified separately"
+        }
+      ]
+    },
+    {
+      "id": "dugourd_cosmos",
+      "title": "Causal integration of multi-omics data with prior knowledge to generate mechanistic hypotheses",
+      "authors": [
+        "Aurelien Dugourd",
+        "Christoph Kuppe",
+        "Marco Sciacovelli",
+        "Enio Gjerga",
+        "Attila Gabor",
+        "Kristina B. Emdal",
+        "Vitor Vieira",
+        "Dorte B. Bekker-Jensen",
+        "Jennifer Kranz",
+        "Eric M. J. Bindels",
+        "Ana S. H. Costa",
+        "Abel Sousa",
+        "Pedro Beltrao",
+        "Miguel Rocha",
+        "Jesper V. Olsen",
+        "Christian Frezza",
+        "Rafael Kramann",
+        "Julio Saez-Rodriguez"
+      ],
+      "year": 2021,
+      "publication_status": "Molecular Systems Biology 17:e9730",
+      "doi": "10.15252/msb.20209730",
+      "primary_url": "https://link.springer.com/article/10.15252/msb.20209730",
+      "family": "causal_multiomics_prior_network_contextualization",
+      "observation_contract": "Bulk multi-omics tumor/normal contrasts with biological sample correspondence and a signed directed prior network.",
+      "target": "Coherent mechanistic hypotheses selected from prior pathways.",
+      "assumptions": "Curated regulatory signs/directions and activity footprints; optimization favors compact networks explaining measured changes.",
+      "theorem_applicability": "Additional directed biological knowledge changes the information contract. Authors frame outputs as hypotheses, not complete de novo causal identification.",
+      "evidence_locator": "Introduction; Fig.1; Discussion limitations; Methods prior-network construction and CARNIVAL optimization.",
+      "evidence_level": "primary_full_text_methods_and_limitations_reviewed",
+      "discovery_origin": "supplementary primary search",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W3124569282",
+          "title": "Causal integration of multi‐omics data with prior knowledge to generate mechanistic hypotheses",
+          "year": 2021,
+          "doi": "https://doi.org/10.15252/msb.20209730",
+          "query_files": [
+            "raw/openalex_01.json"
+          ],
+          "relation": "same publication"
+        }
+      ]
+    },
+    {
+      "id": "xi_propensity_alignment",
+      "title": "Propensity Score Alignment of Unpaired Multimodal Data",
+      "authors": [
+        "Johnny Xi",
+        "Jana Osea",
+        "Zuheng (David) Xu",
+        "Jason Hartford"
+      ],
+      "year": 2024,
+      "publication_status": "NeurIPS 37 (2024), main conference; official proceedings verified",
+      "doi": "10.52202/079017-4480",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ff56c8dc4c61017eab9771481b7fda0d-Abstract-Conference.html",
+      "family": "positive_unpaired_alignment_with_perturbation_labels",
+      "observation_contract": "Separate modalities with observed experimental labels perturbing a shared latent state.",
+      "target": "A common identifiable propensity representation and matching/prediction, not a causal DAG.",
+      "assumptions": "Injective modality measurement maps and treatment-independent private variation conditional on state; sufficiently informative perturbations for full state discrimination.",
+      "theorem_applicability": "A relevant biological alignment result using permitted information only if such labels and assumptions exist. Equal propensity scores need not imply equal states; residual causality is not identified by alignment alone.",
+      "evidence_locator": "§2; Propositions 3.1–3.2; Appendix A explicitly separates shuffled same-source data.",
+      "evidence_level": "primary_full_text_proposition_statement_reviewed",
+      "discovery_origin": "supplementary primary search",
+      "related_preprint_doi": "10.48550/arXiv.2404.01595",
+      "full_text_url": "https://arxiv.org/html/2404.01595v2",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/ff56c8dc4c61017eab9771481b7fda0d-Paper-Conference.pdf",
+      "openalex_related_records": []
+    },
+    {
+      "id": "tong_ot_structural_grn",
+      "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-cell Data",
+      "authors": [
+        "Tsz Pan Tong",
+        "Aoran Wang",
+        "George Panagopoulos",
+        "Jun Pang"
+      ],
+      "year": 2026,
+      "publication_status": "ECML PKDD 2024 proceedings, CCIS2560, pp257–271; first online 7 May 2026",
+      "doi": "10.1007/978-3-032-25311-8_21",
+      "primary_url": "https://link.springer.com/chapter/10.1007/978-3-032-25311-8_21",
+      "family": "temporal_transport_and_empirical_grn_inference",
+      "observation_contract": "Known temporal snapshots of the same jointly measured gene panel; reported simulations shuffle existing trajectories at sampled times.",
+      "target": "A gene regulatory graph inferred from transport-reconstructed trajectories.",
+      "assumptions": "Temporal ordering, chosen transport geometry and a dynamical structural-inference model.",
+      "theorem_applicability": "A meaningful empirical challenger in a different design, not an identification theorem for disjoint modalities at one population snapshot. No general identifiability theorem was found in the inspected text.",
+      "evidence_locator": "Publisher 2026 metadata/abstract verified; full methods inspected in 2024 preprint: §3 OT trajectory construction; §4 structural inference; §5.1 shuffled temporal benchmark design. Final publisher full text is subscription gated.",
+      "evidence_level": "primary_preprint_full_text_methods_and_final_publication_metadata_reviewed",
+      "discovery_origin": "parent referral from independent integration-method reviewer",
+      "related_preprint_doi": "10.48550/arXiv.2409.15080",
+      "full_text_url": "https://arxiv.org/html/2409.15080v1",
+      "openalex_related_records": [
+        {
+          "id": "https://openalex.org/W7160425695",
+          "title": "Integrating Optimal Transport and Structural Inference Models for GRN Inference from Single-Cell Data",
+          "year": 2026,
+          "doi": "https://doi.org/10.1007/978-3-032-25311-8_21",
+          "query_files": [
+            "raw/openalex_03.json"
+          ],
+          "relation": "same publication"
+        }
+      ]
+    },
+    {
+      "id": "huang_cdnod",
+      "title": "Causal Discovery from Heterogeneous/Nonstationary Data",
+      "authors": [
+        "Biwei Huang",
+        "Kun Zhang",
+        "Jiji Zhang",
+        "Joseph Ramsey",
+        "Ruben Sanchez-Romero",
+        "Clark Glymour",
+        "Bernhard Schölkopf"
+      ],
+      "year": 2020,
+      "publication_status": "JMLR 21(89):1–53",
+      "doi": null,
+      "primary_url": "https://www.jmlr.org/papers/v21/19-232.html",
+      "full_text_url": "https://www.jmlr.org/papers/volume21/19-232/19-232.pdf",
+      "family": "positive_causal_discovery_with_heterogeneity",
+      "observation_contract": "Jointly measured variables with a domain or time index across changing distributions.",
+      "target": "Causal skeleton and directions supported by changes; otherwise an equivalence class.",
+      "assumptions": "Pseudo causal sufficiency, augmented faithfulness and independent mechanism changes/edge-specific conditions for orientation.",
+      "theorem_applicability": "Heterogeneity can add identifying information under explicit restrictions. Batch labels or independently missing cross-assay variables do not automatically supply the required joint conditional tests.",
+      "evidence_locator": "§3.1 Assumptions 1–2; Theorem 1; §4 Theorem 2 and Corollary 1.",
+      "evidence_level": "primary_full_text_theorem_statement_reviewed",
+      "discovery_origin": "known primary source; direct retrieval",
+      "openalex_related_records": []
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "CausalVAE: Structured Causal Disentanglement in Variational Autoencoder",
+      "primary_url": "https://arxiv.org/html/2004.08697v7",
+      "status": "full-text screened; contextual only",
+      "reason": "Its causal latent representation uses concept-level supervision. Retained as context, but the core set prioritizes unpaired and multimodal theorems; CVPR page access returned 403. No inference of unsupervised causal identification is made."
+    },
+    {
+      "title": "Partial identification in the statistical matching problem",
+      "doi": "10.1016/j.csda.2016.06.005",
+      "status": "OpenAlex metadata screened; primary full text unavailable through attempted routes",
+      "reason": "Publisher DOI redirect failed and ScienceDirect returned 403. No theorem-level claims extracted."
+    },
+    {
+      "title": "Causal Representation Learning Made Identifiable by Grouping of Observational Variables",
+      "primary_url": "https://arxiv.org/abs/2310.15709",
+      "status": "metadata screened; full-theorem extraction deferred",
+      "reason": "Closely related positive grouped-observation theory; Sun biomedical paper and paired multiview records received priority in this bounded pass. This is a scope exclusion, not negative evidence."
+    }
+  ],
+  "access_log": [
+    {
+      "date": "2026-11-01",
+      "route": "primary known-source retrieval",
+      "sources": "JMLR/PMLR pages and PDFs for unlinked regression, ANM, Locatello, auxiliary ICA, iVAE, Gresele, CD-NOD; Istat manuscript; arXiv Koo and Kim"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary web search after OpenAlex began",
+      "query": "\"single-cell\" \"causal\" \"unpaired\" integration identifiable"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary web search",
+      "query": "\"causal\" \"multi-omics\" \"representation\" integration"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary web search",
+      "query": "\"Statistical matching using fractional imputation\" Kim Berg Park 2016"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary web search",
+      "query": "\"unpaired\" \"causal\" \"multi-modal\" identifiability"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary metadata verification",
+      "query": "\"Unpaired Multi-Domain Causal Representation Learning\" site:proceedings.neurips.cc"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary metadata verification",
+      "query": "\"Identifiable Shared Component Analysis of Unpaired Multimodal Mixtures\" site:proceedings.neurips.cc"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary metadata verification",
+      "query": "\"Causal Representation Learning from Multimodal Biomedical Observations\" ICML ICLR"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary metadata verification",
+      "query": "\"Old and new approaches in statistical matching\" Scanu"
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://www.embopress.org/doi/full/10.15252/msb.20209730",
+      "result": "Redirected successfully to Springer Nature full article; PMC captcha and Europe PMC 403 were bypassed using this publisher route."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://arxiv.org/html/2302.00993v3",
+      "result": "404 for nonexistent version; canonical v2 subsequently verified and used."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/2ec91b31ac4aa578d99309d4f00c81ad-Paper-Conference.pdf",
+      "result": "Official publication and full text available; supersedes PMC-only preprint status."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/6c8985579293e0209bdaa4f21bb1d237-Paper-Conference.pdf",
+      "result": "Official full text available."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e6c967a0e4168df9614a81ed4195ba78-Paper-Conference.pdf",
+      "result": "Official full text available."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "supplementary metadata verification",
+      "query": "\"Propensity Score Alignment of Unpaired Multimodal Data\" site:proceedings.neurips.cc",
+      "result": "Official NeurIPS2024 publication and DOI verified."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://doi.org/10.1007/978-3-032-25311-8_21",
+      "result": "DOI redirect tool failed; direct Springer chapter URL succeeded."
+    },
+    {
+      "date": "2026-11-01",
+      "route": "primary retrieval",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-032-25311-8_21",
+      "result": "Final publication metadata and abstract verified. Full publisher text gated; methods evidence remains explicitly the available 2024 preprint."
+    }
+  ]
+}

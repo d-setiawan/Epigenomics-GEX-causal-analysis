@@ -1,0 +1,745 @@
+{
+  "assignment_ids_verified": true,
+  "declared_probe_reproduction": {
+    "scglue": {
+      "H3K27ac->H3K27ac": {
+        "mean_r2": 0.9227640409564488,
+        "r2_by_state": [
+          0.9294769431051985,
+          0.9160511388076991
+        ]
+      },
+      "H3K27ac->H3K4me3": {
+        "mean_r2": 0.9579443738093556,
+        "r2_by_state": [
+          0.9760195042974883,
+          0.939869243321223
+        ]
+      },
+      "H3K27ac->RNA": {
+        "mean_r2": 0.9394352570951616,
+        "r2_by_state": [
+          0.9579607048407986,
+          0.9209098093495246
+        ]
+      },
+      "H3K4me3->H3K27ac": {
+        "mean_r2": 0.8895346387748019,
+        "r2_by_state": [
+          0.8934400776706147,
+          0.885629199878989
+        ]
+      },
+      "H3K4me3->H3K4me3": {
+        "mean_r2": 0.9714018779120079,
+        "r2_by_state": [
+          0.9727182677974006,
+          0.9700854880266154
+        ]
+      },
+      "H3K4me3->RNA": {
+        "mean_r2": 0.9436620680156516,
+        "r2_by_state": [
+          0.956178556205036,
+          0.9311455798262672
+        ]
+      },
+      "RNA->H3K27ac": {
+        "mean_r2": 0.8579744004782875,
+        "r2_by_state": [
+          0.87071464879357,
+          0.8452341521630051
+        ]
+      },
+      "RNA->H3K4me3": {
+        "mean_r2": 0.9355834051632222,
+        "r2_by_state": [
+          0.9563303332951965,
+          0.914836477031248
+        ]
+      },
+      "RNA->RNA": {
+        "mean_r2": 0.9649887830115775,
+        "r2_by_state": [
+          0.9695754038297192,
+          0.9604021621934358
+        ]
+      }
+    },
+    "scmrdr": {
+      "H3K27ac->H3K27ac": {
+        "mean_r2": 0.9764918025728038,
+        "r2_by_state": [
+          0.9733700348311297,
+          0.9796135703144778
+        ]
+      },
+      "H3K27ac->H3K4me3": {
+        "mean_r2": 0.9764180277996859,
+        "r2_by_state": [
+          0.9704035135432636,
+          0.9824325420561083
+        ]
+      },
+      "H3K27ac->RNA": {
+        "mean_r2": 0.9015669618957126,
+        "r2_by_state": [
+          0.8866812560453287,
+          0.9164526677460966
+        ]
+      },
+      "H3K4me3->H3K27ac": {
+        "mean_r2": 0.9462240048876774,
+        "r2_by_state": [
+          0.9268895180698865,
+          0.9655584917054684
+        ]
+      },
+      "H3K4me3->H3K4me3": {
+        "mean_r2": 0.9874353196143129,
+        "r2_by_state": [
+          0.9846271829196065,
+          0.9902434563090193
+        ]
+      },
+      "H3K4me3->RNA": {
+        "mean_r2": 0.8528940794691109,
+        "r2_by_state": [
+          0.8609975900776483,
+          0.8447905688605735
+        ]
+      },
+      "RNA->H3K27ac": {
+        "mean_r2": -0.9101616044214256,
+        "r2_by_state": [
+          -1.7680818159693947,
+          -0.052241392873456416
+        ]
+      },
+      "RNA->H3K4me3": {
+        "mean_r2": -0.9758698475261197,
+        "r2_by_state": [
+          -2.542927073657308,
+          0.5911873786050685
+        ]
+      },
+      "RNA->RNA": {
+        "mean_r2": 0.9613591325299742,
+        "r2_by_state": [
+          0.9632270737759141,
+          0.9594911912840343
+        ]
+      }
+    }
+  },
+  "disjoint_train_val": true,
+  "exploratory_probes": {
+    "scglue": {
+      "raw_euclidean_knn15": {
+        "H3K27ac->H3K27ac": {
+          "mean_r2": 0.9379693873255825,
+          "r2_by_state": [
+            0.9263796044606639,
+            0.9495591701905012
+          ]
+        },
+        "H3K27ac->H3K4me3": {
+          "mean_r2": 0.9419659846586592,
+          "r2_by_state": [
+            0.949715833880689,
+            0.9342161354366294
+          ]
+        },
+        "H3K27ac->RNA": {
+          "mean_r2": 0.8820918973584654,
+          "r2_by_state": [
+            0.9057617031453362,
+            0.8584220915715945
+          ]
+        },
+        "H3K4me3->H3K27ac": {
+          "mean_r2": 0.9246016560091581,
+          "r2_by_state": [
+            0.9145255602847354,
+            0.9346777517335809
+          ]
+        },
+        "H3K4me3->H3K4me3": {
+          "mean_r2": 0.9555658612937894,
+          "r2_by_state": [
+            0.9551222779259841,
+            0.9560094446615945
+          ]
+        },
+        "H3K4me3->RNA": {
+          "mean_r2": 0.8789291535012083,
+          "r2_by_state": [
+            0.9009741657278273,
+            0.8568841412745893
+          ]
+        },
+        "RNA->H3K27ac": {
+          "mean_r2": 0.916625111467265,
+          "r2_by_state": [
+            0.9170828057218218,
+            0.9161674172127081
+          ]
+        },
+        "RNA->H3K4me3": {
+          "mean_r2": 0.9284449046924941,
+          "r2_by_state": [
+            0.9341422090611372,
+            0.9227476003238511
+          ]
+        },
+        "RNA->RNA": {
+          "mean_r2": 0.8979157047705275,
+          "r2_by_state": [
+            0.9026561648958276,
+            0.8931752446452275
+          ]
+        }
+      },
+      "raw_ridge_alpha1": {
+        "H3K27ac->H3K27ac": {
+          "mean_r2": 0.9222730825544903,
+          "r2_by_state": [
+            0.928690136011851,
+            0.9158560290971294
+          ]
+        },
+        "H3K27ac->H3K4me3": {
+          "mean_r2": 0.9592968583585793,
+          "r2_by_state": [
+            0.9771219136975317,
+            0.941471803019627
+          ]
+        },
+        "H3K27ac->RNA": {
+          "mean_r2": 0.9406926157055724,
+          "r2_by_state": [
+            0.9594636252001172,
+            0.9219216062110275
+          ]
+        },
+        "H3K4me3->H3K27ac": {
+          "mean_r2": 0.8885311074336711,
+          "r2_by_state": [
+            0.8940768578065732,
+            0.8829853570607691
+          ]
+        },
+        "H3K4me3->H3K4me3": {
+          "mean_r2": 0.9708838858520046,
+          "r2_by_state": [
+            0.9724243828754429,
+            0.9693433888285664
+          ]
+        },
+        "H3K4me3->RNA": {
+          "mean_r2": 0.9430117092088056,
+          "r2_by_state": [
+            0.9563188105756235,
+            0.9297046078419877
+          ]
+        },
+        "RNA->H3K27ac": {
+          "mean_r2": 0.8687484880038177,
+          "r2_by_state": [
+            0.878456839547664,
+            0.8590401364599712
+          ]
+        },
+        "RNA->H3K4me3": {
+          "mean_r2": 0.9405840210023781,
+          "r2_by_state": [
+            0.9553435050553571,
+            0.9258245369493991
+          ]
+        },
+        "RNA->RNA": {
+          "mean_r2": 0.9650971569732008,
+          "r2_by_state": [
+            0.9698222139451885,
+            0.960372100001213
+          ]
+        }
+      }
+    },
+    "scmrdr": {
+      "raw_euclidean_knn15": {
+        "H3K27ac->H3K27ac": {
+          "mean_r2": 0.9768270405814258,
+          "r2_by_state": [
+            0.9782320675623462,
+            0.9754220136005054
+          ]
+        },
+        "H3K27ac->H3K4me3": {
+          "mean_r2": 0.9896119869119189,
+          "r2_by_state": [
+            0.9897361454367584,
+            0.9894878283870795
+          ]
+        },
+        "H3K27ac->RNA": {
+          "mean_r2": 0.916836803568021,
+          "r2_by_state": [
+            0.9296423173610465,
+            0.9040312897749954
+          ]
+        },
+        "H3K4me3->H3K27ac": {
+          "mean_r2": 0.9728767643910884,
+          "r2_by_state": [
+            0.9746986633126257,
+            0.9710548654695511
+          ]
+        },
+        "H3K4me3->H3K4me3": {
+          "mean_r2": 0.9906485853995134,
+          "r2_by_state": [
+            0.9905332503324427,
+            0.9907639204665841
+          ]
+        },
+        "H3K4me3->RNA": {
+          "mean_r2": 0.8849222647115838,
+          "r2_by_state": [
+            0.8942241499800491,
+            0.8756203794431184
+          ]
+        },
+        "RNA->H3K27ac": {
+          "mean_r2": 0.9696607724743307,
+          "r2_by_state": [
+            0.9749406110556535,
+            0.9643809338930077
+          ]
+        },
+        "RNA->H3K4me3": {
+          "mean_r2": 0.9813411411589772,
+          "r2_by_state": [
+            0.9800974161908219,
+            0.9825848661271325
+          ]
+        },
+        "RNA->RNA": {
+          "mean_r2": 0.9515154826315567,
+          "r2_by_state": [
+            0.9572730087390996,
+            0.9457579565240138
+          ]
+        }
+      },
+      "raw_ridge_alpha1": {
+        "H3K27ac->H3K27ac": {
+          "mean_r2": 0.9671952006379896,
+          "r2_by_state": [
+            0.9599505772943236,
+            0.9744398239816554
+          ]
+        },
+        "H3K27ac->H3K4me3": {
+          "mean_r2": 0.9740387421545076,
+          "r2_by_state": [
+            0.9671623639193933,
+            0.9809151203896219
+          ]
+        },
+        "H3K27ac->RNA": {
+          "mean_r2": 0.8570489687195764,
+          "r2_by_state": [
+            0.8027931958011051,
+            0.9113047416380476
+          ]
+        },
+        "H3K4me3->H3K27ac": {
+          "mean_r2": 0.9618203547552391,
+          "r2_by_state": [
+            0.9553151636589617,
+            0.9683255458515165
+          ]
+        },
+        "H3K4me3->H3K4me3": {
+          "mean_r2": 0.9762998207710096,
+          "r2_by_state": [
+            0.9690568460379295,
+            0.9835427955040899
+          ]
+        },
+        "H3K4me3->RNA": {
+          "mean_r2": 0.8390111087907106,
+          "r2_by_state": [
+            0.7779767938019398,
+            0.9000454237794813
+          ]
+        },
+        "RNA->H3K27ac": {
+          "mean_r2": 0.876412710231089,
+          "r2_by_state": [
+            0.9079678122469484,
+            0.8448576082152297
+          ]
+        },
+        "RNA->H3K4me3": {
+          "mean_r2": 0.8383992794314806,
+          "r2_by_state": [
+            0.8845467200234809,
+            0.7922518388394804
+          ]
+        },
+        "RNA->RNA": {
+          "mean_r2": 0.9497910344644788,
+          "r2_by_state": [
+            0.9510936908035569,
+            0.9484883781254007
+          ]
+        }
+      }
+    }
+  },
+  "input_hashes": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/H3K27ac.npz": "ec7d626275ed7e4504c6c4884cb304c71bf017c89ea57aa41d6ccbece0d193f6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/H3K4me3.npz": "a820fec957fe35492162a8c2f2d0826f6c785b7def77ba075c849649e29a2675",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/RNA.npz": "ef8300954e7f85c63be0f876abf9cf49b9656b8d552eae2ffb5ee3014e9fbbda",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/H3K27ac.npz": "c31b95c9dbc0816bf5f03cb044fc39b5ff82bb6208e68c8ea4afc02de32a21b0",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/H3K4me3.npz": "ce647b986a46dd9b228aaff8e867cda38581feb4d9eeca44a475281577e12704",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/RNA.npz": "366cb9a141dafd26aee42233839a9fd1ac0b2c083e038ec4d5509a4d58b5faad",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/H3K27ac.npz": "77f38c560e2d38132d533b7b4d431ef02d469ee4c45cfa6c2f5140779662a470",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/H3K4me3.npz": "22f9dc2523bb088b082d6c9d380783478494234437ecea9e9327053a08b6e1d4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/RNA.npz": "9f15d7e2981cb1bcce5d3130cbaa81639f2906abdbb25727c114dec429c21eb1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/H3K27ac.npz": "daad98f89a763a68751d0e15595732a59039996d1ffd90802793cc930e877707",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/H3K4me3.npz": "6bd19ea8104394a6c87a47cf855744cd1dadd1d707ed747bbe5e0f8d2b96ce32",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/RNA.npz": "5cb313392c8a9dd6ce6bddf4d05f250ce233da6513997dcfdbeaeefcb4474d86",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/train.npz": "6e3cba33e1d1936eacc372334777698dbeba47e5ac80bfce11e18041c5a65e1f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/val.npz": "54f3abf9155128d7c46ae3dda1fc2ff59413f79500e15119d71c644fbaa6a5e7"
+  },
+  "pool_checks": {
+    "train": {
+      "H3K27ac": {
+        "common_before_equalization": 2000,
+        "observed": 4000,
+        "selected": 1936,
+        "selected_ids_sha256": "a3e5787cc4812415b627365341889dd044dcdca70eecd0011cedddacd07d6c5b"
+      },
+      "H3K4me3": {
+        "common_before_equalization": 2000,
+        "observed": 4000,
+        "selected": 1936,
+        "selected_ids_sha256": "ab8db14a30dcd98f189b5a66626a9646962497929087048ef66efa8b7916f566"
+      },
+      "RNA": {
+        "common_before_equalization": 1936,
+        "observed": 4000,
+        "selected": 1936,
+        "selected_ids_sha256": "311d67c552803f1eb866bfff430a1f32df4a70ad97dcc30908cbbff217b2a532"
+      }
+    },
+    "val": {
+      "H3K27ac": {
+        "common_before_equalization": 500,
+        "observed": 500,
+        "selected": 487,
+        "selected_ids_sha256": "2cc79027018c792e79b65b1cee41902c6ff48afc75610100e3c55d8116766b82"
+      },
+      "H3K4me3": {
+        "common_before_equalization": 500,
+        "observed": 500,
+        "selected": 487,
+        "selected_ids_sha256": "94f1aad33b7b880b4a2d3b24c28dd701f4196aeab16c90edfef2ebac366d91ef"
+      },
+      "RNA": {
+        "common_before_equalization": 487,
+        "observed": 500,
+        "selected": 487,
+        "selected_ids_sha256": "207773f7febfdd82125a0441b6ef22014fcdc86ca3849d65277a36535a5eefb6"
+      }
+    }
+  },
+  "post_baseline_nulls": {
+    "constant_embedding_row_order": {
+      "H3K27ac--H3K4me3": {
+        "matched_squared_cost": 3.921260315129144,
+        "normalized_gap": 1.0100728136116108,
+        "oracle_squared_cost": 0.07856072808940617,
+        "random_expected_squared_cost": 3.882939516683668
+      },
+      "RNA--H3K27ac": {
+        "matched_squared_cost": 3.8896287570211916,
+        "normalized_gap": 0.9572572441031334,
+        "oracle_squared_cost": 0.06182784815923006,
+        "random_expected_squared_cost": 4.060544945827451
+      },
+      "RNA--H3K4me3": {
+        "matched_squared_cost": 3.9667187127910224,
+        "normalized_gap": 1.0074599034510128,
+        "oracle_squared_cost": 0.06994561760387434,
+        "random_expected_squared_cost": 3.937864412028259
+      }
+    },
+    "fixed_random_permutation": {
+      "H3K27ac--H3K4me3": {
+        "matched_squared_cost": 3.871376131274077,
+        "normalized_gap": 0.9969605062870557,
+        "oracle_squared_cost": 0.07856072808940617,
+        "random_expected_squared_cost": 3.882939516683668
+      },
+      "RNA--H3K27ac": {
+        "matched_squared_cost": 4.208531911368585,
+        "normalized_gap": 1.0370086109936183,
+        "oracle_squared_cost": 0.06182784815923006,
+        "random_expected_squared_cost": 4.060544945827451
+      },
+      "RNA--H3K4me3": {
+        "matched_squared_cost": 4.121515663659595,
+        "normalized_gap": 1.0474806378810408,
+        "oracle_squared_cost": 0.06994561760387434,
+        "random_expected_squared_cost": 3.937864412028259
+      }
+    }
+  },
+  "report": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/linear_chain_0_informative_val_seed0_scglue-scmrdr_baseline_5e025d63.json",
+  "report_sha256": "196b4ee216bc09139a1f647f7fbdae5a5ebae5a3e06ff8dc6267051a09878a96",
+  "rna_probe_scaling_diagnostics": {
+    "scglue": {
+      "raw_ridge_decoder_operator_norm": 1.3506386280059814,
+      "source_fitted_raw_decoder_operator_norm": 1.652359087836913,
+      "source_low_sd_dimensions": [],
+      "source_train_sd": [
+        0.451957656817536,
+        0.8688167901035732,
+        0.17377870010491245,
+        0.2993159095873624,
+        0.6609347508440299,
+        0.12296592966534847,
+        0.23606618763097334,
+        0.21194733253011938,
+        0.3527678402608388,
+        0.21166381864490108,
+        0.2981004104819828,
+        0.11440775573582668,
+        0.8097414234969207,
+        0.4096641768203878,
+        0.21599278292751853,
+        0.8216087043767334,
+        0.7515189299959759,
+        0.1754444379532631,
+        0.17125105886246406,
+        0.3106023527861553,
+        0.7393372893171754,
+        0.4715711552822182,
+        0.23657275987911372,
+        0.8154876356840742,
+        0.18507471972457962,
+        0.14953152303196077,
+        0.2213090590389744,
+        0.16450536239685032,
+        0.16983095084008235,
+        0.31687873682057477
+      ],
+      "targets": {
+        "H3K27ac": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 0.07392197125256673,
+          "max_abs_source_standardized_low_sd_mean_shift": null,
+          "max_abs_source_standardized_mean_shift": 0.9288960640221342,
+          "prediction_mean_error_by_state": [
+            -0.07800345864314456,
+            0.165382655488512
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            0.0,
+            0.0
+          ],
+          "squared_mean_bias": 0.03343596229672461,
+          "total_mse": 0.29195039213010243
+        },
+        "H3K4me3": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 0.03285420944558522,
+          "max_abs_source_standardized_low_sd_mean_shift": null,
+          "max_abs_source_standardized_mean_shift": 1.1090616347573754,
+          "prediction_mean_error_by_state": [
+            -0.04833656424953521,
+            -0.06535218607803671
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            0.0,
+            0.0
+          ],
+          "squared_mean_bias": 0.00660733166862778,
+          "total_mse": 0.12254469658758516
+        },
+        "RNA": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 0.002053388090349076,
+          "max_abs_source_standardized_low_sd_mean_shift": null,
+          "max_abs_source_standardized_mean_shift": 0.2157427841789454,
+          "prediction_mean_error_by_state": [
+            -0.02832469506126394,
+            0.028298459353006622
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            0.0,
+            0.0
+          ],
+          "squared_mean_bias": 0.0016030911520673577,
+          "total_mse": 0.07315974695041365
+        }
+      }
+    },
+    "scmrdr": {
+      "raw_ridge_decoder_operator_norm": 1.3355164527893066,
+      "source_fitted_raw_decoder_operator_norm": 165.4878297972356,
+      "source_low_sd_dimensions": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source_train_sd": [
+        0.004541157623873143,
+        0.8540394013726558,
+        0.003172444112304693,
+        0.0029427961097875425,
+        0.8166680416340096,
+        0.0028865296392030825,
+        0.0034266156900881004,
+        0.00365485443490688,
+        0.22625315707544782,
+        0.0021709820475869085,
+        0.002011166389026284,
+        0.0051529111526962094,
+        0.0026980200198289733,
+        0.002640547767190656,
+        0.001992711752923405,
+        0.004365867896786573,
+        0.004090864771868511,
+        0.004367315495939867,
+        0.0016339281256080372,
+        0.0019413333076915298
+      ],
+      "targets": {
+        "H3K27ac": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 1.0,
+          "max_abs_source_standardized_low_sd_mean_shift": 4.188873412488544,
+          "max_abs_source_standardized_mean_shift": 9.096446707918142,
+          "prediction_mean_error_by_state": [
+            -1.4778587051657632,
+            0.9360278925917546
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            -0.5335985407136266,
+            0.5639332794335052
+          ],
+          "squared_mean_bias": 3.0602145681439876,
+          "total_mse": 3.843369455715197
+        },
+        "H3K4me3": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 1.0,
+          "max_abs_source_standardized_low_sd_mean_shift": 3.481923775301682,
+          "max_abs_source_standardized_mean_shift": 9.01522324170838,
+          "prediction_mean_error_by_state": [
+            -1.7226600232055516,
+            0.43907449879508437
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            -0.8414147718525851,
+            0.1410183738823067
+          ],
+          "squared_mean_bias": 3.160343971042706,
+          "total_mse": 3.8054376614387304
+        },
+        "RNA": {
+          "fraction_rows_outside_source_train_coordinate_ranges": 0.014373716632443531,
+          "max_abs_source_standardized_low_sd_mean_shift": 0.06620026577188577,
+          "max_abs_source_standardized_mean_shift": 0.06620026577188577,
+          "prediction_mean_error_by_state": [
+            -0.012518484311877166,
+            0.009177335857978757
+          ],
+          "prediction_shift_from_low_sd_dimensions": [
+            0.022436608260381363,
+            0.0024083195753256516
+          ],
+          "squared_mean_bias": 0.00024093594291685742,
+          "total_mse": 0.08099253514888277
+        }
+      }
+    }
+  },
+  "scope": "Public baseline train/val only; secondary probes and nulls are post-baseline exploratory checks, not selection criteria.",
+  "script_sha256": "0ed7d3ed1af31dcf21334669483ea165ef8a450eeb3a11cf0c0105558e3e49a1",
+  "state_center": [
+    0.0027658891300102162,
+    0.0036931498334113874
+  ],
+  "state_scale": [
+    1.0071856125953662,
+    1.0145039876265425
+  ],
+  "status": "crosscheck_passed",
+  "transport": {
+    "scglue": {
+      "H3K27ac--H3K4me3": {
+        "matched_squared_cost": 0.6187874789520809,
+        "normalized_gap": 0.14200130451844184,
+        "oracle_squared_cost": 0.07856072808940617,
+        "random_expected_squared_cost": 3.882939516683668
+      },
+      "RNA--H3K27ac": {
+        "matched_squared_cost": 0.4988994939172124,
+        "normalized_gap": 0.10930296769752797,
+        "oracle_squared_cost": 0.06182784815923006,
+        "random_expected_squared_cost": 4.060544945827451
+      },
+      "RNA--H3K4me3": {
+        "matched_squared_cost": 0.4684113251591334,
+        "normalized_gap": 0.10301811613254355,
+        "oracle_squared_cost": 0.06994561760387434,
+        "random_expected_squared_cost": 3.937864412028259
+      }
+    },
+    "scmrdr": {
+      "H3K27ac--H3K4me3": {
+        "matched_squared_cost": 0.13244688322813888,
+        "normalized_gap": 0.014164245500549625,
+        "oracle_squared_cost": 0.07856072808940617,
+        "random_expected_squared_cost": 3.882939516683668
+      },
+      "RNA--H3K27ac": {
+        "matched_squared_cost": 0.17475897793002748,
+        "normalized_gap": 0.02824184032340051,
+        "oracle_squared_cost": 0.06182784815923006,
+        "random_expected_squared_cost": 4.060544945827451
+      },
+      "RNA--H3K4me3": {
+        "matched_squared_cost": 0.15415278630451149,
+        "normalized_gap": 0.021770666132397094,
+        "oracle_squared_cost": 0.06994561760387434,
+        "random_expected_squared_cost": 3.937864412028259
+      }
+    }
+  },
+  "truth_field_access": [
+    "cell_ids",
+    "assigned_assay",
+    "state"
+  ],
+  "versions": {
+    "numpy": "2.2.6",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.14.1"
+  }
+}

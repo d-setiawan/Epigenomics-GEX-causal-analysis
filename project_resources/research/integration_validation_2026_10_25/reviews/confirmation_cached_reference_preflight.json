@@ -1,0 +1,1030 @@
+{
+  "checks_passed": 701,
+  "completed_utc": "2026-10-25T23:28:15.148532+00:00",
+  "created_utc": "2026-10-25T23:28:12.754420+00:00",
+  "errors": [],
+  "future_public_run_calls_checked": 32,
+  "geometry": [
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "9b06c121d83d4408181cc9efecfdaf1456257ee3463ec3692491e2cad3701c10",
+          "n_cells": 2000,
+          "npz_sha256": "8bbbf3ce063d335a007a094efa3abb343df9df3c8eafebffa8e7988faaf34161",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "e78ee4e16a473b76fc5d0ba773de6be0cf7760c5e8574e86f1723a0948b90b98",
+          "n_cells": 2000,
+          "npz_sha256": "f8b8ff9902ac51f4773b34a22c5d1c47c69ab1c19f9a8bc2e972ddbbc5ff13fe",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "63306297b4e3effca982f91729a14e1c7e52f597e7dac3a537af4231c839b5ab",
+          "n_cells": 1614,
+          "npz_sha256": "8c598165172d74f67fd4b43d31b2e21fbbb2320362dd667a54a0c4143a865efd",
+          "representation": "X_pca",
+          "shape": [
+            1614,
+            50
+          ]
+        }
+      },
+      "cohort": "train",
+      "manifest_sha256": "e658f79556737554a548431c5188c3523b3ab99fc52fbe93aadf0d8dc7379705",
+      "regime": "realistic",
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "d900ccb7681124731eee79a192b602bfef733dbf39954260dd798299ac72331a",
+          "n_cells": 1000,
+          "npz_sha256": "a88c51366474d34d310a05027626329544fe534143eeca5c184cbd76a9a09f16",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "90091971fc98d019a167828aceb34dafca10835cc3e485b06dfb88cbd1955273",
+          "n_cells": 1000,
+          "npz_sha256": "d060e37c6e3a00a67046b5260c1a6e090b5648c069c19036071cfd7a7421a20e",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "a98032cf2f8721e3182dccf8ff744afc588b62ce0272c5793da20622a47c0155",
+          "n_cells": 766,
+          "npz_sha256": "1441c19c4ecf59f16b0aa1910ddb10cf3703533c0ed39fd985b8dff2444cccb7",
+          "representation": "X_pca",
+          "shape": [
+            766,
+            50
+          ]
+        }
+      },
+      "cohort": "discovery",
+      "manifest_sha256": "a8f9b8a49b64258f72bf341ccc09a2ca25a4f78e9c0ff627c66af79add9e5e2d",
+      "regime": "realistic",
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "db88abef7a61a386774ed84cca5f7a63abbb4da7b9ba2f76bbe204db2de8329a",
+          "n_cells": 2000,
+          "npz_sha256": "7e1e873c5b34bc89b4b59841781132615240b01d7379b3ccc7598368398010f8",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "4d5965a8a0b6a0959fafe5beff358ca174e219c145386d219bb282a2eea4bc74",
+          "n_cells": 2000,
+          "npz_sha256": "3b1cb9dfe4871f11ff9c27e05f575b032c60340914297e6f7e000d478e634dee",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "302936de8420d687501054455e06ddcb9ea0ef136f2ad8c8fe1a2967aa144d8a",
+          "n_cells": 1942,
+          "npz_sha256": "12486e6331b628c323c4f4205eb67021a0984064fe758d2740073a2c61d574cb",
+          "representation": "X_pca",
+          "shape": [
+            1942,
+            50
+          ]
+        }
+      },
+      "cohort": "train",
+      "manifest_sha256": "46914e44f7cf662810b1eef7c270e75ab70a5f99eb3f9a69627577eddc582d89",
+      "regime": "informative",
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "3b5baa242ab18fa5fe50ce80bb2ca724b566251111769f8d2cce8cad38f0eb17",
+          "n_cells": 1000,
+          "npz_sha256": "ee3333e65b4e45571595e442aac428f4d5ff516b15a9de0777a2941c2711f1f0",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "e006b1c0f7a5cd5a774d55f79c592238b059e8fe85a9874d84f1d541cd660d4a",
+          "n_cells": 1000,
+          "npz_sha256": "9355d20f2724709a9a1716aca14305c058bff51c825cefc923bc35dd7cb2da7f",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "73b05e2b10a0b3f33c6b36127f82064b732af56a67d8f3870d4b6da2016bdce0",
+          "n_cells": 955,
+          "npz_sha256": "fbee1e06c70b3e0b1ca3f005224090c27288cd4ecfb8cc881ff0809332981dc7",
+          "representation": "X_pca",
+          "shape": [
+            955,
+            50
+          ]
+        }
+      },
+      "cohort": "discovery",
+      "manifest_sha256": "2ce345649e4b8843c0c4e46bf55d042bb64e3a62dcf8dc5fb9ac8971e7ba615e",
+      "regime": "informative",
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "1b3f379954092407c32cb7f5d35bbe629fdd8c411421b7b0c15b39c5ac04a045",
+          "n_cells": 2000,
+          "npz_sha256": "ff930a7d6e4e4bc5384ac160074aa9cf0d041f4cc7e1d2ef57fec12ea0060aa7",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "6c0dc8ec543d30f7e503d2fe957977faa6810f91a2298fcd14f771412f9b8fd5",
+          "n_cells": 2000,
+          "npz_sha256": "be8ac374c7981fa2164e30d37e16fcbf7a63711f5c6606bc5b7e90bae8d806a2",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "f4936dbcfc65dded3845175369ad5164fd9f1d6d6840c37c4e9a08da66a15772",
+          "n_cells": 1567,
+          "npz_sha256": "3ea4e214a2091f6c0104f52c5582beed471f5a4af5f90558a5216b9f3f3169d6",
+          "representation": "X_pca",
+          "shape": [
+            1567,
+            50
+          ]
+        }
+      },
+      "cohort": "train",
+      "manifest_sha256": "bcd3c1430f1e653ab994bc4372ea31956ff5ec92e72f3e8b6bf16757e57a7565",
+      "regime": "realistic",
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "b899aab4ae2a04be9830768b4ee82b20d9409b8e67c84b0c486cd49933f26e0b",
+          "n_cells": 1000,
+          "npz_sha256": "017462ae4a1fa00f0b3fef706930e22495c055a293bde1487b15092afed5c6fa",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "78e09efe264cc211383463c4612176944e9614dfb11b7e65b379419901844284",
+          "n_cells": 1000,
+          "npz_sha256": "a16497c87f638068dc401342036edd11d0080663fcc4c905e40dc6e557291acf",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "76149b4a15bb961766d9ca2278b720b49dae2e76ec61bb6b1ae3d10d98f40bb2",
+          "n_cells": 756,
+          "npz_sha256": "4c05a17fd89ed6d98f219fa5d121373141f7565889d0b6a3fd5bdc0e7759b55b",
+          "representation": "X_pca",
+          "shape": [
+            756,
+            50
+          ]
+        }
+      },
+      "cohort": "discovery",
+      "manifest_sha256": "7bd6a18c8fa85f457863b47632db1e21f2f11f25618db59c1a56dc3b0ede27b4",
+      "regime": "realistic",
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "352dde81aafcc15002244076cc28c9441de1d6c0d0bf4de029cae7e87811214e",
+          "n_cells": 2000,
+          "npz_sha256": "5e9dedaff2d500c34cd8b0ea2da23b57cc72187b66c34f3c2f47670734fe2834",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "3f944c6ea6abf89309f0eec6273539fa5f17dc73c6cbdf9b05e9a1e6408815ae",
+          "n_cells": 2000,
+          "npz_sha256": "5d25dc4b995fb53d427eccb560a66ae7b06b282681aa83e9994c45f2922d103b",
+          "representation": "X_lsi",
+          "shape": [
+            2000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "9887d5ca4019b0636668070ace5abace765e0c5775a3931238e13295e4dadbcb",
+          "n_cells": 1931,
+          "npz_sha256": "cf29eef61ff75f3a3c137ebd84e70bf5f8546a7d6738fca5188f4c2824ad530d",
+          "representation": "X_pca",
+          "shape": [
+            1931,
+            50
+          ]
+        }
+      },
+      "cohort": "train",
+      "manifest_sha256": "4610288c0ee545e2eef60610bbcafa0dd4ad6395aff43380e66f0a728a5771ed",
+      "regime": "informative",
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "assays": {
+        "H3K27ac": {
+          "h5ad_sha256": "ca83d5d0b74d1297a2fe63af8ba2b15f7e9f3e6eefaa21c8667ffe8edd40b83a",
+          "n_cells": 1000,
+          "npz_sha256": "1315d25fcd39146162f5d30427d553e12af87df6275287d640d3d1b1cd1008df",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "H3K4me3": {
+          "h5ad_sha256": "5b4863b7591b089ee622246f8038338370e67bf36f38bb78623cb2beecdc10aa",
+          "n_cells": 1000,
+          "npz_sha256": "d913e89ccc3a0abb98d82a21d20b9a0dbf4be6d8b40313ab00e7e43c855f527f",
+          "representation": "X_lsi",
+          "shape": [
+            1000,
+            50
+          ]
+        },
+        "RNA": {
+          "h5ad_sha256": "3f5e084f140c90f89432994a0933cb09d953072a5740ebc60a2050554a921d26",
+          "n_cells": 957,
+          "npz_sha256": "762fe432f3bb9480e7aabc203efd28d9190afaceb52ecc5a872c814b3eca2d79",
+          "representation": "X_pca",
+          "shape": [
+            957,
+            50
+          ]
+        }
+      },
+      "cohort": "discovery",
+      "manifest_sha256": "91e9c7630a91e134d7283455f95ab10ad221fc46f476cd971014aaa7ba69870c",
+      "regime": "informative",
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    }
+  ],
+  "geometry_sets_ready": 8,
+  "geometry_sets_total": 8,
+  "purpose": "Preflight cached confirmation reference dependencies, before future confirmation outcomes are opened",
+  "regimes": [
+    "realistic",
+    "informative"
+  ],
+  "runs": [
+    {
+      "checkpoint_sha256": "fb2ae62cb5957676a501639616fb61a5961f7f09ea5aba72a5f71f55bad0662a",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "977757fc41520a1a81c0d1a5f9b8359eae9c9b24ba91f67a7647547106fa7fc1"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "509b5f940afcb839d6c84f8f4613614168878591364d4a31d786bc9e87443ddf"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "4c21f9d2823bd327b328a5e01930d7e49a18b35440ef19b49ba456fb4c4733c5",
+          "rows": 766,
+          "sha256": "a6820e526f29b86b696a8c6ed4efa08e60415760badf0537da584e331e083cd1"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "fac106bad1ff69cb0d9d4ecd8ccf2503090e47860463875362369e0e838c422b"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "e808468f6f954c0efaea3363b16abac8a773c14663958416bb25df6f349a240e"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "78ea6a7466f6dd46ae5d819710d8d5cdfcd1f1942afc4cf655b78b03555ac0a0",
+          "rows": 1614,
+          "sha256": "9d44bc0a27587abe5e1c6b88ac2952b3623954054dd61de62e2c9f970bb5bcf8"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "52d52a69e9257a238cc9f6de3aae0ec015a5439980802d5b80bd99cb0fb4527d",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/realistic/primary/scglue_seed0",
+      "public_seal_sha256": "c207f136825af9577c450ca5958c0d06b43a2ea2ab7b0aa4386f736d4ed0a57e",
+      "regime": "realistic",
+      "seed": 0,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "9bd038e87cfdcb875d0124b0130311ff29271d28c751630bdd35d561d2a6ce81",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "e9277f40db20baaee692477c039a3f65bafd348aeb9a4b0c56b8f41afd69eabf"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "5a016c95028b615aae3d93914f3051027f90fecc0418156277323ec4586d96af"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "2d10dce987292bccb0351aa8c68b4a5acd642a0c293540e46fd10f8677ff7714",
+          "rows": 1000,
+          "sha256": "7ab39430e3d78ede8b9c8ef73f666ee142254445dc6d9fa6fa38059c9d8780c8"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "9845ca8de14fd0572577d8202d8b9313b78756c61b663d13f5103112e5f5f8b3"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "1275fe36f1975d6f96d7a40211dad463406bc7b1fe87dadaf543d2cb111adae5"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "f913874b4ceb493ae34c7851de57c6112611eacf535a3593daea1fd879d83b1a",
+          "rows": 2000,
+          "sha256": "6736f9d6a934474bbef45d2e0e3ec418069b038f6c79ad0f8c29fd2e00d9cb87"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "3e73e6d09b7d9121e7d305f7bb83541733da4c202a66a94e1704859f9d155a3c",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/realistic/primary/scmrdr_seed0",
+      "public_seal_sha256": "2e7d523811f6bcd5f9b3c8c0deef43becac4e8d65510015963d3e694f026bb1c",
+      "regime": "realistic",
+      "seed": 0,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "429d9781b05bd2c3ffc76bedbc5fb721745b3ee53a8ab0e28d83e35056adb05f",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "f5de4b775c1d1605be9b57ae5b0d881567b8e26b26d7612484ad0d22e7123068"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "f306f2bd56cbb224c9ce528047bb0c1af49c08f356a174c293d384ff2b58c0a4"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "4c21f9d2823bd327b328a5e01930d7e49a18b35440ef19b49ba456fb4c4733c5",
+          "rows": 766,
+          "sha256": "3c69bd2d619ba0cd35d4971819199fe0cf986ab356f5cad68ac15ed7c93e783a"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "86780de346878a8c845c110431f4d782ad9d2f44f325cf4b40611fdb7889f424"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "b12344ecf7a125565400a372c031e54f258c1d6079f64c1cc9ece8cb00526756"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "78ea6a7466f6dd46ae5d819710d8d5cdfcd1f1942afc4cf655b78b03555ac0a0",
+          "rows": 1614,
+          "sha256": "d03cfa5789ec45032d699dd6c5df470ee7d1a91e085ab18b51f040cc590d8961"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "5331a7045d40e0a2c8a6430d860acd83e1ac8aa1d49168e15767fce4d9be5db2",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/realistic/primary/scglue_seed1",
+      "public_seal_sha256": "18a68b60fafc77adc7e116195b8bf3ff6922028a01f7ad8686af3da48939cc06",
+      "regime": "realistic",
+      "seed": 1,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "bb0eeface0fe4ceb12e4d42e7dfd74ca4e4f9dc16e8386c21e1e707188b9adc7",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "fab08d0a9fcc81f7e23689746c6ef42ad1202a369b5e1bd8776abafb4357a722"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "a493dc3bebb1583527838c4fa81a1fd89a64f712a169d7af2d1d30b71d69c786"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "2d10dce987292bccb0351aa8c68b4a5acd642a0c293540e46fd10f8677ff7714",
+          "rows": 1000,
+          "sha256": "d2d5f8cc227448c71c97e4cc66e9ba1cbc8fd549058a4b7678871d90f864e5f3"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "70b6ff5bd6e4eee548afeb8d710b98559b362e0584fc235f834c3ce13c4ae418"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "21b9603a8827f348ab453db0c1a812a498dad06e810732ae1d96ce6238c805de"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "f913874b4ceb493ae34c7851de57c6112611eacf535a3593daea1fd879d83b1a",
+          "rows": 2000,
+          "sha256": "9c7e7fcbfd7a9590542009b74019a81941c152f69130b143684ce6bae2fa9d30"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "7a55783df949c5446bab3cb23ba69398138dc3aa4b1c106f02007c190469f5cb",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/realistic/primary/scmrdr_seed1",
+      "public_seal_sha256": "653eb778f9c06c329e9dc2d40e7cca1b6229aaa91d373150f19fa502508de583",
+      "regime": "realistic",
+      "seed": 1,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "ea5ed26494ac986517fc223c99ac60b6aaa8ff1d3508eb8e70dcbfce025a44d1",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "6113d53fc3bb03ab7910f2be1fa65b7b22652e3c335b2f109b32a03e6e40327e"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "85c83803de70d9559fefa74179a1961e42ed925e7f46f732538fd44db84f556b"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "112d5da15874e060d5b341cd263d44216e589e421534e7cb41b1d5d14aae3725",
+          "rows": 955,
+          "sha256": "0198eef2d5da6fab2695ee7b911b644a26849c77babbd43a9626b4f6fd0b1e6b"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "9ad60a26f59758eed92a925fa73d0d151b9fe4c450012784d59aae682c412a41"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "3f25af4c35cb50ad7b2827532f0a65200ecd41231ecbdc4e0531c6cb51ca809f"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "87123daf750666955b7dd4a720035917f3a598950bcd957057eba7f852b7dbeb",
+          "rows": 1942,
+          "sha256": "90588d79b63778441a6e9a9e04b85099d78505c3b06a412b6eee652c7ff31b16"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "0f4532152a6c3d7119f68fd48d10e9126ca7eac9a0f35ba156d86d598d755bf8",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/informative/primary/scglue_seed0",
+      "public_seal_sha256": "399b54ec6b1c47376be9b1d49bb860ec71017190a818122967339683faac5aae",
+      "regime": "informative",
+      "seed": 0,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "33562c0f67e2de6b357118a543f5725e0e98cf100b7cbe8d18b25a42596de54f",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "63b2e99d7f20b21ae89e926df3b9d40dcbddee4eda0f0ad7a1e6ddaf451f7a83"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "b0b25b22206ff7d464aa2fcc3afeca234b0bd869d53828fff8d2736a69235acc"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "2d10dce987292bccb0351aa8c68b4a5acd642a0c293540e46fd10f8677ff7714",
+          "rows": 1000,
+          "sha256": "12e450e5a6837c6237bff49f3268287aecd3da822c2a4caacacb5d0b7cc588e9"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "3d33fc7f543705dcf21f1c48dedc6a19b987324f188990b86c99b935b5a94bba"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "176a64e67d4dab84de2af50b58ab2c335f5f39a1674eced38c7c849300db1497"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "f913874b4ceb493ae34c7851de57c6112611eacf535a3593daea1fd879d83b1a",
+          "rows": 2000,
+          "sha256": "e4a52e795d7b123097b819412294d3a8bd9562276245876c1bdb86c2c37dc957"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "5abb96d2398dc4ebad59948565a77e4ae33c7546df1923f38390a828490f62dc",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/informative/primary/scmrdr_seed0",
+      "public_seal_sha256": "4000aa18be6f220d62ade1cba38e50b2f1846403e46c971ecfe9cd560999d61e",
+      "regime": "informative",
+      "seed": 0,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "e158db73939857beba26aa77aaf4c2f99041e7e0813cdf6bf7d6d9502c6bc3a1",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "a9e693593df72550003f7f14c98ce491c52463c3b0d6a1b9cd8f14b3b775474a"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "d66614054b26e0b7a0919cd392a80015166ea29f591ef9c330d403884113a66a"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "112d5da15874e060d5b341cd263d44216e589e421534e7cb41b1d5d14aae3725",
+          "rows": 955,
+          "sha256": "abff30e078a1f949c2822c31252f03147db698e48380eb9828c3cbe8afb8b3f8"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "83475704c16230a100fdc00e80b0bd9a76b0e123c090271b3e73676d9c1399fc"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "f49511e105792b6a21b73ea63a79faceca8bf42d993ef4dd8fb5362fe96c6c8e"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "87123daf750666955b7dd4a720035917f3a598950bcd957057eba7f852b7dbeb",
+          "rows": 1942,
+          "sha256": "c5367ef17b1480e00962decd0d459cc56cabf48e9fcbfc5baf95b0cf29477331"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "3b8aae3f034d4a90a87162422ad35a337e8644172a546fddcb779dc4682e9214",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/informative/primary/scglue_seed1",
+      "public_seal_sha256": "d2eed6ce999e7e49aea83349c8553f61019fab7840e05f71c6782f45e98be7ad",
+      "regime": "informative",
+      "seed": 1,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "506629ef1c60d60002d107a542c56933ef7ccd936584d8678db7472e613f5571",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "131341bd31ca4d5c377dd4304fe387d5f848a74f4ce53e288b4d83888c70a7e5",
+          "rows": 1000,
+          "sha256": "908e2624ade499b72d6dd81b13d12b6a39f027c845cb4d1ea88030e4e98380f4"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "735891ef60d50977b45c07a80bd41cec5f1711e40a6741473195b0722afcdcc6",
+          "rows": 1000,
+          "sha256": "becd52f216629282de51d6a812ae9801c4eabd4d651cbff4f8dcd638a165ca36"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "2d10dce987292bccb0351aa8c68b4a5acd642a0c293540e46fd10f8677ff7714",
+          "rows": 1000,
+          "sha256": "410e031dbc4a660d6b79b1f5613b1684db35af5054ea7320853b4d77703ab429"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "6d0db06b587a330c744b6ff66476b02206267e6084b56aedbdda509c84895c06",
+          "rows": 2000,
+          "sha256": "e6afb315d62d7adcfde03e1fdc7c8ad61472f4c151b543911c52164c9a7ffd29"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "5c8f56025d31f2bb92e051bba98c82a5ea208464227e870138df5bdbf38708d9",
+          "rows": 2000,
+          "sha256": "d7fccecda903e6731554b11fbbf0eecc27b50a8a1007da2fdad629e13df11786"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "f913874b4ceb493ae34c7851de57c6112611eacf535a3593daea1fd879d83b1a",
+          "rows": 2000,
+          "sha256": "1d600a55524efe9a28729754310dc82e61cd3e740b8a284cd6a871c196f381b4"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "2b5eb8530b4688b3cfdf06d1ddf42ff389487c21a53018e56901782cc3fc1482",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/constrained_chain_0/informative/primary/scmrdr_seed1",
+      "public_seal_sha256": "8204ec4db30eb5e6873629c50201d9dfc6317dfeeae81290ce8f4d116895c31a",
+      "regime": "informative",
+      "seed": 1,
+      "status": "ready",
+      "world": "constrained_chain_0"
+    },
+    {
+      "checkpoint_sha256": "0058ad61fa57f71ca993725d56c702568cd0e1c50d841fd323a3cc391ac6a9c5",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "9adf33899b53ace531ffa1ccb6cd7dac7ab3fc2b225325c1e02836aee50f8959"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "0b295e0d1b2f1e453507ac4f9ac5c11af6dd6914fb42d23d3ff1af5b3d986ee3"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "3b26ecbd0614d941998f5da9b9836905cd67e9810352eb815cfaac59287c3619",
+          "rows": 756,
+          "sha256": "e119a7bd15e532243e7c722919eed8a2ab48b3283de205b452821b93e9235201"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "ee4aa4afc17fb4e0b050519efd3248e6c7b19d768138fb50def6c5caf5550003"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "2a0cc362566c7c510796c35aad82347d59c9c82d3540a08ee197609eda72c753"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "7a2aee81a76acbd3944f1620c3b141fc7e33d216f25306f1a69ff5b11a565edd",
+          "rows": 1567,
+          "sha256": "8e566ded4642a67e7a7d7c35dc0865dced35bd02b516e9d598913942dcd1669f"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "50077583abfb5ba7f4a464ae27198554d0d30c31a51ba7dfef41b391891cb427",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/realistic/primary/scglue_seed0",
+      "public_seal_sha256": "f4841ca33ac946b5e433d07058b6fda0e2c4147773d9a242ca814cc9cc2d1eaf",
+      "regime": "realistic",
+      "seed": 0,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "f03afa92500c1c47c15050862c5d2989d8e0b262edeb1ea7a7e26f3194c2ca37",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "113601730a84a2cb9f9064a4dbc97e762d2d6c00ece4c1b81360dd4bdc1d03da"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "f8b34a84d687e78afe591c37b40568f219b5d8dc4346ba5b4e463d2bdd805a6d"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "be5bf1c19300116b604713c3b0ed39fd3eca5729183e21d607815af1d8736638",
+          "rows": 1000,
+          "sha256": "f1cb135a098efa470ce6a6ecde2796f5f479a24e788d860b4c1e001837893bff"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "d11e9ada0c355cd6dd6f454b3897f0fb27b2050644fba15ce0b8ec231925bbf9"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "a3ce85846e49e7701ef05dd2d8407114be9632bcc5fffeeffe5c34edde6498b1"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "ed3acbddf44d083dfdcdcf152d66f4f06d1ddf72e479493f3473868e42032c85",
+          "rows": 2000,
+          "sha256": "ba5c725618a4104a04bf650825c3fec1a1240adfc80b01267e1b7545c4f4f90c"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "18b848a794076c831f35d298bd2044b6c366a4d3820231f3376386e39f5a33f2",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/realistic/primary/scmrdr_seed0",
+      "public_seal_sha256": "80471b7fa3bb6d41b9a179758b91c8bb2e20340c20a10da1f16ce9759e52d69f",
+      "regime": "realistic",
+      "seed": 0,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "019989d842607375c98b17e8fea97242be6fccd9099b2b7718490f2fdadbde1c",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "64865659d32033a0ca50a5f6d1bae250a59c0cba44d2546211ecd63e5c667540"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "4be6a4f8306557dc5e0bb182ccdf757703c7dfa27cbc50690876fe830babdc02"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "3b26ecbd0614d941998f5da9b9836905cd67e9810352eb815cfaac59287c3619",
+          "rows": 756,
+          "sha256": "e1a0a3081ec5373e66b38990abc7560a21e8785eb4810b2347ee8990ce88eac7"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "84b94a4e26b6985b21b0616816862418ca8136768e38a8a9210f3b944fbe61b7"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "ee4254c17f93bab385b21f70b950416ab36fbaa49b89ffd62b1a79f311d95fcb"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "7a2aee81a76acbd3944f1620c3b141fc7e33d216f25306f1a69ff5b11a565edd",
+          "rows": 1567,
+          "sha256": "e0076e01f8abfe25d7207d83eb51f36fc862dfe24a20b695a2d299dbeabfcc9e"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "9bdd33e0b5ea6ef0506d500299eb5dc9eb80a03eeea650f2abfb6d4cab2db244",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/realistic/primary/scglue_seed1",
+      "public_seal_sha256": "669b30c3c2ddb2a39197c0c2f74b28fbd1ae1c34c753cfe5bee03b2fff64a851",
+      "regime": "realistic",
+      "seed": 1,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "c0f25fa9ef185184856aa642f9218b52cb5fe9a61ca0de44bc79543ce108895f",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "8a1eac98eaa161850a2ae476d0f9470f5afd0d3726b6f9c96f8a9bb0dc57b845"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "4cdc33afc2fd4d83353e9dde0ebdbfb412a14a64e6f974499510aeda7efc7047"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "be5bf1c19300116b604713c3b0ed39fd3eca5729183e21d607815af1d8736638",
+          "rows": 1000,
+          "sha256": "afffc7c4e69f4c8bdb2921e02f2c127e596fc1ae204ceea166fc8c19760b8faa"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "381a429208f89ba52acf6fff2fb4b2ba618b41e0fcc8d0052d1ffb22013c009a"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "98dab8685dd76caa25e87fda1cb5002e1b108806d8936a9ba03519c627ad537d"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "ed3acbddf44d083dfdcdcf152d66f4f06d1ddf72e479493f3473868e42032c85",
+          "rows": 2000,
+          "sha256": "30804e91f3ea09d526a54e06bbf645fce2c2637f844b8625662a2223cb12fe02"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "680349b2c8afd47848799d1a47f1fb5512791b63fbd5acf5a1b4ae3114460d37",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/realistic/primary/scmrdr_seed1",
+      "public_seal_sha256": "e4cd5420ec9a4979986124e83a972960169a7bda9559b6fdb4a4396803476e2e",
+      "regime": "realistic",
+      "seed": 1,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "48a6e2d712ce942a41a0dc7c49e1ce28d2e00009745f1637a86fcbf1ad512730",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "7038bf1908e13c8ec9705d06bc6e699a9b0b6d7d936b5d570405ebbf21f010c6"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "7e9a2941039d7e416eda08ca7bdde1310753ce8f42051a239ca658544304101a"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "cc9b90f01122cf4bdbdb91cc7fc8a0a92a11a213dfbcde3c6968ad17f4a8fa76",
+          "rows": 957,
+          "sha256": "187733bc24e5fd35380bb8494e992dae7b9989a84dae2c76f7ca8c97df06e79f"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "96bce03ed5bf6a145de84f6c2148063c1c00756b5725baeab22fe2a024939b27"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "677855993f6fcb49f059ebf38927ea2ce27522c9722c0e0efe27ec2cd181aa4b"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "e5d13062af022fe62ade446fa1336370b92f2120d7e7ab3b420561c5c9be9acc",
+          "rows": 1931,
+          "sha256": "eee190c3de7b94dbf8e866f11e774a20fa3ea20c80b53e27dbe53fcac771abd9"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "250d3592422f8844d37dc88bf0340b82ebc2d4f1b436e8f362ef0da08804682a",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/informative/primary/scglue_seed0",
+      "public_seal_sha256": "1356809a1d6b753c919051d884a552c20d9ee582d2f033087524ac54471add59",
+      "regime": "informative",
+      "seed": 0,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "1f18ef7b58fa47f20aa8b173c247ea2a9831a38599ce1ef7c0dd5a637e064156",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "10bc81ba1f56a5615d1ae1f257c721a4d272eb6101cd177b5f91e96af7884628"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "3dc97107b4e2cf8ee90546438816d72abfa0feeb688e7083113ca25f8c143770"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "be5bf1c19300116b604713c3b0ed39fd3eca5729183e21d607815af1d8736638",
+          "rows": 1000,
+          "sha256": "7a672ea8d9efab00fb7e33765d179c622c0c516b15393b51d442e003b6b983a4"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "a07cdb61e11e453d0fab269ed239827cb4725fd1653fb1b56bd16fefe4142497"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "83d1975a935b585f9a523c627cd2e56575b70a532766e8703d882c2c0a19b535"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "ed3acbddf44d083dfdcdcf152d66f4f06d1ddf72e479493f3473868e42032c85",
+          "rows": 2000,
+          "sha256": "7442ea62090bce009c73fc24cb7ec946c7562fff71735208d4936eebe60b3797"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "ff1890f28fec334fee545b8b2da6859b645e31d4e186132662f45558eaf71ad6",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/informative/primary/scmrdr_seed0",
+      "public_seal_sha256": "c620f725988d7ed5a67af6c5ec9cfe4328cb35e0a9dc15ceeb032c5d28bdb099",
+      "regime": "informative",
+      "seed": 0,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "3ac9b35685099aac65af8a253615c278d23108c22bdd11616407936dc79b221f",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "3cd082e58569f2bfa0958d7c505e091534014031fc5602f7545db859990419ea"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "b5f1d7849c717ab7b081e01a008d987da2e8df198b7be14dd340c4d66dc1ff7f"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "cc9b90f01122cf4bdbdb91cc7fc8a0a92a11a213dfbcde3c6968ad17f4a8fa76",
+          "rows": 957,
+          "sha256": "6f170516fcdc117a02634794aaeb9ccb480f037b3085171fc99bfba792c8a970"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "185a4439efe00b0ef3bdb45300f87674de6ea0fb021aae223f49ce3ea289edba"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "ee7a953f536a8ad00877002deb21c76241b9b5274104856feeefcab6ed475fdd"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "e5d13062af022fe62ade446fa1336370b92f2120d7e7ab3b420561c5c9be9acc",
+          "rows": 1931,
+          "sha256": "6c961f57de396771cd0ccfd4a96dde03d2a00f9b6216589d80fef413b189134b"
+        }
+      },
+      "method": "scglue",
+      "model_manifest_sha256": "d9c9040fc0f3f115af28cf39a3b9e4b5ada3c4195f12235c5207aacd02e5a8bd",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/informative/primary/scglue_seed1",
+      "public_seal_sha256": "0cdb6cbc3d54bbcb4de4e10254c0fd1f8ee6965cfbd0c1101a1d37d756a776b0",
+      "regime": "informative",
+      "seed": 1,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    },
+    {
+      "checkpoint_sha256": "d667fd3d7b481c8ce1107b469527a1b9da7470321d14bb9ba92de4161a99b82e",
+      "files": {
+        "discovery/H3K27ac.npz": {
+          "cell_ids_sha256": "77433fa2e1b669ed3753ce642e491470aeaa7383c28698f2bbd57015364c0af0",
+          "rows": 1000,
+          "sha256": "26bb3da3b657110b7722fa93a69d6974c2a83f53f6a8115c3ea0d92096bd5a2c"
+        },
+        "discovery/H3K4me3.npz": {
+          "cell_ids_sha256": "8de7fb3031527150215eae7c3e2d57d01f507fb548ba92146408ef0f4b5f971a",
+          "rows": 1000,
+          "sha256": "47648d763ff8520c53ca76c6d563865288de69c74c0a42d6ff7c49a84eb0e349"
+        },
+        "discovery/RNA.npz": {
+          "cell_ids_sha256": "be5bf1c19300116b604713c3b0ed39fd3eca5729183e21d607815af1d8736638",
+          "rows": 1000,
+          "sha256": "aaf5c189d14751d6976a265949c5a406848500ad3f5bf35ddcb083330b056079"
+        },
+        "train/H3K27ac.npz": {
+          "cell_ids_sha256": "e8f69017e0d9758799b2444596353052d614fdf5ef11cb102248eca1daf2cdc2",
+          "rows": 2000,
+          "sha256": "4fda6e547d826eebe5a724a0d1e11e14654b87934025b40919c8ee0fca928694"
+        },
+        "train/H3K4me3.npz": {
+          "cell_ids_sha256": "3ab8bbf72c5d79be2bf58067a314f2cbbc262f6c45182c983fbb3a14dc5b5a5a",
+          "rows": 2000,
+          "sha256": "8a81bc70dac7727928b3ca52f044421355f00fc09b0480160e48846305cf9bb8"
+        },
+        "train/RNA.npz": {
+          "cell_ids_sha256": "ed3acbddf44d083dfdcdcf152d66f4f06d1ddf72e479493f3473868e42032c85",
+          "rows": 2000,
+          "sha256": "1755df7c6ee29cd1720d968d1162257d26927260ac74325ab11e7fdcef650fe8"
+        }
+      },
+      "method": "scmrdr",
+      "model_manifest_sha256": "e74c5a6d729c83bb19b7ad754b901f3f408db5230efd435b82170f6c4190cae2",
+      "path": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/unrestricted_chain_0/informative/primary/scmrdr_seed1",
+      "public_seal_sha256": "1ab5a1b8fcfa82ab2476f418a6583edc1f9a706879f57f7b2ffcc2e899857ea9",
+      "regime": "informative",
+      "seed": 1,
+      "status": "ready",
+      "world": "unrestricted_chain_0"
+    }
+  ],
+  "runs_ready": 16,
+  "runs_total": 16,
+  "scope": "Only baseline default configurations, source/model/checkpoint/public train-discovery export receipts and public IDs, plus frozen PCA/LSI files and array metadata. No state labels, truth/private/probe/assessment arrays, causal or integration scores, model/checkpoint deserialization, fitting, CUDA, reruns or source/plan/fitted-output changes. Public validation-cohort export bytes were not rehashed because future confirmation audit uses train/discovery references only.",
+  "seeds": [
+    0,
+    1
+  ],
+  "status": "ready",
+  "worlds": [
+    "constrained_chain_0",
+    "unrestricted_chain_0"
+  ]
+}

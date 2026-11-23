@@ -1,0 +1,23 @@
+{
+  "data_extraction_may_read_test_counts_and_pair_indices": true,
+  "data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "evaluator_sha256": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db",
+  "frozen_at_utc": "2026-11-01T20:30:22.100002+00:00",
+  "heldout_scientific_performance_computed_before_all_fit_seal": false,
+  "independent_review": "causal_reliability_pilot reviewed full scorer and independently checked48 explicit bootstrap resamples; nondegenerate max RMSE difference1.78e-15, degenerate cancellation about1e-7",
+  "protocol_sha256": "d6b638b94a34654be510c84e5390b9c2c8c08a60c56b62d0f970ecb2abb0aee4",
+  "reused_utility_sha256": "b50731038d185398c15fe97d88768ebed45b9dfec62c6882d7317c5af67da890",
+  "runner_schema_checked": true,
+  "scope_notes": [
+    "Both matching levels are finite-fingerprint candidates",
+    "Common original30 anchors and commonoutside300 exposure for width comparisons",
+    "Pairwise blocks need not define a PSD joint distribution",
+    "No new worlds, measurements or privatecohorts",
+    "No scientific source fit performed by evaluator; independent nuisance validation only"
+  ],
+  "status": "passed_before_scientific_evaluation",
+  "test_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest project_resources/research/count_extensions_2026_11_01/test_evaluate_extensions.py -q",
+  "test_count": 13,
+  "test_result": "13 passed in0.31s",
+  "test_sha256": "62cac64c789a82a808d8533e7fa61ca8b64c34b83f7880bc9179763decddb9c8"
+}

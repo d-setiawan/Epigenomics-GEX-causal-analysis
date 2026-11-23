@@ -1,0 +1,27 @@
+{
+  "status": "approved",
+  "date_utc": "2026-11-01T21:07:52.873572+00:00",
+  "reviewer": "causal_reliability_pilot",
+  "new_fits": 0,
+  "new_datasets": 0,
+  "scientific_scope": "Bounded finite estimator comparison and computational-rank sensitivity; no universal impossibility or causal recovery claim",
+  "performance_replay": "Independent raw heldout count replay in extension_metric_audit.json; this final document check additionally recomputes displayed aggregates from sealed results",
+  "decision_replay_scope": "Underlying gate decision replay is separately owned by the fit auditor; this review recomputed the displayed gate counts from saved assay/pair records",
+  "followup_not_independent_validation": true,
+  "checks": [
+    "All real30/unit model-table values independently reconstructed from sealed evaluator outputs",
+    "NB0.5 full8/9 and offdiagonal6/9 improvement counts, NB2 both7/9, and full-anchor panel8/9 count checked",
+    "Both state maxima and model/seed/assay identities checked",
+    "CF unassessed, unique/moment distinction, source-instance counts and rank-ceiling scope qualified"
+  ],
+  "files_sha256": {
+    "README.md": "83419ba27c6ce4793195e05ff6b49a9f3b1d3e6b3e9b298ff06e2488f133c8a4",
+    "RESULTS.md": "f91c1900c98707151b5854ef22763b9ff9b44898059f260b62f8650433e1d6a6",
+    "protocol.json": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92",
+    "reviews/extension_metric_audit.json": "8e18e86297e6f8e0ede626d2d972f43c12ba76342e7ad3feab848b03b9ab6d8d",
+    "reviews/result_interpretation_review.md": "775f41c5fdf133b16d79c11625ebb29f8b5aa270c220236adac43b0526e8f226",
+    "METHOD.md": "528a68342666be268b21ea97a1d31f067d0576b4dceb74a7fff90aee1b965f5a"
+  },
+  "fit_provenance_sha256": "2f47365763893e69b4dba4af398ca29ce095658524cab4962d449298ebf4e378",
+  "evaluation_provenance_sha256": "bba8d5d74f696727ba0b71addaa45067b3f1346d481157a05f359759d88999b3"
+}

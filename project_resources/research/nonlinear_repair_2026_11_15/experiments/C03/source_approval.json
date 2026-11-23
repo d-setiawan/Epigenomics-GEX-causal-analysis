@@ -1,0 +1,15 @@
+{
+  "approved": true,
+  "protocol_sha256": "49c0f068cb213fefc555824bbbfeee36b55c12ef9fef6b8c1e0ee733b6ef8f68",
+  "reviewer": "Astra scientific coordinator",
+  "date": "2026-11-15",
+  "independent_prefit_review": "reviews/c03_independent_prefit/REVIEW.md",
+  "basis": "Astra design/source inspection and independent recomputation of protocol,40QP fixtures,source objective/compatibility/zero-support tests; no prefit blocker.",
+  "scope": "Execute unchanged36application fixedr4 baseline grid, three starts each, no tests until complete fit seal.",
+  "limitations": [
+    "Source baseline configuration not full paper ALS++ reproduction",
+    "Omitted data-only objective constant not numerically computed; start objectives comparable only within same application",
+    "No bootstrap or cross-assay correspondence claim",
+    "Version/BLAS runtime provenance does not hash entire base environment"
+  ]
+}

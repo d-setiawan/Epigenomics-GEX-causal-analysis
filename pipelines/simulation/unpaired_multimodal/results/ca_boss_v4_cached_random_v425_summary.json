@@ -1,0 +1,138 @@
+{
+  "schema_version": "ca_boss_v4.cached_random_v425_summary.v1",
+  "algorithm_schema_version": "ca_boss_v4.layered_contract.v4.25",
+  "date": "2026-09-01",
+  "evidence_class": "retrospective_cached_world_production_wiring_replay",
+  "constraints": {
+    "cached_inputs_only": true,
+    "new_worlds_or_datasets_created": false,
+    "new_modalities_created": false,
+    "paired_cells_used": false,
+    "external_data_used": false,
+    "fresh_locked_certification_claimed": false,
+    "calibrator_application_on_its_development_pool_is_independent_validation": false
+  },
+  "production_integration": {
+    "empirical_null_state_tier_is_emitted_by_layered_state_evidence_v4": true,
+    "formal_runner_requires_a_content_addressed_calibrator": true,
+    "formal_runner_schema_version": "shared_state_subspace_v4.block_runner.v8",
+    "layered_candidate_schema_version": "layered_state_evidence_v4.frozen_candidate.v5",
+    "layered_provenance_schema_version": "layered_state_evidence_v4.v5",
+    "scorer_schema_version": "layered_state_evidence_v4.scorer.v9",
+    "validation_protocol_schema_version": "layered_state_evidence_v4.validation_protocol.v13",
+    "empirical_null_state_schema_version": "empirical_null_state_calibration.v4.25",
+    "direct_selector_schema_version": "crossfit_hierarchical_collider.v4.22",
+    "strict_or_equivalence_membership_changed": false,
+    "direct_candidates_changed_by_calibration": false,
+    "pairwise_expansion_permitted": false,
+    "exact_cross_assay_pair_claimed": false,
+    "direct_cross_assay_effect_claimed": false
+  },
+  "frozen_calibrator": {
+    "path": "Evaluation/outputs/ca_boss_v4/cached_nested_empirical_null_v425_full_pool/phase_b_full_calibrator.json",
+    "artifact_sha256": "adc8de2aae1b698c4d46899b7f5ca8137fd881bbd829e54b405aa064bc40cd87",
+    "artifact_payload_sha256": "9715114298dfe32fdce82dbf8165ab1e3d88ad992a20a2dcb7f01dd095edd9bb",
+    "numeric_payload_sha256": "79d9eccf624a00480b3975bfaf2d6523d47253a17cf4681e38f891735dd131f9",
+    "application_requires_truth": false,
+    "training_used_simulation_null_labels": true,
+    "artifact_role": "future_application_only"
+  },
+  "random_cached_panels": {
+    "sampling_method": "random_block_balanced_without_replacement",
+    "selection_seeds": [
+      20260919,
+      20260920,
+      20260921,
+      20260922,
+      20260923
+    ],
+    "panels": 5,
+    "panel_size": 12,
+    "world_evaluations": 60,
+    "unique_worlds": 49,
+    "successful_phase_a_world_evaluations": 60,
+    "successful_phase_b_world_evaluations": 60,
+    "world_reliability_successes": 60,
+    "mean_base_state_supported_recall": 0.8619999999999999,
+    "mean_state_calibrated_recall": 0.8973333333333334,
+    "minimum_panel_mean_state_calibrated_recall": 0.8566666666666668,
+    "maximum_panel_mean_state_calibrated_recall": 0.9333333333333332,
+    "mean_state_calibrated_precision": 1.0,
+    "total_empirical_null_added_members": 53,
+    "total_empirical_null_added_sentinels": 0,
+    "total_state_calibrated_sentinels": 0,
+    "total_empirical_null_pairwise_relations": 0,
+    "total_empirical_null_direct_relations_created": 0,
+    "mean_direct_precision": 1.0,
+    "mean_direct_recall": 1.0
+  },
+  "per_panel": [
+    {
+      "selection_seed": 20260919,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_base_recall": 0.8666666666666667,
+      "mean_calibrated_recall": 0.9,
+      "added_members": 10,
+      "phase_a_manifest_sha256": "c06ef463e57e9a89bef6b3c0879308958b4ff0df6dcc474af98eb68462697487",
+      "phase_b_summary_sha256": "a9a0be5dc61c04811748208103d451afe5d5dbbf7ba875edfd3862bae28ab15f",
+      "summary_payload_sha256": "423b1aca9e4b462dcd20d013e30142ddb884014b7c90c26660d182c4ac8afdbc"
+    },
+    {
+      "selection_seed": 20260920,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_base_recall": 0.8566666666666666,
+      "mean_calibrated_recall": 0.9066666666666666,
+      "added_members": 15,
+      "phase_a_manifest_sha256": "a111c87e05123e84898dd4e16e5faf6d8dc7a6c0e3b5ec76fdb14df376224141",
+      "phase_b_summary_sha256": "d173909368fb26b2f32da9432e09ed7db84923fd98d1cf6d597a4953a64e7f3a",
+      "summary_payload_sha256": "eb440af1a97b8cfa3ce4f86a31ce04043fc0105feb3eb2d0a3820b2d928574f6"
+    },
+    {
+      "selection_seed": 20260921,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_base_recall": 0.8633333333333334,
+      "mean_calibrated_recall": 0.89,
+      "added_members": 8,
+      "phase_a_manifest_sha256": "89fdcbd81c57c303f587304a6e07fd2bcded8b24c8807416026e4b82157747ad",
+      "phase_b_summary_sha256": "d92c88fc8c60a41383d01c5c85a572c07a628b17d481de0ebe6ceb7a501bec22",
+      "summary_payload_sha256": "95654c1d107e06609546de8bbb99ae6c66d9e495ae82e86ab1744f9d73f64ff0"
+    },
+    {
+      "selection_seed": 20260922,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_base_recall": 0.8066666666666668,
+      "mean_calibrated_recall": 0.8566666666666668,
+      "added_members": 15,
+      "phase_a_manifest_sha256": "aea26e22020e863b9fd4b869e795bc814e97aa82e37c58dd875471316e68d280",
+      "phase_b_summary_sha256": "4e3e812d7c94deda924c6784585c75851198a3ef7ae4bcd613307e49c70806bc",
+      "summary_payload_sha256": "7ef3b4f1aa0105462b3370cc0f533e24b78076845e969bd710b6fb13e686eb51"
+    },
+    {
+      "selection_seed": 20260923,
+      "successful_worlds": 12,
+      "reliable_worlds": 12,
+      "mean_base_recall": 0.9166666666666666,
+      "mean_calibrated_recall": 0.9333333333333332,
+      "added_members": 5,
+      "phase_a_manifest_sha256": "c13d5695b14656b03ed04c9a8e9e6e27cfb945decb970ec34040f44b04ee5571",
+      "phase_b_summary_sha256": "6fac6c21f1a8a81bf1da24921439d302e774ed58c817c9788e7a5534b1b97966",
+      "summary_payload_sha256": "7b2db0905e0842b6251a1184fbe702b0540856b483616dfc91187be4f8bba0ea"
+    }
+  ],
+  "verification": {
+    "evaluation_tests_passed": 461,
+    "evaluation_tests_failed": 0,
+    "warnings": 62,
+    "warning_note": "Unchanged scikit-learn deprecations from the frozen rank-fusion derivation audit."
+  },
+  "interpretation": {
+    "advance": "The frozen v4.25 calibrator now runs through the layered producer, scorer, random cached replay, and formal source/binding contracts.",
+    "scientific_evidence": "Independent evidence remains the nested leave-one-source-block-out audit; these full-calibrator replays are wiring and regression checks on its development pool.",
+    "cross_assay_structure": "Typed shared-state membership across unpaired assays, without exact reporter pairing or direct cross-assay effects.",
+    "remaining_limit": "Fresh locked certification is not claimed, and cell-specific residual directions remain unidentified from the agreed disjoint-cell variables."
+  }
+}

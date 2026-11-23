@@ -1,0 +1,174 @@
+{
+  "algorithm": "CA-BOSS v4.29",
+  "cached_data_only": true,
+  "change": {
+    "axis_route": "selected_leave_one_group_out_cross_assay_axis_consensus_with_at_least_one_state_v427_supported_member",
+    "axis_route_minimum_groups": 2,
+    "axis_route_minimum_modalities": 2,
+    "direct_structure_changed": false,
+    "exact_cross_assay_feature_pair_created": false,
+    "fixed_rule": "all_loading_group_members_are_state_v427_supported_or_selected_leave_one_group_out_cross_assay_axis_consensus_with_at_least_one_state_v427_supported_member",
+    "guard_schema_version": "assay_local_loading_group_state_guard.v4.29",
+    "state_membership_changed": false,
+    "state_route": "all_loading_group_members_are_state_v427_supported"
+  },
+  "date": "2026-09-01",
+  "formal_binding": {
+    "block_runner_schema_version": "shared_state_subspace_v4.block_runner.v12",
+    "global_pretruth_extension_schema_version": "layered_state_evidence_v4.global_pretruth_extension.v10",
+    "guard_is_content_addressed_layered_dependency": true,
+    "group_axis_evidence_is_bound_to_world_pretruth_manifest": true,
+    "layered_candidate_schema_version": "layered_state_evidence_v4.frozen_candidate.v9",
+    "layered_provenance_schema_version": "layered_state_evidence_v4.v9",
+    "layered_scorer_schema_version": "layered_state_evidence_v4.scorer.v13",
+    "layered_validation_protocol_schema_version": "layered_state_evidence_v4.validation_protocol.v17",
+    "shared_state_scorer_schema_version": "shared_state_subspace_v4.scorer.v12"
+  },
+  "fresh_locked_claim": false,
+  "identifiability_boundary": {
+    "cell_specific_cross_assay_direction": "not_identifiable_from_disjoint_cells",
+    "estimand": "shared_latent_state_feature_participation_with_assay_local_loading_groups_and_leave_one_group_out_cross_assay_axis_support",
+    "exact_cross_assay_feature_pairing": "not_claimed",
+    "paired_cells_or_external_data_used": false,
+    "state_membership_added_by_loading_axis_route": false
+  },
+  "nested_full_cache_audit": {
+    "all_outer_blocks_zero_false_axis_additions": true,
+    "all_outer_blocks_zero_sentinel_axis_additions": true,
+    "outer_source_blocks": 7,
+    "pre_guard_proposed_groups": 833,
+    "truth_within_assay_shared_state_groups": 906,
+    "v428": {
+      "false_negative_groups": 170,
+      "false_positive_groups": 10,
+      "precision": 0.9865951742627346,
+      "recall": 0.8123620309050773,
+      "selected_groups": 746,
+      "sentinel_groups": 0,
+      "true_positive_groups": 736
+    },
+    "v429": {
+      "axis_route_false_additions": 0,
+      "axis_route_selected_groups": 20,
+      "axis_route_sentinel_additions": 0,
+      "axis_route_true_additions": 20,
+      "false_negative_groups": 150,
+      "false_positive_groups": 10,
+      "incremental_false_groups_beyond_v428": 0,
+      "minimum_world_precision": 0.75,
+      "minimum_world_recall": 0.5,
+      "precision": 0.9869451697127938,
+      "recall": 0.8344370860927153,
+      "selected_groups": 766,
+      "sentinel_groups": 0,
+      "true_positive_groups": 756,
+      "worlds_meeting_precision_0_80_and_zero_sentinel": 150
+    },
+    "worlds": 151
+  },
+  "new_modalities_or_variables_added": false,
+  "new_worlds_or_datasets_created": false,
+  "production_cached_replay": {
+    "all_direct_structure_alone_insufficient": true,
+    "all_guard_safe": true,
+    "all_phase_a_successful": true,
+    "all_phase_b_successful": true,
+    "axis_route_loading_groups": 7,
+    "direct_precision": 1.0,
+    "direct_recall": 1.0,
+    "evaluations": 60,
+    "full_layered_reliability_successes": 60,
+    "loading_false_negative_pairs": 61,
+    "loading_false_positive_pairs": 1,
+    "loading_mean_pair_precision": 0.9972222222222221,
+    "loading_mean_pair_recall": 0.8305555555555555,
+    "loading_micro_pair_precision": 0.9966666666666667,
+    "loading_micro_pair_recall": 0.8305555555555556,
+    "loading_minimum_world_pair_precision": 0.8333333333333334,
+    "loading_minimum_world_pair_recall": 0.5,
+    "loading_pre_guard_groups": 329,
+    "loading_rejected_groups": 29,
+    "loading_retained_groups": 300,
+    "loading_sentinel_members": 0,
+    "loading_state_route_groups": 293,
+    "loading_true_positive_pairs": 299,
+    "panel_size": 12,
+    "selection_seeds": [
+      20261009,
+      20261010,
+      20261011,
+      20261012,
+      20261013
+    ],
+    "state_false_negative_members": 71,
+    "state_false_positive_members": 0,
+    "state_mean_precision": 1.0,
+    "state_mean_recall": 0.9526666666666666,
+    "state_minimum_world_recall": 0.84,
+    "state_sentinel_members": 0,
+    "state_true_positive_members": 1429,
+    "unique_worlds": 49,
+    "v428_exact_panel_baseline": {
+      "loading_mean_pair_precision": 0.9972222222222222,
+      "loading_mean_pair_recall": 0.8111111111111111,
+      "loading_rejected_groups": 36,
+      "loading_retained_groups": 293,
+      "loading_true_positive_pairs": 292
+    }
+  },
+  "production_panel_artifacts": [
+    {
+      "phase_a_manifest_sha256": "35a04c5e0c312a08a170a71ee0bb25358372c4d861f31029a223a617d0981809",
+      "phase_b_summary_payload_sha256": "38ece399e242b2f036d514bdb51c58044da305c605650b5ee804c5377674b09c",
+      "phase_b_summary_sha256": "a67b2324f2180d7daf29169cf702055173984a5060a15babc2b4abf84c212936",
+      "selection_seed": 20261009
+    },
+    {
+      "phase_a_manifest_sha256": "54d956abdaa9e62120e6d2e5408528fba896b76053e955a6989bc4b607d6e22b",
+      "phase_b_summary_payload_sha256": "dcd47db6525a26e9d83c7f1f3cfda9f859ce2b6abaacf81ac17b8fd945142762",
+      "phase_b_summary_sha256": "4d042fe1078a73002d6fd047d4d0060a2fd0d217b79833598fd0f89256584e87",
+      "selection_seed": 20261010
+    },
+    {
+      "phase_a_manifest_sha256": "d571ced86b511eae459028c8b078157133121644d0a4326c6167c0a3debb0c09",
+      "phase_b_summary_payload_sha256": "0882357acc14af124d926d5d5083d242fd4bc0110659e9ae1f569838af914192",
+      "phase_b_summary_sha256": "844a9f870a4795f3977c91b9525f390c939145e5d16fb1ad466b3bbfb36041a9",
+      "selection_seed": 20261011
+    },
+    {
+      "phase_a_manifest_sha256": "bc83e227a04f570a8f397ea9c4a7850aac78cbf29993bc47b84a219e6b23b9ae",
+      "phase_b_summary_payload_sha256": "a54f7bce4950e4054bc39ae8f5a9f571bf2b10fa416e57a7d7c8c07fcfe2e2e0",
+      "phase_b_summary_sha256": "eeb79a61debe23bbef635dfb6e63a1385b11229b0ea3768d2ab15cb4fc587105",
+      "selection_seed": 20261012
+    },
+    {
+      "phase_a_manifest_sha256": "96615911602e0667a07dafe770c0cba5a276d69c88077b84b6a6300251f1ad66",
+      "phase_b_summary_payload_sha256": "2b29cb701a5ebe33c4a0eb77b6232f8140a9b8fe414fa17fb2a38e93febbcf58",
+      "phase_b_summary_sha256": "5a9f2829c21f52b34b9b8447b93309e37b413c3d97302c97e6135d2575b8fc8d",
+      "selection_seed": 20261013
+    }
+  ],
+  "retrospective_development_only": true,
+  "schema_version": "ca_boss_v4.cached_random_v429_summary.v1",
+  "source_sha256": {
+    "audit_nested_loading_group_axis_consensus_v4.py": "c77a9f18f4af6ef6427756abb771a37b415b2195244142ba770ca8de736c66b3",
+    "layered_state_evidence_v4.py": "80ed640cff446669356ebf9eeda1c0fb59c0fab4678570ab0fc2477345a7c5d3",
+    "loading_group_state_guard_v4.py": "63807a243c70e6ce90fa9b7878aa94392669b9e022f8dcf303e685753daaa6a4",
+    "replay_cached_layered_state_v4.py": "80eea669a472079a43cf5fb3673062b7c980cbc7fe40b89841fdf5586fca6a3b",
+    "run_shared_state_subspace_block_v4.py": "becd634cb40c4c88ee996006ec202a6ee60f3412638c6fee16ae6d40e16e261f",
+    "score_layered_state_evidence_v4.py": "105814280340df9601c7019cb844074a9efeb25a2840ae6efbcad066876b58be",
+    "score_shared_state_subspace_v4.py": "6a93b36f2ad0514b182737d727be75cf3f70e2edb335958671971417f88a4b1f"
+  },
+  "summary_payload_sha256": "895ec748bb8a474257db9fbee6608683e735a85b952b3b280a7f3cb122269575",
+  "two_phase_nested_audit_artifact": {
+    "fixed_guard_artifact_sha256": "c5b66b525b00b0c0c1d3d66ade42faac62a216b17df8d99bcd5cd134de204e7a",
+    "phase_a_manifest_sha256": "708494d7615b668d2d2e2b8e539cc637499b731f026aa0163a60cb5d5482a42d",
+    "phase_b_summary_payload_sha256": "c9e692a22ba70a2393ecaea111ec2340d989ccd54cac66fe92e5ee05caa00a6a",
+    "phase_b_summary_sha256": "64f88ee1b24b37140fe5ab7cc4a339a4e5939e206b2b16e5d214881cf0b25c57"
+  },
+  "verification": {
+    "focused_contract_tests_passed": 72,
+    "full_evaluation_tests_passed": 480,
+    "full_evaluation_warnings": 62
+  }
+}

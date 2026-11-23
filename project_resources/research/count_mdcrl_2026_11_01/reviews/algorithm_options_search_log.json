@@ -1,0 +1,41 @@
+[
+  {
+    "date_utc": "2026-11-01T19:01:02.596496+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "discrete ICA gamma Poisson cumulants",
+      "per-page": 100,
+      "select": "id,doi,title,publication_year,primary_location,open_access"
+    },
+    "sort": "default relevance",
+    "page": 1,
+    "status": 200,
+    "returned": 41
+  },
+  {
+    "date_utc": "2026-11-01T19:01:03.004638+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "Gamma Poisson factorization independent component analysis",
+      "per-page": 100,
+      "select": "id,doi,title,publication_year,primary_location,open_access"
+    },
+    "sort": "default relevance",
+    "page": 1,
+    "status": 200,
+    "returned": 100
+  },
+  {
+    "date_utc": "2026-11-01T19:01:03.597346+00:00",
+    "endpoint": "https://api.openalex.org/works",
+    "params": {
+      "search": "Poisson lognormal independent components count data",
+      "per-page": 100,
+      "select": "id,doi,title,publication_year,primary_location,open_access"
+    },
+    "sort": "default relevance",
+    "page": 1,
+    "status": 200,
+    "returned": 100
+  }
+]

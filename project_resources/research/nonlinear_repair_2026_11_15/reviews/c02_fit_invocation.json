@@ -1,0 +1,8 @@
+{
+  "noted_at_utc": "2026-11-15T20:58:07.099225+00:00",
+  "tool_session": 22008,
+  "command": "env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=/tmp/epigenomics-dcrl-deps-20261115:<pinned DCRL src> /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -u run.py --run",
+  "protocol_sha256": "6f39a86e041c00cc3272ae2958a38a8b0a7b13b981ce7d8d27a423bc1dd4c7a5",
+  "evaluator_launched": false,
+  "scope": "Single approved36application execution; failures/timeouts retained by unchanged controller"
+}

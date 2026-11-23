@@ -1,0 +1,294 @@
+{
+  "reviewer": "causal_reliability_pilot",
+  "status": "pass",
+  "scope": "Independent static review and numerical replay of all18 exploratory pairwise source-matching and heldout moment readouts; no ICA refits or new datasets.",
+  "protocol_sha256": "95138c0b3a00bf60f6ceeba3fbba6b21705c355d04e802e0094bb7687bcc1c7b",
+  "runner_sha256": "ede19a3641197414851b49e8a3ccd5ff8f3c5a9ce55ecefec9f56f37e6de3515",
+  "shared_adapter_sha256": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+  "summary_sha256": "5e221aab7929cee8f225e1348804840b6455eed223bcabf2d62fcd1bbbf43376",
+  "helper": {
+    "path": "reviews/replay_pairwise_review.py",
+    "sha256": "4234f17ba72475be05adb36da8885ef7408d6834d8a9cfbefc69c234a70bd3fc",
+    "execution": "Six bounded invocations with indices0\u20135 in the frozen scrna_r runtime, BLAS/OpenMP threads1."
+  },
+  "checks": [
+    "Runner/adapter/parent/input/reference/output seals",
+    "Training sources independently checked against least-squares encodings with fixed means/unit variances",
+    "All32400 signed KS comparisons reconstructed; mutual-max matching independently implemented",
+    "Native pair alpha and original global alpha counts separately verified",
+    "Shared-only covariance and private-inclusive total variance",
+    "Paired index bounds and uniqueness; all stored correlation matrices and RMSE/zero-baseline values"
+  ],
+  "counts": {
+    "parents": 6,
+    "comparisons": 18,
+    "positive_at_native_pair_alpha": 0,
+    "positive_at_original_global_alpha": 0
+  },
+  "multiplicity": {
+    "native_pair_alpha": 2.777777777777778e-05,
+    "original_global_alpha": 9.259259259259259e-06,
+    "meaning": "The pair-specific nonrejection criterion is stricter; zero counts also under original global alpha show that the all3 consistency requirement is not the sole cause."
+  },
+  "largest_signed_KS_pvalue": 3.5545665256074256e-15,
+  "interpretation": "No shared sources were found in these saved count-panel representations. This does not establish that biological shared state or causal effects are absent. Zero predictions give no improvement over each own-scale zero-correlation baseline.",
+  "final_document_review": {
+    "status": "no blocking interpretation issue",
+    "files": {
+      "README.md": "fac74e2ea906925efdb60a042873f5c7f5810234aef7df962682688e978562c5",
+      "APPLICATION_RESULTS.md": "dd0e1ca6022c2f1ee72b34a7c036ad49f7092b42b01257c6d2d711591764eadc"
+    },
+    "focus": [
+      "Observed-feature versus latent targets",
+      "No exact-DAG claim",
+      "Reference-scale change is not recovery improvement",
+      "All failures/warnings retained",
+      "Sparse-panel and identifying-assumption limits"
+    ]
+  },
+  "execution_note": "An initial unsplit read-only replay exited143 after9 comparisons logged pass. All18 comparisons were subsequently replayed in six bounded chunks with durable receipts; no settings or outcomes changed.",
+  "parts": [
+    {
+      "path": "reviews/pairwise_replay_parts/0.json",
+      "sha256": "3763f790ea1fe59d4697639fc93b6a9d42d0e30d5657a77189ee1389d5d67fc4"
+    },
+    {
+      "path": "reviews/pairwise_replay_parts/1.json",
+      "sha256": "85fb438d448b3e5530b5482fca5b285ea4806ffe63aa6840adf9757836a018f1"
+    },
+    {
+      "path": "reviews/pairwise_replay_parts/2.json",
+      "sha256": "d2be6ca2e5ec06bb554c2a2e9f206bf2c1ca275f9a14313f83de4f47e1909990"
+    },
+    {
+      "path": "reviews/pairwise_replay_parts/3.json",
+      "sha256": "d11bb4e50ad0e04ea7436bbd16a5070d33e67edabb310fa559e24571aa7c6393"
+    },
+    {
+      "path": "reviews/pairwise_replay_parts/4.json",
+      "sha256": "d00c63e4dcc9a6fab4013afda23abf2e8afaf34c91f1a2c6fb9245af7428abcb"
+    },
+    {
+      "path": "reviews/pairwise_replay_parts/5.json",
+      "sha256": "b1e1f94b52896a0648568570bba88bdb242f6410368594ff6287fa46755c023a"
+    }
+  ],
+  "rows": [
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.622831699939192e-21,
+      "correlation_rmse": 0.03749276205212845,
+      "zero_correlation_rmse": 0.03749276205212845
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.9697899254819875e-18,
+      "correlation_rmse": 0.03662613003729324,
+      "zero_correlation_rmse": 0.03662613003729324
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.501760158928348e-28,
+      "correlation_rmse": 0.04246711687078873,
+      "zero_correlation_rmse": 0.04246711687078873
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0__independent_columns/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 2.0504385746990914e-17,
+      "correlation_rmse": 0.03749276205212845,
+      "zero_correlation_rmse": 0.03749276205212845
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0__independent_columns/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.5545665256074256e-15,
+      "correlation_rmse": 0.03662613003729324,
+      "zero_correlation_rmse": 0.03662613003729324
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed0__independent_columns/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 4.874596038196089e-27,
+      "correlation_rmse": 0.04246711687078873,
+      "zero_correlation_rmse": 0.04246711687078873
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed1/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 2.7738791011684326e-21,
+      "correlation_rmse": 0.03749276205212845,
+      "zero_correlation_rmse": 0.03749276205212845
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed1/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.162089374201686e-18,
+      "correlation_rmse": 0.03662613003729324,
+      "zero_correlation_rmse": 0.03662613003729324
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__log1p_cp10k__seed1/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.501760158928348e-28,
+      "correlation_rmse": 0.04246711687078873,
+      "zero_correlation_rmse": 0.04246711687078873
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.8957640919262545e-21,
+      "correlation_rmse": 0.06514883613479983,
+      "zero_correlation_rmse": 0.06514883613479983
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 7.543771915671657e-19,
+      "correlation_rmse": 0.06472494669685584,
+      "zero_correlation_rmse": 0.06472494669685584
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 2.3096102641032034e-26,
+      "correlation_rmse": 0.05296422854509914,
+      "zero_correlation_rmse": 0.05296422854509914
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0__independent_columns/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.7105063954525684e-17,
+      "correlation_rmse": 0.06514883613479983,
+      "zero_correlation_rmse": 0.06514883613479983
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0__independent_columns/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 2.1460477625253156e-15,
+      "correlation_rmse": 0.06472494669685584,
+      "zero_correlation_rmse": 0.06472494669685584
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed0__independent_columns/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.1874381393519431e-25,
+      "correlation_rmse": 0.05296422854509914,
+      "zero_correlation_rmse": 0.05296422854509914
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed1/result.json",
+      "assays": [
+        "RNA",
+        "H3K27ac"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 3.223995393239615e-21,
+      "correlation_rmse": 0.06514883613479983,
+      "zero_correlation_rmse": 0.06514883613479983
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed1/result.json",
+      "assays": [
+        "RNA",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 1.9381550985465872e-18,
+      "correlation_rmse": 0.06472494669685584,
+      "zero_correlation_rmse": 0.06472494669685584
+    },
+    {
+      "parent": "application_v1/scmtr_seq_s1__raw_counts__seed1/result.json",
+      "assays": [
+        "H3K27ac",
+        "H3K4me3"
+      ],
+      "shared_source_count": 0,
+      "count_at_global_alpha": 0,
+      "max_signed_KS_pvalue": 4.3494009897299963e-26,
+      "correlation_rmse": 0.05296422854509914,
+      "zero_correlation_rmse": 0.05296422854509914
+    }
+  ]
+}

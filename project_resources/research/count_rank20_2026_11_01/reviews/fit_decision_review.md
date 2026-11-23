@@ -1,0 +1,11 @@
+# Independent rank-follow-up decision review
+
+The independent replay passed all 54 sealed arms and 162 assay records. [audit_rank20_fits.json](audit_rank20_fits.json) binds the wrapper, unchanged original audit helper, scientific sources, protocol, and final fit seal. No source model was refitted by the audit and no heldout reference was read.
+
+The original and follow-up records agree exactly on all 49 null maxima, every covariance eigenvalue and rank p-value, uncapped ranks, input hashes, feature and split identities, exposure parameters, bootstrap seeds, and point mean/covariance/noise/scale/constant-column arrays. The three scientific scripts remain byte-identical. The intentionally changed requested source dimension accounts for the different orientations and bootstrap behavior.
+
+No selected dimension reaches the new cap. All 54 arms and 162 assay fits completed, without warnings or source-bootstrap fitting failures. The original-data arms fitted 1,152 direction instances; 25 passed eligibility, comprising 21 in the linear world and four in the collider world. None passed in the real data. These are repeated direction instances across variants and seeds, not independent biological discoveries.
+
+The [gate summary](gate_summary.json) separates numerical completion from statistical reliability. Overlapping rejection counts are 1,012 for median loading stability, 1,097 for lower-decile loading stability, 704 for orientation residual, 206 for insufficient valid moment replicates, and 104 for invalid calibration variance. Every one of the 422 real-data direction instances fails the lower-decile stability gate. All 54 control assay fits have rank zero.
+
+There are 14 signed comparisons with eligible endpoints. The closest has normalized point distance 4.34834 and uncertainty radius 11.47292, summing to 15.82126 against the frozen acceptance limit of one. No raw moment-equivalent pair exists, so uniqueness is not the obstacle and all CF assessments correctly remain unassessed. This removes the earlier computational cap as an explanation for the absence of matching in these specified unit-exposure 300-feature variants. It does not establish biological independence or a universal failure of unpaired count models.

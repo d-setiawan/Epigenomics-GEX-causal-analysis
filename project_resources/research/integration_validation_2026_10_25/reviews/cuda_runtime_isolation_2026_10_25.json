@@ -1,0 +1,69 @@
+{
+  "all_scientific_model_operations": "none",
+  "archive_path": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive.tar.xz",
+  "archive_sha256": "25b8071951baba827be1580b841d363464f6ee6c39f48d33a81646f90cc95ed1",
+  "archive_url": "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-13.0.96-archive.tar.xz",
+  "completed_utc": "2026-10-25T22:22:43.160964+00:00",
+  "created_utc": "2026-10-25T22:22:40.408585+00:00",
+  "current_conda_library": "/home/dgsetiawan/anaconda3/envs/scrna_r/targets/x86_64-linux/lib/libcudart.so.13.1.80",
+  "current_conda_library_sha256_after": "2f3cb41e71e2e43b0dcb28d16be21ae9633e3c7f18ebba9952a440a144a96cc1",
+  "current_conda_library_sha256_before": "2f3cb41e71e2e43b0dcb28d16be21ae9633e3c7f18ebba9952a440a144a96cc1",
+  "diagnostics": [
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "-X",
+        "faulthandler",
+        "-u",
+        "-c",
+        "import resource\nresource.setrlimit(resource.RLIMIT_CORE, (0, 0))\nimport ctypes, json\nruntime = ctypes.CDLL('/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96')\nversion = ctypes.c_int()\nassert runtime.cudaRuntimeGetVersion(ctypes.byref(version)) == 0\nprint(json.dumps({'runtime_version': version.value}), flush=True)\ncount = ctypes.c_int()\nstatus = runtime.cudaGetDeviceCount(ctypes.byref(count))\nprint(json.dumps({'cudaGetDeviceCount': status, 'device_count': count.value}), flush=True)\nassert status == 0 and count.value > 0\n"
+      ],
+      "core_dump_limit": [
+        0,
+        0
+      ],
+      "environment_overrides": {},
+      "name": "official_cuda_13_0_96_device_count",
+      "returncode": 0,
+      "started_utc": "2026-10-25T22:22:40.411043+00:00",
+      "stderr": "",
+      "stdout": "{\"runtime_version\": 13000}\n{\"cudaGetDeviceCount\": 0, \"device_count\": 1}\n"
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "-X",
+        "faulthandler",
+        "-u",
+        "-c",
+        "import resource\nresource.setrlimit(resource.RLIMIT_CORE, (0, 0))\nimport json, torch\nprint(json.dumps({'torch_version': torch.__version__, 'torch_cuda_build': torch.version.cuda}), flush=True)\nassert torch.cuda.is_available()\nprint(json.dumps({'device_name': torch.cuda.get_device_name(0), 'device_count': torch.cuda.device_count()}), flush=True)\nx = torch.arange(16, dtype=torch.float32, device='cuda').reshape(4,4).requires_grad_()\nw = torch.eye(4, device='cuda')\nloss = ((x @ w) ** 2).sum()\nloss.backward()\ntorch.cuda.synchronize()\nassert loss.item() == 1240.0\nassert torch.allclose(x.grad, 2 * x.detach())\nwith open('/proc/self/maps') as stream:\n    paths = sorted({line.split()[-1] for line in stream if 'libcudart' in line})\nprint(json.dumps({'loss': loss.item(), 'max_gradient_error': float((x.grad - 2*x.detach()).abs().max()), 'loaded_cuda_runtimes': paths}), flush=True)\n"
+      ],
+      "core_dump_limit": [
+        0,
+        0
+      ],
+      "environment_overrides": {
+        "LD_PRELOAD": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96"
+      },
+      "name": "process_preload_torch_cuda_forward_backward",
+      "returncode": 0,
+      "started_utc": "2026-10-25T22:22:40.556951+00:00",
+      "stderr": "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.\n  import pynvml  # type: ignore[import]\n",
+      "stdout": "{\"torch_version\": \"2.10.0\", \"torch_cuda_build\": \"13.0\"}\n{\"device_name\": \"NVIDIA GeForce RTX 3070 Ti Laptop GPU\", \"device_count\": 1}\n{\"loss\": 1240.0, \"max_gradient_error\": 0.0, \"loaded_cuda_runtimes\": [\"/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96\"]}\n"
+    }
+  ],
+  "direct_runtime_passed": true,
+  "library_path": "/tmp/integration_cuda_runtime_13096.l5PWiq/cuda_cudart-linux-x86_64-13.0.96-archive/lib/libcudart.so.13.0.96",
+  "library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+  "metadata_sha256": "d73344990be5d826cf6eedc5495c858eb5923e5ffe7ede7fd6ebdd7be928ffc9",
+  "metadata_url": "https://developer.download.nvidia.com/compute/cuda/redist/redistrib_13.0.3.json",
+  "redistributable_metadata": {
+    "md5": "26ebf8fd2c0fe1f303d5d27c49624d5e",
+    "relative_path": "cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-13.0.96-archive.tar.xz",
+    "sha256": "25b8071951baba827be1580b841d363464f6ee6c39f48d33a81646f90cc95ed1",
+    "size": "1487960"
+  },
+  "scope": "Isolated runtime diagnostics only; no installs, environment mutation, model fitting, stage retry or checkpoint reads",
+  "temporary_directory": "/tmp/integration_cuda_runtime_13096.l5PWiq",
+  "torch_preload_passed": true
+}

@@ -1,0 +1,219 @@
+{
+  "date_utc": "2026-11-01T06:55:23.967182+00:00",
+  "tool": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "tool_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "endpoints": [
+    "https://doi.org/api/handles/{doi}",
+    "https://api.crossref.org/works/{doi}"
+  ],
+  "results": [
+    {
+      "method": "Seurat v3 anchors",
+      "doi": "10.1016/j.cell.2019.05.031",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Comprehensive Integration of Single-Cell Data",
+        "authors": "Stuart, T., Butler, A., Hoffman, P., et al.",
+        "year": "2019",
+        "journal": "Cell",
+        "volume": "177",
+        "pages": "1888-1902.e21",
+        "doi": "10.1016/j.cell.2019.05.031"
+      },
+      "requested_title": "Comprehensive Integration of Single-Cell Data",
+      "requested_year": 2019
+    },
+    {
+      "method": "Seurat WNN",
+      "doi": "10.1016/j.cell.2021.04.048",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Integrated analysis of multimodal single-cell data",
+        "authors": "Hao, Y., Hao, S., Andersen-Nissen, E., et al.",
+        "year": "2021",
+        "journal": "Cell",
+        "volume": "184",
+        "pages": "3573-3587.e29",
+        "doi": "10.1016/j.cell.2021.04.048"
+      },
+      "requested_title": "Integrated analysis of multimodal single-cell data",
+      "requested_year": 2021
+    },
+    {
+      "method": "Seurat v5 dictionary/bridge",
+      "doi": "10.1038/s41587-023-01767-y",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+        "authors": "Hao, Y., Stuart, T., Kowalski, M., et al.",
+        "year": "2024",
+        "journal": "Nature Biotechnology",
+        "volume": "42",
+        "pages": "293-304",
+        "doi": "10.1038/s41587-023-01767-y"
+      },
+      "requested_title": "Dictionary learning for integrative, multimodal and scalable single-cell analysis",
+      "requested_year": 2024
+    },
+    {
+      "method": "LIGER",
+      "doi": "10.1016/j.cell.2019.05.006",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+        "authors": "Welch, J., Kozareva, V., Ferreira, A., et al.",
+        "year": "2019",
+        "journal": "Cell",
+        "volume": "177",
+        "pages": "1873-1887.e17",
+        "doi": "10.1016/j.cell.2019.05.006"
+      },
+      "requested_title": "Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity",
+      "requested_year": 2019
+    },
+    {
+      "method": "MOFA",
+      "doi": "10.15252/msb.20178124",
+      "doi_handle_valid": true,
+      "metadata": {},
+      "requested_title": "Multi-Omics Factor Analysis\u2014a framework for unsupervised integration of multi-omics data sets",
+      "requested_year": 2018
+    },
+    {
+      "method": "MOFA+",
+      "doi": "10.1186/s13059-020-02015-1",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+        "authors": "Argelaguet, R., Arnol, D., Bredikhin, D., et al.",
+        "year": "2020",
+        "journal": "Genome Biology",
+        "volume": "21",
+        "pages": "",
+        "doi": "10.1186/s13059-020-02015-1"
+      },
+      "requested_title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+      "requested_year": 2020
+    },
+    {
+      "method": "MultiVI",
+      "doi": "10.1038/s41592-023-01909-9",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "MultiVI: deep generative model for the integration of multimodal data",
+        "authors": "Ashuach, T., Gabitto, M., Koodli, R., et al.",
+        "year": "2023",
+        "journal": "Nature Methods",
+        "volume": "20",
+        "pages": "1222-1231",
+        "doi": "10.1038/s41592-023-01909-9"
+      },
+      "requested_title": "MultiVI: deep generative model for the integration of multimodal data",
+      "requested_year": 2023
+    },
+    {
+      "method": "totalVI",
+      "doi": "10.1038/s41592-020-01050-x",
+      "doi_handle_valid": true,
+      "metadata": {},
+      "requested_title": "Joint probabilistic modeling of single-cell multi-omic data with totalVI",
+      "requested_year": 2021
+    },
+    {
+      "method": "Cobolt",
+      "doi": "10.1186/s13059-021-02556-z",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+        "authors": "Gong, B., Zhou, Y., Purdom, E.",
+        "year": "2021",
+        "journal": "Genome Biology",
+        "volume": "22",
+        "pages": "",
+        "doi": "10.1186/s13059-021-02556-z"
+      },
+      "requested_title": "Cobolt: integrative analysis of multimodal single-cell sequencing data",
+      "requested_year": 2021
+    },
+    {
+      "method": "scMVP",
+      "doi": "10.1186/s13059-021-02595-6",
+      "doi_handle_valid": true,
+      "metadata": {},
+      "requested_title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+      "requested_year": 2022
+    },
+    {
+      "method": "scMM",
+      "doi": "10.1016/j.crmeth.2021.100071",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+        "authors": "Minoura, K., Abe, K., Nam, H., et al.",
+        "year": "2021",
+        "journal": "Cell Reports Methods",
+        "volume": "1",
+        "pages": "100071",
+        "doi": "10.1016/j.crmeth.2021.100071"
+      },
+      "requested_title": "A mixture-of-experts deep generative model for integrated analysis of single-cell multiomics data",
+      "requested_year": 2021
+    },
+    {
+      "method": "BABEL",
+      "doi": "10.1073/pnas.2023070118",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+        "authors": "Wu, K., Yost, K., Chang, H., et al.",
+        "year": "2021",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "volume": "118",
+        "pages": "",
+        "doi": "10.1073/pnas.2023070118"
+      },
+      "requested_title": "BABEL enables cross-modality translation between multiomic profiles at single-cell resolution",
+      "requested_year": 2021
+    },
+    {
+      "method": "CLUE",
+      "doi": "10.52202/068431-1160",
+      "doi_handle_valid": true,
+      "metadata": {},
+      "requested_title": "Cross-Linked Unified Embedding for cross-modality representation learning",
+      "requested_year": 2022
+    },
+    {
+      "method": "JAMIE",
+      "doi": "10.1038/s42256-023-00663-z",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Joint variational autoencoders for multimodal imputation and embedding",
+        "authors": "Cohen Kalafut, N., Huang, X., Wang, D.",
+        "year": "2023",
+        "journal": "Nature Machine Intelligence",
+        "volume": "5",
+        "pages": "631-642",
+        "doi": "10.1038/s42256-023-00663-z"
+      },
+      "requested_title": "Joint variational autoencoders for multimodal imputation and embedding",
+      "requested_year": 2023
+    },
+    {
+      "method": "Harmony",
+      "doi": "10.1038/s41592-019-0619-0",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+        "authors": "Korsunsky, I., Millard, N., Fan, J., et al.",
+        "year": "2019",
+        "journal": "Nature Methods",
+        "volume": "16",
+        "pages": "1289-1296",
+        "doi": "10.1038/s41592-019-0619-0"
+      },
+      "requested_title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+      "requested_year": 2019
+    }
+  ]
+}

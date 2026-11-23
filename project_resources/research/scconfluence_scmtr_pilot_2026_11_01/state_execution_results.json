@@ -1,0 +1,79 @@
+{
+  "execution_plan_sha256": "90f890cdf03fc7b23371bf3e06a3ac37a041bfa058ff2d8bcd3bf9b66c2f78ac",
+  "readouts": [
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/state_readout.py",
+        "score",
+        "--world",
+        "linear_chain_0",
+        "--seed",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/linear_chain_0_seed0_state.log",
+      "log_sha256": "d1b5e5de8b19e90ac67308b9d91d7ab4026c39148cae43d4bcea9e03ccc6ead2",
+      "seconds": 4.8218207359313965,
+      "seed": 0,
+      "status": "complete",
+      "world": "linear_chain_0"
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/state_readout.py",
+        "score",
+        "--world",
+        "linear_chain_0",
+        "--seed",
+        "1"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/linear_chain_0_seed1_state.log",
+      "log_sha256": "3009bc37ee1061e4b27e252e0736d51d385f02d72eeab0b35ff2389f0681df24",
+      "seconds": 4.41187047958374,
+      "seed": 1,
+      "status": "complete",
+      "world": "linear_chain_0"
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/state_readout.py",
+        "score",
+        "--world",
+        "constrained_collider_0",
+        "--seed",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/constrained_collider_0_seed0_state.log",
+      "log_sha256": "d80c450d2598a998e96374e3d33b9e6cd417a4e91fe123a1c4a2ebf1ec9f8682",
+      "seconds": 4.51802921295166,
+      "seed": 0,
+      "status": "complete",
+      "world": "constrained_collider_0"
+    },
+    {
+      "command": [
+        "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/state_readout.py",
+        "score",
+        "--world",
+        "constrained_collider_0",
+        "--seed",
+        "1"
+      ],
+      "exit_code": 0,
+      "log": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/scconfluence_scmtr_pilot_2026_11_01/logs/constrained_collider_0_seed1_state.log",
+      "log_sha256": "04177311a81fdabb7d7b40f8493e696d7e3c621761c30365eb9318f07a7e314e",
+      "seconds": 4.347098112106323,
+      "seed": 1,
+      "status": "complete",
+      "world": "constrained_collider_0"
+    }
+  ],
+  "status": "complete",
+  "watcher_sha256": "a98fd927d4d63908fc67c7a7bdbfc6a60d50bf67efb8dd4c506d6823bc7e479b"
+}

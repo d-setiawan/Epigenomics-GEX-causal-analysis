@@ -1,0 +1,42 @@
+{
+  "cap6_comparison_sha256": "4fd692084540de78b598ba45b307893058b923985582a733b47de10ce4bce3e5",
+  "confirmed_pair_matches": 0,
+  "cross_score_statuses": {
+    "ok": 216
+  },
+  "evaluation_arms": 54,
+  "evaluation_seal_sha256": "4dd8187da4cc49a34def7c1169710075d3a96b0bbc073f968bcbed2e4549264c",
+  "evaluation_statuses": {
+    "complete": 54
+  },
+  "evaluator_sha256": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db",
+  "fit_arms": 54,
+  "fit_seal_sha256": "c8ff28601e1a063960a39788a39f44e9f2c7a11c4be463a1c7a328bcc1d7316b",
+  "independent_metric_replay_sha256": "67e0ecf5bd56b18efdd680f99d434d404f0117badd9452f63cc2998eedd68b2c",
+  "max_control_covariance_change": 0.0,
+  "max_seed_covariance_difference": 8.326672684688674e-17,
+  "moment_pair_matches": 0,
+  "primary_cross_rmse_improvement_values": [
+    0.0
+  ],
+  "real_eligible_source_instances": 0,
+  "real_pair_level_view_scores": 216,
+  "remaining_cap_binding_assay_fits": 0,
+  "scope": [
+    "Sameexisting data and matching rules, with only computational sourcecap raised from6to20 in prespecified affected variants",
+    "No new cells, worlds, biological measurements or featureselection",
+    "Data/evaluator agent performed no scientific refits or settingchanges",
+    "Zero predictions are emptycandidate defaults, not proof of independence",
+    "State maxima are descriptive across variable componentcounts and seeds",
+    "Repeatedly inspected development cohorts; no real causalgroundtruth"
+  ],
+  "scoring_anomalies": [],
+  "source_bootstrap_fitting_failures": 0,
+  "status": "pass",
+  "unchanged_nuisance_feature_split_arrays": 1134,
+  "warning_records": 0,
+  "within_view_statuses": {
+    "ok": 324
+  },
+  "within_views": 324
+}

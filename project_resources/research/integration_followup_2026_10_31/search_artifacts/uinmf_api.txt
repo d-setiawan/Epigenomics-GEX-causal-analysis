@@ -1,0 +1,38 @@
+Perform Mosaic iNMF (UINMF) on scaled datasets with unshared features — runUINMF • rliger Skip to contents rliger 2.1.0 Installation Tutorials Integrating multiple scRNAseq data Integrating scRNA and scATAC data Online iNMF with HDF5 based data Integration using unshared features Cross-species Analysis with UINMF UINMF with STARmap spatial and transcriptomic UINMF with SNAREseq scATAC and scRNA Integrating scRNAseq and DNA methylation Benchmarking integration quality Usage Import data Introduction to a liger object Interoperate with Seurat Reference NEWS Welch Lab Perform Mosaic iNMF (UINMF) on scaled datasets with unshared features Source: R/integration.R runUINMF.Rd Performs mosaic integrative non-negative matrix factorization (UINMF) (A.R.
+Kriebel, 2022) using block coordinate descent (alternating non-negative
+least squares, ANLS) to return factorized \(H\), \(W\), \(V\) and
+\(U\) matrices. The objective function is stated as $$\arg\min_{H\ge0,W\ge0,V\ge0,U\ge0}\sum_{i}^{d}
+||\begin{bmatrix}E_i \\ P_i \end{bmatrix} -
+(\begin{bmatrix}W \\ 0 \end{bmatrix}+
+\begin{bmatrix}V_i \\ U_i \end{bmatrix})Hi||^2_F+
+\lambda_i\sum_{i}^{d}||\begin{bmatrix}V_i \\ U_i \end{bmatrix}H_i||_F^2$$ where \(E_i\) is the input non-negative matrix of the \(i\)'th dataset,
+\(P_i\) is the input non-negative matrix for the unshared features,
+\(d\) is the total number of datasets. \(E_i\) is of size
+\(m \times n_i\) for \(m\) shared features and \(n_i\) cells, \(P_i\)
+is of size \(u_i \times n_i\) for \(u_i\) unshared feaetures,
+\(H_i\) is of size \(k \times n_i\), \(V_i\) is of size
+\(m \times k\), \(W\) is of size \(m \times k\) and \(U_i\) is of
+size \(u_i \times k\). The factorization produces a shared \(W\) matrix (genes by k). For each
+dataset, an \(H\) matrix (k by cells), a \(V\) matrix (genes by k) and
+a \(U\) matrix (unshared genes by k). The \(H\) matrices represent the
+cell factor loadings. \(W\) is held consistent among all datasets, as it
+represents the shared components of the metagenes across datasets. The
+\(V\) matrices represent the dataset-specific components of the metagenes,
+\(U\) matrices are similar to \(V\)s but represents the loading
+contributed by unshared features. This function adopts highly optimized fast and memory efficient
+implementation extended from Planc (Kannan, 2016). Pre-installation of
+extension package RcppPlanc is required. The underlying algorithm
+adopts the identical ANLS strategy as optimizeALS (unshared =
+TRUE) in the old version of LIGER. Usage runUINMF ( object , k = 20 , lambda = 5 , ... ) # S3 method for liger runUINMF ( object , k = 20 , lambda = 5 , nIteration = 30 , nRandomStarts = 1 , seed = 1 , nCores = 2L , verbose = getOption ( "ligerVerbose" , TRUE ) , ... ) Arguments object liger object. Should run selectGenes with unshared = TRUE and then run scaleNotCenter in advance. k Inner dimension of factorization (number of factors). Generally, a
+higher k will be needed for datasets with more sub-structure. Default 20 . lambda Regularization parameter. Larger values penalize
+dataset-specific effects more strongly (i.e. alignment should increase as lambda increases). Default 5 . ... Arguments passed to other methods and wrapped functions. nIteration Total number of block coordinate descent iterations to
+perform. Default 30 . nRandomStarts Number of restarts to perform (iNMF objective function
+is non-convex, so taking the best objective from multiple successive
+initialization is recommended). For easier reproducibility, this increments
+the random seed by 1 for each consecutive restart, so future factorization
+of the same dataset can be run with one rep if necessary. Default 1 . seed Random seed to allow reproducible results. Default 1 . nCores The number of parallel tasks to speed up the computation.
+Default 2L . Only supported for platform with OpenMP support. verbose Logical. Whether to show information of the progress. Default getOption("ligerVerbose") or TRUE if users have not set. Value liger method - Returns updated input liger object. A list of all \(H\) matrices can be accessed with getMatrix(object, "H") A list of all \(V\) matrices can be accessed with getMatrix(object, "V") The \(W\) matrix can be accessed with getMatrix(object, "W") A list of all \(U\) matrices can be accessed with getMatrix(object, "U") Note Currently, Seurat S3 method is not supported for UINMF because there is no
+simple solution for organizing a number of miscellaneous matrices with a
+single Seurat object. We strongly recommend that users create a liger object which has the specific structure. References April R. Kriebel and Joshua D. Welch, UINMF performs mosaic
+integration of single-cell multi-omic datasets using nonnegative matrix
+factorization, Nat. Comm., 2022 Examples pbmc <- normalize ( pbmc ) #> ℹ Normalizing datasets "ctrl" #> ℹ Normalizing datasets "stim" #> ✔ Normalizing datasets "stim" ... done #> #> ℹ Normalizing datasets "ctrl" #> ✔ Normalizing datasets "ctrl" ... done #> pbmc <- selectGenes ( pbmc , useUnsharedDatasets = c ( "ctrl" , "stim" ) ) #> ℹ Selecting variable features for dataset "ctrl" #> ✔ ... 168 features selected out of 249 shared features. #> ✔ ... 0 features selected out of 17 unshared features. #> ℹ Selecting variable features for dataset "stim" #> ✔ ... 166 features selected out of 249 shared features. #> ✔ ... 0 features selected out of 13 unshared features. #> ✔ Finally 173 shared variable features are selected. pbmc <- scaleNotCenter ( pbmc ) #> ℹ Scaling dataset "ctrl" #> ✔ Scaling dataset "ctrl" ... done #> #> ℹ Scaling dataset "stim" #> ✔ Scaling dataset "stim" ... done #> if ( ! is.null ( getMatrix ( pbmc , "scaleUnsharedData" , "ctrl" ) ) && ! is.null ( getMatrix ( pbmc , "scaleUnsharedData" , "stim" ) ) ) { # TODO: unshared variable features cannot be detected from this example pbmc <- runUINMF ( pbmc ) } On this page Developed by Joshua Welch, Yichen Wang, Chao Gao, Jialin Liu, Joshua Sodicoff, Velina Kozareva, Evan Macosko. Site built with pkgdown 2.0.9.

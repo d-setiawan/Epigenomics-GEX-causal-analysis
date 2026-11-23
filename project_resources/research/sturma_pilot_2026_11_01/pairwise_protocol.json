@@ -1,0 +1,13 @@
+{
+  "status": "frozen_before_pairwise_followup",
+  "interpretation": "Exploratory follow-up motivated by zero three-assay matches in all real-data application arms; does not replace primary outcomes.",
+  "dataset": "scmtr_seq_s1",
+  "parent_arms": "All six real original/control representation/seed arms from application_v1",
+  "pairs": [["RNA", "H3K27ac"], ["RNA", "H3K4me3"], ["H3K27ac", "H3K4me3"]],
+  "expected_comparisons": 18,
+  "operation": "Reuse each frozen per-assay ICA mixing, mean and training source encoding; run native matching/joint-mixing/graph stages on each pair. No ICA refits, feature changes or new datasets.",
+  "native_parameters": {"measure": "ks-test", "alpha": 0.05, "gamma": 0.2},
+  "multiplicity_note": "Native two-domain matching recomputes adjusted KS alpha for that pair. A separate count under the original three-domain adjusted alpha distinguishes this change from the consistency requirement.",
+  "readouts": ["All pairwise matched-source counts and native anonymous coefficient matrices, including failures", "Heldout paired feature-correlation RMSE versus zero baseline", "Matched-source count with original global adjusted KS alpha; descriptive only"],
+  "scope": "Matching nonrejection is not calibrated false-sharing control. Agreement with a paired observational moment is not causal-edge validation. No causal graph threshold or model selection is added."
+}

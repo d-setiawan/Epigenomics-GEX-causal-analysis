@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "candidate": "channel_final_v3",
+  "validation_date": "2026-08-20",
+  "protocol": {
+    "development_world_seeds": "201-208",
+    "locked_world_seeds": "10001-10040",
+    "n_locked_worlds": 40,
+    "nested_metacell_seeds": [0, 1, 2],
+    "consensus_min_frequency": 0.6666666666666667,
+    "world_success_required": 34,
+    "primary_pair_count_required": 34,
+    "null_pair_count_allowed": 3,
+    "n_cells_per_modality": 1800,
+    "n_features_per_modality": 128,
+    "n_metacells_requested": 100,
+    "guidance_mode": "holdout"
+  },
+  "frozen_configuration": {
+    "state_algorithm": "boss",
+    "state_penalty": 1.0,
+    "state_starts": 20,
+    "state_use_bes": true,
+    "state_boss_min_abs_r": 0.2,
+    "state_boss_alpha": 0.05,
+    "state_marginal_min_abs_r": 0.2,
+    "state_marginal_alpha": 0.05,
+    "depth_residualize": true,
+    "within_sample_prior": 5.0,
+    "within_starts": 20,
+    "within_use_bes": true,
+    "sparse_min_odds_ratio": 1.5,
+    "sparse_alpha": 0.25,
+    "within_profile_clusters": 20,
+    "within_profile_min_abs_r": 0.6,
+    "within_profile_alpha": 0.05,
+    "impose_gene_sink": true
+  },
+  "arms": {
+    "gapca": {
+      "world_successes": 37,
+      "world_success_rate": 0.925,
+      "world_success_wilson_95": [
+        0.8013576647568946,
+        0.9741639742254119
+      ],
+      "gate_passed": true,
+      "mean_sentinel_f1": 0.9676010101010102,
+      "mean_null_false_adjacency_rate": 0.0375,
+      "mean_estimated_biological_edges": 22.725,
+      "mean_matched_skeleton_f1": 0.5440125776606399,
+      "primary_pair_counts": {
+        "slow_gene": 40,
+        "H3K27ac_direct": 40,
+        "H3K4me3_direct": 38,
+        "H3K27ac_shared": 40,
+        "H3K4me3_shared": 40
+      },
+      "challenge_fast_gene_count": 4,
+      "maximum_individual_null_pair_count": 3
+    },
+    "oracle": {
+      "world_successes": 36,
+      "world_success_rate": 0.9,
+      "world_success_wilson_95": [
+        0.7694822477247771,
+        0.9604204713173936
+      ],
+      "gate_passed": true,
+      "mean_sentinel_f1": 0.9625505050505051,
+      "mean_null_false_adjacency_rate": 0.040625,
+      "mean_estimated_biological_edges": 21.475,
+      "mean_matched_skeleton_f1": 0.5410434176502408,
+      "primary_pair_counts": {
+        "slow_gene": 40,
+        "H3K27ac_direct": 40,
+        "H3K4me3_direct": 37,
+        "H3K27ac_shared": 40,
+        "H3K4me3_shared": 40
+      },
+      "challenge_fast_gene_count": 2,
+      "maximum_individual_null_pair_count": 3
+    },
+    "gapca_production_fci": {
+      "world_successes": 0,
+      "world_success_rate": 0.0,
+      "gate_passed": false,
+      "mean_sentinel_f1": 0.65,
+      "mean_matched_skeleton_f1": 0.3331876234682253
+    },
+    "oracle_production_fci": {
+      "world_successes": 0,
+      "world_success_rate": 0.0,
+      "gate_passed": false,
+      "mean_sentinel_f1": 0.6555555555555556,
+      "mean_matched_skeleton_f1": 0.34888264063640706
+    }
+  },
+  "paired_cluster_bootstrap": {
+    "seed": 20260820,
+    "replicates": 20000,
+    "gapca_success_rate_difference": 0.925,
+    "gapca_difference_95": [0.825, 1.0],
+    "oracle_success_rate_difference": 0.9,
+    "oracle_difference_95": [0.8, 0.975]
+  }
+}

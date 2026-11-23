@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "literal_row_resamples_checked": 48,
+  "width_pairs": [
+    [
+      3,
+      5
+    ],
+    [
+      30,
+      30
+    ],
+    [
+      300,
+      300
+    ]
+  ],
+  "nonzero_and_zero_predictions": true,
+  "degenerate_single_cell_resample": true,
+  "large_constant_shift_check": true,
+  "cache_replay": true,
+  "maximum_absolute_rmse_difference": 1.0172526041666667e-07,
+  "maximum_nondegenerate_rmse_difference": 1.7763568394002505e-15,
+  "project_data_read": false,
+  "model_fits": 0,
+  "source_sha256": {
+    "verify_gram_algebra.py": "5aa9d1348155bed52df23de75bbcfde87d1090a191b4def1554069027a737c10",
+    "evaluate_extensions.py": "49263bf4d85c8cd49e8c0eb64239d95ba6244fa622b5d821338a716116f556db"
+  }
+}

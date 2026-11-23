@@ -1,0 +1,66 @@
+{
+  "C01_comparison": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -11.841576313862909,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.029438141474440096,
+        "standardized_offdiag_covariance_rmse": 0.06152378214507279,
+        "standardized_variance_rmse": 0.42050717438653,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.034762794207769045,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -10.97151061642244,
+        "log_score_status": "finite",
+        "rows": 2000,
+        "standardized_mean_rmse": 0.029438141474440103,
+        "standardized_offdiag_covariance_rmse": 0.04190985439983417,
+        "standardized_variance_rmse": 0.36211709508062045,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.022494293848003197,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": {
+    "30": {
+      "features": 30,
+      "log_score": -11.74680128892645,
+      "log_score_status": "finite",
+      "rows": 2000,
+      "standardized_mean_rmse": 0.033892078589328196,
+      "standardized_offdiag_covariance_rmse": 0.061379502035929866,
+      "standardized_variance_rmse": 0.44231867224858734,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.024656596193822208,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "application": "constrained_collider_0__H3K27ac__30__original",
+  "execution": {
+    "application": "constrained_collider_0__H3K27ac__30__original",
+    "best_completed_penalized_objective": -36500.4990357373,
+    "best_completed_start": "spectral_1",
+    "complete_three_start_application": true,
+    "elapsed_seconds": 3.054279271993437,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory test comparison; no state or causal target"
+}

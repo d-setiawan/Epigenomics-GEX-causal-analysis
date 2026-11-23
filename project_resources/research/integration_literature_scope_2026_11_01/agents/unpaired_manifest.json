@@ -1,0 +1,407 @@
+{
+  "date_utc": "2026-11-01T07:12:56.744047+00:00",
+  "scope": "24 primary method records; primary retrievals, search responses and bounded cross-review",
+  "record_count": 24,
+  "evidence_levels": {
+    "abstract": 2,
+    "full_methods": 22
+  },
+  "citation_verification": "Parent consolidated review owns final DOI verifier run; local primary metadata and sources retained independently.",
+  "xml_parse_failures": [],
+  "files": [
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_cross_review.md",
+      "bytes": 2327,
+      "sha256": "99387b1d70302c54b2e7d4832bf9b54970dff25c0df0dd47c074ddff39a00200"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_cross_review_sources.json",
+      "bytes": 56404,
+      "sha256": "a3ec101aee1af0215c0b43a777adaf54c766fabc174662f87273f450de474ff0"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_discovery_provenance.json",
+      "bytes": 10304,
+      "sha256": "fdc5bee2c871c5bfd4cb98afe01757408c30784263a41bedeb5005a9ad6a8529"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_methods.json",
+      "bytes": 36491,
+      "sha256": "b802bb278f616f847a04fcae29a38221c5f092b8cd1a14c5762edd8911c0b607"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_checks.json",
+      "bytes": 95600,
+      "sha256": "6d6540f9a0ed854df7db8e40725ac3ff080dc3fa8bd17d647ca36f8078088e26"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_following.json",
+      "bytes": 86639,
+      "sha256": "64d941d695477f33e70bdfaa42c107fae9b648c98370ef227ca079e0397278b3"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_primary_reuse.json",
+      "bytes": 34074,
+      "sha256": "fcb4b058c4fe189b22ccf39a7e56a98e64911dede6d6a31ef1d02ab9ed071c0f"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_publication_date_verification.json",
+      "bytes": 66799,
+      "sha256": "5b7249658518217e611024d204fdc18081add267a2c2263a294c7ef856fb2a97"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_review.md",
+      "bytes": 3928,
+      "sha256": "dd39e8910f910a05acb58edfc26ae97c570382e69ccf27f03a044a7b58471b23"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_search_log.md",
+      "bytes": 3422,
+      "sha256": "cb1cafd139ef18256af0a8bd417922d74d7548746e8bcbd0bb50f26319371bc6"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_fullText.txt",
+      "bytes": 95918,
+      "sha256": "b1c8507867a8069ac3de7bbd3daea48587be89308621ae63a48078afd20bd959"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_fullText.xml",
+      "bytes": 299984,
+      "sha256": "26ed1e3607afcf06b7d846883a9f101317c21e727ae2394a72a1161db11d7b90"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_metadata.json",
+      "bytes": 12057,
+      "sha256": "94cde044bcf407e0ce939622b994747bd6fcce7e41815608d922105074960d9f"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/BiCLUM_retrieval.json",
+      "bytes": 469,
+      "sha256": "35b2f3bae7b8558f52a9f73aa4cf0874ea24bcbb638f7b37199ea4fa9ddf861b"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_fullText.txt",
+      "bytes": 76078,
+      "sha256": "bd4893fc504e21bedfedf6fdfdad6d2292af3d7af1c16b5eb36836d87fd08b65"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_fullText.xml",
+      "bytes": 298975,
+      "sha256": "cf10046fc16305977899dc753f878227728a2543f4af2e04a462f8a85a163d5f"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/GLUE_retrieval.json",
+      "bytes": 241,
+      "sha256": "c4959cc8fbe73ad2532190a4ba8c4982bbc9263c9a505e2712b6cd7598007eef"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_fullText.txt",
+      "bytes": 91114,
+      "sha256": "bd345c9c7b98869649d1b3c2000b96d687120c6ff5bdd8f2ad42f7f7441094ff"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_fullText.xml",
+      "bytes": 173071,
+      "sha256": "b250f2cf2b91ca56665fb145b375e631d852ca5df8aaad65a4c70b7b97b4a4a3"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MATCHER_retrieval.json",
+      "bytes": 434,
+      "sha256": "268503218a082b067bab7ee9795f82ccde5faf1b1d98ed969e8627033150c048"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_fullText.txt",
+      "bytes": 30942,
+      "sha256": "1286d73503df131f272d881351629f68baf430ee21885e1ad44b191093824605"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_fullText.xml",
+      "bytes": 95831,
+      "sha256": "2f77ed1f009c4004b880ad5a0c6c69c67d199d6f86c458d60754b5a8decc821e"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2019_retrieval.json",
+      "bytes": 390,
+      "sha256": "eb9784585615bee27f937b1cb2729cd71d9ae69dbe055e0fb40c303f1359c9cb"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MMD_MA_2020_retrieval.json",
+      "bytes": 240,
+      "sha256": "f34e72b3bba7cd686cc751a73e89a0e7ec534bba9a6c1c360b3f06f925414438"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_fullText.txt",
+      "bytes": 84632,
+      "sha256": "023d522dbd90b1d38acac06810b9459e5d4edfb2d0ac60c0c12a096261a25e66"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_fullText.xml",
+      "bytes": 147679,
+      "sha256": "648d6196ed6a072570fbaf6a605d8cb738039bcdf03328729421fd298f155c6a"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_metadata.json",
+      "bytes": 18229,
+      "sha256": "f3fcf13ed804e021e39136da964d30c23bb7b199937f04e30646d7dc95fc5996"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/MultiMAP_retrieval.json",
+      "bytes": 450,
+      "sha256": "fc7de7011e151e7c3d7628f021871cf1f15cfa66de5eefd4f7a0ccff21d1519f"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_fullText.txt",
+      "bytes": 44369,
+      "sha256": "7e71a6c7d17c8f231a85104420f8d2bebe1ff4b895f6157f27f089239f9202a3"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_fullText.xml",
+      "bytes": 151699,
+      "sha256": "7d414650393805df05dae09b9e2c4e48f87daab466501653d22b587093504dd7"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/Pamona_retrieval.json",
+      "bytes": 421,
+      "sha256": "0fcc965797d81d38848d0ca42e77529cdb79ea1cfc41f314b0c4b7b1034a4d48"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_fullText.txt",
+      "bytes": 48517,
+      "sha256": "3c32fb1f679cb1c0c8887a9c5c1e9df12ed5bbcae89203ff7db2b810289e4371"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_fullText.xml",
+      "bytes": 135542,
+      "sha256": "0df406fdf0574ad1eaf467a5700d05f2dd226c00a69e79659ff2d3f036948707"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCIM_retrieval.json",
+      "bytes": 392,
+      "sha256": "83b5ebf86bf949193748a903247dbf074a9fe855a4d4253a19adb44068c15f01"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_fullText.txt",
+      "bytes": 35401,
+      "sha256": "ed1d214affe6cfcbdfba96ee1c8bb878675fe62a4a37eec4d8d36b8e7c7941dc"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_fullText.xml",
+      "bytes": 114976,
+      "sha256": "227bd9505a38cc7ce29d87dc413b57ca49843ea4435f686f179213b869734e2e"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_plus_retrieval.json",
+      "bytes": 414,
+      "sha256": "e8ec4f8a32ed89525bf3be181eabee34d36449030e58d8303eb835dec23c8d8c"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOT_retrieval.json",
+      "bytes": 233,
+      "sha256": "a95cf2fcb013ec0e3ed5ad2aa6b64ac59c159bfe67344f6fb28ce5da77454697"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SCOTv2_retrieval.json",
+      "bytes": 235,
+      "sha256": "0d869f57b191dfcb79f408d38d8904587a2d00949fa85d3be4b389ff95d59ee3"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_fullText.txt",
+      "bytes": 84502,
+      "sha256": "a315c10c3242e99e6076259753bf27dbb8417bd16af6eecd1cdb5c8be7572ef9"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_fullText.xml",
+      "bytes": 187289,
+      "sha256": "5012b668df227a8da872f52d183c36e3e482114bcecc13f38c3ba6b4db0bd588"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/SIMBA_retrieval.json",
+      "bytes": 240,
+      "sha256": "9b61bff968a5dc73f57feaaa47874e398b3fbc837d6fe5376829a092e9e7c100"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_fullText.txt",
+      "bytes": 46129,
+      "sha256": "3bd721a6180bb3bf74f44afe2dced6a003d9c3c6cb3bb3f7e99148a287273388"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_fullText.xml",
+      "bytes": 128513,
+      "sha256": "35d42cddd8e1b2f8c75447a889935ae19272a528caaf5efc944acf927f66b8df"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/UnionCom_retrieval.json",
+      "bytes": 407,
+      "sha256": "259a1cfa355492a9f55dd1d3e069425d1ce92c418ad59a2c494fcf4d450afb3e"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_fullText.txt",
+      "bytes": 68295,
+      "sha256": "61868b6850bf191c637e71de2d88209caebc3a8efdf22cd3854a8ce6b4f79964"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_fullText.xml",
+      "bytes": 212431,
+      "sha256": "3c3256f51d5ad596cb7e55b97e360f2ddf0e254977fd086eb5ee8f744d8fb189"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/bindSC_retrieval.json",
+      "bytes": 378,
+      "sha256": "0b0e69725453d665263dccde3f19d50c39c62671c163e8b44d15994f643b3760"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_fullText.txt",
+      "bytes": 95756,
+      "sha256": "ddf308259822241908195386d332aaa4e107ae667eb867f65c5e211deb7a944c"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_fullText.xml",
+      "bytes": 211030,
+      "sha256": "b177c27a631f119317ba2e4e365e01c73f97edb92bdaca1d27a224eca0893603"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_metadata.json",
+      "bytes": 14327,
+      "sha256": "e19ef32be5a2f51c2ef1115b76aab726f914b8de4528f82f1d14465bb337fa92"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/graph_OT_retrieval.json",
+      "bytes": 491,
+      "sha256": "b1f1542b4763262f894ab055f2e136f7fd77ebed7d1244798b34b31c598aa34d"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_fullText.txt",
+      "bytes": 71527,
+      "sha256": "93f2f662daa7ab69553d93990c034ae687e579f6619dcdac80c717ae9c2ccf39"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_fullText.xml",
+      "bytes": 178224,
+      "sha256": "956c109629a717ed0e65fa5487955384aef161a666214d3cceb6e50a8be1b64c"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_metadata.json",
+      "bytes": 8870,
+      "sha256": "2bf3f136db4f0aba196e7e1f173f26ca28b93bd099a2f14d35581acd5b11c731"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/regression_unpaired_retrieval.json",
+      "bytes": 483,
+      "sha256": "1c90cb1d0bf3b1ea6f3a72e30d63f721b9f8c42fd511c30cf0e82c9d7f304512"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_fullText.txt",
+      "bytes": 102932,
+      "sha256": "910505704fd55473583021b526e6e0f04f89b9fbf41a3a7543c17f4884e78bc3"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_fullText.xml",
+      "bytes": 244527,
+      "sha256": "fe951e5bf85d7fd6e79cc1fd146f36e95f28c0e12802da5f8bbe1c405e8b631e"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scDART_retrieval.json",
+      "bytes": 443,
+      "sha256": "a2a43d83c1981c2a5c0f992a49a9a987471603c4ff92b327767c37331d9c6637"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scJoint_retrieval.json",
+      "bytes": 236,
+      "sha256": "92c55952665600ad31d7cb92c7c1992d179d029d5664b88687025346c0921909"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_fullText.txt",
+      "bytes": 43077,
+      "sha256": "fd4de5b9aa3f409c46ab4101edc4133d63537caf55c7c91d266d91d840605c61"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_fullText.xml",
+      "bytes": 113112,
+      "sha256": "925dde0417c5572bdc02c58603831a73b3d9c2eb42927c990f9e6ce9b8b45dce"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/scTopoGAN_retrieval.json",
+      "bytes": 389,
+      "sha256": "8aa776aa9afc147b20ecd7f972f09e5e80ac379eaf5108c5062e066625408fa9"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_fullText.txt",
+      "bytes": 57317,
+      "sha256": "03cff0065e0fd2d4b8c5ddfddb2c3ff9cb005ba70b044e9d407aea3b940ace1d"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_fullText.xml",
+      "bytes": 125410,
+      "sha256": "40179fc7349ecf0b3000fb2ef9edbdf52f405dc12aba49ff54d2b53618e4381d"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_metadata.json",
+      "bytes": 10464,
+      "sha256": "ddd3a5d9879404615d7bdba1e73a02b4ae62e33007567b37ed7aa0b2f899e020"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/sciCAN_retrieval.json",
+      "bytes": 500,
+      "sha256": "6299dd6c9d42081ad2d3db3508966c2ed64e3e28d9b3ad7fb5bc725ee78d1bce"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_fullText.txt",
+      "bytes": 61324,
+      "sha256": "f76b677382a5cf223d0c70120dd4e576471a1ab9797f7187c9789fb6a3940b29"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_fullText.xml",
+      "bytes": 146664,
+      "sha256": "3fb11cffb83df3f7f968e71857e23a6c9d3ba834ad0cc3d1a46ad487769d0595"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_metadata.json",
+      "bytes": 10646,
+      "sha256": "39422587707c85ed4b599740fbc9928a75745230e362285562e384a8cc11c083"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/siamese_graph_retrieval.json",
+      "bytes": 494,
+      "sha256": "1dc38ea7b9a9ee776cc532aca696e2bea12195b05c273e104e54798879fe29ad"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_fullText.txt",
+      "bytes": 64455,
+      "sha256": "3f0f540a06a42dd2e3a21783feb3e4e889349a9da2957cea2f439a961525825e"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_fullText.xml",
+      "bytes": 198385,
+      "sha256": "6f8aa67a72e5b7485771864be6ab6edc48b26beb1fde37540732e241e7c3dd46"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_sources/uniPort_retrieval.json",
+      "bytes": 239,
+      "sha256": "4cd03db30b4eebe050049304c91c283654e286bf9cc572e401854181e9d1eabd"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/unpaired_supplementary_searches.json",
+      "bytes": 146512,
+      "sha256": "1fdfa941ab9fe03b69f168f7f6ce1ac4abc5a8f55b8bcc3d89d12cc46b39e995"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/final_unpaired_cross_review.md",
+      "bytes": 3722,
+      "sha256": "a8d08c8974b6b53778317954e2a58995c5122b7e1a3f583f55fbc137b811ffd5"
+    }
+  ],
+  "cross_review_inputs": [
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/theory_methods.json",
+      "sha256": "1bf92e1c8550fee6fa080d74b29153fbac081adb94725bf6aee085859d8c02ed"
+    },
+    {
+      "path": "project_resources/research/integration_literature_scope_2026_11_01/agents/bridge_methods.json",
+      "sha256": "6b9c4d3e8d4703e4d0595d60d0ce5ed37ba700e1fe3c4fa0722c5ac74e59fd55"
+    }
+  ],
+  "final_review_source": {
+    "path": "project_resources/research/integration_literature_scope_2026_11_01/REVIEW.md",
+    "sha256": "26be6e5c9c02bc801bb2bd45e8803b3953bfb94ba14b30da63c348f8ae516291"
+  }
+}

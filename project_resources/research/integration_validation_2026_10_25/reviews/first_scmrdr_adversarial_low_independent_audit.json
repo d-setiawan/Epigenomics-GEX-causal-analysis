@@ -1,0 +1,257 @@
+{
+  "best_epoch": 172,
+  "best_validation_loss": 2535.386140625,
+  "checkpoint_sha256": "65e06415358e0e1e698301b267cd34b0653534c17f93827d6761c0a3850b6119",
+  "configuration": {
+    "batch_size": 128,
+    "beta": 5,
+    "cosine_learning_rate": true,
+    "device": "cuda",
+    "dispersion_strategy": "gene",
+    "dropout_rate": 0.2,
+    "gamma": 10,
+    "gradient_clip_norm": 1,
+    "hidden_layers": [
+      128,
+      128
+    ],
+    "lambda_adv": 5,
+    "latent_dim_shared": 20,
+    "latent_dim_specific": 20,
+    "learning_rate": 0.001,
+    "max_epochs": 200,
+    "min_delta": 0,
+    "patience": 10,
+    "seed": 0,
+    "validation_fraction": 0.1,
+    "validation_mc_samples": 1
+  },
+  "created_utc": "2026-10-25T22:45:40.749088+00:00",
+  "discovery_rows_per_assay": 1000,
+  "epochs_completed": 182,
+  "features": 2009,
+  "files": {
+    "discovery/H3K27ac.npz": {
+      "cell_ids_sha256": "8f6440f9519650ba88b52a1a6181ef60c1a1a228f59d816e5bd9f56e071eb4a0",
+      "private_shape": [
+        1000,
+        20
+      ],
+      "rows": 1000,
+      "sha256": "240d183e7dad0483858cc92617466722ea3f8e5c9052cb250778bc9b3102aa5c",
+      "shared_shape": [
+        1000,
+        20
+      ]
+    },
+    "discovery/H3K4me3.npz": {
+      "cell_ids_sha256": "a650d1f574e21d93efd819ce128a47f7c8e4cd0d68867742916f5ef78834acb4",
+      "private_shape": [
+        1000,
+        20
+      ],
+      "rows": 1000,
+      "sha256": "3cc6483d12c7c5e74a21a5ddf2dc8f9ca8825b40ceb23ffb0da682bca77a269c",
+      "shared_shape": [
+        1000,
+        20
+      ]
+    },
+    "discovery/RNA.npz": {
+      "cell_ids_sha256": "878afc3ce3315ca947baf9ad18b0d9001b54fd3fc333f0ca7d42ae35d4bfb4cd",
+      "private_shape": [
+        1000,
+        20
+      ],
+      "rows": 1000,
+      "sha256": "76d8de92239854f4dd486c8dc9bf668af3a905ba615675a48b39541c415b80cc",
+      "shared_shape": [
+        1000,
+        20
+      ]
+    },
+    "train/H3K27ac.npz": {
+      "cell_ids_sha256": "98e81b7ed290f90b58243cb288ce118a650c64d21030476adaa72ab69e160858",
+      "private_shape": [
+        2000,
+        20
+      ],
+      "rows": 2000,
+      "sha256": "2704b8924eaf98b34cbb6e67c1ded145d32a606d611efcd8e92cdf61b13cb029",
+      "shared_shape": [
+        2000,
+        20
+      ]
+    },
+    "train/H3K4me3.npz": {
+      "cell_ids_sha256": "f29cdce7b567c452b26743a00511d01fa6dbe00dffb8cf0236df7fed3704c77f",
+      "private_shape": [
+        2000,
+        20
+      ],
+      "rows": 2000,
+      "sha256": "eaa7c21e1b1927d1991f49c6f0ac1c512a742e01a6e9d0ced72925581333296b",
+      "shared_shape": [
+        2000,
+        20
+      ]
+    },
+    "train/RNA.npz": {
+      "cell_ids_sha256": "1997fbea1b1c70c08d777a6918aae4986cd03b49db05be892ebc8049cf5c942e",
+      "private_shape": [
+        2000,
+        20
+      ],
+      "rows": 2000,
+      "sha256": "5352ba146b4e970f2cd77e3e1d8e2f9d5bae46a968a00bfcd8bd873e002f11ec",
+      "shared_shape": [
+        2000,
+        20
+      ]
+    },
+    "val/H3K27ac.npz": {
+      "cell_ids_sha256": "0ed1f901ca7fa15aefb66bcb82bb81112c6f6a431e0d4dd9f8712c989407ecf6",
+      "private_shape": [
+        500,
+        20
+      ],
+      "rows": 500,
+      "sha256": "8af88d99921efa35ea1121146931ae151931078a9ccc80aef2242a34464fce23",
+      "shared_shape": [
+        500,
+        20
+      ]
+    },
+    "val/H3K4me3.npz": {
+      "cell_ids_sha256": "1a435a5903e2d76f007ecdd7567a889018eccb30d203806760b561560923e41f",
+      "private_shape": [
+        500,
+        20
+      ],
+      "rows": 500,
+      "sha256": "002c34cae40623f3c277e31a6c6a6f105d62605324daa10b1354160ac6b9247a",
+      "shared_shape": [
+        500,
+        20
+      ]
+    },
+    "val/RNA.npz": {
+      "cell_ids_sha256": "fd00adca05333b43cb7a8c202131137d50455e469d85872e2eaf76b670fffa5f",
+      "private_shape": [
+        500,
+        20
+      ],
+      "rows": 500,
+      "sha256": "f733a741e012eb8562394393739c05d99e84aba246d9fc152ec484eaee57112b",
+      "shared_shape": [
+        500,
+        20
+      ]
+    }
+  },
+  "last_checkpoint_sha256": "1b98841fd1a14baa3f66748cb08a0e6b9ea49eb06b45cbd3b13d6abcff4cb5b1",
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "public_input_hashes_matched_to_frozen_world_manifest": {
+    "observed/informative/discovery/H3K27ac.h5ad": "936a444eb47a2641aeb37e9dd328aa4c647b1c62856bcee6271d8e95c6633b60",
+    "observed/informative/discovery/H3K4me3.h5ad": "66787bdb7d623127fffd6b64b94dac604dc8dba2463641c9f3642d3aeb10b1af",
+    "observed/informative/discovery/RNA.h5ad": "68a811dde223b992070f817a73e05e8e36796804fd79bfb097fbaa0f00a87c74",
+    "observed/informative/train/H3K27ac.h5ad": "7be2ad515658662d639a91d693ff6ef976216c725ad417f3e14153b22bb6ba51",
+    "observed/informative/train/H3K4me3.h5ad": "0d29da40c222bfb39fd11b6f4e9fc68f5c2d32ff0f31b7de93fb216af40a9b80",
+    "observed/informative/train/RNA.h5ad": "4defd86c8b8503491ea45e089d9c935e7679c1f856c39b7cec8264285d862e59",
+    "observed/informative/val/H3K27ac.h5ad": "8532feb5fef25e4bb3eeccee7ded56498584727a29772258f1dc6236cb52e8ad",
+    "observed/informative/val/H3K4me3.h5ad": "83da9ff23639cc3189ea561b50fe17ca3c3542260574afd5533012edbb7b2b9a",
+    "observed/informative/val/RNA.h5ad": "e83ab66efa001523a0ad3161412363abe29d57ba48b88f3c44149804a16e222b"
+  },
+  "run": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0",
+  "runtime_library_sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+  "scope": "JSON/NPZ/source reads and checkpoint hashing only; no CUDA, fitting, causal evaluation or private/protected cohort reads. H5AD input identities were reconciled against frozen manifest hashes without reopening counts. No checkpoint deserialization; epoch metadata checked against history, summary and frozen best-state restoration code. Access boundary established from source and declared inputs, not an operating-system syscall trace.",
+  "status": "passed_scoped_independent_audit",
+  "total_unique_public_ids": 10500,
+  "training_rows_per_assay": 2000,
+  "validation_rows_per_assay": 500,
+  "verified_checks": [
+    "protocol hash",
+    "actual full configuration matches declared override",
+    "only adversarial weight differs from defaults",
+    "study seals completed validation manifest",
+    "fit manifest seal",
+    "fit bridge source",
+    "original CLI snapshot hash",
+    "frozen sources",
+    "baseline assessment lock preserves identical source pins",
+    "paper native core source",
+    "paper vendored source and license",
+    "gene transform identity",
+    "gene transform scope",
+    "checkpoint identity",
+    "epochs and best epoch",
+    "history epochs are sequential",
+    "best checkpoint selection agrees with first validation minimum",
+    "early stopping patience",
+    "every recorded component loss and learning rate is finite",
+    "all explicit validation rows held out",
+    "training/validation retention",
+    "nine public files only",
+    "export seal discovery/H3K27ac.npz",
+    "export schema/finite values discovery/H3K27ac.npz",
+    "unique disjoint public IDs discovery/H3K27ac.npz",
+    "baseline export integrity discovery/H3K27ac.npz",
+    "same public IDs as cached baseline discovery/H3K27ac.npz",
+    "declared public input identity discovery/H3K27ac.npz",
+    "export seal discovery/H3K4me3.npz",
+    "export schema/finite values discovery/H3K4me3.npz",
+    "unique disjoint public IDs discovery/H3K4me3.npz",
+    "baseline export integrity discovery/H3K4me3.npz",
+    "same public IDs as cached baseline discovery/H3K4me3.npz",
+    "declared public input identity discovery/H3K4me3.npz",
+    "export seal discovery/RNA.npz",
+    "export schema/finite values discovery/RNA.npz",
+    "unique disjoint public IDs discovery/RNA.npz",
+    "baseline export integrity discovery/RNA.npz",
+    "same public IDs as cached baseline discovery/RNA.npz",
+    "declared public input identity discovery/RNA.npz",
+    "export seal train/H3K27ac.npz",
+    "export schema/finite values train/H3K27ac.npz",
+    "unique disjoint public IDs train/H3K27ac.npz",
+    "baseline export integrity train/H3K27ac.npz",
+    "same public IDs as cached baseline train/H3K27ac.npz",
+    "training IDs match frozen gene manifest train/H3K27ac.npz",
+    "declared public input identity train/H3K27ac.npz",
+    "export seal train/H3K4me3.npz",
+    "export schema/finite values train/H3K4me3.npz",
+    "unique disjoint public IDs train/H3K4me3.npz",
+    "baseline export integrity train/H3K4me3.npz",
+    "same public IDs as cached baseline train/H3K4me3.npz",
+    "training IDs match frozen gene manifest train/H3K4me3.npz",
+    "declared public input identity train/H3K4me3.npz",
+    "export seal train/RNA.npz",
+    "export schema/finite values train/RNA.npz",
+    "unique disjoint public IDs train/RNA.npz",
+    "baseline export integrity train/RNA.npz",
+    "same public IDs as cached baseline train/RNA.npz",
+    "training IDs match frozen gene manifest train/RNA.npz",
+    "declared public input identity train/RNA.npz",
+    "export seal val/H3K27ac.npz",
+    "export schema/finite values val/H3K27ac.npz",
+    "unique disjoint public IDs val/H3K27ac.npz",
+    "baseline export integrity val/H3K27ac.npz",
+    "same public IDs as cached baseline val/H3K27ac.npz",
+    "declared public input identity val/H3K27ac.npz",
+    "export seal val/H3K4me3.npz",
+    "export schema/finite values val/H3K4me3.npz",
+    "unique disjoint public IDs val/H3K4me3.npz",
+    "baseline export integrity val/H3K4me3.npz",
+    "same public IDs as cached baseline val/H3K4me3.npz",
+    "declared public input identity val/H3K4me3.npz",
+    "export seal val/RNA.npz",
+    "export schema/finite values val/RNA.npz",
+    "unique disjoint public IDs val/RNA.npz",
+    "baseline export integrity val/RNA.npz",
+    "same public IDs as cached baseline val/RNA.npz",
+    "declared public input identity val/RNA.npz",
+    "frozen heldout inference val",
+    "frozen heldout inference discovery",
+    "no private cohort outputs",
+    "verified runtime preload binary"
+  ]
+}

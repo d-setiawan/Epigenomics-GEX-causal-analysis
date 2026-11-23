@@ -1,0 +1,149 @@
+{
+  "schema_version": "ca_boss_v4.cached_full_pool_v423_summary.v1",
+  "algorithm_schema_version": "ca_boss_v4.layered_contract.v4.23",
+  "direct_selector_schema_version": "crossfit_hierarchical_collider.v4.22",
+  "date": "2026-09-01",
+  "retrospective_development_only": true,
+  "fresh_locked_claim": false,
+  "new_worlds_or_datasets_created": false,
+  "base_checkpoint": {
+    "path": "Evaluation/results/ca_boss_v4_cached_full_pool_v422_summary.json",
+    "sha256": "8164cf5372015a1ff54c33cf85102998e8884164eee9f7d016720efbab7c5bb7",
+    "eligible_cached_worlds": 152,
+    "random_panel_world_evaluations": 276,
+    "exact_random_panel_world_evaluations": 276
+  },
+  "unchanged_layers": {
+    "direct_layer": {
+      "exact_worlds": 152,
+      "true_positive_directed_arms": 1824,
+      "false_positive_directed_arms": 0,
+      "false_negative_directed_arms": 0,
+      "strict_reversals": 0,
+      "micro_precision": 1.0,
+      "micro_recall": 1.0,
+      "mean_direct_adjacencies_per_world": 12.0
+    },
+    "shared_state_assay_layer": {
+      "assay_tests": 1064,
+      "selected_assays": 1064,
+      "worlds_with_all_seven_modalities": 152,
+      "assay_participation_recall": 1.0
+    },
+    "strict_state_feature_layer": {
+      "true_positive_members": 2990,
+      "false_positive_members": 0,
+      "false_negative_members": 810,
+      "precision": 1.0,
+      "recall": 0.7868421052631579
+    }
+  },
+  "state_equivalence_feature_layer": {
+    "schema_version": "state_equivalence_membership.v4.23",
+    "rule": "strict members OR pre-redundancy-selected redundancy-demoted reporters with feature_global_maxT_p <= 0.01",
+    "threshold_source": "existing frozen within-assay strong-core world-maxT threshold; not retuned on v4.23 outcomes",
+    "equivalence_only_true_positive_members": 256,
+    "equivalence_only_false_positive_members": 0,
+    "supported_true_positive_members": 3246,
+    "supported_false_positive_members": 0,
+    "supported_false_negative_members": 554,
+    "supported_precision": 1.0,
+    "supported_recall": 0.8542105263157894,
+    "supported_role_recall": {
+      "P": 0.7456140350877193,
+      "Q": 0.881578947368421,
+      "C": 0.8421052631578947,
+      "S": 0.9232456140350878,
+      "RNA": 1.0
+    },
+    "within_assay_equivalence_groups": 1064,
+    "pairwise_cross_assay_edges_created": 0,
+    "direct_edges_created_or_changed": 0,
+    "strict_membership_changed": false,
+    "assay_participation_changed": false
+  },
+  "leave_one_source_block_out_replay": [
+    {
+      "held_out_block": "development_34001_34016",
+      "true_positive_members": 329,
+      "false_positive_members": 0,
+      "false_negative_members": 71,
+      "precision": 1.0,
+      "recall": 0.8225
+    },
+    {
+      "held_out_block": "development_47001_47016",
+      "true_positive_members": 348,
+      "false_positive_members": 0,
+      "false_negative_members": 52,
+      "precision": 1.0,
+      "recall": 0.87
+    },
+    {
+      "held_out_block": "train_39001_39024",
+      "true_positive_members": 515,
+      "false_positive_members": 0,
+      "false_negative_members": 85,
+      "precision": 1.0,
+      "recall": 0.8583333333333333
+    },
+    {
+      "held_out_block": "train_40001_40024",
+      "true_positive_members": 512,
+      "false_positive_members": 0,
+      "false_negative_members": 88,
+      "precision": 1.0,
+      "recall": 0.8533333333333334
+    },
+    {
+      "held_out_block": "train_41001_41024",
+      "true_positive_members": 514,
+      "false_positive_members": 0,
+      "false_negative_members": 86,
+      "precision": 1.0,
+      "recall": 0.8566666666666667
+    },
+    {
+      "held_out_block": "train_46001_46024",
+      "true_positive_members": 520,
+      "false_positive_members": 0,
+      "false_negative_members": 80,
+      "precision": 1.0,
+      "recall": 0.8666666666666667
+    },
+    {
+      "held_out_block": "train_49001_49024",
+      "true_positive_members": 508,
+      "false_positive_members": 0,
+      "false_negative_members": 92,
+      "precision": 1.0,
+      "recall": 0.8466666666666667
+    }
+  ],
+  "tests": {
+    "collider_tests_passed": 105,
+    "state_equivalence_tests_passed": 3,
+    "cached_layered_audit_tests_passed": 3,
+    "full_evaluation_tests_passed": 450,
+    "full_evaluation_warnings": 62,
+    "warnings": "scikit-learn deprecations from the unchanged frozen rank-fusion derivation audit"
+  },
+  "audit_artifacts": {
+    "utility": "Evaluation/scripts/audit_cached_layered_contract_v4.py",
+    "equivalence_module": "Evaluation/scripts/state_equivalence_membership_v4.py",
+    "output": "Evaluation/outputs/ca_boss_v4/cached_layered_contract_v423_full_pool",
+    "phase_a_manifest_sha256": "e3442601aa5c9b93c5cd80fd54f0bda7ab6165af5ed0a8426258f3987edea148",
+    "phase_b_summary_sha256": "48b6759995c9f6289711fd3c9f4f76e28969fb829ded2f8f2f6845afd0749119",
+    "phase_b_summary_payload_sha256": "bffc96e399ed3596015c11bb0dade19d717b69724a714dcf12160bdf177872f5",
+    "state_equivalence_groups_sha256": "af30df70267278f23508aa97f4e467c7633744079db260a85395a7069dc4e990",
+    "state_equivalence_source_sha256": "b4f8f15a00d56e9ff0662a2cca811e5ad621ebc9e751432a7522efa4da23315b",
+    "audit_source_sha256": "5518bfa26fd64e412ab7b9a43c65d927e7548484b0fabde5816bd32aa0249e4c"
+  },
+  "interpretation": {
+    "strict_membership": "unchanged precision-first representative set",
+    "state_equivalence_membership": "uncertainty-aware within-assay set of strong interchangeable state reporters",
+    "cross_assay_structure": "assay participation only; equivalence groups are not joined across assays",
+    "exact_cross_assay_feature_pairing": "not claimed",
+    "cell_specific_cross_assay_direct_effects": "not identifiable from the agreed disjoint-cell variables"
+  }
+}

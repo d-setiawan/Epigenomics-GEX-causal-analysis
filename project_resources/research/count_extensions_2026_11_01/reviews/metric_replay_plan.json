@@ -1,0 +1,30 @@
+{
+  "status": "declared_before_evaluation",
+  "date_utc": "2026-11-01T20:41:33.037407+00:00",
+  "reviewer": "causal_reliability_pilot",
+  "scientific_outcomes_read": false,
+  "requires_complete_fit_and_evaluation_seals": true,
+  "helper_sha256": "04b978763356265613266d67e610de211f9e7e77838ead0e3496264614f3f16c",
+  "protocol_sha256": "d2a6a5ea3ce2d811046d90f83e513c3fc30e4b042794fe0913f9c5357a79ae92",
+  "literal_bootstrap_indices": [
+    0,
+    99,
+    199
+  ],
+  "bootstrap_seed": 3000,
+  "bootstrap_total": 200,
+  "scope": [
+    "All225 arms and both scoring levels; all point metrics and state matrices",
+    "Literal paired raw-count covariance resampling for indices0,99,199 in every pair/width/depth/scale context",
+    "All200 model-versus-zero squared-error identities using independent low-rank source projections",
+    "All saved bootstrap percentile and positive-improvement summaries",
+    "Both complete seals, artifact hashes and paired evaluator/public joins"
+  ],
+  "limits": [
+    "All200 error identities condition on saved zero-predictor norms; three literal samples verify those norms from data in each context",
+    "General row-Gram implementation has separate48-fixture independent algebra audit",
+    "No learner/evaluator imports, new model fits, threshold choices, panels, or datasets"
+  ],
+  "self_check": "Seven deterministic algebra resamples, including repeated rows and a one-row degenerate sample; zero and nonzero source predictors pass",
+  "data_arrays_opened_by_preparation": false
+}

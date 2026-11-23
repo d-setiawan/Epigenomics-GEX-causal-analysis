@@ -1,0 +1,241 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_mutual_nearest_margin_rescue_v453_record.v1",
+  "algorithm": "CA-BOSS v4.53 bootstrap-stable mutual-nearest-margin rescue",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_mutual_nearest_margin_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_positive_labels_used_for_score_fit": false,
+    "other_block_sentinel_null_roles_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 196,
+      "true_positive_hyperedges": 196,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 113,
+      "precision": 1.0,
+      "recall": 0.6343042071197411
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 316,
+      "correctly_recovered_assay_participations": 316,
+      "precision": 1.0,
+      "recall": 0.511326860841424,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 196,
+      "coverage": 0.6343042071197411,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 266,
+      "average_ambiguity_set_size": 1.3571428571428572,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 158,
+      "exact_cross_assay_pair_true_positives": 158,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.511326860841424,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v451_bootstrap_sparse_baseline": {
+      "true_positive_hyperedges": 187,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6051779935275081
+    },
+    "v452_bootstrap_empirical_copula": {
+      "true_positive_hyperedges": 190,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6148867313915858
+    },
+    "v453_bootstrap_mutual_nearest_margin": {
+      "true_positive_hyperedges": 196,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6343042071197411,
+      "incremental_stable_true_hyperedges": 6,
+      "incremental_stable_false_hyperedges": 0,
+      "interpretation": "matches v4.50's exploratory full-fit coverage while replacing its unstable additions with six whole-world-stable local-competition additions"
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "eligible_pair_universe": "reporter-pair rows remaining after the fixed truth-blind v4.44 and v4.46 exclusions",
+    "pair_features": [
+      "statistical_context_support_count",
+      "global_reporter_coassignment_context_count",
+      "maximum_reporter_pair_scaled_ks_ratio",
+      "mean_coassigned_pair_exclusion_relative_margin"
+    ],
+    "feature_directions": [
+      "increasing",
+      "increasing",
+      "decreasing",
+      "increasing"
+    ],
+    "base_pair_score": "v4.52 product of four training-fold empirical-CDF percentiles",
+    "local_competitor_set": "all other eligible pairs incident to either endpoint within the same world",
+    "reciprocity_rule": "strict unique mutual nearest neighbour in every nested fold",
+    "margin": "candidate copula score minus the larger of the two endpoint-specific competitor maxima",
+    "nested_score": "minimum absolute margin over four leave-one-source-block calibration folds",
+    "null_threshold": "maximum corresponding absolute margin among eligible mutual-neighbour sentinel-null pairs in the other blocks",
+    "threshold_comparison": "strictly greater than",
+    "positive_labels_used_for_score_fit": false,
+    "other_block_truth_role": "identify empirical-null pairs only",
+    "proposal_source": "nominal mutual-nearest-margin pairs not already in target-safe v4.52",
+    "base_union": "target-safe v4.52 hypotheses",
+    "bootstrap_unit": "whole training world sampled with replacement within its original seed block",
+    "bootstrap_replicates": 100,
+    "bootstrap_frequency_threshold": 0.8,
+    "bootstrap_threshold_comparison": "inclusive greater than or equal",
+    "perfect_matching_assumed": false,
+    "fixed_shared_relationship_count_assumed": false,
+    "conflict_handling": "merge connected assay pairs into an unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never direct structure, exact cross-assay feature identity, or cross-assay direction"
+  },
+  "stability_audit": {
+    "retained_mutual_nearest_margin_proposals": [
+      {
+        "world_key": "train_46001_46024__world_seed46005",
+        "modalities": ["chrom_H3K4me1", "chrom_H3K4me3"],
+        "minimum_nested_absolute_margin": 0.5316102614746427,
+        "calibration_null_margin_upper_envelope": 0.419572127679948,
+        "selection_count": 99,
+        "selection_frequency": 0.99,
+        "retained": true
+      },
+      {
+        "world_key": "train_46001_46024__world_seed46007",
+        "modalities": ["chrom_H3K27ac", "chrom_H3K9me3"],
+        "minimum_nested_absolute_margin": 0.47477655271848057,
+        "calibration_null_margin_upper_envelope": 0.419572127679948,
+        "selection_count": 93,
+        "selection_frequency": 0.93,
+        "retained": true
+      },
+      {
+        "world_key": "train_46001_46024__world_seed46014",
+        "modalities": ["chrom_H3K27me3", "chrom_H3K4me2"],
+        "minimum_nested_absolute_margin": 0.5106250544570461,
+        "calibration_null_margin_upper_envelope": 0.419572127679948,
+        "selection_count": 96,
+        "selection_frequency": 0.96,
+        "retained": true
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49006",
+        "modalities": ["chrom_H3K27ac", "chrom_H3K27me3"],
+        "minimum_nested_absolute_margin": 0.675580634103748,
+        "calibration_null_margin_upper_envelope": 0.44663533515318415,
+        "selection_count": 100,
+        "selection_frequency": 1.0,
+        "retained": true
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49016",
+        "modalities": ["chrom_H3K27ac", "chrom_H3K4me2"],
+        "minimum_nested_absolute_margin": 0.5120427124258758,
+        "calibration_null_margin_upper_envelope": 0.44663533515318415,
+        "selection_count": 82,
+        "selection_frequency": 0.82,
+        "retained": true
+      },
+      {
+        "world_key": "train_49001_49024__world_seed49023",
+        "modalities": ["chrom_H3K4me3", "chrom_H3K9me3"],
+        "minimum_nested_absolute_margin": 0.5701361281608188,
+        "calibration_null_margin_upper_envelope": 0.44663533515318415,
+        "selection_count": 98,
+        "selection_frequency": 0.98,
+        "retained": true
+      }
+    ],
+    "rejected_unstable_nominal_proposals": [
+      {
+        "world_key": "train_41001_41024__world_seed41018",
+        "modalities": ["chrom_H3K4me1", "chrom_H3K4me3"],
+        "posttruth_type": "true_pair",
+        "selection_count": 30,
+        "selection_frequency": 0.3,
+        "retained": false
+      },
+      {
+        "world_key": "train_46001_46024__world_seed46004",
+        "modalities": ["chrom_H3K27me3", "chrom_H3K9me3"],
+        "posttruth_type": "null_pair",
+        "selection_count": 48,
+        "selection_frequency": 0.48,
+        "retained": false
+      }
+    ],
+    "posttruth_maximum_null_selection_frequency": 0.48,
+    "posttruth_null_pairs_at_or_above_frequency_threshold": 0,
+    "new_stable_true_hyperedges_over_v452": 6,
+    "new_stable_false_hyperedges_over_v452": 0
+  },
+  "bounded_rule_diagnostic": {
+    "candidate_rule_count": 35,
+    "scope": "fixed combinations of global and held-out context summaries with product, minimum, harmonic mean, arithmetic mean, and two-worst-rank aggregators",
+    "outcome": "most variants reproduced or weakened v4.52; held-out-only mean-margin variants stabilized one null, while the minimum-held-out-margin view did not; neither was promoted",
+    "margin_comparison": "absolute mutual-neighbour margin retained no stable null; relative and log margins each retained one null at frequency 0.94 and were rejected",
+    "use": "posttruth retrospective rule development only, never fresh validation"
+  },
+  "published_method_inspiration": {
+    "mutual_nearest_neighbours": "Haghverdi, Lun, Morgan, and Marioni (Nature Biotechnology 2018), Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors, DOI 10.1038/nbt.4091",
+    "empirical_copula_tail_scoring": "Li, Zhao, Botta, Ionescu, and Hu (ICDM 2020), COPOD: Copula-Based Outlier Detection, DOI 10.1109/ICDM50108.2020.00135",
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "relationship": "V4.53 adapts mutual-nearest-neighbour reciprocity to partial local pair selection over CA-BOSS copula scores; it is not batch correction, does not enforce a full matching, and is not a direct application of any cited algorithm. No publication contributes data, pairings, features, or biological priors."
+  },
+  "limitations": {
+    "remaining_shared_state_hyperedge_abstentions": 113,
+    "complete_recovery_achieved": false,
+    "fresh_locked_generalization_established": false,
+    "cross_assay_direction_identified": false,
+    "interpretation": "The six gains are reproducible within cached-world resampling, but all 103 worlds and the bounded rule screen have informed development. This is the strongest retrospective checkpoint, not reliable out-of-sample complete recovery."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_mutual_nearest_margin_rescue_v453_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "9f136ce087ac509866e8df7c3e4bf1a30bb55b8142c51cee82f51695c6ce1525",
+    "campaign_summary_file_sha256": "01527111e8cb2d0a8a87ff2541236eb44ad7c2cc28e1a2f76d856cb55bcc1cf0",
+    "campaign_world_metrics_sha256": "79a6e7c18bd4755cb8ab18ab6f0dc1fd369ba86869b2aa4a583ad9ac3aca22bd",
+    "campaign_panels_sha256": "82d16865a1e3becd3ce8368e608cf59d6ff8b433c2800feabd829733ad7adae8",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "0d869cb9150acb62de2d04c6e6a0556d2c0cf3aeddd4c7857f148892c989f3b7",
+      "development_47001_47016": "6141d03396495987fdd3623076d69c5549d375ce201ad700040fb6e78f27be2f",
+      "train_41001_41024": "ad749ed061e58e830694d5c9b8409debf40c381607c66f3fcac1c0e0b2afb5ed",
+      "train_46001_46024": "f40bb24def18c1f31fd0037fecfcb72c2a756257725c51fd4193115f01d13597",
+      "train_49001_49024": "1f1beab5c0f39a5a27127d03a7b14973992003d22271c91caf5d4207e1a0659f"
+    },
+    "calibrator_source_sha256": "54faa74ac0b9cc026a2b22a3db232c06eeb749cd5a6800156d46149e471c2a9a",
+    "scorer_source_sha256": "aef799a5d590016bf2887d656c0781e08fa74959aa51955ba97461372babbda8"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "domains": 2,
+  "n_per_domain": 1000,
+  "seed": 5,
+  "ica_seed": 100005,
+  "protocol_sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+  "status": "correct_dimension_graph_available",
+  "nr_joint": 3,
+  "mixing_error_raw": 5.2134994913010395,
+  "mixing_error_native_normalized": 0.05792777212556711,
+  "mixing_error_sqrt_beta_normalized": 0.5495510990880162,
+  "graph_error_raw": 1.6293800270475824,
+  "graph_error_normalized": 0.5431266756825275,
+  "unconditional_coefficient_criterion": false,
+  "data_sha256": [
+    "41a7bd7c75ebbf1763e9307a58608c4ad997080523eeb2a1b2ea53fd94498b75",
+    "792a64b8673dbf27a32a59c2bd6553e941c7337a6ebdf9f5d2099aad0bc64cd3"
+  ],
+  "fit_seconds": 0.0368128219852224,
+  "ica_components": [
+    5,
+    5
+  ],
+  "graph_numeric_diagnostics": {
+    "diagonal_entries_above_1e_minus12": 3,
+    "bidirectional_pairs_above_1e_minus12": 3
+  },
+  "warnings": [],
+  "ica_convergence_warning": false,
+  "elapsed_seconds": 0.04344159000902437,
+  "matrices_sha256": "05c97a2f5a618d313915b61a50340ddfe6385fb1e712129b25816f3a2ef1981e"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "binding": {
+    "report": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scconfluence_state_v1/reports/constrained_collider_0_seed0.json",
+    "report_sha256": "45ed97cac192288672da91f521d45d3704f92c9877160f38b24372e629227fc2",
+    "reviewer_sha256": "19f9099747b7855078dc2de2bbf8d869dfcdd49745264220f538e47847ca4877"
+  },
+  "assignments_exact": true,
+  "train_state_scaling_reproduced": true,
+  "costs": {
+    "RNA--H3K27ac": {
+      "matched_squared_cost": 0.48774104639835003,
+      "oracle_squared_cost": 0.10418752602752399,
+      "random_expected_squared_cost": 3.8998257296269254,
+      "normalized_gap": 0.1010511275829984
+    },
+    "RNA--H3K4me3": {
+      "matched_squared_cost": 0.3687592464904914,
+      "oracle_squared_cost": 0.11411805507518188,
+      "random_expected_squared_cost": 3.8950211944701167,
+      "normalized_gap": 0.0673493030704987
+    },
+    "H3K27ac--H3K4me3": {
+      "matched_squared_cost": 0.44480913321731214,
+      "oracle_squared_cost": 0.05881228226434009,
+      "random_expected_squared_cost": 4.035422725543131,
+      "normalized_gap": 0.0970668000948844
+    }
+  },
+  "worst_pair_gap": 0.1010511275829984,
+  "scope": "Independent NumPy/SciPy assignment, scaling and all state-cost formulas; no scorer helpers or model refits",
+  "not_checked": "Secondary decoder and geometry metrics are outside this numeric audit"
+}

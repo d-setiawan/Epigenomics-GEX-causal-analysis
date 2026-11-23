@@ -1,0 +1,354 @@
+{
+  "protocol_sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+  "reference_stats_sha256": "bc5af02d1379192fe644632d7228b8b6e246e953a68b4edffee58ddd18fce0e8",
+  "scope": "Reduced60-fit check with current dependencies; original saved stats aggregate1000 models per setting. Their error keys named mean actually contain medians.",
+  "groups": [
+    {
+      "domains": 2,
+      "n_per_domain": 1000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 5,
+        "underestimated_dimension": 5
+      },
+      "dimension_correct_rate": 0.5,
+      "graph_available_rate": 0.5,
+      "unconditional_coefficient_criterion_rate": 0.0,
+      "ica_convergence_warning_count": 0,
+      "average_number_shared": 2.5,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 10,
+        "median": 0.01696604305986155,
+        "q25": 0.012699242721818632,
+        "q75": 0.03019812287070143
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 5,
+        "median": 0.01940439214133393,
+        "q25": 0.011744918667616427,
+        "q75": 0.05792777212556711
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 10,
+        "median": 0.1314184044437634,
+        "q25": 0.11370266086571057,
+        "q75": 0.24235876695983705
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 5,
+        "median": 0.18408622733306143,
+        "q25": 0.11142208176929398,
+        "q75": 0.5495510990880162
+      },
+      "graph_error_normalized": {
+        "n": 5,
+        "median": 0.5431266756825275,
+        "q25": 0.38737485336316374,
+        "q75": 0.5487977549614848
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 5,
+        "median": 0.5431266756825275,
+        "q25": 0.38737485336316374,
+        "q75": 0.5487977549614848
+      },
+      "upstream_saved_stats": {
+        "number_shared": 2.692,
+        "too_many_shared_rate": 0.045,
+        "mixing_error": 0.030124256618889705,
+        "graph_error": 0.6355842720645127
+      }
+    },
+    {
+      "domains": 2,
+      "n_per_domain": 10000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 10
+      },
+      "dimension_correct_rate": 1.0,
+      "graph_available_rate": 1.0,
+      "unconditional_coefficient_criterion_rate": 0.6,
+      "ica_convergence_warning_count": 0,
+      "average_number_shared": 3.0,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 10,
+        "median": 0.0032555235302354044,
+        "q25": 0.0031098934290244027,
+        "q75": 0.0034137757813307956
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.0032555235302354044,
+        "q25": 0.0031098934290244027,
+        "q75": 0.0034137757813307956
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 10,
+        "median": 0.03088460799544775,
+        "q25": 0.029503039548324915,
+        "q75": 0.03238592067037869
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.03088460799544775,
+        "q25": 0.029503039548324915,
+        "q75": 0.03238592067037869
+      },
+      "graph_error_normalized": {
+        "n": 10,
+        "median": 0.05485383777185386,
+        "q25": 0.036529121611637044,
+        "q75": 0.32114878662216173
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.05485383777185386,
+        "q25": 0.036529121611637044,
+        "q75": 0.32114878662216173
+      },
+      "upstream_saved_stats": {
+        "number_shared": 2.974,
+        "too_many_shared_rate": 0.001,
+        "mixing_error": 0.0036282506461722845,
+        "graph_error": 0.3919142353657609
+      }
+    },
+    {
+      "domains": 2,
+      "n_per_domain": 25000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 10
+      },
+      "dimension_correct_rate": 1.0,
+      "graph_available_rate": 1.0,
+      "unconditional_coefficient_criterion_rate": 0.6,
+      "ica_convergence_warning_count": 0,
+      "average_number_shared": 3.0,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 10,
+        "median": 0.0019491651806428764,
+        "q25": 0.0015531356685339916,
+        "q75": 0.002056225111266417
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.0019491651806428764,
+        "q25": 0.0015531356685339916,
+        "q75": 0.002056225111266417
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 10,
+        "median": 0.018491404520175093,
+        "q25": 0.014734338683447167,
+        "q75": 0.019507064200905092
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.018491404520175093,
+        "q25": 0.014734338683447167,
+        "q75": 0.019507064200905092
+      },
+      "graph_error_normalized": {
+        "n": 10,
+        "median": 0.02767802262541575,
+        "q25": 0.017938674525084894,
+        "q75": 0.335295102443558
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 10,
+        "median": 0.02767802262541575,
+        "q25": 0.017938674525084894,
+        "q75": 0.335295102443558
+      },
+      "upstream_saved_stats": {
+        "number_shared": 2.983,
+        "too_many_shared_rate": 0.0,
+        "mixing_error": 0.002259703297958786,
+        "graph_error": 0.05829997845333618
+      }
+    },
+    {
+      "domains": 3,
+      "n_per_domain": 1000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 1,
+        "no_shared_factors": 2,
+        "underestimated_dimension": 7
+      },
+      "dimension_correct_rate": 0.1,
+      "graph_available_rate": 0.1,
+      "unconditional_coefficient_criterion_rate": 0.0,
+      "ica_convergence_warning_count": 2,
+      "average_number_shared": 1.3,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 8,
+        "median": 0.01963303673533534,
+        "q25": 0.015591143232634126,
+        "q75": 0.04010601478283861
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 1,
+        "median": 0.011668340411043506,
+        "q25": 0.011668340411043506,
+        "q75": 0.011668340411043506
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 8,
+        "median": 0.12260778558530644,
+        "q25": 0.11428456713831436,
+        "q75": 0.2505106486499427
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 1,
+        "median": 0.11069559663924841,
+        "q25": 0.11069559663924841,
+        "q75": 0.11069559663924841
+      },
+      "graph_error_normalized": {
+        "n": 1,
+        "median": 0.5225425812078391,
+        "q25": 0.5225425812078391,
+        "q75": 0.5225425812078391
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 1,
+        "median": 0.5225425812078391,
+        "q25": 0.5225425812078391,
+        "q75": 0.5225425812078391
+      },
+      "upstream_saved_stats": {
+        "number_shared": 1.4,
+        "too_many_shared_rate": 0.004,
+        "mixing_error": 0.020644172143976965,
+        "graph_error": 0.5724477432769496
+      }
+    },
+    {
+      "domains": 3,
+      "n_per_domain": 10000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 8,
+        "underestimated_dimension": 2
+      },
+      "dimension_correct_rate": 0.8,
+      "graph_available_rate": 0.8,
+      "unconditional_coefficient_criterion_rate": 0.3,
+      "ica_convergence_warning_count": 0,
+      "average_number_shared": 2.8,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 10,
+        "median": 0.004438761101405651,
+        "q25": 0.0037030446529567073,
+        "q75": 0.004881688945086881
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 8,
+        "median": 0.004162305996013702,
+        "q25": 0.003594047581820542,
+        "q75": 0.004758352376100797
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 10,
+        "median": 0.03948710179793707,
+        "q25": 0.033870074870669134,
+        "q75": 0.04631176768481756
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 8,
+        "median": 0.03948710179793707,
+        "q25": 0.03409612913271985,
+        "q75": 0.04514169425445802
+      },
+      "graph_error_normalized": {
+        "n": 8,
+        "median": 0.2789190412046833,
+        "q25": 0.05643084621490377,
+        "q75": 2.3877012815924945
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 8,
+        "median": 0.2789190412046833,
+        "q25": 0.05643084621490377,
+        "q75": 2.3877012815924945
+      },
+      "upstream_saved_stats": {
+        "number_shared": 2.832,
+        "too_many_shared_rate": 0.001,
+        "mixing_error": 0.004364523577340853,
+        "graph_error": 0.4222966105371452
+      }
+    },
+    {
+      "domains": 3,
+      "n_per_domain": 25000,
+      "planned": 10,
+      "completed": 10,
+      "status_counts": {
+        "correct_dimension_graph_available": 9,
+        "underestimated_dimension": 1
+      },
+      "dimension_correct_rate": 0.9,
+      "graph_available_rate": 0.9,
+      "unconditional_coefficient_criterion_rate": 0.6,
+      "ica_convergence_warning_count": 1,
+      "average_number_shared": 2.9,
+      "too_many_shared_rate": 0.0,
+      "mixing_error_native_normalized": {
+        "n": 10,
+        "median": 0.0025692372061900002,
+        "q25": 0.002142690268831379,
+        "q75": 0.0031059937610694085
+      },
+      "mixing_error_native_normalized_conditional_correct_dimension": {
+        "n": 9,
+        "median": 0.0025432797178201742,
+        "q25": 0.0020849436050014393,
+        "q75": 0.0030185892938321386
+      },
+      "mixing_error_sqrt_beta_normalized": {
+        "n": 10,
+        "median": 0.024206135744877094,
+        "q25": 0.02032734470935695,
+        "q75": 0.027632684005290366
+      },
+      "mixing_error_sqrt_beta_normalized_conditional_correct_dimension": {
+        "n": 9,
+        "median": 0.024127669905666227,
+        "q25": 0.01977951175442093,
+        "q75": 0.02863685246732645
+      },
+      "graph_error_normalized": {
+        "n": 9,
+        "median": 0.02125327879931342,
+        "q25": 0.01466516139826238,
+        "q75": 0.21440460513818194
+      },
+      "graph_error_normalized_conditional_correct_dimension": {
+        "n": 9,
+        "median": 0.02125327879931342,
+        "q25": 0.01466516139826238,
+        "q75": 0.21440460513818194
+      },
+      "upstream_saved_stats": {
+        "number_shared": 2.958,
+        "too_many_shared_rate": 0.0,
+        "mixing_error": 0.002693445251420465,
+        "graph_error": 0.09520822015492368
+      }
+    }
+  ]
+}

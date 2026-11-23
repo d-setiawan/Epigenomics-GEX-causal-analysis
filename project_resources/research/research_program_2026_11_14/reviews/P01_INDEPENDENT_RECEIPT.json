@@ -1,0 +1,116 @@
+{
+  "predictions_checked": 8100,
+  "evaluation_checked": 2700,
+  "max_prediction_error": 0.0,
+  "max_evaluation_error": 0.0,
+  "above": 25,
+  "below": 0,
+  "max_gap": 0.009183477951441161,
+  "input_hashes_verified": 9,
+  "train_shapes_first30": {
+    "scmtr_seq_s1/RNA": [
+      602,
+      30
+    ],
+    "scmtr_seq_s1/H3K27ac": [
+      615,
+      30
+    ],
+    "scmtr_seq_s1/H3K4me3": [
+      614,
+      30
+    ],
+    "linear_chain_0/RNA": [
+      4000,
+      30
+    ],
+    "linear_chain_0/H3K27ac": [
+      4000,
+      30
+    ],
+    "linear_chain_0/H3K4me3": [
+      4000,
+      30
+    ],
+    "constrained_collider_0/RNA": [
+      4000,
+      30
+    ],
+    "constrained_collider_0/H3K27ac": [
+      4000,
+      30
+    ],
+    "constrained_collider_0/H3K4me3": [
+      4000,
+      30
+    ]
+  },
+  "overwrite_refusal_verified": true,
+  "no_files_overwritten": true,
+  "reference_sha256": "30810f85c00fa810f1252fa9a18c3ba03dd198c5edfd97ec10c371842e18bd1e",
+  "evaluation_sha256": "3ad6cf04f371afc86ba10b9796876490b63020adaee9c38c1aeb4021bd239c65",
+  "protocol_sha256": "c876efb366ba4b730d11f9bc45df7ff58450d6be1f01a9ab233ee8263f688f13",
+  "prediction_seal_sha256": "dc2a3738adbc07fbc39a91873b86c30935727ba09da00026f454ea533c5e88d1",
+  "prediction_sha256": "c11f02a42fa8cac31d5e1e5e5e0c54e5d5e4bf325b41c4281d56f2bf7f9a5a7d",
+  "source_hashes": {
+    "evaluate.py": "f3da5d6b2012ed86d703d9574ab1a6e86b0c2899b3e16ef11eb1ed6900f91310",
+    "fit.py": "8ae32188fcf5a017f30126a6920b1b45df6b8259f7b1f7e22a0b383fa2817497",
+    "test_fit.py": "c75a54d94d0fc8f3fbfcbb53ff7aa8cf1990ac95e7cc46f3235adc5054f429ff"
+  },
+  "verified_input_sha256": {
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K27ac.npz": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K4me3.npz": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/RNA.npz": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2"
+  },
+  "commands": [
+    "python reviews/p01_independent_replay.py",
+    "python -m unittest -v test_fit (cwd experiments/P01)",
+    "python fit.py (existing output refusal)",
+    "python evaluate.py (existing output refusal)"
+  ],
+  "replay_sha256": "6abc5f00d4659cecc5e76a7c86928f4a5be8a8e96d114fbef1693a557f17f1cb",
+  "chronology": {
+    "plans/P01_PARTIAL_IDENTIFICATION.md": {
+      "mtime_ns": 1794692324666728149,
+      "ctime_ns": 1794692324666728149
+    },
+    "experiments/P01/fit.py": {
+      "mtime_ns": 1794692732844563504,
+      "ctime_ns": 1794692732844563504
+    },
+    "experiments/P01/evaluate.py": {
+      "mtime_ns": 1794692732846679174,
+      "ctime_ns": 1794692732846679174
+    },
+    "experiments/P01/test_fit.py": {
+      "mtime_ns": 1794692732845690660,
+      "ctime_ns": 1794692732845690660
+    },
+    "experiments/P01/protocol.json": {
+      "mtime_ns": 1794692752494645077,
+      "ctime_ns": 1794692752494645077
+    },
+    "experiments/P01/predictions.csv": {
+      "mtime_ns": 1794692752842645013,
+      "ctime_ns": 1794692752842645013
+    },
+    "experiments/P01/prediction_seal.json": {
+      "mtime_ns": 1794692752845082135,
+      "ctime_ns": 1794692752845082135
+    },
+    "experiments/P01/evaluation.csv": {
+      "mtime_ns": 1794692753094644967,
+      "ctime_ns": 1794692753094644967
+    },
+    "experiments/P01/evaluation_summary.json": {
+      "mtime_ns": 1794692753109167962,
+      "ctime_ns": 1794692753109167962
+    }
+  }
+}

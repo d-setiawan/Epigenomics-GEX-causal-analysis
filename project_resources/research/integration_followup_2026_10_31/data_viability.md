@@ -1,0 +1,41 @@
+# Existing empirical data viability — 2026-10-31
+
+**Keep the existing RNA/H3K27ac/H3K4me3 data for a bounded state-alignment investigation. The evidence does not justify discarding these assays wholesale, and it does not yet establish reliable RNA anchoring, fine monocyte-state correspondence, or recovery of the missing same-cell joint distribution.** A stronger external validation dataset would address a different weakness: the absence of observed cross-assay correspondence. The [shortlist](dataset_shortlist.md) distinguishes those purposes.
+
+This review reads existing README/manifests and saved September audit/development JSON, then checks primary source metadata. It does not reopen count matrices, release reserved assessment proteins, fit models, or change experiments. Sources, exact retrieval URLs, timestamps and SHA256 hashes are in the [catalog receipt](search_artifacts/data_catalog_provenance.json). The task date is October 31 local time; retrieval occurred November 1 UTC.
+
+**What the inputs actually represent.** Chromatin is attributed to healthy-human-PBMC scCUT&Tag-pro, [GSE195725](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE195725), with six marks and same-cell surface proteins. RNA is the separate [10x 10k Human PBMC 5′ v3 Ultima demonstration dataset](https://www.10xgenomics.com/datasets/10k_Human_PBMC_5p_v3_Ultima), whose official portal describes one healthy donor. There is no verified donor match or paired-cell identity across RNA and histone inputs. HTO classes are technical hashtag groups, not five established donors; exact local chromatin file→GSM/replicate/checksum reconciliation remains incomplete. The local RNA library ID is more direct provenance than the chromatin study attribution. See the [source correction](../../../pipelines/empirical/data/results/data_sources.md).
+
+The published scCUT&Tag-pro integration used a common surface-protein reference across multimodal experiments. Its success does not certify this repository's RNA/histone-only alignment with proteins reserved for evaluation. That is a substantive difference in available anchoring information. [Zhang et al., 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9378363/)
+
+| Input | Existing audited coverage | Meaning for this task |
+|---|---|---|
+| RNA | 9,506 raw cells; 9,462 retained; median 10,532.5 UMIs and 3,159 genes in the raw cohort | Substantial expression coverage; 96 retained cells exceed 20% mitochondrial counts, a descriptive flag rather than an applied exclusion rule. |
+| H3K27ac | 7,099 clean / 7,098 integration cells; median 234 fragment-file rows and 66 detected reconstruction bins per cell | Sparse locus measurements, despite usable broad cell-state structure. The 15k reconstruction features retain 16.65% of source bin-count mass. |
+| H3K4me3 | 8,875 clean/integration cells; median 317 fragment-file rows and 250 detected reconstruction bins per cell | More detected reconstruction bins than H3K27ac; 48.37% source bin-count retention. Still sparse for individual regulatory loci. |
+
+These quantities are reported in the [input audit](../../../pipelines/empirical/data/outputs/biology_review_2026-09-10/input_audit.json) and [retention investigation](../../../pipelines/empirical/data/results/biological_investigation_2026-09-11.md). Fragment-file rows are not fifth-column multiplicity or a cross-study unique-fragment standard. Bin-count retention is not FRiP or information retention. Recorded metadata lack FRiP, TSS-enrichment and blacklist-overlap summaries. Large cell counts alone do not establish power for sparse, fine-scale locus relationships.
+
+**Separate four explanations.**
+
+| Issue | Evidence and present conclusion |
+|---|---|
+| Coverage and preprocessing | Substantial measured truncation occurs in the abundance-selected 30k encoder and 15k reconstruction feature branches. H3K9me3 is especially affected: 6.52% count retention and median 18 detected reconstruction bins. Mark-aware features deserve a controlled comparison. Identical narrow peak calling for all marks is a separate concern; peaks did not generate the fixed-bin matrices, so the 51 H3K9me3 peaks cannot directly explain bin truncation. |
+| Technical confounding or implementation error | Raw→clean ADT/HTO, source→integration counts, metadata and embedding identities passed explicit joins; all 44,433 coarse transferred labels/confidences replay exactly. This weakens a row-order/corruption explanation. Depth/hashtag effects remain, and assay, antibody, preparation and study are not crossed experimental factors. Regression adjustment cannot uniquely separate nuisance from biology. |
+| Real biological population mismatch | Separate PBMC collections can differ in composition or activation, and have no verified donor matching. That is a plausible risk, **not a demonstrated cause** of the observed reversals. Transferred labels are not independent evidence of population proportions. Twelve dubious “microglial” RNA annotations are an annotation issue, not evidence that the PBMC specimen contained brain cells. |
+| Nonidentifiability | Even perfect assay QC and matched population proportions leave many cross-assay couplings compatible with unpaired marginals. Matching supplies a coupling; it does not measure cross-assay residual covariance. More unpaired cells or a better UMAP cannot establish the missing copula or preserve causal conditional independences. See [L17/L18](../LIMITATIONS.md#l17-biological-integration-is-not-established-by-modality-mixing) and the [aggregation derivation](../theory/06_latent_space_aggregation.md). |
+
+**The requested histone pair is more encouraging than the worst six-mark results.** Saved development protein-neighbor scores below predict the target's T-minus-myeloid protein contrast using 25 source neighbors. They are Spearman correlations, not pairing accuracy or causal directions.
+
+| Historical embedding; source→target | Raw correlation | Depth + hashtag adjusted |
+|---|---:|---:|
+| scGLUE; H3K27ac→H3K4me3 | 0.644875 | 0.551483 |
+| scGLUE; H3K4me3→H3K27ac | 0.644400 | 0.554500 |
+| scMRDR comparator; H3K27ac→H3K4me3 | −0.116523 | −0.093457 |
+| scMRDR comparator; H3K4me3→H3K27ac | −0.095257 | −0.013103 |
+
+The two GLUE adjusted effects exceed their 64 saved conditional-shuffle ranges (−0.0766–0.2286 and −0.0807–0.2012). Those ranges are descriptive null controls, not confidence intervals or calibrated tests. Within-assay GLUE T-minus-myeloid conservation is 0.735 for H3K27ac and 0.699 for H3K4me3. In contrast, other mark pairs have strong negative correspondence, including H3K27me3→H3K4me1. The [full GLUE](../../../pipelines/empirical/integration/comparisons/biology_alignment_2026-09-16/glue_full_development_v1/metrics.json) and [matched MRDR](../../../pipelines/empirical/integration/comparisons/biology_alignment_2026-09-16/jianle_development_v1/metrics.json) JSON support this extraction; the [evaluation contract](../../../pipelines/empirical/integration/results/biological_alignment_2026-09-16.md) documents identities, reservation and caveats.
+
+This supports investigating the preferred pair, with all difficult assays retained in reporting. A T-versus-myeloid contrast can succeed while within-monocyte ordering fails. B-panel correlations for the preferred pair are near zero, and RNA has no measured common ADT bridge here. The protein checks are transductive, use development outcomes, and were defined after earlier exploratory work; they do not constitute unseen-cell or pristine external validation. The historical empirical MRDR comparator also must not be equated with the newer simulation adapter merely because the method name matches.
+
+The next decision should depend on whether existing data can support defensible, outcome-independent RNA anchoring and coverage of the intended state population. Keep unmatched populations and technical strata visible, use held-out RNA/guidance information and the existing protein reservation under an explicit protocol, and compare preprocessing without treating retention as accuracy. If the goal instead requires validating same-cell cross-mark/RNA covariance, the optional fully paired external candidate is materially stronger evidence. Neither route alone supplies a known causal graph.

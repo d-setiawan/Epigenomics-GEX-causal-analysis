@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-14",
+  "command": "graphify update .",
+  "exit_code": 0,
+  "scope": "AST-only code graph update; no semantic document/paper extraction or API use",
+  "reason_for_final_refresh": "Later primary-code review added source snapshots after the preceding graph update",
+  "code_files_extracted": 1945,
+  "nodes": 10329,
+  "edges": 20672,
+  "communities_reported": 737,
+  "source_keys_checked": [
+    "source_file",
+    "source_location"
+  ],
+  "dependency_or_bytecode_sources": [],
+  "graph_sha256": "84f0e196a87c0b97ad4dbdf719e7d7bf292c404a9271df59c81e61415cdedfb0",
+  "html": "Skipped by graphify because node count exceeds visualization limit",
+  "previous_update": {
+    "date": "2026-11-14",
+    "command": "graphify update .",
+    "exit_code": 0,
+    "scope": "AST-only code graph update; no semantic document/paper extraction or API use",
+    "code_files_extracted": 1907,
+    "nodes": 10099,
+    "edges": 20341,
+    "communities_reported": 718,
+    "source_keys_checked": [
+      "source_file",
+      "source_location"
+    ],
+    "dependency_or_bytecode_sources": [],
+    "graph_sha256": "788e9153b79e9305d679c5d36fd39873999e9a5741647f32d8b067bbb9102c4d",
+    "html": "Skipped by graphify because node count exceeds visualization limit"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "purpose": "Tiny native API/GPU validation only; not a simulated benchmark world",
+  "fit": "/tmp/scconfluence_gpu_api_20261101_95m1q9rv/fit",
+  "roundtrip": {
+    "RNA": 0.0,
+    "H3K27ac": 0.0,
+    "H3K4me3": 0.0
+  },
+  "exports": {
+    "RNA": 8,
+    "H3K27ac": 8,
+    "H3K4me3": 8
+  },
+  "source_files": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/pilot_adapter.py": "ef68a3eaff16dab2681a62675f5965ab19c8515d7c3d98c802f9c96a0ddf9733",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/loss_patch.py": "309fb31d6424affc1dc2f16fc531f558572546a7b87e3bf1423762e4a16b095e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scconfluence/upstream/UPSTREAM.json": "7f93822b48f33585a3406ca05fc325136ec3725d73aa555c9194f21bce9535db",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb"
+  }
+}

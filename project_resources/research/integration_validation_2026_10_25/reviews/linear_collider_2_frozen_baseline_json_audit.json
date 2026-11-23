@@ -1,0 +1,1283 @@
+{
+  "assessment_lock_sha256": "2f69a3f1f2c4ab0da9d116a3901120f0cfa32e8a7133fcec452690049358d0cf",
+  "attempts": [
+    {
+      "artifact_sha256": {
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json": "464fa98cb735d48ebc1898b7e8a48df34f47b6be85abc7589acb1e9005435552",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_seed0/embedding_manifest.json": "096715ce81497f71a08013a659d1ffbd39f263ede89032b0fb68d793f434ddb8",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_seed0/model_manifest.json": "5db490538cb4da7ba05fdbe396e58b1992619ac7c2e0fa640e53a2fb5fed5fc8",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scmrdr_seed0/manifest.json": "cf13f1a4c462613095fc8fd633db5f2e8be9738f7531d3e65dd60e3a2e1c99c1",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scmrdr_seed0/public_embedding_manifest.json": "bffd604faed6e74c6faf116338e8bddf379b573e3f51f1082484cea19a491118"
+      },
+      "exit_code": 0,
+      "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791159836995655811_3414993a6fab499cb460d2a7d729dde9.json",
+      "stage_id": "pipeline:linear_collider_2:informative:primary:seeds0"
+    },
+    {
+      "artifact_sha256": {
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_collider_2/manifest.json": "d872966c3d2c057ec0377ba8d8887ff3dde4ab2a61cce1bf6fe8ee501a565c63"
+      },
+      "exit_code": 0,
+      "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791158062648030052_c9fb5adc760040298d6b808c947d47a7.json",
+      "stage_id": "world:linear_collider_2"
+    },
+    {
+      "artifact_sha256": {
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json": "b9b96194fdee90f9f2343d9fab94175e306ba77f1ce144687202e6191242ef8a",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_seed0/embedding_manifest.json": "5d1cff4853ec7cecc5ec52dcc732bdf4f3a4351f2c117f69bc6cc5cecd11e9c7",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_seed0/model_manifest.json": "e0d5f54aa120689671558507f8da6c3af85504e494fede5c8dbea700c95fb8b3",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scmrdr_seed0/manifest.json": "0e1b83b9b11532ec6c718075f30d533773dd0f2f4ba80df46da3ade01529a08b",
+        "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scmrdr_seed0/public_embedding_manifest.json": "f13359c3ab6eff89fae3748c1ed805156584b63580d3ee46e2481f2cb31e1508"
+      },
+      "exit_code": 0,
+      "receipt": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791158903387239395_a892a8473d73477f8a62f1365865b314.json",
+      "stage_id": "pipeline:linear_collider_2:realistic:primary:seeds0"
+    }
+  ],
+  "checked_metadata_hashes": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/__init__.py": "67cec6321ffe39c2c0e588381c49f86510091adda41a33dd3e783245df441b29",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/adapter.py": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/__init__.py": "8e61c5e8b7b000d2a3a51557fbddea81c0f409e14a9899f5e53c4901f5a2a684",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/calibration.py": "a3f997167b43530dcffa75dbf6caa0c08a432f8b4705780f01ae4bd5ad35a6dd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/guidance_baseline.py": "fb8152119b3632077b3fcfe006b34702706fcb235564df9d7e6f499442affec1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/preprocessing.py": "8f430c656e885b02fbb9fa00fc605092cf12745b141f44a17dfacbaf931b6acb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/recover_scglue_export.py": "38b89d1a43d366e30801fd1486fbfc2ef460fc6f5162c66e66aa923e288b8ac8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/run_benchmark.py": "f8b1713328c95659885d1cf92f194972df986574c0927df5230e7cc3a0003673",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/calibration/empirical_count_profiles.json": "a22ac6c8653d160cc4f8f49738655be36d3d191ef6a959ee9442607a0698a222",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/input_manifest.json": "655ce88d8d618de417f8e4e517ba65a17be6787dbe29f80de95361b622f94b10",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/evaluation_scglue_scmrdr_seeds0/report.json": "464fa98cb735d48ebc1898b7e8a48df34f47b6be85abc7589acb1e9005435552",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/gene_transform/manifest.json": "8eb57fefcaf4c980f2994e16beb5e65f7ff058788c71a79a59d63ed657ae368e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_preprocessing/cohorts/discovery/manifest.json": "2a1a5b915cc2a2e15f1e2253e9b47c476504947d4f74c9d0fdfc638255bba52d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_preprocessing/manifest.json": "23aa3af3dc94159b0a7e5bacdae7e2904a37b5f2c3a541c72fe64df9aba980f3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_preprocessing/transforms/H3K27ac.json": "2c8148113d0223e62ba95fd952a93dd2a4f4e688f1610eb75a67891bd79a8642",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_preprocessing/transforms/H3K4me3.json": "44a46e14ca323cd8cc14f84a1df05b2023e8990689a50cce03227d583d107371",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_preprocessing/transforms/RNA.json": "26bc89706a431258fffc48648db05250c29cda4bfb1e7ce4ea793112ccba3ed9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_seed0/embedding_manifest.json": "096715ce81497f71a08013a659d1ffbd39f263ede89032b0fb68d793f434ddb8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_seed0/model_manifest.json": "5db490538cb4da7ba05fdbe396e58b1992619ac7c2e0fa640e53a2fb5fed5fc8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scglue_seed0/public_embedding_manifest.json": "3d288784b47f26a49e4ed0219802492cf9ade685b3da40147761f74b90f00a8d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scmrdr_seed0/manifest.json": "cf13f1a4c462613095fc8fd633db5f2e8be9738f7531d3e65dd60e3a2e1c99c1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/informative/primary/scmrdr_seed0/public_embedding_manifest.json": "bffd604faed6e74c6faf116338e8bddf379b573e3f51f1082484cea19a491118",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/input_manifest.json": "2415f7cbd5d22f13b253522d2e6a401d6fe1314653b0b3bdbf10f416b6d21d08",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/evaluation_scglue_scmrdr_seeds0/report.json": "b9b96194fdee90f9f2343d9fab94175e306ba77f1ce144687202e6191242ef8a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/gene_transform/manifest.json": "334df6c9a556ae27304071e3a64db23246cfb5e8550f17ffca4df478694e5af2",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_preprocessing/cohorts/discovery/manifest.json": "8b5763103515086819dd0895073196be0bf6a87ccfdc2884055b0b15d602633c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_preprocessing/manifest.json": "c257184921508a7dd1c49cae459edc6c65564c2dc80f584f60928a5b780b2d43",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_preprocessing/transforms/H3K27ac.json": "a7bb10285310763d62e74cf4b66dfd26621e8bd11817e6fa98c72c56e1e43260",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_preprocessing/transforms/H3K4me3.json": "b5bb3fee7680bf7a297f590f967e7043a71d96e4694deef3c9e6bdab68f540b9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_preprocessing/transforms/RNA.json": "d24b26d6791aa6cb61a2ab84a1bcfa2f6e42d0a70fe6d304808bf0e6d0898290",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_seed0/embedding_manifest.json": "5d1cff4853ec7cecc5ec52dcc732bdf4f3a4351f2c117f69bc6cc5cecd11e9c7",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_seed0/model_manifest.json": "e0d5f54aa120689671558507f8da6c3af85504e494fede5c8dbea700c95fb8b3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scglue_seed0/public_embedding_manifest.json": "f948faf4b5758cc084e4f6fbadffff2d147952b5a10ea3841f39b436674ebd74",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scmrdr_seed0/manifest.json": "0e1b83b9b11532ec6c718075f30d533773dd0f2f4ba80df46da3ade01529a08b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_collider_2/realistic/primary/scmrdr_seed0/public_embedding_manifest.json": "f13359c3ab6eff89fae3748c1ed805156584b63580d3ee46e2481f2cb31e1508",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/assessment_lock.json": "2f69a3f1f2c4ab0da9d116a3901120f0cfa32e8a7133fcec452690049358d0cf",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1.json": "2cb56e1d77dc3557332c9200f5b92457b8483531b61be5c596300826467423d5",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791158062648030052_c9fb5adc760040298d6b808c947d47a7.json": "cf5fceffa31e7d091961a0061d11328090d1e42f87119b1894559c056b7a1dee",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791158903387239395_a892a8473d73477f8a62f1365865b314.json": "94041654363acb664f734a4f6081ff904c40d8a1481ccfdb189a3093289b91df",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/suite/schedule_v1_attempts/1791159836995655811_3414993a6fab499cb460d2a7d729dde9.json": "d42c5253459a4d29e6110c8d2ca10e6c0e1c8acca89d8f632f81576e82bca7b6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/extended_bank_manifest.json": "6432cbc30adc40a9422066f4a84e3bd3f5e369d37926767cd793efa5bda742fa",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_collider_2/manifest.json": "d872966c3d2c057ec0377ba8d8887ff3dde4ab2a61cce1bf6fe8ee501a565c63",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_collider_2/truth/manifest.json": "caebaf62d48103a7eb09bbc2b8aada5324caee408b93ecc9b5271a6d07517e16",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scglue_adapter.py": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scmrdr_adapter.py": "4ebfbb7fe86f264698af0cb53ad9a229e7587bfbbd7c1e4075ba340566828d23",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/simulator.py": "754520b9802ac2548c07fc61aa1842d3350c9397a825fcab5b32d060b557ef0d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/suite_plan.py": "a3619b06e9e7c6c0d8fe89d7d0f13fe96a1643b51e563065be091b40a09b3a1a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/twin_controls.py": "5023ec1a3d93efaacfef6ad8d513f34c0845e3115a0024f5d3bb76de3988fa27",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/RCIT/RCIT.py": "6dd2e8f0275efbc2fa5f6253a9ca71c7329d84788d68eeae7b4607ffc5b75e06",
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/lib/python3.11/site-packages/causallearn/utils/cit.py": "0d3db11083985b7cb0edbaa44662307c28f27bc135053a65751cd52f451ddc8f"
+  },
+  "controls": [
+    {
+      "all_exact_endpoints": {
+        "n_correct": 6,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 24,
+        "precision": 0.375,
+        "recall": 0.25
+      },
+      "biological_directed_stress": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 2
+      },
+      "cross_adjacency": {
+        "f1": 0.8235294117647058,
+        "false_negative": 3,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 7,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.7,
+        "true_positive": 7
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 5,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 20,
+        "precision": 0.35714285714285715,
+        "recall": 0.25
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_core",
+          "RNA_core"
+        ],
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 3,
+        "n_predicted_endpoints": 22,
+        "n_true_endpoints": 42,
+        "precision": 0.13636363636363635,
+        "recall": 0.07142857142857142
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.1,
+        "false_negative": 11,
+        "false_positive": 7,
+        "false_positive_rate": 0.4666666666666667,
+        "n_predicted": 8,
+        "n_true": 12,
+        "precision": 0.125,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 1,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 24,
+        "precision": 0.0625,
+        "recall": 0.041666666666666664
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.5714285714285714,
+        "recall": 0.3333333333333333
+      },
+      "biological_directed_stress": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 2
+      },
+      "cross_adjacency": {
+        "f1": 0.75,
+        "false_negative": 4,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.6,
+        "true_positive": 6
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 7,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 20,
+        "precision": 0.5833333333333334,
+        "recall": 0.35
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_core",
+          "RNA_core"
+        ],
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 20,
+        "n_true_endpoints": 42,
+        "precision": 0.4,
+        "recall": 0.19047619047619047
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.3157894736842105,
+        "false_negative": 9,
+        "false_positive": 4,
+        "false_positive_rate": 0.26666666666666666,
+        "n_predicted": 7,
+        "n_true": 12,
+        "precision": 0.42857142857142855,
+        "recall": 0.25,
+        "true_positive": 3
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 5,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.35714285714285715,
+        "recall": 0.20833333333333334
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 8,
+        "n_true_endpoints": 24,
+        "precision": 0.5,
+        "recall": 0.16666666666666666
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.0,
+        "false_negative": 10,
+        "false_positive": 1,
+        "false_positive_rate": 0.058823529411764705,
+        "n_predicted": 1,
+        "n_true": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 2,
+        "n_true_endpoints": 20,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 1,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 42,
+        "precision": 0.07142857142857142,
+        "recall": 0.023809523809523808
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.11764705882352941,
+        "false_negative": 11,
+        "false_positive": 4,
+        "false_positive_rate": 0.26666666666666666,
+        "n_predicted": 5,
+        "n_true": 12,
+        "precision": 0.2,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 1,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 24,
+        "precision": 0.1,
+        "recall": 0.041666666666666664
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.5714285714285714,
+        "recall": 0.3333333333333333
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.625,
+        "false_negative": 5,
+        "false_positive": 1,
+        "false_positive_rate": 0.058823529411764705,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 0.8333333333333334,
+        "recall": 0.5,
+        "true_positive": 5
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 6,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 20,
+        "precision": 0.5,
+        "recall": 0.3
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 7,
+        "n_predicted_endpoints": 18,
+        "n_true_endpoints": 42,
+        "precision": 0.3888888888888889,
+        "recall": 0.16666666666666666
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.3157894736842105,
+        "false_negative": 9,
+        "false_positive": 4,
+        "false_positive_rate": 0.26666666666666666,
+        "n_predicted": 7,
+        "n_true": 12,
+        "precision": 0.42857142857142855,
+        "recall": 0.25,
+        "true_positive": 3
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 6,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.42857142857142855,
+        "recall": 0.25
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 6,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 24,
+        "precision": 0.375,
+        "recall": 0.25
+      },
+      "biological_directed_stress": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 2
+      },
+      "cross_adjacency": {
+        "f1": 0.8235294117647058,
+        "false_negative": 3,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 7,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.7,
+        "true_positive": 7
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 5,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 20,
+        "precision": 0.35714285714285715,
+        "recall": 0.25
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_core",
+          "RNA_core"
+        ],
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 3,
+        "n_predicted_endpoints": 4,
+        "n_true_endpoints": 42,
+        "precision": 0.75,
+        "recall": 0.07142857142857142
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.0,
+        "false_negative": 12,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 0,
+        "n_true": 12,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 0,
+        "n_true_endpoints": 24,
+        "precision": null,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "independent_paired_assessment",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.5714285714285714,
+        "recall": 0.3333333333333333
+      },
+      "biological_directed_stress": {
+        "f1": 1.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 2
+      },
+      "cross_adjacency": {
+        "f1": 0.75,
+        "false_negative": 4,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.6,
+        "true_positive": 6
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 7,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 20,
+        "precision": 0.5833333333333334,
+        "recall": 0.35
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_core",
+          "RNA_core"
+        ],
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 42,
+        "precision": 0.3333333333333333,
+        "recall": 0.047619047619047616
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.14285714285714285,
+        "false_negative": 11,
+        "false_positive": 1,
+        "false_positive_rate": 0.06666666666666667,
+        "n_predicted": 2,
+        "n_true": 12,
+        "precision": 0.5,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 1,
+        "n_predicted_endpoints": 4,
+        "n_true_endpoints": 24,
+        "precision": 0.25,
+        "recall": 0.041666666666666664
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "paired_anchor_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 24,
+        "precision": 0.6666666666666666,
+        "recall": 0.16666666666666666
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.0,
+        "false_negative": 10,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 0,
+        "n_true": 10,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 0,
+        "n_true_endpoints": 20,
+        "precision": null,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 2,
+        "n_true_endpoints": 42,
+        "precision": 1.0,
+        "recall": 0.047619047619047616
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.0,
+        "false_negative": 12,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 0,
+        "n_true": 12,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 0,
+        "n_true_endpoints": 24,
+        "precision": null,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "random_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 24,
+        "precision": 0.5714285714285714,
+        "recall": 0.3333333333333333
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 2,
+        "n_predicted": 2,
+        "n_true": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.625,
+        "false_negative": 5,
+        "false_positive": 1,
+        "false_positive_rate": 0.058823529411764705,
+        "n_predicted": 6,
+        "n_true": 10,
+        "precision": 0.8333333333333334,
+        "recall": 0.5,
+        "true_positive": 5
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 6,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 20,
+        "precision": 0.5,
+        "recall": 0.3
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_core",
+          "H3K4me3_core"
+        ],
+        [
+          "RNA_core",
+          "H3K4me3_core"
+        ]
+      ],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 42,
+        "precision": 0.6666666666666666,
+        "recall": 0.09523809523809523
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.2857142857142857,
+        "false_negative": 10,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 2,
+        "n_true": 12,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 3,
+        "n_predicted_endpoints": 4,
+        "n_true_endpoints": 24,
+        "precision": 0.75,
+        "recall": 0.125
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "true_state_reference",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    }
+  ],
+  "integrity_limit": "Metadata hash-chain consistency only; binary file contents and oracle generation were not reverified.",
+  "reports": {
+    "informative": {
+      "bindings": {
+        "scglue_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "5db490538cb4da7ba05fdbe396e58b1992619ac7c2e0fa640e53a2fb5fed5fc8",
+          "public_export_receipt_sha256": "3d288784b47f26a49e4ed0219802492cf9ade685b3da40147761f74b90f00a8d",
+          "reported_manifest_sha256": "096715ce81497f71a08013a659d1ffbd39f263ede89032b0fb68d793f434ddb8"
+        },
+        "scmrdr_paper_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "cf13f1a4c462613095fc8fd633db5f2e8be9738f7531d3e65dd60e3a2e1c99c1",
+          "public_export_receipt_sha256": "bffd604faed6e74c6faf116338e8bddf379b573e3f51f1082484cea19a491118",
+          "reported_manifest_sha256": "cf13f1a4c462613095fc8fd633db5f2e8be9738f7531d3e65dd60e3a2e1c99c1"
+        }
+      },
+      "common_pool_counts": {
+        "H3K27ac": 960,
+        "H3K4me3": 960,
+        "RNA": 960
+      },
+      "empty_graphs": [],
+      "failures": [],
+      "input_fingerprint": "bb93faa0552721e76f88dbe32cece554ac4528a3d3e98170e493ffad037ea679",
+      "report_sha256": "464fa98cb735d48ebc1898b7e8a48df34f47b6be85abc7589acb1e9005435552",
+      "report_status": "completed"
+    },
+    "realistic": {
+      "bindings": {
+        "scglue_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "e0d5f54aa120689671558507f8da6c3af85504e494fede5c8dbea700c95fb8b3",
+          "public_export_receipt_sha256": "f948faf4b5758cc084e4f6fbadffff2d147952b5a10ea3841f39b436674ebd74",
+          "reported_manifest_sha256": "5d1cff4853ec7cecc5ec52dcc732bdf4f3a4351f2c117f69bc6cc5cecd11e9c7"
+        },
+        "scmrdr_paper_seed0": {
+          "checkpoint_digest_agrees_between_metadata": true,
+          "discovery_export_digests_agree_between_metadata": true,
+          "model_manifest_sha256": "0e1b83b9b11532ec6c718075f30d533773dd0f2f4ba80df46da3ade01529a08b",
+          "public_export_receipt_sha256": "f13359c3ab6eff89fae3748c1ed805156584b63580d3ee46e2481f2cb31e1508",
+          "reported_manifest_sha256": "0e1b83b9b11532ec6c718075f30d533773dd0f2f4ba80df46da3ade01529a08b"
+        }
+      },
+      "common_pool_counts": {
+        "H3K27ac": 775,
+        "H3K4me3": 775,
+        "RNA": 775
+      },
+      "empty_graphs": [],
+      "failures": [],
+      "input_fingerprint": "c317635958ea2eac0f50cbb35abbf031ee81575c3b9dc1a042ac7896d2d76203",
+      "report_sha256": "b9b96194fdee90f9f2343d9fab94175e306ba77f1ce144687202e6191242ef8a",
+      "report_status": "completed"
+    }
+  },
+  "reviewer_script_sha256": "3b0dd459f9f6a292c701b5c0b99fae1d3accca22a4f0bd12b9da6cd6f1b36953",
+  "rows": [
+    {
+      "all_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 24,
+        "precision": 0.6666666666666666,
+        "recall": 0.3333333333333333
+      },
+      "biological_directed_stress": {
+        "f1": 0.6666666666666666,
+        "false_negative": 1,
+        "false_positive": 0,
+        "n_predicted": 1,
+        "n_true": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "true_positive": 1
+      },
+      "cross_adjacency": {
+        "f1": 0.46153846153846156,
+        "false_negative": 7,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 3,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.3,
+        "true_positive": 3
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 20,
+        "precision": 0.6666666666666666,
+        "recall": 0.2
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K4me3_core",
+          "RNA_core"
+        ]
+      ],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 10,
+        "n_predicted_endpoints": 22,
+        "n_true_endpoints": 42,
+        "precision": 0.45454545454545453,
+        "recall": 0.23809523809523808
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.38095238095238093,
+        "false_negative": 8,
+        "false_positive": 5,
+        "false_positive_rate": 0.3333333333333333,
+        "n_predicted": 9,
+        "n_true": 12,
+        "precision": 0.4444444444444444,
+        "recall": 0.3333333333333333,
+        "true_positive": 4
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 18,
+        "n_true_endpoints": 24,
+        "precision": 0.4444444444444444,
+        "recall": 0.3333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 10,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 24,
+        "precision": 0.8333333333333334,
+        "recall": 0.4166666666666667
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.5333333333333333,
+        "false_negative": 6,
+        "false_positive": 1,
+        "false_positive_rate": 0.058823529411764705,
+        "n_predicted": 5,
+        "n_true": 10,
+        "precision": 0.8,
+        "recall": 0.4,
+        "true_positive": 4
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 8,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 20,
+        "precision": 0.8,
+        "recall": 0.4
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 5,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 42,
+        "precision": 0.35714285714285715,
+        "recall": 0.11904761904761904
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.23529411764705882,
+        "false_negative": 10,
+        "false_positive": 3,
+        "false_positive_rate": 0.2,
+        "n_predicted": 5,
+        "n_true": 12,
+        "precision": 0.4,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 10,
+        "n_true_endpoints": 24,
+        "precision": 0.2,
+        "recall": 0.08333333333333333
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "realistic",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 12,
+        "n_true_endpoints": 24,
+        "precision": 0.3333333333333333,
+        "recall": 0.16666666666666666
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 3,
+        "n_predicted": 3,
+        "n_true": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.5714285714285714,
+        "false_negative": 6,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 4,
+        "n_true": 10,
+        "precision": 1.0,
+        "recall": 0.4,
+        "true_positive": 4
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 2,
+        "n_predicted_endpoints": 8,
+        "n_true_endpoints": 20,
+        "precision": 0.25,
+        "recall": 0.1
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_decoy",
+          "H3K4me3_decoy"
+        ],
+        [
+          "H3K27ac_decoy",
+          "RNA_decoy"
+        ],
+        [
+          "H3K4me3_decoy",
+          "RNA_decoy"
+        ]
+      ],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 4,
+        "n_predicted_endpoints": 6,
+        "n_true_endpoints": 42,
+        "precision": 0.6666666666666666,
+        "recall": 0.09523809523809523
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.2857142857142857,
+        "false_negative": 10,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 2,
+        "n_true": 12,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "true_positive": 2
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 3,
+        "n_predicted_endpoints": 4,
+        "n_true_endpoints": 24,
+        "precision": 0.75,
+        "recall": 0.125
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scglue_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 16,
+        "n_true_endpoints": 24,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 5,
+        "n_predicted": 5,
+        "n_true": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.7058823529411765,
+        "false_negative": 4,
+        "false_positive": 1,
+        "false_positive_rate": 0.058823529411764705,
+        "n_predicted": 7,
+        "n_true": 10,
+        "precision": 0.8571428571428571,
+        "recall": 0.6,
+        "true_positive": 6
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 14,
+        "n_true_endpoints": 20,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "activities",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [
+        [
+          "H3K27ac_decoy",
+          "RNA_core"
+        ],
+        [
+          "H3K27ac_decoy",
+          "RNA_decoy"
+        ],
+        [
+          "H3K4me3_core",
+          "H3K27ac_core"
+        ],
+        [
+          "H3K4me3_decoy",
+          "H3K27ac_decoy"
+        ],
+        [
+          "RNA_core",
+          "H3K4me3_core"
+        ]
+      ],
+      "regime": "informative",
+      "status": "ok"
+    },
+    {
+      "all_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 2,
+        "n_true_endpoints": 42,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "biological_directed_stress": {
+        "f1": 0.0,
+        "false_negative": 2,
+        "false_positive": 0,
+        "n_predicted": 0,
+        "n_true": 2,
+        "precision": null,
+        "recall": 0.0,
+        "true_positive": 0
+      },
+      "cross_adjacency": {
+        "f1": 0.15384615384615385,
+        "false_negative": 11,
+        "false_positive": 0,
+        "false_positive_rate": 0.0,
+        "n_predicted": 1,
+        "n_true": 12,
+        "precision": 1.0,
+        "recall": 0.08333333333333333,
+        "true_positive": 1
+      },
+      "cross_exact_endpoints": {
+        "n_correct": 0,
+        "n_predicted_endpoints": 2,
+        "n_true_endpoints": 24,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "empty_graph": false,
+      "layer": "counts",
+      "method": "scmrdr_paper_seed0",
+      "predicted_directed_cross_edges": [],
+      "regime": "informative",
+      "status": "ok"
+    }
+  ],
+  "schedule_hash": "3aca771d50f2ea1ac0e57b5540ef1837b26578d0882d7a778823e21ab750adfe",
+  "scope": "Old frozen baseline assessment JSON graph and metadata audit only; no new-study selection or fitting.",
+  "status": "passed_scoped_metadata_and_score_audit",
+  "unopened": [
+    "all NPZ/H5AD arrays",
+    "all model checkpoints",
+    "native discovery/test execution",
+    "other assessment scientific results"
+  ],
+  "world_id": "linear_collider_2"
+}

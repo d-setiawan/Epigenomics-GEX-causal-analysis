@@ -1,0 +1,39 @@
+{
+  "outer_records": 72,
+  "outer_finite": 72,
+  "outer_gradient_converged": 72,
+  "outer_numerically_accepted": 65,
+  "joint_candidates": 180,
+  "joint_models": 180,
+  "joint_stop_outcomes": {
+    "gradient_convergence": 179,
+    "floating_point_stagnation": 1
+  },
+  "mixture_runs": 432,
+  "mixture_stop_outcomes": {
+    "converged": 415,
+    "Zero/dead/nonfinite mixture parameter": 14,
+    "Zero/dead mixture component or zero rate update": 3
+  },
+  "max_em_iterations": 6417,
+  "max_joint_iterations": 36134,
+  "max_outer_seconds": 1881.2840655659966,
+  "sum_outer_elapsed_seconds": 6040.67298524901,
+  "outer_stats_by_mode": {
+    "source_search": {
+      "records": 36,
+      "numerically_accepted": 33
+    },
+    "plain_unbounded": {
+      "records": 36,
+      "numerically_accepted": 32
+    }
+  },
+  "sources_frozen_before_fit": true,
+  "tests": {
+    "command": "python -m pytest pipelines/simulation/integration_recoverability/tests/test_count_transport*.py -q",
+    "passed": 112,
+    "seconds": 1.39
+  },
+  "freeze_to_fit_seal_seconds": 3037.153979
+}

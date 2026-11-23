@@ -1,0 +1,30 @@
+{
+  "date_utc": "2026-11-15T20:47:09.035096+00:00",
+  "python": "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+  "isolated_target": "/tmp/epigenomics-dcrl-deps-20261115",
+  "upstream_source_src": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/nonlinear_repair_2026_11_15/sources/dcrl_root/src",
+  "base_versions_before_path_override": {
+    "causal-learn": "0.1.4.5",
+    "numpy": "2.2.6",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0"
+  },
+  "scope": "Package import audit only; no scientific fits, generators, datasets or estimator instances",
+  "status": "passed",
+  "selected_versions": {
+    "factor_analyzer": "0.5.1",
+    "causal-learn": "0.1.4.8",
+    "numpy": "2.2.6",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0"
+  },
+  "module_paths": {
+    "factor_analyzer": "/tmp/epigenomics-dcrl-deps-20261115/factor_analyzer/__init__.py",
+    "causallearn": "/tmp/epigenomics-dcrl-deps-20261115/causallearn/__init__.py",
+    "dcrl": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/project_resources/research/nonlinear_repair_2026_11_15/sources/dcrl_root/src/dcrl/__init__.py"
+  },
+  "fitting_functions": {
+    "coefficient_bounds": "(K, distribution, scale=1.0)",
+    "observed_loglikelihood": "(X, B, p, gamma, distribution, *, max_states=65536, batch_size=256)"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "markdown_files_checked": 21,
+  "local_links_checked": 353,
+  "selected_papers": 64,
+  "source_hashes_match": true,
+  "citation_identities_reconciled": 64,
+  "earlier_proof_hashes_unchanged": {
+    "07_unpaired_integration_nonidentifiability.md": "847fe532640c82a336b6517ccd8dfe82da7f69411b3f56798973cf97073f313b",
+    "08_modern_integration_objectives.md": "5cd4091f949886ac32d15e13d09c1d2e52929fbaa6e5abdb080a0e88e9ef793d"
+  },
+  "checks": [
+    "local links and Markdown anchors",
+    "selected and discovery record counts/statuses",
+    "paper identifiers and evidence-depth counts",
+    "extraction hashes",
+    "all citation identities and DOI/URL checks",
+    "64 matrix entries",
+    "no emoji characters in reviewed Markdown",
+    "earlier proof hashes unchanged"
+  ],
+  "limits": [
+    "Scoped documentation/artifact checks, not a whole-repository drift audit.",
+    "No new integration fits, biological data or simulations.",
+    "Published proofs and implementations were not all independently reproduced."
+  ]
+}

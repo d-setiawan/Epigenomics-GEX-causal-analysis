@@ -1,0 +1,486 @@
+{
+  "status": "pass",
+  "all_50_assignments_reconstructed_from_seed": true,
+  "all_50_original_source_count_graphs_replayed_exactly": true,
+  "all_summary_fields_recomputed_exactly": true,
+  "exploratory_post_primary": true,
+  "interpretation": "Conditional artificial product-coupling null on fixed empirical marginals; not biological causal truth or a biological FDR estimate",
+  "independent_summary": {
+    "n_attempted": 50,
+    "n_successful": 50,
+    "n_failed": 0,
+    "failed_seeds": [],
+    "any_cross_edge_count": 48,
+    "any_cross_edge_fraction": 0.96,
+    "cross_edge_count_distribution": {
+      "0": 2,
+      "1": 10,
+      "2": 12,
+      "3": 13,
+      "4": 10,
+      "5": 1,
+      "6": 2
+    },
+    "cross_edge_count_mean": 2.6,
+    "cross_edge_count_quantiles": {
+      "0": 0.0,
+      "0.25": 2.0,
+      "0.5": 3.0,
+      "0.75": 3.75,
+      "0.95": 4.549999999999997,
+      "1": 6.0
+    },
+    "per_seed": [
+      {
+        "seed": 10000,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10001,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10002,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10003,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10004,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10005,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10006,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10007,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10008,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10009,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10010,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10011,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10012,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10013,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10014,
+        "status": "ok",
+        "cross_edges": 0
+      },
+      {
+        "seed": 10015,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10016,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10017,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10018,
+        "status": "ok",
+        "cross_edges": 6
+      },
+      {
+        "seed": 10019,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10020,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10021,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10022,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10023,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10024,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10025,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10026,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10027,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10028,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10029,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10030,
+        "status": "ok",
+        "cross_edges": 5
+      },
+      {
+        "seed": 10031,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10032,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10033,
+        "status": "ok",
+        "cross_edges": 4
+      },
+      {
+        "seed": 10034,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10035,
+        "status": "ok",
+        "cross_edges": 6
+      },
+      {
+        "seed": 10036,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10037,
+        "status": "ok",
+        "cross_edges": 0
+      },
+      {
+        "seed": 10038,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10039,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10040,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10041,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10042,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10043,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10044,
+        "status": "ok",
+        "cross_edges": 1
+      },
+      {
+        "seed": 10045,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10046,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10047,
+        "status": "ok",
+        "cross_edges": 2
+      },
+      {
+        "seed": 10048,
+        "status": "ok",
+        "cross_edges": 3
+      },
+      {
+        "seed": 10049,
+        "status": "ok",
+        "cross_edges": 3
+      }
+    ],
+    "edge_recurrence": [
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "H3K4me3|ENSG00000178567",
+        "count": 10,
+        "fraction": 0.2
+      },
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "H3K4me3|ENSG00000204256",
+        "count": 15,
+        "fraction": 0.3
+      },
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "H3K4me3|ENSG00000219481",
+        "count": 23,
+        "fraction": 0.46
+      },
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "RNA|ENSG00000178567",
+        "count": 2,
+        "fraction": 0.04
+      },
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "RNA|ENSG00000204256",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K27ac|ENSG00000178567",
+        "node2": "RNA|ENSG00000219481",
+        "count": 2,
+        "fraction": 0.04
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "H3K4me3|ENSG00000178567",
+        "count": 6,
+        "fraction": 0.12
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "H3K4me3|ENSG00000204256",
+        "count": 7,
+        "fraction": 0.14
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "H3K4me3|ENSG00000219481",
+        "count": 15,
+        "fraction": 0.3
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "RNA|ENSG00000178567",
+        "count": 3,
+        "fraction": 0.06
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "RNA|ENSG00000204256",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K27ac|ENSG00000204256",
+        "node2": "RNA|ENSG00000219481",
+        "count": 3,
+        "fraction": 0.06
+      },
+      {
+        "node1": "H3K27ac|ENSG00000219481",
+        "node2": "H3K4me3|ENSG00000178567",
+        "count": 9,
+        "fraction": 0.18
+      },
+      {
+        "node1": "H3K27ac|ENSG00000219481",
+        "node2": "H3K4me3|ENSG00000204256",
+        "count": 8,
+        "fraction": 0.16
+      },
+      {
+        "node1": "H3K27ac|ENSG00000219481",
+        "node2": "H3K4me3|ENSG00000219481",
+        "count": 17,
+        "fraction": 0.34
+      },
+      {
+        "node1": "H3K27ac|ENSG00000219481",
+        "node2": "RNA|ENSG00000178567",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K27ac|ENSG00000219481",
+        "node2": "RNA|ENSG00000219481",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K4me3|ENSG00000204256",
+        "node2": "RNA|ENSG00000178567",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K4me3|ENSG00000204256",
+        "node2": "RNA|ENSG00000204256",
+        "count": 1,
+        "fraction": 0.02
+      },
+      {
+        "node1": "H3K4me3|ENSG00000204256",
+        "node2": "RNA|ENSG00000219481",
+        "count": 3,
+        "fraction": 0.06
+      },
+      {
+        "node1": "H3K4me3|ENSG00000219481",
+        "node2": "RNA|ENSG00000178567",
+        "count": 1,
+        "fraction": 0.02
+      }
+    ]
+  },
+  "frozen_sources": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/causal_reliability_pilot.py": "c76cbda821003016c93537e068e26b88b338622a1b5c520336085319e0385079",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/causal_reliability_pilot_empirical.py": "44b0e7e1d9fce418e3a8aa64709676d14a83fde32c9ef4c52826d3089d8703a0",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/causal_reliability_pilot_null.py": "fc43af9cbb28c2a6d7b3581cb2942e6b95f161b464070fa651b33b276bd073e6"
+  },
+  "source_files": {
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K27ac_test_map.tsv": "160d926320558e461b3037ca114066e765efc2f48ad76278ed28b5aeb7b149b7",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/H3K4me3_test_map.tsv": "78b0305d312b40950fabe1e7169bd7b4ed01fd2745e0c50d658c1b18aa259e02",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/RNA_test_map.tsv": "450d13f036cccace2c9ddda93de9e115d2101d588dc98928a134653f862ec2f8",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/panel_genes.tsv": "dfff83a2f368c46f6fe204443c738cfc9446140c95881e47adaeb5a1fc7baa32",
+    "pipelines/empirical/data/scmtr_seq/cohort_s1/evaluator/panel_nodes.tsv": "b622ca04c6ce8a5b1cbd6c5141ae3a0977fc46aa81eba07ba4441dd990b06fc4",
+    "pipelines/empirical/data/scmtr_seq/full_s1/H3K27ac.npz": "57c8aa7c0dfdc5f2765df8354c2cb80e0fb7e02f94d4827953eb76225238fa0c",
+    "pipelines/empirical/data/scmtr_seq/full_s1/H3K4me3.npz": "6c8010b7736a9a7bf4ba000818c3979d9da028532c6a269f1f06d61c94c1cbcc",
+    "pipelines/empirical/data/scmtr_seq/full_s1/RNA.npz": "dd8e8e58a35011eeea7434f26017c11cff3426ed8eb3f0cbac99c7b42f26a532",
+    "pipelines/empirical/data/scmtr_seq/full_s1/cells.tsv": "5c3d3b6c18dc184b7f048814091d84fb24640ab66fd32bf0114ea755ce91db99",
+    "pipelines/empirical/data/scmtr_seq/full_s1/features.tsv": "ed77095b8b70de7d673c81f32569ebd094ceea086b9b5690c4b20448fcf0ce3d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/protocol.json": "e7fe411bad22b986048fc4a526b71b644da274abf4863d2e4c75794d254b7030",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10000.json": "fc58ec9618030720a316650ab51ddf0d0591ae6ad2a1a634e54e445b5f5653cd",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10001.json": "08851cdbf14f3a1e58554d3d39c1707df2170b7f7f0eb93ef6ff59672aff413e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10002.json": "1af8b3076d26047351c13d359a64d0ee1b6472098af877ae91cd9ed02080f4b1",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10003.json": "5e697245a09dfeff3d8e18460a1396160365e8320bea0d0e1b52391827ed13b3",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10004.json": "92c0fc982cd328fb29052548c8ab6892e41c08932f214f98fef889413434ecb2",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10005.json": "07702bb44f50d6aa386495d2f2612f5861cfdd3651e1dba4208d29dfb42950d3",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10006.json": "498c8b1f25d896afa6a41b8dcb306bb76ae73ffa5dd920c3ab56081b0a8fec24",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10007.json": "84da86e72cfdb92cbabb840a520a94a9d3cc9cd6fde990704acd0703d05f6da3",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10008.json": "13b8843e58422b90debdc70f4afee2c5f1652f7902b474d3b3e25369e5a55a5d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10009.json": "cbd0a845886b2c0b9daacedafd79b2e67870f68291bfbca1388ef73038554e05",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10010.json": "6ec663da3dea54042a935aad1affe9900b1a37e31d08d15763a7d649f029ed2c",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10011.json": "a0305162fdd132a2be1b356497d3317f4a81361deca8b3a28e53b087bc06b9c5",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10012.json": "3fcc9088e20660e819c58f3bd79331b9f28db04765210178af70776fddf1bd6b",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10013.json": "fa84a1ece5462f5fdf73d2bc645803d7945fc0cc3de0b516d6b200d721be9e3f",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10014.json": "1521a4679d7d677d3577c8b48bd89f96958f6921be8e60608e01181c126e00df",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10015.json": "9c66d64f92230e7cb42373749ae18fda5ea194ebce59fc264340119e3e6248c9",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10016.json": "a4043baa0e7a8c7eeefabe4419210934dade826d979672c0d5964fd514be10be",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10017.json": "022c2c532146a9de30d563b636236b4281685ee8155987f527e1013573f6e7be",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10018.json": "00b4a2bb08bad383922d7c45c76fb501e761168f3f4202a136a74d8bd6a5fbd1",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10019.json": "3c5715a0d7d641ea95bf1287afdd94e5a5dc70e160dbc17df3ad469ae9dd6156",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10020.json": "290c3386832c5317702cb397c7b85eff5b2337ea87c4a71f9f59ebcf100a99cd",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10021.json": "bac7d642dcf0776d98e6eff6f5db39b89073eb3449e2e38440b8c26cf04174d8",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10022.json": "58c7951365c26dc88453b3485d292cc6cd436fa15553508a7cd4cb2aa5823b3b",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10023.json": "6c3a0c37f845e5765233790e05e8564b27f2f4b0fde446b8ebde506f158777b1",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10024.json": "86407946b2098dfc10872e83c7b79bfbe1608893bc282501da4383ea6a6d8335",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10025.json": "97eead3843eb419643be5840168e2170a50c12e4b7b144c6d6327e9ea7878678",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10026.json": "a7759fc941d8cd418a2a5a8f308e4ec5ef53167fe9aaebe8bf7de14eeae8d444",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10027.json": "a7bd956308276cad282248c55ccd63ffae5e5a3ef7235b62d37c7426bd9a24f7",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10028.json": "e23c24f6442426e751ef50a46f9096d216e7242084160da989a5fab56777f56c",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10029.json": "58d844235c29f4e195f83b821468af1397443da3a138fc8795fd95aaa4606082",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10030.json": "3a2c1c363d31d27660a8bfc518485e957128b8410041b2a03e21eccef33434ef",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10031.json": "1768bcf48e41fec9f76c3d2e701c8b0871373735e7593c7f5ee37ba4c97382fd",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10032.json": "32f5d591178f0d4d037043652eef08c619f6e25b98dd05860d6d333f9aad731e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10033.json": "4de1f8b04116aec3795ae378b98c5f94ec5cf4dbc59fbd8f3fddd4e024719760",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10034.json": "a504d1b254a1411d0bd7d3fb9ab6381eb2505c9f45e5a41f49f9d6d07f1c396b",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10035.json": "56ae4862ac3a95e5dd2de03207cd42f4ed8fea1f5f7caa6589c73f9e6afb0228",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10036.json": "06d6c3a9978aa8e138fe82b34ee45849a2dd54c8aa3bb9fffecc4a841e850e9e",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10037.json": "c245334fec5044169bab759af1c9dce21b7eb0a73b6b51a08be3134ade437d07",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10038.json": "feda152958d0197845c334ae66d7041e6f9e244c2cb2771fa67f8da839dbfd0a",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10039.json": "ebde0779f197f4c4c791ca257085a01221657d43008916dcae2e1bd6270ed5b6",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10040.json": "8f724cd54ed1083248c4242939f493a508f0b30f4b34aac0f7afa5ac7c74a746",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10041.json": "9002941f24aece21c59e9ed989c9dcfab6a44154595cde57509c8de36a13dfd9",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10042.json": "c0f650806b9e893b5a03b0fbf5d7d0df01168cbcf50a6f538082e35c34e8444f",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10043.json": "59c6095fb8f7b76dfe738547706c972c27a0deafaeefe0a19d5c09f5a2763749",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10044.json": "a46b5916b1e357f246f5d4249f6c383b28f1f8ec12912664c122dcdb6eaffef4",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10045.json": "019f557a8befa69dea214ce7730b6c114cb387d6598aa63b639e78d763f4882d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10046.json": "703e4c74b82c16b173947c8c91ba3bd9c5328a05cec388bbaf71151e5a99c116",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10047.json": "59446f1e34a51525b994d19b661a02a0a7b95818bce5b6f8d4d9572ad692e6e2",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10048.json": "991313ebbfb2d3f8663734daedd616d710384524298ce68c430bd4b716623540",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/seeds/10049.json": "a9aecbe8b0272680abba1b10dcdec0b6ca4c98440e8a41e048ec6ca7e20cc83d",
+    "pipelines/simulation/integration_recoverability/runs/integration_validation/20261101_scmtr_product_null_audit_v1/summary.json": "c1d3b5dbb840f831a24151ba10d09e1e401f529b4191492dfadabb95584861ba",
+    "project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/replay_empirical_baselines.py": "5c44bb42b35b08defee0833d17707333241e3a952455ecdb4be0b72055a90e86",
+    "project_resources/research/scconfluence_scmtr_pilot_2026_11_01/reviews/replay_empirical_product_null.py": "f4d50648e08c47ad168e2f086a1adce2c5440259ea41afca2a0e79ac99dcdd3b"
+  }
+}

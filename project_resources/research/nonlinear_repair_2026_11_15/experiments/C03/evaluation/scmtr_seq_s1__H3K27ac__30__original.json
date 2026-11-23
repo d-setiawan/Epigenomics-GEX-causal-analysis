@@ -1,0 +1,66 @@
+{
+  "C01": {
+    "1": {
+      "30": {
+        "features": 30,
+        "log_score": -2.7722642057550497,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06783432055396033,
+        "standardized_offdiag_covariance_rmse": 0.04840384580286252,
+        "standardized_variance_rmse": 0.47362985213336856,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.011160823890053193,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    },
+    "4": {
+      "30": {
+        "features": 30,
+        "log_score": -2.8311551867709617,
+        "log_score_status": "finite",
+        "rows": 595,
+        "standardized_mean_rmse": 0.06783432315122606,
+        "standardized_offdiag_covariance_rmse": 0.05898690069892081,
+        "standardized_variance_rmse": 0.5237731701479186,
+        "unscorable_covariance_entries": 0,
+        "zero_frequency_rmse": 0.010519968565265417,
+        "zero_probability_rows": 0,
+        "zero_scale_features": 0
+      }
+    }
+  },
+  "C02": null,
+  "C03": {
+    "30": {
+      "features": 30,
+      "log_score": -2.9105680112457977,
+      "log_score_status": "finite",
+      "rows": 595,
+      "standardized_mean_rmse": 0.07247067824442895,
+      "standardized_offdiag_covariance_rmse": 0.1398266838199487,
+      "standardized_variance_rmse": 0.7375357341619925,
+      "unscorable_covariance_entries": 0,
+      "zero_frequency_rmse": 0.010123439496129205,
+      "zero_probability_rows": 0,
+      "zero_scale_features": 0
+    }
+  },
+  "execution": {
+    "application": "scmtr_seq_s1__H3K27ac__30__original",
+    "best_completed_objective": -4.57131298634883,
+    "best_completed_seed": 2,
+    "complete_application": true,
+    "elapsed_seconds": 1.8713566750084283,
+    "exit_code": 0,
+    "start_states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "status": "complete",
+    "timed_out": false
+  },
+  "interpretation": "exploratory prediction comparison; no shared-state or causal claim"
+}

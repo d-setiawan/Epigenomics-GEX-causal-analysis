@@ -1,0 +1,88 @@
+{
+  "date_utc": "2026-11-01T06:59:30.117612+00:00",
+  "tool": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "tool_sha256": "ab492d2670865cd3a632024121c7449bb7138dc1ca565fbd0c0e697635104d55",
+  "purpose": "Verify two added primary papers and retry four empty metadata responses without modifying original verification artifact.",
+  "endpoints": [
+    "https://doi.org/api/handles/{doi}",
+    "https://api.crossref.org/works/{doi}"
+  ],
+  "results": [
+    {
+      "method": "MOFA",
+      "doi": "10.15252/msb.20178124",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets",
+        "authors": "Argelaguet, R., Velten, B., Arnol, D., et al.",
+        "year": "2018",
+        "journal": "Molecular Systems Biology",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.15252/msb.20178124"
+      }
+    },
+    {
+      "method": "totalVI",
+      "doi": "10.1038/s41592-020-01050-x",
+      "doi_handle_valid": true,
+      "metadata": {}
+    },
+    {
+      "method": "scMVP",
+      "doi": "10.1186/s13059-021-02595-6",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "A deep generative model for multi-view profiling of single-cell RNA-seq and ATAC-seq data",
+        "authors": "Li, G., Fu, S., Wang, S., et al.",
+        "year": "2022",
+        "journal": "Genome Biology",
+        "volume": "23",
+        "pages": "",
+        "doi": "10.1186/s13059-021-02595-6"
+      }
+    },
+    {
+      "method": "CLUE",
+      "doi": "10.52202/068431-1160",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Cross-Linked Unified Embedding for Cross-Modality Representation Learning",
+        "authors": "Tu, X., Cao, Z., Chenrui, X., et al.",
+        "year": "2022",
+        "journal": "Advances in Neural Information Processing Systems 35",
+        "volume": "",
+        "pages": "15942-15955",
+        "doi": "10.52202/068431-1160"
+      }
+    },
+    {
+      "method": "Mowgli",
+      "doi": "10.1038/s41467-023-43019-2",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "Paired single-cell multi-omics data integration with Mowgli",
+        "authors": "Huizing, G., Deutschmann, I., Peyré, G., et al.",
+        "year": "2023",
+        "journal": "Nature Communications",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.1038/s41467-023-43019-2"
+      }
+    },
+    {
+      "method": "scMoMaT",
+      "doi": "10.1038/s41467-023-36066-2",
+      "doi_handle_valid": true,
+      "metadata": {
+        "title": "scMoMaT jointly performs single cell mosaic integration and multi-modal bio-marker detection",
+        "authors": "Zhang, Z., Sun, H., Mariappan, R., et al.",
+        "year": "2023",
+        "journal": "Nature Communications",
+        "volume": "14",
+        "pages": "",
+        "doi": "10.1038/s41467-023-36066-2"
+      }
+    }
+  ]
+}

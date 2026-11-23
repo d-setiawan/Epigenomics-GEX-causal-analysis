@@ -1,0 +1,402 @@
+{
+  "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "params": {
+    "query": "DOI:10.1093/gigascience/giag012",
+    "format": "json",
+    "pageSize": 10,
+    "resultType": "core"
+  },
+  "status_code": 200,
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "DOI:10.1093/gigascience/giag012",
+      "resultType": "core",
+      "cursorMark": "*",
+      "pageSize": 10,
+      "sort": "",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "41661124",
+          "source": "MED",
+          "pmid": "41661124",
+          "pmcid": "PMC12970605",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC12970605"
+            ]
+          },
+          "doi": "10.1093/gigascience/giag012",
+          "title": "An interpretable Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis.",
+          "authorString": "Wang Z, Zhan Q, Yang S, Zhou Z, Kan M, Zhai T, Shen L.",
+          "authorList": {
+            "author": [
+              {
+                "fullName": "Wang Z",
+                "lastName": "Wang",
+                "firstName": "Zexuan",
+                "initials": "Z",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0009-0001-2635-7767"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Graduate Group in Applied Mathematics and Computational Science, University of Pennsylvania, 209 S. 33rd Street Philadelphia, PA 19104-6395, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Zhan Q",
+                "lastName": "Zhan",
+                "firstName": "Qipeng",
+                "initials": "Q",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0009-0008-2306-197X"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Graduate Group in Applied Mathematics and Computational Science, University of Pennsylvania, 209 S. 33rd Street Philadelphia, PA 19104-6395, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Yang S",
+                "lastName": "Yang",
+                "firstName": "Shu",
+                "initials": "S",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-8507-7191"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Department of Biostatistics, Epidemiology and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Zhou Z",
+                "lastName": "Zhou",
+                "firstName": "Zhuoping",
+                "initials": "Z",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Graduate Group in Applied Mathematics and Computational Science, University of Pennsylvania, 209 S. 33rd Street Philadelphia, PA 19104-6395, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Kan M",
+                "lastName": "Kan",
+                "firstName": "Mengyuan",
+                "initials": "M",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0001-8132-4776"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Department of Biostatistics, Epidemiology and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Zhai T",
+                "lastName": "Zhai",
+                "firstName": "Tianhuan",
+                "initials": "T",
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Department of Biostatistics, Epidemiology and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA."
+                    }
+                  ]
+                }
+              },
+              {
+                "fullName": "Shen L",
+                "lastName": "Shen",
+                "firstName": "Li",
+                "initials": "L",
+                "authorId": {
+                  "type": "ORCID",
+                  "value": "0000-0002-5443-0503"
+                },
+                "authorAffiliationDetailsList": {
+                  "authorAffiliation": [
+                    {
+                      "affiliation": "Department of Biostatistics, Epidemiology and Informatics, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA 19104, USA."
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "authorIdList": {
+            "authorId": [
+              {
+                "type": "ORCID",
+                "value": "0000-0001-8132-4776"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0002-5443-0503"
+              },
+              {
+                "type": "ORCID",
+                "value": "0000-0002-8507-7191"
+              },
+              {
+                "type": "ORCID",
+                "value": "0009-0001-2635-7767"
+              },
+              {
+                "type": "ORCID",
+                "value": "0009-0008-2306-197X"
+              }
+            ]
+          },
+          "dataLinksTagsList": {
+            "dataLinkstag": [
+              "altmetrics",
+              "supporting_data"
+            ]
+          },
+          "journalInfo": {
+            "volume": "15",
+            "journalIssueId": 4096366,
+            "dateOfPublication": "2026 Jan",
+            "monthOfPublication": 1,
+            "yearOfPublication": 2026,
+            "journal": {
+              "medlineAbbreviation": "Gigascience",
+              "title": "GigaScience",
+              "essn": "2047-217X",
+              "issn": "2047-217X",
+              "nlmid": "101596872",
+              "isoabbreviation": "Gigascience"
+            },
+            "printPublicationDate": "2026-01-01"
+          },
+          "pubYear": "2026",
+          "pageInfo": "giag012",
+          "abstractText": "<h4>Background</h4>Recent advancements in single-cell omics technologies have enabled detailed characterization of cellular processes. However, coassay sequencing technologies remain limited, resulting in unpaired single-cell omics datasets with differing feature dimensions.<h4>Finding</h4>We present GROTIA (Graph-Regularized Optimal Transport Framework for Diagonal Single-Cell Integrative Analysis), a computational method to align multi-omics datasets without requiring any prior correspondence information. GROTIA achieves global alignment through optimal transport while preserving local relationships via graph regularization. Additionally, our approach provides interpretability by deriving domain-specific feature importance from partial derivatives, highlighting key biological markers. Moreover, the transport plan between modalities can be leveraged for post-integration clustering, enabling a data-driven approach to discover novel cell subpopulations.<h4>Conclusions</h4>We demonstrate GROTIA's superior performance on four simulated and four real-world datasets, surpassing state-of-the-art unsupervised alignment methods and confirming the biological significance of the top features identified in each domain.",
+          "affiliation": "Graduate Group in Applied Mathematics and Computational Science, University of Pennsylvania, 209 S. 33rd Street Philadelphia, PA 19104-6395, USA.",
+          "publicationStatus": "ppublish",
+          "language": "eng",
+          "pubModel": "Print",
+          "pubTypeList": {
+            "pubType": [
+              "brief-report",
+              "Journal Article",
+              "Research Support, N.I.H., Extramural"
+            ]
+          },
+          "grantsList": {
+            "grant": [
+              {
+                "agency": "NIH HHS",
+                "acronym": "GF",
+                "grantId": "U01 AG066833",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH HHS",
+                "acronym": "GF",
+                "grantId": "U01 AG068057",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH",
+                "grantId": "U19 AG074879",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH HHS",
+                "acronym": "GF",
+                "grantId": "U19 AG074879",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH",
+                "grantId": "U01 AG066833",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH",
+                "grantId": "R01 AG071470",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH HHS",
+                "acronym": "GF",
+                "grantId": "R01 AG071470",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIH",
+                "grantId": "U01 AG068057",
+                "orderIn": 0
+              },
+              {
+                "agency": "NIA NIH HHS",
+                "acronym": "AG",
+                "grantId": "U19 AG074879",
+                "orderIn": 0
+              }
+            ]
+          },
+          "meshHeadingList": {
+            "meshHeading": [
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Humans"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Computational Biology",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Algorithms"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Software"
+              },
+              {
+                "majorTopic_YN": "Y",
+                "descriptorName": "Single-Cell Analysis",
+                "meshQualifierList": {
+                  "meshQualifier": [
+                    {
+                      "majorTopic_YN": "N",
+                      "abbreviation": "MT",
+                      "qualifierName": "methods"
+                    }
+                  ]
+                }
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Multiomics"
+              },
+              {
+                "majorTopic_YN": "N",
+                "descriptorName": "Clustering Algorithms"
+              }
+            ]
+          },
+          "keywordList": {
+            "keyword": [
+              "Single cell",
+              "Data integration",
+              "Graph Laplacian",
+              "Multi-omics",
+              "Optimal Transport",
+              "Interpretable"
+            ]
+          },
+          "subsetList": {
+            "subset": [
+              {
+                "code": "IM",
+                "name": "Index Medicus"
+              }
+            ]
+          },
+          "fullTextUrlList": {
+            "fullTextUrl": [
+              {
+                "availability": "Subscription required",
+                "availabilityCode": "S",
+                "documentStyle": "doi",
+                "site": "DOI",
+                "url": "https://doi.org/10.1093/gigascience/giag012"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "html",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC12970605"
+              },
+              {
+                "availability": "Open access",
+                "availabilityCode": "OA",
+                "documentStyle": "pdf",
+                "site": "Europe_PMC",
+                "url": "https://europepmc.org/articles/PMC12970605?pdf=render"
+              }
+            ]
+          },
+          "commentCorrectionList": {
+            "commentCorrection": [
+              {
+                "source": "PPR",
+                "id": "PPR933819",
+                "type": "Preprint in",
+                "note": "CrossRef Pre-print loader",
+                "orderIn": 10002
+              }
+            ]
+          },
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 1,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasData": "Y",
+          "license": "cc by",
+          "authMan": "N",
+          "epmcAuthMan": "N",
+          "nihAuthMan": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "doi"
+            ]
+          },
+          "dateOfCompletion": "2026-07-07",
+          "dateOfCreation": "2026-02-09",
+          "dateOfRevision": "2026-08-13",
+          "firstPublicationDate": "2026-01-01",
+          "firstIndexDate": "2026-02-10",
+          "fullTextReceivedDate": "2026-03-10",
+          "hasEvaluations": "N"
+        }
+      ]
+    }
+  }
+}

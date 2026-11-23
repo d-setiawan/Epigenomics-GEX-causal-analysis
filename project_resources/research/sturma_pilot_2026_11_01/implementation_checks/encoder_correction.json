@@ -1,0 +1,8 @@
+{
+  "reason": "A rectangular known-source self-test and independent review found an omitted transpose in the new heldout encoder. Application was prematurely launched before inspecting the failed test. Two records failed encoder parity; this check was mislabeled graph stage. Output-directory preservation interrupted the active third fit with a file-path error. All early artifacts are retained and excluded from scientific results. Corrected code passes the preflight tests; no native algorithm or frozen scientific setting was changed.",
+  "correction": "For x = sources @ mixing.T + mean, sources=(x-mean) @ pinv(mixing).T.",
+  "upstream_changed": false,
+  "protocol_clarification": "Only the implementation of the declared pseudoinverse encoding is corrected; all data, preprocessing, matching and evaluation settings remain frozen.",
+  "failure_stage_reporting_corrected": true,
+  "frozen_protocol_text_erratum": "The frozen application_protocol.json heldout_encoding string omitted the transpose; actual corrected and tested implementation uses (test_X-train_mean) @ pinv(train_mixing).T. The original protocol remains unchanged for provenance."
+}

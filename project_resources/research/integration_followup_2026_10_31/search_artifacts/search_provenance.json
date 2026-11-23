@@ -1,0 +1,136 @@
+{
+  "review_type": "focused narrative; not systematic or comprehensive",
+  "date_local": "2026-10-31 America/New_York",
+  "capture_finalized_utc": "2026-11-01T01:19:50.201450+00:00",
+  "question": "Credible count/feature/OT/factor alternatives for fully unpaired RNA,H3K27ac,H3K4me3 using only existing counts and allowed annotations, preferably avoiding fixed PCA/HVG ranking",
+  "allowed_mutations": "this memo and search artifacts only",
+  "search_route": {
+    "initial": "OpenAlex first",
+    "openalex_failure_artifact": "openalex_search_log.json",
+    "openalex_success_artifact": "openalex_network_search_log.json",
+    "rows_returned": 244,
+    "deduplicated_by_doi_then_normalized_title_year": 232,
+    "full_text_screening_claim": "only five selected primary works; all returned rows were not comprehensively screened",
+    "auth_mode": "unauthenticated because designated OPENALEX_API_KEY not configured; no credentials serialized",
+    "supplementary_web_searches": [
+      {
+        "date_utc": "2026-11-01",
+        "query": "uniPort unified computational framework single cell data integration optimal transport Nature Communications 2022",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "scMoMaT mosaic integration single cell multi omics matrix factorization Nature Biotechnology",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "UINMF nonnegative matrix factorization partially overlapping features single cell paper",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "Pamona partial manifold alignment heterogeneous single cell multiomics Nature Communications",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "scConfluence unpaired multimodal single cell integration count negative binomial optimal transport",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "unpaired RNA histone modification integration method count encoder PCA scJoint scConfluence",
+        "backend": "native web search; primary sources retained for claims"
+      },
+      {
+        "date_utc": "2026-11-01",
+        "query": "scMAGCA unpaired integration counts histone modification RNA PCA 2026",
+        "backend": "native web search; primary sources retained for claims"
+      }
+    ],
+    "other_sources": "official publisher, PMC, Crossref DOI verification, official GitHub connector and documentation"
+  },
+  "selected_primary_works": [
+    {
+      "method": "scConfluence",
+      "doi": "10.1038/s41467-024-51382-x",
+      "decision": "primary prospective count-autoencoder+rIOT candidate, conditional on verified multi-pair loss correction",
+      "source": "OpenAlex and primary paper/code"
+    },
+    {
+      "method": "uniPort",
+      "doi": "10.1038/s41467-022-35094-8",
+      "decision": "include as minibatch-UOT/common-feature neural alternative; not count likelihood",
+      "source": "OpenAlex and primary paper/code"
+    },
+    {
+      "method": "UINMF",
+      "doi": "10.1038/s41467-022-28431-4",
+      "decision": "include as CPU-capable shared/unshared factor comparison; not count likelihood",
+      "source": "OpenAlex and primary paper/official code/docs"
+    },
+    {
+      "method": "Pamona",
+      "doi": "10.1093/bioinformatics/btab594",
+      "decision": "include as bounded partial geometry-only alternative with transductive/geometry limits",
+      "source": "supplementary web search to primary publisher/PMC/code"
+    },
+    {
+      "method": "2026 histone component benchmark",
+      "doi": "10.1186/s13059-026-04071-5",
+      "decision": "context only; not an additional integration candidate",
+      "source": "OpenAlex, existing prior verified primary evidence, primary PMC article"
+    }
+  ],
+  "other_candidates_not_selected": [
+    {
+      "name": "scMoMaT",
+      "reason": "credible shared-factor route discovered, but redundant with the selected UINMF comparison in this bounded review; not evaluated fully or rejected on performance"
+    },
+    {
+      "name": "scMAGCA",
+      "reason": "newer candidate surfaced in targeted search; not selected because no primary-source/code compatibility audit was performed for this fully unpaired three-assay setting; no adverse performance claim"
+    },
+    {
+      "name": "paired-bridge and extra-data methods",
+      "reason": "outside task when they need paired cells, extra modalities or reference measurements; not a blanket incompatibility claim for every package"
+    }
+  ],
+  "implementation_snapshots": {
+    "scconfluence": "14d81e2ca679e161ec5c6806103a66c14fcdcd9a",
+    "uniport": "c2743c5451765d5278a867ac051abda5c4d75189",
+    "liger": "afecff11de78c3089b1961017d57fe855794556c",
+    "pamona": "44322c487eb907cf021d5ee7bd1a3ff3f124c14b"
+  },
+  "scconfluence_static_finding": {
+    "file": "scconfluence/model.py",
+    "lines": "400-429",
+    "type": "static read-only source finding, no runtime/model reproduction",
+    "description": "per-pair losses assigned afresh and self-added, final dictionary retains last nonempty pair doubled rather than sum of pairs",
+    "consequence": "unmodified inspected three-assay code is not sufficient for advertised full joint alignment objective; single-pair weight is doubled too"
+  },
+  "citation_check": {
+    "artifact": "citation_verification.json",
+    "all_memo_dois_verified": true,
+    "unique_memo_dois": 5,
+    "unresolved": 0,
+    "pamona_date_note": "2021 online and 2022 journal issue are both retained"
+  },
+  "resource_claims": {
+    "measured_here": false,
+    "dense_costs": "three float64 ni-by-nj matrices: 96MB at 2000 cells each; 2.4GB at 10000 each; excludes copies/model/training overhead",
+    "paper_runtime_transfer": "not assumed for raw-feature adaptation"
+  },
+  "scope_exclusions": [
+    "no installation",
+    "no training or probes",
+    "no CUDA or active fit reads",
+    "no new datasets/measurements",
+    "no main README/protocol edits",
+    "no protected biology arrays or model deserialization",
+    "no source correction or upstream messaging"
+  ],
+  "memo_sha256": "af0d635c34fb79543915f76665911d687681e29f8d551338561da81be9534aea",
+  "additional_source_capture": "uinmf_factor_input_source.json"
+}

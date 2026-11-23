@@ -1,0 +1,69 @@
+{
+  "date_utc": "2026-11-15T21:17:09.912053+00:00",
+  "scope": "Historical frozen scientific artifacts and source/support bindings; living navigation intentionally excluded; no scientific re-evaluation",
+  "checks": [
+    {
+      "label": "prior_program_immutable_artifacts",
+      "files": 87,
+      "mismatches": []
+    },
+    {
+      "label": "prior_recheck_artifacts",
+      "files": 7,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1",
+      "files": 452,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1/source",
+      "files": 3,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/runs_v1/support",
+      "files": 5,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/evaluation_v1",
+      "files": 451,
+      "mismatches": []
+    },
+    {
+      "label": "count_extensions_2026_11_01/evaluation_v1/source",
+      "files": 4,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1",
+      "files": 110,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1/source",
+      "files": 3,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/runs_v1/support",
+      "files": 5,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/evaluation_v1",
+      "files": 109,
+      "mismatches": []
+    },
+    {
+      "label": "count_rank20_2026_11_01/evaluation_v1/source",
+      "files": 4,
+      "mismatches": []
+    }
+  ],
+  "hash_references_checked": 1240,
+  "permitted_data_manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "status": "passed"
+}

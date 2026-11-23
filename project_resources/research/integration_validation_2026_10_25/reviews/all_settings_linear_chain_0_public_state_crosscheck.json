@@ -1,0 +1,511 @@
+{
+  "accessed_npz_members": {
+    "public_embedding_archives": [
+      "cell_ids"
+    ],
+    "public_truth_train_and_val": [
+      "cell_ids",
+      "assigned_assay",
+      "state"
+    ]
+  },
+  "assignment_permutations_and_anchor_order_verified": true,
+  "binding_checks": {
+    "scglue/align_high": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "800699c543e951f01c72387cbbbb072974a122f33cef9b231bb98f59eb26268a",
+      "model_manifest_sha256": "1af80554c55f6941cf12504c7edff642e0766ba711ba8f028dd88c52bdfdf873",
+      "study_sha256": "6010544b7ed9bca4c7270f07c2df0565142a9545b5c641f19fbf520f078dbb2b"
+    },
+    "scglue/align_low": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "e98d1be47b359bd8eacecdefc0378fe3777f4d85f6463b232ddb05f2f6eaae21",
+      "model_manifest_sha256": "fac99a2d6ea48010156f0f5351bee0ff5dd56cbf9bff4641d39fd953a3728ade",
+      "study_sha256": "ca79b081f0fa004b98f0669d3be9a402a8eea961f09d1c190ef6dd755f5b37d6"
+    },
+    "scglue/baseline": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "5cf9025c71dd8918d5bb9615585d35bdfc4600e640681f622eaccfe71f0901c9",
+      "model_manifest_sha256": "b4e92f6d9715744a7ae1782e0b547afaee0c58b6923f262b61c3f47fffdbf7b3",
+      "study_sha256": "58e856907fdde6c3fab08e9cc828682fc9dc1265837d04f64d5f50788e0336d5"
+    },
+    "scglue/latent_small": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "33c12bb15b50fb1b1425dc4e79e5724b129f742ec2ec311df0ec2a832fa0c4b6",
+      "model_manifest_sha256": "c057ea2af853e1f0da26cd8af6bf84457a5b823f80c22c88722668fa0e75d2fb",
+      "study_sha256": "9596f0a6a6ff5d71f8c59173c4b94b13e9848ba0d6082950d332e140c36fffad"
+    },
+    "scmrdr/adversarial_low": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "d25deb860c0dce055e9a8f3e630ea66e6997b06eee2aa4f9ca13423cd1b099b7",
+      "model_manifest_sha256": "01f23f6813f544bd542d5086887a927d9c73e0cf102a2d60d412472d7bd687ea",
+      "study_sha256": "38f901b14fff2649edf816931b77809e8b685e7491986906ad963ce330eb95cf"
+    },
+    "scmrdr/baseline": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "0e7d00f3f07a180b307b847965eb6c0dd18bc161d371964f6303e8ca09bc51bd",
+      "model_manifest_sha256": "b0521a19cb6eedc730a5788be6c30e1c5b2d735ecdb140bb55cd8f31998cf41d",
+      "study_sha256": "b7fed943d6e5f3c2cf17a09c785c1018a0f9900e51f562c95a290c9a57d7f372"
+    },
+    "scmrdr/beta_low": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "3497f1706c099ff4a3525ee0d4316f8eae4314d31c935ed8ba866d2ea75ce0da",
+      "model_manifest_sha256": "43863d9ce4fa8c9cd9e60d3cd2aaf9b52695d65425db75b66a0533a7a9b97b56",
+      "study_sha256": "71a15045a6a56d6f8e4ac36c88b447520b3dd55e401741d0a3d2427d3f0c8a33"
+    },
+    "scmrdr/gamma_low": {
+      "checkpoint_digest_reference_verified_without_checkpoint_read": true,
+      "configuration_verified": true,
+      "export_seal_sha256": "cfaac73320306d7b226d6b8af52e9ef631324d800336025277d6448656bd42fc",
+      "model_manifest_sha256": "275e2598ffe1f789cea5b6e269cf944a5c666199608b98d4bb4412b4eaf14d2c",
+      "study_sha256": "097e027e28146c07e112e0fc895c01f57a0836f0f7945599b9eea8043500ef06"
+    }
+  },
+  "checked_file_hashes": {
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/__init__.py": "67cec6321ffe39c2c0e588381c49f86510091adda41a33dd3e783245df441b29",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/adapter.py": "0b2857139120573013d7e6bd30398523d2a6680bca8b7f162c2453a9c828874a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/__init__.py": "8e61c5e8b7b000d2a3a51557fbddea81c0f409e14a9899f5e53c4901f5a2a684",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/loss.py": "5fbd90962ccb08b7bbfc2d2adfbc7fd47e008f77bde7ec4112d592bd0085252c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/empirical/integration/methods/scmrdr/paper_faithful/upstream/model.py": "99a2b10b6bcce8f20422392ecc64b889ca30fd154577be22490664a817aba52b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/calibration.py": "a3f997167b43530dcffa75dbf6caa0c08a432f8b4705780f01ae4bd5ad35a6dd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/configs/integration_validation_v1.json": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/evaluate.py": "f2c8536be44fe07081ed582cc1e79deb55fd1d962319e9968931799ee13eb171",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/gene_features.py": "57b008b292d08605fb1898d9f6f0e3b867bca29eb51868be3fc3b58e78b3bfbb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/guidance_baseline.py": "fb8152119b3632077b3fcfe006b34702706fcb235564df9d7e6f499442affec1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/preprocessing.py": "8f430c656e885b02fbb9fa00fc605092cf12745b141f44a17dfacbaf931b6acb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/recover_scglue_export.py": "38b89d1a43d366e30801fd1486fbfc2ef460fc6f5162c66e66aa923e288b8ac8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/run_benchmark.py": "f8b1713328c95659885d1cf92f194972df986574c0927df5230e7cc3a0003673",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_preprocessing/manifest.json": "dfb97922a30c2c706932985adcdb8a8fd64ba184cd654b6b197124e141bee9de",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/model_manifest.json": "c4a7cfa5064b78feea75673d6f0c8fd050c445ff8dee1e503e81a222dc975761",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/public_embedding_manifest.json": "9d850c3fa906d6221aff4e64518b9d69d99d7d828d5a079da39dfaef40448354",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/H3K27ac.npz": "ec7d626275ed7e4504c6c4884cb304c71bf017c89ea57aa41d6ccbece0d193f6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/H3K4me3.npz": "a820fec957fe35492162a8c2f2d0826f6c785b7def77ba075c849649e29a2675",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/train/RNA.npz": "ef8300954e7f85c63be0f876abf9cf49b9656b8d552eae2ffb5ee3014e9fbbda",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/H3K27ac.npz": "c31b95c9dbc0816bf5f03cb044fc39b5ff82bb6208e68c8ea4afc02de32a21b0",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/H3K4me3.npz": "ce647b986a46dd9b228aaff8e867cda38581feb4d9eeca44a475281577e12704",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scglue_seed0/val/RNA.npz": "366cb9a141dafd26aee42233839a9fd1ac0b2c083e038ec4d5509a4d58b5faad",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/manifest.json": "4e7d8c110d6d6f0eb6db491ec6b8705857b9f07da1f29ace39c94577482dfb35",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/public_embedding_manifest.json": "64eceaee8db06186b875f3d054fe7e551951a2c070a9683a651ac38a61d1e2e2",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/H3K27ac.npz": "77f38c560e2d38132d533b7b4d431ef02d469ee4c45cfa6c2f5140779662a470",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/H3K4me3.npz": "22f9dc2523bb088b082d6c9d380783478494234437ecea9e9327053a08b6e1d4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/train/RNA.npz": "9f15d7e2981cb1bcce5d3130cbaa81639f2906abdbb25727c114dec429c21eb1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/H3K27ac.npz": "daad98f89a763a68751d0e15595732a59039996d1ffd90802793cc930e877707",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/H3K4me3.npz": "6bd19ea8104394a6c87a47cf855744cd1dadd1d707ed747bbe5e0f8d2b96ce32",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/extended/linear_chain_0/informative/primary/scmrdr_seed0/val/RNA.npz": "5cb313392c8a9dd6ce6bddf4d05f250ce233da6513997dcfdbeaeefcb4474d86",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/model_manifest.json": "1af80554c55f6941cf12504c7edff642e0766ba711ba8f028dd88c52bdfdf873",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/study.json": "6010544b7ed9bca4c7270f07c2df0565142a9545b5c641f19fbf520f078dbb2b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/train/H3K27ac.npz": "127af34784442182799874911b3c9745c9826db5130132ec21b67484316b1f93",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/train/H3K4me3.npz": "38d0720d181e031d768fdcb65ca2e123ce58b211c03860f85a7f56b3fc705dfd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/train/RNA.npz": "f8c7f3f7550e23d584d0a5ded3187b7170db3c708b76c8c21b622ae2158fd580",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/val/H3K27ac.npz": "821e76f54afae11bf6163bbf6ca09f6be7ca40a94a4234f4a1982090bee20158",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/val/H3K4me3.npz": "bdfa27c685c59f01e02d57640c29845b935d5a3c34a1747a4ec4d1cda86ef10d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/val/RNA.npz": "be1e1dd4f1cd7431b5460bc8c29dd218054513e21510f22faca165dc1d8d5558",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_high_seed0/validation_fit.json": "800699c543e951f01c72387cbbbb072974a122f33cef9b231bb98f59eb26268a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/model_manifest.json": "fac99a2d6ea48010156f0f5351bee0ff5dd56cbf9bff4641d39fd953a3728ade",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/study.json": "ca79b081f0fa004b98f0669d3be9a402a8eea961f09d1c190ef6dd755f5b37d6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/train/H3K27ac.npz": "459b0b36f4ed5c2a3f09cd5f9f1682503be59d3f55c37048937986d4ce690cc0",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/train/H3K4me3.npz": "f18d7e90fca13b36cf07c71dab14196d8e8ba090545f3f89908b124166d20174",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/train/RNA.npz": "03a8361e34f25d99b39aee4d4982e3bd5b49f463b70fec00bdc70eb753088b4e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/val/H3K27ac.npz": "28000bab4e3d0bf610b79b6b700dcb5b226c39fdf3ea353fd3f70972d526a611",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/val/H3K4me3.npz": "dd42cbea5315695e86a15f9db6b0dcb83cf1c53c9cdf5321f83af4c14850877e",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/val/RNA.npz": "1ff3efc24bf00c73a23f3c64ca2241b6263f10efea494d77ded8b3e2daa9fb61",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/align_low_seed0/validation_fit.json": "e98d1be47b359bd8eacecdefc0378fe3777f4d85f6463b232ddb05f2f6eaae21",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/model_manifest.json": "b4e92f6d9715744a7ae1782e0b547afaee0c58b6923f262b61c3f47fffdbf7b3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/study.json": "58e856907fdde6c3fab08e9cc828682fc9dc1265837d04f64d5f50788e0336d5",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/train/H3K27ac.npz": "84ca79e1b3f95b92cc380dff1a3232128da0d95b89a111893da42f23a0d96855",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/train/H3K4me3.npz": "8349b317dc3208541724b76146f4d7822071081f6cf6c180518ae197d1384ba3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/train/RNA.npz": "49678475c5db668148aa860a997862607ff10dcb0a7859ffeaebd7c387cd8de8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/val/H3K27ac.npz": "04ba7ea1153a2a2f66e2db76fc8774fa681cdeac2bc9563daf20459a4dcd7c14",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/val/H3K4me3.npz": "e9d9e8c8eaddd57e998e265d31ed228fc80734e38a48b92a1766c130a61a3cdd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/val/RNA.npz": "4ba6ad6948d798438b9e99e1cfe7fc6cae30bdaca00b034d11966e3ec9001e0a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/baseline_seed0/validation_fit.json": "5cf9025c71dd8918d5bb9615585d35bdfc4600e640681f622eaccfe71f0901c9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/model_manifest.json": "c057ea2af853e1f0da26cd8af6bf84457a5b823f80c22c88722668fa0e75d2fb",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/study.json": "9596f0a6a6ff5d71f8c59173c4b94b13e9848ba0d6082950d332e140c36fffad",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/train/H3K27ac.npz": "34a161cb140308fb5d618e580dd4364ed3f6d2498a07b93c4460c7516166a6a6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/train/H3K4me3.npz": "b767112ba0f063bf63e44d4878972997c3751dfa6da9df9c15fa43bef38072c9",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/train/RNA.npz": "0dd99bfa981f8edd105c91bbbfcc0275d5a42dbb12c9d1c3d6150512912732e6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/val/H3K27ac.npz": "fc301f12e45c98883c1e9103b1d472e30644530fbf3dbe416e2ba6e4541e5b09",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/val/H3K4me3.npz": "092d81e5fc947614dfc402ce97bb9295ff507062c5d97798970bce46216c70a1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/val/RNA.npz": "9bfed0b31160ac8a42598bebf3b094681b86841d5d8fd99ab89615296b3fd827",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scglue/latent_small_seed0/validation_fit.json": "33c12bb15b50fb1b1425dc4e79e5724b129f742ec2ec311df0ec2a832fa0c4b6",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/manifest.json": "01f23f6813f544bd542d5086887a927d9c73e0cf102a2d60d412472d7bd687ea",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/study.json": "38f901b14fff2649edf816931b77809e8b685e7491986906ad963ce330eb95cf",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/train/H3K27ac.npz": "2704b8924eaf98b34cbb6e67c1ded145d32a606d611efcd8e92cdf61b13cb029",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/train/H3K4me3.npz": "eaa7c21e1b1927d1991f49c6f0ac1c512a742e01a6e9d0ced72925581333296b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/train/RNA.npz": "5352ba146b4e970f2cd77e3e1d8e2f9d5bae46a968a00bfcd8bd873e002f11ec",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/val/H3K27ac.npz": "8af88d99921efa35ea1121146931ae151931078a9ccc80aef2242a34464fce23",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/val/H3K4me3.npz": "002c34cae40623f3c277e31a6c6a6f105d62605324daa10b1354160ac6b9247a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/val/RNA.npz": "f733a741e012eb8562394393739c05d99e84aba246d9fc152ec484eaee57112b",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/adversarial_low_seed0/validation_fit.json": "d25deb860c0dce055e9a8f3e630ea66e6997b06eee2aa4f9ca13423cd1b099b7",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/manifest.json": "b0521a19cb6eedc730a5788be6c30e1c5b2d735ecdb140bb55cd8f31998cf41d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/study.json": "b7fed943d6e5f3c2cf17a09c785c1018a0f9900e51f562c95a290c9a57d7f372",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/train/H3K27ac.npz": "77f38c560e2d38132d533b7b4d431ef02d469ee4c45cfa6c2f5140779662a470",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/train/H3K4me3.npz": "22f9dc2523bb088b082d6c9d380783478494234437ecea9e9327053a08b6e1d4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/train/RNA.npz": "9f15d7e2981cb1bcce5d3130cbaa81639f2906abdbb25727c114dec429c21eb1",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/val/H3K27ac.npz": "daad98f89a763a68751d0e15595732a59039996d1ffd90802793cc930e877707",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/val/H3K4me3.npz": "6bd19ea8104394a6c87a47cf855744cd1dadd1d707ed747bbe5e0f8d2b96ce32",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/val/RNA.npz": "5cb313392c8a9dd6ce6bddf4d05f250ce233da6513997dcfdbeaeefcb4474d86",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/baseline_seed0/validation_fit.json": "0e7d00f3f07a180b307b847965eb6c0dd18bc161d371964f6303e8ca09bc51bd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/manifest.json": "43863d9ce4fa8c9cd9e60d3cd2aaf9b52695d65425db75b66a0533a7a9b97b56",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/study.json": "71a15045a6a56d6f8e4ac36c88b447520b3dd55e401741d0a3d2427d3f0c8a33",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/train/H3K27ac.npz": "e67bbe7f1888e0380545e2e3b6799b254ed15ff65de79855edfe3b62f3926fbd",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/train/H3K4me3.npz": "01c6c0090316e94c3c8a62dadab69d601c25e4db11f02d3cbeeabe6f6b9c39c4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/train/RNA.npz": "860eaf3c25a63f65becc0566f3ab68e548bd019a1326331811c5dbf1e092e154",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/val/H3K27ac.npz": "824012c14d170cebcdc8d26fea4db80f4310e84049bafb5a2f4fb6628e43952a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/val/H3K4me3.npz": "c69ec6aa67ca407843d77db8fbc10cc9b2acfbd373333ab14aea39fba5a082f8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/val/RNA.npz": "2e91f94928fedd07f3d2012055c8dc4f6a025bfba64237528e9c62c624b9c956",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/beta_low_seed0/validation_fit.json": "3497f1706c099ff4a3525ee0d4316f8eae4314d31c935ed8ba866d2ea75ce0da",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/manifest.json": "275e2598ffe1f789cea5b6e269cf944a5c666199608b98d4bb4412b4eaf14d2c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/study.json": "097e027e28146c07e112e0fc895c01f57a0836f0f7945599b9eea8043500ef06",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/train/H3K27ac.npz": "3cfe730334ac349e85c1c1f3f0248ae3341431d763807bab0c7c48ee5af24f05",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/train/H3K4me3.npz": "52dfb0ff4b6cc6e115fdf44e18530bbe11bf391a8f1d4e1ecbf98f076222939d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/train/RNA.npz": "52e239c96bb682ee9457ee2d69225b461a2570005cda1d3af69223dfd91361f3",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/val/H3K27ac.npz": "92139d21afc7740358ef2b05fa8d3e2b5ecc82d2312fad3875988d67ca6b4a52",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/val/H3K4me3.npz": "fb22942f7cf23c4098973006f1241b5bed50f139d5b819b932ed219915c59230",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/val/RNA.npz": "6bd36b2f7b6e3d95a285203ecac95bd2414d169daf5b55666784b5af7c3c7294",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/fits/linear_chain_0/informative/scmrdr/gamma_low_seed0/validation_fit.json": "cfaac73320306d7b226d6b8af52e9ef631324d800336025277d6448656bd42fc",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/linear_chain_0_informative_val_seed0_scglue-scmrdr_all_8366327f.json": "24e89e3cde4dbeb3355baffd86417d57b8d10ff2eb01469ab1a3571361a2622c",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/linear_chain_0_informative_val_seed0_scmrdr_all_8366327f.json": "4ef21d78b0fd353e022fa2819a5fed78408e7a22fd10a032dba86dfb2191e899",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/extended_bank_manifest.json": "6432cbc30adc40a9422066f4a84e3bd3f5e369d37926767cd793efa5bda742fa",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/manifest.json": "f05a1e1c72b348956e9fe050e081bbb342b88ac0e14ede53d652c785facdb68f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/train.npz": "6e3cba33e1d1936eacc372334777698dbeba47e5ac80bfce11e18041c5a65e1f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/worlds/linear_chain_0/truth/val.npz": "54f3abf9155128d7c46ae3dda1fc2ff59413f79500e15119d71c644fbaa6a5e7",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scglue_adapter.py": "e021d91f0f8ea93b90f9192efd7715ae68fdfe86e0f4643a420c5516fa18db5f",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scmrdr_adapter.py": "4ebfbb7fe86f264698af0cb53ad9a229e7587bfbbd7c1e4075ba340566828d23",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/integration_validation_fit.py": "7734c84b4ce692cac18831a98eea7d1ea5db610e8e94cd278a7c362ac02604e5",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/integration_validation_metrics.py": "6fd960ef76757b68db4977a1a3a563eed56fe062a2b85e7f2b25dc195217fcb8",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/scripts/validate_integration.py": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/simulator.py": "754520b9802ac2548c07fc61aa1842d3350c9397a825fcab5b32d060b557ef0d",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/suite_plan.py": "a3619b06e9e7c6c0d8fe89d7d0f13fe96a1643b51e563065be091b40a09b3a1a",
+    "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/twin_controls.py": "5023ec1a3d93efaacfef6ad8d513f34c0845e3115a0024f5d3bb76de3988fa27"
+  },
+  "limits": [
+    "No integration/probe fit, CUDA operation, causal evaluation, or candidate selection.",
+    "Assignments were checked as public-ID permutations and scored, not reoptimized in latent space.",
+    "Checkpoint digests were reconciled between metadata, not rehashed from checkpoint binaries.",
+    "Finite-pool state transport does not identify residual coupling or real-data biological correctness."
+  ],
+  "max_absolute_arithmetic_discrepancy": 8.881784197001252e-16,
+  "not_accessed": [
+    "embedding numeric arrays",
+    "activities",
+    "residuals",
+    "private/probe/assessment cohorts",
+    "causal scores",
+    "checkpoints"
+  ],
+  "pool_checks": {
+    "train": {
+      "H3K27ac": {
+        "n": 1936,
+        "selected_ids_sha256": "a3e5787cc4812415b627365341889dd044dcdca70eecd0011cedddacd07d6c5b"
+      },
+      "H3K4me3": {
+        "n": 1936,
+        "selected_ids_sha256": "ab8db14a30dcd98f189b5a66626a9646962497929087048ef66efa8b7916f566"
+      },
+      "RNA": {
+        "n": 1936,
+        "selected_ids_sha256": "311d67c552803f1eb866bfff430a1f32df4a70ad97dcc30908cbbff217b2a532"
+      }
+    },
+    "val": {
+      "H3K27ac": {
+        "n": 487,
+        "selected_ids_sha256": "2cc79027018c792e79b65b1cee41902c6ff48afc75610100e3c55d8116766b82"
+      },
+      "H3K4me3": {
+        "n": 487,
+        "selected_ids_sha256": "94f1aad33b7b880b4a2d3b24c28dd701f4196aeab16c90edfef2ebac366d91ef"
+      },
+      "RNA": {
+        "n": 487,
+        "selected_ids_sha256": "207773f7febfdd82125a0441b6ef22014fcdc86ca3849d65277a36535a5eefb6"
+      }
+    }
+  },
+  "prior_scmrdr_report_sha256": "4ef21d78b0fd353e022fa2819a5fed78408e7a22fd10a032dba86dfb2191e899",
+  "prior_scmrdr_results_assignments_and_selected_pools_exactly_equal": true,
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "report": "/home/dgsetiawan/MachineLearning/CLeaR/epigenomics/Epigenomics-GEX-causal-analysis/pipelines/simulation/integration_recoverability/runs/integration_validation/20261025_v1/reports/linear_chain_0_informative_val_seed0_scglue-scmrdr_all_8366327f.json",
+  "report_sha256": "24e89e3cde4dbeb3355baffd86417d57b8d10ff2eb01469ab1a3571361a2622c",
+  "reviewer_script_sha256": "8d939afbc97ebd158f0b098660e92e47cca0faefb7c05ba543c2db4262c60d19",
+  "rows": [
+    {
+      "matched_squared_cost": 0.45701283107012264,
+      "method": "scglue",
+      "normalized_gap": 0.09882794237715328,
+      "one_lipschitz_squared_error_bound": 0.45701283107012264,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "align_high"
+    },
+    {
+      "matched_squared_cost": 0.4531070444273338,
+      "method": "scglue",
+      "normalized_gap": 0.09906139378515073,
+      "one_lipschitz_squared_error_bound": 0.4531070444273338,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "align_high"
+    },
+    {
+      "matched_squared_cost": 0.5503645418826941,
+      "method": "scglue",
+      "normalized_gap": 0.12401599315183384,
+      "one_lipschitz_squared_error_bound": 0.5503645418826941,
+      "oracle_squared_cost": 0.07856072808940619,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "align_high"
+    },
+    {
+      "matched_squared_cost": 0.7049351702705017,
+      "method": "scglue",
+      "normalized_gap": 0.16082841231411144,
+      "one_lipschitz_squared_error_bound": 0.7049351702705017,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "align_low"
+    },
+    {
+      "matched_squared_cost": 0.8140015550867153,
+      "method": "scglue",
+      "normalized_gap": 0.19236596656460309,
+      "one_lipschitz_squared_error_bound": 0.8140015550867153,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "align_low"
+    },
+    {
+      "matched_squared_cost": 0.7684451647154125,
+      "method": "scglue",
+      "normalized_gap": 0.18133957604177534,
+      "one_lipschitz_squared_error_bound": 0.7684451647154125,
+      "oracle_squared_cost": 0.07856072808940617,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "align_low"
+    },
+    {
+      "matched_squared_cost": 0.47801415202815983,
+      "method": "scglue",
+      "normalized_gap": 0.10407995707213727,
+      "one_lipschitz_squared_error_bound": 0.47801415202815983,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.43845009145056874,
+      "method": "scglue",
+      "normalized_gap": 0.09527202959325169,
+      "one_lipschitz_squared_error_bound": 0.43845009145056874,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.6344762848952858,
+      "method": "scglue",
+      "normalized_gap": 0.14612518566041457,
+      "one_lipschitz_squared_error_bound": 0.6344762848952858,
+      "oracle_squared_cost": 0.07856072808940617,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.46116668920022347,
+      "method": "scglue",
+      "normalized_gap": 0.09986674007867688,
+      "one_lipschitz_squared_error_bound": 0.46116668920022347,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "latent_small"
+    },
+    {
+      "matched_squared_cost": 0.4620927254202949,
+      "method": "scglue",
+      "normalized_gap": 0.10138452451010649,
+      "one_lipschitz_squared_error_bound": 0.4620927254202949,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "latent_small"
+    },
+    {
+      "matched_squared_cost": 0.4846928152660178,
+      "method": "scglue",
+      "normalized_gap": 0.10675385121855323,
+      "one_lipschitz_squared_error_bound": 0.4846928152660178,
+      "oracle_squared_cost": 0.07856072808940619,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "latent_small"
+    },
+    {
+      "matched_squared_cost": 0.17179428678089678,
+      "method": "scmrdr",
+      "normalized_gap": 0.027500429746778444,
+      "one_lipschitz_squared_error_bound": 0.17179428678089678,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "adversarial_low"
+    },
+    {
+      "matched_squared_cost": 0.15495989711726488,
+      "method": "scmrdr",
+      "normalized_gap": 0.021979334115271202,
+      "one_lipschitz_squared_error_bound": 0.15495989711726488,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "adversarial_low"
+    },
+    {
+      "matched_squared_cost": 0.13471430310175725,
+      "method": "scmrdr",
+      "normalized_gap": 0.014760248159489953,
+      "one_lipschitz_squared_error_bound": 0.13471430310175725,
+      "oracle_squared_cost": 0.07856072808940617,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "adversarial_low"
+    },
+    {
+      "matched_squared_cost": 0.17475897793002748,
+      "method": "scmrdr",
+      "normalized_gap": 0.02824184032340051,
+      "one_lipschitz_squared_error_bound": 0.17475897793002748,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.15415278630451149,
+      "method": "scmrdr",
+      "normalized_gap": 0.021770666132397094,
+      "one_lipschitz_squared_error_bound": 0.15415278630451149,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.13244688322813888,
+      "method": "scmrdr",
+      "normalized_gap": 0.014164245500549625,
+      "one_lipschitz_squared_error_bound": 0.13244688322813888,
+      "oracle_squared_cost": 0.07856072808940617,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "baseline"
+    },
+    {
+      "matched_squared_cost": 0.16806825734339337,
+      "method": "scmrdr",
+      "normalized_gap": 0.026568623533311585,
+      "one_lipschitz_squared_error_bound": 0.16806825734339337,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "beta_low"
+    },
+    {
+      "matched_squared_cost": 0.1526007459987845,
+      "method": "scmrdr",
+      "normalized_gap": 0.02136940633656988,
+      "one_lipschitz_squared_error_bound": 0.1526007459987845,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "beta_low"
+    },
+    {
+      "matched_squared_cost": 0.13671329020928316,
+      "method": "scmrdr",
+      "normalized_gap": 0.015285691922744803,
+      "one_lipschitz_squared_error_bound": 0.13671329020928316,
+      "oracle_squared_cost": 0.07856072808940619,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "beta_low"
+    },
+    {
+      "matched_squared_cost": 0.16889999799078392,
+      "method": "scmrdr",
+      "normalized_gap": 0.026776625406681315,
+      "one_lipschitz_squared_error_bound": 0.16889999799078392,
+      "oracle_squared_cost": 0.06182784815923006,
+      "pair": "RNA--H3K27ac",
+      "random_expected_squared_cost": 4.060544945827451,
+      "setting": "gamma_low"
+    },
+    {
+      "matched_squared_cost": 0.15692408369267294,
+      "method": "scmrdr",
+      "normalized_gap": 0.022487148958292066,
+      "one_lipschitz_squared_error_bound": 0.15692408369267294,
+      "oracle_squared_cost": 0.06994561760387434,
+      "pair": "RNA--H3K4me3",
+      "random_expected_squared_cost": 3.937864412028259,
+      "setting": "gamma_low"
+    },
+    {
+      "matched_squared_cost": 0.12946177557854346,
+      "method": "scmrdr",
+      "normalized_gap": 0.013379595018703564,
+      "one_lipschitz_squared_error_bound": 0.12946177557854346,
+      "oracle_squared_cost": 0.07856072808940617,
+      "pair": "H3K27ac--H3K4me3",
+      "random_expected_squared_cost": 3.882939516683668,
+      "setting": "gamma_low"
+    }
+  ],
+  "scope": "One development world, one regime, seed0, eight declared scGLUE/scMRDR settings; not setting selection or the two-world selection result.",
+  "source_hashes": {
+    "integration_validation_metrics.py": "6fd960ef76757b68db4977a1a3a563eed56fe062a2b85e7f2b25dc195217fcb8",
+    "validate_integration.py": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4"
+  },
+  "state_center": [
+    0.0027658891300102162,
+    0.0036931498334113874
+  ],
+  "state_scale": [
+    1.0071856125953662,
+    1.0145039876265425
+  ],
+  "status": "passed_independent_public_state_cost_crosscheck",
+  "train_val_ids_disjoint": true,
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.14.1"
+  },
+  "worst_pair_gaps": {
+    "scglue/align_high": 0.12401599315183384,
+    "scglue/align_low": 0.19236596656460309,
+    "scglue/baseline": 0.14612518566041457,
+    "scglue/latent_small": 0.10675385121855323,
+    "scmrdr/adversarial_low": 0.027500429746778444,
+    "scmrdr/baseline": 0.02824184032340051,
+    "scmrdr/beta_low": 0.026568623533311585,
+    "scmrdr/gamma_low": 0.026776625406681315
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "saved_utc": "2026-10-25",
+  "research_scope": "focused narrative; supplemental to main OpenAlex discovery",
+  "tool_result": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "content": "import torch\nfrom torch import nn\nimport torch.nn.functional as F\nimport matplotlib.pyplot as plt\nfrom torch import optim\nimport torch.utils.data as Data\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import LabelEncoder,OneHotEncoder,StandardScaler\nimport anndata as ad\nfrom torch.utils.tensorboard import SummaryWriter\nfrom scipy.sparse import lil_matrix\nimport scanpy as sc\n# from data import IntegrateDataset,CombinedDataset\n# from model import embeddingNet,integrateNet\n# from train import train_model, inference_model, train_integrate, inference_integrate\n# from module import Integration\n\nimport sys\nsys.path.insert(1, '/home/bingxing2/ailab/group/ai4bio/sunjianle/integration/models2')\nfrom module import Integration\n\n\nadata = sc.read_h5ad(\"/home/bingxing2/ailab/group/ai4bio/sunjianle/mop/BMMC/feature_aligned_sampled.h5ad\")\n\nadata\nrna_hvg = np.where(adata.var_names.isin(adata.uns['rna_hvg']))[0].tolist()\natac_hvg = np.where(adata.var_names.isin(adata.uns['atac_hvg']))[0].tolist()\nprot_hvg = np.where(adata.var_names.isin(adata.uns['prot_hvg']))[0].tolist()\nfeature_list = {\"0\":rna_hvg,\"1\":atac_hvg,\"2\":prot_hvg}\n\nmodel = Integration(data=adata, layer = 'counts', modality_key=\"modality\",distribution=\"ZINB\", \n                    batch_key=\"batch\", feature_list=feature_list)\nmodel.setup(hidden_layers = [128,128], latent_dim_shared = 30, latent_dim_specific = 30, \n            beta = 5, gamma = 10, lambda_adv = 10, dropout_rate=0.2)\nmodel.train(epoch_num = 200, batch_size = 64, lr = 1e-3, adaptlr = False, num_warmup = 0,\n            early_stopping = True, valid_prop = 0.1, patience = 25)\nmodel.inference(n_samples=1,update=True,returns=False)\n# model.integrate(num_heads = 5, paired = False, epoch_num = 200, batch_size = 128, lr = 5e-4,update=True,returns=False)\nadata = model.get_adata()\nadata.write(\"/home/bingxing2/ailab/group/ai4bio/sunjianle/mop/BMMC/feature_aligned_trained_sampled.h5ad\")\n# adata.write(\"/home/bingxing2/ailab/group/ai4bio/sunjianle/BMMC/data2/feature_aligned_unpaired_trained_mse.h5ad\")\n\n",
+        "encoding": "utf-8",
+        "sha": "087f6f4150fe7fae4fdf7ab3011f4212eabbce0e",
+        "display_url": "https://github.com/sjl-sjtu/scMRDR/blob/main/experiments/BMMC_codes/main.py",
+        "display_title": "main.py"
+      },
+      "isError": false
+    }
+  }
+}

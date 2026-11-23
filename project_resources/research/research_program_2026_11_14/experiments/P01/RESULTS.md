@@ -1,0 +1,17 @@
+# P01: marginal detection intervals
+
+Status: completed exploratory computation with [independent replay](../../reviews/P01_INDEPENDENT_REVIEW.md). The protocol and code/input hashes were sealed before predictions, and the complete predictions were hashed before the paired evaluator read. The calculation uses the existing first 30 source-panel features per assay, three datasets, three unordered assay pairs and all 900 pairs per assay pair: 8,100 rows in `predictions.csv`. Training shapes after the 30-column slice are recorded in `prediction_seal.json`; biological assays have 602, 615, and 614 rows in RNA, H3K27ac, H3K4me3 order, and each simulation assay has 4,000 rows.
+
+| Dataset | Pairs | Interval width min / median / max | Zero-width intervals | Covariance intervals containing zero |
+| --- | ---: | --- | ---: | ---: |
+| scMTR S1 | 2,700 | 0.01626 / 0.01951 / 0.04723 | 0 | 2,700 |
+| linear_chain_0 | 2,700 | 0.00250 / 0.07000 / 0.47175 | 0 | 2,700 |
+| constrained_collider_0 | 2,700 | 0.00325 / 0.06700 / 0.45000 | 0 | 2,700 |
+
+All intervals contain the independence completion by construction, so covariance intervals containing zero are a mathematical property, not evidence for independence. The biological reference contains 595 paired cells and 900 columns, of which the original 30 anchors in each assay were scored. Of 2,700 paired empirical detection joints, 25 fall above the plug-in upper endpoint and none below: 9 RNA–H3K27ac, 16 RNA–H3K4me3, 0 H3K27ac–H3K4me3. The largest distance is 0.00918. Evaluator-only bounds recomputed from the paired holdout's own marginals contain all holdout joints, as required by arithmetic; that check is tautological and is not a learner prediction.
+
+These sets couple the supplied assay-specific empirical training marginals. They are not confidence intervals and are not certified identified sets for the all-assay-QC holdout population. Training pools have different local QC rules, the 595-cell holdout passes all three rules, and sampling differences can also move a heldout joint outside a plug-in interval. The historically selected panels and earlier holdout use preclude nominal post-selection coverage claims. No latent state, causal graph, or paired-reference information was used in fitting. Simulation state references do not contain detection joints and were not scored.
+
+`test_fit.py` checks valid and malformed counts/features, endpoint attainability, deterministic marginals and row reversal. The run verifies all inputs against their manifest and requires the same SHA-256 values as the protocol. `arithmetic_replay.json` records the author's separate formula replay. A different researcher then independently reconstructed every prediction and evaluator row directly from the frozen arrays, checked source/input seals and overwrite refusal, and reviewed population correspondence; see the linked independent report. `evaluation.csv` contains all pair-level discrepancies. File chronology supports the recorded freeze order but cannot prove that no earlier process ever accessed a file. The correct next step is interpretation with the stated population limits, not threshold tuning.
+
+Reproduce in a separate study copy with no outputs: run `/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m unittest -v test_fit.py`, then `python fit.py`, then `python evaluate.py` with the same interpreter. Each output uses exclusive creation; existing sealed files are never overwritten. The protocol pins source and input hashes; update neither protocol nor outputs in place.

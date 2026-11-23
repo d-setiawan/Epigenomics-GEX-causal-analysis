@@ -1,0 +1,480 @@
+{
+  "saved_utc": "2026-10-25",
+  "tool_result": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "results": [
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/utils.py",
+            "path": "evaluation/workflow/utils.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/utils.py",
+            "display_title": "evaluation/workflow/utils.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "\n\ndef default_hyperparam_conf(hyperparam_conf):\n    pattern = \"dim:{dim}-alt_dim:{alt_dim}-hidden_depth:{hidden_depth}-hidden_dim:{hidden_dim}-dropout:{dropout}-lam_graph:{lam_graph}-lam_align:{lam_align}-neg_samples:{neg_samples}\"\n    conf = parse.parse(pattern, hyperparam_conf).named\n    conf.update({\n        \"dim\": 50,",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      183,
+                      192
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      194,
+                      203
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/hyperparam.smk",
+            "path": "evaluation/workflow/hyperparam.smk",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/hyperparam.smk",
+            "display_title": "evaluation/workflow/hyperparam.smk",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "    output:\n        \"results/hyperparam.csv\"\n    params:\n        pattern=lambda wildcards: \"results/raw/{dataset}/{data_conf}/{prior_conf}/GLUE/dim:{dim:d}-alt_dim:{alt_dim:d}-hidden_depth:{hidden_depth:d}-hidden_dim:{hidden_dim:d}-dropout:{dropout:f}-lam_graph:{lam_graph:f}-lam_align:{lam_align:f}-neg_samples:{neg_samples:d}/seed:{seed:d}/metrics.yaml\"\n    threads: 1\n    script:\n        \"scripts/summarize.py\"",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      276,
+                      285
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      287,
+                      296
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/glue.py",
+            "path": "scglue/models/glue.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/glue.py",
+            "display_title": "scglue/models/glue.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "        Graph weight\n    lam_align\n        Adversarial alignment weight",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      25,
+                      34
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "        lam_graph: float = None,\n        lam_align: float = None,\n        dsc_steps: int = None,",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      41,
+                      50
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/rules/methods.smk",
+            "path": "evaluation/workflow/rules/methods.smk",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/rules/methods.smk",
+            "display_title": "evaluation/workflow/rules/methods.smk",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "        atac=\"{path}/atac.h5ad\",\n        prior=\"{path}/{prior_conf}/sub.graphml.gz\"\n    output:\n        rna_latent=\"{path}/{prior_conf}/GLUE/dim:{dim}-alt_dim:{alt_dim}-hidden_depth:{hidden_depth}-hidden_dim:{hidden_dim}-dropout:{dropout}-lam_graph:{lam_graph}-lam_align:{lam_align}-neg_samples:{neg_samples}/seed:{seed}/rna_latent.csv\",\n        atac_latent=\"{path}/{prior_conf}/GLUE/dim:{dim}-alt_dim:{alt_dim}-hidden_depth:{hidden_depth}-hidden_dim:{hidden_dim}-dropout:{dropout}-lam_graph:{lam_graph}-lam_align:{lam_align}-neg_samples:{neg_samples}/seed:{seed}/atac_latent.csv\",\n        feature_latent=\"{path}/{prior_conf}/GLUE/dim:{dim}-alt_dim:{alt_dim}-hidden_depth:{hidden_depth}-hidden_dim:{hidden_dim}-dropout:{dropout}-lam_graph:{lam_graph}-lam_align:{lam_align}-neg_samples:{neg_samples}/seed:{seed}/feature_latent.csv\",\n        run_info=\"{path}/{prior_conf}/GLUE/dim:{dim}-alt_dim:{alt_dim}-hidden_depth:{hidden_depth}-hidden_dim:{hidden_dim}-dropout:{dropout}-lam_graph:{lam_graph}-lam_align:{lam_align}-neg_samples:{neg_samples}/seed:{seed}/run_info.yaml\"",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      261,
+                      270
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      272,
+                      281
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      504,
+                      513
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      515,
+                      524
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      751,
+                      760
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      762,
+                      771
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      995,
+                      1004
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      1006,
+                      1015
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/scripts/run_GLUE.py",
+            "path": "evaluation/workflow/scripts/run_GLUE.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/workflow/scripts/run_GLUE.py",
+            "display_title": "evaluation/workflow/scripts/run_GLUE.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "    parser.add_argument(\n        \"--lam-align\", dest=\"lam_align\", type=float, default=0.02,\n        help=\"Adversarial alignment weight\"",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      54,
+                      63
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "    )\n    glue.compile(lam_graph=args.lam_graph, lam_align=args.lam_align, lr=args.lr)\n    glue.fit(",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      49,
+                      58
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      64,
+                      73
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/scclue.py",
+            "path": "scglue/models/scclue.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/scclue.py",
+            "display_title": "scglue/models/scclue.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "        lam_kl: float = None,\n        lam_align: float = None,\n        lam_sup: float = None,",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      38,
+                      47
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "            \"lam_kl\",\n            \"lam_align\",\n            \"lam_sup\",",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      35,
+                      44
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/scglue.py",
+            "path": "scglue/models/scglue.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/scglue/models/scglue.py",
+            "display_title": "scglue/models/scglue.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "            lam_graph=lam_graph,\n            lam_align=lam_align,\n            dsc_steps=dsc_steps,",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      45,
+                      54
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      55,
+                      64
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "            f\"  lam_graph: {self.lam_graph}\\n\"\n            f\"  lam_align: {self.lam_align}\\n\"\n            f\"  vae_optim: {vae_optim}\\n\"",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      63,
+                      72
+                    ]
+                  },
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      80,
+                      89
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/OverCorrection/control.py",
+            "path": "experiments/OverCorrection/control.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/OverCorrection/control.py",
+            "display_title": "experiments/OverCorrection/control.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "# ## Load evaluation model\n\n# %%\nglue = scglue.models.load_model(f\"../../evaluation/results/raw/{DATASET}/original/gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0/GLUE/dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10/seed:0/final.dill\")\n\n# %% [markdown]\n# ## Visualization",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      264,
+                      273
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Yao-2021.py",
+            "path": "experiments/BatchEffect/Yao-2021.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Yao-2021.py",
+            "display_title": "experiments/BatchEffect/Yao-2021.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:2\" / \"rna_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:2\" / \"atac_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Ma-2020.py",
+            "path": "experiments/BatchEffect/Ma-2020.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Ma-2020.py",
+            "display_title": "experiments/BatchEffect/Ma-2020.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:5\" / \"rna_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:5\" / \"atac_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Muto-2021.py",
+            "path": "experiments/BatchEffect/Muto-2021.py",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/experiments/BatchEffect/Muto-2021.py",
+            "display_title": "experiments/BatchEffect/Muto-2021.py",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:4\" / \"rna_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "    data_path / \"gene_region:combined-extend_range:0-corrupt_rate:0.0-corrupt_seed:0\" / \"GLUE\" /\n    \"dim:50-alt_dim:100-hidden_depth:2-hidden_dim:256-dropout:0.2-lam_graph:0.02-lam_align:0.05-neg_samples:10\" /\n    \"seed:4\" / \"atac_umap.csv\", header=None, index_col=0",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      178,
+                      187
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/config/config.yaml",
+            "path": "evaluation/config/config.yaml",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/config/config.yaml",
+            "display_title": "evaluation/config/config.yaml",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "          - 0.5\n      lam_align:\n        default: 0.05",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      22,
+                      31
+                    ]
+                  }
+                ]
+              },
+              {
+                "property": "content",
+                "fragment": "      lam_graph: 0.02\n      lam_align: 0.05\n      neg_samples: 10",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      28,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/config/display.yaml",
+            "path": "evaluation/config/display.yaml",
+            "display_url": "https://github.com/gao-lab/GLUE/blob/5a30146c6148a52210f547c9e9c330ecfbdf1090/evaluation/config/display.yaml",
+            "display_title": "evaluation/config/display.yaml",
+            "text_matches": [
+              {
+                "property": "content",
+                "fragment": "  hidden_dim: Hidden layer dimensionality\n  dropout: Dropout\n  lam_graph: Lambda graph\n  lam_align: Lambda align\n  neg_samples: Negative sampling rate\n\npalette:",
+                "matches": [
+                  {
+                    "text": "lam_align",
+                    "indices": [
+                      89,
+                      98
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "isError": false
+    }
+  }
+}

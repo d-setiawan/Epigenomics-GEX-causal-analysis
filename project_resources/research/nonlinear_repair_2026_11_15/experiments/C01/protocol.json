@@ -1,0 +1,64 @@
+{
+  "inputs": {
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K27ac.npz": "9ff019b4fea95c3087d66e744e61510f910c41a5e479d9fcaa64b1585ba18efe",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/H3K4me3.npz": "df6a90db3b6f6315f7cabd433a2d6d0a1c03bf4090cf13fb3a3edc2259ff83f9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/constrained_collider_0/train/RNA.npz": "296ae5ffeabb33cf4595201c01cc9f6f55e9e1a3faecc45c7a65e12a984b9ad9",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K27ac.npz": "a3d2716a6901374aa668b53f26ee4a1b11720939decf1325763bfb342d8a150d",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/H3K4me3.npz": "a9882d58f84bbec71efd7e357037480512e79d2bfda605a861bb4549a93b5c41",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/linear_chain_0/train/RNA.npz": "0c975bd6793a2ccc9e4bdfb11f4c0895f99e924a6a93301ec18a87bcb33d55fd",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K27ac.npz": "e43059307caa83756c6d6a1901fc77ac2c571257b18f9b53b031877f5f2618ac",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/H3K4me3.npz": "d83b996152402096a4369169f8c5e462f2568997dacc9c5e02f3b18b5a1c106b",
+    "project_resources/research/count_extensions_2026_11_01/data_v1/public/scmtr_seq_s1/train/RNA.npz": "74a6e79e8ee980080187e12cbbc2f1ef923b3d80e9e4924b9886bbfc1b9949b2"
+  },
+  "manifest_sha256": "30749e63fc85d55edf5092efd5cb014c3fbb4947b0c2dce6ec3fa3e0f882ce2d",
+  "numpy": "2.2.6",
+  "plan_sha256": "24ced4083f3ed81761e8c947bbbc2fbbf8075b256a49b079ddd67126b8f7955d",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python": "3.11.14 | packaged by conda-forge | (main, Jan 26 2026, 23:48:32) [GCC 14.3.0]",
+  "scipy": "1.14.1",
+  "settings": {
+    "K": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "blas_threads": 1,
+    "bootstrap_quantile": 0.9,
+    "bootstraps": 32,
+    "controls": [
+      "original",
+      "column_null"
+    ],
+    "kernels": [
+      "poisson",
+      "nb2"
+    ],
+    "max_iterations": 300,
+    "minimum_bootstraps": 26,
+    "monotonicity_tolerance": 1e-08,
+    "nb_shape": 2,
+    "panels": [
+      30,
+      300
+    ],
+    "permutation_seed": 1000,
+    "processes": 2,
+    "rate_floor": 1e-08,
+    "restarts": [
+      0,
+      1,
+      2
+    ],
+    "split": "SHA256 count-dica-v1: ID, first floor(.75*n)",
+    "tolerance": 1e-07,
+    "weight_uncertainty_max": 0.1
+  },
+  "sklearn": "1.8.0",
+  "sources": {
+    "evaluate.py": "e8cac103567cafe5ba9fe1a04633be731d9edc55e79fedc8c403fadd712dcf25",
+    "model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+    "test_model.py": "b6be10577b2c8b656e2d7b3ee0c9c46606ecf17585ba88cbac256ea0b9de06e8",
+    "train.py": "abefc305d8a8a02874e40aaf801fbe0894f63e2ece8f540450e6d3dbd981fc38"
+  }
+}

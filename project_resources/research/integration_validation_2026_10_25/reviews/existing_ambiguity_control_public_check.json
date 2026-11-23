@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "public_h5ad_pairs": [
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/train/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/train/RNA.h5ad",
+      "shared_sha256": "8ffbb772ba8a7f0df0aa24f1c9d9ce9b1963a0b4b25093397f9f5877fd1361e3",
+      "bytes": 2505673
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/train/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/train/H3K27ac.h5ad",
+      "shared_sha256": "f4c65873bb7f0284f3d9f3cf90870a6a4bf6b1d20d4b10c0fb0972cf4bc24653",
+      "bytes": 2006329
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/train/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/train/H3K4me3.h5ad",
+      "shared_sha256": "e8868e94ae0e1abbf0921ca949be5bacaa8b96553fd6b6110723ae5afc6d5fe1",
+      "bytes": 3407771
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/val/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/val/RNA.h5ad",
+      "shared_sha256": "585d09feec858b301da584262ba2c29a270e816b7812787784442d900d2cc249",
+      "bytes": 605555
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/val/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/val/H3K27ac.h5ad",
+      "shared_sha256": "9d452e51470aee09f51905f6336659516ff3a32404d26711db69f1f21c977577",
+      "bytes": 1145582
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/val/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/val/H3K4me3.h5ad",
+      "shared_sha256": "51d68e2b029812eb7a1c00826595342562319218ec893c9a03cf58b66c1bb832",
+      "bytes": 1307462
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/discovery/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/discovery/RNA.h5ad",
+      "shared_sha256": "429c0cb5f320b7ce03ea65b1753b340206272f5abde5c0c249fdf18d44d13a24",
+      "bytes": 1476522
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/discovery/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/discovery/H3K27ac.h5ad",
+      "shared_sha256": "52d6cca02ee0948daf18c45be29dd504e9bb8dbf4b4e8af7d73a67a358fc615b",
+      "bytes": 1499353
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/realistic/discovery/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/realistic/discovery/H3K4me3.h5ad",
+      "shared_sha256": "4c673011bed1901a4978331928481b25e5d1d28e7de18f6aaaa8a6f7b8f57632",
+      "bytes": 2157445
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/train/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/train/RNA.h5ad",
+      "shared_sha256": "d7bbaf2cd2e0d0a826a1d0fe727101a6dc5ead9ef9bbb2adec19e04ef346001e",
+      "bytes": 4505882
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/train/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/train/H3K27ac.h5ad",
+      "shared_sha256": "0a5a3e105ec19d953903bb2c2d1ce939bd2e0a5862bf784f5d3d131ded7b7152",
+      "bytes": 13257677
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/train/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/train/H3K4me3.h5ad",
+      "shared_sha256": "b74266fd72b05cdda581f953025ee620a872f2586ca8f89ff9321be21fd349c6",
+      "bytes": 31173238
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/val/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/val/RNA.h5ad",
+      "shared_sha256": "231de32e15d95e123f2508041f8a3289d1471d07b294ec083c00503c897b5b2d",
+      "bytes": 872782
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/val/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/val/H3K27ac.h5ad",
+      "shared_sha256": "68b12feb5a866760d17659cef3031e85b397a71c98e233f5f5bccacd145ea672",
+      "bytes": 2472913
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/val/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/val/H3K4me3.h5ad",
+      "shared_sha256": "3b5b8bbb741ce34d226731cbbc55edd673f572023c5baceb2e86b8edd16f555d",
+      "bytes": 4594196
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/discovery/RNA.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/discovery/RNA.h5ad",
+      "shared_sha256": "545923869c12691f15b7c00ff29e20026a44be7531d8edc7699e7c0c09ed126b",
+      "bytes": 2409590
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/discovery/H3K27ac.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/discovery/H3K27ac.h5ad",
+      "shared_sha256": "f7bb15a566f8e476b91cb1453e50f3c1b67c5108b9a488749c815ee085995105",
+      "bytes": 7040914
+    },
+    {
+      "reference": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.0/observed/informative/discovery/H3K4me3.h5ad",
+      "counterpart": "pipelines/simulation/integration_recoverability/runs/worlds/ambiguity_rho_0.7/observed/informative/discovery/H3K4me3.h5ad",
+      "shared_sha256": "b87043a402a22480cab08bb59195f6bc9f89b39c484333c614a5288fcfc77d06",
+      "bytes": 16084543
+    }
+  ],
+  "comparison_reports": [
+    {
+      "path": "pipelines/simulation/integration_recoverability/runs/extended/ambiguity_rho_0.7/realistic/primary/twin_comparison.json",
+      "sha256": "0928c93bcc46b7f435e4137d190834cf621275c7f4fd26062158491a0e16d706",
+      "status": "completed"
+    },
+    {
+      "path": "pipelines/simulation/integration_recoverability/runs/extended/ambiguity_rho_0.7/informative/primary/twin_comparison.json",
+      "sha256": "9f5c9d36d3742ded504bd516f9e9920dd5a9d7bed5bb35c7cb38358d0fc007cd",
+      "status": "completed"
+    }
+  ],
+  "scope": "Read-only checksum follow-up of an existing frozen negative control. No models, new worlds, hidden arrays, protected cohorts or causal scoring were run. Reused fits are not independent recovery trials.",
+  "interpretation": "The two saved public input sets remain byte-identical. Their existing reviewed hidden-joint distinction is described in RESULTS.md; this check does not re-estimate that hidden coupling."
+}

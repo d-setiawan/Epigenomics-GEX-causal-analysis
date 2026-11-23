@@ -1,0 +1,59 @@
+[
+  {
+    "database": "Europe PMC, PubMed-indexed MED records",
+    "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:\"single-cell\" OR TITLE_ABS:\"single cell\") AND (TITLE_ABS:\"multi-omics\" OR TITLE_ABS:multimodal) AND TITLE_ABS:integration AND FIRST_PDATE:[1900-01-01 TO 2026-11-01] AND SRC:MED",
+      "format": "json",
+      "pageSize": 100,
+      "resultType": "core",
+      "cursorMark": "*"
+    },
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3A%22single-cell%22+OR+TITLE_ABS%3A%22single+cell%22%29+AND+%28TITLE_ABS%3A%22multi-omics%22+OR+TITLE_ABS%3Amultimodal%29+AND+TITLE_ABS%3Aintegration+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2026-11-01%5D+AND+SRC%3AMED&format=json&pageSize=100&resultType=core&cursorMark=%2A",
+    "sort": "default relevance",
+    "queried_utc": "2026-11-01T06:54:59.745349+00:00",
+    "raw_file": "europepmc_01.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 1347,
+    "next_cursor": "AoIIQNOvpCg1NTQ0NDM2MA=="
+  },
+  {
+    "database": "Europe PMC, PubMed-indexed MED records",
+    "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:unpaired OR TITLE_ABS:diagonal) AND TITLE_ABS:integration AND (TITLE_ABS:cell OR TITLE_ABS:omics) AND FIRST_PDATE:[1900-01-01 TO 2026-11-01] AND SRC:MED",
+      "format": "json",
+      "pageSize": 100,
+      "resultType": "core",
+      "cursorMark": "*"
+    },
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3Aunpaired+OR+TITLE_ABS%3Adiagonal%29+AND+TITLE_ABS%3Aintegration+AND+%28TITLE_ABS%3Acell+OR+TITLE_ABS%3Aomics%29+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2026-11-01%5D+AND+SRC%3AMED&format=json&pageSize=100&resultType=core&cursorMark=%2A",
+    "sort": "default relevance",
+    "queried_utc": "2026-11-01T06:54:59.746379+00:00",
+    "raw_file": "europepmc_02.json",
+    "status": "ok",
+    "returned": 81,
+    "total_hits": 81,
+    "next_cursor": null
+  },
+  {
+    "database": "Europe PMC, PubMed-indexed MED records",
+    "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+    "params": {
+      "query": "(TITLE_ABS:causal OR TITLE_ABS:identifiability) AND (TITLE_ABS:\"data fusion\" OR TITLE_ABS:multimodal OR TITLE_ABS:\"multi-omics\") AND FIRST_PDATE:[1900-01-01 TO 2026-11-01] AND SRC:MED",
+      "format": "json",
+      "pageSize": 100,
+      "resultType": "core",
+      "cursorMark": "*"
+    },
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3Acausal+OR+TITLE_ABS%3Aidentifiability%29+AND+%28TITLE_ABS%3A%22data+fusion%22+OR+TITLE_ABS%3Amultimodal+OR+TITLE_ABS%3A%22multi-omics%22%29+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2026-11-01%5D+AND+SRC%3AMED&format=json&pageSize=100&resultType=core&cursorMark=%2A",
+    "sort": "default relevance",
+    "queried_utc": "2026-11-01T06:54:59.746798+00:00",
+    "raw_file": "europepmc_03.json",
+    "status": "ok",
+    "returned": 100,
+    "total_hits": 2511,
+    "next_cursor": "AoIIQIsIsCg1NTQzMzY4MA=="
+  }
+]

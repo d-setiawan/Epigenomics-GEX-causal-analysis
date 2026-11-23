@@ -1,0 +1,87 @@
+{
+  "schema_version": "ca_boss_v4.cached_random_v418_summary.v1",
+  "algorithm_schema_version": "crossfit_hierarchical_collider.v4.18",
+  "date": "2026-09-01",
+  "retrospective_development_only": true,
+  "new_worlds_or_datasets_created": false,
+  "eligible_cached_world_pool_size": 152,
+  "random_sampling_method": "block_balanced_without_replacement_within_panel",
+  "panel_world_evaluations": 96,
+  "unique_existing_worlds": 77,
+  "exact_panel_world_evaluations": 96,
+  "exact_unique_worlds": 77,
+  "total_true_positive_directed_arms": 1152,
+  "total_false_positive_directed_arms": 0,
+  "total_false_negative_directed_arms": 0,
+  "total_strict_reversals": 0,
+  "micro_direct_precision": 1.0,
+  "micro_direct_recall": 1.0,
+  "mean_direct_adjacencies_per_world": 12.0,
+  "focused_tests_passed": 115,
+  "full_evaluation_tests_passed": 436,
+  "unique_worlds_by_block": {
+    "development_34001_34016": 8,
+    "development_47001_47016": 12,
+    "train_39001_39024": 9,
+    "train_40001_40024": 13,
+    "train_41001_41024": 12,
+    "train_46001_46024": 11,
+    "train_49001_49024": 12
+  },
+  "panels": [
+    {
+      "selection_seed": 20260908,
+      "panel_size": 24,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_final_regression_seed20260908",
+      "phase_a_manifest_sha256": "3538e5302f763363abf34ff932981728099c2435d0b34475c06d38ed2277e602",
+      "phase_b_summary_sha256": "8c4547a76b06f6ad2bfc434cde9e40299c8fe8bb182baa326b6731102420928e"
+    },
+    {
+      "selection_seed": 20260910,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_strong_production_guard_seed20260910",
+      "phase_a_manifest_sha256": "a539fce6d48e87ce6210a19cb82fdd35766729cdd38c1ce5129dfd5b95a45c5f",
+      "phase_b_summary_sha256": "8fd0afcccae5f9c521ef176373a3ad1c6f0ed62da2cd3a81300253bd9ef65929"
+    },
+    {
+      "selection_seed": 20260912,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_fast_seed20260912",
+      "phase_a_manifest_sha256": "503488e9e0dfb6d0a898c814a7235aa6c43a40584563f754dc262cfb25efe596",
+      "phase_b_summary_sha256": "2e5369562fa4d08dc977723e19ca3f80f798874ae53f06b7279d40469da76de0"
+    },
+    {
+      "selection_seed": 20260913,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_fast_seed20260913",
+      "phase_a_manifest_sha256": "ed9bd444a83d74bd6707bc2750568fd7a481725c193f126f9169563a1be18813",
+      "phase_b_summary_sha256": "97fe91a896a59524258020c297f1dd9468cf2d0334c31cc6638f72ecb412f43c"
+    },
+    {
+      "selection_seed": 20260914,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_fast_seed20260914",
+      "phase_a_manifest_sha256": "64eeeaab0f57e8ef0633d9552de8ba7f6f62373dbe629e406ed4277ea5c8a48f",
+      "phase_b_summary_sha256": "d5ee858f2959065c271876888e7344353451e55d316d91bcacfb793c8392568e"
+    },
+    {
+      "selection_seed": 20260915,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_fast_seed20260915",
+      "phase_a_manifest_sha256": "a29f01ed6c00c86985b386c011c39b5ed035e90a9e09a2a42084ba253a603def",
+      "phase_b_summary_sha256": "9e739603d14e163803fbc4c76c8c3c3370221562cc1baf2012af405011059583"
+    },
+    {
+      "selection_seed": 20260916,
+      "panel_size": 12,
+      "output": "Evaluation/outputs/ca_boss_v4/existing_random_panel_v418_fast_seed20260916",
+      "phase_a_manifest_sha256": "619825abfb3e3f5bd391269895699694b65a86755719ecf1e067433b2c8dbc88",
+      "phase_b_summary_sha256": "780864215c41cb0d549414493c7d617fb96cd0be5c9bd84a89e2c5b584b22876"
+    }
+  ],
+  "interpretation": {
+    "within_assay_direct_structure": "retrospectively exact on the sampled cached worlds",
+    "cross_assay_structure": "shared latent-state participation/subspace only",
+    "cell_specific_cross_assay_direct_effects": "not identifiable from disjoint cells under the agreed data contract"
+  }
+}

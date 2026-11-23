@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-01",
+  "reviewer": "scconfluence_adapter",
+  "scope": "Independent pre-fit audit of root runner; owned estimator implementation acknowledged. No scientific input panels fitted during this review.",
+  "status": "approved_with_scope_limits",
+  "must_fix": [],
+  "reviewed_source_sha256": {
+    "project_resources/research/count_mdcrl_2026_11_01/apply_counts.py": "bc6a411efb67c3e3667a6be257e9d116c164c7695eac010a20722edf11f37504",
+    "project_resources/research/count_mdcrl_2026_11_01/protocol.json": "fb50a65d1dc8bfccd43889494686e50ad98407f2a898b1df906452c58c6fc31c",
+    "project_resources/research/count_mdcrl_2026_11_01/count_sources.py": "43d341a81b4160edf95af33124c51c71afb6b0f800f14086dba0c2d88d8d3fff",
+    "project_resources/research/count_mdcrl_2026_11_01/test_apply_counts.py": "c8a1c834412952e4fd97e15f3b3f4f4a0cc77d787327d2ec36a4c6dab8c7ef4f",
+    "project_resources/research/count_mdcrl_2026_11_01/test_count_sources.py": "f7c878b0c67fb42ec3126647e0cc12748c26c74273c36a37d834cbe45b825e47",
+    "project_resources/research/sturma_pilot_2026_11_01/apply_native.py": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+    "project_resources/research/sturma_pilot_2026_11_01/upstream/src/learner.py": "4cf4627befcc2ac3c11dc16a0929bd88a442fc1fb0d259e23bbe794cb5ab5868"
+  },
+  "validation": {
+    "unit_tests": "9 tests passed independently in current scrna_r CPU environment, BLAS threads=1",
+    "additional_fixtures": [
+      "k=0 fit_assay returns empty arrays and eligible mask",
+      "abstained source result bypasses fingerprints without dereferencing None",
+      "empty/absent source pairs yield no forced matches",
+      "fixed discrete integer fixture fit_arm exports strict JSON and NPZ readable with allow_pickle=False, no object arrays"
+    ]
+  },
+  "not_run": [
+    "No scientific fits",
+    "No evaluator references read",
+    "No source or frozen protocol modified"
+  ],
+  "findings": [
+    "Raw counts, positive outside-panel depths and unique IDs validated; original source bytes checked against frozen manifest.",
+    "Source fitting/rank uses deterministic 75% training split; remaining 25% supplies fixed-direction fingerprints. Public test/evaluator reads are absent from this executable.",
+    "Outside-panel proxy exposure is derived from original counts before any permutation and normalized on source-fit rows only.",
+    "Column controls shuffle integer values separately inside source-fit and calibration partitions and exposure strata.",
+    "Both estimators share rank, source seeds and bootstrap resampling seeds; bootstrap direction alignment is within-assay only.",
+    "Source eligibility requires finite calibration moments/CF, at least26 valid bootstraps, loading stability, tensor fit and no rank-cap binding.",
+    "Pair matching requires finite precision band, unique sign and mutual unique source; all-assay candidates require sign-consistent cliques.",
+    "Native graph stage is called only on >=2 all-assay candidates and explicitly labeled exploratory.",
+    "k=0 and estimator abstention paths preserve artifacts without None/object-array failures."
+  ],
+  "scope_limits": [
+    "Permutation rank is a declared approximate marginal-preserving screen, not a general false-discovery guarantee.",
+    "Finite fingerprint agreement is practical equivalence at specified moments/frequencies, not identification of an entire source law.",
+    "Observed outside-panel depth is a proxy; conditional-Poisson assumptions and independent affine sources remain model assumptions.",
+    "Zero candidate-shared covariance is a prediction/abstention baseline, not evidence that actual cross-assay covariance is zero.",
+    "Uncorrected and corrected low-rank covariance predictions use their declared noise-diagonal conventions; k=0 or constant-feature prediction denominators must remain guarded in the separate evaluator."
+  ]
+}

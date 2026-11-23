@@ -1,0 +1,125 @@
+{
+  "schema_version": "ca_boss_v4.interaction_reporter_rescue_v450_record.v1",
+  "algorithm": "CA-BOSS v4.50 nested interaction-stability reporter rescue",
+  "checkpoint_status": "exploratory_not_promoted",
+  "promoted_to_recommended_checkpoint": false,
+  "score_schema_version": "ca_boss_v4.crossfit_interaction_reporter_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_simulation_truth_used_for_supervised_training": true,
+    "other_block_sentinel_null_roles_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 196,
+      "true_positive_hyperedges": 196,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 113,
+      "precision": 1.0,
+      "recall": 0.6343042071197411
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 316,
+      "correctly_recovered_assay_participations": 316,
+      "precision": 1.0,
+      "recall": 0.511326860841424,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 196,
+      "coverage": 0.6343042071197411,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 266,
+      "average_ambiguity_set_size": 1.3571428571428572,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 158,
+      "exact_cross_assay_pair_true_positives": 158,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.511326860841424,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "base_union": "the target-safe v4.49 shared-state hypotheses",
+    "model_features": [
+      "statistical_context_support_count",
+      "global_reporter_coassignment_context_count",
+      "maximum_reporter_pair_scaled_ks_ratio",
+      "mean_coassigned_pair_exclusion_relative_margin"
+    ],
+    "model": "standardize the four fixed v4.48 signals, expand to degree-two interactions, and fit balanced logistic regression at C=0.02 and C=0.03",
+    "nested_crossfit": "for each target block and regularization, train four models, each excluding the target and one out-of-fold calibration block",
+    "empirical_null": "both regularizations must strictly exceed their maximum corresponding out-of-fold null probabilities",
+    "conflict_handling": "merge connected assay pairs into an unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never direct structure or cross-assay direction"
+  },
+  "new_cached_true_pairs": [
+    {
+      "world_key": "train_46001_46024__world_seed46007",
+      "assay_pair": ["chrom_H3K27ac", "chrom_H3K9me3"]
+    },
+    {
+      "world_key": "train_49001_49024__world_seed49006",
+      "assay_pair": ["chrom_H3K27ac", "chrom_H3K27me3"]
+    },
+    {
+      "world_key": "train_49001_49024__world_seed49014",
+      "assay_pair": ["chrom_H3K4me3", "chrom_H3K9me3"]
+    }
+  ],
+  "posthoc_world_bootstrap_diagnostic": {
+    "replicates": 50,
+    "unit": "whole training world within block",
+    "selection_frequencies": {
+      "train_46001_46024__world_seed46007": 0.12,
+      "train_49001_49024__world_seed49006": 0.02,
+      "train_49001_49024__world_seed49014": 0.0
+    },
+    "all_new_pairs_failed_0_80_stability_threshold": true,
+    "interpretation": "zero cached false positives in a single full fit did not establish selection stability; all three apparent gains are omitted from the recommended checkpoint"
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/crossfit_interaction_reporter_rescue_v450_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "ad82df36aaf0343c874e54da594ccd9a8ebe34019a4ed5356b02ff2369d12c98",
+    "campaign_summary_file_sha256": "70345589f5326c70ffa56a3c7d3f3064a5a2c3b02bc0d4a8d35068ef8af8e995",
+    "campaign_world_metrics_sha256": "d5be1277d9cb8e79dd45f26e6f5599c05e5d4741898c10a824d59bbaeca87a59",
+    "campaign_panels_sha256": "fc3a0405d12366a20a2af457d73d04567d1104a27b967a5b3123e3e2418313ae",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "b54e63b4e5cb1c929be8b28353258d9c4ec29f918f3dc280e21c7aa4df30db57",
+      "development_47001_47016": "c1af63759ee80ca74dbfea672808c90fee933a0b1f75d922f29ecb8f99c69dec",
+      "train_41001_41024": "b850a3775bf5c3a79a9522f686994eadfaa0a7e5393adb646f48b0f25c8676bb",
+      "train_46001_46024": "2fdb7d261168e61e011b6dcfda29ac0a93dc6133d0bc985736c1655a28128aeb",
+      "train_49001_49024": "3b753c9f7cfa2a20bacbf6688318d14bbf9889bea76ce1de31f95efd0b157b86"
+    },
+    "calibrator_source_sha256": "2e1065c70c7ebe24ab18b63442236689e10fa2f7c5f20b2fcca455a1530ba2cd",
+    "scorer_source_sha256": "1fa8ce499e8f423b854d5cce8bb167503d6a6b73ff0f3a7c9ded256155344ec3"
+  }
+}

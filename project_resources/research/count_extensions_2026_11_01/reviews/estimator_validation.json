@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-01",
+  "tests": 11,
+  "status": "passed",
+  "runtime_seconds": 1.1,
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/dgsetiawan/anaconda3/envs/scrna_r/bin/python -m pytest -q test_extension_estimators.py",
+  "source_sha256": {
+    "extension_estimators.py": "f3d674ebf511b9831868281b8fd9dea4a6682bb1730fc75bb5010b54b8febf17",
+    "test_extension_estimators.py": "017980de2a0866cc2e2414c9c9dfb43d4ad0b149479c7359fa26ba56dff46e32",
+    "reviews/estimator_grounding.md": "dfedcc1d7ffa92cb6f40c96f79ada58a8aeb156e13e05e31b8f82f099b9f5214"
+  },
+  "scope": [
+    "Exact conditional Poisson/NB/independent-dropout moment and CF probability sums",
+    "Poisson projected tensor and moments agree with unchanged prior estimator",
+    "NB/ZI projected tensor agrees with scalar Bell moment contractions",
+    "PGF Hessian agrees with finite-difference log-PGF derivatives",
+    "Five-group shrinkage changes relative tensor entries and uses unshrunk eligibility residual",
+    "All kernel sensitivities preserve observed-rate mean and scale",
+    "Successful fits have unit modeled source variance and W B identity",
+    "300-feature computations retain only low-dimensional cubic tensor",
+    "Zero-rank and invalid-model combinations handled explicitly",
+    "Generalized CF supports sign conjugacy, valid zero products and numerical abstention",
+    "Retained exact constant-rate columns preserve positive modes, C3/shrink sources, zero loadings and source unit variance"
+  ],
+  "not_used": [
+    "Scientific benchmark panels",
+    "Test/evaluator references",
+    "New environments or package installation",
+    "Changes to completed pilot sources"
+  ],
+  "independent_review": "Initial full algebra/code audit passed; separate reviewer mathematically approved exact-constant preconditioner and requested the new parity test. Final theory preflight and algebra receipts bind the revised source; see prefit_theory_review.json and extension_algebra_audit.json."
+}

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Pre-commit: block documentation drift.
 #
-# Enabled repo-locally via `git config core.hooksPath .githooks` (see docs/README.md).
+# Enabled repo-locally via `git config core.hooksPath .githooks` (see project_resources/research/README.md).
 # Because it lives in the repo rather than .git/hooks, it is version-controlled and
 # every clone gets it after one `git config` call.
 #
-# Runs docs/check_docs.py only when markdown (or the checker itself) is staged, so
+# Runs the documentation checker only when markdown (or the checker itself) is staged, so
 # code-only commits stay fast. Bypass in an emergency with `git commit --no-verify`.
 set -uo pipefail
 
@@ -13,7 +13,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT" || exit 0
 
 staged="$(git diff --cached --name-only --diff-filter=ACMR)"
-echo "$staged" | grep -qE '\.md$|docs/check_docs\.py$' || exit 0
+echo "$staged" | grep -qE '\.md$|project_resources/research/check_docs\.py$' || exit 0
 
 # Prefer the project env; fall back to whatever python is on PATH.
 PY="/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python"
@@ -21,15 +21,15 @@ PY="/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python"
 [ -n "$PY" ] || { echo "pre-commit: no python found, skipping doc check"; exit 0; }
 
 echo "pre-commit: checking documentation…"
-if ! "$PY" docs/check_docs.py --quiet; then
+if ! "$PY" project_resources/research/check_docs.py --quiet; then
     cat <<'MSG'
 
 pre-commit: BLOCKED — documentation drift detected (see above).
 
   Fix the problems, or:
-    - a caveat belongs only in docs/LIMITATIONS.md
+    - a caveat belongs only in project_resources/research/LIMITATIONS.md
     - result numbers belong only in */results/*.md
-    - if a claim was corrected, add it to FACTS in docs/check_docs.py
+    - if a claim was corrected, add it to FACTS in project_resources/research/check_docs.py
 
   Bypass (discouraged):  git commit --no-verify
 MSG

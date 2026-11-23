@@ -1,0 +1,196 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_joint_context_stratified_stability_rescue_v458_record.v1",
+  "algorithm": "CA-BOSS v4.58 joint local-context-stratified stability rescue",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_joint_context_stratified_stability_rescue.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "cell_level_transport_coupling_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_positive_labels_used_for_score_fit": false,
+    "other_block_null_labels_used_for_empirical_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 238,
+      "true_positive_hyperedges": 238,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 71,
+      "precision": 1.0,
+      "recall": 0.7702265372168284
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 400,
+      "correctly_recovered_assay_participations": 400,
+      "false_positive_assay_participations": 0,
+      "false_negative_assay_participations": 218,
+      "precision": 1.0,
+      "recall": 0.6472491909385113,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 238,
+      "coverage": 0.7702265372168284,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 308,
+      "average_ambiguity_set_size": 1.2941176470588236,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 200,
+      "exact_cross_assay_pair_true_positives": 200,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.6472491909385113,
+      "exact_cross_assay_pair_abstention_rate": 0.3527508090614887,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v455_empirical_null_calibrated_w2_stability": {
+      "true_positive_hyperedges": 213,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6893203883495146
+    },
+    "v456_joint_sliced_geometry_diagnostic": {
+      "promoted": false,
+      "first_random_40_raw_joint_additions": {"true": 8, "false": 3},
+      "second_random_40_raw_joint_additions": {"true": 7, "false": 1},
+      "first_random_40_copula_additions": {"true": 3, "false": 0},
+      "second_random_40_copula_additions": {"true": 3, "false": 2},
+      "remaining_23_intersection_confirmed_additions": 0,
+      "interpretation": "joint sliced-distribution geometry carried signal, but neither the raw nor copula route was precision-safe and their intersection added nothing"
+    },
+    "v457_global_null_stability_diagnostic": {
+      "promoted": false,
+      "new_additions": 0,
+      "worst_null_selection_counts_by_target_block": {
+        "development_34001_34016": 99,
+        "development_47001_47016": 96,
+        "train_41001_41024": 100,
+        "train_46001_46024": 97,
+        "train_49001_49024": 96
+      },
+      "interpretation": "a global maximum null was nearly or fully stable in every target fit, so global threshold relaxation was rejected"
+    },
+    "v458_context_stratified_stability": {
+      "true_positive_hyperedges": 238,
+      "false_positive_hyperedges": 0,
+      "recall": 0.7702265372168284,
+      "incremental_true_hyperedges": 25,
+      "incremental_false_hyperedges": 0,
+      "incremental_assay_participations": 50,
+      "interpretation": "calibration restricted to the same observable three-of-three local mutual-nearest context stratum separates 25 stable joint-geometry proposals from the global catastrophic nulls"
+    }
+  },
+  "method_contract": {
+    "proposal_source": "nominal v4.57 raw joint four-feature rank-product proposals new relative to the target-safe v4.55 union",
+    "joint_geometry_signals": [
+      "statistical context support",
+      "joint sliced-distribution global component coassignment count",
+      "negative maximum normalized joint sliced reporter cost",
+      "mean joint sliced global exclusion margin"
+    ],
+    "target_candidate_bootstrap": "100 whole-world resamples under the frozen v4.57 raw joint geometry rule",
+    "context_stratum": "strict local mutual-nearest reporter agreement in the full fit and both disjoint held-out-background-feature folds",
+    "null_reference": "maximum selection count among every labelled null assay pair in four non-target blocks that also occupies the three-of-three local-consensus stratum",
+    "null_count_estimation": "each candidate calibration block is scored in three folds whose null labels exclude both the target and candidate blocks",
+    "target_evidence_role_in_null_fit": "unlabelled empirical-rank training data only",
+    "majority_gate": "strictly more than 50 of 100 refits",
+    "empirical_null_gate": "target selection count strictly exceeds the worst same-stratum non-target null count",
+    "uncertainty_gate": "working Beta(1,1) probability that the target selection probability exceeds the same-stratum worst-null probability is at least 0.975",
+    "uncertainty_caveat": "bootstrap refits are dependent and are not treated as independent Bernoulli trials; the Beta comparison is a conservative working score, not a calibrated posterior",
+    "base_union": "target-safe v4.55 hypotheses",
+    "perfect_matching_assumed": false,
+    "fixed_shared_relationship_count_assumed": false,
+    "cell_coupling_constructed": false,
+    "conflict_handling": "merge connected assay pairs into one unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never within-assay direct structure, exact cross-assay feature identity, or direction"
+  },
+  "context_stratum_audit": {
+    "diagnostic_proposals_new_relative_to_v455": 30,
+    "diagnostic_true_proposals": 27,
+    "diagnostic_false_proposals": 3,
+    "false_proposals_with_three_of_three_local_context_agreement": 0,
+    "true_proposals_with_three_of_three_local_context_agreement": 26,
+    "true_proposals_with_two_of_three_local_context_agreement": 1,
+    "retrospective_stratum_choice": true,
+    "retrospective_stratum_choice_interpretation": "the three-of-three stratum was selected after truth-separated inspection of the cached diagnostic proposals; it is a development result requiring future locked confirmation, not an independently certified rule",
+    "worst_same_stratum_null_selection_counts_by_target_block": {
+      "development_34001_34016": 0,
+      "development_47001_47016": 1,
+      "train_41001_41024": 78,
+      "train_46001_46024": 0,
+      "train_49001_49024": 0
+    },
+    "new_additions_by_target_block": {
+      "development_34001_34016": 6,
+      "development_47001_47016": 3,
+      "train_41001_41024": 6,
+      "train_46001_46024": 5,
+      "train_49001_49024": 5
+    }
+  },
+  "published_method_inspiration": {
+    "unpaired_multi_domain_causal_representation": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning, DOI 10.52202/075280-1496",
+    "mmd_ma": "Liu, Huang, Singh, Vert, and Noble (WABI 2019), Jointly Embedding Multiple Single-Cell Omics Measurements, DOI 10.4230/LIPIcs.WABI.2019.10",
+    "scot": "Demetci, Santorella, Sandstede, Noble, and Singh (Journal of Computational Biology 2022), SCOT: Single-Cell Multi-Omics Alignment with Optimal Transport, DOI 10.1089/cmb.2021.0446",
+    "sliced_wasserstein": "Yi and Liu (PMLR 2023), Sliced Wasserstein Variational Inference, https://proceedings.mlr.press/v189/yi23a.html",
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "relationship": "V4.58 adapts distributional latent-component matching, multi-view agreement, and empirical-null stability calibration. No publication contributes data, correspondence, modality identity, feature identity, biological priors, or an identifiability guarantee for this simulator."
+  },
+  "limitations": {
+    "remaining_shared_state_hyperedge_abstentions": 71,
+    "complete_recovery_achieved": false,
+    "fresh_locked_generalization_established": false,
+    "cross_assay_direction_identified": false,
+    "shared_component_rank_is_estimated": false,
+    "working_beta_score_is_a_calibrated_posterior": false,
+    "context_stratum_was_selected_before_truth_inspection": false,
+    "interpretation": "V4.58 is the strongest conservative cached-world checkpoint, but all 103 worlds and truth-separated diagnostics informed method development. Its 1.0 retrospective precision does not establish out-of-sample completeness or identify direct cross-assay effects from disjoint cells."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_joint_context_stratified_stability_rescue_v458_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "7b2324fcef4483388b6887859d1e8a24e9ea8f9be0100f5905381482ca478d4b",
+    "campaign_summary_file_sha256": "a4d4d6a2797b733cdad45c8c54da1b04065313fcfca24604e352a109700575e0",
+    "campaign_world_metrics_sha256": "8aae4e86d3b6b40a37933bab02d4a426bd201eb782dceb739ed2866aeb6672ee",
+    "campaign_panels_sha256": "04ae5fea7d138fa42f462e9a38d3ddc99b51da85b2c7480f614e367df33b4638",
+    "joint_evidence_manifest_payload_sha256": "64206628bcf60d78d51602887569e452d267c72c7e67a1df79efb8eff6f412d6",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "5ac2fe345d0c8370536a420b553445f528c5f86ca38b1555deb25eeb7f96c34c",
+      "development_47001_47016": "2da25dd0cee4cd7c7c88c8e98cacfa3b82e47f55f653a7011a1d5ad6bf89efbb",
+      "train_41001_41024": "4c3cca7661446d221d2f54698d59bb05923729d3cbe5bf750aef31e16f1df31f",
+      "train_46001_46024": "35ae052807b110940f6e87492899726cad9596add42d217a64ab6cebb60624c3",
+      "train_49001_49024": "c14a60dbfec7a2ca29478d3a515e55330b4eb36d53c20b85c04780e27743d575"
+    },
+    "joint_evidence_source_sha256": "49a325b6624d5f13f7b5e816024432a94e4bee066539f937bef735fda23e4c79",
+    "v457_diagnostic_source_sha256": "ba26d40d6affd022362621980428a5002ae7b7f2aaf19d7b4477908312ae0cb4",
+    "v458_diagnostic_source_sha256": "2dc567ffbf2259c1c8e4b7a615083cde48c8d85d849f4ee5ca81a085bda82682",
+    "calibrator_source_sha256": "fd04c33a7190245f8f602ac1c02fb62563513bfe7d1e0dd035b11a193a3d3a1a",
+    "scorer_source_sha256": "8a47709b48c29d8d0465b9369e4b1228f950f079ff72e8dc68ceac31c17d9cd1"
+  }
+}

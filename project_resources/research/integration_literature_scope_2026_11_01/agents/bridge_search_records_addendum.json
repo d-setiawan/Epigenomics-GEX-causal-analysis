@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-01",
+  "review_type": "targeted supplementary checks after central OpenAlex discovery",
+  "reason": "Parent requested Mowgli and scMoMaT as paired/mosaic boundary methods; no new broad discovery queries.",
+  "searches": [
+    {
+      "id": "supplementary_web_10",
+      "tool": "web.run.search_query",
+      "queries": [
+        {
+          "q": "scMoMaT mosaic integration matrix tri-factorization Nature Methods Nature Communications 2023",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        },
+        {
+          "q": "Paired single-cell multi-omics data integration with Mowgli",
+          "domains": [
+            "nature.com",
+            "pmc.ncbi.nlm.nih.gov",
+            "pubmed.ncbi.nlm.nih.gov"
+          ]
+        }
+      ],
+      "response_length": "long",
+      "result_urls": [
+        "https://www.nature.com/articles/s41467-023-36066-2",
+        "https://www.nature.com/articles/s41467-023-43019-2",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10673889/",
+        "https://www.nature.com/articles/s41467-023-43019-2.pdf",
+        "https://www.nature.com/articles/s41467-026-72570-x",
+        "https://www.nature.com/articles/s41467-022-28431-4",
+        "https://pubmed.ncbi.nlm.nih.gov/38696763/",
+        "https://www.nature.com/articles/s41467-025-60899-8",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12664900/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11304929/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13539111/",
+        "https://www.nature.com/articles/s41467-026-73055-7",
+        "https://github.com/PeterZZQ/scMoMaT",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10066026/"
+      ],
+      "screening": "Retain only primary Mowgli/scMoMaT publications; final scMoMaT article replaces related central-corpus preprint for extraction."
+    }
+  ],
+  "primary_read_requests": [
+    {
+      "id": "primary_read_batch_8",
+      "tool": "web.run",
+      "commands": {
+        "open": [
+          {
+            "ref_id": "https://www.nature.com/articles/s41467-023-36066-2"
+          },
+          {
+            "ref_id": "https://www.nature.com/articles/s41467-023-43019-2"
+          }
+        ],
+        "response_length": "long"
+      },
+      "result_urls": [
+        "https://www.nature.com/articles/s41467-023-43019-2"
+      ]
+    },
+    {
+      "id": "primary_read_batch_9",
+      "tool": "web.run",
+      "commands": {
+        "find": [
+          {
+            "ref_id": "turn188search0",
+            "pattern": "pseudo"
+          },
+          {
+            "ref_id": "turn192view1",
+            "pattern": "Methods"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://www.nature.com/articles/s41467-023-36066-2?error=cookies_not_supported"
+          },
+          {
+            "ref_id": "turn192view1",
+            "lineno": 200
+          }
+        ],
+        "response_length": "long"
+      },
+      "result_urls": [
+        "https://www.nature.com/articles/s41467-023-36066-2?error=cookies_not_supported",
+        "https://www.nature.com/articles/s41467-023-43019-2"
+      ]
+    },
+    {
+      "id": "primary_read_batch_10",
+      "tool": "web.run",
+      "commands": {
+        "find": [
+          {
+            "ref_id": "turn193view0",
+            "pattern": "pseudo"
+          },
+          {
+            "ref_id": "turn193view0",
+            "pattern": "Methods"
+          },
+          {
+            "ref_id": "turn193view0",
+            "pattern": "gene activity"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "turn192view1",
+            "lineno": 210
+          }
+        ],
+        "response_length": "long"
+      },
+      "result_urls": [
+        "https://www.nature.com/articles/s41467-023-43019-2",
+        "https://www.nature.com/articles/s41467-023-36066-2?error=cookies_not_supported"
+      ]
+    }
+  ],
+  "access_limitations": "scMoMaT publisher initially redirected to authorization; accessible primary HTML was subsequently read with cookies-not-supported query. No paywall bypass or credentials."
+}

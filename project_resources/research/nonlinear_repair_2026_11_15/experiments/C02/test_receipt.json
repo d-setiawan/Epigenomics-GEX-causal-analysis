@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/home/dgsetiawan/anaconda3/envs/scrna_r/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_core.py"
+  ],
+  "exit_code": 0,
+  "label": "deterministic fixtures only; no scientific fitting",
+  "revision": "v2",
+  "sources": {
+    "core.py": "38e36cb2018469f4cbd662266eb6876fdb3080bce601bbd7b59dff4e73d0cbec",
+    "evaluate.py": "77f6087dde0b396948a4df1e3716faae1a18d02ef64dd413152193d558fcd773",
+    "run.py": "ebc5781237a9602533acd737aec02e70e81490ac5cfba49b977fc31c4f45f336",
+    "test_core.py": "69a475414b5577aef39428915b5e55ad39ebcd8c78a6c8342839305a7c6fab44",
+    "worker.py": "a6f6fb72179a72a1dd2679b47d236bbe51162da33c92a04e264d293cc62c4e6a"
+  },
+  "stderr": "test_certificate_exhaustive (test_core.Checks.test_certificate_exhaustive) ... ok\ntest_likelihood_zero_and_moments (test_core.Checks.test_likelihood_zero_and_moments) ... ok\ntest_official_state_order_and_zero_rates (test_core.Checks.test_official_state_order_and_zero_rates) ... ok\ntest_split_null (test_core.Checks.test_split_null) ... ok\ntest_upstream_selection_semantics (test_core.Checks.test_upstream_selection_semantics) ... ok\ntest_zero_probability_serialization (test_core.Checks.test_zero_probability_serialization) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.496s\n\nOK\n",
+  "stdout": ""
+}

@@ -1,0 +1,49 @@
+{
+  "date_utc": "2026-11-15T04:04:39.494582+00:00",
+  "scope": "Follow-up to user question about nonlinear results; mechanical validation only, no fits, no benchmark generation, no old program rewrite",
+  "status": "passed",
+  "scientific_owner": "ASTRA_REASSESSMENT.md",
+  "prior_program_artifacts_unchanged": 87,
+  "prior_program_seal_sha256": "05d7bee70ab5d85fa70d72861f5599485ffbd154dd313acad726278b1bdc0555",
+  "followup_markdown_files": 5,
+  "navigation_files": 4,
+  "local_links_checked": 218,
+  "link_and_emoji_issues": [],
+  "source_access_receipt": "CITATION_ACCESS_CHECK.json",
+  "source_access_note": "Two OpenReview HEAD requests returned403; primary PDF contents were available through the web reader and inspected by reviewers. This access result is not treated as an invalid citation.",
+  "root_primary_checks": {
+    "opened": [
+      "https://arxiv.org/html/2411.03755",
+      "https://arxiv.org/html/2605.17827",
+      "https://arxiv.org/html/2611.11460"
+    ],
+    "search_queries": [
+      "\"Partial disentanglement for domain adaptation\" Kong 2022",
+      "\"Multi-domain image generation and translation with identifiability guarantees\"",
+      "\"Counterfactual generation with identifiability guarantees\" Yan 2023",
+      "\"Diverse influence component analysis\" Nguyen Fu 2025"
+    ],
+    "scope": "Existing sources and citation-chain identity checks; not a global independent search denominator"
+  },
+  "followup_artifact_hashes": {
+    "ASTRA_REASSESSMENT.md": "d4386b7505ff522a664843f72ce4e52a7c298e37efbcf802b7945ae53da842c9",
+    "CITATION_ACCESS_CHECK.json": "0d67664db6e73a2c20d9003c08696f270de585a04af49cf0fba5882fef81da57",
+    "NONLINEAR_INVENTORY.md": "aca8e8958328a9890233815adbe2942f3c63533274313d521ae2a45233dc58c6",
+    "SEARCH_LOG.json": "3b3c673f9381f135b90b5e547c94f1cc9cd4ba88283e6a0d7be945f0cbabab58",
+    "SHRESTHA_FU_2025_SKEPTIC.md": "cae391cfd0656a224b57d12bf9da5333bc341549e903bdbca1c89c1679753d18",
+    "SKEPTICAL_ASSUMPTION_REVIEW.md": "110198b6046919efd8ad488e330c5f623bfc01fa0d2eb0afa1a8b410080695c6",
+    "TIMILSINA_2026_SKEPTIC.md": "003c6dc05a19817904e323acc034124cabfb17efcca6f3a9ba336a637a7cc03d"
+  },
+  "current_navigation_hashes": {
+    "README.md": "5c10e20c6861a2c794c1cc39710ccba4aaf8fc8ec110e0277426afbe1923ea95",
+    "project_resources/research/README.md": "1ad1b4c6021480c3354096c3f6cd028777461cc2d197c9ab579c991b2c13c039",
+    "project_resources/research/theory/README.md": "41acf94e39dd5f9aee13c30bb791321f1d45deab396dd976253708442049c508",
+    "project_resources/research/ROADMAP.md": "083a7d9c2940149d2a979e20b91871c164fa1fb7c9746a499b9f5db3b9006bb6"
+  },
+  "limits": [
+    "The inventory is bounded and does not claim a total literature count",
+    "Published proof steps and optimizer consistency were not exhaustively reproduced",
+    "A corrected variability assumption and identification theorem remain unverified",
+    "Prior navigation hashes are historical snapshots; living navigation now points to this correction"
+  ]
+}

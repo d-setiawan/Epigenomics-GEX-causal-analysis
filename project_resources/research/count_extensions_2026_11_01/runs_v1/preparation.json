@@ -1,0 +1,185 @@
+[
+  {
+    "dataset": "constrained_collider_0",
+    "depth_parameters": {
+      "RNA:elastic": {
+        "mode": "elastic",
+        "normalization": 3467.0,
+        "beta": 0.9516904542384825,
+        "beta_objective": 17025983.84364663
+      },
+      "H3K27ac:elastic": {
+        "mode": "elastic",
+        "normalization": 1342.5,
+        "beta": 0.9880614433187361,
+        "beta_objective": 891874.085735688
+      },
+      "H3K4me3:elastic": {
+        "mode": "elastic",
+        "normalization": 4865.5,
+        "beta": 1.0028028991492581,
+        "beta_objective": 2724997.1605358263
+      },
+      "RNA:offset": {
+        "mode": "offset",
+        "normalization": 3467.0,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K27ac:offset": {
+        "mode": "offset",
+        "normalization": 1342.5,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K4me3:offset": {
+        "mode": "offset",
+        "normalization": 4865.5,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "RNA:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K27ac:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K4me3:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      }
+    },
+    "rank_cache_entries": 108,
+    "transformed_blocks": 18
+  },
+  {
+    "dataset": "linear_chain_0",
+    "depth_parameters": {
+      "RNA:elastic": {
+        "mode": "elastic",
+        "normalization": 3819.5,
+        "beta": 0.9038114318474567,
+        "beta_objective": 12809167.845797857
+      },
+      "H3K27ac:elastic": {
+        "mode": "elastic",
+        "normalization": 1269.0,
+        "beta": 0.998668853356405,
+        "beta_objective": 826355.687710095
+      },
+      "H3K4me3:elastic": {
+        "mode": "elastic",
+        "normalization": 4975.5,
+        "beta": 1.0067499423859019,
+        "beta_objective": 2716502.3379933294
+      },
+      "RNA:offset": {
+        "mode": "offset",
+        "normalization": 3819.5,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K27ac:offset": {
+        "mode": "offset",
+        "normalization": 1269.0,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K4me3:offset": {
+        "mode": "offset",
+        "normalization": 4975.5,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "RNA:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K27ac:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K4me3:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      }
+    },
+    "rank_cache_entries": 108,
+    "transformed_blocks": 18
+  },
+  {
+    "dataset": "scmtr_seq_s1",
+    "depth_parameters": {
+      "RNA:elastic": {
+        "mode": "elastic",
+        "normalization": 10731.0,
+        "beta": 1.0172693959652919,
+        "beta_objective": 904899.1618220352
+      },
+      "H3K27ac:elastic": {
+        "mode": "elastic",
+        "normalization": 207.0,
+        "beta": 0.9882586959294364,
+        "beta_objective": 19161.3962263015
+      },
+      "H3K4me3:elastic": {
+        "mode": "elastic",
+        "normalization": 244.0,
+        "beta": 1.008806894025334,
+        "beta_objective": 21549.34966686861
+      },
+      "RNA:offset": {
+        "mode": "offset",
+        "normalization": 10731.0,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K27ac:offset": {
+        "mode": "offset",
+        "normalization": 207.0,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "H3K4me3:offset": {
+        "mode": "offset",
+        "normalization": 244.0,
+        "beta": 1.0,
+        "beta_objective": null
+      },
+      "RNA:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K27ac:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      },
+      "H3K4me3:unit": {
+        "mode": "unit",
+        "normalization": 1.0,
+        "beta": 0.0,
+        "beta_objective": null
+      }
+    },
+    "rank_cache_entries": 108,
+    "transformed_blocks": 18
+  }
+]

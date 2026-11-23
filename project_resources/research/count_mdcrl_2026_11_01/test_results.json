@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-01T19:25:11.212752+00:00",
+  "tests_run": 18,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "tests_sha256": {
+    "test_count_sources.py": "f7c878b0c67fb42ec3126647e0cc12748c26c74273c36a37d834cbe45b825e47",
+    "test_apply_counts.py": "c8a1c834412952e4fd97e15f3b3f4f4a0cc77d787327d2ec36a4c6dab8c7ef4f",
+    "test_evaluate_count_sources.py": "215c20f51df59931a10b5072790d517b0088f2a2ca5b8dde4f3e107f28c6e20f"
+  },
+  "runner": "pytest",
+  "junit": "pytest_results.xml",
+  "discovery_note": "The earlier unittest receipt covers nine TestCase tests; pytest also discovers the nine function-based evaluator tests. Both passed."
+}

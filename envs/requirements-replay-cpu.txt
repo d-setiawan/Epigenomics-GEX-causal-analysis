@@ -1,0 +1,15 @@
+# CPU replay of the exact count experiment. Python 3.11.
+numpy==2.2.6
+scipy==1.14.1
+threadpoolctl==3.6.0
+pytest==9.0.2
+# Restore the RNA barcode CSV from the vendor HDF5.
+h5py==3.15.1
+# Pytest dependencies, pinned to the replay environment.
+iniconfig==2.3.0
+packaging==26.0
+pluggy==1.6.0
+Pygments==2.19.2
+# Imported by the frozen count model, including initializer helpers.
+scikit-learn==1.8.0
+joblib==1.5.3

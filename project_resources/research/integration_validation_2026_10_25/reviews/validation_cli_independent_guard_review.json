@@ -1,0 +1,36 @@
+{
+  "confirmed_guards": [
+    "Only predeclared calibrated development worlds, regimes, seeds and candidate settings are accepted.",
+    "Private probe/assessment cohorts are rejected before archive access; scorer requests public identities and states only.",
+    "Confirmation requires frozen selected settings and discovery on separate declared development worlds; no other candidate modes are accepted.",
+    "All planned refitted baseline and alternative settings enter complete all-candidate selection audits; cached baselines are reference diagnostics.",
+    "Candidate comparisons within each complete audit share an outcome-free cross-method/candidate ID intersection, matching pools and common training-derived state scale.",
+    "Primary selector remains mean-over-worlds of the maximum of three pairwise normalized squared-state transport gaps; weighted objective losses are not ranked.",
+    "State probes fit StandardScaler/Ridge only on source-assay training states and transfer unchanged to target assays.",
+    "Matching uses shared latent arrays; true state joins follow pool selection and matching; private latent arrays are not matched.",
+    "Output directories are isolated, changed results cannot be overwritten, and model fitting holds suite/global plus GPU advisory locks.",
+    "Frozen scientific source pins remain unchanged; CLI changes are separately hashed and original first-fit CLI source is archived."
+  ],
+  "created_utc": "2026-10-25T22:52:27.350150+00:00",
+  "findings": [
+    {
+      "description": "public_run previously ignored study.validation_fit_sha256. It now checks the outer study receipt before trusting a validation export seal.",
+      "status": "fixed_by_root_during_review"
+    },
+    {
+      "description": "Cached baseline eligibility references constrain pools, but arbitrary later candidate cell losses could still change an all-candidate intersection. Interim and full results should be compared using their selected-ID hashes. These alternatives use unchanged frozen feature transformations, and the audited first fit preserved every expected cell.",
+      "status": "documented_limitation"
+    }
+  ],
+  "protocol_sha256": "df8e8424f02ea950062c1aad2076f89e9694861d63fe898722bfc3545adbfdf1",
+  "reviewed_source": "pipelines/simulation/integration_recoverability/scripts/validate_integration.py",
+  "reviewed_source_sha256": "8366327f115455b431384af31d741c76e0c005730a80fa6e3b09e1794ef21fb4",
+  "scope": "Read-only code/config review of declaration guards, public-only scorer, selection and confirmation comparison logic; no causal/assessment outcomes read and no training or CUDA operations for this review",
+  "scope_limits": [
+    "No operating-system syscall trace of the completed fit was available; access boundaries were checked from frozen code, public input receipts and output identities.",
+    "The independent first-fit audit hashes checkpoints without deserializing their contents and reconciles input H5AD hashes against frozen manifests without reopening counts.",
+    "Scoring diagnostics assess alignment/conservation; they do not certify the unknown unpaired residual coupling or causal structure."
+  ],
+  "selection_fit_count": 16,
+  "status": "no_remaining_material_issue_found_within_reviewed_scope"
+}

@@ -1,0 +1,88 @@
+{
+  "assays": [
+    "RNA",
+    "H3K27ac",
+    "H3K4me3"
+  ],
+  "assessment_reuse": "These nine worlds and paired assessments were already inspected in the primary experiment; this is not fresh confirmatory evidence.",
+  "assessment_rows": 4000,
+  "calibration_rows": 2000,
+  "chunk_evaluations": 15000,
+  "chunk_iterations": 600,
+  "created_utc": "2026-11-15T23:57:50.900433+00:00",
+  "dimension": "Known true source dimension supplied as an experimental condition",
+  "environment": {
+    "numpy": "2.2.6",
+    "python": "3.11.14",
+    "scipy": "1.14.1"
+  },
+  "exploratory": true,
+  "fit_sizes": [
+    12000
+  ],
+  "gtol": 1e-06,
+  "initialization": "Same physical parameter initialization as the primary optimizer, reparameterized without truth values",
+  "numerical_gates": {
+    "minimum_loading_singular_ratio": 0.001,
+    "minimum_probability_gap": 0.03,
+    "projected_gradient": 1e-06
+  },
+  "optimizer_change": "Two-sided Bernoulli probabilities followed by one global label canonicalization across assays; no truth initialization or new data",
+  "optimizer_modes": [
+    "two_sided_labels"
+  ],
+  "parameter_domain_caveat": "Canonical probabilities can extend below the primary lower bound (approximately 0.00669 rather than 0.05268); changes cannot be attributed solely to label traversal. Generating parameters lie in both classes.",
+  "primary_data_manifest_sha256": "b1e9b2881ac45b191127dda1819583e4c521b52f692e29a9d42bae983110a482",
+  "primary_evaluation_seal_sha256": "d2e9b2317152ab6d512328808939c20b0d87fa99ac5948f7c9f846563b24e4da",
+  "primary_generation_seal_sha256": "d848fdd86a652d6c48b1155470c18ca37331a3e68030fa6b0f0fcf4e4cc33bed",
+  "primary_protocol_sha256": "7b955dc5c9baa8e0514ba609e9530ef6d57924240a6377ee9f749113fbe5f23f",
+  "primary_run": "pipelines/simulation/integration_recoverability/runs/count_transport_matched_v1",
+  "recovery_thresholds": {
+    "covariance_relative_error": 0.1,
+    "oracle_conditional_gap_per_feature": 0.02,
+    "positive_nominal_gain_ci95": true,
+    "transport_relative_error": 0.1
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "selection": "Highest equal-assay per-feature calibration LL among gradient-converged finite starts; otherwise highest finite diagnostic. No finite start leaves explicit null selection. No truth-based or paired-assessment reselection.",
+  "sources": {
+    "pipelines/simulation/integration_recoverability/count_transport_converged.py": "82ef9c17d70fdf9f9d6e1d6bdb65332b8c9716d470f4036b0bcf56490b6edd68",
+    "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+    "pipelines/simulation/integration_recoverability/count_transport_label_optimizer.py": "58f82166e28a731da7456552a921fc52696940bf94f1b4d970336f4054ccf4b0",
+    "pipelines/simulation/integration_recoverability/count_transport_label_run.py": "a088b412128df79621450b03587772407161085b236650266d685811c0f08e84",
+    "pipelines/simulation/integration_recoverability/count_transport_matched.py": "c89c92f6d52d50caa03448af721c429dca88db9ca2af83c5890c32f7205cffca",
+    "pipelines/simulation/integration_recoverability/count_transport_matched_evaluate.py": "232a3a012945642ecdeb06bba503338c63c5e3d0c760ba6b1400ee363352c825",
+    "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+    "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+    "pipelines/simulation/integration_recoverability/runs/count_transport_labels_v1/PLAN.md": "e0fe6b887a1f219becf8776a7edafb7a98b1834235dc5cdb116b7a623d350359",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_label_optimizer.py": "6d2c216f642cf355a638602d941a0026f9be4c3868dface851344045fe1cba46",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_label_run.py": "e952db2befa05070fc28cea19804dc6eeb675a0db2da81e4db343a8648bc2208",
+    "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched_evaluate.py": "b4b1990f2bc6670e23e9232dbf8929a738e6b2e729c074f2f4b3ba1cf1d54b33",
+    "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+    "project_resources/research/sturma_pilot_2026_11_01/prepare_cached_data_pilot.py": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5"
+  },
+  "uncertainty": "Descriptive fixed-fit paired-row percentile95 intervals with1000resamples; no familywise guarantee and no fresh-test claim",
+  "version": "count_transport_labels_v1",
+  "widths": {
+    "H3K27ac": 24,
+    "H3K4me3": 18,
+    "RNA": 30
+  },
+  "workers": 2,
+  "worlds": [
+    "d1_rep0",
+    "d1_rep1",
+    "d1_rep2",
+    "d2_rep0",
+    "d2_rep1",
+    "d2_rep2",
+    "d3_rep0",
+    "d3_rep1",
+    "d3_rep2"
+  ]
+}

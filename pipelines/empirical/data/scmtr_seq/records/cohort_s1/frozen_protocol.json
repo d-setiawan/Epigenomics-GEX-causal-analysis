@@ -1,0 +1,37 @@
+{
+  "split_seed": 2718,
+  "paired_reserve_before_QC": 600,
+  "split": "Sort SHA256('2718|partition|' + canonical_id); reserve first 600, round-robin remaining across RNA,H3K27ac,H3K4me3 before QC",
+  "RNA_QC": {
+    "counts_min": 1000,
+    "detected_genes_min": 500,
+    "dominant_RT_fraction_strict_min": 0.5,
+    "mitochondrial_fraction_max": 0.05,
+    "valid_RT_tags": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ]
+  },
+  "histone_QC": {
+    "genomic_fragments_min": 250,
+    "training_uses_only_assigned_assay": true
+  },
+  "paired_reference_QC": "All three assay QC conditions; internal complete-case population within 600 reserved source cells",
+  "panel": {
+    "genes": 3,
+    "minimum_detected_cells": 20,
+    "training_detection_fraction": {
+      "RNA": 0.1,
+      "H3K27ac": 0.05,
+      "H3K4me3": 0.05
+    },
+    "hash_prefix": "20261101_causal_panel_v1|",
+    "nonoverlapping_promoters_required": true,
+    "insufficient_eligible_genes": "fail; never relax thresholds"
+  },
+  "encoder_features": "All own-training-positive annotation-matched genes, excluding every promoter overlapping selected panel loci and every associated RNA gene-name alias; no PCA or variance ranking",
+  "identity_policy": "Independent per-assay/per-partition hash row order and opaque IDs; pairing, RT/day labels, source barcodes and panel counts evaluator-only; learner library_depth sums only retained encoder features",
+  "source_QC_caveat": "Published S1 DNA files already used total six-target DNA counts >=2500; this inherited selection cannot be undone using released three-assay inputs"
+}

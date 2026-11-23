@@ -1,0 +1,138 @@
+{
+  "alignment_status": "abstain",
+  "assignments": 0,
+  "control": "original",
+  "dataset": "scmtr_seq_s1",
+  "kernel": "poisson",
+  "paired": {
+    "H3K27ac__H3K4me3": {
+      "status": "abstain",
+      "unscorable_pairs": 0,
+      "valid_pairs": 900,
+      "views": {
+        "30": {
+          "candidate_rmse": [],
+          "entrywise_range": null,
+          "zero_baseline_rmse": 0.05187225040261178
+        }
+      }
+    },
+    "RNA__H3K27ac": {
+      "status": "abstain",
+      "unscorable_pairs": 0,
+      "valid_pairs": 900,
+      "views": {
+        "30": {
+          "candidate_rmse": [],
+          "entrywise_range": null,
+          "zero_baseline_rmse": 0.06156760463864928
+        }
+      }
+    },
+    "RNA__H3K4me3": {
+      "status": "abstain",
+      "unscorable_pairs": 0,
+      "valid_pairs": 900,
+      "views": {
+        "30": {
+          "candidate_rmse": [],
+          "entrywise_range": null,
+          "zero_baseline_rmse": 0.06199891593725834
+        }
+      }
+    }
+  },
+  "paired_caveat": "selected populations differ and CI completion is an assumption",
+  "panel": 30,
+  "selected_K": 4,
+  "state": {},
+  "within": {
+    "H3K27ac": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -2.77226420575505,
+          "rows": 595,
+          "standardized_mean_rmse": 0.06783432055396033,
+          "standardized_offdiag_covariance_rmse": 0.04840384580286252,
+          "standardized_variance_rmse": 0.47362985213336856,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.011160823890053193,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -2.8311551867709617,
+          "rows": 595,
+          "standardized_mean_rmse": 0.06783432315122606,
+          "standardized_offdiag_covariance_rmse": 0.05898690069892081,
+          "standardized_variance_rmse": 0.5237731701479186,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.010519968565265417,
+          "zero_scale_features": 0
+        }
+      }
+    },
+    "H3K4me3": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -3.4546169128957582,
+          "rows": 595,
+          "standardized_mean_rmse": 0.0629014323465201,
+          "standardized_offdiag_covariance_rmse": 0.051182116259329474,
+          "standardized_variance_rmse": 0.49468680153032923,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.008817624961007554,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -3.710818018276517,
+          "rows": 595,
+          "standardized_mean_rmse": 0.06290142985866981,
+          "standardized_offdiag_covariance_rmse": 0.06367651260026902,
+          "standardized_variance_rmse": 0.49087768817378635,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.008860214417767751,
+          "zero_scale_features": 0
+        }
+      }
+    },
+    "RNA": {
+      "K1_baseline": {
+        "30": {
+          "features": 30,
+          "log_score": -43.66719393020961,
+          "rows": 595,
+          "standardized_mean_rmse": 0.0580372451166126,
+          "standardized_offdiag_covariance_rmse": 0.13240279373806824,
+          "standardized_variance_rmse": 0.7398247823591267,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.2743040513845777,
+          "zero_scale_features": 0
+        }
+      },
+      "completion": [],
+      "independent": {
+        "30": {
+          "features": 30,
+          "log_score": -35.44998650932478,
+          "rows": 595,
+          "standardized_mean_rmse": 0.058037245740446025,
+          "standardized_offdiag_covariance_rmse": 0.0805508418920112,
+          "standardized_variance_rmse": 0.6293168288969698,
+          "unscorable_covariance_entries": 0,
+          "zero_frequency_rmse": 0.19535375935278523,
+          "zero_scale_features": 0
+        }
+      }
+    }
+  }
+}

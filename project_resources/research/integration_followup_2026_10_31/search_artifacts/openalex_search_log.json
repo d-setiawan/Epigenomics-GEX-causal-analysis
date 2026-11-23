@@ -1,0 +1,50 @@
+{
+  "review_type": "focused narrative, not systematic",
+  "queries": [
+    {
+      "label": "unpaired_counts",
+      "date_utc": "2026-11-01T01:13:41.949489+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "unpaired single cell multiomics integration count optimal transport",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "error_category": "ConnectionError"
+    },
+    {
+      "label": "histone",
+      "date_utc": "2026-11-01T01:13:41.954437+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "RNA histone modification unpaired single cell integration",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "error_category": "ConnectionError"
+    },
+    {
+      "label": "shared_factors",
+      "date_utc": "2026-11-01T01:13:41.955441+00:00",
+      "endpoint": "https://api.openalex.org/works",
+      "params": {
+        "search": "single cell integration unshared features integrative nonnegative matrix factorization",
+        "per_page": 100,
+        "select": "id,doi,display_name,publication_year,primary_location",
+        "sort": "relevance_score:desc",
+        "page": 1
+      },
+      "authentication_mode": "unauthenticated",
+      "pagination": "page 1 only; no exhaustiveness claim",
+      "error_category": "ConnectionError"
+    }
+  ]
+}

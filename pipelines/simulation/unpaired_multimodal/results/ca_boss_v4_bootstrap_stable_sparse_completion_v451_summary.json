@@ -1,0 +1,185 @@
+{
+  "schema_version": "ca_boss_v4.bootstrap_stable_sparse_completion_v451_record.v1",
+  "algorithm": "CA-BOSS v4.51 world-bootstrap-stable sparse completion",
+  "checkpoint_status": "recommended_cached_retrospective_checkpoint",
+  "promoted_to_recommended_checkpoint": true,
+  "score_schema_version": "ca_boss_v4.bootstrap_stable_sparse_completion.scorer.v1",
+  "evaluation_scope": {
+    "cached_worlds_only": true,
+    "world_count": 103,
+    "seed_block_count": 5,
+    "panel_count": 5,
+    "cross_panel_worlds_disjoint": true,
+    "new_worlds_or_datasets_created": false,
+    "external_features_or_priors_used": false,
+    "paired_cells_used": false,
+    "simulator_latent_state_used_for_discovery": false,
+    "other_block_simulation_roles_used_for_supervised_training": true,
+    "other_block_sentinel_null_roles_used_for_null_calibration": true,
+    "target_block_truth_used_for_fit_or_selection": false,
+    "retrospective_development_evidence": true,
+    "fresh_locked_certification": false
+  },
+  "benchmark_metrics": {
+    "shared_state_hyperedge": {
+      "truth_hyperedges": 309,
+      "selected_hyperedges": 187,
+      "true_positive_hyperedges": 187,
+      "false_positive_hyperedges": 0,
+      "false_negative_hyperedges": 122,
+      "precision": 1.0,
+      "recall": 0.6051779935275081
+    },
+    "assay_participation_and_sentinel_false_positive": {
+      "truth_participating_assays": 618,
+      "predicted_participating_assays": 298,
+      "correctly_recovered_assay_participations": 298,
+      "precision": 1.0,
+      "recall": 0.48220064724919093,
+      "ambiguous_assay_participation_hypotheses": 38,
+      "assay_participation_point_abstentions": 38,
+      "candidate_assay_pair_alternatives": 108,
+      "sentinel_false_positive_features": 0,
+      "sentinel_null_feature_opportunities": 1236,
+      "sentinel_false_positive_rate": 0.0
+    },
+    "equivalence_class": {
+      "covered_truth_hyperedges": 187,
+      "coverage": 0.6051779935275081,
+      "coverage_precision": 1.0,
+      "candidate_pair_alternatives": 257,
+      "average_ambiguity_set_size": 1.374331550802139,
+      "maximum_ambiguity_set_size": 6,
+      "candidate_alternatives_expanded_as_edges": false
+    },
+    "identifiability_stress_test": {
+      "label": "identifiability_stress_test_not_expected_success_criterion",
+      "included_in_reliability_gate": false,
+      "exact_cross_assay_truth_pairs": 309,
+      "exact_cross_assay_pair_predictions": 149,
+      "exact_cross_assay_pair_true_positives": 149,
+      "exact_cross_assay_pair_false_positives": 0,
+      "exact_cross_assay_pair_precision": 1.0,
+      "exact_cross_assay_pair_recall": 0.48220064724919093,
+      "cross_assay_direction_identifiable_truths": 0,
+      "cross_assay_direction_predictions": 0,
+      "cross_assay_direction_recovery": null
+    }
+  },
+  "development_history": {
+    "v447_recommended_prebootstrap_baseline": {
+      "true_positive_hyperedges": 185,
+      "false_positive_hyperedges": 0,
+      "recall": 0.598705501618123
+    },
+    "v448_full_fit_not_carried_forward": {
+      "true_positive_hyperedges": 190,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6148867313915858,
+      "reason": "all five additions failed whole-world bootstrap stability"
+    },
+    "v449_full_fit_proposal_source": {
+      "true_positive_hyperedges": 193,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6245954692556634
+    },
+    "v450_full_fit_exploratory_not_promoted": {
+      "true_positive_hyperedges": 196,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6343042071197411,
+      "reason": "all three additions failed whole-world bootstrap stability"
+    },
+    "v451_stability_gated": {
+      "true_positive_hyperedges": 187,
+      "false_positive_hyperedges": 0,
+      "recall": 0.6051779935275081,
+      "interpretation": "lower raw recall than exploratory full-fit variants but a stronger reproducibility claim"
+    }
+  },
+  "method_contract": {
+    "state_source": "held-out background features within each assay",
+    "proposal_source": "only target-safe v4.49 new sparse reporter completions",
+    "base_union": "target-safe v4.47 hypotheses; v4.48 and v4.50 additions are deliberately rolled back",
+    "bootstrap_unit": "whole training world sampled with replacement within its original seed block",
+    "bootstrap_replicates": 100,
+    "bootstrap_frequency_threshold": 0.8,
+    "threshold_comparison": "inclusive greater than or equal",
+    "nested_refit": "rerun both v4.49 regularizations and all four out-of-fold sentinel-null envelopes in every bootstrap replicate",
+    "reporter_selection": "the proposal reporter must remain the unique dual-regularization pass within its unresolved assay",
+    "partner_selection": "reuse only the proposal's previously verified unique all-context synchronization partner",
+    "conflict_handling": "merge connected assay pairs into an unexpanded ambiguity hyperedge",
+    "claim_scope": "shared-state equivalence only; never direct structure or cross-assay direction"
+  },
+  "stability_audit": {
+    "stable_v449_proposals": [
+      {
+        "world_key": "development_47001_47016__world_seed47011",
+        "modality": "chrom_H3K4me2",
+        "reporter_feature": "chr4:3253250-3253449__H3K4me2",
+        "selection_count": 100,
+        "selection_frequency": 1.0,
+        "retained": true
+      },
+      {
+        "world_key": "development_47001_47016__world_seed47012",
+        "modality": "chrom_H3K4me1",
+        "reporter_feature": "chr3:2433750-2433949__H3K4me1",
+        "selection_count": 95,
+        "selection_frequency": 0.95,
+        "retained": true
+      }
+    ],
+    "rejected_v449_proposals": [
+      {
+        "world_key": "train_46001_46024__world_seed46011",
+        "modality": "chrom_H3K4me3",
+        "reporter_feature": "chr5:4539500-4539699__H3K4me3",
+        "selection_count": 46,
+        "selection_frequency": 0.46,
+        "retained": false
+      }
+    ],
+    "new_stable_true_hyperedges_over_v447": 2,
+    "new_stable_false_hyperedges_over_v447": 0
+  },
+  "rejected_diagnostics": {
+    "v448_addition_bootstrap_frequencies": {
+      "development_34001_34016__world_seed34007": 0.1,
+      "development_47001_47016__world_seed47001": 0.14,
+      "train_46001_46024__world_seed46005_pair_1": 0.18,
+      "train_46001_46024__world_seed46005_pair_2": 0.14,
+      "train_49001_49024__world_seed49011": 0.44
+    },
+    "v450_addition_bootstrap_frequencies": {
+      "train_46001_46024__world_seed46007": 0.12,
+      "train_49001_49024__world_seed49006": 0.02,
+      "train_49001_49024__world_seed49014": 0.0
+    },
+    "heterogeneous_svc_qda_full_fit_additions": 3,
+    "heterogeneous_svc_qda_bootstrap_frequency_range": [0.02, 0.04],
+    "interpretation": "full-fit cached precision is insufficient when the selected gains disappear under whole-world resampling"
+  },
+  "published_method_inspiration": {
+    "stability_selection": "Meinshausen and Buehlmann (JRSS B 2010), Stability Selection, DOI 10.1111/j.1467-9868.2010.00740.x",
+    "unpaired_multi_domain_causal_representation": "Sturma, Squires, Drton, and Uhler (NeurIPS 2023), Unpaired Multi-Domain Causal Representation Learning",
+    "permutation_synchronization": "Pachauri, Kondor, and Singh (NeurIPS 2013), Solving the Multi-way Matching Problem by Permutation Synchronization",
+    "multiway_matching": "Tang and Jebara (AISTATS 2017), Initialization and Coordinate Optimization for Multi-way Matching",
+    "relationship": "CA-BOSS combines held-out assay-local state evidence, permutation synchronization, empirical sentinel-null calibration, and whole-world stability selection. The papers contribute methodological ideas only; no external data, pairings, features, or biological priors enter the algorithm."
+  },
+  "artifact_binding": {
+    "campaign_directory": "Evaluation/outputs/ca_boss_v4/bootstrap_stable_sparse_completion_v451_source_current_all103_retrospective_campaign_summary",
+    "campaign_summary_payload_sha256": "5be4a42f7f608d95094c0500e6263261078b7fca29700a9a80adeed08f972e57",
+    "campaign_summary_file_sha256": "bebf38e31c107cbe922ee77237129dc07bf8b06c55d15c5302f2875f6ce44f37",
+    "campaign_world_metrics_sha256": "51f85f918890b6e54bea8fa94e04cc59e0796b833cbb868ede6d431f94c1a0b2",
+    "campaign_panels_sha256": "d08e54325aa767b8a77ba167c570132d09aa95c8830447ad96ce754bbf57824e",
+    "calibration_manifest_payload_sha256_by_target_block": {
+      "development_34001_34016": "f6588633466ff1d15d0bc115d08918683106ad6f7af9e4363ddb40b1af2aecdb",
+      "development_47001_47016": "9c3dfbc09bfb454812f526cb8b568dcfc900068f869360593ddc46ffb4f79ca3",
+      "train_41001_41024": "c4b2ca9c6a509e824cdf996387ea756e9228fc369d4cee315bd09ce8c7f92575",
+      "train_46001_46024": "51db6e1a90e099818e3d938a40c3538b5a2dac7c672a286bc25e098fdf67b474",
+      "train_49001_49024": "4ad9036833fab377133baa9884506672c49a65a19a664a24fc4ae023d79dbf14"
+    },
+    "calibrator_source_sha256": "cf6e2548a794fb5c510fbaf7485e84faa09eb7ba584637b12ca352c8855606f2",
+    "scorer_source_sha256": "13e2e1d8c7bd8c2ab969dd78721b226afc2a801523f441e163e6fc27fb19df47"
+  }
+}

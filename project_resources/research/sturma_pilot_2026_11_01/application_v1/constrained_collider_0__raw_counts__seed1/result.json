@@ -1,0 +1,77 @@
+{
+  "dataset": "constrained_collider_0",
+  "representation": "raw_counts",
+  "ica_seed": 1,
+  "control": "original",
+  "input_hashes": {
+    "data_pilot_v1/public/constrained_collider_0/train/RNA.npz": "9c64027f3d8da8ce04369251671b130a461b823bee3e58f7c5f063798aa9a551",
+    "data_pilot_v1/public/constrained_collider_0/test/RNA.npz": "181b32f204806302d2e7e086be1a82988994a01f27af5757ccd3f6d0f4cb0c1c",
+    "data_pilot_v1/public/constrained_collider_0/train/H3K27ac.npz": "a9ca9ca381f60d96fba9ccd8036e66a512a6bbb3c417de44cb04952a983a78b0",
+    "data_pilot_v1/public/constrained_collider_0/test/H3K27ac.npz": "1bc2db481784ce968617427a3059facb3e5b656882c7c2d5a3faf2c0d83216fc",
+    "data_pilot_v1/public/constrained_collider_0/train/H3K4me3.npz": "27f97346299e09b87509c2b1e2ba6bc14126cd3f07c80c3cec4f996e17e9f418",
+    "data_pilot_v1/public/constrained_collider_0/test/H3K4me3.npz": "f0dd64d0fc643716cd02453a64df4eeb98ad81f353c9591808c5a779ce218d0e"
+  },
+  "train_shapes": [
+    [
+      4000,
+      30
+    ],
+    [
+      4000,
+      30
+    ],
+    [
+      4000,
+      30
+    ]
+  ],
+  "status": "completed",
+  "estimated_domain_ranks": [
+    30,
+    30,
+    30
+  ],
+  "shared_source_count": 0,
+  "adjusted_ks_alpha": 9.259259259259259e-06,
+  "joint_factors": [],
+  "joint_signs": [],
+  "graph_status": "no_shared_sources",
+  "train_encoder_max_abs_parity_errors": [
+    2.2004620348070603e-13,
+    6.110667527536862e-13,
+    4.973799150320701e-14
+  ],
+  "evaluation": {
+    "interpretation": "Joint-moment and source/state diagnostics; no original-feature causal truth score.",
+    "reference_sha256": "91d4edaecb16cad8c8c367ecadd8a4e8c1e3526996ffaec0b0d4662b51bd8ce1",
+    "assays": [
+      {
+        "assay": "RNA",
+        "n_test": 2000,
+        "matched_source_count": 0,
+        "state_dimensions": 2,
+        "source_by_state_correlation": [],
+        "max_abs_source_correlation_per_state": null
+      },
+      {
+        "assay": "H3K27ac",
+        "n_test": 2000,
+        "matched_source_count": 0,
+        "state_dimensions": 2,
+        "source_by_state_correlation": [],
+        "max_abs_source_correlation_per_state": null
+      },
+      {
+        "assay": "H3K4me3",
+        "n_test": 2000,
+        "matched_source_count": 0,
+        "state_dimensions": 2,
+        "source_by_state_correlation": [],
+        "max_abs_source_correlation_per_state": null
+      }
+    ]
+  },
+  "warnings": [],
+  "elapsed_seconds": 6.910305026016431,
+  "arrays_sha256": "742fe226dbdf905a79d6bf152139717663161dcb610fb30cbb6737f281c2b80b"
+}

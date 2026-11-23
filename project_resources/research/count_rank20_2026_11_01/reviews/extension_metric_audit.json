@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "imports_learner_or_evaluator": false,
+  "new_fits": 0,
+  "new_datasets": 0,
+  "counts": {
+    "arms": 54,
+    "failed_arms": 0,
+    "within_assay_views": 324,
+    "real_pair_level_views": 216,
+    "unscorable_scale_views": 0,
+    "state_correlation_matrices": 540,
+    "literal_bootstrap_model_and_zero_checks": 648,
+    "bootstrap_error_identities": 43200,
+    "bootstrap_summary_checks": 216,
+    "nonzero_prediction_views": 0
+  },
+  "aggregate_match_counts_across_arms": {
+    "moment_pairs": 0,
+    "confirmed_pairs": 0,
+    "moment_all_assay": 0,
+    "confirmed_all_assay": 0
+  },
+  "maximum_absolute_numeric_difference": 1.1657341758564144e-15,
+  "literal_resample_indices_prespecified": [
+    0,
+    99,
+    199
+  ],
+  "scope": [
+    "All artifact hashes and both complete seals verified before opening data arrays",
+    "All point covariance/mean metrics, original30 anchors and state summaries replayed",
+    "Both cross-assay prediction levels reconstructed from signed matched loadings",
+    "Literal resamples 0,99,199 verified for every real pair/width/depth/scale scoring context",
+    "All 200 model-versus-zero squared-error identities checked with independent low-rank projections",
+    "All saved bootstrap percentile and positive-improvement summaries reconstructed"
+  ],
+  "limits": [
+    "The all200 error-identity check is conditional on saved zero norms; only the three prespecified literal resamples reconstruct those norms from raw counts here",
+    "A separate 48-fixture independent audit proves implementation parity of the general row-Gram formula, including nonzero predictors and large panels",
+    "Decision-gate replay is owned by the separate fit auditor; this readout replay does not refit or infer causal truth"
+  ],
+  "source_sha256": {
+    "replay_extension_metrics.py": "61ad579e41f2ac43eca21b441b616c27f2fb98b279331f6b713523d1bd384bd6",
+    "protocol.json": "e7c9373a1684d6667e213f247f0f7cee8fa1ce361ebf0394da5801859e5774fc"
+  },
+  "fit_provenance_sha256": "c8ff28601e1a063960a39788a39f44e9f2c7a11c4be463a1c7a328bcc1d7316b",
+  "evaluation_provenance_sha256": "4dd8187da4cc49a34def7c1169710075d3a96b0bbc073f968bcbed2e4549264c"
+}

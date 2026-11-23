@@ -1,0 +1,41 @@
+{
+  "count_transport_matched_v1": {
+    "source_count": 11,
+    "sources": {
+      "pipelines/simulation/integration_recoverability/count_transport_converged.py": "82ef9c17d70fdf9f9d6e1d6bdb65332b8c9716d470f4036b0bcf56490b6edd68",
+      "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+      "pipelines/simulation/integration_recoverability/count_transport_matched.py": "c89c92f6d52d50caa03448af721c429dca88db9ca2af83c5890c32f7205cffca",
+      "pipelines/simulation/integration_recoverability/count_transport_matched_evaluate.py": "232a3a012945642ecdeb06bba503338c63c5e3d0c760ba6b1400ee363352c825",
+      "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+      "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+      "pipelines/simulation/integration_recoverability/runs/count_transport_matched_v1/PLAN.md": "47477b62432271d1b2545c46a4a566118b331daaf6140416a21728794630f2e9",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_converged.py": "a3a2014c44d78e7d27bef40ca5cd6f70f695b20a9af682a68d43166b811c4788",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched.py": "3aac2ca6ca884aa95c4f0d7f85e38d261dda6be3fe5d60db8d8bd27f8a771212",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched_evaluate.py": "b4b1990f2bc6670e23e9232dbf8929a738e6b2e729c074f2f4b3ba1cf1d54b33",
+      "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1"
+    },
+    "fit_seal_sha256": "5006d067bbf115d084f4db1e67e92dc629617227a0ba7b4077853622dc630e08",
+    "evaluation_seal_sha256": "d2e9b2317152ab6d512328808939c20b0d87fa99ac5948f7c9f846563b24e4da"
+  },
+  "count_transport_labels_v1": {
+    "source_count": 14,
+    "sources": {
+      "pipelines/simulation/integration_recoverability/count_transport_converged.py": "82ef9c17d70fdf9f9d6e1d6bdb65332b8c9716d470f4036b0bcf56490b6edd68",
+      "pipelines/simulation/integration_recoverability/count_transport_evaluate.py": "1f315b9a3f54be5029bb62139cec6625398d1183033657cde56bccd1cc253094",
+      "pipelines/simulation/integration_recoverability/count_transport_label_optimizer.py": "58f82166e28a731da7456552a921fc52696940bf94f1b4d970336f4054ccf4b0",
+      "pipelines/simulation/integration_recoverability/count_transport_label_run.py": "a088b412128df79621450b03587772407161085b236650266d685811c0f08e84",
+      "pipelines/simulation/integration_recoverability/count_transport_matched.py": "c89c92f6d52d50caa03448af721c429dca88db9ca2af83c5890c32f7205cffca",
+      "pipelines/simulation/integration_recoverability/count_transport_matched_evaluate.py": "232a3a012945642ecdeb06bba503338c63c5e3d0c760ba6b1400ee363352c825",
+      "pipelines/simulation/integration_recoverability/count_transport_model.py": "0c00dfddf9466197296bf6adb7a8e44e9800a96b474037b908ff411f4418a5dc",
+      "pipelines/simulation/integration_recoverability/count_transport_run.py": "95a7999f2d6fb96ae7af4370ecdb6c93558866434f9d99f276afc305adc8851e",
+      "pipelines/simulation/integration_recoverability/runs/count_transport_labels_v1/PLAN.md": "e0fe6b887a1f219becf8776a7edafb7a98b1834235dc5cdb116b7a623d350359",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_label_optimizer.py": "6d2c216f642cf355a638602d941a0026f9be4c3868dface851344045fe1cba46",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_label_run.py": "e952db2befa05070fc28cea19804dc6eeb675a0db2da81e4db343a8648bc2208",
+      "pipelines/simulation/integration_recoverability/tests/test_count_transport_matched_evaluate.py": "b4b1990f2bc6670e23e9232dbf8929a738e6b2e729c074f2f4b3ba1cf1d54b33",
+      "project_resources/research/nonlinear_repair_2026_11_15/experiments/C01/model.py": "c3303c3f9567fe1e2dfc06147ca0a2f0fc57760c09d2df6ce1d08bab800e27d1",
+      "project_resources/research/sturma_pilot_2026_11_01/prepare_cached_data_pilot.py": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5"
+    },
+    "fit_seal_sha256": "c5161b47a4f9a34b88e8eaf6afe23b46b4f1c0fae674e8f9b529a6994031c270",
+    "evaluation_seal_sha256": "c7f0c99edd4e86fe859ad7e0d539718e0c5ce768f7e4f9af64221e4f60635472"
+  }
+}

@@ -1,0 +1,5200 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 6182,
+    "db_response_time_ms": 139,
+    "page": 1,
+    "per_page": 100,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works with (Poisson lognormal independent components count data) in the full text",
+      "x_new_oql": "get works with (Poisson lognormal independent components count data) in the full text",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "column_id": "fulltext.search",
+            "value": "Poisson lognormal independent components count data",
+            "operator": "has"
+          }
+        ]
+      },
+      "url": "/works?filter=fulltext.search:Poisson lognormal independent components count data&per_page=100",
+      "order": "best matches first",
+      "order_default": true
+    },
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W4414421900",
+      "doi": "https://doi.org/10.1007/s11222-025-10729-0",
+      "title": "Zero-inflation in the multivariate poisson lognormal family",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1007/s11222-025-10729-0",
+        "doi": "https://doi.org/10.1007/s11222-025-10729-0",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s11222-025-10729-0",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S5437875",
+          "display_name": "Statistics and Computing",
+          "issn_l": "0960-3174",
+          "issn": [
+            "0960-3174",
+            "1573-1375"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "doyens",
+            "jufo-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics and Computing",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.researchsquare.com/article/rs-4637786/latest.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4398859958",
+      "doi": "https://doi.org/10.48550/arxiv.2405.14711",
+      "title": "Zero-inflation in the Multivariate Poisson Lognormal Family",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2405.14711",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2405.14711",
+        "pdf_url": "https://arxiv.org/pdf/2405.14711",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2405.14711",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3016602993",
+      "doi": "https://doi.org/10.48550/arxiv.2004.06857",
+      "title": "A parsimonious family of multivariate Poisson-lognormal distributions for clustering multivariate count data",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2004.06857",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2004.06857",
+        "pdf_url": "https://arxiv.org/pdf/2004.06857",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2004.06857",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4408704162",
+      "doi": "https://doi.org/10.1016/j.csbj.2025.03.017",
+      "title": "Multivariate Poisson lognormal distribution for modeling counts from modern biological data: An overview",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1016/j.csbj.2025.03.017",
+        "doi": "https://doi.org/10.1016/j.csbj.2025.03.017",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.csbj.2025.03.017",
+        "pdf_url": "https://www.csbj.org/article/S2001-0370(25)00085-6/pdf",
+        "source": {
+          "id": "https://openalex.org/S2764539591",
+          "display_name": "Computational and Structural Biotechnology Journal",
+          "issn_l": "2001-0370",
+          "issn": [
+            "2001-0370"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Computational and Structural Biotechnology Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.csbj.org/article/S2001-0370(25)00085-6/pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7221532883",
+      "doi": "https://doi.org/10.48550/arxiv.2610.12860",
+      "title": "Latent-Class Poisson-Lognormal Mixed Models for Clustering Multivariate Longitudinal Count Data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2610.12860",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2610.12860",
+        "pdf_url": "https://arxiv.org/pdf/2610.12860",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2610.12860",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3144187446",
+      "doi": "https://doi.org/10.3389/fevo.2021.588292",
+      "title": "The Poisson-Lognormal Model as a Versatile Framework for the Joint Analysis of Species Abundances",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.3389/fevo.2021.588292",
+        "doi": "https://doi.org/10.3389/fevo.2021.588292",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fevo.2021.588292",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fevo.2021.588292/pdf",
+        "source": {
+          "id": "https://openalex.org/S2597028195",
+          "display_name": "Frontiers in Ecology and Evolution",
+          "issn_l": "2296-701X",
+          "issn": [
+            "2296-701X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-40",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Ecology and Evolution",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fevo.2021.588292/pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4393027373",
+      "doi": "https://doi.org/10.48550/arxiv.2403.12561",
+      "title": "A Bayesian multilevel hidden Markov model with Poisson-lognormal emissions for intense longitudinal count data",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2403.12561",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2403.12561",
+        "pdf_url": "https://arxiv.org/pdf/2403.12561",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2403.12561",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1586083680",
+      "doi": "https://doi.org/10.18174/202743",
+      "title": "The analysis of dependent count data",
+      "publication_year": 1987,
+      "primary_location": {
+        "id": "doi:10.18174/202743",
+        "doi": "https://doi.org/10.18174/202743",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.18174/202743",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Agricultural University",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research.wur.nl/en/publications/the-analysis-of-dependent-count-data",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3210244834",
+      "doi": "https://doi.org/10.1016/j.patcog.2023.109401",
+      "title": "Poisson PCA for matrix count data",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1016/j.patcog.2023.109401",
+        "doi": "https://doi.org/10.1016/j.patcog.2023.109401",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.patcog.2023.109401",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S414566",
+          "display_name": "Pattern Recognition",
+          "issn_l": "0031-3203",
+          "issn": [
+            "0031-3203",
+            "1873-5142"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "ccf-b",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Pattern Recognition",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.patcog.2023.109401",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7126211037",
+      "doi": "https://doi.org/10.48550/arxiv.2601.21696",
+      "title": "Independent Component Discovery in Temporal Count Data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2601.21696",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2601.21696",
+        "pdf_url": "https://arxiv.org/pdf/2601.21696",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2601.21696",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2964009495",
+      "doi": "https://doi.org/10.1214/15-aoas838",
+      "title": "Population counts along elliptical habitat contours: Hierarchical modeling using Poisson-lognormal mixtures with nonstationary spatial structure",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1214/15-aoas838",
+        "doi": "https://doi.org/10.1214/15-aoas838",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/15-aoas838",
+        "pdf_url": "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-9/issue-3/Population-counts-along-elliptical-habitat-contours--Hierarchical-modeling-using/10.1214/15-AOAS838.pdf",
+        "source": {
+          "id": "https://openalex.org/S112778392",
+          "display_name": "The Annals of Applied Statistics",
+          "issn_l": "1932-6157",
+          "issn": [
+            "1932-6157",
+            "1941-7330"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-9/issue-3/Population-counts-along-elliptical-habitat-contours--Hierarchical-modeling-using/10.1214/15-AOAS838.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7127922357",
+      "doi": "https://doi.org/10.48550/arxiv.2602.05926",
+      "title": "Poisson Log-Normal Process for Count Data Prediction",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2602.05926",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2602.05926",
+        "pdf_url": "https://arxiv.org/pdf/2602.05926",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2602.05926",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2161903320",
+      "doi": "https://doi.org/10.2139/ssrn.990012",
+      "title": "Fixed and Random Effects Models for Count Data",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.990012",
+        "doi": "https://doi.org/10.2139/ssrn.990012",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.990012",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.990012",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3084572241",
+      "doi": "https://doi.org/10.1534/g3.120.401631",
+      "title": "A Multivariate Poisson Deep Learning Model for Genomic Prediction of Count Data",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1534/g3.120.401631",
+        "doi": "https://doi.org/10.1534/g3.120.401631",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1534/g3.120.401631",
+        "pdf_url": "https://academic.oup.com/g3journal/article-pdf/10/11/4177/37192258/g3journal4177.pdf",
+        "source": {
+          "id": "https://openalex.org/S109822313",
+          "display_name": "G3 Genes Genomes Genetics",
+          "issn_l": "2160-1836",
+          "issn": [
+            "2160-1836"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319844",
+          "host_organization_name": "Genetics Society of America",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319844"
+          ],
+          "host_organization_lineage_names": [
+            "Genetics Society of America"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "G3 Genes|Genomes|Genetics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://academic.oup.com/g3journal/article-pdf/10/11/4177/37192258/g3journal4177.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2137084927",
+      "doi": "https://doi.org/10.1093/biostatistics/kxl008",
+      "title": "Disease mapping and spatial regression with count data",
+      "publication_year": 2006,
+      "primary_location": {
+        "id": "doi:10.1093/biostatistics/kxl008",
+        "doi": "https://doi.org/10.1093/biostatistics/kxl008",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1093/biostatistics/kxl008",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S190140075",
+          "display_name": "Biostatistics",
+          "issn_l": "1465-4644",
+          "issn": [
+            "1465-4644",
+            "1468-4357"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Biostatistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4229836154",
+      "doi": "https://doi.org/10.17771/pucrio.acad.25713",
+      "title": "UM MODELO POISSON-LOGNORMAL PARA PREVIS\u00c3O DA QUANTIDADE IBNR VIA MICRO-DADOS",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.17771/pucrio.acad.25713",
+        "doi": "https://doi.org/10.17771/pucrio.acad.25713",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.17771/pucrio.acad.25713",
+        "pdf_url": "https://www.maxwell.vrac.puc-rio.br/25713/25713.PDF",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PONTIF\u00cdCIA UNIVERSIDADE CAT\u00d3LICA DO RIO DE JANEIRO",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.maxwell.vrac.puc-rio.br/25713/25713.PDF",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2964219675",
+      "doi": "https://doi.org/10.1002/sam.11370",
+      "title": "Sparse estimation of multivariate Poisson log\u2010normal models from count data",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1002/sam.11370",
+        "doi": "https://doi.org/10.1002/sam.11370",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1002/sam.11370",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S40788348",
+          "display_name": "Statistical Analysis and Data Mining The ASA Data Science Journal",
+          "issn_l": "1932-1864",
+          "issn": [
+            "1932-1864",
+            "1932-1872"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistical Analysis and Data Mining: The ASA Data Science Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1602.07337",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4413444302",
+      "doi": "https://doi.org/10.1039/d5ja00230c",
+      "title": "Accurate thresholding using a compound-Poisson-lognormal lookup table and parameters recovered from standard single particle ICP-TOFMS data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1039/d5ja00230c",
+        "doi": "https://doi.org/10.1039/d5ja00230c",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1039/d5ja00230c",
+        "pdf_url": "https://pubs.rsc.org/en/content/articlepdf/2025/ja/d5ja00230c",
+        "source": {
+          "id": "https://openalex.org/S26602194",
+          "display_name": "Journal of Analytical Atomic Spectrometry",
+          "issn_l": "0267-9477",
+          "issn": [
+            "0267-9477",
+            "1364-5544"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320556",
+          "host_organization_name": "Royal Society of Chemistry",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320556"
+          ],
+          "host_organization_lineage_names": [
+            "Royal Society of Chemistry"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc",
+        "license_id": "https://openalex.org/licenses/cc-by-nc",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Analytical Atomic Spectrometry",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://pubs.rsc.org/en/content/articlepdf/2025/ja/d5ja00230c",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W3129802901",
+      "doi": "https://doi.org/10.37394/23206.2020.19.46",
+      "title": "Bayesian Bonus-Malus Premium with Poisson-Lindley Distributed Claim Frequency and Lognormal-Gamma DistributedClaim Severity in Automobile Insurance",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.37394/23206.2020.19.46",
+        "doi": "https://doi.org/10.37394/23206.2020.19.46",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.37394/23206.2020.19.46",
+        "pdf_url": "https://doi.org/10.37394/23206.2020.19.46",
+        "source": {
+          "id": "https://openalex.org/S4210205242",
+          "display_name": "WSEAS TRANSACTIONS ON MATHEMATICS",
+          "issn_l": "1109-2769",
+          "issn": [
+            "1109-2769",
+            "2224-2880"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "anvur-scientific",
+            "poland-20",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320666",
+          "host_organization_name": "World Scientific and Engineering Academy and Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320666"
+          ],
+          "host_organization_lineage_names": [
+            "World Scientific and Engineering Academy and Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "WSEAS TRANSACTIONS ON MATHEMATICS",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.37394/23206.2020.19.46",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1510247938",
+      "doi": "https://doi.org/10.1002/9780470996249.ch16",
+      "title": "Essentials of Count Data Regression",
+      "publication_year": 2003,
+      "primary_location": {
+        "id": "doi:10.1002/9780470996249.ch16",
+        "doi": "https://doi.org/10.1002/9780470996249.ch16",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/9780470996249.ch16",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/9780470996249.ch16",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "A Companion to Theoretical Econometrics",
+        "raw_type": "other"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/9780470996249.ch16",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W2556738441",
+      "doi": "https://doi.org/10.48550/arxiv.1701.05573",
+      "title": "Poisson--Gamma Dynamical Systems",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:1701.05573",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1701.05573",
+        "pdf_url": "https://arxiv.org/pdf/1701.05573",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1701.05573",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3184119917",
+      "doi": "https://doi.org/10.1002/tpg2.20118",
+      "title": "Application of a Poisson deep neural network model for the prediction of count data in genome\u2010based prediction",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1002/tpg2.20118",
+        "doi": "https://doi.org/10.1002/tpg2.20118",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/tpg2.20118",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/tpg2.20118",
+        "source": {
+          "id": "https://openalex.org/S84695101",
+          "display_name": "The Plant Genome",
+          "issn_l": "1940-3372",
+          "issn": [
+            "1940-3372"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310316504",
+          "host_organization_name": "Crop Science Society of America",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310316504"
+          ],
+          "host_organization_lineage_names": [
+            "Crop Science Society of America"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Plant Genome",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/tpg2.20118",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7133476014",
+      "doi": "https://doi.org/10.21203/rs.3.rs-11381825/v1",
+      "title": "Sparse Poisson Log Normal Model for Zero-Inflated Multivariate Count Data",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.21203/rs.3.rs-11381825/v1",
+        "doi": "https://doi.org/10.21203/rs.3.rs-11381825/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.21203/rs.3.rs-11381825/v1",
+        "pdf_url": "https://www.researchsquare.com/article/rs-11381825/latest.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306525896",
+          "display_name": "Research Square",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Research Square",
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.researchsquare.com/article/rs-11381825/latest.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2969233311",
+      "doi": "https://doi.org/10.1098/rsos.191023",
+      "title": "On the physical origin of linguistic laws and lognormality in speech",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1098/rsos.191023",
+        "doi": "https://doi.org/10.1098/rsos.191023",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1098/rsos.191023",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2737558550",
+          "display_name": "Royal Society Open Science",
+          "issn_l": "2054-5703",
+          "issn": [
+            "2054-5703"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319787",
+          "host_organization_name": "Royal Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319787"
+          ],
+          "host_organization_lineage_names": [
+            "Royal Society"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Royal Society Open Science",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1098/rsos.191023",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2167829364",
+      "doi": "https://doi.org/10.2139/ssrn.986620",
+      "title": "Functional Form and Heterogeneity in Models for Count Data",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.986620",
+        "doi": "https://doi.org/10.2139/ssrn.986620",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.986620",
+        "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=986620",
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "SSRN Electronic Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=986620",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2059055510",
+      "doi": "https://doi.org/10.1007/s10651-007-0008-1",
+      "title": "Simulating correlated count data",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.1007/s10651-007-0008-1",
+        "doi": "https://doi.org/10.1007/s10651-007-0008-1",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s10651-007-0008-1",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S43170165",
+          "display_name": "Environmental and Ecological Statistics",
+          "issn_l": "1352-8505",
+          "issn": [
+            "1352-8505",
+            "1573-3009"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Environmental and Ecological Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1778886704",
+      "doi": "https://doi.org/10.2139/ssrn.990011",
+      "title": "Correlation in the Bivariate Poisson Regression Model",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.990011",
+        "doi": "https://doi.org/10.2139/ssrn.990011",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.990011",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.990011",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7169913071",
+      "doi": "https://doi.org/10.48550/arxiv.2607.18009",
+      "title": "Bayesian Conway-Maxwell-Poisson model with spike-and slab priors for dispersed count data with application to football scores",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2607.18009",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://arxiv.org/abs/2607.18009",
+        "pdf_url": "https://arxiv.org/pdf/2607.18009",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2607.18009",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2428811258",
+      "doi": "https://doi.org/10.18297/etd/2458",
+      "title": "Inference for a zero-inflated Conway-Maxwell-Poisson regression for clustered count data.",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.18297/etd/2458",
+        "doi": "https://doi.org/10.18297/etd/2458",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.18297/etd/2458",
+        "pdf_url": "https://ir.library.louisville.edu/cgi/viewcontent.cgi?article=3392&context=etd",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "University of Louisville",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ir.library.louisville.edu/cgi/viewcontent.cgi?article=3392&context=etd",
+        "any_repository_has_fulltext": null
+      }
+    },
+    {
+      "id": "https://openalex.org/W1891683394",
+      "doi": "https://doi.org/10.1080/03610926.2016.1257712",
+      "title": "A new count model generated from mixed Poisson transmuted exponential family with an application to health care data",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1080/03610926.2016.1257712",
+        "doi": "https://doi.org/10.1080/03610926.2016.1257712",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1080/03610926.2016.1257712",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S128350725",
+          "display_name": "Communication in Statistics- Theory and Methods",
+          "issn_l": "0361-0926",
+          "issn": [
+            "0361-0926",
+            "1532-415X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320547",
+          "host_organization_name": "Taylor & Francis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320547",
+            "https://openalex.org/P4310320449"
+          ],
+          "host_organization_lineage_names": [
+            "Taylor & Francis",
+            "Informa"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Communications in Statistics - Theory and Methods",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1504.01097",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1549060837",
+      "doi": "https://doi.org/10.1186/1471-2105-7-157",
+      "title": "Modeling Sage data with a truncated gamma-Poisson model",
+      "publication_year": 2006,
+      "primary_location": {
+        "id": "doi:10.1186/1471-2105-7-157",
+        "doi": "https://doi.org/10.1186/1471-2105-7-157",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/1471-2105-7-157",
+        "pdf_url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/1471-2105-7-157",
+        "source": {
+          "id": "https://openalex.org/S19032547",
+          "display_name": "BMC Bioinformatics",
+          "issn_l": "1471-2105",
+          "issn": [
+            "1471-2105"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-c",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Bioinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/1471-2105-7-157",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7161998288",
+      "doi": "https://doi.org/10.1007/s13253-026-00742-9",
+      "title": "Bayesian Tail Index Learning for Poisson\u2013Tweedie Counts via a Poisson-GIG Bridge",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1007/s13253-026-00742-9",
+        "doi": "https://doi.org/10.1007/s13253-026-00742-9",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s13253-026-00742-9",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s13253-026-00742-9.pdf",
+        "source": {
+          "id": "https://openalex.org/S185969502",
+          "display_name": "Journal of Agricultural Biological and Environmental Statistics",
+          "issn_l": "1085-7117",
+          "issn": [
+            "1085-7117",
+            "1537-2693"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Agricultural, Biological and Environmental Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13253-026-00742-9.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2277881910",
+      "doi": "https://doi.org/10.1111/2041-210x.12552",
+      "title": "Three points to consider when choosing a LM or GLM test for count data",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1111/2041-210x.12552",
+        "doi": "https://doi.org/10.1111/2041-210x.12552",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1111/2041-210x.12552",
+        "pdf_url": "https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.12552",
+        "source": {
+          "id": "https://openalex.org/S1131227",
+          "display_name": "Methods in Ecology and Evolution",
+          "issn_l": "2041-210X",
+          "issn": [
+            "2041-210X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Methods in Ecology and Evolution",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.12552",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1555933177",
+      "doi": null,
+      "title": "Multivariate Poisson hidden Markov models for analysis of spatial counts",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "pmh:oai:ecommons.usask.ca:10388/etd-06072007-091059",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10388/etd-06072007-091059",
+        "pdf_url": "http://hdl.handle.net/10388/etd-06072007-091059",
+        "source": {
+          "id": "https://openalex.org/S4377196608",
+          "display_name": "University Library - University of Saskatchewan (University of Saskatchewan)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I32625721",
+          "host_organization_name": "University of Saskatchewan",
+          "host_organization_lineage": [
+            "https://openalex.org/I32625721"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10388/etd-06072007-091059",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4401377428",
+      "doi": "https://doi.org/10.12691/ajams-12-3-3",
+      "title": "Bayesian Spatial Modelling of Tuberculosis Incidence in Meru County, Kenya Using Conditional Autoregressive(CAR) and Poisson Lognormal(PLN) Models",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.12691/ajams-12-3-3",
+        "doi": "https://doi.org/10.12691/ajams-12-3-3",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.12691/ajams-12-3-3",
+        "pdf_url": "https://pubs.sciepub.com/ajams/12/3/3/ajams-12-3-3.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764458368",
+          "display_name": "American Journal of Applied Mathematics and Statistics",
+          "issn_l": "2328-7292",
+          "issn": [
+            "2328-7292",
+            "2328-7306"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "American Journal of Applied Mathematics and Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pubs.sciepub.com/ajams/12/3/3/ajams-12-3-3.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2035829815",
+      "doi": "https://doi.org/10.1214/10-aoas336",
+      "title": "Bayesian inference for double Pareto lognormal queues",
+      "publication_year": 2010,
+      "primary_location": {
+        "id": "doi:10.1214/10-aoas336",
+        "doi": "https://doi.org/10.1214/10-aoas336",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/10-aoas336",
+        "pdf_url": "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-4/issue-3/Bayesian-inference-for-double-Pareto-lognormal-queues/10.1214/10-AOAS336.pdf",
+        "source": {
+          "id": "https://openalex.org/S112778392",
+          "display_name": "The Annals of Applied Statistics",
+          "issn_l": "1932-6157",
+          "issn": [
+            "1932-6157",
+            "1941-7330"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-4/issue-3/Bayesian-inference-for-double-Pareto-lognormal-queues/10.1214/10-AOAS336.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1870014636",
+      "doi": "https://doi.org/10.1007/s13253-015-0223-4",
+      "title": "Genomic Prediction Models for Count Data",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1007/s13253-015-0223-4",
+        "doi": "https://doi.org/10.1007/s13253-015-0223-4",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s13253-015-0223-4",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s13253-015-0223-4.pdf",
+        "source": {
+          "id": "https://openalex.org/S185969502",
+          "display_name": "Journal of Agricultural Biological and Environmental Statistics",
+          "issn_l": "1085-7117",
+          "issn": [
+            "1085-7117",
+            "1537-2693"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Agricultural, Biological, and Environmental Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13253-015-0223-4.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W1966626570",
+      "doi": "https://doi.org/10.1145/2792838.2800174",
+      "title": "Dynamic Poisson Factorization",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1145/2792838.2800174",
+        "doi": "https://doi.org/10.1145/2792838.2800174",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1145/2792838.2800174",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S7407086088",
+          "display_name": "ACM Conference on Recommender Systems (RecSys)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Proceedings of the 9th ACM Conference on Recommender Systems",
+        "raw_type": "proceedings-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1509.04640",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2998752464",
+      "doi": "https://doi.org/10.48550/arxiv.2001.04343",
+      "title": "Review of Probability Distributions for Modeling Count Data",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2001.04343",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2001.04343",
+        "pdf_url": "https://arxiv.org/pdf/2001.04343",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2001.04343",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2996823046",
+      "doi": "https://doi.org/10.71548/17999",
+      "title": "Inference for Bivariate Conway-Maxwell-Poisson Distribution and Its Application in Modeling Bivariate Count Data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:macsphere.mcmaster.ca:11375/25100",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/11375/25100",
+        "pdf_url": "http://hdl.handle.net/11375/25100",
+        "source": {
+          "id": "https://openalex.org/S4306402139",
+          "display_name": "MacSphere (McMaster University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I98251732",
+          "host_organization_name": "McMaster University",
+          "host_organization_lineage": [
+            "https://openalex.org/I98251732"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11375/25100",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2601035857",
+      "doi": "https://doi.org/10.1214/18-aoas1177",
+      "title": "Variational inference for probabilistic Poisson PCA",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1214/18-aoas1177",
+        "doi": "https://doi.org/10.1214/18-aoas1177",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1214/18-aoas1177",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S112778392",
+          "display_name": "The Annals of Applied Statistics",
+          "issn_l": "1932-6157",
+          "issn": [
+            "1932-6157",
+            "1941-7330"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "doyens",
+            "jufo-3",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319881",
+          "host_organization_name": "Institute of Mathematical Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319881"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Mathematical Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Annals of Applied Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1703.06633",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2953934987",
+      "doi": "https://doi.org/10.1017/s1748499519000034",
+      "title": "Insurance ratemaking using the Exponential-Lognormal regression model",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.1017/s1748499519000034",
+        "doi": "https://doi.org/10.1017/s1748499519000034",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1017/s1748499519000034",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2764823410",
+          "display_name": "Annals of Actuarial Science",
+          "issn_l": "1748-4995",
+          "issn": [
+            "1748-4995",
+            "1748-5002"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "erih-plus",
+            "fnege-4",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311721",
+          "host_organization_name": "Cambridge University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311721",
+            "https://openalex.org/P4310311702"
+          ],
+          "host_organization_lineage_names": [
+            "Cambridge University Press",
+            "University of Cambridge"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Annals of Actuarial Science",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://eprints.lse.ac.uk/101729/1/Annals_of_Act_Sc_LSE.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2160582366",
+      "doi": "https://doi.org/10.1017/s0515036100014495",
+      "title": "Fixed versus Random Effects in Poisson Regression Models for Claim Counts: A Case Study with Motor Insurance",
+      "publication_year": 2006,
+      "primary_location": {
+        "id": "doi:10.1017/s0515036100014495",
+        "doi": "https://doi.org/10.1017/s0515036100014495",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1017/s0515036100014495",
+        "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FA28A28B33A8C0491219202C03140AF3/S0515036100014495a.pdf/div-class-title-fixed-versus-random-effects-in-poisson-regression-models-for-claim-counts-a-case-study-with-motor-insurance-div.pdf",
+        "source": {
+          "id": "https://openalex.org/S92223472",
+          "display_name": "Astin Bulletin",
+          "issn_l": "0515-0361",
+          "issn": [
+            "0515-0361",
+            "1783-1350"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "erih-plus",
+            "fnege-3",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311721",
+          "host_organization_name": "Cambridge University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311721",
+            "https://openalex.org/P4310311702"
+          ],
+          "host_organization_lineage_names": [
+            "Cambridge University Press",
+            "University of Cambridge"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "ASTIN Bulletin",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FA28A28B33A8C0491219202C03140AF3/S0515036100014495a.pdf/div-class-title-fixed-versus-random-effects-in-poisson-regression-models-for-claim-counts-a-case-study-with-motor-insurance-div.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7214452706",
+      "doi": "https://doi.org/10.31801/cfsuasmas.1765197",
+      "title": "Statistical Inference for Multi-sample of Geometric Processes with Lognormal Distribution",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.31801/cfsuasmas.1765197",
+        "doi": "https://doi.org/10.31801/cfsuasmas.1765197",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.31801/cfsuasmas.1765197",
+        "pdf_url": "https://dergipark.org.tr/en/download/article-file/5154707",
+        "source": {
+          "id": "https://openalex.org/S4210232279",
+          "display_name": "Communications Faculty Of Science University of Ankara Series A1Mathematics and Statistics",
+          "issn_l": "1303-5991",
+          "issn": [
+            "1303-5991"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "dongbi-d",
+            "poland-20",
+            "russia-white-list-3",
+            "tr-dizin"
+          ],
+          "host_organization": "https://openalex.org/P4310318375",
+          "host_organization_name": "Ankara University",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310318375"
+          ],
+          "host_organization_lineage_names": [
+            "Ankara University"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Communications Faculty of Sciences University of Ankara Series A1 Mathematics and Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://dergipark.org.tr/en/download/article-file/5154707",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2048502775",
+      "doi": "https://doi.org/10.2967/jnumed.107.048843",
+      "title": "Lognormal Distribution of Cellular Uptake of Radioactivity: Statistical Analysis of \u03b1-Particle Track Autoradiography",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "doi:10.2967/jnumed.107.048843",
+        "doi": "https://doi.org/10.2967/jnumed.107.048843",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2967/jnumed.107.048843",
+        "pdf_url": "https://jnm.snmjournals.org/content/jnumed/49/6/1009.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210180780",
+          "display_name": "Journal of Nuclear Medicine",
+          "issn_l": "0161-5505",
+          "issn": [
+            "0161-5505",
+            "1535-5667",
+            "2159-662X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315767",
+          "host_organization_name": "Society of Nuclear Medicine and Molecular Imaging",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315767"
+          ],
+          "host_organization_lineage_names": [
+            "Society of Nuclear Medicine and Molecular Imaging"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Nuclear Medicine",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://jnm.snmjournals.org/content/jnumed/49/6/1009.full.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W34553451",
+      "doi": "https://doi.org/10.12681/eadd/25175",
+      "title": "Modelling multivariate time series for count data",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.12681/eadd/25175",
+        "doi": "https://doi.org/10.12681/eadd/25175",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.12681/eadd/25175",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "\u039f\u03b9\u03ba\u03bf\u03bd\u03bf\u03bc\u03b9\u03ba\u03cc \u03a0\u03b1\u03bd\u03b5\u03c0\u03b9\u03c3\u03c4\u03ae\u03bc\u03b9\u03bf \u0391\u03b8\u03b7\u03bd\u03ce\u03bd, \u03a4\u03bc\u03ae\u03bc\u03b1 \u03a3\u03c4\u03b1\u03c4\u03b9\u03c3\u03c4\u03b9\u03ba\u03ae\u03c2",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10442/hedi/25175",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2803931329",
+      "doi": "https://doi.org/10.1371/journal.pone.0197338",
+      "title": "A semi-nonparametric Poisson regression model for analyzing motor vehicle crash data",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1371/journal.pone.0197338",
+        "doi": "https://doi.org/10.1371/journal.pone.0197338",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1371/journal.pone.0197338",
+        "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0197338&type=printable",
+        "source": {
+          "id": "https://openalex.org/S202381698",
+          "display_name": "PLoS ONE",
+          "issn_l": "1932-6203",
+          "issn": [
+            "1932-6203"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "erih-plus",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315706",
+          "host_organization_name": "Public Library of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315706"
+          ],
+          "host_organization_lineage_names": [
+            "Public Library of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "PLOS ONE",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0197338&type=printable",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2344653597",
+      "doi": "https://doi.org/10.1523/jneurosci.4944-14.2015",
+      "title": "A Lognormal Recurrent Network Model for Burst Generation during Hippocampal Sharp Waves",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.1523/jneurosci.4944-14.2015",
+        "doi": "https://doi.org/10.1523/jneurosci.4944-14.2015",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1523/jneurosci.4944-14.2015",
+        "pdf_url": "https://www.jneurosci.org/content/jneuro/35/43/14585.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S5555990",
+          "display_name": "Journal of Neuroscience",
+          "issn_l": "0270-6474",
+          "issn": [
+            "0270-6474",
+            "1529-2401"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319739",
+          "host_organization_name": "Society for Neuroscience",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319739"
+          ],
+          "host_organization_lineage_names": [
+            "Society for Neuroscience"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The Journal of Neuroscience",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.jneurosci.org/content/jneuro/35/43/14585.full.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4399172532",
+      "doi": "https://doi.org/10.3389/fmicb.2024.1394204",
+      "title": "A GLM-based zero-inflated generalized Poisson factor model for analyzing microbiome data",
+      "publication_year": 2024,
+      "primary_location": {
+        "id": "doi:10.3389/fmicb.2024.1394204",
+        "doi": "https://doi.org/10.3389/fmicb.2024.1394204",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fmicb.2024.1394204",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2484704948",
+          "display_name": "Frontiers in Microbiology",
+          "issn_l": "1664-302X",
+          "issn": [
+            "1664-302X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Microbiology",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3389/fmicb.2024.1394204",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2970816088",
+      "doi": "https://doi.org/10.32614/rj-2019-022",
+      "title": "SimCorrMix: Simulation of Correlated Data with Multiple Variable Types Including Continuous and Count Mixture Distributions",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.32614/rj-2019-022",
+        "doi": "https://doi.org/10.32614/rj-2019-022",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.32614/rj-2019-022",
+        "pdf_url": "https://journal.r-project.org/archive/2019/RJ-2019-022/RJ-2019-022.pdf",
+        "source": {
+          "id": "https://openalex.org/S2489169438",
+          "display_name": "The R Journal",
+          "issn_l": "2073-4859",
+          "issn": [
+            "2073-4859"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/I4402554076",
+          "host_organization_name": "R Foundation for Statistical Computing",
+          "host_organization_lineage": [
+            "https://openalex.org/I4402554076"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "The R Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.r-project.org/archive/2019/RJ-2019-022/RJ-2019-022.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2340893731",
+      "doi": null,
+      "title": "Bayesian methods for Poisson models",
+      "publication_year": 2000,
+      "primary_location": {
+        "id": "pmh:oai:era.ed.ac.uk:1842/14505",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/1842/14505",
+        "pdf_url": "http://hdl.handle.net/1842/14505",
+        "source": {
+          "id": "https://openalex.org/S7407055182",
+          "display_name": "ERA",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "Thesis or Dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1842/14505",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4379536008",
+      "doi": "https://doi.org/10.1007/s13385-023-00351-7",
+      "title": "EM estimation for bivariate mixed poisson INAR(1) claim count regression models with correlated random effects",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1007/s13385-023-00351-7",
+        "doi": "https://doi.org/10.1007/s13385-023-00351-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s13385-023-00351-7",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s13385-023-00351-7.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764805351",
+          "display_name": "European Actuarial Journal",
+          "issn_l": "2190-9733",
+          "issn": [
+            "2190-9733",
+            "2190-9741"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "European Actuarial Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13385-023-00351-7.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1821329685",
+      "doi": "https://doi.org/10.18637/jss.v063.i11",
+      "title": "geoCount: AnRPackage for the Analysis of Geostatistical Count Data",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "doi:10.18637/jss.v063.i11",
+        "doi": "https://doi.org/10.18637/jss.v063.i11",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.18637/jss.v063.i11",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S167961193",
+          "display_name": "Journal of Statistical Software",
+          "issn_l": "1548-7660",
+          "issn": [
+            "1548-7660"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315759",
+          "host_organization_name": "Foundation for Open Access Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315759"
+          ],
+          "host_organization_lineage_names": [
+            "Foundation for Open Access Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Statistical Software",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.18637/jss.v063.i11",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2501484908",
+      "doi": "https://doi.org/10.1016/j.cam.2016.06.035",
+      "title": "The Weibull\u2013Conway\u2013Maxwell\u2013Poisson distribution to analyze survival data",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1016/j.cam.2016.06.035",
+        "doi": "https://doi.org/10.1016/j.cam.2016.06.035",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.cam.2016.06.035",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0377042716303077/pdf",
+        "source": {
+          "id": "https://openalex.org/S165473669",
+          "display_name": "Journal of Computational and Applied Mathematics",
+          "issn_l": "0377-0427",
+          "issn": [
+            "0377-0427",
+            "1879-1778"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Computational and Applied Mathematics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0377042716303077/pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7154604798",
+      "doi": "https://doi.org/10.66573/001c.142045",
+      "title": "Models of Insurance Claim Counts with Time Dependence Based on Generalization of Poisson and Negative Binomial Distributions",
+      "publication_year": 2008,
+      "primary_location": {
+        "id": "doi:10.66573/001c.142045",
+        "doi": "https://doi.org/10.66573/001c.142045",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.66573/001c.142045",
+        "pdf_url": "https://variancejournal.org/article/142045.pdf",
+        "source": {
+          "id": "https://openalex.org/S7407056956",
+          "display_name": "Variance",
+          "issn_l": "1940-6452",
+          "issn": [
+            "1940-6452"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "abdc-c"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Variance",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://variancejournal.org/article/142045.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W3195010818",
+      "doi": "https://doi.org/10.1016/j.cmpb.2021.106337",
+      "title": "An Accelerated Life Model Analog for Discrete Survival and Count Data",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1016/j.cmpb.2021.106337",
+        "doi": "https://doi.org/10.1016/j.cmpb.2021.106337",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.cmpb.2021.106337",
+        "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0169260721004119/pdf",
+        "source": {
+          "id": "https://openalex.org/S138959710",
+          "display_name": "Computer Methods and Programs in Biomedicine",
+          "issn_l": "0169-2607",
+          "issn": [
+            "0169-2607",
+            "1872-7565"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Computer Methods and Programs in Biomedicine",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0169260721004119/pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4310925380",
+      "doi": "https://doi.org/10.48550/arxiv.2212.03665",
+      "title": "Network Analysis of Count Data from Mixed Populations",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2212.03665",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2212.03665",
+        "pdf_url": "https://arxiv.org/pdf/2212.03665",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2212.03665",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2954619670",
+      "doi": null,
+      "title": "Statistical inference for periodic and partially observable poisson processes",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "pmh:oai:etheses.bham.ac.uk:9000",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://etheses.bham.ac.uk//id/eprint/9000/1/Jovan2019PhD.pdf",
+        "pdf_url": "http://etheses.bham.ac.uk//id/eprint/9000/1/Jovan2019PhD.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306402357",
+          "display_name": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I79619799",
+          "host_organization_name": "University of Birmingham",
+          "host_organization_lineage": [
+            "https://openalex.org/I79619799"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "Thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://etheses.bham.ac.uk//id/eprint/9000/1/Jovan2019PhD.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1968322929",
+      "doi": "https://doi.org/10.1002/sim.6293",
+      "title": "A marginalized zero\u2010inflated Poisson regression model with overall exposure effects",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1002/sim.6293",
+        "doi": "https://doi.org/10.1002/sim.6293",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1002/sim.6293",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S55189604",
+          "display_name": "Statistics in Medicine",
+          "issn_l": "0277-6715",
+          "issn": [
+            "0277-6715",
+            "1097-0258"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics in Medicine",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4227945",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7160944567",
+      "doi": "https://doi.org/10.1080/10618600.2026.2669388",
+      "title": "Stochastic Dispersion Mixed Poisson Spatial-Temporal Regression Models for Climate-Related Claim Counts",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.1080/10618600.2026.2669388",
+        "doi": "https://doi.org/10.1080/10618600.2026.2669388",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1080/10618600.2026.2669388",
+        "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/10618600.2026.2669388?needAccess=true",
+        "source": {
+          "id": "https://openalex.org/S76159266",
+          "display_name": "Journal of Computational and Graphical Statistics",
+          "issn_l": "1061-8600",
+          "issn": [
+            "1061-8600",
+            "1537-2715"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a-star",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-3",
+            "ki-jl-2",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320547",
+          "host_organization_name": "Taylor & Francis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320547",
+            "https://openalex.org/P4310320449"
+          ],
+          "host_organization_lineage_names": [
+            "Taylor & Francis",
+            "Informa"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Computational and Graphical Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/10618600.2026.2669388?needAccess=true",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2336628768",
+      "doi": null,
+      "title": "Bayesian Dynamical Modeling of Count Data",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:etd.ohiolink.edu:osu1315949027",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1315949027",
+        "pdf_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1315949027",
+        "source": {
+          "id": "https://openalex.org/S4377196344",
+          "display_name": "OhioLink ETD Center (Ohio Library and Information Network)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I4210155183",
+          "host_organization_name": "Ohio Library and Information Network",
+          "host_organization_lineage": [
+            "https://openalex.org/I4210155183"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1315949027",
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://rave.ohiolink.edu/etdc/view?acc_num=osu1315949027",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1985812034",
+      "doi": "https://doi.org/10.1186/1471-2164-14-128",
+      "title": "A Poisson hierarchical modelling approach to detecting copy number variation in sequence coverage data",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.1186/1471-2164-14-128",
+        "doi": "https://doi.org/10.1186/1471-2164-14-128",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/1471-2164-14-128",
+        "pdf_url": "https://bmcgenomics.biomedcentral.com/counter/pdf/10.1186/1471-2164-14-128",
+        "source": {
+          "id": "https://openalex.org/S28614077",
+          "display_name": "BMC Genomics",
+          "issn_l": "1471-2164",
+          "issn": [
+            "1471-2164"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "oarl",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Genomics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcgenomics.biomedcentral.com/counter/pdf/10.1186/1471-2164-14-128",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1590281652",
+      "doi": "https://doi.org/10.1186/1476-072x-4-31",
+      "title": "Geostatistical analysis of disease data: estimation of cancer mortality risk from empirical frequencies using Poisson kriging",
+      "publication_year": 2005,
+      "primary_location": {
+        "id": "doi:10.1186/1476-072x-4-31",
+        "doi": "https://doi.org/10.1186/1476-072x-4-31",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/1476-072x-4-31",
+        "pdf_url": "https://ij-healthgeographics.biomedcentral.com/track/pdf/10.1186/1476-072X-4-31",
+        "source": {
+          "id": "https://openalex.org/S28612791",
+          "display_name": "International Journal of Health Geographics",
+          "issn_l": "1476-072X",
+          "issn": [
+            "1476-072X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Health Geographics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ij-healthgeographics.biomedcentral.com/track/pdf/10.1186/1476-072X-4-31",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2282619569",
+      "doi": "https://doi.org/10.1534/g3.116.028118",
+      "title": "Genomic Bayesian Prediction Model for Count Data with Genotype \u00d7 Environment Interaction",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.1534/g3.116.028118",
+        "doi": "https://doi.org/10.1534/g3.116.028118",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1534/g3.116.028118",
+        "pdf_url": "https://www.g3journal.org/content/ggg/6/5/1165.full.pdf",
+        "source": {
+          "id": "https://openalex.org/S109822313",
+          "display_name": "G3 Genes Genomes Genetics",
+          "issn_l": "2160-1836",
+          "issn": [
+            "2160-1836"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-70",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319844",
+          "host_organization_name": "Genetics Society of America",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319844"
+          ],
+          "host_organization_lineage_names": [
+            "Genetics Society of America"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "G3 Genes|Genomes|Genetics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.g3journal.org/content/ggg/6/5/1165.full.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4383301510",
+      "doi": "https://doi.org/10.1093/cercor/bhad160",
+      "title": "Ubiquitous lognormal distribution of neuron densities in mammalian cerebral cortex",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1093/cercor/bhad160",
+        "doi": "https://doi.org/10.1093/cercor/bhad160",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/cercor/bhad160",
+        "pdf_url": "https://academic.oup.com/cercor/advance-article-pdf/doi/10.1093/cercor/bhad160/50828598/bhad160.pdf",
+        "source": {
+          "id": "https://openalex.org/S117898428",
+          "display_name": "Cerebral Cortex",
+          "issn_l": "1047-3211",
+          "issn": [
+            "1047-3211",
+            "1460-2199"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-3",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Cerebral Cortex",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/cercor/advance-article-pdf/doi/10.1093/cercor/bhad160/50828598/bhad160.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2407298264",
+      "doi": null,
+      "title": "On the compound Poisson-gamma distribution",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "pmh:oai:oai.dml.cz:10338.dmlcz/141475",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10338.dmlcz/141475",
+        "pdf_url": "http://dml.cz/bitstream/handle/10338.dmlcz/141475/Kybernetika_47-2011-1_2.pdf",
+        "source": {
+          "id": "https://openalex.org/S4406922294",
+          "display_name": "Czech digital mathematics library",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "type:math"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://dml.cz/bitstream/handle/10338.dmlcz/141475/Kybernetika_47-2011-1_2.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2886016238",
+      "doi": "https://doi.org/10.1007/s40415-018-0496-2",
+      "title": "Periphytic algae traits are mainly lognormally distributed in a neotropical floodplain tributary",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1007/s40415-018-0496-2",
+        "doi": "https://doi.org/10.1007/s40415-018-0496-2",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s40415-018-0496-2",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2497724177",
+          "display_name": "Revista Brasileira de Bot\u00e2nica",
+          "issn_l": "0100-8404",
+          "issn": [
+            "0100-8404",
+            "1806-9959"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-d",
+            "poland-40",
+            "russia-white-list-2"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Brazilian Journal of Botany",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7154612519",
+      "doi": "https://doi.org/10.66573/001c.142026",
+      "title": "Pricing Multiple Property Cover Based on a Bivariate Lognormal Distribution",
+      "publication_year": 2007,
+      "primary_location": {
+        "id": "doi:10.66573/001c.142026",
+        "doi": "https://doi.org/10.66573/001c.142026",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.66573/001c.142026",
+        "pdf_url": "https://variancejournal.org/article/142026.pdf",
+        "source": {
+          "id": "https://openalex.org/S7407056956",
+          "display_name": "Variance",
+          "issn_l": "1940-6452",
+          "issn": [
+            "1940-6452"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [
+            "abdc-c"
+          ],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Variance",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://variancejournal.org/article/142026.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4384698860",
+      "doi": "https://doi.org/10.17713/ajs.v52i3.1465",
+      "title": "Using the Discrete Lindley Distribution to Deal with Over-dispersion in Count Data",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.17713/ajs.v52i3.1465",
+        "doi": "https://doi.org/10.17713/ajs.v52i3.1465",
+        "is_oa": true,
+        "landing_page_url": "http://dx.doi.org/10.17713/ajs.v52i3.1465",
+        "pdf_url": "https://www.ajs.or.at/index.php/ajs/article/download/1465/789",
+        "source": {
+          "id": "https://openalex.org/S2764411241",
+          "display_name": "Austrian Journal of Statistics",
+          "issn_l": "1026-597X",
+          "issn": [
+            "1026-597X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "ddh",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310317894",
+          "host_organization_name": "Austrian Journal of Statistics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310317894"
+          ],
+          "host_organization_lineage_names": [
+            "Austrian Journal of Statistics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Austrian Journal of Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.ajs.or.at/index.php/ajs/article/download/1465/789",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2803648513",
+      "doi": "https://doi.org/10.11606/d.76.2017.tde-25052017-110738",
+      "title": "Structural, functional and dynamical properties of a lognormal network of bursting neurons",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.11606/d.76.2017.tde-25052017-110738",
+        "doi": "https://doi.org/10.11606/d.76.2017.tde-25052017-110738",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.11606/d.76.2017.tde-25052017-110738",
+        "pdf_url": "http://www.teses.usp.br/teses/disponiveis/76/76131/tde-25052017-110738/publico/MilenaMenezesCarvalho_ME_corrigida.pdf",
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Universidade de S\u00e3o Paulo",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://www.teses.usp.br/teses/disponiveis/76/76131/tde-25052017-110738/publico/MilenaMenezesCarvalho_ME_corrigida.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2006580754",
+      "doi": "https://doi.org/10.14490/jjss1995.25.193",
+      "title": "ANALYSIS OF COUNT DATA USING POWER VARIANCE FUNCTION",
+      "publication_year": 1995,
+      "primary_location": {
+        "id": "doi:10.14490/jjss1995.25.193",
+        "doi": "https://doi.org/10.14490/jjss1995.25.193",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.14490/jjss1995.25.193",
+        "pdf_url": "https://www.jstage.jst.go.jp/article/jjss1995/25/2/25_2_193/_pdf",
+        "source": {
+          "id": "https://openalex.org/S4210181406",
+          "display_name": "JOURNAL OF THE JAPAN STATISTICAL SOCIETY",
+          "issn_l": "1348-6365",
+          "issn": [
+            "1348-6365",
+            "1882-2754"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-c",
+            "anvur-scientific",
+            "cwts-core",
+            "jufo-1"
+          ],
+          "host_organization": "https://openalex.org/P4310313328",
+          "host_organization_name": "Japan Statistical Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310313328"
+          ],
+          "host_organization_lineage_names": [
+            "Japan Statistical Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "JOURNAL OF THE JAPAN STATISTICAL SOCIETY",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.jstage.jst.go.jp/article/jjss1995/25/2/25_2_193/_pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4381678503",
+      "doi": "https://doi.org/10.3390/analytics2020024",
+      "title": "Clustering Matrix Variate Longitudinal Count Data",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.3390/analytics2020024",
+        "doi": "https://doi.org/10.3390/analytics2020024",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/analytics2020024",
+        "pdf_url": "https://www.mdpi.com/2813-2203/2/2/24/pdf?version=1683275756",
+        "source": {
+          "id": "https://openalex.org/S4387280261",
+          "display_name": "Analytics",
+          "issn_l": "2813-2203",
+          "issn": [
+            "2813-2203"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Analytics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2813-2203/2/2/24/pdf?version=1683275756",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W7163319974",
+      "doi": "https://doi.org/10.21203/rs.3.rs-9883023/v1",
+      "title": "New class of Poisson mixture models and its statistical properties",
+      "publication_year": 2026,
+      "primary_location": {
+        "id": "doi:10.21203/rs.3.rs-9883023/v1",
+        "doi": "https://doi.org/10.21203/rs.3.rs-9883023/v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.21203/rs.3.rs-9883023/v1",
+        "pdf_url": "https://www.researchsquare.com/article/rs-9883023/latest.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306525896",
+          "display_name": "Research Square",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "Research Square",
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.researchsquare.com/article/rs-9883023/latest.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2164077590",
+      "doi": "https://doi.org/10.1111/rssa.12057",
+      "title": "Bayesian Inference for Transportation Origin\u2013Destination Matrices: the Poisson\u2013Inverse Gaussian and Other Poisson Mixtures",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1111/rssa.12057",
+        "doi": "https://doi.org/10.1111/rssa.12057",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1111/rssa.12057",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S185328345",
+          "display_name": "Journal of the Royal Statistical Society Series A (Statistics in Society)",
+          "issn_l": "0964-1998",
+          "issn": [
+            "0964-1998",
+            "1467-985X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311763",
+          "host_organization_name": "Royal Statistical Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311763"
+          ],
+          "host_organization_lineage_names": [
+            "Royal Statistical Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of the Royal Statistical Society Series A: Statistics in Society",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://durham-repository.worktribe.com/file/1320233/1/Accepted%20Journal%20Article",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4411278480",
+      "doi": "https://doi.org/10.3390/axioms14060464",
+      "title": "Influence Analysis in the Lognormal Regression Model with Fitted and Quantile Residuals",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.3390/axioms14060464",
+        "doi": "https://doi.org/10.3390/axioms14060464",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/axioms14060464",
+        "pdf_url": "https://www.mdpi.com/2075-1680/14/6/464/pdf?version=1749816851",
+        "source": {
+          "id": "https://openalex.org/S4210173132",
+          "display_name": "Axioms",
+          "issn_l": "2075-1680",
+          "issn": [
+            "2075-1680"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "poland-20",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Axioms",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2075-1680/14/6/464/pdf?version=1749816851",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2951784885",
+      "doi": "https://doi.org/10.7554/elife.18805",
+      "title": "Lognormal firing rate distribution reveals prominent fluctuation\u2013driven regime in spinal motor networks",
+      "publication_year": 2016,
+      "primary_location": {
+        "id": "doi:10.7554/elife.18805",
+        "doi": "https://doi.org/10.7554/elife.18805",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7554/elife.18805",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S1336409049",
+          "display_name": "eLife",
+          "issn_l": "2050-084X",
+          "issn": [
+            "2050-084X"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-2",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311710",
+          "host_organization_name": "eLife Sciences Publications Ltd",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311710"
+          ],
+          "host_organization_lineage_names": [
+            "eLife Sciences Publications Ltd"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "eLife",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.7554/elife.18805",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3045765015",
+      "doi": "https://doi.org/10.11606/t.104.2020.tde-29072020-093809",
+      "title": "A new class of discrete models for the analysis of zero-modified count data",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.11606/t.104.2020.tde-29072020-093809",
+        "doi": "https://doi.org/10.11606/t.104.2020.tde-29072020-093809",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.11606/t.104.2020.tde-29072020-093809",
+        "pdf_url": "http://www.teses.usp.br/teses/disponiveis/104/104131/tde-29072020-093809/publico/WesleyBertoliSilva_revisada.pdf",
+        "source": null,
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Universidade de S\u00e3o Paulo",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://www.teses.usp.br/teses/disponiveis/104/104131/tde-29072020-093809/publico/WesleyBertoliSilva_revisada.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2567421046",
+      "doi": "https://doi.org/10.1186/s12859-016-1441-7",
+      "title": "Negative binomial mixed models for analyzing microbiome count data",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1186/s12859-016-1441-7",
+        "doi": "https://doi.org/10.1186/s12859-016-1441-7",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s12859-016-1441-7",
+        "pdf_url": "https://bmcbioinformatics.biomedcentral.com/track/pdf/10.1186/s12859-016-1441-7",
+        "source": {
+          "id": "https://openalex.org/S19032547",
+          "display_name": "BMC Bioinformatics",
+          "issn_l": "1471-2105",
+          "issn": [
+            "1471-2105"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "ccf-c",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "doyens",
+            "jufo-1",
+            "ki-jl-1",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320256",
+          "host_organization_name": "BioMed Central",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320256",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "BioMed Central",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "BMC Bioinformatics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcbioinformatics.biomedcentral.com/track/pdf/10.1186/s12859-016-1441-7",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4414149740",
+      "doi": "https://doi.org/10.1016/j.jmva.2025.105507",
+      "title": "Tree P\u00f3lya Splitting distributions for multivariate count data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1016/j.jmva.2025.105507",
+        "doi": "https://doi.org/10.1016/j.jmva.2025.105507",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.jmva.2025.105507",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S133905466",
+          "display_name": "Journal of Multivariate Analysis",
+          "issn_l": "0047-259X",
+          "issn": [
+            "0047-259X",
+            "1095-7243"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "doyens",
+            "jufo-2",
+            "ki-jl-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Multivariate Analysis",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.jmva.2025.105507",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2528464905",
+      "doi": "https://doi.org/10.11575/prism/25338",
+      "title": "Cluster Aanlysis of Gene Expression Profiles via Flexible Count Models for RNA-seq Data",
+      "publication_year": 2015,
+      "primary_location": {
+        "id": "pmh:oai:prism.ucalgary.ca:11023/2293",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/11023/2293",
+        "pdf_url": "http://hdl.handle.net/11023/2293",
+        "source": {
+          "id": "https://openalex.org/S4306402261",
+          "display_name": "Libraries and Cultural Resources (University of Calgary)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I168635309",
+          "host_organization_name": "University of Calgary",
+          "host_organization_lineage": [
+            "https://openalex.org/I168635309"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "master thesis"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11023/2293",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3165263264",
+      "doi": "https://doi.org/10.1186/s40488-021-00119-y",
+      "title": "A flexible multivariate model for high-dimensional correlated count data",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1186/s40488-021-00119-y",
+        "doi": "https://doi.org/10.1186/s40488-021-00119-y",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1186/s40488-021-00119-y",
+        "pdf_url": "https://jsdajournal.springeropen.com/counter/pdf/10.1186/s40488-021-00119-y",
+        "source": {
+          "id": "https://openalex.org/S2739109696",
+          "display_name": "Journal of Statistical Distributions and Applications",
+          "issn_l": "2195-5832",
+          "issn": [
+            "2195-5832"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "poland-20",
+            "russia-white-list-3"
+          ],
+          "host_organization": "https://openalex.org/P4310319965",
+          "host_organization_name": "Springer Nature",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Statistical Distributions and Applications",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://jsdajournal.springeropen.com/counter/pdf/10.1186/s40488-021-00119-y",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4407277040",
+      "doi": "https://doi.org/10.1101/2025.02.03.636129",
+      "title": "Principled PCA separates signal from noise in omics count data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1101/2025.02.03.636129",
+        "doi": "https://doi.org/10.1101/2025.02.03.636129",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1101/2025.02.03.636129",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306402567",
+          "display_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I2750212522",
+          "host_organization_name": "Cold Spring Harbor Laboratory",
+          "host_organization_lineage": [
+            "https://openalex.org/I2750212522"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "bioRxiv",
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.1101/2025.02.03.636129",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2982590986",
+      "doi": "https://doi.org/10.11648/j.ijdsa.20190505.15",
+      "title": "Bayesian Finite Mixture Negative Binomial Model for Over-dispersed Count Data with Application to DMFT Index Data",
+      "publication_year": 2019,
+      "primary_location": {
+        "id": "doi:10.11648/j.ijdsa.20190505.15",
+        "doi": "https://doi.org/10.11648/j.ijdsa.20190505.15",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.11648/j.ijdsa.20190505.15",
+        "pdf_url": "http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijdsa.20190505.15.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210238777",
+          "display_name": "International Journal of Data Science and Analysis",
+          "issn_l": "2575-1883",
+          "issn": [
+            "2575-1883",
+            "2575-1891"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/P4310319272",
+          "host_organization_name": "Science Publishing Group",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319272"
+          ],
+          "host_organization_lineage_names": [
+            "Science Publishing Group"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Data Science and Analysis",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijdsa.20190505.15.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2085534751",
+      "doi": "https://doi.org/10.1109/tpami.2013.211",
+      "title": "Negative Binomial Process Count and Mixture Modeling",
+      "publication_year": 2013,
+      "primary_location": {
+        "id": "doi:10.1109/tpami.2013.211",
+        "doi": "https://doi.org/10.1109/tpami.2013.211",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1109/tpami.2013.211",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S199944782",
+          "display_name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+          "issn_l": "0162-8828",
+          "issn": [
+            "0162-8828",
+            "1939-3539",
+            "2160-9292"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "ccf-a",
+            "cwts-core",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "medline",
+            "norway-2",
+            "poland-200",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320439",
+          "host_organization_name": "IEEE Computer Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320439",
+            "https://openalex.org/P4310319808"
+          ],
+          "host_organization_lineage_names": [
+            "IEEE Computer Society",
+            "Institute of Electrical and Electronics Engineers"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/1209.3442",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4377022244",
+      "doi": "https://doi.org/10.1007/s11222-023-10244-0",
+      "title": "A fast look-up method for Bayesian mean-parameterised Conway\u2013Maxwell\u2013Poisson regression models",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.1007/s11222-023-10244-0",
+        "doi": "https://doi.org/10.1007/s11222-023-10244-0",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s11222-023-10244-0",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11222-023-10244-0.pdf",
+        "source": {
+          "id": "https://openalex.org/S5437875",
+          "display_name": "Statistics and Computing",
+          "issn_l": "0960-3174",
+          "issn": [
+            "0960-3174",
+            "1573-1375"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "doyens",
+            "jufo-2",
+            "norway-2",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistics and Computing",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11222-023-10244-0.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4387133273",
+      "doi": "https://doi.org/10.3390/ma16196452",
+      "title": "Observation of Weibull, Lognormal, and Gamma Distributions in Electrodeposited Cu and Cu-Ag Particles",
+      "publication_year": 2023,
+      "primary_location": {
+        "id": "doi:10.3390/ma16196452",
+        "doi": "https://doi.org/10.3390/ma16196452",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/ma16196452",
+        "pdf_url": "https://www.mdpi.com/1996-1944/16/19/6452/pdf?version=1695887832",
+        "source": {
+          "id": "https://openalex.org/S18714766",
+          "display_name": "Materials",
+          "issn_l": "1996-1944",
+          "issn": [
+            "1996-1944"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Materials",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1996-1944/16/19/6452/pdf?version=1695887832",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4303446540",
+      "doi": "https://doi.org/10.1093/jssam/smac026",
+      "title": "Empirical Best Prediction of Small Area Means Based on a Unit-Level Gamma-Poisson Model",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1093/jssam/smac026",
+        "doi": "https://doi.org/10.1093/jssam/smac026",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1093/jssam/smac026",
+        "pdf_url": "https://academic.oup.com/jssam/advance-article-pdf/doi/10.1093/jssam/smac026/47750917/smac026.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210204360",
+          "display_name": "Journal of Survey Statistics and Methodology",
+          "issn_l": "2325-0984",
+          "issn": [
+            "2325-0984",
+            "2325-0992"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311648",
+          "host_organization_name": "Oxford University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311648",
+            "https://openalex.org/P4310311647"
+          ],
+          "host_organization_lineage_names": [
+            "Oxford University Press",
+            "University of Oxford"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Survey Statistics and Methodology",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/jssam/advance-article-pdf/doi/10.1093/jssam/smac026/47750917/smac026.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W2610193587",
+      "doi": "https://doi.org/10.1017/s1748499517000070",
+      "title": "Application of bivariate negative binomial regression model in analysing insurance count data",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "doi:10.1017/s1748499517000070",
+        "doi": "https://doi.org/10.1017/s1748499517000070",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1017/s1748499517000070",
+        "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C8A1A76A40C8D1EA2BA9CADD13F3D55B/S1748499517000070a.pdf/div-class-title-application-of-bivariate-negative-binomial-regression-model-in-analysing-insurance-count-data-div.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764823410",
+          "display_name": "Annals of Actuarial Science",
+          "issn_l": "1748-4995",
+          "issn": [
+            "1748-4995",
+            "1748-5002"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "erih-plus",
+            "fnege-4",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310311721",
+          "host_organization_name": "Cambridge University Press",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311721",
+            "https://openalex.org/P4310311702"
+          ],
+          "host_organization_lineage_names": [
+            "Cambridge University Press",
+            "University of Cambridge"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Annals of Actuarial Science",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C8A1A76A40C8D1EA2BA9CADD13F3D55B/S1748499517000070a.pdf/div-class-title-application-of-bivariate-negative-binomial-regression-model-in-analysing-insurance-count-data-div.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4210280210",
+      "doi": "https://doi.org/10.1214/21-bjps513",
+      "title": "Unit level model for small area estimation with count data under square root transformation",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "doi:10.1214/21-bjps513",
+        "doi": "https://doi.org/10.1214/21-bjps513",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1214/21-bjps513",
+        "pdf_url": "https://projecteuclid.org/journals/brazilian-journal-of-probability-and-statistics/volume-36/issue-1/Unit-level-model-for-small-area-estimation-with-count-data/10.1214/21-BJPS513.pdf",
+        "source": {
+          "id": "https://openalex.org/S3832347",
+          "display_name": "Brazilian Journal of Probability and Statistics",
+          "issn_l": "0103-0752",
+          "issn": [
+            "0103-0752",
+            "2317-6199"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-b",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-3",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310312298",
+          "host_organization_name": "Associa\u00e7\u00e3o Brasileira de Estat\u00edstica",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310312298",
+            "https://openalex.org/P4310311977"
+          ],
+          "host_organization_lineage_names": [
+            "Associa\u00e7\u00e3o Brasileira de Estat\u00edstica",
+            "Institute of Mathematics and Statistics, University of S\u00e3o Paulo"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Brazilian Journal of Probability and Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://projecteuclid.org/journals/brazilian-journal-of-probability-and-statistics/volume-36/issue-1/Unit-level-model-for-small-area-estimation-with-count-data/10.1214/21-BJPS513.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W7225028504",
+      "doi": null,
+      "title": "LIKELIHOOD-BASED INFERENCE FOR THE POISSON\u2013TWEEDIE FAMILY",
+      "publication_year": null,
+      "primary_location": {
+        "id": "pmh:oai:scholars.wlu.ca:etd-4167",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://scholars.wlu.ca/etd/3003",
+        "pdf_url": "https://scholars.wlu.ca/context/etd/article/4167/viewcontent/Si_s_PhD_Thesis__Oct_5_revised.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401971",
+          "display_name": "Scholars Commons (Wilfrid Laurier University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I75381157",
+          "host_organization_name": "Wilfrid Laurier University",
+          "host_organization_lineage": [
+            "https://openalex.org/I75381157"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Theses and Dissertations (Comprehensive)",
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholars.wlu.ca/context/etd/article/4167/viewcontent/Si_s_PhD_Thesis__Oct_5_revised.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2020465528",
+      "doi": "https://doi.org/10.1007/s13253-014-0192-z",
+      "title": "Estimating Abundance from Counts in Large Data Sets of Irregularly Spaced Plots using Spatial Basis Functions",
+      "publication_year": 2014,
+      "primary_location": {
+        "id": "doi:10.1007/s13253-014-0192-z",
+        "doi": "https://doi.org/10.1007/s13253-014-0192-z",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s13253-014-0192-z",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s13253-014-0192-z.pdf",
+        "source": {
+          "id": "https://openalex.org/S185969502",
+          "display_name": "Journal of Agricultural Biological and Environmental Statistics",
+          "issn_l": "1085-7117",
+          "issn": [
+            "1085-7117",
+            "1537-2693"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Agricultural, Biological, and Environmental Statistics",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13253-014-0192-z.pdf",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W72609852",
+      "doi": "https://doi.org/10.17077/etd.5szwv66z",
+      "title": "Two-level lognormal frailty model and competing risks model with missing cause of failure",
+      "publication_year": 2012,
+      "primary_location": {
+        "id": "doi:10.17077/etd.5szwv66z",
+        "doi": "https://doi.org/10.17077/etd.5szwv66z",
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.17077/etd.5szwv66z",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "University of Iowa",
+        "raw_type": "dissertation"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://iro.uiowa.edu/view/delivery/01IOWA_INST/12730530560002771/13730805040002771",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3095729671",
+      "doi": null,
+      "title": "Semiparametric Regression Analysis of Survival Data and Panel Count Data",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "pmh:oai:scholarcommons.sc.edu:etd-6861",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://scholarcommons.sc.edu/etd/6071",
+        "pdf_url": "https://scholarcommons.sc.edu/etd/6071",
+        "source": {
+          "id": "https://openalex.org/S4306401386",
+          "display_name": "Scholar Commons (University of South Carolina)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I155781252",
+          "host_organization_name": "University of South Carolina",
+          "host_organization_lineage": [
+            "https://openalex.org/I155781252"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Theses and Dissertations",
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarcommons.sc.edu/etd/6071",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3210356789",
+      "doi": "https://doi.org/10.1080/10920277.2021.1978850",
+      "title": "Bivariate Mixed Poisson Regression Models with Varying Dispersion",
+      "publication_year": 2021,
+      "primary_location": {
+        "id": "doi:10.1080/10920277.2021.1978850",
+        "doi": "https://doi.org/10.1080/10920277.2021.1978850",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1080/10920277.2021.1978850",
+        "pdf_url": "http://eprints.lse.ac.uk/114327/1/Bivariate_Mixed_Poisson_Regression_Models_with_Varying_Dispersion.pdf",
+        "source": {
+          "id": "https://openalex.org/S2764463436",
+          "display_name": "North American Actuarial Journal",
+          "issn_l": "1092-0277",
+          "issn": [
+            "1092-0277",
+            "2325-0453"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "fnege-3",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320547",
+          "host_organization_name": "Taylor & Francis",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320547",
+            "https://openalex.org/P4310320449"
+          ],
+          "host_organization_lineage_names": [
+            "Taylor & Francis",
+            "Informa"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "North American Actuarial Journal",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "http://eprints.lse.ac.uk/114327/1/Bivariate_Mixed_Poisson_Regression_Models_with_Varying_Dispersion.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2753572836",
+      "doi": null,
+      "title": "A review of spatial econometric models for count data",
+      "publication_year": 2017,
+      "primary_location": {
+        "id": "pmh:oai:RePEc:zbw:hohdps:192017",
+        "doi": null,
+        "is_oa": false,
+        "landing_page_url": "https://www.econstor.eu/bitstream/10419/168040/1/89655662X.pdf",
+        "pdf_url": "https://www.econstor.eu/bitstream/10419/168040/1/89655662X.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306401271",
+          "display_name": "RePEc: Research Papers in Economics",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I77793887",
+          "host_organization_name": "Federal Reserve Bank of St. Louis",
+          "host_organization_lineage": [
+            "https://openalex.org/I77793887"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "preprint"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10419/168040",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W3007076394",
+      "doi": "https://doi.org/10.1111/pirs.12523",
+      "title": "An analysis of pedestrian crashes using a spatial count data model",
+      "publication_year": 2020,
+      "primary_location": {
+        "id": "doi:10.1111/pirs.12523",
+        "doi": "https://doi.org/10.1111/pirs.12523",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1111/pirs.12523",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/pirs.12523",
+        "source": {
+          "id": "https://openalex.org/S101788309",
+          "display_name": "Papers of the Regional Science Association",
+          "issn_l": "0486-2902",
+          "issn": [
+            "0486-2902",
+            "1056-8190",
+            "1435-5957"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "abdc-a",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "fnege-3",
+            "jufo-1",
+            "norway-1",
+            "poland-70",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Papers in Regional Science",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/pirs.12523",
+        "any_repository_has_fulltext": false
+      }
+    },
+    {
+      "id": "https://openalex.org/W4411779235",
+      "doi": "https://doi.org/10.1007/s00362-025-01732-8",
+      "title": "On the distribution of isometric log-ratio coordinates under extra-multinomial count data",
+      "publication_year": 2025,
+      "primary_location": {
+        "id": "doi:10.1007/s00362-025-01732-8",
+        "doi": "https://doi.org/10.1007/s00362-025-01732-8",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1007/s00362-025-01732-8",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00362-025-01732-8.pdf",
+        "source": {
+          "id": "https://openalex.org/S4210184815",
+          "display_name": "Statistical Papers",
+          "issn_l": "0932-5026",
+          "issn": [
+            "0932-5026",
+            "1613-9798"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "abdc-b",
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-2",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319900",
+            "https://openalex.org/P4310319965"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Science+Business Media",
+            "Springer Nature"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Statistical Papers",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00362-025-01732-8.pdf",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W4302011703",
+      "doi": "https://doi.org/10.48550/arxiv.2210.00697",
+      "title": "A flexible model for correlated count data, with application to multi-condition differential expression analyses of single-cell RNA sequencing data",
+      "publication_year": 2022,
+      "primary_location": {
+        "id": "pmh:oai:arXiv.org:2210.00697",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/2210.00697",
+        "pdf_url": "https://arxiv.org/pdf/2210.00697",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "cc-by-nc-sa",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://arxiv.org/pdf/2210.00697",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W2765590569",
+      "doi": "https://doi.org/10.1103/physrevd.98.023507",
+      "title": "Density split statistics: Cosmological constraints from counts and lensing in cells in DES Y1 and SDSS data",
+      "publication_year": 2018,
+      "primary_location": {
+        "id": "doi:10.1103/physrevd.98.023507",
+        "doi": "https://doi.org/10.1103/physrevd.98.023507",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1103/physrevd.98.023507",
+        "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.98.023507",
+        "source": {
+          "id": "https://openalex.org/S4210238307",
+          "display_name": "Physical review. D/Physical review. D.",
+          "issn_l": "2470-0010",
+          "issn": [
+            "2470-0010",
+            "2470-0029",
+            "2470-0037"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "dongbi-a",
+            "jufo-2",
+            "ki-jl-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320261",
+          "host_organization_name": "American Physical Society",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320261"
+          ],
+          "host_organization_lineage_names": [
+            "American Physical Society"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Physical Review D",
+        "raw_type": "journal-article"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://link.aps.org/pdf/10.1103/PhysRevD.98.023507",
+        "any_repository_has_fulltext": true
+      }
+    },
+    {
+      "id": "https://openalex.org/W1580654548",
+      "doi": "https://doi.org/10.2139/ssrn.1884898",
+      "title": "Mixture of Bivariate Poisson Regression Models with an Application to Insurance",
+      "publication_year": 2011,
+      "primary_location": {
+        "id": "doi:10.2139/ssrn.1884898",
+        "doi": "https://doi.org/10.2139/ssrn.1884898",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.1884898",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.1884898",
+        "any_repository_has_fulltext": true
+      }
+    }
+  ],
+  "group_by": []
+}

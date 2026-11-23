@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-15T22:20:11.425612+00:00",
+  "verifier": "/home/dgsetiawan/.agents/skills/literature-review/scripts/verify_citations.py",
+  "urls": [
+    {
+      "url": "https://arxiv.org/abs/2605.19135",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.28134",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.28330",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/html/2401.09671v2",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/html/2601.21696v2#S3.SS2",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/html/2606.18509v1",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.09530v1",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/html/2611.11460",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2001.09061",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://papers.neurips.cc/paper_files/paper/2023/file/6c8985579293e0209bdaa4f21bb1d237-Paper-Conference.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://perso.tesa.prd.fr/jyt/publis_fichiers/Letac2007.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v162/foster22a/foster22a.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v206/xi23a/xi23a.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v236/lopez24a/lopez24a.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v306/chaussard26a.html",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v48/podosinnikova16.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper/2020/file/510f2318f324cf07fce24c3a4b89c771-Paper.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    },
+    {
+      "url": "https://www.imo.universite-paris-saclay.fr/~elisabeth.gassiat/sn-article.pdf",
+      "head_accessible": true,
+      "http_status": 200,
+      "interpretation": "HTTP reachability only; theorem and metadata checked from primary text separately"
+    }
+  ],
+  "dois": [
+    {
+      "doi": "10.1016/j.jmva.2006.03.005",
+      "handle_resolves": true,
+      "crossref_metadata": {}
+    },
+    {
+      "doi": "10.48550/arXiv.2601.21696",
+      "handle_resolves": true,
+      "crossref_metadata": {}
+    },
+    {
+      "doi": "10.48550/arXiv.2401.15903",
+      "handle_resolves": true,
+      "crossref_metadata": {}
+    },
+    {
+      "doi": "10.1007/s11222-025-10668-w",
+      "handle_resolves": true,
+      "crossref_metadata": {
+        "title": "Tree-based variational inference for Poisson log-normal models",
+        "authors": "Chaussard, A., Bonnet, A., Gassiat, E., et al.",
+        "year": "2025",
+        "journal": "Statistics and Computing",
+        "volume": "35",
+        "pages": "",
+        "doi": "10.1007/s11222-025-10668-w"
+      }
+    }
+  ],
+  "notes": "DOI handle existence and HTTP HEAD are not a proof audit. Missing Crossref metadata for arXiv/DataCite DOIs is not evidence of invalid DOI. Primary titles/authors/version dates and theorem locations were inspected separately through publisher/arXiv texts."
+}

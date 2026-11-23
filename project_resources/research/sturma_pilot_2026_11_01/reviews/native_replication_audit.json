@@ -1,0 +1,34 @@
+{
+  "reviewer": "causal_reliability_pilot",
+  "status": "pass",
+  "scope": "Independent read-only replay of saved score arrays and summary accounting; no source generation or model fitting.",
+  "protocol_sha256": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+  "summary_sha256": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+  "checks": [
+    "Frozen source, runner and test hashes",
+    "All60 JSON/NPZ provenance seals",
+    "Native two-stage signed-permutation mixing scores reconstructed independently",
+    "Native constrained-permutation/sign graph scores reconstructed independently",
+    "Native and sqrt(beta) normalizations kept separate",
+    "Dimension-conditioned and unconditional denominator accounting",
+    "All group medians/quartiles and fixed coefficient criterion"
+  ],
+  "counts": {
+    "fits": 60,
+    "correct_dimension": 43,
+    "under_dimension_positive": 15,
+    "zero_shared": 2,
+    "exceptions": 0,
+    "ica_convergence_warnings": 3,
+    "fixed_coefficient_criterion_pass": 21
+  },
+  "max_abs_score_difference": {
+    "mixing": 2.220446049250313e-16,
+    "graph": 0.0
+  },
+  "limitations": [
+    "Native heuristic scores reproduced, not replaced by a different optimum.",
+    "No biological causal-ground-truth claim.",
+    "Ten repeated seeds per setting; not independent across settings."
+  ]
+}

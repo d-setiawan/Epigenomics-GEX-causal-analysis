@@ -1,0 +1,115 @@
+{
+  "algorithm": "CA-BOSS v4.27",
+  "cached_data_only": true,
+  "date": "2026-09-01",
+  "fresh_locked_claim": false,
+  "identifiability_boundary": {
+    "cell_specific_cross_assay_direction": "not_identifiable_from_disjoint_cells",
+    "direct_structure_alone_implies_state_membership": false,
+    "estimand": "shared_latent_state_feature_participation_set",
+    "exact_cross_assay_feature_pairing": "not_claimed"
+  },
+  "nested_leave_one_source_block_out_audit": {
+    "false_positive_members": 0,
+    "future_application_calibrator_sha256": "ad3e0ef8ffaef95ff9dbde75716a5ade187d6cedb860c5f2f634ab433be86efb",
+    "minimum_world_recall": 0.84,
+    "outer_blocks": 7,
+    "outer_blocks_sentinel_certified": 7,
+    "outer_blocks_with_zero_false_additions": 7,
+    "phase_a_manifest_sha256": "8e1be654894693f6834a913235ecc7dc6b75dc8075964a5354b4f7bfc729f1dc",
+    "phase_b_summary_file_sha256": "e083cfefe9a851e41934db7bca7719c835ad4eef55aa08859ed4dbdb8c5e8276",
+    "phase_b_summary_payload_sha256": "98d592bf69079e79c3b81953eb2fef327b45169063bf2548fd110d2589a4eb36",
+    "precision": 1.0,
+    "recall": 0.9571052631578948,
+    "role_recall": {
+      "C": 0.981359649122807,
+      "P": 0.8695175438596491,
+      "Q": 0.9956140350877193,
+      "RNA": 1.0,
+      "S": 0.9747807017543859
+    },
+    "topology_consensus_false_additions": 0,
+    "topology_consensus_true_additions": 147,
+    "true_positive_members": 3637,
+    "false_negative_members": 163,
+    "upstream_v426_recall": 0.9184210526315789,
+    "worlds": 152,
+    "worlds_meeting_precision_one_and_recall_at_least_0_80": 152
+  },
+  "new_modalities_or_variables_added": false,
+  "new_worlds_or_datasets_created": false,
+  "production_cached_replay": {
+    "all_direct_structure_alone_insufficient": true,
+    "all_phase_a_successful": true,
+    "all_phase_b_successful": true,
+    "evaluations": 60,
+    "false_negative_members": 71,
+    "false_positive_members": 0,
+    "full_layered_reliability_successes": 59,
+    "mean_recall": 0.9526666666666672,
+    "minimum_recall": 0.84,
+    "panel_mean_recall_range": [
+      0.9333333333333332,
+      0.9733333333333333
+    ],
+    "panel_size": 12,
+    "precision": 1.0,
+    "selection_seeds": [
+      20261009,
+      20261010,
+      20261011,
+      20261012,
+      20261013
+    ],
+    "state_layer_reliability_successes": 60,
+    "topology_consensus_direct_relations_created": 0,
+    "topology_consensus_pairwise_relations_created": 0,
+    "topology_consensus_sentinel_additions": 0,
+    "topology_consensus_true_additions": 65,
+    "true_positive_members": 1429,
+    "unique_worlds": 49,
+    "upstream_v426_true_positive_members": 1364,
+    "upstream_v426_false_positive_members": 0,
+    "upstream_v426_recall": 0.9093333333333333,
+    "whole_layer_failure": {
+      "failed_checks": [
+        "loading_pair_precision_at_least_0_80",
+        "loading_zero_sentinel_or_member_conflation"
+      ],
+      "reason": "pre-existing assay-local loading-group failure unrelated to v4.27 state membership",
+      "state_v427_precision": 1.0,
+      "state_v427_recall": 0.84,
+      "world": "train_41001_41024:41019"
+    }
+  },
+  "production_panel_artifacts": [
+    {
+      "phase_a_manifest_sha256": "3418521cee8a443590b680d90c4a67731317be5e8f062cf1fbb402320924416f",
+      "phase_b_summary_sha256": "27610da5791600cbdc8f967f845d95817ae5d9cdd7fbd75ec67be0e8b4eab6f1",
+      "selection_seed": 20261009
+    },
+    {
+      "phase_a_manifest_sha256": "63a452cb452dcca742b71bfe3c4432c8698d5addb42af771d3556473763dd352",
+      "phase_b_summary_sha256": "6446a65673ceb05869dff091057cb37b3bd5ef777f6a58fee1a2eac439256143",
+      "selection_seed": 20261010
+    },
+    {
+      "phase_a_manifest_sha256": "9a215db2f51063b74f60d1507d499f93de838ea9a1aeb6eceb1625151485db87",
+      "phase_b_summary_sha256": "87912ae1c455e66d62f6d6b227ef5b4edfe175bb9a8fcbb807a6d97b7c1fb432",
+      "selection_seed": 20261011
+    },
+    {
+      "phase_a_manifest_sha256": "6dcd2289cee95013df6bad39ba6e6a05be56b898f588742f64f58b907a06b972",
+      "phase_b_summary_sha256": "a5298d63f001673505e8b246c75def3342ca555f4c28ddd6040e672ca1ff17a6",
+      "selection_seed": 20261012
+    },
+    {
+      "phase_a_manifest_sha256": "cb42c8aee6c04b4ff4db8d39d87fa2da255b49bbb2a4da8f0115d4d91b17edc7",
+      "phase_b_summary_sha256": "d87a94794a0ad678e2afa33afe359ae0ab61c1a06ff4018adb321cb1aebd0b77",
+      "selection_seed": 20261013
+    }
+  ],
+  "retrospective_development_only": true,
+  "schema_version": "ca_boss_v4.cached_random_v427_summary.v1",
+  "summary_payload_sha256": "52f38103d1de5e0bee2be1d7392210c0c07f85f49a2aec9cb18b0e19c6dbe0b4"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "upstream_clean": true,
+  "focused_tests_passed": 5,
+  "published_fits": 60,
+  "primary_application_fits": 18,
+  "exploratory_pairwise_comparisons": 18,
+  "markdown_files_checked": 12,
+  "local_links_checked": 279,
+  "independent_audits_passed": [
+    "reviews/native_replication_audit.json",
+    "reviews/data_extraction_audit.json",
+    "reviews/data_consumer_audit.json",
+    "reviews/application_readout_audit.json",
+    "reviews/pairwise_followup_audit.json"
+  ],
+  "sha256": {
+    "README.md": "4870e0d181734e5e8470abf9a536bc5a531d1c6f80f404fc831ca2cf60192002",
+    "APPLICATION_RESULTS.md": "dd0e1ca6022c2f1ee72b34a7c036ad49f7092b42b01257c6d2d711591764eadc",
+    "application_protocol.json": "4991e33d3866b001c8f1d1ac9f7a9ec92bc7fd5dfdc1dcba56d335c1d7550fff",
+    "data_extraction_protocol.json": "7e8e158a0e64913efb6078b3ec51f281e48a2b1de7598cd74c7df01a5cd4e9fe",
+    "pairwise_protocol.json": "95138c0b3a00bf60f6ceeba3fbba6b21705c355d04e802e0094bb7687bcc1c7b",
+    "apply_native.py": "62df9501d73619653604dbe682b8c9e9a290fc8d73b752deabc1d316c6de81ed",
+    "pairwise_followup.py": "ede19a3641197414851b49e8a3ccd5ff8f3c5a9ce55ecefec9f56f37e6de3515",
+    "prepare_cached_data_pilot.py": "05f14564ab34cfa28bbb258a7088066b6e5e6b7a450a34ad9367984d4a0a25f5",
+    "data_pilot_v1/manifest.json": "d56c1cbec8aa4bd899c712b5bb7e0ee2e1b3e0e58d42955b4b79e85758f1d0b8",
+    "application_v1/provenance.json": "100964eb3b4506cbaaa5f6299bf46630cc756a9e5c521bcd901865b18bc1612d",
+    "application_v1/summary.json": "ac6577a5abe0bd4cdda140203dcbcc3e2e546e2612dcb126c22150a5829c32e3",
+    "pairwise_v1/provenance.json": "a2d160905e6d630c4c74e806c4cbb62cc545d73d5b46a7d2f49690c5deef8efb",
+    "pairwise_v1/summary.json": "5e221aab7929cee8f225e1348804840b6455eed223bcabf2d62fcd1bbbf43376",
+    "published_replication_protocol.json": "13629b82a4056685cc8cb0ed065a06da9f83ffb4b35642c301defbdd7b5a7a84",
+    "published_replication_manifest.json": "2234bc1a80658ffe80f19c5da439abdf286d42f2fe413785caf0a987457050b2",
+    "published_replication_summary.json": "c30e87e3c448a3d2cfba9dc3505acd92c6f3fd289a5ccafecbb1d662b5884e1e",
+    "focused_test_results.json": "36cb9f18b25fa0ccc8fe3e11b2f60e8d427ba3dd996358f6d195c26bdaa799bb",
+    "implementation_checks/encoder_correction.json": "fd71cbe19d5cfaa7ebce20d21b0b2505ba0d0e04ae9ca44b40b756a247f3bfda",
+    "reviews/native_replication_audit.json": "cc4dcbe7b35333afa85dfbbb0b0d0629f5ab3db01ba11bcf87381a69f54b1c35",
+    "reviews/data_extraction_audit.json": "113663f6ec58b256c9430996c01f63e2d74c6b531df8acd98a730a1a4a7e39ba",
+    "reviews/data_consumer_audit.json": "c48a9868cee17697addf1e2c1507194d96f6ea050d315af1787587a852f78004",
+    "reviews/application_readout_audit.json": "b83695fd0f8f43a30b7f8895540c5fe3d81f1b1e922b28e4aa198b5be3d18dca",
+    "reviews/pairwise_followup_audit.json": "ecac3b62b94f92a433300183a69c19a4c5908474e1c744780ddc5cbe4c85b2c1"
+  },
+  "scope": "Scoped artifact and documentation validation; independent audits validate calculations, not causal identification for counts. Published replication is reduced; no exact-DAG success metric. Earlier preflight attempt preserved and excluded."
+}
